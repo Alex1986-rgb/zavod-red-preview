@@ -148,6 +148,25 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .prod-card:hover .prod-ic{color:var(--red2)}
 .prod-ic svg{width:100%;height:100%}
 .prod-card b{font-size:13.5px;color:var(--text);font-weight:700;line-height:1.32}
+/* VS COMPARISON (b3) */
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:30px}
+@media(max-width:860px){.vs{grid-template-columns:1fr;gap:14px}}
+.vs-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 24px 20px}
+.vs-bad{border-top:3px solid #7a8b97}
+.vs-good{border-top:3px solid #37e06a}
+.vs-head{font-size:20px;font-weight:800;color:#fff;margin-bottom:18px}
+.vs-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin:0 0 18px;padding:0}
+.vs-list li{display:flex;gap:12px;align-items:flex-start}
+.vs-ic{flex:0 0 26px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px}
+.vs-ic-bad{background:rgba(225,27,27,.14);color:#ff5a5a}
+.vs-ic-good{background:rgba(55,224,106,.14);color:#37e06a}
+.vs-list b{display:block;color:#fff;font-size:15px}
+.vs-list p{color:var(--muted);font-size:13.2px;line-height:1.42;margin-top:2px}
+.vs-banner{margin-top:auto;border-radius:10px;padding:12px 14px;font-size:13.5px;font-weight:700;text-align:center}
+.vs-banner-bad{background:rgba(225,27,27,.10);border:1px solid rgba(225,27,27,.35);color:#ff7a7a}
+.vs-banner-good{background:rgba(55,224,106,.10);border:1px solid rgba(55,224,106,.35);color:#5bdc84}
+.vs-badge{align-self:center;width:54px;height:54px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:15px}
+@media(max-width:860px){.vs-badge{transform:rotate(90deg)}}
 
 /* SELECTOR */
 .selector{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -536,11 +555,27 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     <div class="eyebrow">Знакомая ситуация?</div>
     <h2>Редуктор встал — а производство ждать не может</h2>
     <p class="lead">Редуктор вышел из строя, поставщик не отвечает, импортный аналог недоступен или нужно срочно подобрать замену? Пришлите фото, маркировку или параметры — подберём решение, рассчитаем стоимость и сроки поставки.</p>
-    <div class="sit-grid">
-      <div class="sit-card"><span class="sit-ic">⚠️</span><b>Редуктор вышел из строя</b><p>Срочно нужна замена, оборудование простаивает.</p></div>
-      <div class="sit-card"><span class="sit-ic">📦</span><b>Поставщик не отвечает</b><p>Сроки сорваны, поставки нет — нужен надёжный производитель.</p></div>
-      <div class="sit-card"><span class="sit-ic">🌍</span><b>Импортный аналог недоступен</b><p>Воспроизведём присоединительные и габаритные размеры по образцу или чертежу.</p></div>
-      <div class="sit-card"><span class="sit-ic">📐</span><b>Нужен расчёт под оборудование</b><p>Подберём по нагрузке и параметрам, дадим чертёж и 3D-модель.</p></div>
+    <div class="vs">
+      <div class="vs-card vs-bad">
+        <div class="vs-head">Импортный редуктор</div>
+        <ul class="vs-list">
+          <li><span class="vs-ic vs-ic-bad">₽</span><div><b>Дороже</b><p>Высокая стоимость и рост курса</p></div></li>
+          <li><span class="vs-ic vs-ic-bad">⏱</span><div><b>Долго</b><p>Ожидание от нескольких недель до нескольких месяцев</p></div></li>
+          <li><span class="vs-ic vs-ic-bad">⚠</span><div><b>Риск простоя</b><p>Оборудование стоит — компания теряет деньги</p></div></li>
+        </ul>
+        <div class="vs-banner vs-banner-bad">✕ Непредсказуемые сроки и непонятный результат</div>
+      </div>
+      <div class="vs-badge">VS</div>
+      <div class="vs-card vs-good">
+        <div class="vs-head">Наше решение</div>
+        <ul class="vs-list">
+          <li><span class="vs-ic vs-ic-good">✓</span><div><b>Выгоднее</b><p>Оптимальная цена без переплат</p></div></li>
+          <li><span class="vs-ic vs-ic-good">✓</span><div><b>Быстро</b><p>Изготовление от 3 дней</p></div></li>
+          <li><span class="vs-ic vs-ic-good">✓</span><div><b>Высокое качество</b><p>Контроль на каждом этапе</p></div></li>
+          <li><span class="vs-ic vs-ic-good">✓</span><div><b>Сделано у нас</b><p>Импортозамещение и поддержка</p></div></li>
+        </ul>
+        <div class="vs-banner vs-banner-good">✓ Подходящая замена без долгого ожидания и простоев</div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:32px"><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a></div>
   </div>
