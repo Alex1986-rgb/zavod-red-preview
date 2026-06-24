@@ -170,6 +170,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .vs-banner-good{background:rgba(55,224,106,.10);border:1px solid rgba(55,224,106,.35);color:#5bdc84}
 .vs-badge{align-self:center;width:54px;height:54px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:15px}
 @media(max-width:860px){.vs-badge{transform:rotate(90deg)}}
+/* STEPS — как мы работаем */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:30px}
+@media(max-width:920px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px 20px}
+.step .step-n{width:34px;height:34px;border-radius:10px;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:14px}
+.step b{display:block;color:#fff;font-size:15.5px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:13.2px;line-height:1.45}
 
 /* SELECTOR */
 .selector{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -549,6 +557,22 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
       </a>
     </div>
     <div class="cat-grid" id="catGrid" style="margin-top:36px"></div>
+  </div>
+</section>
+
+<!-- ===== ЭТАПЫ — как мы работаем ===== -->
+<section class="section" id="steps">
+  <div class="wrap">
+    <div class="eyebrow">Как мы работаем</div>
+    <h2>От заявки до отгрузки — 5 шагов</h2>
+    <p class="lead">Прозрачный процесс: вы всегда знаете цену, срок и статус. Подбор, расчёт и производство — на одном заводе, без посредников.</p>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><b>Заявка</b><p>Пришлите фото шильдика, маркировку, образец или технические параметры — любым удобным способом.</p></div>
+      <div class="step"><div class="step-n">2</div><b>Расчёт и КП</b><p>Инженер подберёт редуктор или аналог, рассчитает цену и срок и пришлёт коммерческое предложение.</p></div>
+      <div class="step"><div class="step-n">3</div><b>Производство</b><p>Изготовим под заказ или отгрузим со склада. Чертежи и 3D-модели передаём заранее.</p></div>
+      <div class="step"><div class="step-n">4</div><b>Контроль качества</b><p>Проверка на каждом этапе. Гарантия 24 месяца или переделаем за наш счёт.</p></div>
+      <div class="step"><div class="step-n">5</div><b>Отгрузка по РФ</b><p>Отправим транспортной компанией до вашего адреса. Отгрузка от 3 дней.</p></div>
+    </div>
   </div>
 </section>
 
