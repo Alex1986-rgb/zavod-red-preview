@@ -145,9 +145,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 @media(max-width:560px){.prod-grid{grid-template-columns:1fr 1fr}}
 .prod-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 12px;transition:transform .16s,box-shadow .16s,border-color .16s,background .16s}
 .prod-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.32);border-color:var(--blue)}
-.prod-ic{width:52px;height:52px;color:var(--steel);transition:color .16s}
-.prod-card:hover .prod-ic{color:var(--red2)}
+.prod-ic{width:78px;height:78px;color:var(--steel);transition:transform .16s;display:flex;align-items:center;justify-content:center}
+.prod-card:hover .prod-ic{transform:scale(1.06)}
 .prod-ic svg{width:100%;height:100%}
+.prod-ic img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
 .prod-card b{font-size:13.5px;color:var(--text);font-weight:700;line-height:1.32}
 /* VS COMPARISON (b3) */
 .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:30px}
@@ -522,27 +523,27 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     <p class="lead">Производим промышленные редукторы, мотор-редукторы и приводное оборудование для предприятий. Подбираем решения под конвейерные линии, подъёмные механизмы, производственные установки и другое промышленное оборудование.</p>
     <div class="prod-grid">
       <a class="prod-card" href="catalog/evl.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="16" width="22" height="16" rx="3"/><circle cx="16" cy="24" r="4"/><path d="M27 19h8a5 5 0 0 1 0 10h-8"/><path d="M40 24h3"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_evl.webp" alt="Редукторы EVL" width="76" height="76" loading="lazy" /></span>
         <b>Редукторы EVL</b>
       </a>
       <a class="prod-card" href="catalog/index.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="26" height="20" rx="3"/><circle cx="21" cy="24" r="5"/><path d="M34 24h7"/><circle cx="12.5" cy="18" r="1"/><circle cx="29.5" cy="18" r="1"/><circle cx="12.5" cy="30" r="1"/><circle cx="29.5" cy="30" r="1"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_pr.webp" alt="Редукторы ПР" width="76" height="76" loading="lazy" /></span>
         <b>Редукторы ПР</b>
       </a>
       <a class="prod-card" href="catalog/index.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="7"/><circle cx="24" cy="24" r="2.4"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4M14.1 14.1l2.8 2.8M31.1 31.1l2.8 2.8M33.9 14.1l-2.8 2.8M16.9 31.1l-2.8 2.8"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_mr.webp" alt="Редукторы МР" width="76" height="76" loading="lazy" /></span>
         <b>Редукторы МР</b>
       </a>
       <a class="prod-card" href="catalog/index.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="16" width="15" height="16" rx="3"/><path d="M5 20H3M5 28H3"/><rect x="23" y="17" width="15" height="14" rx="2"/><circle cx="30.5" cy="24" r="3.3"/><path d="M38 24h4"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_motor.webp" alt="Мотор-редукторы" width="76" height="76" loading="lazy" /></span>
         <b>Мотор-редукторы</b>
       </a>
       <a class="prod-card" href="catalog/index.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="21" r="6"/><circle cx="19" cy="21" r="1.8"/><path d="M19 11v3M19 28v3M9 21h3M26 21h3M12.6 14.6l2 2M23.4 25.4l2 2M25.4 14.6l-2 2M14.6 25.4l-2 2"/><circle cx="32" cy="31" r="4"/><path d="M32 24v2M32 36v2M25 31h2M37 31h2"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_industrial.webp" alt="Промышленные редукторы" width="76" height="76" loading="lazy" /></span>
         <b>Промышленные редукторы</b>
       </a>
       <a class="prod-card" href="uslugi/podbor.html">
-        <span class="prod-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="9" width="20" height="29" rx="3"/><path d="M16 9V7h8v2"/><path d="M15 18h10M15 24h6"/><circle cx="30" cy="30" r="5"/><path d="M33.6 33.6 38 38"/></svg></span>
+        <span class="prod-ic"><img src="assets/icons/icon_podbor.webp" alt="Подбор редуктора" width="76" height="76" loading="lazy" /></span>
         <b>Подбор по маркировке, фото, шильдику и параметрам</b>
       </a>
     </div>
