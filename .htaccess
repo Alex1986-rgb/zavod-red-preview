@@ -1,0 +1,52 @@
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  # HTML — не кэшируем: страницы должны обновляться сразу (ассеты бьём через ?v=)
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTML всегда ревалидируется на сервере (отдаётся 304, если не менялся) — клиент не залипает на старой версии
+  <FilesMatch "\.(?:html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # --- Защитные заголовки (РКН-аудит S01, 2026-06-16) ---
+  # Принудительный HTTPS на год (сайт уже на валидном TLS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # Запрет встраивания сайта в чужие iframe (clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Запрет MIME-sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # Не утекать полный URL рефереру на чужие домены
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Отключить ненужные браузерные API
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # Мягкий CSP: только апгрейд http-подресурсов в https (не ломает inline-скрипты/Метрику/model-viewer)
+  Header always set Content-Security-Policy "upgrade-insecure-requests"
+</IfModule>

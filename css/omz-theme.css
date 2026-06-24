@@ -1,0 +1,542 @@
+/* --- Pseudo Clearfy Link --- */
+.pseudo-clearfy-link {
+    color: #008acf;
+    cursor: pointer;
+}
+
+.pseudo-clearfy-link:hover {
+    text-decoration: none;
+}
+
+
+
+/* ===============================================================
+   ОМЗ Омск — DARK THEME OVERRIDE
+   Accent: #00aaff (электрик-синий вместо оранжевого)
+   =============================================================== */
+:root {
+    --color-accent: #00aaff;
+    --color-accent-hover: #0088dd;
+    --color-accent-dark: #006aaa;
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2333;
+    --bg-overlay: rgba(13, 17, 23, 0.82);
+    --text-primary: #e6edf3;
+    --text-muted: #8b949e;
+    --border: #30363d;
+}
+
+/* --- BASE --- */
+html,
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* --- HEADER --- */
+header,
+.header,
+.site-header {
+    background: rgba(13, 17, 23, 0.95) !important;
+    border-bottom: 1px solid var(--border) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header__menu a,
+.nav a,
+nav a {
+    color: var(--text-primary) !important;
+}
+
+.header__menu a:hover,
+.nav a:hover,
+nav a:hover {
+    color: var(--color-accent) !important;
+}
+
+.header__phone a,
+.header-phone,
+.phone {
+    color: var(--color-accent) !important;
+}
+
+/* --- HERO --- */
+.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    background: var(--bg-primary) !important;
+}
+
+video.hero-video-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: -1 !important;
+    opacity: .45;
+    pointer-events: none;
+}
+
+.hero .container,
+.hero>div,
+.hero>form {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.hero h1,
+.hero .title {
+    color: #fff !important;
+}
+
+.hero .subtitle,
+.hero .subtitle span {
+    color: var(--text-primary) !important;
+}
+
+/* --- SECTIONS BG --- */
+section,
+.section {
+    background-color: var(--bg-primary) !important;
+}
+
+.benefits,
+.faq,
+.contact-form,
+.news,
+.services {
+    background-color: var(--bg-secondary) !important;
+}
+
+.certificates,
+.import-substitution,
+.how-to-work,
+.geography {
+    background-color: var(--bg-primary) !important;
+}
+
+.applications,
+.consultation {
+    background-color: var(--bg-secondary) !important;
+}
+
+.footer,
+footer {
+    background: #0a0e14 !important;
+    border-top: 1px solid var(--border) !important;
+    color: var(--text-muted) !important;
+}
+
+/* --- HEADINGS & TEXT --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title h2,
+.section-title,
+.catalog-item__title,
+.benefits__item-title,
+.advantage__title,
+.import-block__title,
+.how-to-work-list__title,
+.reviews-title,
+.news-title,
+.faq-question,
+.faq__question {
+    color: #e6edf3 !important;
+}
+
+p,
+li,
+span,
+label,
+td,
+th {
+    color: var(--text-primary) !important;
+}
+
+.subhead,
+.subtitle span,
+.catalog-item__desc,
+.benefits__item-description p,
+.advantage__desc,
+.how-to-work-list_description,
+.reviews-excerpt p,
+.reviews-excerpt,
+.news-excerpt,
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* --- CARDS --- */
+.catalog-item,
+.benefits__item,
+.import-feature,
+.advantage,
+.team-member,
+.review-card,
+.service-card,
+.news-item,
+.faq-item,
+.how-to-work-item,
+.application-item,
+.services__item,
+.news__item {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+}
+
+.catalog-item:hover,
+.benefits__item:hover,
+.service-card:hover,
+.news__item:hover {
+    border-color: var(--color-accent) !important;
+    box-shadow: 0 4px 20px rgba(0, 170, 255, 0.15) !important;
+}
+
+/* --- ACCENT COLOR (was orange) --- */
+/* Buttons */
+.btn,
+.button,
+button[type="submit"],
+input[type="submit"],
+.wpcf7-submit,
+.btn--primary,
+.btn--orange {
+    background-color: var(--color-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    transition: background 0.2s ease !important;
+}
+
+.btn:hover,
+.button:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover,
+.wpcf7-submit:hover {
+    background-color: var(--color-accent-hover) !important;
+    color: #fff !important;
+}
+
+.btn--outline,
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid var(--color-accent) !important;
+    color: var(--color-accent) !important;
+}
+
+.btn--outline:hover {
+    background: var(--color-accent) !important;
+    color: #fff !important;
+}
+
+/* Replace orange accent everywhere */
+a {
+    color: var(--color-accent) !important;
+}
+
+a:hover {
+    color: var(--color-accent-hover) !important;
+}
+
+.accent,
+.text-accent,
+.highlight,
+[style*="#f89406"],
+[style*="#ff6900"],
+[style*="color: orange"] {
+    color: var(--color-accent) !important;
+}
+
+/* --- FORMS & INPUTS --- */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    border-radius: 4px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--color-accent) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.15) !important;
+}
+
+/* --- MISC --- */
+hr,
+.divider {
+    border-color: var(--border) !important;
+}
+
+blockquote {
+    border-left-color: var(--color-accent) !important;
+}
+
+/* FAQ accordion */
+.faq-answer,
+.faq__answer {
+    color: var(--text-muted) !important;
+    background: var(--bg-card) !important;
+}
+
+/* Pagination dots, slick arrows */
+.slick-dots li button:before,
+.owl-dot span {
+    background: var(--text-muted) !important;
+}
+
+.slick-dots li.slick-active button:before,
+.owl-dot.active span {
+    background: var(--color-accent) !important;
+}
+
+/* ===============================================================
+           FIXES v2 — JUNE 2026
+           =============================================================== */
+
+/* --- SLIDER ARROWS --- */
+.slider-button-prev,
+.slider-button-next,
+.arrow-slider .slider-button-prev,
+.arrow-slider .slider-button-next {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--color-accent) !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    color: var(--color-accent) !important;
+    transition: background 0.2s, color 0.2s !important;
+}
+
+.slider-button-prev:hover,
+.slider-button-next:hover {
+    background: var(--color-accent) !important;
+    color: #fff !important;
+}
+
+.slider-button-prev i,
+.slider-button-next i,
+.arrow-slider i {
+    font-size: 16px !important;
+    color: inherit !important;
+}
+
+/* --- CONSULTATION IMAGE SIZE FIX --- */
+.consultation-list__image,
+.contact-form-list__image {
+    max-width: 380px !important;
+    overflow: hidden !important;
+}
+
+.consultation-list__image img,
+.contact-form-list__image img {
+    width: 100% !important;
+    max-height: 520px !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    border-radius: 8px !important;
+}
+
+/* --- FORM LABELS "Остались вопросы" / "Работаем только..." CONTRAST --- */
+.headform p,
+.headform,
+div.headform>p {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+.subheadform p,
+.subheadform {
+    color: #b0bec5 !important;
+    font-size: 1rem !important;
+}
+
+.form-attention,
+.form-attention-inverse,
+.form-attention p,
+.form-attention-inverse p {
+    background: rgba(0, 170, 255, 0.12) !important;
+    border: 1px solid rgba(0, 170, 255, 0.4) !important;
+    border-radius: 6px !important;
+    padding: 10px 16px !important;
+    color: #00aaff !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+/* --- ADVANTAGES GAP --- */
+.advantages__list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+}
+
+.advantage {
+    flex: 1 1 180px !important;
+    min-width: 160px !important;
+}
+
+/* --- HOW TO WORK — TEXT CONTRAST FIX --- */
+.how-to-work-list__item {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+}
+
+.how-to-work-list__title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.how-to-work-list__number {
+    color: var(--color-accent) !important;
+    font-weight: 800 !important;
+}
+
+.how-to-work-list_description {
+    color: #b0bec5 !important;
+}
+
+/* --- SECTION TITLE "Как мы работаем" --- */
+.how-to-work .title h2,
+.how-to-work h2 {
+    color: #ffffff !important;
+}
+
+/* --- REVIEWS — REDESIGN --- */
+.reviews-item {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    padding: 28px !important;
+    position: relative !important;
+}
+
+.reviews-item::before {
+    content: '"' !important;
+    position: absolute !important;
+    top: 12px !important;
+    left: 20px !important;
+    font-size: 5rem !important;
+    color: rgba(0, 170, 255, 0.2) !important;
+    line-height: 1 !important;
+    font-family: Georgia, serif !important;
+}
+
+.reviews-title {
+    color: var(--color-accent) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+}
+
+.reviews-excerpt p,
+.reviews-excerpt {
+    color: #c9d1d9 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+}
+
+/* --- TEAM TEXT CONTRAST --- */
+.team__item-title {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
+
+.team__item-post {
+    color: var(--color-accent) !important;
+    font-size: 0.85rem !important;
+}
+
+/* --- ABOUT ADV SQUARES — REDESIGN --- */
+.about-adv .item {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    padding: 24px !important;
+    color: #ffffff !important;
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+.about-adv .item span {
+    display: block !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: var(--color-accent) !important;
+    line-height: 1 !important;
+    margin-bottom: 4px !important;
+}
+
+.about-adv .item a {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    color: var(--color-accent) !important;
+}
+
+/* Remove hover-expand behavior on about-adv */
+.about-adv .item:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 24px rgba(0, 170, 255, 0.15) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* --- FAQ SECTION FORM TITLE --- */
+.faq .headform p,
+.faq .headform {
+    color: #ffffff !important;
+}
+
+/* --- NEWS FIXES --- */
+.news .arrow-slider .slider-button-prev,
+.news .arrow-slider .slider-button-next {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--color-accent) !important;
+    color: var(--color-accent) !important;
+}
+
+.news-item .news-footer .linkbtn svg {
+    fill: #ffffff !important;
+}
+
+.news-item:hover .news-footer .linkbtn svg {
+    fill: var(--color-accent) !important;
+}
+
+/* --- APPLICATIONS ARROWS --- */
+.applications .arrow-slider .slider-button-prev,
+.applications .arrow-slider .slider-button-next {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--color-accent) !important;
+    color: var(--color-accent) !important;
+}

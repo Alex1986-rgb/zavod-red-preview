@@ -1,0 +1,11 @@
+{
+  "name": "Завод Редукторов",
+  "short_name": "Завод Редукторов",
+  "theme_color": "#0b151d",
+  "background_color": "#0b151d",
+  "display": "standalone",
+  "icons": [
+    { "src": "assets/favicons/fav-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/favicons/fav-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
