@@ -178,6 +178,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .step .step-n{width:34px;height:34px;border-radius:10px;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:14px}
 .step b{display:block;color:#fff;font-size:15.5px;margin-bottom:6px}
 .step p{color:var(--muted);font-size:13.2px;line-height:1.45}
+/* VS — фото аналога + модель + цена */
+.vs-prod{display:flex;align-items:center;gap:14px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.vs-prod img{width:108px;height:80px;object-fit:contain;flex:0 0 108px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.vs-prod-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.vs-model{color:#fff;font-weight:700;font-size:15px;line-height:1.2}
+.vs-price{font-weight:800;font-size:20px;color:#ff8a8a;white-space:nowrap}
+.vs-price-good{color:#5bdc84}
+.vs-price em{display:block;color:var(--muted2);font-weight:500;font-size:11px;font-style:normal;margin-top:1px}
+.vs-note{text-align:center;color:var(--muted2);font-size:12.5px;margin-top:16px}
 
 /* SELECTOR */
 .selector{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -581,6 +590,13 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     <p class="lead">Редуктор вышел из строя, поставщик не отвечает, импортный аналог недоступен или нужно срочно подобрать замену? Пришлите фото, маркировку или параметры — подберём решение, рассчитаем стоимость и сроки поставки.</p>
     <div class="vs">
       <div class="vs-card vs-bad">
+        <div class="vs-prod">
+          <img src="assets/icons/vs_import.webp" alt="Импортный мотор-редуктор SEW R107" width="108" height="80" loading="lazy" />
+          <div class="vs-prod-info">
+            <span class="vs-model">SEW-Eurodrive R107</span>
+            <span class="vs-price">≈ 215 000 ₽<em>пример · импорт</em></span>
+          </div>
+        </div>
         <div class="vs-head">Импортный редуктор</div>
         <ul class="vs-list">
           <li><span class="vs-ic vs-ic-bad">₽</span><div><b>Дороже</b><p>Высокая стоимость и рост курса</p></div></li>
@@ -591,6 +607,13 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
       </div>
       <div class="vs-badge">VS</div>
       <div class="vs-card vs-good">
+        <div class="vs-prod">
+          <img src="assets/icons/vs_ours.webp" alt="Наш аналог — мотор-редуктор EVL 197" width="108" height="80" loading="lazy" />
+          <div class="vs-prod-info">
+            <span class="vs-model">Наш аналог — EVL 197</span>
+            <span class="vs-price vs-price-good">≈ 128 000 ₽<em>пример · экономия ~40%</em></span>
+          </div>
+        </div>
         <div class="vs-head">Наше решение</div>
         <ul class="vs-list">
           <li><span class="vs-ic vs-ic-good">✓</span><div><b>Выгоднее</b><p>Оптимальная цена без переплат</p></div></li>
@@ -601,7 +624,8 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
         <div class="vs-banner vs-banner-good">✓ Подходящая замена без долгого ожидания и простоев</div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:32px"><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a></div>
+    <p class="vs-note">Модели и цены приведены для примера. Точный аналог, стоимость и срок рассчитаем по вашему образцу, шильдику или параметрам.</p>
+    <div style="text-align:center;margin-top:18px"><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a></div>
   </div>
 </section>
 
