@@ -14,7 +14,7 @@
 <meta property="og:title" content="Импортозамещение редукторов — аналоги SEW, NORD, Bonfiglioli" />
 <meta property="og:description" content="Габаритные аналоги импортных приводов без переделки рамы. Переходные фланцы и спецвалы по чертежам." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
-<link rel="stylesheet" href="assets/inner.css?v=11" />
+<link rel="stylesheet" href="assets/inner.css?v=12" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","serviceType":"Импортозамещение промышленных редукторов","provider":{"@type":"Organization","name":"Завод Редукторов","legalName":"ООО «НИИ АТТ»"},"areaServed":"RU","description":"Изготовление габаритных и присоединительных аналогов импортных редукторов SEW, NORD, Bonfiglioli, Motovario, Flender."}
 </script>
@@ -67,9 +67,9 @@
 <section class="section" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap" style="text-align:center">
     <div class="eyebrow">Какие бренды заменяем</div>
-    <h2>Изготовим аналог любого импортного привода</h2>
-    <p class="lead" style="margin:0 auto 14px">Габаритные и присоединительные аналоги ведущих производителей приводной техники.</p>
-    <p style="margin:0 auto 26px;color:var(--red);font-weight:600;font-size:15px">Нажмите на нужный бренд — откроется страница аналога с параметрами замены и сроками.</p>
+    <h2>Поставим оригинал или изготовим аналог любого импортного привода</h2>
+    <p class="lead" style="margin:0 auto 14px">Поставляем оригинальные приводы ведущих производителей под заказ и изготавливаем габаритные аналоги дешевле оригинала.</p>
+    <p style="margin:0 auto 26px;color:var(--red);font-weight:600;font-size:15px">Нажмите на нужный бренд — откроется страница с поставкой оригинала, параметрами замены и сроками.</p>
     <div class="brands" id="brands"></div>
   </div>
 </section>
@@ -157,7 +157,7 @@
 <script>
 var BRANDS=[['sew','SEW-Eurodrive'],['nord','NORD'],['bonfiglioli','Bonfiglioli'],['motovario','Motovario'],['flender','Flender'],['siemens','Siemens'],['lenze','Lenze'],['bauer','Bauer'],['varvel','Varvel'],['sew-tramec','Tramec'],['siti','SITI'],['stm','STM'],['transtecno','Transtecno'],['innovari','Innovari'],['varmec','Varmec'],['yilmaz','Yilmaz'],['keb','KEB'],['watt-drive','Watt Drive'],['boneng','Boneng'],['innored','Innored'],['guomao','Guomao'],['unidrive','UNI Drive']];
 var br=document.getElementById('brands');
-BRANDS.forEach(function(b){br.insertAdjacentHTML('beforeend','<a class="brand" href="brands/'+b[0]+'.html" title="Аналог '+b[1]+'"><img src="assets/brands/'+b[0]+'.webp" alt="'+b[1]+'" loading="lazy"></a>');});
+BRANDS.forEach(function(b){br.insertAdjacentHTML('beforeend','<a class="brand" href="brands/'+b[0]+'.html" title="'+b[1]+' — поставка оригинала и аналог"><img src="assets/brands/'+b[0]+'.webp" alt="'+b[1]+'" loading="lazy"><span class="brand-name">'+b[1]+'</span></a>');});
 wireLeadForm('impForm',{title:'Заявка: импортозамещение'});
 </script>
 <script defer src="assets/modal.js?v=15"></script>
