@@ -148,7 +148,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:48px 0 28px;c
 .copy{border-top:1px solid var(--line);margin-top:32px;padding-top:20px;font-size:12px;text-align:center}
 
 @media(max-width:1380px){.menu{gap:18px}.nav-phones span{display:none}}
-@media(max-width:1160px){.nav-phones{display:none}}
+@media(max-width:1520px){.nav-phones{display:none}}
 
 @media(max-width:900px){
   .nav-phones{display:none}
