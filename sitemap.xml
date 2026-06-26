@@ -95,6 +95,7 @@
   <url><loc>https://zavod-red.ru/sertifikaty.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/contacts.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/cases/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/cases/sew-3-dnya.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/cases/moroz-minus-50.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/cases/podbor-po-usloviyam.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
