@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Как подобрать электродвигатель к редуктору: параметры и согласование | Завод Редукторов</title>
+<meta name="description" content="Подбор двигателя к редуктору: какие параметры собрать (мощность кВт, синхронные обороты, момент, монтаж IM, IP, КПД), как согласовать фланец IEC и диаметр вала с редуктором. Руководство инженеров." />
+<link rel="canonical" href="https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru.html" />
+<meta property="og:title" content="Как подобрать электродвигатель к редуктору" />
+<meta property="og:description" content="Какие параметры двигателя собрать и как согласовать его с редуктором по фланцу IEC, диаметру вала и сервис-фактору." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=12" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:#cdd9e1}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:#fff}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:#dfe7ee}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:#bccad4}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+.art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как подобрать электродвигатель к редуктору","description":"Какие параметры двигателя собрать и как согласовать его с редуктором по фланцу IEC, диаметру вала и сервис-фактору.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор двигателя к редуктору","item":"https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru.html"}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов" /></a>
+    <nav class="menu">
+      <a href="../catalog/index.html">Каталог редукторов</a>
+      <a href="../podbor.html">Подбор</a>
+      <a href="../ceny.html">Цены</a>
+      <a href="../importozameshchenie.html">Импортозамещение</a>
+      <a href="index.html" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
+        <a href="../contacts.html">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · zr@zavod-red.ru</span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Подбор двигателя к редуктору</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор</div>
+  <h1>Как подобрать электродвигатель к редуктору</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+
+  <p class="lead-p">Подбор двигателя к редуктору — это не только совпадение мощности. Электродвигатель для редуктора должен подойти по оборотам, моменту, монтажному исполнению и присоединительному фланцу, иначе сборка либо не встанет механически, либо перегреется и выйдет из строя. Разберём, какие параметры двигателя собрать и как согласовать их с редуктором, чтобы привод работал надёжно.</p>
+
+  <h2>Какие параметры двигателя нужны для подбора</h2>
+  <p>Прежде чем выбирать конкретный мотор, соберите его ключевые характеристики. Они задают и силовую часть привода, и его геометрию:</p>
+  <ul>
+    <li><b>Мощность</b>, кВт — определяет, какой момент двигатель отдаст на входной вал редуктора. Берётся с запасом над расчётной нагрузкой механизма;</li>
+    <li><b>Синхронные обороты</b>, об/мин — стандартный ряд <b>750 / 1000 / 1500 / 3000</b> (соответствует 8 / 6 / 4 / 2 полюсам). Чем ниже обороты, тем больше момент при той же мощности;</li>
+    <li><b>Крутящий момент на валу двигателя</b>, Н·м — связан с мощностью и оборотами, важен для согласования с входным звеном редуктора;</li>
+    <li><b>Монтажное исполнение IM</b> — способ крепления: на лапах (<b>IM B3</b>), фланцевый большой (<b>IM B5</b>), фланцевый малый (<b>IM B14</b>), комбинированные (лапы + фланец);</li>
+    <li><b>Класс защиты IP</b> — обычно IP54 или IP55 для промышленных условий с пылью и брызгами;</li>
+    <li><b>КПД и класс энергоэффективности</b> (IE2 / IE3) — влияют на нагрев и эксплуатационные расходы при длительной работе.</li>
+  </ul>
+
+  <div class="note">Подбираете двигатель к уже имеющемуся мотор-редуктору или фланцевому редуктору? Сфотографируйте посадочный фланец и конец входного вала, замерьте диаметры и центры отверстий — по фото и размерам инженер подберёт мотор, который встанет без переходников.</div>
+
+  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор с фланцем под электродвигатель IEC" loading="lazy"><figcaption>Цилиндрический редуктор с фланцем под мотор — высокий КПД и работа в режиме S1</figcaption></figure>
+
+  <h2>Согласование двигателя с редуктором</h2>
+  <p>Даже верно подобранный по мощности мотор должен физически и кинематически состыковаться с редуктором. Проверяют три параметра:</p>
+  <ul>
+    <li><b>Фланец IEC</b> — присоединительный размер двигателя (например, фланцы под габариты 80, 90, 100, 112, 132 и т.д.) должен совпадать с посадочным местом редуктора по диаметру центровки и расположению отверстий;</li>
+    <li><b>Диаметр и длина вала двигателя</b> — конец вала мотора входит в полую муфту или шестерню редуктора; диаметр и шпоночный паз должны соответствовать входному звену;</li>
+    <li><b>Сервис-фактор</b> — запас редуктора по моменту относительно момента, который реально передаёт двигатель с учётом пусков, реверсов и характера нагрузки.</li>
+  </ul>
+  <p>Если фланец двигателя и редуктора не совпадают, изготавливают переходный фланец-проставку. Если не совпадает вал — ставят переходную муфту или меняют входную шестерню. Лучше, когда обе детали изначально согласованы по стандарту IEC — тогда привод собирается без доработок.</p>
+
+  <h2>Напряжение питания: 220 или 380 В</h2>
+  <p>Электродвигатель для редуктора выбирают и по схеме питания. Трёхфазные моторы 380 В — стандарт для промышленности, они дают полную мощность и устойчивый пуск. Однофазные 220 В применяют там, где нет трёхфазной сети, но они ограничены по мощности и моменту пуска. Подробно разница и варианты подключения разобраны в статье <a href="../blog/motor-reduktor-220-380v.html">мотор-редуктор 220 или 380 В</a>.</p>
+
+  <figure class="art-fig"><img src="../assets/production/p07.webp" alt="Сборка привода — согласование двигателя и редуктора на производстве" loading="lazy"><figcaption>Согласование мотора и редуктора при сборке на собственном производстве</figcaption></figure>
+
+  <h2>Мотор-редуктор или раздельная схема</h2>
+  <p>Двигатель и редуктор можно либо купить как готовый мотор-редуктор (единый блок с согласованными фланцем и валом), либо собрать раздельную схему — отдельный мотор, состыкованный с редуктором через фланец или муфту. Готовый мотор-редуктор компактнее и не требует согласования размеров, раздельная схема даёт гибкость в замене мотора и ремонте. Что выбрать под вашу задачу — разбираем в материале <a href="../blog/motoreduktor-ili-reduktor-otdelno.html">мотор-редуктор или редуктор отдельно</a>.</p>
+
+  <h2>Как мы комплектуем привод</h2>
+  <p>Завод Редукторов поставляет редуктор и подобранный к нему двигатель как готовый согласованный комплект. По вашим данным инженер рассчитывает требуемую мощность и обороты, подбирает мотор нужного исполнения IM и класса IP, проверяет фланец IEC и диаметр вала, закладывает сервис-фактор под режим работы. При несовпадении присоединительных размеров изготавливаем переходный фланец или муфту. На выходе — собранный и проверенный привод, который ставится на место без подгонки. Оформить подбор можно на странице <a href="../podbor.html">подбора привода</a> или подобрать модель в <a href="../catalog/index.html">каталоге редукторов</a>.</p>
+
+  <h2>Таблица параметров двигателя</h2>
+  <table class="spec"><tbody>
+    <tr><th>Мощность</th><td>номинальная мощность двигателя, кВт</td></tr>
+    <tr><th>Обороты</th><td>синхронные 750 / 1000 / 1500 / 3000 об/мин</td></tr>
+    <tr><th>Момент</th><td>крутящий момент на валу мотора, Н·м</td></tr>
+    <tr><th>Монтаж IM</th><td>лапы B3 · фланец B5 / B14 · комбинированные</td></tr>
+    <tr><th>Защита IP</th><td>IP54 / IP55 для промышленных условий</td></tr>
+    <tr><th>Питание</th><td>380 В (3 фазы) или 220 В (1 фаза)</td></tr>
+    <tr><th>КПД</th><td>класс энергоэффективности IE2 / IE3</td></tr>
+  </tbody></table>
+
+  <h2>Вывод</h2>
+  <p>Грамотный подбор двигателя к редуктору — это согласование мощности, оборотов и момента с проверкой фланца IEC, диаметра вала и сервис-фактора. Соберите параметры по таблице выше или просто пришлите фото редуктора и посадочного места — инженер Завода Редукторов подберёт электродвигатель для редуктора, проверит присоединительные размеры и пришлёт коммерческое предложение.</p>
+
+</div></div></section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Подберём двигатель к вашему редуктору</h2>
+      <p>Пришлите модель редуктора, шильд или опишите задачу — рассчитаем подбор мотора и пришлём КП в течение 15 минут.</p>
+      <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Блог</div>
+  <h2 style="font-size:26px">Читайте также</h2>
+  <div class="xgrid">
+    <a class="xcard" href="motor-reduktor-220-380v.html"><b>Мотор-редуктор 220 или 380 В</b><span>Чем отличается питание и как подключить</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="motoreduktor-ili-reduktor-otdelno.html"><b>Мотор-редуктор или редуктор отдельно</b><span>Готовый блок против раздельной схемы</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="kak-podobrat-reduktor.html"><b>Как подобрать редуктор</b><span>Пошаговое руководство по параметрам</span><span class="xcard-go">Читать →</span></a>
+  </div>
+</div></section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов" />
+      <p>Собственное производство промышленных редукторов и мотор-редукторов. Челябинск.</p>
+      <div class="foot-req">ООО «НИИ АТТ» · ИНН 7452136680<br />454007, г. Челябинск, пр-т Ленина, 2, оф. 221</div>
+    </div>
+    <div>
+      <h4>Каталог</h4>
+      <a href="../catalog/chervyachnye.html">Червячные</a>
+      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
+      <a href="../catalog/soosnye.html">Соосные</a>
+      <a href="../importozameshchenie.html">Импортозамещение</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+      <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+      <a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+    </div>
+  </div>
+  <div class="wrap copy"><a href="../privacy.html">Политика обработки персональных данных</a> · <a href="../agreement.html">Пользовательское соглашение</a><br>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=15"></script>
+</body></html>
