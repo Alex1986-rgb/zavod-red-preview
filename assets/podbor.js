@@ -21,6 +21,7 @@
 
   var presetType=(root.getAttribute('data-type')||'').trim();
   var lockType=root.getAttribute('data-locktype')==='1';
+  var compact=root.getAttribute('data-compact')==='1'; // только фильтры + счётчик, без списка строк
 
   var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический'];
   var enabledIdx=[];
@@ -55,13 +56,26 @@
 
   var pillsHtml=lockType?'':'<div class="pf-types" id="pfTypes"></div>';
 
+  // тулбар: в полном режиме — сброс+CSV; в компактном — сброс + «Показать в таблице»
+  var toolbar=compact
+    ? '<tr class="pf-brow"><td colspan="'+NCOL+'"><div class="pf-toolbar">'
+        +'<a class="pf-btn pf-btn--red" id="pfOpen" href="#">Показать подходящие в таблице →</a>'
+        +'<button type="button" class="pf-btn pf-btn--ghost" id="pfReset">Сбросить</button>'
+        +'<span class="pf-count" id="pfCount"></span></div></td></tr>'
+    : btnHtml;
+
+  // тело: в компактном режиме строк нет
+  var tbody=compact
+    ? ''
+    : '<tbody><tr><td colspan="'+NCOL+'" class="pf-loading-cell">Загружаем базу типоразмеров…</td></tr></tbody>';
+
   root.innerHTML=pillsHtml
    +'<div class="pf-tablewrap"><table class="pf-table" id="pfTable">'
-     +'<thead>'+headHtml+filterHtml+btnHtml+'</thead>'
-     +'<tbody><tr><td colspan="'+NCOL+'" class="pf-loading-cell">Загружаем базу типоразмеров…</td></tr></tbody>'
+     +'<thead>'+headHtml+filterHtml+toolbar+'</thead>'
+     +tbody
    +'</table></div>'
-   +'<button type="button" class="pf-more" id="pfMore" hidden>Показать ещё</button>'
-   +'<p class="pf-note">Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные присоединительные размеры, момент с учётом сервис-фактора, наличие, цену и срок изготовления подтверждает инженер по заявке.</p>'
+   +(compact?'':'<button type="button" class="pf-more" id="pfMore" hidden>Показать ещё</button>')
+   +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
   var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, $=function(id){return document.getElementById(id);};
@@ -95,14 +109,25 @@
   (location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){ if(!kv)return; var a=kv.split('='); Q[a[0]]=decodeURIComponent((a[1]||'').replace(/\+/g,' ')); });
 
   function preApplyNumeric(){
+    // точные min<col>/max<col> и поиск q — приходят из компактного режима на главной
+    COLS.forEach(function(c){
+      ['min','max'].forEach(function(mm){
+        var key=mm+c.i; if(Q[key]==null||Q[key]==='')return;
+        var sel=root.querySelector('[data-'+mm+'="'+c.i+'"]'); if(!sel)return;
+        var ok=Array.prototype.some.call(sel.options,function(o){return o.value===Q[key];});
+        if(ok)sel.value=Q[key];
+      });
+    });
+    if(Q.q && qEl){ qEl.value=Q.q; }
+    // legacy: pw/os/tq как одиночное значение → ближайший диапазон
     var map={pw:1, os:2, tq:3};
     Object.keys(map).forEach(function(k){
       if(Q[k]==null||Q[k]==='')return;
       var col=map[k], val=parseFloat(String(Q[k]).replace(',','.')); if(isNaN(val))return;
       var mn=root.querySelector('[data-min="'+col+'"]'), mx=root.querySelector('[data-max="'+col+'"]');
       function nums(sel){return Array.prototype.map.call(sel.options,function(o){return o.value;}).filter(function(v){return v!=='';}).map(parseFloat);}
-      if(mn){var lo=nums(mn).filter(function(v){return v<=val;}); if(lo.length)mn.value=String(Math.max.apply(null,lo));}
-      if(mx){var hi=nums(mx).filter(function(v){return v>=val;}); if(hi.length)mx.value=String(Math.min.apply(null,hi));}
+      if(mn&&mn.value===''){var lo=nums(mn).filter(function(v){return v<=val;}); if(lo.length)mn.value=String(Math.max.apply(null,lo));}
+      if(mx&&mx.value===''){var hi=nums(mx).filter(function(v){return v>=val;}); if(hi.length)mx.value=String(Math.min.apply(null,hi));}
     });
   }
 
@@ -118,7 +143,9 @@
     preApplyNumeric();
     apply();
   }).catch(function(){
-    $('pfTable').tBodies[0].innerHTML='<tr><td colspan="'+NCOL+'" class="pf-empty">Не удалось загрузить базу. Обновите страницу или оставьте заявку — инженер подберёт.</td></tr>';
+    var cnt=$('pfCount'); if(cnt)cnt.textContent='База временно недоступна';
+    var tb=$('pfTable').tBodies[0];
+    if(tb)tb.innerHTML='<tr><td colspan="'+NCOL+'" class="pf-empty">Не удалось загрузить базу. Обновите страницу или оставьте заявку — инженер подберёт.</td></tr>';
   });
 
   function buildPills(){
@@ -169,13 +196,30 @@
       res.push(it);
     }
     CUR=res; RENDER=0;
-    var body=$('pfTable').tBodies[0];
     $('pfCount').innerHTML='Найдено: <b>'+res.length+'</b>';
+    if(compact){
+      var op=$('pfOpen'); if(op){ op.href=buildOpenURL(); }
+      return;
+    }
+    var body=$('pfTable').tBodies[0];
     if(res.length===0){
       body.innerHTML='<tr><td colspan="'+NCOL+'" class="pf-empty">Под эти параметры ничего не нашлось — смягчите фильтр или оставьте заявку, инженер подберёт.</td></tr>';
       $('pfMore').hidden=true; return;
     }
     body.innerHTML=''; more();
+  }
+
+  // ссылка на полную таблицу с текущими фильтрами (для компактного режима на главной)
+  function buildOpenURL(){
+    var q=[];
+    var ti=curType(); if(ti>=0) q.push('type='+encodeURIComponent(DB.t[ti]));
+    COLS.forEach(function(c){
+      var mn=root.querySelector('[data-min="'+c.i+'"]'), mx=root.querySelector('[data-max="'+c.i+'"]');
+      if(mn&&mn.value!=='')q.push('min'+c.i+'='+encodeURIComponent(mn.value));
+      if(mx&&mx.value!=='')q.push('max'+c.i+'='+encodeURIComponent(mx.value));
+    });
+    if(qEl&&qEl.value.trim()!=='')q.push('q='+encodeURIComponent(qEl.value.trim()));
+    return pfx+'podbor.html'+(q.length?'?'+q.join('&'):'');
   }
 
   function rowHtml(it){
@@ -225,8 +269,8 @@
     Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';});
     apply();
   });
-  $('pfExport').addEventListener('click',exportCSV);
-  $('pfMore').addEventListener('click',more);
+  if($('pfExport'))$('pfExport').addEventListener('click',exportCSV);
+  if($('pfMore'))$('pfMore').addEventListener('click',more);
 
   // предзаполнить тип в сообщении формы-заявки (modal.js)
   Array.prototype.forEach.call(root.querySelectorAll('[data-zayavka]'),function(b){
