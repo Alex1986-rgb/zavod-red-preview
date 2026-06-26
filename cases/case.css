@@ -106,3 +106,28 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:36px 0;color:
 .sf-bottom a:hover{color:var(--text)}
 @media(max-width:860px){.sf-top{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.sf-top{grid-template-columns:1fr;gap:28px}.sf-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+/* ===== FAQ и SEO-текст (как на основных страницах) ===== */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-top:8px}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr;gap:12px}}
+.cat-faq{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.faq-grid .cat-faq{margin-top:0}
+.cat-faq details{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.cat-faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4}
+.cat-faq summary::-webkit-details-marker{display:none}
+.cat-faq summary::after{content:"+";color:var(--red2);font-size:24px;font-weight:400;line-height:1;flex:0 0 auto;transition:transform .2s}
+.cat-faq details[open] summary::after{transform:rotate(45deg)}
+.cat-faq details>p{color:var(--muted);font-size:14.5px;line-height:1.6;padding:0 22px 20px;margin:0}
+.seo-text{border-top:1px solid var(--line);padding-top:30px;max-width:var(--maxw);margin:0 auto}
+.seo-text .seo-lead{color:#b9c7d2;font-size:15.5px;line-height:1.75;margin:0}
+[data-theme="light"] .seo-text .seo-lead{color:#3a4751}
+.seo-text summary{display:inline-flex;align-items:center;gap:8px;color:var(--red2);font-weight:700;font-size:14px;cursor:pointer;list-style:none;margin-top:16px}
+.seo-text summary::-webkit-details-marker{display:none}
+.seo-text summary::after{content:"▾";font-size:13px;transition:transform .2s}
+.seo-text details[open] summary::after{transform:rotate(180deg)}
+.seo-text .seo-body{margin-top:14px}
+.seo-text .seo-body p{color:var(--muted);font-size:14.5px;line-height:1.7;margin:0 0 12px}
+.seo-text .seo-body h3{font-size:18px;margin:20px 0 8px;color:var(--text)}
+.seo-text .seo-body a{color:var(--steel);text-decoration:underline}
+.faq-section{max-width:var(--maxw);margin:0 auto;padding:30px 24px 0}
+.faq-section .eyebrow{margin-bottom:14px}
