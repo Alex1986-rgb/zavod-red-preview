@@ -520,6 +520,8 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 
 /* FAQ */
 .faq{max-width:900px;margin:0 auto}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;align-items:start}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr;gap:0}}
 .faq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--card)}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;text-align:left;background:none;border:0;color:#fff;font-weight:600;font-size:16px;padding:18px 22px;cursor:pointer;font-family:inherit;line-height:1.4}
 .faq-ic{flex:0 0 auto;width:22px;height:22px;position:relative}
@@ -1051,16 +1053,17 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   <div class="wrap">
     <div class="eyebrow">Вопросы и ответы</div>
     <h2>Частые вопросы</h2>
-    <div class="faq">
+    <div class="faq-grid"><div class="faq">
       <div class="faq-item"><button class="faq-q">Из чего изготовлены зубчатые колёса и корпус?<span class="faq-ic"></span></button><div class="faq-a"><p>Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1.</p></div></div>
       <div class="faq-item"><button class="faq-q">Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?<span class="faq-ic"></span></button><div class="faq-a"><p>Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу.</p></div></div>
       <div class="faq-item"><button class="faq-q">Поможете подобрать редуктор под мою задачу?<span class="faq-ic"></span></button><div class="faq-a"><p>Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки.</p></div></div>
       <div class="faq-item"><button class="faq-q">Дадите 3D-модель и чертёж до заказа?<span class="faq-ic"></span></button><div class="faq-a"><p>Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости.</p></div></div>
+    </div><div class="faq">
       <div class="faq-item"><button class="faq-q">Можно ли подключить мотор-редуктор к преобразователю частоты?<span class="faq-ic"></span></button><div class="faq-a"><p>Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу.</p></div></div>
       <div class="faq-item"><button class="faq-q">Изготовите снятую с производства или редкую модель?<span class="faq-ic"></span></button><div class="faq-a"><p>Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования.</p></div></div>
       <div class="faq-item"><button class="faq-q">Какие сроки изготовления и доставки?<span class="faq-ic"></span></button><div class="faq-a"><p>По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России.</p></div></div>
       <div class="faq-item"><button class="faq-q">Какая гарантия и какие документы предоставляете?<span class="faq-ic"></span></button><div class="faq-a"><p>Гарантия — 24 месяца; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012.</p></div></div>
-    </div>
+    </div></div>
   </div>
 </section>
 

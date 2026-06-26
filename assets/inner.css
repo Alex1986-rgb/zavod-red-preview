@@ -188,7 +188,10 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .xref td.xref-group{background:#101f2b;color:#fff;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;padding-top:14px;padding-bottom:14px}
 
 /* FAQ-аккордеон на внутренних страницах (нативный details, без JS) */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-top:8px}
+@media(max-width:760px){.faq-grid{grid-template-columns:1fr;gap:12px}}
 .cat-faq{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.faq-grid .cat-faq{margin-top:0}
 .cat-faq details{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
 .cat-faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4}
 .cat-faq summary::-webkit-details-marker{display:none}
