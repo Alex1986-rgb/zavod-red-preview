@@ -259,3 +259,14 @@
     bar.style.display='none';
   });
 })();
+
+/* ===== Переключатель светлой/тёмной темы ===== */
+(function(){
+  function apply(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('zr_theme',t);}catch(e){}}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.theme-toggle');
+    if(!b)return;
+    var cur=document.documentElement.getAttribute('data-theme')||'dark';
+    apply(cur==='light'?'dark':'light');
+  });
+})();

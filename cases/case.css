@@ -67,3 +67,23 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:36px 0;color:
   .case-hero{padding:36px 0 24px}
   .facts{gap:18px}
 }
+
+/* ===== Переключатель темы ===== */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;background:transparent;border:1px solid var(--line);color:var(--text);cursor:pointer;flex:0 0 auto;transition:.15s;padding:0}
+.theme-toggle:hover{border-color:var(--red);color:var(--red2)}
+.theme-toggle svg{width:18px;height:18px}
+.theme-toggle .ic-sun{display:none}
+[data-theme="light"] .theme-toggle .ic-moon{display:none}
+[data-theme="light"] .theme-toggle .ic-sun{display:inline}
+/* ===== Светлая тема ===== */
+[data-theme="light"]{--bg:#f5f7fa;--bg2:#eaeef3;--card:#ffffff;--line:#dce3ea;--text:#17252f;--muted:#566873;--muted2:#7c8c98;--steel:#2f6ea3}
+[data-theme="light"] header{background:rgba(255,255,255,.9)}
+[data-theme="light"] .nav-back{color:#33424d}
+[data-theme="light"] .nav-back:hover{color:var(--text)}
+[data-theme="light"] .nav-phone{color:var(--text)}
+[data-theme="light"] .article h3{color:var(--text)}
+[data-theme="light"] .article p,[data-theme="light"] .article li{color:#3a4751}
+[data-theme="light"] .solution b,[data-theme="light"] .fact b{color:var(--text)}
+[data-theme="light"] .result{background:linear-gradient(120deg,#eef2f7,#e3e9ef)}
+[data-theme="light"] footer{background:#eaeef3;color:var(--muted)}
+[data-theme="light"] .foot a:hover{color:var(--text)}
