@@ -40,8 +40,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .submenu a:hover{background:#16242f;color:#fff;border:0}
 .nav-right{margin-left:auto;display:flex;align-items:center;gap:22px}
 .nav-phones{text-align:right;font-size:13px;line-height:1.35}
-.nav-phones b{display:block;color:#fff;font-size:15px;font-weight:700}
-.nav-phones span{color:var(--muted)}
+.nav-phones b{display:block;color:#fff;font-size:15px;font-weight:700;white-space:nowrap}
+.nav-phones span{color:var(--muted);white-space:nowrap}
 .menu-phone{display:none}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
 .burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
@@ -147,7 +147,8 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:48px 0 28px;c
 .foot-req{font-size:13px;line-height:1.7;margin-top:14px}
 .copy{border-top:1px solid var(--line);margin-top:32px;padding-top:20px;font-size:12px;text-align:center}
 
-@media(max-width:1320px){.menu{gap:20px}.nav-phones span{display:none}}
+@media(max-width:1380px){.menu{gap:18px}.nav-phones span{display:none}}
+@media(max-width:1160px){.nav-phones{display:none}}
 
 @media(max-width:900px){
   .nav-phones{display:none}
@@ -266,3 +267,23 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
   [data-theme="light"] .menu{background:#fff;box-shadow:0 18px 40px rgba(20,40,60,.14)}
   [data-theme="light"] .menu a{border-bottom-color:rgba(0,0,0,.06)}
 }
+
+/* ===== Модернизированный подвал ===== */
+.site-footer{background:#08121a;border-top:1px solid var(--line);padding:56px 0 26px;color:var(--muted);font-size:14px}
+[data-theme="light"] .site-footer{background:#eaeef3}
+.sf-top{display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1fr;gap:36px}
+.sf-brand img{height:46px;margin-bottom:14px}
+.sf-brand p{color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:16px;max-width:310px}
+.sf-contacts-inline{display:flex;flex-direction:column;gap:5px}
+.sf-contacts-inline a{color:var(--text);font-weight:700;font-size:15px}
+.sf-contacts-inline a.sf-mail{font-weight:600;font-size:14px;color:var(--steel)}
+.sf-contacts-inline a:hover{color:var(--red2)}
+.sf-col h4{color:var(--text);font-size:14px;margin-bottom:13px;font-weight:700;letter-spacing:.01em}
+.sf-col a{display:block;color:var(--muted);padding:4px 0;font-size:13.5px;transition:.14s}
+.sf-col a:hover{color:var(--text)}
+.sf-req{color:var(--muted2);font-size:12.5px;line-height:1.7;margin-top:12px}
+.sf-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:40px;padding-top:20px;font-size:12.5px;color:var(--muted2)}
+.sf-bottom a{color:var(--muted2);text-decoration:underline;text-underline-offset:2px}
+.sf-bottom a:hover{color:var(--text)}
+@media(max-width:860px){.sf-top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sf-top{grid-template-columns:1fr;gap:28px}.sf-bottom{flex-direction:column;gap:8px;text-align:center}}
