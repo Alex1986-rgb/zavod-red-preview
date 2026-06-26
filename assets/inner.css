@@ -290,3 +290,7 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .sf-bottom a:hover{color:var(--text)}
 @media(max-width:860px){.sf-top{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.sf-top{grid-template-columns:1fr;gap:28px}.sf-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+.ic{color:var(--red2)}
+.ic svg{width:22px;height:22px;display:block}
+.feat .ic svg{width:20px;height:20px}
