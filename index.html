@@ -680,6 +680,12 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 .ic{color:var(--red2)}
 .ic svg{width:22px;height:22px;display:block}
 .feat .ic svg{width:20px;height:20px}
+
+.oem-band-list .ob span{color:var(--red2)}
+.oem-band-list .ob span svg{width:24px;height:24px;display:block}
+.vs-ic svg{width:18px;height:18px;display:block}
+.hd-ic{display:inline-flex;vertical-align:-3px;margin-right:4px}
+.hd-ic svg{width:18px;height:18px;color:var(--red2)}
 </style>
 <!-- (Метрика отключена) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Из чего изготовлены зубчатые колёса и корпус?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1."}},{"@type":"Question","name":"Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?","acceptedAnswer":{"@type":"Answer","text":"Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу."}},{"@type":"Question","name":"Поможете подобрать редуктор под мою задачу?","acceptedAnswer":{"@type":"Answer","text":"Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки."}},{"@type":"Question","name":"Дадите 3D-модель и чертёж до заказа?","acceptedAnswer":{"@type":"Answer","text":"Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости."}},{"@type":"Question","name":"Можно ли подключить мотор-редуктор к преобразователю частоты?","acceptedAnswer":{"@type":"Answer","text":"Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу."}},{"@type":"Question","name":"Изготовите снятую с производства или редкую модель?","acceptedAnswer":{"@type":"Answer","text":"Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования."}},{"@type":"Question","name":"Какие сроки изготовления и доставки?","acceptedAnswer":{"@type":"Answer","text":"По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России."}},{"@type":"Question","name":"Какая гарантия и какие документы предоставляете?","acceptedAnswer":{"@type":"Answer","text":"Гарантия — 24 месяца; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012."}}]}</script>
@@ -770,8 +776,8 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
         <div class="vs-head">Импортный редуктор</div>
         <ul class="vs-list">
           <li><span class="vs-ic vs-ic-bad">₽</span><div><b>Дороже</b><p>Высокая стоимость и рост курса</p></div></li>
-          <li><span class="vs-ic vs-ic-bad">⏱</span><div><b>Долго</b><p>Ожидание от нескольких недель до нескольких месяцев</p></div></li>
-          <li><span class="vs-ic vs-ic-bad">⚠</span><div><b>Риск простоя</b><p>Оборудование стоит — компания теряет деньги</p></div></li>
+          <li><span class="vs-ic vs-ic-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></span><div><b>Долго</b><p>Ожидание от нескольких недель до нескольких месяцев</p></div></li>
+          <li><span class="vs-ic vs-ic-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/></svg></span><div><b>Риск простоя</b><p>Оборудование стоит — компания теряет деньги</p></div></li>
         </ul>
         <div class="vs-banner vs-banner-bad">✕ Непредсказуемые сроки и непонятный результат</div>
       </div>
@@ -891,10 +897,10 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
         </div>
       </div>
       <div class="oem-band-list">
-        <div class="ob"><span>📦</span><div><b>Резерв на складе</b><i>отгрузка партиями под ваш план</i></div></div>
-        <div class="ob"><span>💰</span><div><b>Фиксированная цена</b><i>стабильная себестоимость без скачков</i></div></div>
-        <div class="ob"><span>⚙️</span><div><b>Специсполнение</b><i>под ваш конструктив, единая маркировка</i></div></div>
-        <div class="ob"><span>⚡</span><div><b>Приоритет в производстве</b><i>сжатые сроки под ваши заказы</i></div></div>
+        <div class="ob"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span><div><b>Резерв на складе</b><i>отгрузка партиями под ваш план</i></div></div>
+        <div class="ob"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></span><div><b>Фиксированная цена</b><i>стабильная себестоимость без скачков</i></div></div>
+        <div class="ob"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span><div><b>Специсполнение</b><i>под ваш конструктив, единая маркировка</i></div></div>
+        <div class="ob"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span><div><b>Приоритет в производстве</b><i>сжатые сроки под ваши заказы</i></div></div>
       </div>
     </div>
   </div>
