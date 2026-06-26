@@ -1,7 +1,7 @@
 /* Всплывающая форма-заявка (popup) — единая по всему сайту. Самодостаточный модуль. */
 (function(){
   // глубина страницы → пути к api и privacy
-  var sub = /\/(catalog|cases|uslugi|brands)\//.test(location.pathname);
+  var sub = /\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
   var pfx = sub ? '../' : '';
   var ACTION = pfx + 'api/feedback.php';
   var PRIVACY = pfx + 'privacy.html';
@@ -232,7 +232,7 @@
 (function(){
   var KEY='zr_cookie_consent';
   try{ if(localStorage.getItem(KEY)) return; }catch(e){}
-  var sub=/\/(catalog|cases|uslugi|brands)\//.test(location.pathname);
+  var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
   var PRIVACY=(sub?'../':'')+'privacy.html';
   var css=''
    +'.zr-cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:995;max-width:760px;margin:0 auto;'
