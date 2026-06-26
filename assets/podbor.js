@@ -90,14 +90,32 @@
     });
   }
 
+  // параметры из URL (приходят с мини-формы на главной): type, pw, os, tq
+  var Q={};
+  (location.search||'').replace(/^\?/,'').split('&').forEach(function(kv){ if(!kv)return; var a=kv.split('='); Q[a[0]]=decodeURIComponent((a[1]||'').replace(/\+/g,' ')); });
+
+  function preApplyNumeric(){
+    var map={pw:1, os:2, tq:3};
+    Object.keys(map).forEach(function(k){
+      if(Q[k]==null||Q[k]==='')return;
+      var col=map[k], val=parseFloat(String(Q[k]).replace(',','.')); if(isNaN(val))return;
+      var mn=root.querySelector('[data-min="'+col+'"]'), mx=root.querySelector('[data-max="'+col+'"]');
+      function nums(sel){return Array.prototype.map.call(sel.options,function(o){return o.value;}).filter(function(v){return v!=='';}).map(parseFloat);}
+      if(mn){var lo=nums(mn).filter(function(v){return v<=val;}); if(lo.length)mn.value=String(Math.max.apply(null,lo));}
+      if(mx){var hi=nums(mx).filter(function(v){return v>=val;}); if(hi.length)mx.value=String(Math.min.apply(null,hi));}
+    });
+  }
+
   fetch(DATA_URL).then(function(r){return r.json();}).then(function(d){
     DB=d;
     enabledIdx=d.t.map(function(n,i){return ENABLED.indexOf(n)>=0?i:-1;}).filter(function(x){return x>=0;});
     if(lockType){ selType=d.t.indexOf(presetType); }
+    else if(Q.type && d.t.indexOf(Q.type)>=0){ selType=d.t.indexOf(Q.type); }
     else if(presetType){ var pi=d.t.indexOf(presetType); selType=pi>=0?pi:-1; }
     else { selType=-1; }
     if(!lockType) buildPills();
     fillRanges();
+    preApplyNumeric();
     apply();
   }).catch(function(){
     $('pfTable').tBodies[0].innerHTML='<tr><td colspan="'+NCOL+'" class="pf-empty">Не удалось загрузить базу. Обновите страницу или оставьте заявку — инженер подберёт.</td></tr>';
