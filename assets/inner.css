@@ -182,3 +182,21 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .brand{transition:.16s}
 
 .xref td.xref-group{background:#101f2b;color:#fff;font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;padding-top:14px;padding-bottom:14px}
+
+/* FAQ-аккордеон на внутренних страницах (нативный details, без JS) */
+.cat-faq{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.cat-faq details{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.cat-faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4}
+.cat-faq summary::-webkit-details-marker{display:none}
+.cat-faq summary::after{content:"+";color:var(--red2);font-size:24px;font-weight:400;line-height:1;flex:0 0 auto;transition:transform .2s}
+.cat-faq details[open] summary::after{transform:rotate(45deg)}
+.cat-faq details>p{color:var(--muted);font-size:14.5px;line-height:1.6;padding:0 22px 20px;margin:0}
+
+/* Кросс-ссылки на смежные разделы */
+.xgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.xcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;transition:.16s}
+.xcard:hover{border-color:var(--red);transform:translateY(-2px)}
+.xcard b{display:block;color:#fff;font-size:16px;margin-bottom:5px}
+.xcard span{color:var(--muted);font-size:13.5px;line-height:1.5}
+.xcard .xcard-go{display:inline-block;margin-top:10px;color:var(--red2);font-weight:700;font-size:13.5px}
+@media(max-width:760px){.xgrid{grid-template-columns:1fr}}
