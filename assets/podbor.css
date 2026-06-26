@@ -1,0 +1,79 @@
+/* ===== Подбор редуктора — фильтр-таблица. Тема сайта (тёмная/светлая). ===== */
+#pfRoot{color:var(--text);font-family:inherit;margin-top:6px}
+
+/* переключатель типа */
+.pf-types{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pf-pill{appearance:none;background:var(--card);border:1px solid var(--line);color:var(--muted);
+  font:600 13px/1 inherit;padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s}
+.pf-pill:hover{color:var(--text);border-color:#2f4456}
+.pf-pill.is-active{background:var(--red);border-color:var(--red);color:#fff}
+
+/* таблица */
+.pf-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.pf-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:1040px}
+
+/* шапка с заголовками */
+.pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:left;
+  vertical-align:bottom;padding:15px 14px 10px;font-size:11.5px;text-transform:uppercase;
+  letter-spacing:.03em;line-height:1.32;border-bottom:1px solid var(--line)}
+.pf-th-tz{min-width:172px}
+
+/* строка фильтров */
+.pf-frow td{background:var(--bg2);padding:0 14px 15px;vertical-align:top;border-bottom:1px solid var(--line)}
+.pf-in{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  padding:8px 11px;border-radius:8px;font:13.5px/1.2 inherit;box-sizing:border-box}
+.pf-in::placeholder{color:var(--muted2)}
+.pf-in:focus,.pf-sel:focus{outline:none;border-color:var(--blue)}
+.pf-rg{display:flex;align-items:center;gap:7px;margin-top:7px}
+.pf-rg:first-of-type{margin-top:0}
+.pf-rg span{color:var(--muted2);font-size:11.5px;flex:0 0 16px}
+.pf-sel{flex:1 1 auto;width:100%;min-width:74px;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  padding:7px 26px 7px 9px;border-radius:8px;font:13px/1.2 inherit;box-sizing:border-box;
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237fa8c4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 8px center}
+
+/* строка кнопок */
+.pf-brow td{background:var(--card);padding:14px;border-bottom:1px solid var(--line)}
+.pf-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.pf-btn{font:700 13px/1 inherit;padding:11px 20px;border-radius:9px;cursor:pointer;border:1px solid transparent;transition:.15s}
+.pf-btn--ghost{background:transparent;border-color:var(--line);color:var(--muted)}
+.pf-btn--ghost:hover{color:var(--text);border-color:#2f4456}
+.pf-btn--red{background:var(--red);color:#fff}
+.pf-btn--red:hover{background:#c81414}
+.pf-count{color:var(--muted);font-size:13px;margin-left:4px}
+.pf-count b{color:var(--text)}
+
+/* тело */
+.pf-table tbody td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap}
+.pf-table tbody tr:last-child td{border-bottom:0}
+.pf-table tbody tr:nth-child(even){background:var(--card2)}
+.pf-table tbody tr:hover{background:#16242f}
+.pf-tz{white-space:normal !important;min-width:160px}
+.pf-tz b{display:block;color:var(--red2);font-weight:800;font-size:14px}
+.pf-tr-gost{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+.pf-tr-an{display:block;color:var(--muted2);font-size:11px;margin-top:1px}
+.pf-empty{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
+.pf-loading-cell{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
+
+.pf-more{display:block;margin:16px auto 0;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  font:600 14px/1 inherit;padding:11px 26px;border-radius:9px;cursor:pointer}
+.pf-more:hover{border-color:var(--blue)}
+.pf-more[hidden]{display:none}
+.pf-note{font-size:12.5px;color:var(--muted2);margin:16px 0 0;line-height:1.55;max-width:840px}
+
+/* нижний CTA */
+.pf-ask{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:20px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.pf-ask span{font-size:14px;color:var(--text);font-weight:600}
+.pf-cta{background:var(--red);color:#fff;font:700 14px/1 inherit;padding:12px 22px;border:0;border-radius:9px;cursor:pointer;transition:.15s}
+.pf-cta:hover{background:#c81414}
+
+/* светлая тема — мягкие hover-фоны под светлый режим */
+[data-theme="light"] .pf-table tbody tr:hover{background:#eef3f7}
+[data-theme="light"] .pf-pill:hover,[data-theme="light"] .pf-btn--ghost:hover,[data-theme="light"] .pf-pill:hover{border-color:#9fb4c4}
+
+@media(max-width:680px){
+  .pf-ask{flex-direction:column;align-items:stretch;text-align:center}
+  .pf-toolbar{justify-content:flex-start}
+}
