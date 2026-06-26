@@ -137,6 +137,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .ceny-card b{color:#fff;font-size:clamp(20px,2.2vw,26px);line-height:1.05}
 .ceny-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 @media(max-width:760px){.ceny-grid{grid-template-columns:1fr 1fr}}
+.oem-band{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+@media(max-width:860px){.oem-band{grid-template-columns:1fr;gap:28px}}
+.oem-band-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.oem-band-list{grid-template-columns:1fr}}
+.oem-band-list .ob{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px}
+.oem-band-list .ob span{font-size:22px;flex:0 0 auto}
+.oem-band-list .ob b{display:block;color:#fff;font-size:15px;margin-bottom:2px}
+.oem-band-list .ob i{color:var(--muted);font-size:13px;font-style:normal;line-height:1.4}
 #calc{background:var(--bg2)}
 .calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start;margin-top:8px}
 @media(max-width:820px){.calc-grid{grid-template-columns:1fr}}
@@ -531,6 +539,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
       <a href="catalog/index.html">Каталог редукторов</a>
       <a href="podbor.html">Подбор</a>
       <a href="ceny.html">Цены</a>
+      <a href="proizvoditelyam-oborudovaniya.html">Производителям</a>
       <a href="importozameshchenie.html">Импортозамещение</a>
       <a href="blog/index.html">Блог</a>
       <div class="dropdown">
@@ -675,6 +684,28 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
         <div class="feat"><div class="ic">📥</div><div><h4>8000+ типоразмеров</h4><p>EVL, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
         <div class="feat"><div class="ic">🛡️</div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
         <a class="btn ghost" href="podbor.html" style="margin-top:4px">Расширенный подбор →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="oem" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="oem-band">
+      <div class="oem-band-text">
+        <div class="eyebrow">Производителям оборудования</div>
+        <h2>Делаете конвейеры, смесители, линии? Поставим редукторы под вашу серию</h2>
+        <p class="lead">Для производителей оборудования — серийные поставки от завода: резерв на складе под план выпуска, фиксированная цена по договору, приоритет и специсполнения под ваш конструктив. Один редуктор — во всей вашей линейке.</p>
+        <div class="ceny-cta">
+          <a class="btn lg" href="proizvoditelyam-oborudovaniya.html">Условия для производителя</a>
+          <a class="btn lg ghost" data-zayavka href="#zayavka">Обсудить серийную поставку</a>
+        </div>
+      </div>
+      <div class="oem-band-list">
+        <div class="ob"><span>📦</span><div><b>Резерв на складе</b><i>отгрузка партиями под ваш план</i></div></div>
+        <div class="ob"><span>💰</span><div><b>Фиксированная цена</b><i>стабильная себестоимость без скачков</i></div></div>
+        <div class="ob"><span>⚙️</span><div><b>Специсполнение</b><i>под ваш конструктив, единая маркировка</i></div></div>
+        <div class="ob"><span>⚡</span><div><b>Приоритет в производстве</b><i>сжатые сроки под ваши заказы</i></div></div>
       </div>
     </div>
   </div>
