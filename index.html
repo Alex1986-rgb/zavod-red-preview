@@ -15,6 +15,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fav-32x32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/fav-192x192.png" />
 <link rel="apple-touch-icon" href="assets/favicons/fav-180x180.png" />
+<link rel="stylesheet" href="assets/podbor.css?v=1" />
 <link rel="manifest" href="site.webmanifest" />
 
 <!-- Open Graph -->
@@ -725,32 +726,14 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 
 <section class="section" id="calc">
   <div class="wrap">
-    <div class="eyebrow">Калькулятор</div>
+    <div class="eyebrow">Калькулятор подбора</div>
     <h2>Подберите редуктор по параметрам онлайн</h2>
-    <p class="lead">Укажите тип и параметры — откроем таблицу подходящих типоразмеров нашего производства с обозначениями EVL, ГОСТ и импортными аналогами. Точную цену и срок пришлёт инженер.</p>
-    <div class="calc-grid">
-      <div class="pf-calc">
-        <div class="pf-field">
-          <label for="pfType">Тип редуктора</label>
-          <select id="pfType" class="pf-in">
-            <option value="червячный">Червячный</option>
-            <option value="соосно-цилиндрический">Соосно-цилиндрический</option>
-            <option value="коническо-цилиндрический">Цилиндро-конический</option>
-            <option value="плоско-цилиндрический">Плоский цилиндрический</option>
-          </select>
-        </div>
-        <div class="pf-row">
-          <div class="pf-field"><label for="pfPow">Мощность двигателя, кВт</label><input id="pfPow" class="pf-in" type="number" inputmode="decimal" step="0.01" min="0" placeholder="например, 1,5" /></div>
-          <div class="pf-field"><label for="pfOut">Обороты на выходе, об/мин</label><input id="pfOut" class="pf-in" type="number" inputmode="decimal" step="0.1" min="0" placeholder="например, 50" /></div>
-        </div>
-        <div class="pf-field"><label for="pfTq">Крутящий момент, Н·м <span style="color:var(--muted2);font-weight:400">(если известен)</span></label><input id="pfTq" class="pf-in" type="number" inputmode="decimal" step="0.1" min="0" placeholder="необязательно" /></div>
-        <a id="pfGo" class="btn lg" href="podbor.html" style="width:100%;justify-content:center;margin-top:4px">Подобрать редуктор →</a>
-      </div>
-      <div class="calc-aside">
-        <div class="feat"><div class="ic">🏭</div><div><h4>Цена от производителя</h4><p>Понижающие мотор-редукторы от 6 930 ₽, без посредников.</p></div></div>
-        <div class="feat"><div class="ic">📥</div><div><h4>8000+ типоразмеров</h4><p>EVL, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
-        <div class="feat"><div class="ic">🛡️</div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
-      </div>
+    <p class="lead">Выберите тип и задайте диапазоны «от/до» — мощность, обороты на выходе, момент, передаточное число. Таблица покажет подходящие типоразмеры нашего производства с обозначениями EVL, ГОСТ и импортными аналогами (SEW, NORD, Motovario). Результат можно выгрузить в CSV.</p>
+    <div id="pfRoot"></div>
+    <div class="feats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px">
+      <div class="feat"><div class="ic">🏭</div><div><h4>Цена от производителя</h4><p>Понижающие мотор-редукторы от 6 930 ₽, без посредников.</p></div></div>
+      <div class="feat"><div class="ic">📥</div><div><h4>8000+ типоразмеров</h4><p>EVL, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
+      <div class="feat"><div class="ic">🛡️</div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
     </div>
   </div>
 </section>
@@ -1338,7 +1321,7 @@ document.querySelectorAll('.vfac').forEach(function(f){
  },{once:true});
 });
 </script>
-<script>(function(){var b=document.getElementById('pfGo');if(!b)return;function build(){var g=function(id){var e=document.getElementById(id);return e?(e.value||'').trim():'';};var q=[];var t=g('pfType');if(t)q.push('type='+encodeURIComponent(t));var pw=g('pfPow');if(pw)q.push('pw='+encodeURIComponent(pw));var os=g('pfOut');if(os)q.push('os='+encodeURIComponent(os));var tq=g('pfTq');if(tq)q.push('tq='+encodeURIComponent(tq));b.href='podbor.html'+(q.length?'?'+q.join('&'):'');}b.addEventListener('click',build);build();})();</script>
+<script defer src="assets/podbor.js?v=2"></script>
 <script defer src="assets/modal.js?v=16"></script>
 </body>
 </html>
