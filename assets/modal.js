@@ -208,6 +208,26 @@
   document.addEventListener('click',function(e){if(!w.contains(e.target))w.classList.remove('open');});
 })();
 
+/* ===== Липкая мобильная CTA-панель (Позвонить / Заявка) ===== */
+(function(){
+  var TEL='+74951514102';
+  var css=''
+   +'.zr-mbar{position:fixed;left:0;right:0;bottom:0;z-index:985;display:none;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(11,21,29,.94);backdrop-filter:blur(10px);border-top:1px solid #22333f;font-family:inherit}'
+   +'.zr-mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}'
+   +'.zr-mbar .call{background:#15242f;border:1px solid #2a3b48;color:#e9eff4}'
+   +'.zr-mbar .lead{background:#e11b1b;color:#fff}'
+   +'.zr-mbar svg{width:18px;height:18px;flex:0 0 auto}'
+   +'@media(max-width:720px){.zr-mbar{display:flex}body{padding-bottom:70px}.zrw{bottom:80px}.zr-cookie{bottom:80px}}';
+  var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+  var phone='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+  var spark='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2h-5"/><path d="m3 21 3-3-3-3"/><path d="M9 18H4"/></svg>';
+  var bar=document.createElement('div');
+  bar.className='zr-mbar';
+  bar.innerHTML='<a class="call" href="tel:'+TEL+'">'+phone+'Позвонить</a>'
+   +'<a class="lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
+  document.body.appendChild(bar);
+})();
+
 /* ===== Cookie-баннер (152-ФЗ / практика РКН) ===== */
 (function(){
   var KEY='zr_cookie_consent';

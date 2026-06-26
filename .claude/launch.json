@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "zavod-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4137", "--directory", "/Users/macbook/Downloads/zavod_preview"],
+      "port": 4137
+    }
+  ]
+}
