@@ -137,6 +137,37 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .ceny-card b{color:#fff;font-size:clamp(20px,2.2vw,26px);line-height:1.05}
 .ceny-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 @media(max-width:760px){.ceny-grid{grid-template-columns:1fr 1fr}}
+#calc{background:var(--bg2)}
+.calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start;margin-top:8px}
+@media(max-width:820px){.calc-grid{grid-template-columns:1fr}}
+.pf-calc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+.pf-field{margin-bottom:13px}
+.pf-field label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px;font-weight:600}
+.pf-in{width:100%;background:#0c161e;border:1px solid var(--line);color:#fff;padding:12px 14px;border-radius:10px;font-size:15px;font-family:inherit;box-sizing:border-box}
+.pf-in:focus{outline:none;border-color:var(--red)}
+select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
+.pf-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.pf-result{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.pf-out-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.pf-out{background:#0c161e;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.pf-out span{display:block;color:var(--muted);font-size:11.5px;margin-bottom:5px}
+.pf-out b{font-size:22px;color:#fff}
+.pf-rec{background:rgba(225,27,27,.1);border:1px solid rgba(225,27,27,.3);border-radius:10px;padding:13px 15px;color:#e9eff4;font-size:14px;line-height:1.55;margin-bottom:14px}
+.calc-aside{display:flex;flex-direction:column;gap:18px}
+.calc-aside .feat{display:flex;gap:14px}
+.calc-aside .feat .ic{flex:0 0 42px;height:42px;border-radius:10px;background:rgba(225,27,27,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+.calc-aside .feat h4{font-size:16px;margin-bottom:3px}
+.calc-aside .feat p{color:var(--muted);font-size:13.5px;line-height:1.5}
+.seo-text{border-top:1px solid var(--line);padding-top:30px}
+.seo-text .seo-lead{color:#b9c7d2;font-size:15.5px;line-height:1.75;max-width:920px;margin:0}
+.seo-text summary{display:inline-flex;align-items:center;gap:8px;color:var(--red2);font-weight:700;font-size:14px;cursor:pointer;list-style:none;margin-top:16px;user-select:none}
+.seo-text summary::-webkit-details-marker{display:none}
+.seo-text summary::after{content:"▾";font-size:13px;transition:transform .2s}
+.seo-text details[open] summary::after{transform:rotate(180deg)}
+.seo-text .seo-body{margin-top:14px;max-width:920px}
+.seo-text .seo-body p{color:var(--muted);font-size:14.5px;line-height:1.7;margin:0 0 12px}
+.seo-text .seo-body h3{font-size:18px;margin:20px 0 8px;color:#fff}
+.seo-text .seo-body a{color:var(--steel);text-decoration:underline}
 .hero-3d{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
 .hero-3d img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 24px 42px rgba(0,0,0,.55))}
 .hero-3d model-viewer{width:100%;height:100%;background:transparent}
@@ -603,6 +634,52 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   </div>
 </section>
 
+<section class="section" id="calc">
+  <div class="wrap">
+    <div class="eyebrow">Калькулятор</div>
+    <h2>Подберите редуктор по параметрам онлайн</h2>
+    <p class="lead">Задайте мощность и обороты — рассчитаем передаточное число и крутящий момент на выходе. Точный типоразмер и цену пришлёт инженер.</p>
+    <div class="calc-grid">
+      <div class="pf-calc">
+        <div class="pf-field">
+          <label for="pfType">Тип редуктора</label>
+          <select id="pfType" class="pf-in">
+            <option value="cyl">Цилиндрический / соосный</option>
+            <option value="bevel">Цилиндро-конический</option>
+            <option value="flat">Плоский цилиндрический</option>
+            <option value="worm">Червячный</option>
+            <option value="planet">Планетарный</option>
+          </select>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label for="pfPow">Мощность, кВт</label><input id="pfPow" class="pf-in" type="number" inputmode="decimal" step="0.01" min="0" placeholder="1,5" /></div>
+          <div class="pf-field"><label for="pfIn">Обороты входные</label><input id="pfIn" class="pf-in" type="number" inputmode="numeric" step="1" min="1" value="1500" /></div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label for="pfOut">Обороты выходные</label><input id="pfOut" class="pf-in" type="number" inputmode="decimal" step="0.1" min="0" placeholder="50" /></div>
+          <div class="pf-field"><label for="pfEff">Сервис-фактор</label><select id="pfEff" class="pf-in"><option value="1.0">Спокойная ×1,0</option><option value="1.25" selected>Средняя ×1,25</option><option value="1.5">Ударная ×1,5</option></select></div>
+        </div>
+        <button id="pfCalc" class="btn lg" style="width:100%;justify-content:center;margin-top:4px">Рассчитать</button>
+        <div id="pfResult" class="pf-result" hidden>
+          <div class="pf-out-grid">
+            <div class="pf-out"><span>Передаточное i</span><b id="pfI">—</b></div>
+            <div class="pf-out"><span>Момент, Н·м</span><b id="pfT">—</b></div>
+            <div class="pf-out"><span>С запасом</span><b id="pfTs">—</b></div>
+          </div>
+          <p id="pfRec" class="pf-rec"></p>
+          <a class="btn lg" data-zayavka href="#zayavka" style="width:100%;justify-content:center">Отправить на точный подбор</a>
+        </div>
+      </div>
+      <div class="calc-aside">
+        <div class="feat"><div class="ic">🏭</div><div><h4>Цена от производителя</h4><p>Понижающие мотор-редукторы от 6 930 ₽, без посредников.</p></div></div>
+        <div class="feat"><div class="ic">📥</div><div><h4>8000+ типоразмеров</h4><p>EVL, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
+        <div class="feat"><div class="ic">🛡️</div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
+        <a class="btn ghost" href="podbor.html" style="margin-top:4px">Расширенный подбор →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="steps">
   <div class="wrap">
     <div class="eyebrow">Как мы работаем</div>
@@ -872,6 +949,29 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   </div>
 </section>
 
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="seo-text">
+    <p class="seo-lead">Завод Редукторов (ООО «НИИ АТТ», Челябинск) — производитель промышленных редукторов и понижающих мотор-редукторов с ценой от производителя. Выпускаем червячные, цилиндрические, соосно-цилиндрические, цилиндро-конические и плоско-цилиндрические приводы серий EVL, ПР и МР, а также вариаторы и планетарные редукторы под заказ. Подбираем редуктор по мощности, моменту, оборотам и шильдику и изготавливаем габаритные аналоги импортных приводов SEW, NORD, Bonfiglioli, Motovario.</p>
+    <details class="seo-more">
+      <summary>Читать полностью</summary>
+      <div class="seo-body">
+        <p>Понижающий редуктор снижает обороты электродвигателя и повышает крутящий момент на выходном валу — это основа привода конвейеров, мешалок, подъёмных механизмов, насосов, дробильно-размольного и упаковочного оборудования. Мы производим мотор-редукторы в сборе с электродвигателем 220 В и 380 В и отдельные редукторы под имеющийся двигатель, с отгрузкой от 3 дней и гарантией 24 месяца.</p>
+        <h3>Что мы производим и подбираем</h3>
+        <p>В <a href="catalog/index.html">каталоге редукторов</a> — <a href="catalog/chervyachnye.html">червячные</a> (самоторможение, валы под 90°), <a href="catalog/cilindricheskie.html">цилиндрические</a> (высокий КПД, режим S1), <a href="catalog/soosnye.html">соосно-цилиндрические</a>, <a href="catalog/konichesko-cilindricheskie.html">цилиндро-конические</a>, <a href="catalog/ploskie.html">плоские цилиндрические</a> мотор-редукторы, <a href="catalog/variatory.html">вариаторы</a> и <a href="catalog/planetarnye.html">планетарные</a> приводы. Не знаете, какой нужен? — воспользуйтесь <a href="podbor.html">калькулятором подбора по параметрам</a> или посмотрите <a href="ceny.html">цены по маркировкам EVL, ПР, МР</a>.</p>
+        <h3>Импортозамещение приводов</h3>
+        <p>Изготавливаем габаритные и присоединительные аналоги импортных мотор-редукторов — узел встаёт на штатное место без переделки оборудования, а стоит дешевле оригинала. Подбираем замену по шильдику, фото или образцу. Подробнее — на странице <a href="importozameshchenie.html">импортозамещения</a> и в <a href="blog/index.html">блоге</a>.</p>
+        <table class="spec"><tbody>
+          <tr><th>Типы редукторов</th><td>червячные, цилиндрические, соосные, конические, плоские, вариаторы, планетарные</td></tr>
+          <tr><th>Линейки</th><td>EVL, ПР, МР — мотор-редуктор от 6 930 ₽</td></tr>
+          <tr><th>Мощность</th><td>от 0,12 до 200 кВт, 220 В / 380 В</td></tr>
+          <tr><th>Аналоги</th><td>SEW, NORD, Bonfiglioli, Motovario, Varvel и др.</td></tr>
+          <tr><th>Поставка</th><td>от 3 дней по всей России, гарантия 24 месяца</td></tr>
+        </table>
+      </div>
+    </details>
+  </div>
+</div></section>
+
 <footer>
   <div class="wrap foot">
     <div>
@@ -1105,6 +1205,7 @@ document.querySelectorAll('.vfac').forEach(function(f){
  },{once:true});
 });
 </script>
+<script defer src="assets/calc.js?v=1"></script>
 <script defer src="assets/modal.js?v=15"></script>
 </body>
 </html>
