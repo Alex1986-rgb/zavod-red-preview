@@ -313,3 +313,8 @@ html,body{overflow-x:clip}
 @media(max-width:400px){
   .btn,.btn.lg{min-width:0!important}
 }
+/* на тач-устройствах не применять hover-лифты (карточки «прыгают»/залипают при касании) */
+@media(hover:none){
+  .btn:hover,a.card:hover,a.card-img:hover,a.brand:hover,.xcard:hover,
+  .brand-card:hover,.evl-fam:hover,.post-card:hover{transform:none!important}
+}
