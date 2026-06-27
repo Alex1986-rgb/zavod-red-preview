@@ -184,7 +184,8 @@
    +'.zrw__toggle .zrw__dot{width:9px;height:9px;border-radius:50%;background:#37e06a;box-shadow:0 0 0 3px rgba(55,224,106,.22)}'
    +'.zrw__toggle svg{width:20px;height:20px}'
    +'.zrw.open .zrw__lbl-open{display:none}.zrw__lbl-close{display:none}.zrw.open .zrw__lbl-close{display:inline}'
-   +'@media(max-width:600px){.zrw{right:14px;bottom:14px}.zrw__panel{width:208px}.zrw__toggle{padding:12px 18px;font-size:14px}}';
+   +'@media(max-width:600px){.zrw{right:14px}.zrw__panel{width:208px}.zrw__toggle{padding:12px 18px;font-size:14px}}'
+   +'@media(max-width:720px){.zrw{bottom:80px}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
   var chat='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.3 1.2 4.4 3.3 5.9-.2 1.3-.9 2.6-1.9 3.6 1.7-.2 3.3-.8 4.6-1.8 1.2.4 2.5.6 4 .6 5.5 0 10-3.6 10-8.3S17.5 3 12 3z"/></svg>';
@@ -213,9 +214,9 @@
   var TEL='+74951514102';
   var css=''
    +'.zr-mbar{position:fixed;left:0;right:0;bottom:0;z-index:985;display:none;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(11,21,29,.94);backdrop-filter:blur(10px);border-top:1px solid #22333f;font-family:inherit}'
-   +'.zr-mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}'
-   +'.zr-mbar .call{background:#15242f;border:1px solid #2a3b48;color:#e9eff4}'
-   +'.zr-mbar .lead{background:#e11b1b;color:#fff}'
+   +'.zr-mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:13px 10px;border-radius:10px;font-weight:700;font-size:15px;line-height:1.2;white-space:nowrap;text-decoration:none}'
+   +'.zr-mbar .zrmb-call{background:#15242f;border:1px solid #2a3b48;color:#e9eff4}'
+   +'.zr-mbar .zrmb-lead{background:#e11b1b;color:#fff}'
    +'.zr-mbar svg{width:18px;height:18px;flex:0 0 auto}'
    +'@media(max-width:720px){.zr-mbar{display:flex}body{padding-bottom:70px}.zrw{bottom:80px}.zr-cookie{bottom:80px}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
@@ -223,8 +224,8 @@
   var spark='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2h-5"/><path d="m3 21 3-3-3-3"/><path d="M9 18H4"/></svg>';
   var bar=document.createElement('div');
   bar.className='zr-mbar';
-  bar.innerHTML='<a class="call" href="tel:'+TEL+'">'+phone+'Позвонить</a>'
-   +'<a class="lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
+  bar.innerHTML='<a class="zrmb-call" href="tel:'+TEL+'">'+phone+'Позвонить</a>'
+   +'<a class="zrmb-lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
   document.body.appendChild(bar);
 })();
 
@@ -245,7 +246,7 @@
    +'.zr-cookie__btn{background:#e11b1b;color:#fff;border:0;border-radius:9px;padding:11px 22px;'
    +'font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;transition:.15s}'
    +'.zr-cookie__btn:hover{background:#c81414}'
-   +'@media(max-width:560px){.zr-cookie{flex-direction:column;align-items:stretch;text-align:left;gap:11px;padding:14px 15px;left:10px;right:10px;bottom:10px;font-size:13px;line-height:1.4}.zr-cookie p{flex:none}.zr-cookie__btn{width:100%;padding:11px}}';
+   +'@media(max-width:560px){.zr-cookie{flex-direction:column;align-items:stretch;text-align:left;gap:11px;padding:14px 15px;left:10px;right:10px;bottom:80px;font-size:13px;line-height:1.4}.zr-cookie p{flex:none}.zr-cookie__btn{width:100%;padding:11px}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
   var bar=document.createElement('div');
   bar.className='zr-cookie';
