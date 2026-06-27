@@ -300,3 +300,16 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .vs-ic svg{width:18px;height:18px;display:block}
 .hd-ic{display:inline-flex;vertical-align:-3px;margin-right:4px}
 .hd-ic svg{width:18px;height:18px;color:var(--red2)}
+
+/* --- Адаптив: устранение горизонтального переполнения на мобильных --- */
+html,body{overflow-x:clip}
+@media(max-width:760px){
+  .spec,.xref{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+  .dl-frame{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:560px){
+  .btn{white-space:normal;max-width:100%;box-sizing:border-box;justify-content:center;text-align:center}
+}
+@media(max-width:400px){
+  .btn,.btn.lg{min-width:0!important}
+}
