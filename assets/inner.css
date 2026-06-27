@@ -321,5 +321,7 @@ html,body{overflow-x:clip}
 /* логотип не сжимать во flex-шапке (на узких экранах схлопывался в полоску) */
 .logo{flex-shrink:0}
 .logo img{flex-shrink:0;max-width:none}
+/* в светлой теме белый логотип невидим на светлой шапке → тёмный вариант (путь резолвится относительно inner.css = /assets/) */
+[data-theme="light"] .logo img{content:url(zr_logo_dark.webp)}
 @media(max-width:560px){header .nav{gap:14px}.nav-right{gap:14px}.logo img{height:40px}}
 @media(max-width:430px){.nav-right [data-zayavka]{display:none}.logo img{height:36px}}
