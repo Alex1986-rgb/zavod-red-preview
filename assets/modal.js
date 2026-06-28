@@ -282,3 +282,60 @@
     apply(cur==='light'?'dark':'light');
   });
 })();
+
+/* ===== Универсальный обработчик статичных лид-форм (.lead-form, напр. #impForm) ===== */
+(function(){
+  var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
+  var ACTION=(sub?'../':'')+'api/feedback.php';
+  document.addEventListener('submit',function(e){
+    var form=e.target;
+    if(!form.classList||!form.classList.contains('lead-form'))return;
+    e.preventDefault();
+    // honeypot
+    var hp=form.querySelector('input[name="work_email"]');
+    if(hp&&hp.value){ return; }
+    var res=form.querySelector('.form-result');
+    function show(msg,cls){ if(res){res.textContent=msg;res.className='form-result '+(cls||'');} else { alert(msg); } }
+    // поля по типу
+    var nameEl=form.querySelector('input[type="text"]:not([name="work_email"])');
+    var phoneEl=form.querySelector('input[type="tel"]');
+    var emailEl=form.querySelector('input[type="email"]');
+    var msgEl=form.querySelector('textarea');
+    var consent=form.querySelector('input[type="checkbox"]');
+    var name=nameEl?nameEl.value.trim():'';
+    var phone=phoneEl?phoneEl.value.trim():'';
+    var email=emailEl?emailEl.value.trim():'';
+    if(!name){ show('Укажите имя.','err'); return; }
+    if(phoneEl&&(phone.replace(/\D/g,'').length<10)&&!email){ show('Укажите корректный телефон или email.','err'); return; }
+    if(consent&&!consent.checked){ show('Подтвердите согласие на обработку данных.','err'); return; }
+    var fd=new FormData();
+    fd.append('work_email','');
+    fd.append('text-562',name);
+    if(phone)fd.append('tel-535',phone);
+    if(email)fd.append('email-727',email);
+    if(msgEl&&msgEl.value.trim())fd.append('textarea-725',msgEl.value.trim());
+    fd.append('product_title','Заявка (форма на странице) · '+document.title);
+    try{
+      var p=new URLSearchParams(location.search),ks=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid'],st={};
+      try{st=JSON.parse(localStorage.getItem('zr_utm')||'{}');}catch(_){}
+      ks.forEach(function(k){fd.append(k,p.get(k)||st[k]||'');});
+      fd.append('referrer',document.referrer||'');fd.append('page_url',location.href);
+    }catch(_){}
+    var btn=form.querySelector('button[type="submit"],button');
+    if(btn){btn.disabled=true;var _t=btn.textContent;btn.textContent='Отправляем…';}
+    show('Отправляем заявку…','busy');
+    fetch(ACTION,{method:'POST',body:fd}).then(function(r){return r.json().catch(function(){return {};});}).then(function(d){
+      if(btn){btn.disabled=false;btn.textContent=_t;}
+      if(d.status==='success'||d.ok){
+        if(window.ym)ym(109758131,'reachGoal','zayavka');
+        form.reset();
+        show('Заявка принята. Инженер свяжется с вами и пришлёт КП.','ok');
+      } else {
+        show((d.message||'Не удалось отправить.')+' Позвоните: +7 (495) 151-41-02.','err');
+      }
+    }).catch(function(){
+      if(btn){btn.disabled=false;btn.textContent=_t;}
+      show('Ошибка сети. Позвоните: +7 (495) 151-41-02.','err');
+    });
+  });
+})();
