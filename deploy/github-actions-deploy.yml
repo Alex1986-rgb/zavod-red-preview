@@ -1,0 +1,43 @@
+name: Deploy site to hosting (FTP)
+
+# Авто-деплой сайта на Timeweb: push в main → сборка dist/ (Метрика + robots) → заливка по FTP.
+# Деплоит ТОЛЬКО файлы сайта; CRM (api/admin/...) управляется своим workflow и не затрагивается
+# (отдельный state-файл .ftp-deploy-site.json + dangerous-clean-slate: false).
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy-site
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build dist (Метрика + robots)
+        run: python3 deploy/build-dist.py
+
+      - name: Deploy dist via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR || '/public_html/' }}
+          protocol: ftps
+          local-dir: ./dist/
+          dangerous-clean-slate: false
+          state-name: .ftp-deploy-site.json   # свой журнал — не трогает файлы CRM
+          exclude:
+            - "**/.DS_Store"
+            - "api/**"
+            - "admin/**"
+            - "crm-data/**"
+            - "migrations/**"
+            - "**/config.php"
