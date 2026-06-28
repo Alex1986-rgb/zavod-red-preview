@@ -132,6 +132,17 @@
     if(msg!=='')fd.append('textarea-725',msg);
     if(fileInp.files&&fileInp.files[0])fd.append('file-174',fileInp.files[0]);
     fd.append('product_title','Заявка (раскрывающаяся форма) · '+(type||'тип не указан')+' · '+document.title);
+    // UTM / источник / referrer для CRM и ретаргетинга (first-touch в localStorage)
+    try{
+      var _p=new URLSearchParams(location.search);
+      var _ks=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid'];
+      var _st={};try{_st=JSON.parse(localStorage.getItem('zr_utm')||'{}');}catch(e){}
+      var _has=false;_ks.forEach(function(k){var v=_p.get(k);if(v){_st[k]=v;_has=true;}});
+      if(_has){try{localStorage.setItem('zr_utm',JSON.stringify(_st));}catch(e){}}
+      _ks.forEach(function(k){fd.append(k,_p.get(k)||_st[k]||'');});
+      fd.append('referrer',document.referrer||'');
+      fd.append('page_url',location.href);
+    }catch(e){}
 
     var hasFile=fileInp.files&&fileInp.files[0];
     var btn=form.querySelector('.zr-btn');
