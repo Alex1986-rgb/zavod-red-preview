@@ -696,9 +696,15 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 .vs-ic svg{width:18px;height:18px;display:block}
 .hd-ic{display:inline-flex;vertical-align:-3px;margin-right:4px}
 .hd-ic svg{width:18px;height:18px;color:var(--red2)}
-/* Бургер-меню до 1450px: 8 пунктов меню помещаются по горизонтали только на широких экранах (≥1451),
-   иначе кнопка «Оставить заявку» уезжала за край (MacBook). CTA остаётся видимой. */
+/* 1241–1450px: уплотняем меню, чтобы быстрые ссылки оставались в шапке и кнопка влезала. */
 @media(max-width:1450px){
+  .menu{gap:11px;margin-left:6px}
+  .menu a{font-size:14px}
+  .nav-right{gap:12px}
+  .btn.btn-sm{padding:9px 14px;font-size:14px}
+}
+/* ≤1240px: ссылки не помещаются по горизонтали → бургер-меню. */
+@media(max-width:1240px){
   .nav-phones{display:none}
   .burger{display:flex}
   .menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;background:#0b151d;border-bottom:1px solid var(--line);padding:0 24px;max-height:0;overflow:hidden;opacity:0;box-shadow:0 18px 40px rgba(0,0,0,.5);transition:max-height .3s ease,opacity .2s,padding .3s}
