@@ -10,7 +10,7 @@
 
   var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
   var pfx=sub?'../':'';
-  var DATA_URL=pfx+'assets/podbor-data.json?v=5';
+  var DATA_URL=pfx+'assets/podbor-data.json?v=6';
 
   var TYPE_LABEL={
     'червячный':'Червячный',
