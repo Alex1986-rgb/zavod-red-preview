@@ -17,10 +17,13 @@ h1,h2,h3{line-height:1.14;letter-spacing:-.01em;font-weight:800}
 h2{font-size:clamp(26px,3vw,40px);margin-bottom:14px}
 .lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:760px;margin-bottom:34px}
 .eyebrow{color:var(--red2);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;transition:.18s;white-space:nowrap}
-.btn:hover{background:#c81414;transform:translateY(-1px)}
-.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}
-.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#ed2222,#cf1515);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:12px;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap;box-shadow:0 8px 20px -7px rgba(225,27,27,.6)}
+.btn:hover{background:linear-gradient(180deg,#f23030,#c81414);transform:translateY(-2px);box-shadow:0 14px 28px -7px rgba(225,27,27,.78)}
+.btn:active{transform:translateY(0)}
+.btn.ghost{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.32);color:#fff;box-shadow:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 10px 22px -8px rgba(0,0,0,.5)}
+.nav-mail{font-weight:700;color:#fff;text-decoration:none}
+.nav-mail:hover{color:var(--red2,#ff3b30)}
 .btn.lg{padding:17px 32px;font-size:16px}
 .btn.sm{padding:11px 18px;font-size:14px}
 
