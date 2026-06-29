@@ -202,16 +202,22 @@
   <url><loc>https://zavod-red.ru/reduktor/evl-189</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-188</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-193</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-194</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-194-193</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-197-193</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1610-197</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1810-197</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1913-197</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1812-198</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1810</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1816</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1816-1910</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1615</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1612-197</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1812-197</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1612-198</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1615-199</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1816-199</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-167-193</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-166-193</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-184-193</loc><priority>0.7</priority></url>
@@ -228,8 +234,11 @@
   <url><loc>https://zavod-red.ru/reduktor/evl-7137</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-071-767</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-188-195</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-198-195</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-071-777</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-080-7137</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-747-777</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-757-7117</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1818-199</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/reduktor/evl-1914-197</loc><priority>0.7</priority></url>
 </urlset>
