@@ -17,11 +17,10 @@ h1,h2,h3{line-height:1.14;letter-spacing:-.01em;font-weight:800}
 h2{font-size:clamp(26px,3vw,40px);margin-bottom:14px}
 .lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:760px;margin-bottom:34px}
 .eyebrow{color:var(--red2);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#ed2222,#cf1515);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:12px;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap;box-shadow:0 8px 20px -7px rgba(225,27,27,.6)}
-.btn:hover{background:linear-gradient(180deg,#f23030,#c81414);transform:translateY(-2px);box-shadow:0 14px 28px -7px rgba(225,27,27,.78)}
-.btn:active{transform:translateY(0)}
-.btn.ghost{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.32);color:#fff;box-shadow:none;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 10px 22px -8px rgba(0,0,0,.5)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn:hover{background:#c81414;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}
+.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 .nav-mail{font-weight:700;color:#fff;text-decoration:none}
 .nav-mail:hover{color:var(--red2,#ff3b30)}
 .btn.lg{padding:17px 32px;font-size:16px}
@@ -366,28 +365,3 @@ html,body{overflow-x:clip}
 [data-theme="light"] .field select:focus,[data-theme="light"] .field input:focus,[data-theme="light"] .pf-in:focus{border-color:var(--red)}
 [data-theme="light"] .sel-result,[data-theme="light"] .sel-result b{color:#16242e}
 [data-theme="light"] ::placeholder{color:#7d8e9b;opacity:1}
-
-/* ===== Премиальный лоск: карточки, тени, мягкий ховер ===== */
-.card-img,.brand-card,.evl-fam,.sit-card,.ceny-card,.rev,.cat-faq details{box-shadow:0 6px 22px -11px rgba(0,0,0,.55);transition:transform .18s,box-shadow .18s,border-color .18s}
-.card-img:hover,.brand-card:hover,.evl-fam:hover,.sit-card:hover,.ceny-card:hover{transform:translateY(-4px);box-shadow:0 22px 42px -14px rgba(0,0,0,.66);border-color:rgba(225,27,27,.42)}
-[data-theme="light"] .card-img,[data-theme="light"] .brand-card,[data-theme="light"] .evl-fam,[data-theme="light"] .sit-card,[data-theme="light"] .ceny-card,[data-theme="light"] .rev,[data-theme="light"] .cat-faq details{box-shadow:0 6px 20px -11px rgba(20,40,60,.18)}
-[data-theme="light"] .card-img:hover,[data-theme="light"] .brand-card:hover,[data-theme="light"] .evl-fam:hover,[data-theme="light"] .sit-card:hover{box-shadow:0 22px 42px -14px rgba(20,40,60,.26)}
-
-/* ===== ПРЕМИУМ-ШЛИФОВКА: единый стиль карточек/блоков/полей ===== */
-.card,.card-img,.brand-card,.evl-fam,.sit-card,.ceny-card,.spec,.lead-form,.map{border-radius:16px}
-.card{box-shadow:0 6px 22px -12px rgba(0,0,0,.5);transition:transform .18s,box-shadow .18s,border-color .18s}
-a.card:hover,.card:hover{transform:translateY(-4px);box-shadow:0 22px 42px -14px rgba(0,0,0,.6);border-color:rgba(225,27,27,.4)}
-.card .ic,.feat .ic{background:linear-gradient(145deg,rgba(225,27,27,.20),rgba(225,27,27,.05));border:1px solid rgba(225,27,27,.20)}
-.spec{box-shadow:0 4px 18px -12px rgba(0,0,0,.5)}
-.spec th{font-weight:700}
-.spec tbody tr{transition:background .14s}
-.spec tbody tr:hover td,.spec tbody tr:hover th{background:rgba(225,27,27,.04)}
-.field input,.field textarea,.field select,.pf-in{border-radius:11px;transition:border-color .15s,box-shadow .15s}
-.field input:focus,.field textarea:focus,.field select:focus,.pf-in:focus{box-shadow:0 0 0 3px rgba(225,27,27,.15)}
-.lead-form{box-shadow:0 20px 54px -22px rgba(0,0,0,.62)}
-.cat-faq details[open]{box-shadow:0 10px 28px -14px rgba(225,27,27,.3)}
-[data-theme="light"] .card,[data-theme="light"] .card-img{border-color:rgba(20,40,60,.1)}
-[data-theme="light"] .card:hover,[data-theme="light"] a.card:hover{box-shadow:0 22px 42px -16px rgba(20,40,60,.22)}
-[data-theme="light"] .spec{box-shadow:0 4px 16px -12px rgba(20,40,60,.16)}
-[data-theme="light"] .spec tbody tr:hover td,[data-theme="light"] .spec tbody tr:hover th{background:rgba(225,27,27,.05)}
-[data-theme="light"] .field input:focus,[data-theme="light"] .field select:focus,[data-theme="light"] .pf-in:focus{box-shadow:0 0 0 3px rgba(225,27,27,.13)}
