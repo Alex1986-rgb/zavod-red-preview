@@ -50,3 +50,17 @@
   # Мягкий CSP: только апгрейд http-подресурсов в https (не ломает inline-скрипты/Метрику/model-viewer)
   Header always set Content-Security-Policy "upgrade-insecure-requests"
 </IfModule>
+
+# --- Защита бэкенда CRM (живёт в этом же корне; правила безвредны, даже если CRM нет) ---
+Options -Indexes
+<FilesMatch "^config\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+# Каталог данных/загрузок CRM — закрыт от прямого доступа
+RedirectMatch 403 ^/crm-data/.*$
