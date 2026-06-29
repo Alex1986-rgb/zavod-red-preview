@@ -357,3 +357,18 @@ html,body{overflow-x:clip}
   [data-theme="light"] .menu{background:#fff}
   [data-theme="light"] .menu a{color:#33424d;border-bottom-color:rgba(0,0,0,.06)}
 }
+
+
+/* ===== Светлая тема — читаемость форм/полей (фикс «невидимого») ===== */
+[data-theme="light"] .field select,[data-theme="light"] .field input,[data-theme="light"] .field textarea,
+[data-theme="light"] .pf-in,[data-theme="light"] input:not([type=checkbox]):not([type=radio]),
+[data-theme="light"] select,[data-theme="light"] textarea{background:#fff;color:#16242e;border-color:#cdd9e2}
+[data-theme="light"] .field select:focus,[data-theme="light"] .field input:focus,[data-theme="light"] .pf-in:focus{border-color:var(--red)}
+[data-theme="light"] .sel-result,[data-theme="light"] .sel-result b{color:#16242e}
+[data-theme="light"] ::placeholder{color:#7d8e9b;opacity:1}
+
+/* ===== Премиальный лоск: карточки, тени, мягкий ховер ===== */
+.card-img,.brand-card,.evl-fam,.sit-card,.ceny-card,.rev,.cat-faq details{box-shadow:0 6px 22px -11px rgba(0,0,0,.55);transition:transform .18s,box-shadow .18s,border-color .18s}
+.card-img:hover,.brand-card:hover,.evl-fam:hover,.sit-card:hover,.ceny-card:hover{transform:translateY(-4px);box-shadow:0 22px 42px -14px rgba(0,0,0,.66);border-color:rgba(225,27,27,.42)}
+[data-theme="light"] .card-img,[data-theme="light"] .brand-card,[data-theme="light"] .evl-fam,[data-theme="light"] .sit-card,[data-theme="light"] .ceny-card,[data-theme="light"] .rev,[data-theme="light"] .cat-faq details{box-shadow:0 6px 20px -11px rgba(20,40,60,.18)}
+[data-theme="light"] .card-img:hover,[data-theme="light"] .brand-card:hover,[data-theme="light"] .evl-fam:hover,[data-theme="light"] .sit-card:hover{box-shadow:0 22px 42px -14px rgba(20,40,60,.26)}
