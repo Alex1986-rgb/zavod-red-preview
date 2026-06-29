@@ -36,18 +36,18 @@
     {i:6, h:'Сервис-фактор, Sfном',                     d:2},
     {i:7, h:'Обороты двигателя n вх, об/мин',            d:0}
   ];
-  var NCOL=COLS.length+1;
+  var NCOL=COLS.length+2;
 
   function fmt(x,d){ if(x==null)return '—'; var p=Math.pow(10,d==null?2:d); var v=Math.round(x*p)/p; return String(v).replace('.',','); }
 
   var headHtml='<tr><th class="pf-th-tz">Типоразмер редуктора</th>'
-    +COLS.map(function(c){return '<th>'+c.h+'</th>';}).join('')+'</tr>';
+    +COLS.map(function(c){return '<th>'+c.h+'</th>';}).join('')+'<th class="pf-th-ord">Заказ</th></tr>';
 
   var filterHtml='<tr class="pf-frow"><td><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off"></td>'
     +COLS.map(function(c){
         return '<td><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
              +'<div class="pf-rg"><span>до</span><select class="pf-sel" data-max="'+c.i+'"><option value="">Все</option></select></div></td>';
-      }).join('')+'</tr>';
+      }).join('')+'<td></td></tr>';
 
   var btnHtml='<tr class="pf-brow"><td colspan="'+NCOL+'"><div class="pf-toolbar">'
     +'<button type="button" class="pf-btn pf-btn--ghost" id="pfReset">Сбросить фильтр</button>'
@@ -230,7 +230,8 @@
     var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
     var tz='<td class="pf-tz"><b>'+g.e+'</b>'+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
     var tds=COLS.map(function(c){return '<td>'+fmt(it[c.i],c.d)+'</td>';}).join('');
-    return '<tr>'+tz+tds+'</tr>';
+    var ord='<td class="pf-order"><button type="button" class="pf-ord" data-zayavka data-order="'+g.e+'">Заказать</button></td>';
+    return '<tr>'+tz+tds+ord+'</tr>';
   }
   function more(){
     var end=Math.min(RENDER+STEP,CUR.length), html='';
@@ -271,6 +272,14 @@
   });
   if($('pfExport'))$('pfExport').addEventListener('click',exportCSV);
   if($('pfMore'))$('pfMore').addEventListener('click',more);
+
+  // кнопка «Заказать» в строке → подставить конкретный типоразмер в заявку (modal.js откроет форму по data-zayavka)
+  root.addEventListener('click',function(e){
+    var b=e.target.closest('[data-order]'); if(!b)return;
+    var model=b.getAttribute('data-order');
+    var msg=document.getElementById('zrMsg');
+    if(msg)msg.value='Заказ: редуктор '+model+'. Прошу рассчитать цену, срок поставки и подобрать исполнение.';
+  });
 
   // предзаполнить тип в сообщении формы-заявки (modal.js)
   Array.prototype.forEach.call(root.querySelectorAll('[data-zayavka]'),function(b){
