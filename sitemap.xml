@@ -128,4 +128,6 @@
   <url><loc>https://zavod-red.ru/oplata</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/garantiya</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/sitemap</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/pr</loc><priority>0.8</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/mr</loc><priority>0.8</priority></url>
 </urlset>
