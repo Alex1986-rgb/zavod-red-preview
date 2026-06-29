@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /
+Sitemap: https://zavod-red.ru/sitemap-tiporazmer.xml
