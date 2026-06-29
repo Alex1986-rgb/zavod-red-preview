@@ -1,7 +1,8 @@
-# Принудительный HTTPS (если работает mod_rewrite на хостинге)
+# Принудительный HTTPS — через X-Forwarded-Proto (Timeweb за nginx-прокси).
+# Редирект только если прокси явно передал http — иначе зацикливается.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
