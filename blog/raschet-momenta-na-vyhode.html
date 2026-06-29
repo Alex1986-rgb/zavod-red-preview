@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Расчёт крутящего момента на выходном валу редуктора</title>
 <meta name="description" content="Как рассчитать крутящий момент на выходном валу редуктора по формуле T=9550·P·КПД/n2: примеры расчёта, влияние КПД и оборотов, таблицы и калькулятор подбора." />
-<link rel="canonical" href="https://zavod-red.ru/blog/raschet-momenta-na-vyhode.html" />
+<link rel="canonical" href="https://zavod-red.ru/blog/raschet-momenta-na-vyhode" />
 <meta name="theme-color" content="#0b151d" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
 <link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zavod-red.ru/blog/raschet-momenta-na-vyhode.html" />
+<meta property="og:url" content="https://zavod-red.ru/blog/raschet-momenta-na-vyhode" />
 <meta property="og:title" content="Расчёт крутящего момента на выходном валу редуктора" />
 <meta property="og:description" content="Формула T=9550·P·КПД/n2 с примерами: как рассчитать момент на выходном валу редуктора и проверить запас по моменту." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
@@ -31,24 +31,24 @@
 .art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
 .art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Расчёт крутящего момента на выходном валу редуктора","description":"Как рассчитать крутящий момент на выходном валу редуктора по формуле T=9550·P·КПД/n2 — с примерами и таблицами.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/raschet-momenta-na-vyhode.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Расчёт момента на выходном валу","item":"https://zavod-red.ru/blog/raschet-momenta-na-vyhode.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Расчёт крутящего момента на выходном валу редуктора","description":"Как рассчитать крутящий момент на выходном валу редуктора по формуле T=9550·P·КПД/n2 — с примерами и таблицами.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/raschet-momenta-na-vyhode"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Расчёт момента на выходном валу","item":"https://zavod-red.ru/blog/raschet-momenta-na-vyhode"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"По какой формуле считают крутящий момент на выходном валу редуктора?","acceptedAnswer":{"@type":"Answer","text":"Базовая формула: T2 = 9550 · P · η / n2, где T2 — момент на выходном валу (Н·м), P — мощность двигателя (кВт), η — КПД редуктора (доля), n2 — обороты выходного вала (об/мин). Коэффициент 9550 переводит кВт и об/мин в ньютон-метры. Например, при P=4 кВт, η=0,95 и n2=47 об/мин момент равен T2 = 9550·4·0,95/47 ≈ 772 Н·м."}},{"@type":"Question","name":"Зачем в формуле момента учитывать КПД редуктора?","acceptedAnswer":{"@type":"Answer","text":"КПД показывает, какая доля мощности доходит до выходного вала после потерь в зацеплении и подшипниках. У цилиндрических редукторов η ≈ 0,96–0,98, у червячных при больших передаточных числах он падает до 0,5–0,7. Если не учесть КПД, расчётный момент червячного редуктора окажется завышенным, а реальная нагрузочная способность — ниже ожидаемой."}},{"@type":"Question","name":"Как пересчитать момент через передаточное число?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходе можно выразить через входной момент: T2 = T1 · i · η, где T1 — момент на входном валу, i — передаточное число, η — КПД. Поскольку n2 = n1 / i, эта запись эквивалентна формуле через мощность. Передаточное число умножает момент во столько же раз, во сколько снижает обороты, минус потери на КПД."}},{"@type":"Question","name":"Чем отличается номинальный момент редуктора от расчётного?","acceptedAnswer":{"@type":"Answer","text":"Расчётный (рабочий) момент — это то, что нужно вашему механизму. Номинальный момент редуктора (T2ном по каталогу) — максимально допустимый для длительной работы. Подбор верен, когда T2ном ≥ T2рабочий · Sf, где Sf — сервис-фактор. Запас по моменту покрывает пуски, удары и реверсы."}},{"@type":"Question","name":"Какой момент брать для подбора, если известна только мощность?","acceptedAnswer":{"@type":"Answer","text":"Если момент на машине напрямую не задан, его вычисляют из мощности и требуемых выходных оборотов по формуле T2 = 9550 · P · η / n2. Достаточно знать мощность двигателя, КПД редуктора по типу и обороты, которые нужны на рабочем органе. Полученное значение и есть исходный момент для подбора типоразмера."}},{"@type":"Question","name":"Как момент связан с радиальной нагрузкой на вал?","acceptedAnswer":{"@type":"Answer","text":"Если на выходном валу стоит звёздочка, шкив или шестерня радиусом R, то окружное усилие F = T2 / R создаёт радиальную (консольную) нагрузку на вал. Поэтому после расчёта момента отдельно проверяют допустимую консольную нагрузку редуктора — она может ограничить выбор раньше, чем сам момент."}},{"@type":"Question","name":"Можно ли рассчитать момент онлайн?","acceptedAnswer":{"@type":"Answer","text":"Да. Введите мощность, обороты и тип редуктора в калькулятор подбора на странице «Подбор» — он рассчитает выходные обороты, момент с учётом КПД и предложит подходящий типоразмер. Для точного подбора пришлите инженеру условия работы: режим, число пусков, нагрузки на вал."}}]}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
     <nav class="menu">
-      <a href="../catalog/index.html">Каталог редукторов</a>
-      <a href="../podbor.html">Подбор</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="index.html" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
-        <a href="../contacts.html">Контакты</a>
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
       <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
     </nav>
     <div class="nav-right">
@@ -60,7 +60,7 @@
   </div>
 </header>
 
-<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Расчёт момента на выходном валу</div>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Расчёт момента на выходном валу</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Подбор</div>
   <h1>Расчёт крутящего момента на выходном валу редуктора</h1>
@@ -93,7 +93,7 @@
   <p>Это рабочий момент. Для подбора его умножают на сервис-фактор и сравнивают с номинальным моментом типоразмера по каталогу.</p>
 
   <h2>Пример 2. Червячный редуктор</h2>
-  <p>Тот же двигатель 4 кВт и i = 40, но КПД <a href="../catalog/chervyachnye.html">червячного редуктора</a> при таком передаточном числе ниже — η ≈ 0,75.</p>
+  <p>Тот же двигатель 4 кВт и i = 40, но КПД <a href="/catalog/chervyachnye">червячного редуктора</a> при таком передаточном числе ниже — η ≈ 0,75.</p>
   <ul>
     <li>n<sub>2</sub> = 1500 / 40 = 37,5 об/мин;</li>
     <li>T<sub>2</sub> = 9550 · 4 · 0,75 / 37,5 ≈ <b>764 Н·м</b>.</li>
@@ -119,7 +119,7 @@
   <h2>Запас по моменту и сервис-фактор</h2>
   <p>Расчётный момент — это не итог подбора, а только его начало. Номинальный момент типоразмера должен превышать рабочий с запасом:</p>
   <div class="formula">T<sub>2ном</sub> ≥ T<sub>2рабочий</sub> · S<sub>f</sub></div>
-  <p>Сервис-фактор S<sub>f</sub> учитывает характер нагрузки, число пусков в час и продолжительность работы. Подробнее о его выборе — в статье <a href="servis-faktor-reduktora.html">«Сервис-фактор редуктора»</a> и материале <a href="podbor-reduktora-po-tipu-nagruzki.html">«Подбор редуктора по характеру нагрузки»</a>. Ниже — типовые значения для расчёта.</p>
+  <p>Сервис-фактор S<sub>f</sub> учитывает характер нагрузки, число пусков в час и продолжительность работы. Подробнее о его выборе — в статье <a href="/blog/servis-faktor-reduktora">«Сервис-фактор редуктора»</a> и материале <a href="/blog/podbor-reduktora-po-tipu-nagruzki">«Подбор редуктора по характеру нагрузки»</a>. Ниже — типовые значения для расчёта.</p>
   <div style="overflow-x:auto">
   <table class="spec"><tbody>
     <tr><th>Характер нагрузки</th><td>Сервис-фактор S<sub>f</sub></td></tr>
@@ -131,7 +131,7 @@
   <p>Например, рабочий момент 780 Н·м при ударной нагрузке с S<sub>f</sub> = 1,8 требует редуктора с T<sub>2ном</sub> ≥ 1404 Н·м — то есть на типоразмер крупнее, чем по «голому» расчёту.</p>
 
   <h2>Вывод</h2>
-  <p>Момент на выходном валу считается по формуле T<sub>2</sub> = 9550·P·η/n<sub>2</sub>, обязательно с учётом КПД конкретного типа редуктора. Полученное значение умножают на сервис-фактор и сравнивают с каталожным T<sub>2ном</sub>. Чтобы не считать вручную, откройте <a href="../podbor.html#kalkulyator">калькулятор подбора редуктора</a> — он рассчитает обороты, момент и предложит типоразмер. Для проверки под реальные условия пришлите инженеру режим работы и нагрузки на вал.</p>
+  <p>Момент на выходном валу считается по формуле T<sub>2</sub> = 9550·P·η/n<sub>2</sub>, обязательно с учётом КПД конкретного типа редуктора. Полученное значение умножают на сервис-фактор и сравнивают с каталожным T<sub>2ном</sub>. Чтобы не считать вручную, откройте <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> — он рассчитает обороты, момент и предложит типоразмер. Для проверки под реальные условия пришлите инженеру режим работы и нагрузки на вал.</p>
 
 </div></div></section>
 
@@ -150,7 +150,7 @@
     <tr><th>n2 = 37,5 об/мин, η=0,75</th><td>T2 ≈ 764 Н·м</td></tr>
     <tr><th>n2 = 18 об/мин, η=0,95</th><td>T2 ≈ 2017 Н·м</td></tr>
     <tr><th>n2 = 9 об/мин, η=0,94</th><td>T2 ≈ 3990 Н·м</td></tr>
-  </tbody></table><p>Рассчитать момент и подобрать редуктор онлайн можно в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> или на странице <a href="../podbor.html">подбора редуктора</a>. Пришлите мощность, обороты и условия работы — инженер проверит момент, КПД и консольную нагрузку.</p></div></details></div></div></section>
+  </tbody></table><p>Рассчитать момент и подобрать редуктор онлайн можно в <a href="/podbor#kalkulyator">калькуляторе подбора</a> или на странице <a href="/podbor">подбора редуктора</a>. Пришлите мощность, обороты и условия работы — инженер проверит момент, КПД и консольную нагрузку.</p></div></details></div></div></section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -166,10 +166,10 @@
   <div class="eyebrow">Блог</div>
   <h2 style="font-size:26px">Читайте также</h2>
   <div class="xgrid">
-    <a class="xcard" href="raschet-peredatochnogo-chisla.html"><b>Расчёт передаточного числа</b><span>Как найти i по входным и выходным оборотам</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="konsolnaya-nagruzka-reduktora.html"><b>Консольная нагрузка редуктора</b><span>Как учесть радиальную нагрузку на вал</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="servis-faktor-reduktora.html"><b>Сервис-фактор редуктора</b><span>Запас по моменту под режим работы</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="chto-takoe-kpd-reduktora.html"><b>Что такое КПД редуктора</b><span>Потери в зацеплении и их влияние на момент</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/raschet-peredatochnogo-chisla"><b>Расчёт передаточного числа</b><span>Как найти i по входным и выходным оборотам</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/konsolnaya-nagruzka-reduktora"><b>Консольная нагрузка редуктора</b><span>Как учесть радиальную нагрузку на вал</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/servis-faktor-reduktora"><b>Сервис-фактор редуктора</b><span>Запас по моменту под режим работы</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/chto-takoe-kpd-reduktora"><b>Что такое КПД редуктора</b><span>Потери в зацеплении и их влияние на момент</span><span class="xcard-go">Читать →</span></a>
   </div>
 </div></section>
 
@@ -186,34 +186,34 @@
     </div>
     <div class="sf-col">
       <h4>Каталог</h4>
-      <a href="../catalog/chervyachnye.html">Червячные</a>
-      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
-      <a href="../catalog/soosnye.html">Соосные</a>
-      <a href="../catalog/konichesko-cilindricheskie.html">Цилиндро-конические</a>
-      <a href="../catalog/planetarnye.html">Планетарные</a>
-      <a href="../catalog/index.html">Весь каталог →</a>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
     </div>
     <div class="sf-col">
       <h4>Разделы</h4>
-      <a href="../podbor.html">Подбор редуктора</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../dostavka-raschet.html">Расчёт доставки</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям оборудования</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="../blog/index.html">Блог</a>
-      <a href="../cases/index.html">Кейсы</a>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a>
     </div>
     <div class="sf-col">
       <h4>Компания</h4>
-      <a href="../about.html">О заводе</a>
-      <a href="../sertifikaty.html">Сертификаты и качество</a>
-      <a href="../contacts.html">Контакты</a><a href="../oplata.html">Оплата и реквизиты</a><a href="../garantiya.html">Гарантия</a>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
       <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
     </div>
   </div>
   <div class="wrap sf-bottom">
     <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
-    <span><a href="../privacy.html">Политика конфиденциальности</a> · <a href="../agreement.html">Пользовательское соглашение</a> · <a href="../sitemap.html">Карта сайта</a></span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
 

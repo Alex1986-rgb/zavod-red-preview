@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Подбор редуктора по передаточному числу — ряд i</title>
 <meta name="description" content="Как подобрать редуктор по передаточному числу: формула i=n1/n2, стандартный ряд передаточных чисел, выбор ближайшего значения и связь i с моментом и оборотами." />
-<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu.html" />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu" />
 <meta name="theme-color" content="#0b151d" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
 <link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu.html" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu" />
 <meta property="og:title" content="Подбор редуктора по передаточному числу — ряд i" />
 <meta property="og:description" content="Формула i=n1/n2, стандартный ряд передаточных чисел и выбор ближайшего значения при подборе редуктора." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
@@ -30,24 +30,24 @@
 .art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
 .art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по передаточному числу: ряд i и калькулятор","description":"Как подобрать редуктор по передаточному числу: формула i=n1/n2, стандартный ряд передаточных чисел, выбор ближайшего значения и связь i с моментом и оборотами.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по передаточному числу","item":"https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по передаточному числу: ряд i и калькулятор","description":"Как подобрать редуктор по передаточному числу: формула i=n1/n2, стандартный ряд передаточных чисел, выбор ближайшего значения и связь i с моментом и оборотами.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по передаточному числу","item":"https://zavod-red.ru/blog/podbor-reduktora-po-peredatochnomu"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как рассчитать передаточное число редуктора?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число равно отношению входных оборотов к выходным: i = n1/n2. Например, при оборотах двигателя 1500 об/мин и требуемых 50 об/мин на выходе передаточное число равно 30. Это же отношение справедливо для моментов в обратную сторону: момент на выходе больше входного в i раз за вычетом потерь на КПД."}},{"@type":"Question","name":"Какой стандартный ряд передаточных чисел у редукторов?","acceptedAnswer":{"@type":"Answer","text":"Передаточные числа задают рядом предпочтительных чисел, например 1,4; 1,6; 1,8; 2; 2,24; 2,5; 2,8; 3,15; 3,55; 4; 4,5; 5; 5,6; 6,3; 7,1; 8; 9; 10 и далее с тем же шагом до сотен. У многоступенчатых серий итоговое i — произведение чисел ступеней. Точное расчётное значение редко совпадает с рядом, поэтому берут ближайшее."}},{"@type":"Question","name":"Что выбрать, если расчётное передаточное число между двумя табличными?","acceptedAnswer":{"@type":"Answer","text":"Берут ближайшее значение ряда и проверяют, как изменятся обороты на выходе. Большее передаточное число даёт меньшие обороты и больший момент, меньшее — наоборот. Если технология допускает небольшое отклонение скорости, выбирают ближайшее. Если обороты критичны, склоняются к значению, дающему скорость чуть ниже требуемой, либо применяют вариатор."}},{"@type":"Question","name":"Как передаточное число связано с моментом?","acceptedAnswer":{"@type":"Answer","text":"Редуктор увеличивает момент во столько раз, во сколько снижает обороты, за вычетом потерь: T2 = T1·i·η. Чем больше передаточное число, тем выше момент на выходе и тем ниже обороты. Поэтому при большом i важно проверить, что выходной вал и зацепление выдерживают возросший момент, а не только что обороты совпадают."}},{"@type":"Question","name":"Можно ли получить большое передаточное число одним редуктором?","acceptedAnswer":{"@type":"Answer","text":"У одноступенчатого редуктора передаточное число ограничено: у цилиндрической ступени обычно до 6,3–8, у червячной до 80. Для больших значений применяют двух- и трёхступенчатые передачи, где итоговое i — произведение ступеней, либо комбинируют типы. Так получают передаточные числа в сотни единиц при сохранении КПД."}},{"@type":"Question","name":"Почему у червячного редуктора передаточное число влияет на КПД?","acceptedAnswer":{"@type":"Answer","text":"У червячной передачи с ростом передаточного числа уменьшается угол подъёма витка и растёт доля трения скольжения, поэтому КПД падает. При i до 20 КПД 0,8–0,9, а при i 40–80 он снижается до 0,55–0,75. Это нужно учитывать: при большом i полезный момент на выходе оказывается заметно меньше, чем у цилиндрической передачи."}},{"@type":"Question","name":"Как подобрать аналог редуктора по передаточному числу?","acceptedAnswer":{"@type":"Answer","text":"Сначала уточняют точное передаточное число заменяемого редуктора по шильдику или расчётом по оборотам. Затем подбирают модель с тем же или ближайшим i из ряда, проверяют момент, обороты и присоединительные размеры. Если точного i в ряду аналога нет, выбирают ближайшее и согласуют допустимое отклонение оборотов с технологией."}}]}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
     <nav class="menu">
-      <a href="../catalog/index.html">Каталог редукторов</a>
-      <a href="../podbor.html">Подбор</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="index.html" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
-        <a href="../contacts.html">Контакты</a>
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
       <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
     </nav>
     <div class="nav-right">
@@ -59,7 +59,7 @@
   </div>
 </header>
 
-<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Подбор редуктора по передаточному числу</div>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по передаточному числу</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Подбор</div>
   <h1>Подбор редуктора по передаточному числу</h1>
@@ -74,7 +74,7 @@
   <p>Передаточное число i — отношение входных оборотов к выходным: <b>i = n<sub>1</sub> / n<sub>2</sub></b>. То же отношение в обратную сторону справедливо для моментов: момент на выходе больше входного в i раз за вычетом потерь. Передаточное число — безразмерная величина; чем оно больше, тем сильнее редуктор снижает скорость и увеличивает момент.</p>
 
   <h2>Как рассчитать передаточное число</h2>
-  <p>Если известны обороты двигателя и требуемые обороты на выходе, передаточное число получают делением. Например, при n<sub>1</sub> = 1500 об/мин и n<sub>2</sub> = 50 об/мин: i = 1500 / 50 = 30. Если задан момент, передаточное число можно оценить через моменты: i ≈ T<sub>2</sub> / (T<sub>1</sub> · η). Подробный разбор с примерами — в статье <a href="raschet-peredatochnogo-chisla.html">расчёт передаточного числа</a>.</p>
+  <p>Если известны обороты двигателя и требуемые обороты на выходе, передаточное число получают делением. Например, при n<sub>1</sub> = 1500 об/мин и n<sub>2</sub> = 50 об/мин: i = 1500 / 50 = 30. Если задан момент, передаточное число можно оценить через моменты: i ≈ T<sub>2</sub> / (T<sub>1</sub> · η). Подробный разбор с примерами — в статье <a href="/blog/raschet-peredatochnogo-chisla">расчёт передаточного числа</a>.</p>
 
   <h2>Стандартный ряд передаточных чисел</h2>
   <p>Передаточные числа серий задают рядом предпочтительных чисел со знаменателем около 1,12. У многоступенчатых редукторов итоговое i — произведение чисел ступеней, поэтому ряд получается плотным.</p>
@@ -90,12 +90,12 @@
   <div class="note">Точное расчётное передаточное число почти никогда не совпадает с рядом. Берут ближайшее значение и проверяют, как изменятся обороты на выходе и момент.</div>
 
   <h2>Выбор ближайшего значения</h2>
-  <p>Если расчётное i попадает между двумя табличными, решение зависит от технологии. Большее передаточное число даёт меньшие обороты и больший момент, меньшее — наоборот. Когда скорость на выходе допускает отклонение, выбирают ближайшее значение. Когда обороты критичны, склоняются к варианту чуть ниже требуемой скорости или применяют <a href="../catalog/variatory.html">вариатор</a> для плавной подстройки.</p>
+  <p>Если расчётное i попадает между двумя табличными, решение зависит от технологии. Большее передаточное число даёт меньшие обороты и больший момент, меньшее — наоборот. Когда скорость на выходе допускает отклонение, выбирают ближайшее значение. Когда обороты критичны, склоняются к варианту чуть ниже требуемой скорости или применяют <a href="/catalog/variatory">вариатор</a> для плавной подстройки.</p>
 
   <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — подбор по передаточному числу" loading="lazy"><figcaption>Передаточное число задаёт скорость и момент на выходе</figcaption></figure>
 
   <h2>Передаточное число и момент</h2>
-  <p>Редуктор увеличивает момент во столько раз, во сколько снижает обороты: <b>T<sub>2</sub> = T<sub>1</sub> · i · η</b>. Чем больше i, тем выше момент на выходе и тем сильнее нагружены вал и зацепление. Поэтому при большом передаточном числе проверяют не только обороты, но и допустимый момент типоразмера. Силовая часть подбора разобрана в статье <a href="podbor-reduktora-po-momentu.html">подбор по крутящему моменту</a>.</p>
+  <p>Редуктор увеличивает момент во столько раз, во сколько снижает обороты: <b>T<sub>2</sub> = T<sub>1</sub> · i · η</b>. Чем больше i, тем выше момент на выходе и тем сильнее нагружены вал и зацепление. Поэтому при большом передаточном числе проверяют не только обороты, но и допустимый момент типоразмера. Силовая часть подбора разобрана в статье <a href="/blog/podbor-reduktora-po-momentu">подбор по крутящему моменту</a>.</p>
 
   <table class="spec"><tbody>
     <tr><th>i = 5, n<sub>1</sub> = 1500</th><td>n<sub>2</sub> = 300 об/мин, момент ×5</td></tr>
@@ -109,7 +109,7 @@
   <p>Передаточное число одной ступени ограничено типом передачи. У цилиндрической ступени оно обычно до 6,3–8, у червячной — до 80, но с падением КПД. Для больших значений применяют многоступенчатые передачи, где итоговое i — произведение ступеней. У червячных передач рост i снижает КПД: при i до 20 он 0,8–0,9, при i 40–80 — 0,55–0,75, и полезный момент на выходе уменьшается.</p>
 
   <h2>Вывод</h2>
-  <p>Подбор по передаточному числу — это расчёт i = n<sub>1</sub>/n<sub>2</sub>, выбор ближайшего значения из ряда и проверка момента на выходе. При большом i учитывают падение КПД у червячных передач и переход на многоступенчатые. Пришлите обороты двигателя и требуемые на выходе или передаточное число заменяемого редуктора, и инженер Завода Редукторов подберёт серию и типоразмер. Рассчитать i можно в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a>.</p>
+  <p>Подбор по передаточному числу — это расчёт i = n<sub>1</sub>/n<sub>2</sub>, выбор ближайшего значения из ряда и проверка момента на выходе. При большом i учитывают падение КПД у червячных передач и переход на многоступенчатые. Пришлите обороты двигателя и требуемые на выходе или передаточное число заменяемого редуктора, и инженер Завода Редукторов подберёт серию и типоразмер. Рассчитать i можно в <a href="/podbor#kalkulyator">калькуляторе подбора</a>.</p>
 
 </div></div></section>
 
@@ -126,7 +126,7 @@
     <tr><th>Червячная ступень</th><td>i до 80, КПД падает с ростом i</td></tr>
     <tr><th>Двухступенчатая</th><td>i до ~50, произведение ступеней</td></tr>
     <tr><th>Трёхступенчатая</th><td>i до сотен единиц</td></tr>
-  </tbody></table><p>Рассчитать передаточное число и подобрать серию можно в <a href="../podbor.html#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="../podbor.html">подбора редуктора по параметрам</a>. Для больших i с самоторможением смотрите <a href="../catalog/chervyachnye.html">червячные редукторы</a>.</p></div></details></div></div></section>
+  </tbody></table><p>Рассчитать передаточное число и подобрать серию можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для больших i с самоторможением смотрите <a href="/catalog/chervyachnye">червячные редукторы</a>.</p></div></details></div></div></section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -142,9 +142,9 @@
   <div class="eyebrow">Блог</div>
   <h2 style="font-size:26px">Читайте также</h2>
   <div class="xgrid">
-    <a class="xcard" href="podbor-reduktora-po-oborotam.html"><b>Подбор по оборотам на выходе</b><span>Как обороты задают передаточное число</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="podbor-reduktora-po-momentu.html"><b>Подбор по крутящему моменту</b><span>Связь i с моментом T2=T1·i·η</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="raschet-peredatochnogo-chisla.html"><b>Расчёт передаточного числа</b><span>Формула i=n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-oborotam"><b>Подбор по оборотам на выходе</b><span>Как обороты задают передаточное число</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-momentu"><b>Подбор по крутящему моменту</b><span>Связь i с моментом T2=T1·i·η</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/raschet-peredatochnogo-chisla"><b>Расчёт передаточного числа</b><span>Формула i=n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
   </div>
 </div></section>
 
@@ -161,34 +161,34 @@
     </div>
     <div class="sf-col">
       <h4>Каталог</h4>
-      <a href="../catalog/chervyachnye.html">Червячные</a>
-      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
-      <a href="../catalog/soosnye.html">Соосные</a>
-      <a href="../catalog/konichesko-cilindricheskie.html">Цилиндро-конические</a>
-      <a href="../catalog/planetarnye.html">Планетарные</a>
-      <a href="../catalog/index.html">Весь каталог →</a>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
     </div>
     <div class="sf-col">
       <h4>Разделы</h4>
-      <a href="../podbor.html">Подбор редуктора</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../dostavka-raschet.html">Расчёт доставки</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям оборудования</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="../blog/index.html">Блог</a>
-      <a href="../cases/index.html">Кейсы</a>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a>
     </div>
     <div class="sf-col">
       <h4>Компания</h4>
-      <a href="../about.html">О заводе</a>
-      <a href="../sertifikaty.html">Сертификаты и качество</a>
-      <a href="../contacts.html">Контакты</a><a href="../oplata.html">Оплата и реквизиты</a><a href="../garantiya.html">Гарантия</a>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
       <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
     </div>
   </div>
   <div class="wrap sf-bottom">
     <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
-    <span><a href="../privacy.html">Политика конфиденциальности</a> · <a href="../agreement.html">Пользовательское соглашение</a> · <a href="../sitemap.html">Карта сайта</a></span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
 

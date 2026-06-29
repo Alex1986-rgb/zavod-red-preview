@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Подбор редуктора под двигатель 1500 об/мин</title>
 <meta name="description" content="Подбор редуктора под двигатель 1500 об/мин: как от n_вх=1500/1400 рассчитать выходные обороты n_вых=n_вх/i, передаточное число и момент. Формулы и калькулятор." />
-<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min.html" />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min" />
 <meta name="theme-color" content="#0b151d" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
 <link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min.html" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min" />
 <meta property="og:title" content="Подбор редуктора под двигатель 1500 об/мин" />
 <meta property="og:description" content="Как от 1500 (1400) об/мин на входе рассчитать выходные обороты, передаточное число и момент редуктора." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
@@ -30,24 +30,24 @@
 .art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
 .art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора под двигатель 1500 об/мин","description":"Как от 1500 (1400) об/мин на входе рассчитать выходные обороты, передаточное число и момент редуктора.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора под 1500 об/мин","item":"https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора под двигатель 1500 об/мин","description":"Как от 1500 (1400) об/мин на входе рассчитать выходные обороты, передаточное число и момент редуктора.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора под 1500 об/мин","item":"https://zavod-red.ru/blog/podbor-reduktora-1500-ob-min"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему пишут и 1500, и 1400 об/мин для одного двигателя?","acceptedAnswer":{"@type":"Answer","text":"1500 об/мин — это синхронная частота вращения четырёхполюсного двигателя при 50 Гц. Реальные обороты под нагрузкой ниже на величину скольжения и составляют около 1400–1460 об/мин. Для расчёта передаточного числа берут номинальные обороты с шильдика (например 1430), а 1500 используют как округлённую синхронную величину."}},{"@type":"Question","name":"Как рассчитать выходные обороты редуктора при 1500 об/мин?","acceptedAnswer":{"@type":"Answer","text":"Выходные обороты равны входным, делённым на передаточное число: nвых = nвх / i. Например, при 1500 об/мин и i = 30 на выходе получится 50 об/мин, при i = 50 — 30 об/мин. Если известны требуемые выходные обороты, передаточное число находят обратной формулой i = nвх / nвых."}},{"@type":"Question","name":"Какое передаточное число нужно для 1500 об/мин?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число зависит от того, какие выходные обороты нужны механизму. Его считают как i = 1500 / nвых. Для 50 об/мин нужно i = 30, для 25 об/мин — i = 60, для 100 об/мин — i = 15. Точное значение берут из ряда выбранной серии, ближайшее к расчётному."}},{"@type":"Question","name":"Как меняется момент на выходе при 1500 об/мин и разном i?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходе считают по формуле T = 9550 · P · η / nвых. При фиксированной мощности и оборотах двигателя 1500 чем больше передаточное число, тем ниже выходные обороты и выше момент. То есть редуктор с большим i даёт большее усилие на тихоходном валу."}},{"@type":"Question","name":"Чем 1500 об/мин отличается от 3000, 1000 и 750 для подбора?","acceptedAnswer":{"@type":"Answer","text":"Это синхронные частоты двигателей с разным числом полюсов: 3000 — двухполюсный, 1500 — четырёхполюсный, 1000 — шестиполюсный, 750 — восьмиполюсный. Чем ниже входные обороты при том же требуемом выходе, тем меньше нужно передаточное число. 1500 об/мин — самый распространённый вход для мотор-редукторов."}},{"@type":"Question","name":"Можно ли подобрать редуктор под 1500 об/мин онлайн?","acceptedAnswer":{"@type":"Answer","text":"Да. В калькуляторе подбора укажите входные обороты 1500 (или паспортные 1400–1460), мощность двигателя и требуемые выходные обороты. Калькулятор рассчитает передаточное число и момент и покажет подходящие типоразмеры. Инженер подтвердит присоединительные размеры после заявки."}},{"@type":"Question","name":"Что важнее задать — выходные обороты или передаточное число?","acceptedAnswer":{"@type":"Answer","text":"Достаточно любого из двух при известных входных оборотах. Если механизм требует конкретную скорость рабочего органа, задают выходные обороты, и калькулятор находит i = 1500/nвых. Если редуктор подбирают как замену, обычно известно передаточное число — тогда проверяют, какие выходные обороты оно даст."}}]}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
     <nav class="menu">
-      <a href="../catalog/index.html">Каталог редукторов</a>
-      <a href="../podbor.html">Подбор</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="index.html" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
-        <a href="../contacts.html">Контакты</a>
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
       <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
     </nav>
     <div class="nav-right">
@@ -59,7 +59,7 @@
   </div>
 </header>
 
-<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Подбор редуктора под 1500 об/мин</div>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора под 1500 об/мин</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Подбор</div>
   <h1>Подбор редуктора под двигатель 1500 об/мин</h1>
@@ -117,10 +117,10 @@
     <li><b>Передаточное число</b> i = 1500 / n<sub>вых</sub> — ближайшее из ряда серии;</li>
     <li><b>Момент с сервис-фактором</b> — запас под режим и пуски.</li>
   </ul>
-  <p>Посчитать всё сразу удобно в <a href="../podbor.html#kalkulyator">калькуляторе подбора редуктора</a>: укажите вход 1500, мощность и нужные выходные обороты — система найдёт i, момент и типоразмер. Для червячных приводов перейдите в <a href="../catalog/chervyachnye.html#kalkulyator">подбор червячного редуктора</a>.</p>
+  <p>Посчитать всё сразу удобно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a>: укажите вход 1500, мощность и нужные выходные обороты — система найдёт i, момент и типоразмер. Для червячных приводов перейдите в <a href="/catalog/chervyachnye#kalkulyator">подбор червячного редуктора</a>.</p>
 
   <h2>Вывод</h2>
-  <p>Подбор редуктора под двигатель 1500 об/мин строится на формуле n<sub>вых</sub> = n<sub>вх</sub> / i. Зная вход (1500 или паспортные 1400), требуемые выходные обороты и мощность, легко найти передаточное число и момент, а затем типоразмер с запасом по сервис-фактору. Откройте <a href="../podbor.html#kalkulyator">калькулятор подбора</a> или пришлите шильдик мотора — инженер Завода Редукторов подтвердит расчёт и пришлёт КП. Цены на импорт — по запросу.</p>
+  <p>Подбор редуктора под двигатель 1500 об/мин строится на формуле n<sub>вых</sub> = n<sub>вх</sub> / i. Зная вход (1500 или паспортные 1400), требуемые выходные обороты и мощность, легко найти передаточное число и момент, а затем типоразмер с запасом по сервис-фактору. Откройте <a href="/podbor#kalkulyator">калькулятор подбора</a> или пришлите шильдик мотора — инженер Завода Редукторов подтвердит расчёт и пришлёт КП. Цены на импорт — по запросу.</p>
 
 </div></div></section>
 
@@ -144,7 +144,7 @@
     <tr><th>Передаточное число i</th><td>i = 1500 / n2</td></tr>
     <tr><th>Момент на выходе T</th><td>T = 9550 · P · η / n2</td></tr>
     <tr><th>Мощность P</th><td>P = T · n2 / (9550 · η)</td></tr>
-  </tbody></table><p>Рассчитать редуктор под 1500 об/мин удобно в <a href="../podbor.html#kalkulyator">калькуляторе подбора редуктора</a>. См. также материал блога <a href="raschet-peredatochnogo-chisla.html">расчёт передаточного числа</a> и <a href="../catalog/chervyachnye.html#kalkulyator">подбор червячного редуктора</a>. Пришлите шильдик мотора и требуемые выходные обороты — найдём i, момент и типоразмер.</p></div></details></div></div></section>
+  </tbody></table><p>Рассчитать редуктор под 1500 об/мин удобно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a>. См. также материал блога <a href="/blog/raschet-peredatochnogo-chisla">расчёт передаточного числа</a> и <a href="/catalog/chervyachnye#kalkulyator">подбор червячного редуктора</a>. Пришлите шильдик мотора и требуемые выходные обороты — найдём i, момент и типоразмер.</p></div></details></div></div></section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -160,9 +160,9 @@
   <div class="eyebrow">Блог</div>
   <h2 style="font-size:26px">Читайте также</h2>
   <div class="xgrid">
-    <a class="xcard" href="raschet-peredatochnogo-chisla.html"><b>Расчёт передаточного числа</b><span>Формула i = n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="podbor-motor-reduktora.html"><b>Подбор мотор-редуктора</b><span>Расчёт по мощности и оборотам</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="kak-podobrat-dvigatel-k-reduktoru.html"><b>Подбор двигателя к редуктору</b><span>Согласование оборотов и мощности</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/raschet-peredatochnogo-chisla"><b>Расчёт передаточного числа</b><span>Формула i = n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-motor-reduktora"><b>Подбор мотор-редуктора</b><span>Расчёт по мощности и оборотам</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/kak-podobrat-dvigatel-k-reduktoru"><b>Подбор двигателя к редуктору</b><span>Согласование оборотов и мощности</span><span class="xcard-go">Читать →</span></a>
   </div>
 </div></section>
 
@@ -179,34 +179,34 @@
     </div>
     <div class="sf-col">
       <h4>Каталог</h4>
-      <a href="../catalog/chervyachnye.html">Червячные</a>
-      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
-      <a href="../catalog/soosnye.html">Соосные</a>
-      <a href="../catalog/konichesko-cilindricheskie.html">Цилиндро-конические</a>
-      <a href="../catalog/planetarnye.html">Планетарные</a>
-      <a href="../catalog/index.html">Весь каталог →</a>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
     </div>
     <div class="sf-col">
       <h4>Разделы</h4>
-      <a href="../podbor.html">Подбор редуктора</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../dostavka-raschet.html">Расчёт доставки</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям оборудования</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="../blog/index.html">Блог</a>
-      <a href="../cases/index.html">Кейсы</a>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a>
     </div>
     <div class="sf-col">
       <h4>Компания</h4>
-      <a href="../about.html">О заводе</a>
-      <a href="../sertifikaty.html">Сертификаты и качество</a>
-      <a href="../contacts.html">Контакты</a><a href="../oplata.html">Оплата и реквизиты</a><a href="../garantiya.html">Гарантия</a>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
       <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
     </div>
   </div>
   <div class="wrap sf-bottom">
     <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
-    <span><a href="../privacy.html">Политика конфиденциальности</a> · <a href="../agreement.html">Пользовательское соглашение</a> · <a href="../sitemap.html">Карта сайта</a></span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
 

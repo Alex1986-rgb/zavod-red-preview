@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Подбор редуктора по мощности двигателя — расчёт</title>
 <meta name="description" content="Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и формула пересчёта мощности в момент." />
-<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti.html" />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti" />
 <meta name="theme-color" content="#0b151d" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
 <link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti.html" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti" />
 <meta property="og:title" content="Подбор редуктора по мощности двигателя — расчёт" />
 <meta property="og:description" content="Стандартный ряд мощностей, тепловой запас, КПД по типам передач и пересчёт мощности в момент при подборе редуктора." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
@@ -30,24 +30,24 @@
 .art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
 .art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по мощности двигателя: расчёт и калькулятор","description":"Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и пересчёт мощности в момент.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по мощности","item":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по мощности двигателя: расчёт и калькулятор","description":"Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и пересчёт мощности в момент.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по мощности","item":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как подобрать редуктор по мощности двигателя?","acceptedAnswer":{"@type":"Answer","text":"Возьмите мощность с шильдика двигателя в кВт и сравните её с допустимой механической мощностью редуктора на нужном передаточном числе и оборотах. Допустимая мощность редуктора должна быть не ниже мощности двигателя с учётом сервис-фактора. Затем мощность пересчитывают в момент на выходе по формуле T2 = 9550·P·η/n2, чтобы проверить запас по моменту."}},{"@type":"Question","name":"Можно ли поставить редуктор с большей мощностью, чем у двигателя?","acceptedAnswer":{"@type":"Answer","text":"Да, и это нормальная практика. Редуктор с запасом по допустимой мощности работает менее нагруженно, меньше греется и служит дольше. Главное — чтобы совпали обороты, передаточное число и присоединительные размеры. Ставить редуктор с допустимой мощностью ниже мощности двигателя нельзя: возможен перегрев и поломка зацепления."}},{"@type":"Question","name":"Зачем учитывать КПД при подборе по мощности?","acceptedAnswer":{"@type":"Answer","text":"Часть мощности теряется в зацеплении и подшипниках. У цилиндрических передач КПД 0,96–0,98, у червячных 0,7–0,9 в зависимости от передаточного числа. При расчёте момента на выходе мощность умножают на КПД, поэтому червячный редуктор при той же входной мощности даёт меньший полезный момент, чем цилиндрический."}},{"@type":"Question","name":"Что такое тепловая мощность редуктора?","acceptedAnswer":{"@type":"Answer","text":"Тепловая мощность — это мощность, которую редуктор способен длительно рассеивать без перегрева масла при заданной температуре среды и режиме S1. Для крупных червячных и для непрерывной работы тепловая мощность может оказаться ниже механической, и именно она ограничивает передаваемую мощность. Тогда подбирают больший типоразмер или принудительное охлаждение."}},{"@type":"Question","name":"Какой стандартный ряд мощностей у двигателей и редукторов?","acceptedAnswer":{"@type":"Answer","text":"Стандартный ряд мощностей электродвигателей: 0,18; 0,25; 0,37; 0,55; 0,75; 1,1; 1,5; 2,2; 3; 4; 5,5; 7,5; 11; 15; 18,5; 22; 30; 37; 45 кВт и далее. Редукторы и мотор-редукторы привязывают к этому ряду, поэтому подбор удобно вести по ближайшей ступени мощности и нужным оборотам на выходе."}},{"@type":"Question","name":"Как мощность пересчитать в крутящий момент на выходе?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходном валу считают по формуле T2 = 9550·P·η/n2, где P — мощность двигателя в кВт, η — КПД редуктора, n2 — обороты на выходе в об/мин, T2 — момент в Н·м. Например, при P=4 кВт, η=0,95 и n2=50 об/мин момент составит около 726 Н·м. Это значение проверяют против допустимого момента типоразмера."}},{"@type":"Question","name":"Что важнее при подборе — мощность или момент?","acceptedAnswer":{"@type":"Answer","text":"Главный силовой параметр на выходе — крутящий момент, поэтому окончательная проверка типоразмера идёт по моменту. Но подбор удобно начинать с мощности двигателя, потому что её всегда знают по шильдику. Мощность задаёт диапазон типоразмеров и тепловой режим, а момент с сервис-фактором уточняет конкретную модель."}}]}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
     <nav class="menu">
-      <a href="../catalog/index.html">Каталог редукторов</a>
-      <a href="../podbor.html">Подбор</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="index.html" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
-        <a href="../contacts.html">Контакты</a>
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
       <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
     </nav>
     <div class="nav-right">
@@ -59,7 +59,7 @@
   </div>
 </header>
 
-<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Подбор редуктора по мощности</div>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по мощности</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Подбор</div>
   <h1>Подбор редуктора по мощности двигателя</h1>
@@ -101,7 +101,7 @@
   <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический мотор-редуктор для подбора по мощности двигателя" loading="lazy"><figcaption>Цилиндрический мотор-редуктор — высокий КПД и минимальные потери мощности</figcaption></figure>
 
   <h2>Пересчёт мощности в момент на выходе</h2>
-  <p>Чтобы проверить типоразмер по силовому параметру, мощность пересчитывают в крутящий момент на выходном валу по формуле <b>T<sub>2</sub> = 9550 · P · η / n<sub>2</sub></b>, где P — мощность двигателя в кВт, η — КПД редуктора, n<sub>2</sub> — обороты на выходе в об/мин, T<sub>2</sub> — момент в Н·м. Например, при P = 4 кВт, η = 0,95 и n<sub>2</sub> = 50 об/мин момент составит около 726 Н·м. Полученное значение сравнивают с допустимым моментом типоразмера с учётом сервис-фактора — рассчитать это удобно в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a>.</p>
+  <p>Чтобы проверить типоразмер по силовому параметру, мощность пересчитывают в крутящий момент на выходном валу по формуле <b>T<sub>2</sub> = 9550 · P · η / n<sub>2</sub></b>, где P — мощность двигателя в кВт, η — КПД редуктора, n<sub>2</sub> — обороты на выходе в об/мин, T<sub>2</sub> — момент в Н·м. Например, при P = 4 кВт, η = 0,95 и n<sub>2</sub> = 50 об/мин момент составит около 726 Н·м. Полученное значение сравнивают с допустимым моментом типоразмера с учётом сервис-фактора — рассчитать это удобно в <a href="/podbor#kalkulyator">калькуляторе подбора</a>.</p>
 
   <h2>Тепловая мощность и режим работы</h2>
   <p>Кроме механической мощности, у редуктора есть тепловая — та, что он способен длительно рассеивать без перегрева масла. При непрерывной работе S1, высокой температуре среды или у крупных червячных передач тепловая мощность может оказаться ниже механической и именно она ограничивает передачу. В таких случаях берут больший типоразмер, переходят на цилиндрическую передачу с высоким КПД или предусматривают принудительное охлаждение.</p>
@@ -115,7 +115,7 @@
   </tbody></table>
 
   <h2>Вывод</h2>
-  <p>Подбор по мощности — это удобная стартовая точка, но не финал. Возьмите мощность с шильдика, выберите ближайшую ступень ряда и нужные обороты, затем пересчитайте мощность в момент с учётом КПД и проверьте тепловой режим. Если сомневаетесь — пришлите мощность двигателя, обороты и характер нагрузки, и инженер Завода Редукторов рассчитает типоразмер. См. также подбор <a href="podbor-motor-reduktora.html">мотор-редуктора по мощности и оборотам</a>.</p>
+  <p>Подбор по мощности — это удобная стартовая точка, но не финал. Возьмите мощность с шильдика, выберите ближайшую ступень ряда и нужные обороты, затем пересчитайте мощность в момент с учётом КПД и проверьте тепловой режим. Если сомневаетесь — пришлите мощность двигателя, обороты и характер нагрузки, и инженер Завода Редукторов рассчитает типоразмер. См. также подбор <a href="/blog/podbor-motor-reduktora">мотор-редуктора по мощности и оборотам</a>.</p>
 
 </div></div></section>
 
@@ -132,7 +132,7 @@
     <tr><th>Тепловой режим</th><td>проверка тепловой мощности при S1</td></tr>
     <tr><th>Полезный момент</th><td>через КПД и обороты на выходе</td></tr>
     <tr><th>Запас под нагрузку</th><td>сервис-фактор 1,0–2,0+</td></tr>
-  </tbody></table><p>Рассчитать всё это можно в <a href="../podbor.html#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="../podbor.html">подбора редуктора по параметрам</a>. Для цилиндрических приводов с высоким КПД смотрите раздел <a href="../catalog/cilindricheskie.html">цилиндрических редукторов</a>.</p></div></details></div></div></section>
+  </tbody></table><p>Рассчитать всё это можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для цилиндрических приводов с высоким КПД смотрите раздел <a href="/catalog/cilindricheskie">цилиндрических редукторов</a>.</p></div></details></div></div></section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -148,9 +148,9 @@
   <div class="eyebrow">Блог</div>
   <h2 style="font-size:26px">Читайте также</h2>
   <div class="xgrid">
-    <a class="xcard" href="podbor-reduktora-po-momentu.html"><b>Подбор по крутящему моменту</b><span>Формула T=9550·P·η/n2 и проверка типоразмера</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="podbor-reduktora-po-oborotam.html"><b>Подбор по оборотам на выходе</b><span>Как обороты задают передаточное число</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="kak-podobrat-reduktor.html"><b>Как подобрать редуктор</b><span>Пошаговый гайд по всем параметрам</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-momentu"><b>Подбор по крутящему моменту</b><span>Формула T=9550·P·η/n2 и проверка типоразмера</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-oborotam"><b>Подбор по оборотам на выходе</b><span>Как обороты задают передаточное число</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/kak-podobrat-reduktor"><b>Как подобрать редуктор</b><span>Пошаговый гайд по всем параметрам</span><span class="xcard-go">Читать →</span></a>
   </div>
 </div></section>
 
@@ -167,34 +167,34 @@
     </div>
     <div class="sf-col">
       <h4>Каталог</h4>
-      <a href="../catalog/chervyachnye.html">Червячные</a>
-      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
-      <a href="../catalog/soosnye.html">Соосные</a>
-      <a href="../catalog/konichesko-cilindricheskie.html">Цилиндро-конические</a>
-      <a href="../catalog/planetarnye.html">Планетарные</a>
-      <a href="../catalog/index.html">Весь каталог →</a>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
     </div>
     <div class="sf-col">
       <h4>Разделы</h4>
-      <a href="../podbor.html">Подбор редуктора</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../dostavka-raschet.html">Расчёт доставки</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям оборудования</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="../blog/index.html">Блог</a>
-      <a href="../cases/index.html">Кейсы</a>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a>
     </div>
     <div class="sf-col">
       <h4>Компания</h4>
-      <a href="../about.html">О заводе</a>
-      <a href="../sertifikaty.html">Сертификаты и качество</a>
-      <a href="../contacts.html">Контакты</a><a href="../oplata.html">Оплата и реквизиты</a><a href="../garantiya.html">Гарантия</a>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
       <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
     </div>
   </div>
   <div class="wrap sf-bottom">
     <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
-    <span><a href="../privacy.html">Политика конфиденциальности</a> · <a href="../agreement.html">Пользовательское соглашение</a> · <a href="../sitemap.html">Карта сайта</a></span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
 

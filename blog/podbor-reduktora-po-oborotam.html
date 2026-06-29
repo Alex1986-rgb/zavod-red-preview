@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Подбор редуктора по оборотам на выходе — расчёт</title>
 <meta name="description" content="Как подобрать редуктор по оборотам на выходе: связь входных и выходных оборотов, формула i=n1/n2, синхронные обороты двигателя и подбор передаточного числа." />
-<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-oborotam.html" />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-po-oborotam" />
 <meta name="theme-color" content="#0b151d" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
 <link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-oborotam.html" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-oborotam" />
 <meta property="og:title" content="Подбор редуктора по оборотам на выходе — расчёт" />
 <meta property="og:description" content="Связь входных и выходных оборотов, формула i=n1/n2 и подбор передаточного числа по требуемым оборотам на выходе." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
@@ -30,24 +30,24 @@
 .art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
 .art-fig{margin:26px 0}.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line)}.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по оборотам на выходе: расчёт и калькулятор","description":"Как подобрать редуктор по оборотам на выходе: связь входных и выходных оборотов, формула i=n1/n2, синхронные обороты двигателя и подбор передаточного числа.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-oborotam.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по оборотам","item":"https://zavod-red.ru/blog/podbor-reduktora-po-oborotam.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по оборотам на выходе: расчёт и калькулятор","description":"Как подобрать редуктор по оборотам на выходе: связь входных и выходных оборотов, формула i=n1/n2, синхронные обороты двигателя и подбор передаточного числа.","image":"https://zavod-red.ru/og-image.jpg","author":{"@type":"Organization","name":"Завод Редукторов"},"publisher":{"@type":"Organization","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-oborotam"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по оборотам","item":"https://zavod-red.ru/blog/podbor-reduktora-po-oborotam"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как подобрать редуктор по оборотам на выходе?","acceptedAnswer":{"@type":"Answer","text":"Определите требуемые обороты на выходном валу n2 из технологии процесса и обороты двигателя на входе n1. Передаточное число находят как i = n1/n2. По нему из ряда серии выбирают ближайшее значение, а затем проверяют момент на выходе. Например, при n1=1500 об/мин и требуемых n2=75 об/мин передаточное число равно 20."}},{"@type":"Question","name":"Какие обороты у электродвигателя на входе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Асинхронные двигатели имеют синхронные обороты 3000, 1500, 1000 или 750 об/мин в зависимости от числа полюсов. Под нагрузкой реальные обороты на 2–5% ниже из-за скольжения: примерно 2900, 1430, 950 и 715 об/мин. При подборе по оборотам за n1 обычно берут номинальные обороты двигателя с шильдика."}},{"@type":"Question","name":"Почему фактические обороты на выходе отличаются от расчётных?","acceptedAnswer":{"@type":"Answer","text":"Передаточные числа стандартных серий идут фиксированным рядом, поэтому точное расчётное значение редко совпадает с табличным. Берут ближайшее передаточное число, и обороты на выходе немного отличаются от желаемых. Дополнительно влияет скольжение двигателя под нагрузкой. Если нужны точные обороты, применяют вариатор или частотный преобразователь."}},{"@type":"Question","name":"Как обороты на выходе влияют на момент?","acceptedAnswer":{"@type":"Answer","text":"Чем ниже обороты на выходе, тем выше момент при той же мощности: T2 = 9550·P·η/n2. Снижая обороты, редуктор пропорционально увеличивает момент за вычетом потерь. Поэтому требуемые выходные обороты определяют не только передаточное число, но и нагрузку на зацепление и нужный типоразмер."}},{"@type":"Question","name":"Можно ли получить любые обороты на выходе одним редуктором?","acceptedAnswer":{"@type":"Answer","text":"Одноступенчатый редуктор даёт ограниченный диапазон передаточных чисел. Для очень малых выходных оборотов берут многоступенчатую передачу или комбинируют редукторы. Для плавного изменения оборотов под нагрузкой применяют вариатор, а для регулировки в широком диапазоне — частотный преобразователь на двигателе."}},{"@type":"Question","name":"Как подобрать редуктор под частотный преобразователь?","acceptedAnswer":{"@type":"Answer","text":"С частотником обороты двигателя меняются в диапазоне, поэтому за n1 берут номинальные обороты, а диапазон регулировки учитывают отдельно. На низких частотах падает охлаждение двигателя и его момент, а у редуктора нужно проверить тепловой режим при длительной работе на малых оборотах. Передаточное число подбирают под номинальную рабочую точку."}},{"@type":"Question","name":"Что задаёт обороты на выходе — двигатель или редуктор?","acceptedAnswer":{"@type":"Answer","text":"Обороты на выходе задаёт связка двигателя и редуктора: входные обороты двигателя делятся на передаточное число редуктора. n2 = n1/i. Двигатель определяет n1, редуктор — i, а технология процесса диктует требуемое n2. Подбор сводится к выбору передаточного числа, которое даёт нужные обороты при имеющихся оборотах двигателя."}}]}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="../index.html"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
     <nav class="menu">
-      <a href="../catalog/index.html">Каталог редукторов</a>
-      <a href="../podbor.html">Подбор</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="index.html" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="../index.html#about">Фотографии производства</a><a href="../index.html#team">Люди производства</a><a href="../index.html#certs">Сертификаты</a><a href="../about.html">О заводе — подробно</a></div></div>
-        <a href="../contacts.html">Контакты</a>
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
       <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
     </nav>
     <div class="nav-right">
@@ -59,7 +59,7 @@
   </div>
 </header>
 
-<div class="wrap crumbs"><a href="../index.html">Главная</a><span>›</span><a href="index.html">Блог</a><span>›</span>Подбор редуктора по оборотам</div>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по оборотам</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Подбор</div>
   <h1>Подбор редуктора по оборотам на выходе</h1>
@@ -92,10 +92,10 @@
   <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Редуктор для подбора по оборотам на выходе" loading="lazy"><figcaption>Обороты на выходе задаёт связка двигателя и передаточного числа</figcaption></figure>
 
   <h2>Обороты и момент связаны</h2>
-  <p>Снижая обороты, редуктор пропорционально увеличивает момент: <b>T<sub>2</sub> = 9550 · P · η / n<sub>2</sub></b>. Чем ниже выходные обороты, тем выше момент при той же мощности. Поэтому требуемое n<sub>2</sub> определяет не только передаточное число, но и нагрузку на зацепление, а значит и типоразмер. Силовую часть подбора разбираем в статье <a href="podbor-reduktora-po-momentu.html">подбор по крутящему моменту</a>.</p>
+  <p>Снижая обороты, редуктор пропорционально увеличивает момент: <b>T<sub>2</sub> = 9550 · P · η / n<sub>2</sub></b>. Чем ниже выходные обороты, тем выше момент при той же мощности. Поэтому требуемое n<sub>2</sub> определяет не только передаточное число, но и нагрузку на зацепление, а значит и типоразмер. Силовую часть подбора разбираем в статье <a href="/blog/podbor-reduktora-po-momentu">подбор по крутящему моменту</a>.</p>
 
   <h2>Пример подбора по оборотам</h2>
-  <p>Нужны 60 об/мин на барабане при двигателе 1500 об/мин. Расчётное передаточное число i = 1500 / 60 = 25. В ряду серии ближайшие значения — 22,4 и 28; при i = 25 получают точно 60 об/мин, при i = 28 — около 53,6 об/мин. Выбирают вариант, который ближе к технологическому требованию, и проверяют момент. Рассчитать удобно в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a>.</p>
+  <p>Нужны 60 об/мин на барабане при двигателе 1500 об/мин. Расчётное передаточное число i = 1500 / 60 = 25. В ряду серии ближайшие значения — 22,4 и 28; при i = 25 получают точно 60 об/мин, при i = 28 — около 53,6 об/мин. Выбирают вариант, который ближе к технологическому требованию, и проверяют момент. Рассчитать удобно в <a href="/podbor#kalkulyator">калькуляторе подбора</a>.</p>
 
   <table class="spec"><tbody>
     <tr><th>n<sub>1</sub> = 1500, i = 20</th><td>n<sub>2</sub> = 75 об/мин</td></tr>
@@ -106,10 +106,10 @@
   </tbody></table>
 
   <h2>Когда нужны регулируемые обороты</h2>
-  <p>Если выходные обороты должны меняться под нагрузкой, одного редуктора недостаточно. Для плавного изменения скорости применяют <a href="../catalog/variatory.html">вариатор</a>, а для регулировки в широком диапазоне — частотный преобразователь на двигателе. При работе с частотником учитывают падение охлаждения и момента двигателя на низких частотах и проверяют тепловой режим редуктора при длительной работе на малых оборотах.</p>
+  <p>Если выходные обороты должны меняться под нагрузкой, одного редуктора недостаточно. Для плавного изменения скорости применяют <a href="/catalog/variatory">вариатор</a>, а для регулировки в широком диапазоне — частотный преобразователь на двигателе. При работе с частотником учитывают падение охлаждения и момента двигателя на низких частотах и проверяют тепловой режим редуктора при длительной работе на малых оборотах.</p>
 
   <h2>Вывод</h2>
-  <p>Подбор по оборотам сводится к простой цепочке: технология задаёт n<sub>2</sub>, двигатель — n<sub>1</sub>, а передаточное число i = n<sub>1</sub>/n<sub>2</sub> определяет, какую серию и типоразмер взять. Из ряда выбирают ближайшее значение и проверяют момент. Пришлите требуемые обороты на выходе и обороты двигателя, и инженер Завода Редукторов подберёт передаточное число и типоразмер. См. также <a href="raschet-peredatochnogo-chisla.html">расчёт передаточного числа</a>.</p>
+  <p>Подбор по оборотам сводится к простой цепочке: технология задаёт n<sub>2</sub>, двигатель — n<sub>1</sub>, а передаточное число i = n<sub>1</sub>/n<sub>2</sub> определяет, какую серию и типоразмер взять. Из ряда выбирают ближайшее значение и проверяют момент. Пришлите требуемые обороты на выходе и обороты двигателя, и инженер Завода Редукторов подберёт передаточное число и типоразмер. См. также <a href="/blog/raschet-peredatochnogo-chisla">расчёт передаточного числа</a>.</p>
 
 </div></div></section>
 
@@ -126,7 +126,7 @@
     <tr><th>1500 об/мин</th><td>4 полюса, самые распространённые</td></tr>
     <tr><th>1000 об/мин</th><td>6 полюсов, умеренные обороты</td></tr>
     <tr><th>750 об/мин</th><td>8 полюсов, тихоходные приводы</td></tr>
-  </tbody></table><p>Рассчитать передаточное число и обороты на выходе можно в <a href="../podbor.html#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="../podbor.html">подбора редуктора по параметрам</a>. Для плавного изменения оборотов смотрите <a href="../catalog/variatory.html">вариаторы</a>.</p></div></details></div></div></section>
+  </tbody></table><p>Рассчитать передаточное число и обороты на выходе можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для плавного изменения оборотов смотрите <a href="/catalog/variatory">вариаторы</a>.</p></div></details></div></div></section>
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -142,9 +142,9 @@
   <div class="eyebrow">Блог</div>
   <h2 style="font-size:26px">Читайте также</h2>
   <div class="xgrid">
-    <a class="xcard" href="podbor-reduktora-po-peredatochnomu.html"><b>Подбор по передаточному числу</b><span>Стандартный ряд i и выбор ближайшего</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="podbor-reduktora-po-momentu.html"><b>Подбор по крутящему моменту</b><span>Как обороты на выходе задают момент</span><span class="xcard-go">Читать →</span></a>
-    <a class="xcard" href="raschet-peredatochnogo-chisla.html"><b>Расчёт передаточного числа</b><span>Формула i=n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-peredatochnomu"><b>Подбор по передаточному числу</b><span>Стандартный ряд i и выбор ближайшего</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/podbor-reduktora-po-momentu"><b>Подбор по крутящему моменту</b><span>Как обороты на выходе задают момент</span><span class="xcard-go">Читать →</span></a>
+    <a class="xcard" href="/blog/raschet-peredatochnogo-chisla"><b>Расчёт передаточного числа</b><span>Формула i=n1/n2 с примерами</span><span class="xcard-go">Читать →</span></a>
   </div>
 </div></section>
 
@@ -161,34 +161,34 @@
     </div>
     <div class="sf-col">
       <h4>Каталог</h4>
-      <a href="../catalog/chervyachnye.html">Червячные</a>
-      <a href="../catalog/cilindricheskie.html">Цилиндрические</a>
-      <a href="../catalog/soosnye.html">Соосные</a>
-      <a href="../catalog/konichesko-cilindricheskie.html">Цилиндро-конические</a>
-      <a href="../catalog/planetarnye.html">Планетарные</a>
-      <a href="../catalog/index.html">Весь каталог →</a>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
     </div>
     <div class="sf-col">
       <h4>Разделы</h4>
-      <a href="../podbor.html">Подбор редуктора</a>
-      <a href="../ceny.html">Цены</a>
-      <a href="../dostavka-raschet.html">Расчёт доставки</a>
-      <a href="../proizvoditelyam-oborudovaniya.html">Производителям оборудования</a>
-      <a href="../importozameshchenie.html">Импортозамещение</a>
-      <a href="../blog/index.html">Блог</a>
-      <a href="../cases/index.html">Кейсы</a>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a>
     </div>
     <div class="sf-col">
       <h4>Компания</h4>
-      <a href="../about.html">О заводе</a>
-      <a href="../sertifikaty.html">Сертификаты и качество</a>
-      <a href="../contacts.html">Контакты</a><a href="../oplata.html">Оплата и реквизиты</a><a href="../garantiya.html">Гарантия</a>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
       <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
     </div>
   </div>
   <div class="wrap sf-bottom">
     <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
-    <span><a href="../privacy.html">Политика конфиденциальности</a> · <a href="../agreement.html">Пользовательское соглашение</a> · <a href="../sitemap.html">Карта сайта</a></span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
 

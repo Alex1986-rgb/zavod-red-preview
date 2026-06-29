@@ -1,9 +1,24 @@
-# Принудительный HTTPS — через X-Forwarded-Proto (Timeweb за nginx-прокси).
-# Редирект только если прокси явно передал http — иначе зацикливается.
+# Принудительный HTTPS + ЧИСТЫЕ URL (без .html)
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # http→https через X-Forwarded-Proto (Timeweb за nginx — иначе цикл)
   RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # index.html → / (каталог)
+  RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # любой /страница.html → /страница (301)
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # внутренне отдаём .html для чистого URL (если такой файл есть)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
 
 <IfModule mod_deflate.c>
