@@ -6,13 +6,13 @@
   RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # index.html → / (каталог)
+  # index.html → / (каталог), сразу на https
   RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
-  RewriteRule ^ /%1 [R=301,L]
+  RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
 
-  # любой /страница.html → /страница (301)
+  # любой /страница.html → /страница (301), сразу на https
   RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
-  RewriteRule ^ /%1 [R=301,L]
+  RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
 
   # внутренне отдаём .html для чистого URL (если такой файл есть)
   RewriteCond %{REQUEST_FILENAME} !-f
