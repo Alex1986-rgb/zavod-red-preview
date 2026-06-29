@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Крутящий момент — что это в редукторах</title>
+<meta name="description" content="Крутящий момент в приводах и редукторах: инженерное определение, единицы измерения, формула расчёта и влияние на подбор редуктора по выходному моменту." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/krutyashchiy-moment" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/krutyashchiy-moment" />
+<meta property="og:title" content="Крутящий момент — что это в редукторах" />
+<meta property="og:description" content="Крутящий момент в приводах и редукторах: инженерное определение, единицы измерения, формула расчёта и влияние на подбор редуктора по выходному моменту." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Крутящий момент", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Крутящий момент в приводах и редукторах: инженерное определение, единицы измерения, формула расчёта и влияние на подбор редуктора по выходному моменту.", "mainEntityOfPage": "https://zavod-red.ru/glossary/krutyashchiy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Крутящий момент — что это в редукторах", "item": "https://zavod-red.ru/glossary/krutyashchiy-moment"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "В каких единицах измеряется крутящий момент редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "В системе СИ — в ньютон-метрах (Н·м). Для крупных приводов используют килоньютон-метры (кН·м), для малосильных — Н·мм. Устаревшая единица кгс·м связана соотношением 1 кгс·м ≈ 9,81 Н·м."}}, {"@type": "Question", "name": "Как рассчитать крутящий момент по мощности и оборотам?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T = 9550 · P / n, где T — момент в Н·м, P — мощность в кВт, n — частота вращения в об/мин. Момент на выходном валу редуктора при этом равен T₂ = T₁ · i · η, где i — передаточное число, η — КПД."}}, {"@type": "Question", "name": "Почему при подборе редуктора важнее момент, а не мощность?", "acceptedAnswer": {"@type": "Answer", "text": "Мощность не отражает тяговое усилие: одинаковый киловатт может давать большой момент на малых оборотах или малый момент на высоких. Работоспособность машины определяет именно допускаемый момент на тихоходном валу, поэтому подбор ведут от требуемого выходного момента. Удобно сделать это через калькулятор подбора."}}, {"@type": "Question", "name": "Что такое сервис-фактор при выборе по моменту?", "acceptedAnswer": {"@type": "Answer", "text": "Сервис-фактор (коэффициент эксплуатации) Sf задаёт запас по моменту с учётом характера нагрузки: T_ном ≥ T_расч · Sf. Для равномерной нагрузки Sf ≈ 1,0–1,25, для ударной и реверсивной работы — 1,5–2,0 и выше. Он защищает редуктор от перегрузки и перегрева."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/" class="active">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Крутящий момент — что это в редукторах</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Крутящий момент</h1>
+  <p>Крутящий момент — ключевой параметр привода: именно он определяет, какое усилие редуктор передаёт на рабочий орган машины. Разбираем определение, единицы и связь с подбором редуктора.</p>
+</div></section>
+<section class="section" style="padding-top:34px"><div class="wrap">
+  <div class="rich" style="max-width:860px"><p><strong>Крутящий момент</strong> (момент силы, обозначается T или M) — это физическая величина, характеризующая вращающее усилие, приложенное к валу. Он равен произведению силы на плечо её действия относительно оси вращения: T = F · r, где F — касательная сила (Н), r — радиус приложения (м). В системе СИ крутящий момент измеряется в ньютон-метрах (Н·м); для крупных приводов применяют кН·м, для малосильных — Н·мм или сН·м.</p>
+
+<p>Физический смысл прост: момент показывает, насколько «сильно» вал способен проворачивать нагрузку. Мощность сама по себе ничего не говорит о тяговом усилии — один и тот же киловатт может реализоваться как высокий момент на малых оборотах или малый момент на высоких. Именно поэтому в приводной технике <strong>момент на выходном валу редуктора</strong> — главный критерий выбора, а не только мощность двигателя.</p>
+
+<h3>Связь момента, мощности и оборотов</h3>
+<p>Для вращательного движения момент, мощность и частота вращения связаны базовой формулой. При мощности P в киловаттах и частоте n в об/мин:</p>
+<ul>
+<li><strong>T = 9550 · P / n</strong> (Н·м) — момент на валу;</li>
+<li><strong>P = T · n / 9550</strong> (кВт) — потребная мощность;</li>
+<li><strong>T₂ = T₁ · i · η</strong> — момент на выходе редуктора, где i — передаточное число, η — КПД.</li>
+</ul>
+<p>Из последней формулы видно главное свойство редуктора: понижая обороты в i раз, он во столько же раз (с поправкой на КПД) увеличивает момент. Например, мотор-редуктор с двигателем 4 кВт при 1430 об/мин даёт на валу двигателя около 27 Н·м, а после редуктора с i = 25 и КПД 0,95 — порядка 633 Н·м на выходном валу при ~57 об/мин. Именно ради такого преумножения момента и применяют редукторы серий EVL, ПР и МР.</p>
+
+<h3>Как момент влияет на подбор редуктора</h3>
+<p>Подбор всегда ведётся «от рабочего органа»: сначала определяют требуемый момент на тихоходном валу (по нагрузке машины), затем подбирают типоразмер, у которого <strong>номинальный (допускаемый) выходной момент</strong> с запасом перекрывает расчётный. Запас задаётся сервис-фактором Sf (коэффициентом эксплуатации): T_ном ≥ T_расч · Sf. Для спокойной равномерной нагрузки Sf ≈ 1,0–1,25, для ударной и реверсивной работы — 1,5–2,0 и выше.</p>
+
+<p>Превышение допускаемого момента ведёт к перегрузке зубчатых пар и подшипников, перегреву и ускоренному износу; чрезмерный запас — к удорожанию и лишним габаритам. Поэтому корректный расчёт момента критичен при <a href="/podbor">подборе редуктора</a> и при подборе импортозамещающего аналога приводов SEW, NORD, Bonfiglioli, Motovario — у заменяемого узла сопоставляют именно выходной момент и передаточное число, а не только посадочные размеры.</p>
+
+<h3>Типовые значения и единицы</h3>
+<ul>
+<li><strong>Единица СИ:</strong> Н·м (ньютон-метр). 1 кгс·м ≈ 9,81 Н·м.</li>
+<li><strong>Малые приводы:</strong> единицы–десятки Н·м (конвейерные ролики, дозаторы).</li>
+<li><strong>Средние:</strong> сотни Н·м – единицы кН·м (миксеры, транспортёры, насосы).</li>
+<li><strong>Тяжёлые:</strong> десятки–сотни кН·м (мельницы, экструдеры, приводы прокатных линий).</li>
+</ul>
+<p>Различают несколько характерных моментов: номинальный (длительно допускаемый), пусковой (кратковременно повышенный при разгоне), максимальный/пиковый (предельно допустимый кратковременно) и момент торможения. При подборе их сверяют с соответствующими режимами работы машины.</p>
+
+<h3>С какими параметрами связан момент</h3>
+<p>Крутящий момент нельзя рассматривать в отрыве от остальных характеристик привода. Он напрямую завязан на передаточное число i (i = n₁/n₂), КПД (для червячных передач η ≈ 0,7–0,9, для цилиндрических ≈ 0,96–0,98), радиальную и осевую консольную нагрузку на валу, а также на тепловой режим. Высокий момент при низком КПД означает существенные потери и нагрев — это особенно важно учитывать для червячных редукторов. Подобрать сбалансированный по моменту, оборотам и КПД вариант помогает онлайн-калькулятор и <a href="/catalog/">каталог</a> типоразмеров.</p>
+
+<h3>Вывод</h3>
+<p>Крутящий момент — это мера вращающего усилия на валу (Н·м), и для приводной техники именно выходной момент редуктора, а не мощность двигателя, определяет работоспособность системы. Грамотный подбор сводится к расчёту требуемого момента на тихоходном валу, применению сервис-фактора и выбору типоразмера с обоснованным запасом по допускаемому моменту.</p></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>В каких единицах измеряется крутящий момент редуктора?</summary><p>В системе СИ — в ньютон-метрах (Н·м). Для крупных приводов используют килоньютон-метры (кН·м), для малосильных — Н·мм. Устаревшая единица кгс·м связана соотношением 1 кгс·м ≈ 9,81 Н·м.</p></details><details><summary>Как рассчитать крутящий момент по мощности и оборотам?</summary><p>По формуле T = 9550 · P / n, где T — момент в Н·м, P — мощность в кВт, n — частота вращения в об/мин. Момент на выходном валу редуктора при этом равен T₂ = T₁ · i · η, где i — передаточное число, η — КПД.</p></details><details><summary>Почему при подборе редуктора важнее момент, а не мощность?</summary><p>Мощность не отражает тяговое усилие: одинаковый киловатт может давать большой момент на малых оборотах или малый момент на высоких. Работоспособность машины определяет именно допускаемый момент на тихоходном валу, поэтому подбор ведут от требуемого выходного момента. Удобно сделать это через калькулятор подбора.</p></details><details><summary>Что такое сервис-фактор при выборе по моменту?</summary><p>Сервис-фактор (коэффициент эксплуатации) Sf задаёт запас по моменту с учётом характера нагрузки: T_ном ≥ T_расч · Sf. Для равномерной нагрузки Sf ≈ 1,0–1,25, для ударной и реверсивной работы — 1,5–2,0 и выше. Он защищает редуктор от перегрузки и перегрева.</p></details></div></div></div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=20"></script>
+</body></html>
