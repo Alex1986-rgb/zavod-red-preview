@@ -43,8 +43,8 @@
 .pf-btn--red:hover{background:#c81414}
 .pf-th-ord{text-align:center;white-space:nowrap}
 .pf-order{text-align:center;white-space:nowrap}
-.pf-ord{font:700 12.5px/1 inherit;padding:9px 16px;border-radius:8px;border:0;background:var(--red);color:#fff;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(225,29,29,.25)}
-.pf-ord:hover{background:#c81414;transform:translateY(-1px);box-shadow:0 4px 14px rgba(225,29,29,.35)}
+.pf-ord{display:inline-block;font:700 12.5px/1 inherit;padding:9px 16px;border-radius:8px;border:0;background:var(--red);color:#fff;text-decoration:none;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(225,29,29,.25)}
+.pf-ord:hover{background:#c81414;color:#fff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(225,29,29,.35)}
 .pf-count{color:var(--muted);font-size:13px;margin-left:4px}
 .pf-count b{color:var(--text)}
 

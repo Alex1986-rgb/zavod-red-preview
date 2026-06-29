@@ -230,7 +230,8 @@
     var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
     var tz='<td class="pf-tz"><b>'+g.e+'</b>'+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
     var tds=COLS.map(function(c){return '<td>'+fmt(it[c.i],c.d)+'</td>';}).join('');
-    var ord='<td class="pf-order"><button type="button" class="pf-ord" data-zayavka data-order="'+g.e+'">Заказать</button></td>';
+    var oslug=g.e.toLowerCase().replace(/ /g,'-').replace(/\//g,'-').replace(/х/g,'x');
+    var ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+oslug+'">Заказать</a></td>';
     return '<tr>'+tz+tds+ord+'</tr>';
   }
   function more(){
@@ -272,14 +273,6 @@
   });
   if($('pfExport'))$('pfExport').addEventListener('click',exportCSV);
   if($('pfMore'))$('pfMore').addEventListener('click',more);
-
-  // кнопка «Заказать» в строке → подставить конкретный типоразмер в заявку (modal.js откроет форму по data-zayavka)
-  root.addEventListener('click',function(e){
-    var b=e.target.closest('[data-order]'); if(!b)return;
-    var model=b.getAttribute('data-order');
-    var msg=document.getElementById('zrMsg');
-    if(msg)msg.value='Заказ: редуктор '+model+'. Прошу рассчитать цену, срок поставки и подобрать исполнение.';
-  });
 
   // предзаполнить тип в сообщении формы-заявки (modal.js)
   Array.prototype.forEach.call(root.querySelectorAll('[data-zayavka]'),function(b){
