@@ -55,7 +55,7 @@
     +'<button type="button" class="pf-btn pf-btn--red" id="pfExport" data-zayavka>Получить выгрузку на почту</button>'
     +'<span class="pf-count" id="pfCount"></span></div></td></tr>';
 
-  var pillsHtml=lockType?'':'<div class="pf-types" id="pfTypes"></div>';
+  var pillsHtml='<div class="pf-brands" id="pfBrands"></div>'+(lockType?'':'<div class="pf-types" id="pfTypes"></div>');
 
   // тулбар: в полном режиме — сброс+CSV; в компактном — сброс + «Показать в таблице»
   var toolbar=compact
@@ -79,8 +79,13 @@
    +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
-  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, RANGE_VALS={}, $=function(id){return document.getElementById(id);};
+  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand='', RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
+  // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
+  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'Motovario',n:'Motovario',s:'motovario'},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},
+    {k:'Bonfiglioli',n:'Bonfiglioli',s:'bonfiglioli'},{k:'NORD',n:'NORD',s:'nord'},{k:'Bauer',n:'Bauer',s:'bauer'},
+    {k:'Yilmaz',n:'Yilmaz',s:'yilmaz'},{k:'Lenze',n:'Lenze',s:'lenze'},{k:'Transtecno',n:'Transtecno',s:'transtecno'}];
+  var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
 
   function curType(){
     if(lockType) return DB?DB.t.indexOf(presetType):-1;
@@ -163,6 +168,7 @@
     else if(presetType){ var pi=d.t.indexOf(presetType); selType=pi>=0?pi:-1; }
     else { selType=-1; }
     if(!lockType) buildPills();
+    buildBrands();
     fillRanges();
     preApplyNumeric();
     fillModels();
@@ -188,6 +194,22 @@
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
         b.classList.add('is-active');
         fillRanges(); syncRanges(); apply();
+      });
+    });
+  }
+
+  function buildBrands(){
+    var box=$('pfBrands'); if(!box||!DB)return;
+    box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'+BRANDS.map(function(b){
+      return '<button type="button" class="pf-pill pf-pill--brand'+(selBrand===b.k?' is-active':'')+'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'+b.n+'</button>';
+    }).join('');
+    Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(btn){
+      btn.addEventListener('click',function(){
+        selBrand=btn.getAttribute('data-bk')||'';
+        Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
+        btn.classList.add('is-active');
+        var th=root.querySelector('.pf-th-tz'); if(th)th.textContent=(selBrand&&BMAP[selBrand])?(BMAP[selBrand].n+' (наш аналог EVL)'):'Типоразмер редуктора';
+        apply();
       });
     });
   }
@@ -248,16 +270,29 @@
     return pfx+'podbor.html'+(q.length?'?'+q.join('&'):'');
   }
 
+  function evlSlug(n){return n.toLowerCase().replace(/ /g,'-').replace(/\//g,'-').replace(/х/g,'x');}
+  function frameSlug(s){return s.toLowerCase().replace(/х/g,'x').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
   function rowHtml(it){
     var g=DB.g[it[0]];
     var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).filter(Boolean);
-    var ans=Object.keys(g.a||{}).slice(0,3).map(function(k){return g.a[k][0];});
-    var sub=[]; if(g.p)sub.push(g.p); gost.forEach(function(x){sub.push(x);});
-    var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
-    var tz='<td class="pf-tz"><b>'+g.e+'</b>'+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
     var tds=COLS.map(function(c){return '<td>'+fmt(it[c.i],c.d)+'</td>';}).join('');
-    var oslug=g.e.toLowerCase().replace(/ /g,'-').replace(/\//g,'-').replace(/х/g,'x');
-    var ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+oslug+'">Заказать</a></td>';
+    var tz, ord, b=BMAP[selBrand];
+    if(b&&b.k){
+      var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
+      if(imp){
+        tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+g.e+'</span></td>';
+        ord='<td class="pf-order"><a class="pf-ord" href="/analog/'+b.s+'-'+frameSlug(imp)+'">Заказать</a></td>';
+      }else{
+        tz='<td class="pf-tz"><b>'+g.e+'</b><span class="pf-tr-an">аналог '+b.n+' — по запросу</span></td>';
+        ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+g.e+'" href="#zayavka">Запрос</a></td>';
+      }
+    }else{
+      var ans=Object.keys(g.a||{}).slice(0,3).map(function(k){return g.a[k][0];});
+      var sub=[]; if(g.p)sub.push(g.p); gost.forEach(function(x){sub.push(x);});
+      var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
+      tz='<td class="pf-tz"><b>'+g.e+'</b>'+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
+      ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
+    }
     return '<tr>'+tz+tds+ord+'</tr>';
   }
   function more(){
@@ -306,6 +341,14 @@
     var m=document.getElementById('zrMsg'); if(m){ m.value=msg; }
   });
   if($('pfMore'))$('pfMore').addEventListener('click',more);
+
+  // кнопка «Запрос» (строка без аналога выбранного бренда) → подставить в заявку
+  root.addEventListener('click',function(e){
+    var b=e.target.closest('[data-req]'); if(!b)return;
+    var req=b.getAttribute('data-req');
+    var m=document.getElementById('zrMsg');
+    if(m)m.value='Нужен аналог: '+req+'. Прошу подобрать наш редуктор, дать цену и срок.';
+  });
 
   // предзаполнить тип в сообщении формы-заявки (modal.js)
   Array.prototype.forEach.call(root.querySelectorAll('[data-zayavka]'),function(b){
