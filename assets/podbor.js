@@ -82,9 +82,7 @@
   var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand='', RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'Motovario',n:'Motovario',s:'motovario'},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},
-    {k:'Bonfiglioli',n:'Bonfiglioli',s:'bonfiglioli'},{k:'NORD',n:'NORD',s:'nord'},{k:'Bauer',n:'Bauer',s:'bauer'},
-    {k:'Yilmaz',n:'Yilmaz',s:'yilmaz'},{k:'Lenze',n:'Lenze',s:'lenze'},{k:'Transtecno',n:'Transtecno',s:'transtecno'}];
+  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
 
   function curType(){
