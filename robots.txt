@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /
 Sitemap: https://zavod-red.ru/sitemap-tiporazmer.xml
 Sitemap: https://zavod-red.ru/sitemap-ispolnenie.xml
+Sitemap: https://zavod-red.ru/sitemap-analog.xml
