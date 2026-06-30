@@ -24,7 +24,7 @@ shutil.copytree(SRC, DST, ignore=IGNORE)
 
 # robots.txt — открыт для индексации
 with open(os.path.join(DST, 'robots.txt'), 'w', encoding='utf-8') as f:
-    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\n")
+    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\n")
 
 # Метрика в <head> каждой HTML (если ещё не вставлена)
 n = 0
