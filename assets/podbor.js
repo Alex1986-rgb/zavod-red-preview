@@ -16,14 +16,15 @@
     'червячный':'Червячный',
     'соосно-цилиндрический':'Соосно-цилиндрический',
     'коническо-цилиндрический':'Цилиндро-конический',
-    'плоско-цилиндрический':'Плоский цилиндрический'
+    'плоско-цилиндрический':'Плоский цилиндрический',
+    'цилиндрический':'Цилиндрический'
   };
 
   var presetType=(root.getAttribute('data-type')||'').trim();
   var lockType=root.getAttribute('data-locktype')==='1';
   var compact=root.getAttribute('data-compact')==='1'; // только фильтры + счётчик, без списка строк
 
-  var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический'];
+  var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический','цилиндрический'];
   var enabledIdx=[];
 
   // Параметры: индекс в позиции, заголовок, знаков после запятой
@@ -43,7 +44,7 @@
   var headHtml='<tr><th class="pf-th-tz">Типоразмер редуктора</th>'
     +COLS.map(function(c){return '<th>'+c.h+'</th>';}).join('')+'<th class="pf-th-ord">Заказ</th></tr>';
 
-  var filterHtml='<tr class="pf-frow"><td><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off"></td>'
+  var filterHtml='<tr class="pf-frow"><td><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off" list="pfModels" inputmode="search"><datalist id="pfModels"></datalist></td>'
     +COLS.map(function(c){
         return '<td><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
              +'<div class="pf-rg"><span>до</span><select class="pf-sel" data-max="'+c.i+'"><option value="">Все</option></select></div></td>';
@@ -51,7 +52,7 @@
 
   var btnHtml='<tr class="pf-brow"><td colspan="'+NCOL+'"><div class="pf-toolbar">'
     +'<button type="button" class="pf-btn pf-btn--ghost" id="pfReset">Сбросить фильтр</button>'
-    +'<button type="button" class="pf-btn pf-btn--red" id="pfExport">Сохранить выгрузку</button>'
+    +'<button type="button" class="pf-btn pf-btn--red" id="pfExport" data-zayavka>Получить выгрузку на почту</button>'
     +'<span class="pf-count" id="pfCount"></span></div></td></tr>';
 
   var pillsHtml=lockType?'':'<div class="pf-types" id="pfTypes"></div>';
@@ -78,7 +79,7 @@
    +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
-  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, $=function(id){return document.getElementById(id);};
+  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
 
   function curType(){
@@ -95,6 +96,7 @@
       var vals={};
       base.forEach(function(it){ if(it[c.i]!=null)vals[it[c.i]]=1; });
       var sorted=Object.keys(vals).map(parseFloat).sort(function(a,b){return a-b;});
+      RANGE_VALS[c.i]=sorted;
       ['min','max'].forEach(function(mm){
         var sel=root.querySelector('[data-'+mm+'="'+c.i+'"]'); if(!sel)return;
         var keep=sel.value;
@@ -102,6 +104,28 @@
         if(keep&&vals[keep])sel.value=keep; else sel.value='';
       });
     });
+  }
+
+  // зависимые от/до: «до» показывает значения ≥ «от», «от» — значения ≤ «до» (по каждой колонке)
+  function syncRanges(){
+    COLS.forEach(function(c){
+      var mn=root.querySelector('[data-min="'+c.i+'"]'), mx=root.querySelector('[data-max="'+c.i+'"]');
+      if(!mn||!mx)return;
+      var all=RANGE_VALS[c.i]||[];
+      var lo=mn.value!==''?parseFloat(mn.value):null, hi=mx.value!==''?parseFloat(mx.value):null;
+      function opts(vals,cur){return '<option value="">Все</option>'+vals.map(function(v){return '<option value="'+v+'"'+(String(v)===String(cur)?' selected':'')+'>'+fmt(v,c.d)+'</option>';}).join('');}
+      mn.innerHTML=opts(all.filter(function(v){return hi==null||v<=hi;}), mn.value);
+      mx.innerHTML=opts(all.filter(function(v){return lo==null||v>=lo;}), mx.value);
+    });
+  }
+
+  // список моделей/аналогов для подсказок (datalist) — удобно на телефоне
+  function fillModels(){
+    var dl=$('pfModels'); if(!dl||!DB)return;
+    var names={};
+    Object.keys(DB.g).forEach(function(k){var g=DB.g[k]; if(g.e)names[g.e]=1; if(g.p)names[g.p]=1;
+      Object.keys(g.a||{}).forEach(function(ak){if(g.a[ak]&&g.a[ak][0])names[g.a[ak][0]]=1;});});
+    dl.innerHTML=Object.keys(names).sort().map(function(n){return '<option value="'+String(n).replace(/"/g,'&quot;')+'"></option>';}).join('');
   }
 
   // параметры из URL (приходят с мини-формы на главной): type, pw, os, tq
@@ -141,6 +165,8 @@
     if(!lockType) buildPills();
     fillRanges();
     preApplyNumeric();
+    fillModels();
+    syncRanges();
     apply();
   }).catch(function(){
     var cnt=$('pfCount'); if(cnt)cnt.textContent='База временно недоступна';
@@ -161,7 +187,7 @@
         selType=parseInt(b.getAttribute('data-ti'));
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
         b.classList.add('is-active');
-        fillRanges(); apply();
+        fillRanges(); syncRanges(); apply();
       });
     });
   }
@@ -265,13 +291,20 @@
   var t=null;
   function deb(){clearTimeout(t);t=setTimeout(apply,160);}
   qEl.addEventListener('input',deb);
-  Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',deb);});
+  Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',function(){syncRanges();apply();});});
   $('pfReset').addEventListener('click',function(){
     qEl.value='';
     Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';});
-    apply();
+    syncRanges(); apply();
   });
-  if($('pfExport'))$('pfExport').addEventListener('click',exportCSV);
+  // «Получить выгрузку на почту» — открывает заявку с параметрами подбора (modal.js откроет форму по data-zayavka). Клиент не скачивает — мы отправляем сами.
+  if($('pfExport'))$('pfExport').addEventListener('click',function(){
+    var parts=[];
+    COLS.forEach(function(c){var mn=root.querySelector('[data-min="'+c.i+'"]'),mx=root.querySelector('[data-max="'+c.i+'"]');var f=mn&&mn.value,t2=mx&&mx.value;if(f||t2)parts.push(c.h.split(',')[0]+': '+(f?'от '+f:'')+(t2?' до '+t2:''));});
+    if(qEl&&qEl.value.trim())parts.push('модель/аналог: '+qEl.value.trim());
+    var msg='Прошу прислать на почту выгрузку подходящих типоразмеров ('+(CUR?CUR.length:0)+' шт) по параметрам: '+(parts.length?parts.join('; '):'без фильтра')+'.';
+    var m=document.getElementById('zrMsg'); if(m){ m.value=msg; }
+  });
   if($('pfMore'))$('pfMore').addEventListener('click',more);
 
   // предзаполнить тип в сообщении формы-заявки (modal.js)

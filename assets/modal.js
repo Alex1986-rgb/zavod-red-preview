@@ -207,7 +207,6 @@
   var html=''
    +'<div class="zrw" id="zrWidget">'
    +'<div class="zrw__panel">'
-   +'<a class="zrw__item tg" href="'+TG+'" target="_blank" rel="noopener">'+tg+'Telegram</a>'
    +'<a class="zrw__item mx" href="'+MAX+'" target="_blank" rel="noopener">'+mx+'MAX</a>'
    +'<a class="zrw__item ml" href="'+MAIL+'">'+ml+'Почта</a>'
    +'</div>'
