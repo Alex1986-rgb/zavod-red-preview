@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-06-30T11:00">
+  <shop>
+    <name>Завод Редукторов</name>
+    <company>ООО «НИИ АТТ»</company>
+    <url>https://zavod-red.ru</url>
+    <currencies><currency id="RUB" rate="1"/></currencies>
+    <categories>
+    <category id="1">Редукторы и мотор-редукторы</category>
+    <category id="2" parentId="1">Червячные редукторы</category>
+    <category id="3" parentId="1">Соосно-цилиндрические редукторы</category>
+    <category id="4" parentId="1">Коническо-цилиндрические редукторы</category>
+    <category id="5" parentId="1">Плоско-цилиндрические редукторы</category>
+    <category id="6" parentId="1">Цилиндрические редукторы</category>
+    </categories>
+    <offers>
+    <offer id="evl-737" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-737</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 737 (червячный)</name>
+      <description>Редуктор EVL 737: червячный, мощность 0.06–0.25 кВт, момент 2.0–24.0 Н·м, 56 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.06–0.25 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-747" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-747</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 747 (червячный)</name>
+      <description>Редуктор EVL 747: червячный, мощность 0.09–0.55 кВт, момент 8.3–53.0 Н·м, 53 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.09–0.55 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-757" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-757</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 757 (червячный)</name>
+      <description>Редуктор EVL 757: червячный, мощность 0.12–1.5 кВт, момент 17.0–89.0 Н·м, 81 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.12–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-767" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-767</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 767 (червячный)</name>
+      <description>Редуктор EVL 767: червячный, мощность 0.18–2.2 кВт, момент 35.0–180.0 Н·м, 83 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.18–2.2 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-777" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-777</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 777 (червячный)</name>
+      <description>Редуктор EVL 777: червячный, мощность 0.25–4.0 кВт, момент 45.0–258.0 Н·м, 83 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.25–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-797" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-797</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 797 (червячный)</name>
+      <description>Редуктор EVL 797: червячный, мощность 0.37–4.0 кВт, момент 70.0–479.0 Н·м, 70 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.37–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-7117" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-7117</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 7117 (червячный)</name>
+      <description>Редуктор EVL 7117: червячный, мощность 0.55–7.5 кВт, момент 161.0–757.0 Н·м, 71 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.55–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-7137" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-7137</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 7137 (червячный)</name>
+      <description>Редуктор EVL 7137: червячный, мощность 0.75–7.5 кВт, момент 277.0–1596.0 Н·м, 58 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.75–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-7157" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-7157</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 7157 (червячный)</name>
+      <description>Редуктор EVL 7157: червячный, мощность 2.2–15.0 кВт, момент 512.0–1760.0 Н·м, 30 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">2.2–15.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-063-747" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-063-747</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 063/747 (червячный)</name>
+      <description>Редуктор EVL 063/747: червячный, мощность 0.12–0.18 кВт, момент 42.0–85.0 Н·м, 8 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.12–0.18 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-063-757" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-063-757</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 063/757 (червячный)</name>
+      <description>Редуктор EVL 063/757: червячный, мощность 0.12–0.18 кВт, момент 64.0–133.0 Н·м, 10 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.12–0.18 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-063-767" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-063-767</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 063/767 (червячный)</name>
+      <description>Редуктор EVL 063/767: червячный, мощность 0.12–0.18 кВт, момент 92.0–155.0 Н·м, 6 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.12–0.18 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-071-757" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-071-757</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 071/757 (червячный)</name>
+      <description>Редуктор EVL 071/757: червячный, мощность 0.18–0.25 кВт, момент 88.0–126.0 Н·м, 6 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.18–0.25 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-071-767" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-071-767</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 071/767 (червячный)</name>
+      <description>Редуктор EVL 071/767: червячный, мощность 0.18–0.37 кВт, момент 91.0–218.0 Н·м, 22 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.18–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-071-777" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-071-777</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 071/777 (червячный)</name>
+      <description>Редуктор EVL 071/777: червячный, мощность 0.18–0.37 кВт, момент 138.0–254.0 Н·м, 17 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.18–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-071-797" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-071-797</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 071/797 (червячный)</name>
+      <description>Редуктор EVL 071/797: червячный, мощность 0.25–0.37 кВт, момент 263.0–371.0 Н·м, 6 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.25–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-080-777" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-080-777</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 080/777 (червячный)</name>
+      <description>Редуктор EVL 080/777: червячный, мощность 0.37–0.75 кВт, момент 205.0–341.0 Н·м, 12 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.37–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-080-797" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-080-797</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 080/797 (червячный)</name>
+      <description>Редуктор EVL 080/797: червячный, мощность 0.37–0.75 кВт, момент 240.0–578.0 Н·м, 15 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.37–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-080-7117" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-080-7117</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 080/7117 (червячный)</name>
+      <description>Редуктор EVL 080/7117: червячный, мощность 0.37–0.75 кВт, момент 425.0–756.0 Н·м, 13 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.37–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-080-7137" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-080-7137</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 080/7137 (червячный)</name>
+      <description>Редуктор EVL 080/7137: червячный, мощность 0.55–0.75 кВт, момент 712.0–858.0 Н·м, 4 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.55–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-090-7117" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-090-7117</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 090/7117 (червячный)</name>
+      <description>Редуктор EVL 090/7117: червячный, мощность 0.75–2.2 кВт, момент 392.0–1000.0 Н·м, 21 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.75–2.2 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-090-7137" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-090-7137</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 090/7137 (червячный)</name>
+      <description>Редуктор EVL 090/7137: червячный, мощность 0.75–2.2 кВт, момент 398.0–1220.0 Н·м, 26 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.75–2.2 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-737-747" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-737-747</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 737/747 (червячный)</name>
+      <description>Редуктор EVL 737/747: червячный, мощность 0.06–0.09 кВт, момент 55.0–327.0 Н·м, 22 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.06–0.09 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-737-757" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-737-757</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 737/757 (червячный)</name>
+      <description>Редуктор EVL 737/757: червячный, мощность 0.09–0.12 кВт, момент 103.0–177.0 Н·м, 8 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.09–0.12 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-737-767" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-737-767</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 737/767 (червячный)</name>
+      <description>Редуктор EVL 737/767: червячный, мощность 0.06–0.37 кВт, момент 150.0–327.0 Н·м, 18 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.06–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-747-777" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-747-777</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 747/777 (червячный)</name>
+      <description>Редуктор EVL 747/777: червячный, мощность 0.06–0.37 кВт, момент 267.0–474.0 Н·м, 16 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.06–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-747-797" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-747-797</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 747/797 (червячный)</name>
+      <description>Редуктор EVL 747/797: червячный, мощность 0.06–0.75 кВт, момент 305.0–722.0 Н·м, 21 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.06–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-757-7117" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-757-7117</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 757/7117 (червячный)</name>
+      <description>Редуктор EVL 757/7117: червячный, мощность 0.12–1.5 кВт, момент 424.0–1279.0 Н·м, 27 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.12–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-767-7137" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-767-7137</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 767/7137 (червячный)</name>
+      <description>Редуктор EVL 767/7137: червячный, мощность 0.25–1.5 кВт, момент 878.0–2210.0 Н·м, 21 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.25–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-767-7157" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-767-7157</url>
+      <price>7080</price><currencyId>RUB</currencyId>
+      <categoryId>2</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_worm.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 767/7157 (червячный)</name>
+      <description>Редуктор EVL 767/7157: червячный, мощность 0.25–1.5 кВт, момент 752.0–3182.0 Н·м, 30 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">червячный</param>
+      <param name="Мощность">0.25–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-163" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-163</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 163 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 163: плоско-цилиндрический, мощность 0.12–3.0 кВт, момент 3.5–245.0 Н·м, 243 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–3.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-164" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-164</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 164 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 164: плоско-цилиндрический, мощность 0.12–3.0 кВт, момент 102.0–435.0 Н·м, 96 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–3.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-165-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-165-193</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 165/193 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 165/193: плоско-цилиндрический, мощность 0.12–0.37 кВт, момент 177.0–655.0 Н·м, 43 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-165" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-165</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 165 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 165: плоско-цилиндрический, мощность 0.12–5.5 кВт, момент 113.0–665.0 Н·м, 117 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-166-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-166-193</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 166/193 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 166/193: плоско-цилиндрический, мощность 0.12–0.55 кВт, момент 215.0–1000.0 Н·м, 45 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–0.55 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-166" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-166</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 166 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 166: плоско-цилиндрический, мощность 0.12–5.5 кВт, момент 107.0–920.0 Н·м, 133 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-167-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-167-193</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 167/193 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 167/193: плоско-цилиндрический, мощность 0.12–0.75 кВт, момент 445.0–1880.0 Н·м, 44 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-167" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-167</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 167 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 167: плоско-цилиндрический, мощность 0.18–11.0 кВт, момент 215.0–1790.0 Н·м, 170 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.18–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-168-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-168-195</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 168/195 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 168/195: плоско-цилиндрический, мощность 0.12–1.5 кВт, момент 710.0–3250.0 Н·м, 60 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-168" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-168</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 168 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 168: плоско-цилиндрический, мощность 0.37–22.0 кВт, момент 485.0–3230.0 Н·м, 166 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.37–22.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-169-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-169-195</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 169/195 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 169/195: плоско-цилиндрический, мощность 0.12–2.2 кВт, момент 1220.0–5070.0 Н·м, 70 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–2.2 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-169" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-169</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 169 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 169: плоско-цилиндрический, мощность 0.55–30.0 кВт, момент 890.0–5000.0 Н·м, 154 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.55–30.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1610-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1610-197</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1610/197 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1610/197: плоско-цилиндрический, мощность 0.12–4.0 кВт, момент 2000.0–9590.0 Н·м, 72 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1610" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1610</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1610 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1610: плоско-цилиндрический, мощность 0.75–45.0 кВт, момент 1500.0–12450.0 Н·м, 157 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.75–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1612-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1612-197</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1612/197 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1612/197: плоско-цилиндрический, мощность 0.12–5.5 кВт, момент 2150.0–15000.0 Н·м, 77 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1612-198" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1612-198</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1612/198 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1612/198: плоско-цилиндрический, мощность 5.5–11.0 кВт, момент 7500.0–15000.0 Н·м, 17 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">5.5–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1612" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1612</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1612 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1612: плоско-цилиндрический, мощность 5.5–90.0 кВт, момент 1610.0–14700.0 Н·м, 141 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">5.5–90.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1615-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1615-199</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1615/199 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1615/199: плоско-цилиндрический, мощность 0.55–18.5 кВт, момент 1950.0–22500.0 Н·м, 82 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">0.55–18.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1615" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1615</url>
+      <price>25680</price><currencyId>RUB</currencyId>
+      <categoryId>5</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_flat.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1615 (плоско-цилиндрический)</name>
+      <description>Редуктор EVL 1615: плоско-цилиндрический, мощность 5.5–200.0 кВт, момент 3900.0–22500.0 Н·м, 155 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">плоско-цилиндрический</param>
+      <param name="Мощность">5.5–200.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-183" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-183</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 183 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 183: коническо-цилиндрический, мощность 0.12–3.0 кВт, момент 10.0–250.0 Н·м, 178 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–3.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-184-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-184-193</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 184/193 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 184/193: коническо-цилиндрический, мощность 0.12–0.18 кВт, момент 142.0–430.0 Н·м, 16 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–0.18 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-184" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-184</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 184 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 184: коническо-цилиндрический, мощность 0.12–3.0 кВт, момент 101.0–425.0 Н·м, 98 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–3.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-185-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-185-193</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 185/193 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 185/193: коническо-цилиндрический, мощность 0.12–0.55 кВт, момент 122.0–660.0 Н·м, 55 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–0.55 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-185" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-185</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 185 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 185: коническо-цилиндрический, мощность 0.12–5.5 кВт, момент 49.0–685.0 Н·м, 179 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-186-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-186-193</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 186/193 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 186/193: коническо-цилиндрический, мощность 0.12–0.55 кВт, момент 134.0–980.0 Н·м, 51 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–0.55 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-186" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-186</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 186 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 186: коническо-цилиндрический, мощность 0.12–5.5 кВт, момент 109.0–910.0 Н·м, 129 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-187-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-187-193</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 187/193 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 187/193: коническо-цилиндрический, мощность 0.12–0.75 кВт, момент 270.0–1900.0 Н·м, 69 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–0.75 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-187" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-187</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 187 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 187: коническо-цилиндрический, мощность 0.25–11.0 кВт, момент 365.0–1820.0 Н·м, 142 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.25–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-188-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-188-195</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 188/195 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 188/195: коническо-цилиндрический, мощность 0.12–1.5 кВт, момент 435.0–3380.0 Н·м, 87 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–1.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-188" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-188</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 188 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 188: коническо-цилиндрический, мощность 0.37–22.0 кВт, момент 525.0–3210.0 Н·м, 143 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.37–22.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-189-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-189-195</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 189/195 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 189/195: коническо-цилиндрический, мощность 0.12–4.0 кВт, момент 675.0–5320.0 Н·м, 105 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-189" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-189</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 189 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 189: коническо-цилиндрический, мощность 0.75–30.0 кВт, момент 1050.0–5150.0 Н·м, 125 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.75–30.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1810-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1810-197</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1810/197 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1810/197: коническо-цилиндрический, мощность 0.12–5.5 кВт, момент 2050.0–10100.0 Н·м, 120 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1810" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1810</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1810 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1810: коническо-цилиндрический, мощность 1.5–45.0 кВт, момент 1430.0–8920.0 Н·м, 140 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">1.5–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1812-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1812-197</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1812/197 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1812/197: коническо-цилиндрический, мощность 0.12–4.0 кВт, момент 3180.0–16600.0 Н·м, 92 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1812-198" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1812-198</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1812/198 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1812/198: коническо-цилиндрический, мощность 1.5–11.0 кВт, момент 3330.0–15200.0 Н·м, 46 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">1.5–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1812" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1812</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1812 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1812: коническо-цилиндрический, мощность 4.0–90.0 кВт, момент 2090.0–15200.0 Н·м, 125 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">4.0–90.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1815-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1815-199</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1815/199 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1815/199: коническо-цилиндрический, мощность 0.55–11.0 кВт, момент 4150.0–22900.0 Н·м, 71 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.55–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1815" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1815</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1815 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1815: коническо-цилиндрический, мощность 5.5–200.0 кВт, момент 4510.0–22100.0 Н·м, 127 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">5.5–200.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1815-1910" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1815-1910</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1815/1910 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1815/1910: коническо-цилиндрический, мощность 9.2–22.0 кВт, момент 9630.0–21400.0 Н·м, 18 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">9.2–22.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1816-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1816-199</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1816/199 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1816/199: коническо-цилиндрический, мощность 0.55–11.0 кВт, момент 8560.0–38700.0 Н·м, 75 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.55–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1816" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1816</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1816 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1816: коническо-цилиндрический, мощность 7.5–200.0 кВт, момент 9850.0–39500.0 Н·м, 87 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">7.5–200.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1816-1910" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1816-1910</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1816/1910 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1816/1910: коническо-цилиндрический, мощность 9.2–45.0 кВт, момент 11500.0–40000.0 Н·м, 46 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">9.2–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1818-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1818-199</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1818/199 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1818/199: коническо-цилиндрический, мощность 0.55–11.0 кВт, момент 20800.0–61900.0 Н·м, 71 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">0.55–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1818-1910" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1818-1910</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1818/1910 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1818/1910: коническо-цилиндрический, мощность 4.0–45.0 кВт, момент 12600.0–60000.0 Н·м, 43 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">4.0–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1817" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1817</url>
+      <price>26130</price><currencyId>RUB</currencyId>
+      <categoryId>4</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_bevel.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1817 (коническо-цилиндрический)</name>
+      <description>Редуктор EVL 1817: коническо-цилиндрический, мощность 15.0–200.0 кВт, момент 12400.0–62800.0 Н·м, 102 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">коническо-цилиндрический</param>
+      <param name="Мощность">15.0–200.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-197-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-197-193</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 197/193 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 197/193: соосно-цилиндрический, мощность 0.12–0.55 кВт, момент 245.0–980.0 Н·м, 50 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–0.55 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-193</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 193 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 193: соосно-цилиндрический, мощность 0.12–3.0 кВт, момент 26.0–250.0 Н·м, 165 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–3.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-196-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-196-193</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 196/193 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 196/193: соосно-цилиндрический, мощность 0.12–0.37 кВт, момент 245.0–655.0 Н·м, 31 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–0.37 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-194-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-194-193</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 194/193 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 194/193: соосно-цилиндрический, мощность 0.12–0.25 кВт, момент 125.0–375.0 Н·м, 17 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–0.25 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-195-193" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-195-193</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 195/193 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 195/193: соосно-цилиндрический, мощность 0.12–0.25 кВт, момент 144.0–530.0 Н·м, 25 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–0.25 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-194" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-194</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 194 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 194: соосно-цилиндрический, мощность 0.12–5.5 кВт, момент 39.0–375.0 Н·м, 216 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-198-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-198-195</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 198/195 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 198/195: соосно-цилиндрический, мощность 0.12–1.1 кВт, момент 345.0–1850.0 Н·м, 64 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–1.1 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-199-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-199-195</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 199/195 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 199/195: соосно-цилиндрический, мощность 0.12–2.2 кВт, момент 740.0–3240.0 Н·м, 77 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–2.2 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-195" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-195</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 195 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 195: соосно-цилиндрический, мощность 0.12–7.5 кВт, момент 72.0–555.0 Н·м, 217 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-196" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-196</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 196 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 196: соосно-цилиндрический, мощность 0.12–7.5 кВт, момент 78.0–670.0 Н·м, 178 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1910-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1910-197</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1910/197 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1910/197: соосно-цилиндрический, мощность 0.12–4.0 кВт, момент 1220.0–5050.0 Н·м, 84 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-197</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 197 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 197: соосно-цилиндрический, мощность 0.12–11.0 кВт, момент 139.0–990.0 Н·м, 175 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1913-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1913-197</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1913/197 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1913/197: соосно-цилиндрический, мощность 0.12–4.0 кВт, момент 1850.0–10100.0 Н·м, 114 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1914-197" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1914-197</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1914/197 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1914/197: соосно-цилиндрический, мощность 0.12–4.0 кВт, момент 3270.0–16600.0 Н·м, 77 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.12–4.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-198" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-198</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 198 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 198: соосно-цилиндрический, мощность 0.25–22.0 кВт, момент 260.0–1910.0 Н·м, 207 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.25–22.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1914-198" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1914-198</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1914/198 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1914/198: соосно-цилиндрический, мощность 1.5–7.5 кВт, момент 3340.0–15500.0 Н·м, 37 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">1.5–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-199</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 199 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 199: соосно-цилиндрический, мощность 0.25–30.0 кВт, момент 455.0–3250.0 Н·м, 207 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.25–30.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1916-199" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1916-199</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1916/199 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1916/199: соосно-цилиндрический, мощность 0.55–11.0 кВт, момент 6510.0–23100.0 Н·м, 65 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.55–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1910" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1910</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1910 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1910: соосно-цилиндрический, мощность 0.75–45.0 кВт, момент 800.0–5060.0 Н·м, 179 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">0.75–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1916-1910" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1916-1910</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1916/1910 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1916/1910: соосно-цилиндрический, мощность 15.0–15.0 кВт, момент 15200.0–20800.0 Н·м, 5 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">15.0–15.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1913" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1913</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1913 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1913: соосно-цилиндрический, мощность 2.2–55.0 кВт, момент 1240.0–10300.0 Н·м, 191 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">2.2–55.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1914" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1914</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1914 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1914: соосно-цилиндрический, мощность 4.0–90.0 кВт, момент 700.0–16600.0 Н·м, 167 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">4.0–90.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1916" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1916</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>3</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_coaxial.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1916 (соосно-цилиндрический)</name>
+      <description>Редуктор EVL 1916: соосно-цилиндрический, мощность 5.5–160.0 кВт, момент 4080.0–23200.0 Н·м, 171 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">соосно-цилиндрический</param>
+      <param name="Мощность">5.5–160.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-1910x" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-1910x</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>6</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_cylindrical.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 1910Х (цилиндрический)</name>
+      <description>Редуктор EVL 1910Х: цилиндрический, мощность 5.5–45.0 кВт, момент 142.0–990.0 Н·м, 63 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">цилиндрический</param>
+      <param name="Мощность">5.5–45.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-195x" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-195x</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>6</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_cylindrical.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 195Х (цилиндрический)</name>
+      <description>Редуктор EVL 195Х: цилиндрический, мощность 0.12–5.5 кВт, момент 1.4–75.0 Н·м, 149 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">цилиндрический</param>
+      <param name="Мощность">0.12–5.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-196x" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-196x</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>6</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_cylindrical.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 196Х (цилиндрический)</name>
+      <description>Редуктор EVL 196Х: цилиндрический, мощность 0.12–7.5 кВт, момент 2.7–127.0 Н·м, 138 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">цилиндрический</param>
+      <param name="Мощность">0.12–7.5 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-197x" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-197x</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>6</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_cylindrical.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 197Х (цилиндрический)</name>
+      <description>Редуктор EVL 197Х: цилиндрический, мощность 1.1–11.0 кВт, момент 21.0–177.0 Н·м, 64 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">цилиндрический</param>
+      <param name="Мощность">1.1–11.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    <offer id="evl-198x" available="true">
+      <url>https://zavod-red.ru/reduktor/evl-198x</url>
+      <price>23050</price><currencyId>RUB</currencyId>
+      <categoryId>6</categoryId>
+      <picture>https://zavod-red.ru/assets/catalog/cat_cylindrical.webp</picture>
+      <vendor>Завод Редукторов</vendor>
+      <name>Мотор-редуктор EVL 198Х (цилиндрический)</name>
+      <description>Редуктор EVL 198Х: цилиндрический, мощность 3.0–30.0 кВт, момент 52.0–570.0 Н·м, 134 исполнений. Производство, аналог импорта, гарантия 24 мес.</description>
+      <param name="Тип передачи">цилиндрический</param>
+      <param name="Мощность">3.0–30.0 кВт</param>
+      <param name="Гарантия">24 месяца</param>
+    </offer>
+    </offers>
+  </shop>
+</yml_catalog>
