@@ -143,7 +143,9 @@
   <url><loc>https://zavod-red.ru/glossary/soosnyy-reduktor</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/servis-faktor</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/konsolnaya-nagruzka</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/osevaya-nagruzka</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/samotormozhenie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/obkatka-reduktora</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/shildik-reduktora</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/flancevyy-montazh</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/lapnoe-kreplenie</loc><priority>0.6</priority></url>
@@ -151,9 +153,13 @@
   <url><loc>https://zavod-red.ru/glossary/oboroty-na-vyhode</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/peregruzochnaya-sposobnost</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/mezhosevoe-rasstoyanie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/resurs-reduktora</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/vibraciya-reduktora</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/stepen-zashchity-ip</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/derevoobrabotka</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/pishchevaya</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/metallurgiya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/mashinostroenie</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/gornaya</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/konveyery</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/podyemnye</loc><priority>0.6</priority></url>
@@ -163,6 +169,10 @@
   <url><loc>https://zavod-red.ru/otrasli/bumaga</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/porty</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/himiya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/sklady-logistika</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/neftegaz</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/ochistnye-sooruzheniya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/farmacevtika</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/glossary/</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/otrasli/</loc><priority>0.6</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-063-747</loc><priority>0.7</priority></url>
@@ -260,4 +270,47 @@
   <url><loc>https://zavod-red.ru/reduktor/evl-199</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1916-199</loc><priority>0.7</priority></url>
   <url><loc>https://zavod-red.ru/reduktor/evl-1815-199</loc><priority>0.7</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/motor-reduktory-220v</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/motor-reduktory-380v</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/chervyachnye-odnostupenchatye</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/chervyachnye-dvuhstupenchatye</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/reduktory-na-lapah</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/flancevye-reduktory</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/reduktory-s-polym-valom</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/nasadnye-reduktory</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/reduktory-bolshogo-peredatochnogo</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/tihohodnye-reduktory</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/reduktory-dlya-konveyera</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/catalog/reduktory-s-tormozom</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/smazka-reduktora</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/montazhnoe-polozhenie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/polyy-val</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/obratnyy-hod</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/teplovaya-moshchnost</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/modul-zaceplenia</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/zubchatoe-koleso</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/shesternya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/podshipnik-reduktora</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/uplotnenie-vala</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/puskovoy-moment</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/moment-inercii</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/radialnaya-nagruzka</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/ip-zashchita</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/lyuft</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/dvuhstupenchatyy-reduktor</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/chastota-vrashcheniya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/nominalnaya-moshchnost</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/peredatochnoe-otnoshenie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/glossary/flanec-iec</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/stroitelstvo</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/cement</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/tekstil</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/poligrafiya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/sudostroenie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/energetika</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/stankostroenie</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/avtomobilnaya</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/steklo</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/kombikorm</loc><priority>0.6</priority></url>
+  <url><loc>https://zavod-red.ru/otrasli/betonnye-zavody</loc><priority>0.6</priority></url>
 </urlset>
