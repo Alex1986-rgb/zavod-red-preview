@@ -10,6 +10,11 @@
   RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
   RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
 
+  # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
+  # при переименовании аналогов sew-k-57,-s-67 → sew-k-57-s-67. Работает и для нескольких запятых.
+  RewriteCond %{REQUEST_URI} ^/(.*),-?(.*)$
+  RewriteRule ^ /%1-%2 [R=301,L,NE]
+
   # любой /страница.html → /страница (301), сразу на https
   RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
   RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
@@ -73,6 +78,9 @@
   # Мягкий CSP: только апгрейд http-подресурсов в https (не ломает inline-скрипты/Метрику/model-viewer)
   Header always set Content-Security-Policy "upgrade-insecure-requests"
 </IfModule>
+
+# Кастомная 404-страница (мягкая для пользователя + не «жёсткий» Apache-404 для роботов)
+ErrorDocument 404 /404.html
 
 # --- Защита бэкенда CRM (живёт в этом же корне; правила безвредны, даже если CRM нет) ---
 Options -Indexes
