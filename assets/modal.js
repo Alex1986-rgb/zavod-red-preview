@@ -1,10 +1,10 @@
 /* Всплывающая форма-заявка (popup) — единая по всему сайту. Самодостаточный модуль. */
 (function(){
   // глубина страницы → пути к api и privacy
-  var sub = /\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
+  var sub = /\/(catalog|cases|uslugi|brands|blog|analog|reduktor|ispolnenie|tiporazmer|glossary|otrasli)\//.test(location.pathname);
   var pfx = sub ? '../' : '';
-  var ACTION = pfx + 'api/feedback.php';
-  var PRIVACY = pfx + 'privacy.html';
+  var ACTION = '/api/feedback.php';
+  var PRIVACY = '/privacy.html';
   var MAXB = 10 * 1024 * 1024; // лимит файла 10 МБ
 
   var css = ''
@@ -242,8 +242,8 @@
 (function(){
   var KEY='zr_cookie_consent';
   try{ if(localStorage.getItem(KEY)) return; }catch(e){}
-  var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
-  var PRIVACY=(sub?'../':'')+'privacy.html';
+  var sub=/\/(catalog|cases|uslugi|brands|blog|analog|reduktor|ispolnenie|tiporazmer|glossary|otrasli)\//.test(location.pathname);
+  var PRIVACY='/privacy.html';
   var css=''
    +'.zr-cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:995;max-width:760px;margin:0 auto;'
    +'background:#15242f;border:1px solid #2a3b48;border-radius:13px;padding:16px 18px;'
@@ -283,8 +283,8 @@
 
 /* ===== Универсальный обработчик статичных лид-форм (.lead-form, напр. #impForm) ===== */
 (function(){
-  var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
-  var ACTION=(sub?'../':'')+'api/feedback.php';
+  var sub=/\/(catalog|cases|uslugi|brands|blog|analog|reduktor|ispolnenie|tiporazmer|glossary|otrasli)\//.test(location.pathname);
+  var ACTION='/api/feedback.php';
   document.addEventListener('submit',function(e){
     var form=e.target;
     if(!form.classList||!form.classList.contains('lead-form'))return;
