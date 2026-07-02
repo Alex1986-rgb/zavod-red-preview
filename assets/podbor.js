@@ -96,8 +96,8 @@
   function fillRanges(){
     var base=rowsOfType();
     COLS.forEach(function(c){
-      var vals={};
-      base.forEach(function(it){ if(it[c.i]!=null)vals[it[c.i]]=1; });
+      var vals={}, _p=Math.pow(10,c.d==null?2:c.d);
+      base.forEach(function(it){ if(it[c.i]!=null)vals[Math.round(it[c.i]*_p)/_p]=1; });
       var sorted=Object.keys(vals).map(parseFloat).sort(function(a,b){return a-b;});
       RANGE_VALS[c.i]=sorted;
       ['min','max'].forEach(function(mm){
