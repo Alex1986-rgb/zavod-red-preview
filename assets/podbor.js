@@ -23,6 +23,8 @@
   var presetType=(root.getAttribute('data-type')||'').trim();
   var lockType=root.getAttribute('data-locktype')==='1';
   var compact=root.getAttribute('data-compact')==='1'; // только фильтры + счётчик, без списка строк
+  var presetBrand=(root.getAttribute('data-brand')||'').trim(); // предустановленный бренд (ключ как в g.a), для страниц брендов
+  var lockBrand=root.getAttribute('data-lockbrand')==='1';      // зафиксировать бренд (страница конкретной фирмы)
 
   var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический','цилиндрический'];
   var enabledIdx=[];
@@ -55,7 +57,7 @@
     +'<button type="button" class="pf-btn pf-btn--red" id="pfExport" data-zayavka>Получить выгрузку на почту</button>'
     +'<span class="pf-count" id="pfCount"></span></div></td></tr>';
 
-  var pillsHtml='<div class="pf-brands" id="pfBrands"></div>'+(lockType?'':'<div class="pf-types" id="pfTypes"></div>');
+  var pillsHtml=(lockBrand?'<div class="pf-brands pf-brands--lock" id="pfBrandLock"></div>':'<div class="pf-brands" id="pfBrands"></div>')+(lockType?'':'<div class="pf-types" id="pfTypes"></div>');
 
   // тулбар: в полном режиме — сброс+CSV; в компактном — сброс + «Показать в таблице»
   var toolbar=compact
@@ -79,10 +81,10 @@
    +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
-  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand='', RANGE_VALS={}, $=function(id){return document.getElementById(id);};
+  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''}];
+  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
 
   function curType(){
@@ -167,6 +169,12 @@
     else { selType=-1; }
     if(!lockType) buildPills();
     buildBrands();
+    if(lockBrand){
+      var _bo=BMAP[selBrand];
+      var _bl=$('pfBrandLock');
+      if(_bl) _bl.innerHTML='<span class="pf-brands-lbl">Показываем аналоги:</span><span class="pf-pill pf-pill--brand is-active" aria-current="true">'+((_bo&&_bo.n)||selBrand)+'</span>';
+      var _th=root.querySelector('.pf-th-tz'); if(_th) _th.textContent=((_bo&&_bo.n)||selBrand)+' (наш аналог EVL)';
+    }
     fillRanges();
     preApplyNumeric();
     fillModels();
