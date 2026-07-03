@@ -351,13 +351,13 @@
     if(m)m.value='Нужен аналог: '+req+'. Прошу подобрать наш редуктор, дать цену и срок.';
   });
 
-  // предзаполнить тип в сообщении формы-заявки (modal.js)
-  Array.prototype.forEach.call(root.querySelectorAll('[data-zayavka]'),function(b){
-    b.addEventListener('click',function(){
-      var tname=(DB&&selType>=0)?DB.t[selType]:presetType;
-      var want=TYPE_LABEL[tname]||tname;
-      var msg=document.getElementById('zrMsg');
-      if(want&&msg&&!msg.value){ msg.value='Интересует '+want.toLowerCase()+' редуктор (из таблицы подбора). Прошу подобрать типоразмер, цену и срок.'; }
-    });
+  // предзаполнить тип в сообщении формы-заявки (modal.js) — делегированно, для ВСЕХ кнопок заявки,
+  // включая кнопки в шапке страницы (вне #pfRoot). guard !msg.value не перетирает ввод и текст «Запрос».
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('[data-zayavka]'))return;
+    var tname=(DB&&selType>=0)?DB.t[selType]:presetType;
+    var want=TYPE_LABEL[tname]||tname;
+    var msg=document.getElementById('zrMsg');
+    if(want&&msg&&!msg.value){ msg.value='Интересует '+want.toLowerCase()+' редуктор (из таблицы подбора). Прошу подобрать типоразмер, цену и срок.'; }
   });
 })();
