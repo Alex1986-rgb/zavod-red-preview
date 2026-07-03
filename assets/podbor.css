@@ -80,6 +80,47 @@
 @media(max-width:680px){
   .pf-ask{flex-direction:column;align-items:stretch;text-align:center}
   .pf-toolbar{justify-content:flex-start}
+
+  /* ——— мобильная карточная раскладка вместо широкой таблицы (нет горизонтального скролла) ——— */
+  .pf-tablewrap{overflow-x:visible;border:0;border-radius:0;background:transparent}
+  .pf-table{display:block;width:100%;min-width:0;font-size:14px}
+  .pf-table thead,.pf-table tbody{display:block;width:100%}
+  /* строка заголовков колонок не нужна — подписи берём из data-label */
+  .pf-table thead tr:first-child{display:none}
+
+  /* строка фильтров → вертикальная панель с подписями */
+  .pf-frow{display:block}
+  .pf-frow td{display:block;width:100%;background:var(--bg2)!important;border:0;border-bottom:1px solid var(--line);padding:11px 14px}
+  .pf-frow td:first-child{border-radius:12px 12px 0 0;border-top:1px solid var(--line)}
+  .pf-frow td.pf-frow-pad{display:none}
+  .pf-frow td[data-label]::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;
+    letter-spacing:.03em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .pf-frow .pf-rg{display:inline-flex;width:calc(50% - 5px)}
+  .pf-frow .pf-rg:first-of-type{margin-right:6px}
+
+  /* строка кнопок */
+  .pf-brow td{display:block;background:var(--card)!important;border-radius:0 0 12px 12px;padding:14px}
+  .pf-toolbar .pf-btn{flex:1 1 auto;text-align:center}
+
+  /* строки результатов → карточки */
+  .pf-table tbody td{white-space:normal}
+  .pf-table tbody tr{display:block;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;
+    background:var(--card)!important;overflow:hidden}
+  .pf-table tbody tr:hover{background:var(--card)!important}
+  [data-theme="light"] .pf-table tbody tr:hover{background:var(--card)!important}
+  .pf-table tbody td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:10px 14px;border-bottom:1px solid var(--line);text-align:right}
+  .pf-table tbody td:last-child{border-bottom:0}
+  .pf-table tbody td[data-label]::before{content:attr(data-label);flex:0 0 46%;text-align:left;
+    color:var(--muted);font-size:12px;font-weight:600}
+  /* ячейка типоразмера — на всю ширину, без подписи */
+  .pf-tz{display:block!important;text-align:left!important;background:var(--bg2)}
+  .pf-tz b{font-size:15px}
+  /* кнопка заказа — во всю ширину карточки */
+  .pf-order{display:block!important;text-align:center!important;padding:12px 14px!important}
+  .pf-ord{display:block;width:100%;box-sizing:border-box;padding:13px}
+  /* пустое / загрузка на всю ширину */
+  .pf-empty,.pf-loading-cell{display:block!important;text-align:center}
 }
 .pf-brands{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
 .pf-brands-lbl{font-size:13px;color:var(--muted);margin-right:4px;font-weight:600}

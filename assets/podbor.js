@@ -31,13 +31,13 @@
 
   // Параметры: индекс в позиции, заголовок, знаков после запятой
   var COLS=[
-    {i:1, h:'Мощность двигателя, кВт',                 d:2},
-    {i:2, h:'Обороты на выходе n вых, об/мин',          d:1},
-    {i:3, h:'Крутящий момент на вых. валу Tном, Н·м',   d:1},
-    {i:4, h:'Передаточное число, U',                    d:2},
-    {i:5, h:'Консольная нагрузка Fном, Н',              d:0},
-    {i:6, h:'Сервис-фактор, Sfном',                     d:2},
-    {i:7, h:'Обороты двигателя n вх, об/мин',            d:0}
+    {i:1, h:'Мощность двигателя, кВт',                 d:2, m:'Мощность, кВт'},
+    {i:2, h:'Обороты на выходе n вых, об/мин',          d:1, m:'n вых, об/мин'},
+    {i:3, h:'Крутящий момент на вых. валу Tном, Н·м',   d:1, m:'Момент, Н·м'},
+    {i:4, h:'Передаточное число, U',                    d:2, m:'Передат. U'},
+    {i:5, h:'Консольная нагрузка Fном, Н',              d:0, m:'Fконс, Н'},
+    {i:6, h:'Сервис-фактор, Sfном',                     d:2, m:'Сервис-фактор Sf'},
+    {i:7, h:'Обороты двигателя n вх, об/мин',            d:0, m:'n вх, об/мин'}
   ];
   var NCOL=COLS.length+2;
 
@@ -46,11 +46,11 @@
   var headHtml='<tr><th class="pf-th-tz">Типоразмер редуктора</th>'
     +COLS.map(function(c){return '<th>'+c.h+'</th>';}).join('')+'<th class="pf-th-ord">Заказ</th></tr>';
 
-  var filterHtml='<tr class="pf-frow"><td><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off" list="pfModels" inputmode="search"><datalist id="pfModels"></datalist></td>'
+  var filterHtml='<tr class="pf-frow"><td data-label="Поиск по модели / аналогу"><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off" list="pfModels" inputmode="search"><datalist id="pfModels"></datalist></td>'
     +COLS.map(function(c){
-        return '<td><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
+        return '<td data-label="'+c.m+'"><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
              +'<div class="pf-rg"><span>до</span><select class="pf-sel" data-max="'+c.i+'"><option value="">Все</option></select></div></td>';
-      }).join('')+'<td></td></tr>';
+      }).join('')+'<td class="pf-frow-pad"></td></tr>';
 
   var btnHtml='<tr class="pf-brow"><td colspan="'+NCOL+'"><div class="pf-toolbar">'
     +'<button type="button" class="pf-btn pf-btn--ghost" id="pfReset">Сбросить фильтр</button>'
@@ -281,7 +281,7 @@
   function rowHtml(it){
     var g=DB.g[it[0]];
     var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).filter(Boolean);
-    var tds=COLS.map(function(c){return '<td>'+fmt(it[c.i],c.d)+'</td>';}).join('');
+    var tds=COLS.map(function(c){return '<td data-label="'+c.m+'">'+fmt(it[c.i],c.d)+'</td>';}).join('');
     var tz, ord, b=BMAP[selBrand];
     if(b&&b.k){
       var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
