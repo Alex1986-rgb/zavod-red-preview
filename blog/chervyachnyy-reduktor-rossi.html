@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Червячный редуктор Rossi и аналог EVL</title>
+<meta name="description" content="Червячные редукторы Rossi серии V: устройство, передаточные числа и КПД. Как подобрать аналог EVL по моменту и валам — практическое руководство инженера." />
+<link rel="canonical" href="https://zavod-red.ru/blog/chervyachnyy-reduktor-rossi.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/chervyachnyy-reduktor-rossi.html" />
+<meta property="og:title" content="Червячный редуктор Rossi и аналог EVL" /><meta property="og:description" content="Червячные редукторы Rossi серии V: устройство, передаточные числа и КПД. Как подобрать аналог EVL по моменту и валам — практическое руководство инженера." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Червячный редуктор Rossi и аналог EVL", "description": "Червячные редукторы Rossi серии V: устройство, передаточные числа и КПД. Как подобрать аналог EVL по моменту и валам — практическое руководство инженера.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/chervyachnyy-reduktor-rossi.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Червячный редуктор Rossi и аналог EVL", "item": "https://zavod-red.ru/blog/chervyachnyy-reduktor-rossi.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем червячный редуктор отличается от цилиндрического?", "acceptedAnswer": {"@type": "Answer", "text": "Червячный компактнее, даёт большое передаточное число в одной ступени и способен к самоторможению, но имеет ниже КПД. Цилиндрический эффективнее по КПД и мощнее, но крупнее при том же i."}}, {"@type": "Question", "name": "Как узнать момент моего Rossi, если нет паспорта?", "acceptedAnswer": {"@type": "Answer", "text": "Посчитайте по формуле T=9550·P·КПД/n2, взяв мощность двигателя и обороты выходного вала. КПД червячной пары примите 0,7–0,85 в зависимости от передаточного числа."}}, {"@type": "Question", "name": "Встанет ли EVL на место старого Rossi?", "acceptedAnswer": {"@type": "Answer", "text": "В большинстве ходовых типоразмеров — да, присоединительные размеры совпадают. Перед заказом инженер сверяет чертёж посадочного узла: вал, фланец, межосевое расстояние."}}, {"@type": "Question", "name": "Что такое самоторможение и когда оно нужно?", "acceptedAnswer": {"@type": "Answer", "text": "Это свойство передачи не проворачиваться обратно без питания. Нужно в подъёмниках, шлагбаумах и позиционерах, чтобы груз или механизм не сползал при остановке."}}, {"@type": "Question", "name": "Почему у червячного редуктора падает КПД?", "acceptedAnswer": {"@type": "Answer", "text": "Из-за трения скольжения в зацеплении. Чем выше передаточное число, тем больше доля скольжения и меньше КПД: при i=100 он может опускаться до 0,6–0,7."}}, {"@type": "Question", "name": "Кто производитель EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Редукторы EVL производит ООО «НИИ АТТ» (Челябинск). Это российская марка, а не перемаркированный импорт, поэтому сроки поставки и запчасти доступны внутри страны."}}, {"@type": "Question", "name": "Нужен ли запас по моменту при подборе?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Аналог подбирают с равным или большим номинальным моментом и учётом сервис-фактора под характер нагрузки: удары, частые пуски и продолжительность работы увеличивают требуемый запас."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Червячный редуктор Rossi и аналог EVL</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Rossi</div>
+  <h1>Червячный редуктор Rossi: характеристики и аналог EVL</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Итальянские червячные редукторы Rossi десятилетиями применяются в конвейерах, упаковке и станках. Но санкции и сроки поставки заставляют искать замену. Разбираем конструкцию Rossi и объясняем, как заводской редуктор EVL закрывает эту потребность без потери характеристик.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Червячная передача Rossi ценится за компактность и способность к самоторможению. Ниже — как читать её параметры и переносить их на аналог EVL по трём ключевым величинам: крутящему моменту, передаточному числу и типу вала.</p>
+  <h2>Устройство и принцип червячной передачи</h2><p>Червячный редуктор преобразует вращение через зацепление червяка (винта) и червячного колеса. Оси входного и выходного валов перекрещиваются под 90°, что даёт компактный корпус и большое передаточное число в одной ступени — от 5 до 100.</p><p>Rossi выпускает червячные редукторы в корпусах из алюминиевого сплава (лёгкие серии) и чугуна (тяжёлые нагрузки). Главное свойство передачи — самоторможение при высоких передаточных числах: без питания вал не проворачивается обратно, что важно для подъёмных и позиционирующих механизмов.</p><h2>Крутящий момент и как он считается</h2><p>Выходной момент определяет, какую нагрузку редуктор потянет. Расчёт ведётся по формуле T=9550·P·КПД/n2, где P — мощность двигателя в кВт, n2 — обороты выходного вала, КПД червячной пары зависит от передаточного числа и составляет обычно 0,7–0,9.</p><p>Для подбора аналога EVL достаточно знать момент и обороты рабочего органа. Если вы снимаете параметры со старого Rossi, ориентируйтесь на его паспортный номинальный момент — редуктор EVL подбирается с равным или большим значением и запасом по сервис-фактору.</p><h2>Передаточное число и обороты</h2><p>Передаточное число i=n1/n2 показывает, во сколько раз падает скорость. При стандартном асинхронном двигателе n1≈1450 об/мин и требуемых, например, 29 об/мин на выходе получаем i=50.</p><p>Червячные редукторы перекрывают диапазон i от 7 до 100 в одной ступени. Это удобно там, где нужны низкие обороты и высокий момент без второй ступени. При подборе EVL берут ближайший типоразмер с тем же i, чтобы сохранить кинематику привода.</p><h2>КПД и тепловой режим</h2><p>Слабое место червячной передачи — КПД, который падает с ростом передаточного числа из-за трения скольжения. При i=50 КПД около 0,8, при i=100 может опускаться до 0,6–0,7. Разница уходит в тепло, поэтому важна теплоотдача корпуса и правильное масло.</p><p>При замене Rossi на EVL проверяют не только момент, но и тепловую мощность: длительная работа под полной нагрузкой требует запаса по нагреву. Заводские редукторы EVL рассчитываются под непрерывный режим S1 с учётом температуры окружающей среды в цеху.</p><h2>Монтажные размеры и присоединение</h2><p>Rossi использует стандартные фланцы и полые/сплошные выходные валы. При замене критичны межосевое расстояние, диаметр вала, тип посадки (шпонка, полый вал под усадку) и расположение лап или фланца.</p><p>EVL повторяет ходовые присоединительные размеры популярных типоразмеров, поэтому в большинстве случаев редуктор встаёт на штатное место. Перед заказом инженер сверяет чертёж посадочного узла — это исключает переделку рамы и муфт.</p><h2>Почему аналог EVL — рабочее решение</h2><p>EVL — собственная марка ООО «НИИ АТТ» (Челябинск). Это не перемаркированный импорт: редукторы проектируются и собираются в России, что снимает зависимость от поставок из ЕС и сокращает сроки до склада.</p><p>Для заказчика это означает предсказуемый срок, ремонтопригодность и доступность запчастей внутри страны. По моменту, передаточному числу и монтажу EVL подбирается как прямая функциональная замена Rossi.</p>
+  <h3>Ключевые параметры для подбора аналога</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Значение / формула</td></tr><tr><th>Крутящий момент T</th><td>T=9550·P·КПД/n2, Н·м</td></tr><tr><th>Передаточное число i</th><td>i=n1/n2</td></tr><tr><th>Обороты двигателя n1</th><td>≈1450 об/мин</td></tr><tr><th>КПД червячной пары</th><td>0,6–0,9 (зависит от i)</td></tr><tr><th>Диапазон i (1 ступень)</th><td>7–100</td></tr></tbody></table><h3>Что сверить при замене Rossi → EVL</h3><table class="spec"><tbody><tr><th>Критерий</th><td>Зачем</td></tr><tr><th>Момент на выходе</th><td>Нагрузочная способность</td></tr><tr><th>Передаточное число</th><td>Сохранение оборотов рабочего органа</td></tr><tr><th>Диаметр и тип вала</th><td>Совместимость посадки</td></tr><tr><th>Фланец / лапы</th><td>Монтаж на штатное место</td></tr><tr><th>Тепловой режим</th><td>Работа без перегрева в S1</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Rossi под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Rossi и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>Чем червячный редуктор отличается от цилиндрического?</summary><div>Червячный компактнее, даёт большое передаточное число в одной ступени и способен к самоторможению, но имеет ниже КПД. Цилиндрический эффективнее по КПД и мощнее, но крупнее при том же i.</div></details><details><summary>Как узнать момент моего Rossi, если нет паспорта?</summary><div>Посчитайте по формуле T=9550·P·КПД/n2, взяв мощность двигателя и обороты выходного вала. КПД червячной пары примите 0,7–0,85 в зависимости от передаточного числа.</div></details><details><summary>Встанет ли EVL на место старого Rossi?</summary><div>В большинстве ходовых типоразмеров — да, присоединительные размеры совпадают. Перед заказом инженер сверяет чертёж посадочного узла: вал, фланец, межосевое расстояние.</div></details><details><summary>Что такое самоторможение и когда оно нужно?</summary><div>Это свойство передачи не проворачиваться обратно без питания. Нужно в подъёмниках, шлагбаумах и позиционерах, чтобы груз или механизм не сползал при остановке.</div></details><details><summary>Почему у червячного редуктора падает КПД?</summary><div>Из-за трения скольжения в зацеплении. Чем выше передаточное число, тем больше доля скольжения и меньше КПД: при i=100 он может опускаться до 0,6–0,7.</div></details><details><summary>Кто производитель EVL?</summary><div>Редукторы EVL производит ООО «НИИ АТТ» (Челябинск). Это российская марка, а не перемаркированный импорт, поэтому сроки поставки и запчасти доступны внутри страны.</div></details><details><summary>Нужен ли запас по моменту при подборе?</summary><div>Да. Аналог подбирают с равным или большим номинальным моментом и учётом сервис-фактора под характер нагрузки: удары, частые пуски и продолжительность работы увеличивают требуемый запас.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Червячные редукторы Rossi и их аналоги EVL: краткая сводка по подбору для инженера-механика.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Подбор аналога начинается с трёх величин: крутящего момента на выходе, передаточного числа и типа вала. Момент считают по T=9550·P·КПД/n2, передаточное число — по i=n1/n2 при n1≈1450 об/мин. Этих данных достаточно, чтобы определить типоразмер EVL.</p><p>EVL производится в Челябинске (ООО «НИИ АТТ»), что даёт короткие сроки поставки и доступность запчастей. Функционально редуктор заменяет Rossi по нагрузке, кинематике и монтажу, сохраняя самоторможение червячной передачи там, где оно требуется.</p><h3>Формулы подбора</h3><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Момент</th><td>T=9550·P·КПД/n2</td></tr><tr><th>Передаточное число</th><td>i=n1/n2</td></tr><tr><th>Обороты входа</th><td>n1≈1450 об/мин</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Rossi под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора по моменту</a><a href="../analog/">Аналоги импортных редукторов EVL</a><a href="../importozameshchenie">Импортозамещение приводной техники</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

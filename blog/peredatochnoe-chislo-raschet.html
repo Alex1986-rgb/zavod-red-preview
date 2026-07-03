@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Передаточное число: расчёт и подбор редуктора</title>
+<meta name="description" content="Как рассчитать передаточное число редуктора по формуле i=n1/n2, разобрать примеры и подобрать редуктор EVL под нужные обороты выходного вала." />
+<link rel="canonical" href="https://zavod-red.ru/blog/peredatochnoe-chislo-raschet.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/peredatochnoe-chislo-raschet.html" />
+<meta property="og:title" content="Передаточное число: расчёт и подбор редуктора" /><meta property="og:description" content="Как рассчитать передаточное число редуктора по формуле i=n1/n2, разобрать примеры и подобрать редуктор EVL под нужные обороты выходного вала." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Передаточное число: расчёт и подбор редуктора", "description": "Как рассчитать передаточное число редуктора по формуле i=n1/n2, разобрать примеры и подобрать редуктор EVL под нужные обороты выходного вала.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/peredatochnoe-chislo-raschet.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Передаточное число: расчёт и подбор редуктора", "item": "https://zavod-red.ru/blog/peredatochnoe-chislo-raschet.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать передаточное число редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле i=n1/n2: обороты входного вала делят на требуемые обороты выходного. Например, 1450/29=50."}}, {"@type": "Question", "name": "Чему равны обороты двигателя n1 в расчётах?", "acceptedAnswer": {"@type": "Answer", "text": "Для стандартного 4-полюсного асинхронного двигателя принимают n1≈1450 об/мин. У 2-полюсных — около 2900, у 6-полюсных — около 960 об/мин."}}, {"@type": "Question", "name": "Что делать, если расчётное i не совпадает со стандартным?", "acceptedAnswer": {"@type": "Answer", "text": "Выбирают ближайшее значение из стандартного ряда редуктора. Фактические обороты выхода немного изменятся; при необходимости точную скорость задают частотником."}}, {"@type": "Question", "name": "Как передаточное число влияет на крутящий момент?", "acceptedAnswer": {"@type": "Answer", "text": "Момент на выходе растёт примерно пропорционально i с учётом КПД. Большое i одновременно снижает обороты и повышает момент."}}, {"@type": "Question", "name": "Почему у червячного редуктора большое передаточное число в одной ступени?", "acceptedAnswer": {"@type": "Answer", "text": "Червячная передача за один оборот червяка проворачивает колесо всего на один-несколько зубьев, что даёт i от 8 до 80 в одной ступени."}}, {"@type": "Question", "name": "Снижается ли КПД при большом передаточном числе?", "acceptedAnswer": {"@type": "Answer", "text": "Да, особенно у червячных и многоступенчатых передач. При большом i КПД червячного редуктора может падать до 0,5–0,7, это учитывают при выборе двигателя."}}, {"@type": "Question", "name": "Можно ли подобрать передаточное число автоматически?", "acceptedAnswer": {"@type": "Answer", "text": "Да, через калькулятор подбора: он рассчитает i по заданным оборотам и подберёт ближайший стандартный типоразмер редуктора EVL."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Передаточное число: расчёт и подбор редуктора</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Nord, SEW, Bonfiglioli</div>
+  <h1>Передаточное число редуктора: расчёт и подбор</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Передаточное число — базовая характеристика любого редуктора: именно оно определяет, во сколько раз снизятся обороты и вырастет крутящий момент на выходном валу. Ошибка в расчёте i приводит к неверной скорости привода и перегрузке двигателя, поэтому подбор редуктора всегда начинают с определения нужного передаточного числа.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Разберём формулу i=n1/n2, порядок расчёта от требуемых оборотов рабочего органа и типовые значения передаточных чисел для червячных, цилиндрических и планетарных редукторов EVL.</p>
+  <h2>Что такое передаточное число</h2><p>Передаточное число i показывает отношение частоты вращения входного вала n1 к частоте вращения выходного вала n2: i=n1/n2. Если двигатель делает 1450 об/мин, а на выходе нужно 29 об/мин, передаточное число составит 1450/29=50.</p><p>Передаточное число всегда безразмерно. Чем оно больше, тем сильнее снижаются обороты и тем больше растёт крутящий момент (без учёта потерь момент растёт пропорционально i). Это ключевое свойство редуктора как понижающей передачи.</p><h2>Формула расчёта передаточного числа</h2><p>Основная формула: i=n1/n2, где n1 — обороты входного вала (обычно вал электродвигателя), n2 — требуемые обороты выходного вала. Для стандартного асинхронного двигателя на 4 полюса принимают n1≈1450 об/мин.</p><p>Расчёт ведут от рабочего органа: сначала определяют, сколько оборотов в минуту должен делать выходной вал, затем делят обороты двигателя на это значение. Полученное i округляют до ближайшего стандартного передаточного числа из ряда редуктора.</p><h2>Пример расчёта для конвейера</h2><p>Допустим, барабан конвейера должен вращаться со скоростью 48 об/мин при двигателе 1450 об/мин. Передаточное число: i=1450/48≈30. Из стандартного ряда выбираем ближайшее значение i=31,5, тогда фактические обороты составят 1450/31,5≈46 об/мин.</p><p>Небольшое отклонение фактических оборотов от расчётных нормально — стандартные ряды передаточных чисел дискретны. Если требуется точная скорость, применяют частотный преобразователь на двигателе или мотор-редуктор с точным подбором ступеней.</p><h2>Стандартные ряды передаточных чисел</h2><p>Червячные редукторы обычно перекрывают диапазон i от 8 до 80 в одной ступени, что делает их удобными для больших замедлений. Цилиндрические одноступенчатые дают i до 6,3, двухступенчатые — до 40, трёхступенчатые — свыше 200.</p><p>Планетарные редукторы отличаются высокими передаточными числами в компактном корпусе. Точные значения ряда i зависят от конкретной серии и типоразмера редуктора EVL — их берут из технической документации, а не подбирают произвольно.</p><h2>Связь передаточного числа и момента</h2><p>После определения i проверяют крутящий момент на выходе. Момент на выходном валу приближённо равен моменту двигателя, умноженному на i и на КПД передачи. Поэтому большое передаточное число одновременно решает две задачи: снижает скорость и повышает момент.</p><p>При этом с ростом числа ступеней и i суммарный КПД падает. У червячных редукторов с большим i КПД может опускаться до 0,5–0,7, что нужно учитывать при расчёте требуемой мощности двигателя.</p><h2>Как связать расчёт с подбором EVL</h2><p>Порядок практического подбора: определить n2 рабочего органа, рассчитать i=n1/n2, выбрать тип редуктора (червячный, цилиндрический, планетарный) под условия эксплуатации, затем по требуемому моменту и i найти типоразмер EVL.</p><p>Удобнее всего вести подбор через калькулятор: он сам подберёт ближайшее стандартное передаточное число и типоразмер под заданные обороты и момент. Производитель линейки — ООО «НИИ АТТ» (бренд EVL), Челябинск.</p>
+  <h3>Пример расчёта передаточного числа при n1=1450 об/мин</h3><table class="spec"><tbody><tr><td>Требуемые n2, об/мин</td><td>Расчётное i=n1/n2</td><td>Ближайшее стандартное i</td></tr><tr><td>145</td><td>10</td><td>10</td></tr><tr><td>96</td><td>15</td><td>16</td></tr><tr><td>48</td><td>30</td><td>31,5</td></tr><tr><td>29</td><td>50</td><td>50</td></tr><tr><td>18</td><td>80</td><td>80</td></tr></tbody></table><h3>Типовые диапазоны передаточных чисел по типу редуктора</h3><table class="spec"><tbody><tr><td>Тип редуктора</td><td>Число ступеней</td><td>Диапазон i</td></tr><tr><td>Цилиндрический</td><td>1</td><td>до 6,3</td></tr><tr><td>Цилиндрический</td><td>2</td><td>до 40</td></tr><tr><td>Червячный</td><td>1</td><td>8–80</td></tr><tr><td>Планетарный</td><td>1–3</td><td>до 1000+</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Nord, SEW, Bonfiglioli под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Nord, SEW, Bonfiglioli и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>Как рассчитать передаточное число редуктора?</summary><div>По формуле i=n1/n2: обороты входного вала делят на требуемые обороты выходного. Например, 1450/29=50.</div></details><details><summary>Чему равны обороты двигателя n1 в расчётах?</summary><div>Для стандартного 4-полюсного асинхронного двигателя принимают n1≈1450 об/мин. У 2-полюсных — около 2900, у 6-полюсных — около 960 об/мин.</div></details><details><summary>Что делать, если расчётное i не совпадает со стандартным?</summary><div>Выбирают ближайшее значение из стандартного ряда редуктора. Фактические обороты выхода немного изменятся; при необходимости точную скорость задают частотником.</div></details><details><summary>Как передаточное число влияет на крутящий момент?</summary><div>Момент на выходе растёт примерно пропорционально i с учётом КПД. Большое i одновременно снижает обороты и повышает момент.</div></details><details><summary>Почему у червячного редуктора большое передаточное число в одной ступени?</summary><div>Червячная передача за один оборот червяка проворачивает колесо всего на один-несколько зубьев, что даёт i от 8 до 80 в одной ступени.</div></details><details><summary>Снижается ли КПД при большом передаточном числе?</summary><div>Да, особенно у червячных и многоступенчатых передач. При большом i КПД червячного редуктора может падать до 0,5–0,7, это учитывают при выборе двигателя.</div></details><details><summary>Можно ли подобрать передаточное число автоматически?</summary><div>Да, через калькулятор подбора: он рассчитает i по заданным оборотам и подберёт ближайший стандартный типоразмер редуктора EVL.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Передаточное число — отправная точка подбора редуктора. Ниже собраны формулы, порядок расчёта и связь i с моментом и КПД для линейки EVL.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Расчёт передаточного числа по формуле i=n1/n2 занимает несколько секунд, но именно он определяет корректность всего привода. Сначала находят требуемые обороты выходного вала рабочего органа, затем делят на обороты двигателя. Полученное значение округляют до ближайшего из стандартного ряда конкретной серии редуктора.</p><p>При подборе важно помнить о взаимосвязи характеристик: чем больше передаточное число, тем ниже обороты и выше момент на выходе, но тем ощутимее потери в передаче. Для червячных редукторов с большим i это особенно критично, поэтому мощность двигателя проверяют с запасом по КПД. Редукторы EVL производит ООО «НИИ АТТ» (Челябинск); подбор удобнее вести через онлайн-калькулятор.</p><h3>Обороты двигателя по числу полюсов (50 Гц)</h3><table class="spec"><tbody><tr><td>Число полюсов</td><td>Синхронные об/мин</td><td>Рабочие n1, об/мин</td></tr><tr><td>2</td><td>3000</td><td>≈2900</td></tr><tr><td>4</td><td>1500</td><td>≈1450</td></tr><tr><td>6</td><td>1000</td><td>≈960</td></tr><tr><td>8</td><td>750</td><td>≈730</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Nord, SEW, Bonfiglioli под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора по оборотам и моменту</a><a href="../analog/">Аналоги импортных редукторов в линейке EVL</a><a href="../catalog/">Каталог редукторов и мотор-редукторов EVL</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

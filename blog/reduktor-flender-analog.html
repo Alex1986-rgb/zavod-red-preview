@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Аналог редуктора Flender — замена на EVL</title>
+<meta name="description" content="Аналог редуктора Flender: как подобрать замену на российский EVL по мощности, передаточному числу и крутящему моменту. Порядок расчёта и подбора без импорта." />
+<link rel="canonical" href="https://zavod-red.ru/blog/reduktor-flender-analog.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/reduktor-flender-analog.html" />
+<meta property="og:title" content="Аналог редуктора Flender — замена на EVL" /><meta property="og:description" content="Аналог редуктора Flender: как подобрать замену на российский EVL по мощности, передаточному числу и крутящему моменту. Порядок расчёта и подбора без импорта." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Аналог редуктора Flender — замена на EVL", "description": "Аналог редуктора Flender: как подобрать замену на российский EVL по мощности, передаточному числу и крутящему моменту. Порядок расчёта и подбора без импорта.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/reduktor-flender-analog.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Аналог редуктора Flender — замена на EVL", "item": "https://zavod-red.ru/blog/reduktor-flender-analog.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Есть ли прямой аналог редуктора Flender?", "acceptedAnswer": {"@type": "Answer", "text": "Прямой аналог подбирается по совпадению характеристик — мощности, передаточного числа, крутящего момента и присоединительных размеров, а не по каталожному номеру Flender."}}, {"@type": "Question", "name": "По каким параметрам подбирают замену?", "acceptedAnswer": {"@type": "Answer", "text": "По мощности P, оборотам выхода n2, передаточному числу i, крутящему моменту T, монтажному исполнению и типу выходного вала."}}, {"@type": "Question", "name": "Как узнать передаточное число, если его нет на шильдике?", "acceptedAnswer": {"@type": "Answer", "text": "Рассчитать по формуле i = n1 / n2. Для 4-полюсного двигателя n1 ≈ 1450 об/мин, n2 — обороты выходного вала."}}, {"@type": "Question", "name": "Как рассчитать крутящий момент для подбора?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T = 9550 · P · КПД / n2. Например, при 7,5 кВт, КПД 0,96 и n2 = 45 об/мин момент ≈ 1528 Н·м."}}, {"@type": "Question", "name": "Встанет ли аналог EVL без переделки привода?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если совпадают присоединительные размеры, монтажное исполнение и тип вала. Именно поэтому их проверяют при подборе."}}, {"@type": "Question", "name": "Кто производит аналог EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Редукторы и мотор-редукторы EVL выпускает ООО «НИИ АТТ» в Челябинске — российский производитель."}}, {"@type": "Question", "name": "Что делать, если шильдик Flender нечитаем?", "acceptedAnswer": {"@type": "Answer", "text": "Восстановить данные по паспорту привода или расчётом: передаточное число через i = n1/n2, крутящий момент через T = 9550·P·КПД/n2."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Аналог редуктора Flender — замена на EVL</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Flender</div>
+  <h1>Аналог редуктора Flender: подбор замены на EVL по характеристикам</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Редукторы Flender — надёжное, но импортное оборудование, поставки которого стали дольше и дороже. Чтобы не останавливать производство, предприятия переходят на российские аналоги. Разберём, как корректно подобрать замену редуктора Flender на EVL без потери характеристик.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Аналог подбирается не по каталожному номеру Flender, а по техническим параметрам: мощности, передаточному числу, крутящему моменту, монтажному исполнению и типу вала. Ниже — методика такого подбора.</p>
+  <h2>Почему ищут аналог Flender</h2><p>Flender — крупный немецкий производитель промышленных редукторов, входящий в Siemens. Его оборудование распространено на металлургических, горнодобывающих и общепромышленных предприятиях. Основные причины поиска аналога — сроки поставки, стоимость и валютные риски.</p><p>Российский аналог EVL решает эти задачи: производство в Челябинске, поставка под конкретный типоразмер, отсутствие зависимости от импорта. При этом важно, чтобы замена совпала по характеристикам с исходным редуктором.</p><h2>Принцип подбора аналога</h2><p>Подбор ведётся по совпадению ключевых параметров, а не по номеру. Сравнивают мощность P, обороты выходного вала n2, передаточное число i, крутящий момент T, монтажное исполнение и тип выходного вала.</p><p>Если совпадают нагрузочные и присоединительные характеристики, аналог EVL встаёт на место Flender без переделки рамы и привода. Каталожный номер Flender при этом служит лишь ориентиром для сбора исходных данных.</p><h2>Какие параметры снимают с редуктора</h2><p>С шильдика и из паспорта берут мощность двигателя, обороты входа и выхода, передаточное число, монтажное положение, диаметр и тип выходного вала. Эти данные — основа заявки на подбор.</p><p>Если часть данных на шильдике стёрта, недостающие величины восстанавливают расчётом. Передаточное число находят как i = n1/n2, а крутящий момент — по формуле T = 9550·P·КПД/n2.</p><h2>Расчёт передаточного числа и момента</h2><p>Передаточное число: i = n1 / n2. Для 4-полюсного асинхронного двигателя n1 ≈ 1450 об/мин. Например, при n2 = 45 об/мин получаем i ≈ 1450 / 45 ≈ 32.</p><p>Крутящий момент на выходе: T = 9550 · P · КПД / n2. При P = 7,5 кВт, КПД = 0,96 и n2 = 45 об/мин момент составит T = 9550 · 7,5 · 0,96 / 45 ≈ 1528 Н·м. Эти два числа задают требуемый типоразмер EVL.</p><h2>Проверка совместимости</h2><p>После расчёта проверяют запас по крутящему моменту (сервис-фактор), совместимость выходного вала и фланца, монтажное исполнение и направление вращения. Аналог должен иметь момент не ниже требуемого с необходимым запасом.</p><p>Отдельно оценивают режим работы: продолжительный, повторно-кратковременный, с ударными нагрузками. От режима зависит требуемый запас и, соответственно, типоразмер аналога EVL.</p><h2>Итог: замена Flender на EVL</h2><p>Корректный аналог EVL повторяет мощность, передаточное число, крутящий момент и присоединительные размеры Flender. Это позволяет заменить редуктор без доработки привода и рамы.</p><p>Производитель EVL (ООО «НИИ АТТ», Челябинск) поставляет оборудование под конкретный типоразмер и сопровождает подбор. Для быстрой оценки замены удобно использовать онлайн-калькулятор подбора.</p>
+  <h3>Параметры для подбора аналога Flender на EVL</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Как используется</td></tr><tr><th>Мощность P, кВт</th><td>база для расчёта момента</td></tr><tr><th>Обороты выхода n2</th><td>определяют i и T</td></tr><tr><th>Передаточное число i</th><td>i = n1/n2</td></tr><tr><th>Крутящий момент T</th><td>T = 9550·P·КПД/n2</td></tr><tr><th>Монтажное исполнение</th><td>совместимость с рамой</td></tr><tr><th>Тип выходного вала</th><td>совместимость присоединения</td></tr></tbody></table><h3>Пример подбора по расчёту</h3><table class="spec"><tbody><tr><th>Исходные данные</th><td>Результат</td></tr><tr><th>P = 7,5 кВт; n1 ≈ 1450 об/мин</th><td>данные двигателя</td></tr><tr><th>n2 = 45 об/мин</th><td>i ≈ 1450/45 ≈ 32</td></tr><tr><th>КПД = 0,96</th><td>T ≈ 9550·7,5·0,96/45 ≈ 1528 Н·м</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Flender под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Flender и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>Есть ли прямой аналог редуктора Flender?</summary><div>Прямой аналог подбирается по совпадению характеристик — мощности, передаточного числа, крутящего момента и присоединительных размеров, а не по каталожному номеру Flender.</div></details><details><summary>По каким параметрам подбирают замену?</summary><div>По мощности P, оборотам выхода n2, передаточному числу i, крутящему моменту T, монтажному исполнению и типу выходного вала.</div></details><details><summary>Как узнать передаточное число, если его нет на шильдике?</summary><div>Рассчитать по формуле i = n1 / n2. Для 4-полюсного двигателя n1 ≈ 1450 об/мин, n2 — обороты выходного вала.</div></details><details><summary>Как рассчитать крутящий момент для подбора?</summary><div>По формуле T = 9550 · P · КПД / n2. Например, при 7,5 кВт, КПД 0,96 и n2 = 45 об/мин момент ≈ 1528 Н·м.</div></details><details><summary>Встанет ли аналог EVL без переделки привода?</summary><div>Да, если совпадают присоединительные размеры, монтажное исполнение и тип вала. Именно поэтому их проверяют при подборе.</div></details><details><summary>Кто производит аналог EVL?</summary><div>Редукторы и мотор-редукторы EVL выпускает ООО «НИИ АТТ» в Челябинске — российский производитель.</div></details><details><summary>Что делать, если шильдик Flender нечитаем?</summary><div>Восстановить данные по паспорту привода или расчётом: передаточное число через i = n1/n2, крутящий момент через T = 9550·P·КПД/n2.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Аналог редуктора Flender подбирается по характеристикам, а не по номеру. Совпадение мощности, передаточного числа и крутящего момента гарантирует замену на EVL без переделки привода.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Ключ к корректной замене — расчёт. Передаточное число i = n1/n2 задаёт снижение оборотов, а крутящий момент T = 9550·P·КПД/n2 определяет нагрузочную способность. Если эти величины и присоединительные размеры совпадают с исходным Flender, аналог EVL работает в тех же условиях.</p><p>Дополнительно учитывают режим работы и сервис-фактор: для ударных и повторно-кратковременных нагрузок требуется больший запас по моменту. Российский производитель EVL подбирает типоразмер под конкретную задачу и сопровождает поставку, что сокращает сроки замены.</p><h3>Этапы подбора аналога Flender</h3><table class="spec"><tbody><tr><th>Этап</th><td>Действие</td></tr><tr><th>Сбор данных</th><td>снять параметры с шильдика и паспорта</td></tr><tr><th>Расчёт</th><td>найти i и T по формулам</td></tr><tr><th>Проверка</th><td>сверить вал, фланец, монтаж, запас</td></tr><tr><th>Выбор</th><td>определить типоразмер EVL</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Flender под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../analog/">Все аналоги импортных редукторов</a><a href="../podbor.html#kalkulyator">Калькулятор подбора аналога EVL</a><a href="../importozameshchenie">Импортозамещение редукторов Flender</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

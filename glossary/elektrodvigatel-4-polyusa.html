@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Электродвигатель 4 полюса: 1500 об/мин для привода</title>
+<meta name="description" content="4-полюсный электродвигатель даёт ~1500 об/мин (реально ~1450). Как это влияет на передаточное число редуктора и подбор мотор-редуктора EVL." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/elektrodvigatel-4-polyusa" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/elektrodvigatel-4-polyusa" />
+<meta property="og:title" content="Электродвигатель 4 полюса: 1500 об/мин для привода" /><meta property="og:description" content="4-полюсный электродвигатель даёт ~1500 об/мин (реально ~1450). Как это влияет на передаточное число редуктора и подбор мотор-редуктора EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Электродвигатель 4 полюса", "description": "4-полюсный электродвигатель даёт ~1500 об/мин (реально ~1450). Как это влияет на передаточное число редуктора и подбор мотор-редуктора EVL.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/elektrodvigatel-4-polyusa"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Электродвигатель 4 полюса", "item": "https://zavod-red.ru/glossary/elektrodvigatel-4-polyusa"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько оборотов у 4-полюсного двигателя?", "acceptedAnswer": {"@type": "Answer", "text": "Синхронно 1500 об/мин, а под нагрузкой около 1450 об/мин из-за скольжения."}}, {"@type": "Question", "name": "Как обороты двигателя влияют на редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Они задают частоту быстроходного вала n1; передаточное число считают по i=n1/n2."}}, {"@type": "Question", "name": "Комплектуется ли аналог EVL 4-полюсным двигателем?", "acceptedAnswer": {"@type": "Answer", "text": "Да, и повторяет присоединительные размеры импорта, поэтому мотор-редуктор меняется без переделки."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Электродвигатель 4 полюса</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий редукторов</div>
+  <h1>Электродвигатель 4 полюса</h1>
+  <p>Электродвигатель на 4 полюса — асинхронный двигатель с синхронной частотой вращения 1500 об/мин при сети 50 Гц; под нагрузкой из-за скольжения он выдаёт около 1450 об/мин. Это самый распространённый привод редукторов.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Обороты и передаточное число</h2><p>Синхронные обороты 4-полюсного двигателя — 1500 об/мин, реальные под нагрузкой — примерно 1450 об/мин из-за скольжения. Эти обороты и есть частота на быстроходном валу редуктора.</p><p>Передаточное число подбирают по формуле i=n1/n2, где n1 ≈ 1450 об/мин. Например, для выходных 47 об/мин нужно i ≈ 31.</p><h2>Подбор мотор-редуктора</h2><p>Мощность двигателя выбирают по требуемому моменту: T=9550·P·КПД/n2. Затем под неё подбирают редуктор с нужным передаточным числом и фланцем под 4-полюсный двигатель.</p><p>Аналог EVL комплектуется 4-полюсными двигателями и повторяет присоединительные размеры импортного мотор-редуктора, поэтому замена выполняется без переделки посадочных мест.</p>
+  <h3>Обороты асинхронных двигателей 50 Гц</h3><table class="spec"><tbody><tr><th>Число полюсов</th><td>Обороты, об/мин</td></tr><tr><th>2 полюса</th><td>~2900</td></tr><tr><th>4 полюса</th><td>~1450</td></tr><tr><th>6 полюсов</th><td>~960</td></tr><tr><th>8 полюсов</th><td>~730</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    Подобрать редуктор по этому параметру — <a href="../podbor.html#kalkulyator">калькулятор подбора</a>. Каталог моделей — <a href="../catalog/">каталог редукторов</a>, аналоги импорта — <a href="../analog/">каталог аналогов</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Электродвигатель 4 полюса</h2>
+  <div class="cat-faq"><details><summary>Сколько оборотов у 4-полюсного двигателя?</summary><div>Синхронно 1500 об/мин, а под нагрузкой около 1450 об/мин из-за скольжения.</div></details><details><summary>Как обороты двигателя влияют на редуктор?</summary><div>Они задают частоту быстроходного вала n1; передаточное число считают по i=n1/n2.</div></details><details><summary>Комплектуется ли аналог EVL 4-полюсным двигателем?</summary><div>Да, и повторяет присоединительные размеры импорта, поэтому мотор-редуктор меняется без переделки.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Электродвигатель на 4 полюса — асинхронный двигатель с синхронной частотой вращения 1500 об/мин при сети 50 Гц; под нагрузкой из-за скольжения он выдаёт около 1450 об/мин. Это самый распространённый привод редукторов.</p>
+  <details class="seo-more"><summary>Смежные термины и подбор</summary>
+  <div class="seo-body"><p>Другие термины — в <a href="../glossary/">глоссарии редукторов</a>. Подбор модели по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p></div></details>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор</a><a href="bystrokhodnyy-val">Быстроходный вал</a><a href="chastotnyy-preobrazovatel">Частотный преобразователь</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

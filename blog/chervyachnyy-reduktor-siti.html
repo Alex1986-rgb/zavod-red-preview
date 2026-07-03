@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Червячный редуктор SITI и аналог EVL</title>
+<meta name="description" content="Червячные редукторы SITI: типоразмеры, передаточные числа и КПД. Как подобрать российский аналог EVL по крутящему моменту и присоединительным размерам." />
+<link rel="canonical" href="https://zavod-red.ru/blog/chervyachnyy-reduktor-siti.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/chervyachnyy-reduktor-siti.html" />
+<meta property="og:title" content="Червячный редуктор SITI и аналог EVL" /><meta property="og:description" content="Червячные редукторы SITI: типоразмеры, передаточные числа и КПД. Как подобрать российский аналог EVL по крутящему моменту и присоединительным размерам." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Червячный редуктор SITI и аналог EVL", "description": "Червячные редукторы SITI: типоразмеры, передаточные числа и КПД. Как подобрать российский аналог EVL по крутящему моменту и присоединительным размерам.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/chervyachnyy-reduktor-siti.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Червячный редуктор SITI и аналог EVL", "item": "https://zavod-red.ru/blog/chervyachnyy-reduktor-siti.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Можно ли заменить червячный редуктор SITI на EVL без переделки?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если совпадают присоединительные размеры: межосевое расстояние, диаметр выходного вала, тип монтажа и передаточное число. Тогда замена идёт на штатное посадочное место."}}, {"@type": "Question", "name": "Как узнать передаточное число моего редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "По шильдику или расчётом i = n1 / n2. При входных n1 ≈ 1450 об/мин достаточно замерить выходные обороты n2."}}, {"@type": "Question", "name": "Почему у червячного редуктора низкий КПД?", "acceptedAnswer": {"@type": "Answer", "text": "Из-за трения скольжения в паре червяк–колесо, особенно при больших передаточных числах. Часть мощности идёт в тепло, зато передача самотормозящая."}}, {"@type": "Question", "name": "Кто производит редукторы EVL?", "acceptedAnswer": {"@type": "Answer", "text": "EVL — торговая марка ООО «НИИ АТТ», Челябинск. Это российский производитель, а не перемаркировка импорта."}}, {"@type": "Question", "name": "Как рассчитать момент на выходе?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, n2 — выходные обороты. КПД берут из паспорта для конкретного передаточного числа."}}, {"@type": "Question", "name": "Нужен ли запас по моменту при подборе?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Для приводов с ударными нагрузками и частыми пусками закладывают коэффициент запаса, чтобы избежать перегрева бронзовой пары."}}, {"@type": "Question", "name": "Какое масло использовать после замены?", "acceptedAnswer": {"@type": "Answer", "text": "То, что указано в паспорте редуктора EVL, — обычно синтетическое трансмиссионное нужной вязкости. Первую замену делают после обкатки."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Червячный редуктор SITI и аналог EVL</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · SITI</div>
+  <h1>Червячный редуктор SITI: характеристики и аналог EVL</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Червячные редукторы SITI широко применялись в приводах конвейеров, ворот, упаковочных и пищевых линий. После ухода поставщика вопрос замены встал остро: нужен аналог с теми же присоединительными размерами и характеристиками. В этом материале разбираем, как устроен червячный редуктор SITI и как подобрать под него российскую замену EVL производства ООО «НИИ АТТ».</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Мы сравниваем червячные редукторы SITI и EVL по ключевым параметрам — межосевому расстоянию, передаточному числу, крутящему моменту и типу монтажа — чтобы замена прошла без переделки рамы и муфт.</p>
+  <h2>Где применяются червячные редукторы SITI</h2><p>Червячная передача даёт большое передаточное число в одной ступени и компактную компоновку с перпендикулярным расположением валов. Именно поэтому редукторы SITI ставили там, где важны тишина хода и самоторможение: подъёмные механизмы, шлагбаумы, поворотные столы, фасовочное оборудование.</p><p>Самоторможение при больших передаточных числах — характерная черта червячной пары. Она удерживает нагрузку без дополнительного тормоза, но снижает КПД. Это нужно учитывать при подборе аналога: важно не потерять момент на выходе.</p><h2>Конструкция и типоразмерный ряд</h2><p>Основной параметр червячного редуктора — межосевое расстояние между червяком и колесом. Оно определяет корпус, посадочные размеры и допустимый крутящий момент. У SITI типоразмеры маркируются по этому расстоянию, что удобно для сопоставления с рядом EVL.</p><p>Корпус выполняется из алюминиевого сплава для лёгких серий и из чугуна для тяжёлых. Колесо — из бронзы, червяк — из закалённой стали. От качества бронзовой пары зависят ресурс и стабильность КПД во времени.</p><h2>Передаточное число и крутящий момент</h2><p>Передаточное число считается как i = n1 / n2, где n1 — обороты на входе (при работе от четырёхполюсного двигателя n1 ≈ 1450 об/мин), n2 — обороты на выходе. Для червячных редукторов типичны большие значения i — от 7 до 100 в одной ступени.</p><p>Крутящий момент на выходном валу оценивается по формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, n2 — выходные обороты. КПД червячной пары падает с ростом передаточного числа, поэтому при высоких i момент растёт не пропорционально.</p><h2>Чем EVL заменяет SITI</h2><p>EVL — торговая марка редукторов ООО «НИИ АТТ» (Челябинск). Червячные серии EVL перекрывают распространённые межосевые расстояния и передаточные числа, на которые приходится основная масса замен по SITI.</p><p>Ключ к корректной замене — совпадение присоединительных размеров: диаметр и длина выходного вала, фланец или лапы, положение входного вала под конкретный двигатель. При равенстве этих параметров редуктор меняется без доработки посадочного места.</p><h2>Как проверить совместимость</h2><p>Снимите фактические размеры с установленного редуктора: межосевое расстояние (или типоразмер по шильдику), передаточное число, диаметр выходного вала, тип монтажа. Эти данные — основа для подбора аналога EVL.</p><p>Сверьте требуемый момент на выходе с паспортным для аналога с запасом на пусковые и ударные нагрузки. Для приводов с частыми пусками закладывают коэффициент запаса, чтобы бронзовая пара не перегревалась.</p><h2>Обслуживание и ресурс</h2><p>Ресурс червячной пары определяется износом бронзового колеса и режимом смазки. Синтетическое масло с нужной вязкостью снижает нагрев и продлевает срок службы. Первую замену масла проводят после обкатки.</p><p>При замене SITI на EVL сохраняйте класс масла и интервалы обслуживания из паспорта нового редуктора. Перегрев корпуса выше нормы — первый признак перегруза или недостаточной смазки.</p>
+  <h3>Сопоставление параметров при подборе аналога</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Значение / что проверить</td></tr><tr><th>Межосевое расстояние</th><td>Типоразмер по шильдику SITI</td></tr><tr><th>Передаточное число i</th><td>i = n1 / n2</td></tr><tr><th>Входные обороты n1</th><td>≈ 1450 об/мин (4 полюса)</td></tr><tr><th>Крутящий момент T</th><td>T = 9550·P·КПД/n2</td></tr><tr><th>Выходной вал</th><td>Диаметр и длина, шпонка</td></tr><tr><th>Монтаж</th><td>Лапы / фланец / полый вал</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог SITI под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: SITI и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>Можно ли заменить червячный редуктор SITI на EVL без переделки?</summary><div>Да, если совпадают присоединительные размеры: межосевое расстояние, диаметр выходного вала, тип монтажа и передаточное число. Тогда замена идёт на штатное посадочное место.</div></details><details><summary>Как узнать передаточное число моего редуктора?</summary><div>По шильдику или расчётом i = n1 / n2. При входных n1 ≈ 1450 об/мин достаточно замерить выходные обороты n2.</div></details><details><summary>Почему у червячного редуктора низкий КПД?</summary><div>Из-за трения скольжения в паре червяк–колесо, особенно при больших передаточных числах. Часть мощности идёт в тепло, зато передача самотормозящая.</div></details><details><summary>Кто производит редукторы EVL?</summary><div>EVL — торговая марка ООО «НИИ АТТ», Челябинск. Это российский производитель, а не перемаркировка импорта.</div></details><details><summary>Как рассчитать момент на выходе?</summary><div>По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, n2 — выходные обороты. КПД берут из паспорта для конкретного передаточного числа.</div></details><details><summary>Нужен ли запас по моменту при подборе?</summary><div>Да. Для приводов с ударными нагрузками и частыми пусками закладывают коэффициент запаса, чтобы избежать перегрева бронзовой пары.</div></details><details><summary>Какое масло использовать после замены?</summary><div>То, что указано в паспорте редуктора EVL, — обычно синтетическое трансмиссионное нужной вязкости. Первую замену делают после обкатки.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Подбор аналога червячного редуктора SITI сводится к сопоставлению межосевого расстояния, передаточного числа и присоединительных размеров с рядом EVL.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Червячный редуктор — узел с перпендикулярными валами и самоторможением. При замене импортного SITI на российский EVL главное — сохранить геометрию посадки и обеспечить требуемый крутящий момент на выходе с запасом.</p><p>Расчёт ведут по базовым формулам: передаточное число i = n1 / n2, момент T = 9550 · P · КПД / n2 при входных n1 ≈ 1450 об/мин. Эти значения позволяют быстро прикинуть, попадает ли аналог EVL в нужный диапазон.</p><h3>Формулы для подбора</h3><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Передаточное число</th><td>i = n1 / n2</td></tr><tr><th>Крутящий момент</th><td>T = 9550·P·КПД/n2</td></tr><tr><th>Входные обороты</th><td>n1 ≈ 1450 об/мин</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог SITI под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора</a><a href="../analog/">Аналоги импортных редукторов</a><a href="../importozameshchenie">Импортозамещение приводной техники</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

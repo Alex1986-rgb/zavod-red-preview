@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ПВ редуктора: продолжительность включения в приводе</title>
+<meta name="description" content="ПВ (продолжительность включения) — доля времени работы под нагрузкой в цикле, в процентах. Как влияет на нагрев и подбор редуктора в повторно-кратковременных режимах." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/pv-prodolzhitelnost-vklyucheniya" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/pv-prodolzhitelnost-vklyucheniya" />
+<meta property="og:title" content="ПВ редуктора: продолжительность включения в приводе" /><meta property="og:description" content="ПВ (продолжительность включения) — доля времени работы под нагрузкой в цикле, в процентах. Как влияет на нагрев и подбор редуктора в повторно-кратковременных режимах." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "ПВ (продолжительность включения)", "description": "ПВ (продолжительность включения) — доля времени работы под нагрузкой в цикле, в процентах. Как влияет на нагрев и подбор редуктора в повторно-кратковременных режимах.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/pv-prodolzhitelnost-vklyucheniya"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "ПВ (продолжительность включения)", "item": "https://zavod-red.ru/glossary/pv-prodolzhitelnost-vklyucheniya"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитывается ПВ?", "acceptedAnswer": {"@type": "Answer", "text": "Как отношение времени работы под нагрузкой к длительности всего цикла в процентах: ПВ=tраб/(tраб+tпауза)·100%."}}, {"@type": "Question", "name": "Почему при низком ПВ допустима большая нагрузка?", "acceptedAnswer": {"@type": "Answer", "text": "Во время пауз редуктор остывает, снижая среднюю температуру. Это ослабляет тепловые ограничения и позволяет передавать большую мощность."}}, {"@type": "Question", "name": "Чем ПВ отличается от числа пусков в час?", "acceptedAnswer": {"@type": "Answer", "text": "ПВ показывает долю времени под нагрузкой, а число пусков — частоту включений. Оба параметра учитывают при оценке режима и нагрева."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>ПВ (продолжительность включения)</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий редукторов</div>
+  <h1>ПВ (продолжительность включения)</h1>
+  <p>ПВ (продолжительность включения) — это отношение времени работы под нагрузкой к длительности всего цикла, выраженное в процентах. Характеризует повторно-кратковременный режим работы привода.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Что показывает ПВ</h2><p>ПВ определяется как отношение времени под нагрузкой к сумме времени работы и пауз за цикл. Например, ПВ=40% означает, что редуктор работает 40% времени цикла, а 60% простаивает.</p><p>Чем ниже ПВ, тем больше времени на остывание, поэтому в повторно-кратковременном режиме допускается более высокая нагрузка, чем при непрерывной работе с ПВ=100%.</p><h2>Влияние на подбор и нагрев</h2><p>ПВ напрямую связано с тепловым режимом: при малой продолжительности включения тепловые ограничения смягчаются, и редуктор допускает большую передаваемую мощность.</p><p>Для редукторов EVL в приводах с частыми паузами учёт ПВ позволяет реалистично оценить тепловую нагрузку и не завышать типоразмер без необходимости.</p>
+  <h3>Типовые значения ПВ</h3><table class="spec"><tbody><tr><th>Режим</th><td>ПВ, %</td></tr><tr><th>Непрерывный</th><td>100</td></tr><tr><th>Повторно-кратковременный</th><td>40–60</td></tr><tr><th>Кратковременный</th><td>15–25</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    Подобрать редуктор по этому параметру — <a href="../podbor.html#kalkulyator">калькулятор подбора</a>. Каталог моделей — <a href="../catalog/">каталог редукторов</a>, аналоги импорта — <a href="../analog/">каталог аналогов</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: ПВ (продолжительность включения)</h2>
+  <div class="cat-faq"><details><summary>Как рассчитывается ПВ?</summary><div>Как отношение времени работы под нагрузкой к длительности всего цикла в процентах: ПВ=tраб/(tраб+tпауза)·100%.</div></details><details><summary>Почему при низком ПВ допустима большая нагрузка?</summary><div>Во время пауз редуктор остывает, снижая среднюю температуру. Это ослабляет тепловые ограничения и позволяет передавать большую мощность.</div></details><details><summary>Чем ПВ отличается от числа пусков в час?</summary><div>ПВ показывает долю времени под нагрузкой, а число пусков — частоту включений. Оба параметра учитывают при оценке режима и нагрева.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">ПВ (продолжительность включения) — это отношение времени работы под нагрузкой к длительности всего цикла, выраженное в процентах. Характеризует повторно-кратковременный режим работы привода.</p>
+  <details class="seo-more"><summary>Смежные термины и подбор</summary>
+  <div class="seo-body"><p>Другие термины — в <a href="../glossary/">глоссарии редукторов</a>. Подбор модели по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p></div></details>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора</a><a href="teplovaya-moschnost.html">Тепловая мощность</a><a href="koefficient-ekspluatatsii.html">Коэффициент эксплуатации</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

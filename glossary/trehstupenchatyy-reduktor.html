@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Трёхступенчатый редуктор: большие i | EVL</title>
+<meta name="description" content="Трёхступенчатый редуктор — три последовательные зубчатые пары для больших передаточных чисел. КПД, компоновка и подбор под момент в калькуляторе EVL." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/trehstupenchatyy-reduktor" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/trehstupenchatyy-reduktor" />
+<meta property="og:title" content="Трёхступенчатый редуктор: большие i | EVL" /><meta property="og:description" content="Трёхступенчатый редуктор — три последовательные зубчатые пары для больших передаточных чисел. КПД, компоновка и подбор под момент в калькуляторе EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Трёхступенчатый редуктор", "description": "Трёхступенчатый редуктор — три последовательные зубчатые пары для больших передаточных чисел. КПД, компоновка и подбор под момент в калькуляторе EVL.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/trehstupenchatyy-reduktor"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Трёхступенчатый редуктор", "item": "https://zavod-red.ru/glossary/trehstupenchatyy-reduktor"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как считается общее передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Общее i равно произведению передаточных чисел всех ступеней: i = i1·i2·i3."}}, {"@type": "Question", "name": "Почему КПД ниже, чем у одноступенчатого?", "acceptedAnswer": {"@type": "Answer", "text": "Каждая ступень вносит свои потери; при трёх последовательных парах общий КПД снижается примерно до 0,94-0,95."}}, {"@type": "Question", "name": "Когда нужен третий каскад?", "acceptedAnswer": {"@type": "Answer", "text": "Когда требуемое передаточное число превышает возможности двухступенчатой схемы — обычно от 40-50 и выше."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Трёхступенчатый редуктор</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий редукторов</div>
+  <h1>Трёхступенчатый редуктор</h1>
+  <p>Трёхступенчатый редуктор — редуктор с тремя последовательными ступенями зацепления. Такая схема даёт большие передаточные числа (обычно от 40 до 250 и выше). Общее передаточное число равно произведению чисел отдельных ступеней.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Компоновка</h2><p>Три пары колёс располагаются последовательно: быстроходная, промежуточная и тихоходная ступени. Общее i равно i1·i2·i3.</p><p>Каждая ступень снижает обороты и повышает момент, поэтому трёхступенчатая схема применяется там, где нужен большой крутящий момент при низких выходных оборотах.</p><h2>КПД и потери</h2><p>Каждая цилиндрическая ступень имеет КПД около 0,98, поэтому общий КПД трёхступенчатого редуктора составляет примерно 0,94-0,95.</p><p>Момент на выходе оценивают формулой T=9550·P·КПД/n2. Точный типоразмер под нагрузку подбирают в калькуляторе EVL.</p>
+  <h3>Параметры трёхступенчатого редуктора</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Значение</td></tr><tr><th>Число ступеней</th><td>3</td></tr><tr><th>Типовое i</th><td>40-250 и выше</td></tr><tr><th>Ориентировочный КПД</th><td>0,94-0,95</td></tr><tr><th>Компоновка</th><td>последовательные пары</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    Подобрать редуктор по этому параметру — <a href="../podbor.html#kalkulyator">калькулятор подбора</a>. Каталог моделей — <a href="../catalog/">каталог редукторов</a>, аналоги импорта — <a href="../analog/">каталог аналогов</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Трёхступенчатый редуктор</h2>
+  <div class="cat-faq"><details><summary>Как считается общее передаточное число?</summary><div>Общее i равно произведению передаточных чисел всех ступеней: i = i1·i2·i3.</div></details><details><summary>Почему КПД ниже, чем у одноступенчатого?</summary><div>Каждая ступень вносит свои потери; при трёх последовательных парах общий КПД снижается примерно до 0,94-0,95.</div></details><details><summary>Когда нужен третий каскад?</summary><div>Когда требуемое передаточное число превышает возможности двухступенчатой схемы — обычно от 40-50 и выше.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Трёхступенчатый редуктор — редуктор с тремя последовательными ступенями зацепления. Такая схема даёт большие передаточные числа (обычно от 40 до 250 и выше). Общее передаточное число равно произведению чисел отдельных ступеней.</p>
+  <details class="seo-more"><summary>Смежные термины и подбор</summary>
+  <div class="seo-body"><p>Другие термины — в <a href="../glossary/">глоссарии редукторов</a>. Подбор модели по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p></div></details>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="dvuhstupenchatyy-reduktor.html">Двухступенчатый редуктор</a><a href="odnostupenchatyy-reduktor.html">Одноступенчатый редуктор</a><a href="../podbor.html#kalkulyator">Подбор редуктора в калькуляторе</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

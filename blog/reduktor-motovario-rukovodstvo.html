@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Редуктор Motovario: руководство по замене на EVL</title>
+<meta name="description" content="Пошаговое руководство по подбору и замене редуктора Motovario на аналог EVL: тип, передаточное число, момент, присоединительные размеры. Формулы и порядок." />
+<link rel="canonical" href="https://zavod-red.ru/blog/reduktor-motovario-rukovodstvo.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/reduktor-motovario-rukovodstvo.html" />
+<meta property="og:title" content="Редуктор Motovario: руководство по замене на EVL" /><meta property="og:description" content="Пошаговое руководство по подбору и замене редуктора Motovario на аналог EVL: тип, передаточное число, момент, присоединительные размеры. Формулы и порядок." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Редуктор Motovario: руководство по замене на EVL", "description": "Пошаговое руководство по подбору и замене редуктора Motovario на аналог EVL: тип, передаточное число, момент, присоединительные размеры. Формулы и порядок.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/reduktor-motovario-rukovodstvo.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор Motovario: руководство по замене на EVL", "item": "https://zavod-red.ru/blog/reduktor-motovario-rukovodstvo.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "С чего начать подбор замены редуктору Motovario?", "acceptedAnswer": {"@type": "Answer", "text": "С определения типа редуктора: червячный NMRV, соосный, коническо-цилиндрический или мотор-редуктор. Тип задаёт компоновку и диапазон передаточных чисел, поэтому аналог подбирается в том же классе."}}, {"@type": "Question", "name": "Как рассчитать передаточное число для замены?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле i = n1 / n2, где n1 — обороты входного вала (для 4-полюсного двигателя около 1450 об/мин), n2 — обороты на выходе. Из ряда EVL выбирается ближайшее стандартное значение."}}, {"@type": "Question", "name": "Как проверить крутящий момент?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, КПД — коэффициент передачи. Подобранный редуктор должен давать момент не ниже требуемого с запасом на сервис-фактор."}}, {"@type": "Question", "name": "Какие размеры сверять при замене?", "acceptedAnswer": {"@type": "Answer", "text": "Межосевое расстояние (для NMRV), диаметр и исполнение выходного вала, тип монтажа и фланец двигателя IEC. Совпадение этих размеров позволяет установить редуктор без переделки рамы."}}, {"@type": "Question", "name": "Что делать, если данные на шильдике стёрлись?", "acceptedAnswer": {"@type": "Answer", "text": "Тип и размеры определяют по паспорту оборудования либо обмером узла при демонтаже: межосевое расстояние, диаметр вала, габарит фланца. По ним восстанавливается профиль для подбора."}}, {"@type": "Question", "name": "Нужно ли учитывать условия эксплуатации?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Режим работы, число пусков, температура и наличие тормоза влияют на выбор смазки, уплотнений и сервис-фактора. Без их учёта редуктор может работать в перегрузке."}}, {"@type": "Question", "name": "Кто производит редукторы EVL?", "acceptedAnswer": {"@type": "Answer", "text": "EVL — российский бренд приводной техники, производитель ООО «НИИ АТТ», Челябинск. Линейка охватывает червячные, цилиндрические и мотор-редукторы под замену импорта."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор Motovario: руководство по замене на EVL</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Motovario</div>
+  <h1>Редуктор Motovario: руководство по замене</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Это практическое руководство поможет инженеру подобрать замену редуктору Motovario, не переделывая привод. Разбираем последовательность действий: от определения типа редуктора и считывания маркировки до расчёта передаточного числа, момента и сверки присоединительных размеров с аналогом EVL.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Motovario — итальянский производитель приводной техники: червячные NMRV, цилиндрические и мотор-редукторы. При замене на EVL (производитель ООО «НИИ АТТ», Челябинск) важно не просто найти похожий корпус, а сохранить кинематику и посадочные размеры. Руководство ниже описывает подбор по шагам.</p>
+  <h2>Шаг 1. Определите тип редуктора</h2><p>Сначала установите тип: червячный (серия NMRV), цилиндрический соосный, коническо-цилиндрический или мотор-редуктор. Тип задаёт компоновку валов и диапазон передаточных чисел, поэтому аналог подбирается в пределах того же класса.</p><p>Тип виден по маркировке на шильдике и по конструкции: у червячного редуктора входной и выходной валы расположены под прямым углом, у соосного — на одной оси. От типа зависит и КПД, который учитывается при расчёте момента.</p><h2>Шаг 2. Считайте данные с шильдика</h2><p>На табличке редуктора указаны типоразмер, передаточное число, иногда мощность и обороты. Для серии NMRV число в обозначении — межосевое расстояние в миллиметрах, базовый присоединительный размер.</p><p>Запишите все доступные параметры: они станут основой для подбора. Если шильдик нечитаем, тип и размеры определяют по паспорту оборудования или обмером узла при демонтаже.</p><h2>Шаг 3. Рассчитайте передаточное число</h2><p>Передаточное число показывает, во сколько раз редуктор понижает обороты: i = n1 / n2, где n1 — обороты входного вала, n2 — требуемые обороты на выходе. Для 4-полюсного асинхронного двигателя n1 ≈ 1450 об/мин.</p><p>Если известны обороты двигателя и нужная скорость механизма, i вычисляется напрямую. Затем из ряда EVL выбирается ближайшее стандартное передаточное число, чтобы сохранить режим работы привода.</p><h2>Шаг 4. Проверьте крутящий момент</h2><p>Момент на выходном валу считается по формуле T = 9550 · P · КПД / n2, где P — мощность привода в кВт, n2 — обороты на выходе, КПД — коэффициент полезного действия передачи. Для червячных редукторов КПД заметно ниже, чем для цилиндрических.</p><p>Подобранный EVL должен обеспечивать момент не ниже требуемого, с запасом на сервис-фактор под характер нагрузки — равномерную, с ударами или частыми пусками. Так исключается перегрузка передачи в работе.</p><h2>Шаг 5. Сверьте присоединительные размеры</h2><p>Проверьте межосевое расстояние (для NMRV), диаметр и исполнение выходного вала, тип монтажа (лапы, фланец, насадной) и фланец двигателя IEC. Совпадение этих размеров означает установку без переделки рамы.</p><p>Небольшие расхождения решаются переходными элементами: втулкой на вал, переходной плитой на фланец. Это дешевле изготовления оригинальных запчастей и переделки посадочных мест под нестандартный узел.</p><h2>Шаг 6. Подберите исполнение и проверьте условия</h2><p>Уточните условия эксплуатации: положение монтажа, режим работы, температуру, наличие тормоза или частотного регулирования. Эти факторы влияют на выбор смазки, уплотнений и сервис-фактора.</p><p>После сверки всех параметров подбирается конкретное исполнение EVL. Итоговый выбор удобно проверить через калькулятор подбора, а спорные случаи согласовать с инженером перед заказом.</p>
+  <h3>Порядок замены редуктора Motovario на EVL</h3><table class="spec"><tbody><tr><th>Шаг</th><td>Действие</td></tr><tr><th>1</th><td>Определить тип редуктора</td></tr><tr><th>2</th><td>Считать данные с шильдика</td></tr><tr><th>3</th><td>Рассчитать i = n1 / n2</td></tr><tr><th>4</th><td>Проверить T = 9550 · P · КПД / n2</td></tr><tr><th>5</th><td>Сверить присоединительные размеры</td></tr><tr><th>6</th><td>Подобрать исполнение и смазку</td></tr></tbody></table><h3>Исходные данные для подбора</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Источник / формула</td></tr><tr><th>Тип редуктора</th><td>Шильдик, конструкция</td></tr><tr><th>Передаточное число i</th><td>i = n1 / n2, n1 ≈ 1450</td></tr><tr><th>Момент T</th><td>T = 9550 · P · КПД / n2</td></tr><tr><th>Межосевое расстояние</th><td>Маркировка NMRV, мм</td></tr><tr><th>Условия работы</th><td>Режим, монтаж, температура</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Motovario под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Motovario и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>С чего начать подбор замены редуктору Motovario?</summary><div>С определения типа редуктора: червячный NMRV, соосный, коническо-цилиндрический или мотор-редуктор. Тип задаёт компоновку и диапазон передаточных чисел, поэтому аналог подбирается в том же классе.</div></details><details><summary>Как рассчитать передаточное число для замены?</summary><div>По формуле i = n1 / n2, где n1 — обороты входного вала (для 4-полюсного двигателя около 1450 об/мин), n2 — обороты на выходе. Из ряда EVL выбирается ближайшее стандартное значение.</div></details><details><summary>Как проверить крутящий момент?</summary><div>По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, КПД — коэффициент передачи. Подобранный редуктор должен давать момент не ниже требуемого с запасом на сервис-фактор.</div></details><details><summary>Какие размеры сверять при замене?</summary><div>Межосевое расстояние (для NMRV), диаметр и исполнение выходного вала, тип монтажа и фланец двигателя IEC. Совпадение этих размеров позволяет установить редуктор без переделки рамы.</div></details><details><summary>Что делать, если данные на шильдике стёрлись?</summary><div>Тип и размеры определяют по паспорту оборудования либо обмером узла при демонтаже: межосевое расстояние, диаметр вала, габарит фланца. По ним восстанавливается профиль для подбора.</div></details><details><summary>Нужно ли учитывать условия эксплуатации?</summary><div>Да. Режим работы, число пусков, температура и наличие тормоза влияют на выбор смазки, уплотнений и сервис-фактора. Без их учёта редуктор может работать в перегрузке.</div></details><details><summary>Кто производит редукторы EVL?</summary><div>EVL — российский бренд приводной техники, производитель ООО «НИИ АТТ», Челябинск. Линейка охватывает червячные, цилиндрические и мотор-редукторы под замену импорта.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Замена редуктора Motovario на EVL выполняется по чёткой последовательности: тип, маркировка, передаточное число, момент, присоединительные размеры. Ниже — руководство по шагам.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Начинают с типа редуктора и данных шильдика: для серии NMRV число в обозначении — межосевое расстояние в миллиметрах. Тип задаёт компоновку валов и диапазон передаточных чисел аналога.</p><p>Передаточное число рассчитывают как i = n1 / n2 (n1 ≈ 1450 об/мин для 4-полюсного двигателя), а момент — как T = 9550 · P · КПД / n2. Для червячных передач КПД учитывается обязательно из-за потерь на трение.</p><p>Финальный шаг — сверка присоединительных размеров: межосевое расстояние, вал, монтаж, фланец IEC. При совпадении EVL встаёт без переделки; расхождения решаются переходными элементами.</p><h3>Ключевые формулы подбора</h3><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Передаточное число</th><td>i = n1 / n2</td></tr><tr><th>Обороты двигателя</th><td>n1 ≈ 1450 об/мин (4 полюса)</td></tr><tr><th>Момент на выходе</th><td>T = 9550 · P · КПД / n2</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Motovario под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора EVL</a><a href="../analog/">Аналоги импортных редукторов</a><a href="../catalog/">Каталог редукторов EVL</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

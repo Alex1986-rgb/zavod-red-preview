@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Число зубьев колеса и шестерни (z) | EVL</title>
+<meta name="description" content="Число зубьев z — базовый параметр зубчатого колеса. Определяет передаточное число, делительный диаметр и минимальное значение без подрезания. Расчёт EVL." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/chislo-zubev" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/chislo-zubev" />
+<meta property="og:title" content="Число зубьев колеса и шестерни (z) | EVL" /><meta property="og:description" content="Число зубьев z — базовый параметр зубчатого колеса. Определяет передаточное число, делительный диаметр и минимальное значение без подрезания. Расчёт EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Число зубьев", "description": "Число зубьев z — базовый параметр зубчатого колеса. Определяет передаточное число, делительный диаметр и минимальное значение без подрезания. Расчёт EVL.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/chislo-zubev"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Число зубьев", "item": "https://zavod-red.ru/glossary/chislo-zubev"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как число зубьев связано с передаточным числом?", "acceptedAnswer": {"@type": "Answer", "text": "Передаточное число пары равно отношению чисел зубьев колеса и шестерни: i = z2/z1."}}, {"@type": "Question", "name": "Почему минимум 17 зубьев?", "acceptedAnswer": {"@type": "Answer", "text": "При α=20° и меньшем числе зубьев инструмент подрезает ножку зуба; коррекция профиля позволяет обойти это ограничение."}}, {"@type": "Question", "name": "Как узнать делительный диаметр?", "acceptedAnswer": {"@type": "Answer", "text": "Умножьте модуль на число зубьев: d = m·z; это базовый диаметр для геометрии зацепления."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Число зубьев</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий редукторов</div>
+  <h1>Число зубьев</h1>
+  <p>Число зубьев (z) — количество зубьев зубчатого колеса или шестерни. Это основной параметр, определяющий передаточное отношение пары и вместе с модулем — делительный диаметр. Отношение чисел зубьев ведомого и ведущего колёс равно передаточному числу ступени.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Связь с передаточным числом</h2><p>Передаточное число ступени i = z2/z1, где z1 — число зубьев шестерни, z2 — колеса. Оно совпадает с отношением частот вращения i = n1/n2.</p><p>Делительный диаметр колеса d = m·z, где m — модуль, поэтому число зубьев напрямую задаёт габарит колеса при выбранном модуле.</p><h2>Минимальное число зубьев</h2><p>Для стандартного эвольвентного прямозубого колеса без подрезания ножки минимальное число зубьев составляет 17 при угле 20°.</p><p>При меньшем числе зубьев применяют коррекцию (смещение исходного контура) или косозубое зацепление, что допускает меньшие z без подрезания.</p>
+  <h3>Число зубьев: ориентиры</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Значение</td></tr><tr><th>Обозначение</th><td>z</td></tr><tr><th>Формула i</th><td>z2/z1</td></tr><tr><th>Делительный диаметр</th><td>d = m·z</td></tr><tr><th>Минимум без подрезания</th><td>17 (α=20°)</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    Подобрать редуктор по этому параметру — <a href="../podbor.html#kalkulyator">калькулятор подбора</a>. Каталог моделей — <a href="../catalog/">каталог редукторов</a>, аналоги импорта — <a href="../analog/">каталог аналогов</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Число зубьев</h2>
+  <div class="cat-faq"><details><summary>Как число зубьев связано с передаточным числом?</summary><div>Передаточное число пары равно отношению чисел зубьев колеса и шестерни: i = z2/z1.</div></details><details><summary>Почему минимум 17 зубьев?</summary><div>При α=20° и меньшем числе зубьев инструмент подрезает ножку зуба; коррекция профиля позволяет обойти это ограничение.</div></details><details><summary>Как узнать делительный диаметр?</summary><div>Умножьте модуль на число зубьев: d = m·z; это базовый диаметр для геометрии зацепления.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Число зубьев (z) — количество зубьев зубчатого колеса или шестерни. Это основной параметр, определяющий передаточное отношение пары и вместе с модулем — делительный диаметр. Отношение чисел зубьев ведомого и ведущего колёс равно передаточному числу ступени.</p>
+  <details class="seo-more"><summary>Смежные термины и подбор</summary>
+  <div class="seo-body"><p>Другие термины — в <a href="../glossary/">глоссарии редукторов</a>. Подбор модели по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p></div></details>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="modul-zuba.html">Модуль зуба</a><a href="mezhosevoe-rasstoyanie.html">Межосевое расстояние</a><a href="delitelnyy-diametr.html">Делительный диаметр</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

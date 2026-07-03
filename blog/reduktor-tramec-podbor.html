@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор аналога редуктора Tramec: пошагово</title>
+<meta name="description" content="Пошаговый подбор аналога редуктора Tramec: сбор данных, расчёт момента и передаточного числа, сверка монтажа и выбор эквивалента EVL от Завода Редукторов." />
+<link rel="canonical" href="https://zavod-red.ru/blog/reduktor-tramec-podbor.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/reduktor-tramec-podbor.html" />
+<meta property="og:title" content="Подбор аналога редуктора Tramec: пошагово" /><meta property="og:description" content="Пошаговый подбор аналога редуктора Tramec: сбор данных, расчёт момента и передаточного числа, сверка монтажа и выбор эквивалента EVL от Завода Редукторов." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор аналога редуктора Tramec: пошагово", "description": "Пошаговый подбор аналога редуктора Tramec: сбор данных, расчёт момента и передаточного числа, сверка монтажа и выбор эквивалента EVL от Завода Редукторов.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/reduktor-tramec-podbor.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Подбор аналога редуктора Tramec: пошагово", "item": "https://zavod-red.ru/blog/reduktor-tramec-podbor.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "С чего начать подбор аналога Tramec?", "acceptedAnswer": {"@type": "Answer", "text": "Со сбора исходных данных: мощность, входные и выходные обороты, требуемый момент, тип нагрузки и схема монтажа."}}, {"@type": "Question", "name": "Как рассчитать передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле i=n1/n2. Для 4-полюсного двигателя входные обороты принимают n1≈1450 об/мин."}}, {"@type": "Question", "name": "Как посчитать крутящий момент?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T=9550·P·КПД/n2, где P — мощность в кВт, n2 — выходные обороты, КПД — коэффициент полезного действия."}}, {"@type": "Question", "name": "Зачем нужен сервис-фактор?", "acceptedAnswer": {"@type": "Answer", "text": "Он закладывает запас по моменту под характер нагрузки: удары, частые пуски и высокую продолжительность включения."}}, {"@type": "Question", "name": "Что если монтаж не совпадает?", "acceptedAnswer": {"@type": "Answer", "text": "Расхождения решают переходными элементами или выбором другого монтажного исполнения EVL с подходящими размерами."}}, {"@type": "Question", "name": "Есть ли готовая таблица замен Tramec на EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Универсальной таблицы нет — подбор ведётся индивидуально по моменту, передаточному числу и монтажу под конкретную задачу."}}, {"@type": "Question", "name": "Кто производит редукторы EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Редукторы EVL выпускает ООО «НИИ АТТ» (Челябинск) под брендом Завода Редукторов."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор аналога редуктора Tramec: пошагово</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Tramec</div>
+  <h1>Подбор аналога редуктора Tramec: пошаговая инструкция</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Замена импортного редуктора Tramec требует точного подбора по кинематике и присоединительным размерам. Ошибка в моменте или монтаже приводит к переделке привода. Показываем пошаговый алгоритм подбора аналога EVL производства ООО «НИИ АТТ» (Челябинск).</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Правильный подбор — это последовательность шагов: собрать данные, рассчитать момент и передаточное число, сверить монтаж и заложить запас. Ниже — рабочий чек-лист для замены Tramec на EVL.</p>
+  <h2>Шаг 1. Сбор исходных данных</h2><p>Первый шаг — зафиксировать паспортные и рабочие параметры: мощность двигателя P (кВт), входные обороты n1, требуемые выходные обороты n2, крутящий момент и тип нагрузки. Без этих данных подбор невозможен.</p><p>Дополнительно фиксируют схему монтажа, диаметр и тип выходного вала, положение корпуса. Эти параметры определяют, встанет ли аналог на штатное место без доработок.</p><h2>Шаг 2. Расчёт передаточного числа</h2><p>Передаточное отношение определяют по формуле i=n1/n2. Для привода от 4-полюсного двигателя входные обороты принимают n1≈1450 об/мин.</p><p>Полученное i — целевое значение для подбора аналога. У EVL выбирают ближайший типоразмер, перекрывающий требуемое передаточное число с учётом допусков по выходным оборотам.</p><h2>Шаг 3. Расчёт крутящего момента</h2><p>Момент на выходном валу считают по формуле T=9550·P·КПД/n2, где P — мощность в кВт, n2 — выходные обороты, КПД — коэффициент полезного действия. Это базовая нагрузочная величина для подбора.</p><p>Тип передачи влияет на КПД: у цилиндрической он выше, у червячной ниже и зависит от передаточного числа. Поэтому расчётный момент сверяют с допустимым моментом типоразмера EVL.</p><h2>Шаг 4. Учёт сервис-фактора</h2><p>К расчётному моменту применяют сервис-фактор, отражающий характер нагрузки: равномерная, с умеренными или сильными ударами, частота пусков и продолжительность включения. Чем жёстче режим, тем выше запас.</p><p>Заниженный сервис-фактор ведёт к перегреву и ускоренному износу, завышенный — к переплате за избыточный типоразмер. Баланс подбирают под реальный режим эксплуатации.</p><h2>Шаг 5. Сверка монтажа и присоединительных размеров</h2><p>Даже при совпадении момента и передаточного числа редуктор должен встать на место. Сверяют схему крепления (лапы, фланец), диаметр и длину вала, межосевое или монтажное расстояние.</p><p>Совпадение присоединительных размеров позволяет менять Tramec на EVL без переделки рамы и сопряжений. Расхождения решают переходными элементами или выбором другого исполнения.</p><h2>Шаг 6. Выбор типоразмера EVL</h2><p>На финальном шаге по рассчитанным моменту, передаточному числу и монтажу подбирают конкретный типоразмер EVL. Мы не публикуем универсальную таблицу замен — подбор ведётся индивидуально.</p><p>Специалисты Завода Редукторов сопоставляют требования с рядом EVL и предлагают эквивалент. Производитель EVL — ООО «НИИ АТТ» (Челябинск).</p>
+  <h3>Чек-лист исходных данных</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Обозначение</td></tr><tr><th>Мощность</th><td>P, кВт</td></tr><tr><th>Входные обороты</th><td>n1 ≈1450 об/мин</td></tr><tr><th>Выходные обороты</th><td>n2</td></tr><tr><th>Момент</th><td>T, Н·м</td></tr><tr><th>Монтаж</th><td>Лапы / фланец, вал</td></tr></tbody></table><h3>Формулы подбора</h3><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Передаточное число</th><td>i=n1/n2</td></tr><tr><th>Крутящий момент</th><td>T=9550·P·КПД/n2</td></tr><tr><th>Расчётный момент</th><td>T·сервис-фактор</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Tramec под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Tramec и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>С чего начать подбор аналога Tramec?</summary><div>Со сбора исходных данных: мощность, входные и выходные обороты, требуемый момент, тип нагрузки и схема монтажа.</div></details><details><summary>Как рассчитать передаточное число?</summary><div>По формуле i=n1/n2. Для 4-полюсного двигателя входные обороты принимают n1≈1450 об/мин.</div></details><details><summary>Как посчитать крутящий момент?</summary><div>По формуле T=9550·P·КПД/n2, где P — мощность в кВт, n2 — выходные обороты, КПД — коэффициент полезного действия.</div></details><details><summary>Зачем нужен сервис-фактор?</summary><div>Он закладывает запас по моменту под характер нагрузки: удары, частые пуски и высокую продолжительность включения.</div></details><details><summary>Что если монтаж не совпадает?</summary><div>Расхождения решают переходными элементами или выбором другого монтажного исполнения EVL с подходящими размерами.</div></details><details><summary>Есть ли готовая таблица замен Tramec на EVL?</summary><div>Универсальной таблицы нет — подбор ведётся индивидуально по моменту, передаточному числу и монтажу под конкретную задачу.</div></details><details><summary>Кто производит редукторы EVL?</summary><div>Редукторы EVL выпускает ООО «НИИ АТТ» (Челябинск) под брендом Завода Редукторов.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Пошаговый подбор аналога редуктора Tramec: от сбора данных и расчёта момента до сверки монтажа и выбора типоразмера EVL.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>Надёжная замена импортного редуктора строится на последовательности: исходные данные, расчёт передаточного числа i=n1/n2, расчёт момента T=9550·P·КПД/n2, учёт сервис-фактора и сверка монтажа. Пропуск любого шага повышает риск перегрева или несовпадения габаритов.</p><p>Финальный выбор типоразмера EVL делают под конкретную нагрузку и монтажную схему. Завод Редукторов подбирает эквивалент индивидуально, без универсальных таблиц замен. Производитель EVL — ООО «НИИ АТТ» (Челябинск).</p><h3>Алгоритм подбора кратко</h3><table class="spec"><tbody><tr><th>Шаг</th><td>Действие</td></tr><tr><th>1</th><td>Собрать данные</td></tr><tr><th>2</th><td>Рассчитать i=n1/n2</td></tr><tr><th>3</th><td>Рассчитать момент</td></tr><tr><th>4</th><td>Заложить сервис-фактор</td></tr><tr><th>5</th><td>Сверить монтаж</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Tramec под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора</a><a href="../analog/">Аналоги импортных редукторов</a><a href="../importozameshchenie">Импортозамещение приводной техники</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

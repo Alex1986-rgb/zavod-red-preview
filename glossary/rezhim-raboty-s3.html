@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Режим работы S3: повторно-кратковременный режим</title>
+<meta name="description" content="Режим работы S3 — повторно-кратковременная работа с паузами. Что такое ПВ, как влияет на нагрев и подбор редуктора и аналога EVL." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/rezhim-raboty-s3" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/rezhim-raboty-s3" />
+<meta property="og:title" content="Режим работы S3: повторно-кратковременный режим" /><meta property="og:description" content="Режим работы S3 — повторно-кратковременная работа с паузами. Что такое ПВ, как влияет на нагрев и подбор редуктора и аналога EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Режим работы S3", "description": "Режим работы S3 — повторно-кратковременная работа с паузами. Что такое ПВ, как влияет на нагрев и подбор редуктора и аналога EVL.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/rezhim-raboty-s3"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Режим работы S3", "item": "https://zavod-red.ru/glossary/rezhim-raboty-s3"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем S3 отличается от S1?", "acceptedAnswer": {"@type": "Answer", "text": "В S3 работа чередуется с паузами и привод не выходит на установившуюся температуру, тогда как S1 — продолжительный режим."}}, {"@type": "Question", "name": "Что такое ПВ в режиме S3?", "acceptedAnswer": {"@type": "Answer", "text": "Относительная продолжительность включения — доля рабочего времени в цикле, обычно 15–60 %."}}, {"@type": "Question", "name": "Как подобрать редуктор для S3?", "acceptedAnswer": {"@type": "Answer", "text": "По ПВ, числу пусков в час и пиковому моменту с проверкой тепловой мощности; аналог EVL берут по паспорту импорта."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Режим работы S3</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий редукторов</div>
+  <h1>Режим работы S3</h1>
+  <p>Режим работы S3 — повторно-кратковременный режим, при котором рабочие периоды чередуются с паузами, а привод не успевает выйти на установившуюся температуру. Характеризуется относительной продолжительностью включения (ПВ).</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Что такое ПВ и как оно влияет</h2><p>Относительная продолжительность включения ПВ — доля рабочего времени в цикле, обычно 15, 25, 40 или 60 %. Чем ниже ПВ, тем меньше средний нагрев при равной пиковой нагрузке.</p><p>В режиме S3 допустимы кратковременно более высокие моменты, чем в S1, за счёт остывания в паузах. Но частые пуски создают динамические нагрузки на зубья и подшипники.</p><h2>Подбор редуктора для S3</h2><p>При подборе учитывают ПВ, число пусков в час и пиковый момент. Сервис-фактор берут по режиму нагрузки, а тепловую мощность проверяют с учётом пауз.</p><p>Аналог EVL для S3 подбирают по паспортным данным импортного узла с тем же классом режима. Габариты совпадают, что позволяет заменить редуктор в приводе с частыми включениями без переделки.</p>
+  <h3>Типовые значения ПВ для S3</h3><table class="spec"><tbody><tr><th>ПВ, %</th><td>Характер работы</td></tr><tr><th>15</th><td>Редкие включения</td></tr><tr><th>25</th><td>Умеренные включения</td></tr><tr><th>40</th><td>Частые включения</td></tr><tr><th>60</th><td>Почти непрерывно</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    Подобрать редуктор по этому параметру — <a href="../podbor.html#kalkulyator">калькулятор подбора</a>. Каталог моделей — <a href="../catalog/">каталог редукторов</a>, аналоги импорта — <a href="../analog/">каталог аналогов</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Режим работы S3</h2>
+  <div class="cat-faq"><details><summary>Чем S3 отличается от S1?</summary><div>В S3 работа чередуется с паузами и привод не выходит на установившуюся температуру, тогда как S1 — продолжительный режим.</div></details><details><summary>Что такое ПВ в режиме S3?</summary><div>Относительная продолжительность включения — доля рабочего времени в цикле, обычно 15–60 %.</div></details><details><summary>Как подобрать редуктор для S3?</summary><div>По ПВ, числу пусков в час и пиковому моменту с проверкой тепловой мощности; аналог EVL берут по паспорту импорта.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Режим работы S3 — повторно-кратковременный режим, при котором рабочие периоды чередуются с паузами, а привод не успевает выйти на установившуюся температуру. Характеризуется относительной продолжительностью включения (ПВ).</p>
+  <details class="seo-more"><summary>Смежные термины и подбор</summary>
+  <div class="seo-body"><p>Другие термины — в <a href="../glossary/">глоссарии редукторов</a>. Подбор модели по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p></div></details>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор</a><a href="rezhim-raboty-s1">Режим работы S1</a><a href="chislo-puskov-v-chas">Число пусков в час</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Цилиндрический редуктор Pujol Muntala: аналог EVL</title>
+<meta name="description" content="Цилиндрический редуктор Pujol Muntala: конструкция, передаточные числа, КПД и расчёт момента. Как подобрать соосный аналог EVL без переделки привода." />
+<link rel="canonical" href="https://zavod-red.ru/blog/cilindricheskiy-reduktor-pujol.html" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/cilindricheskiy-reduktor-pujol.html" />
+<meta property="og:title" content="Цилиндрический редуктор Pujol Muntala: аналог EVL" /><meta property="og:description" content="Цилиндрический редуктор Pujol Muntala: конструкция, передаточные числа, КПД и расчёт момента. Как подобрать соосный аналог EVL без переделки привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Цилиндрический редуктор Pujol Muntala: аналог EVL", "description": "Цилиндрический редуктор Pujol Muntala: конструкция, передаточные числа, КПД и расчёт момента. Как подобрать соосный аналог EVL без переделки привода.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/cilindricheskiy-reduktor-pujol.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Цилиндрический редуктор Pujol Muntala: аналог EVL", "item": "https://zavod-red.ru/blog/cilindricheskiy-reduktor-pujol.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Кто производит редукторы EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Редукторы EVL выпускает «Завод Редукторов» — ООО «НИИ АТТ» из Челябинска. Это российский производитель, а не переклеенный импорт."}}, {"@type": "Question", "name": "Чем цилиндрический редуктор лучше червячного?", "acceptedAnswer": {"@type": "Answer", "text": "У цилиндрической передачи выше КПД и он слабо зависит от передаточного числа. Поэтому такие редукторы энергоэффективнее и меньше греются при длительной нагрузке, но не обладают выраженным самоторможением."}}, {"@type": "Question", "name": "Как рассчитать выходной момент?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, КПД — коэффициент полезного действия, n2 — обороты выходного вала."}}, {"@type": "Question", "name": "Как посчитать передаточное число многоступенчатого редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Общее передаточное число равно произведению передаточных чисел ступеней: i = i1 · i2 · i3. В целом i = n1 / n2 при n1 ≈ 1450 об/мин."}}, {"@type": "Question", "name": "Можно ли заменить Pujol Muntala на EVL без доработок?", "acceptedAnswer": {"@type": "Answer", "text": "Да, аналог EVL подбирают по присоединительным размерам, передаточному числу и моменту, чтобы он встал на место импортного редуктора без переделки привода."}}, {"@type": "Question", "name": "Что такое соосный редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Это редуктор, у которого входной и выходной валы лежат на одной оси. Такая компоновка экономит место по длине и удобна для встраивания в линию."}}, {"@type": "Question", "name": "Как быстро подобрать аналог?", "acceptedAnswer": {"@type": "Answer", "text": "Введите мощность, обороты выхода и требуемый момент в калькулятор подбора — он предложит типоразмер EVL с нужной ступенчатостью и передаточным числом."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Цилиндрический редуктор Pujol Muntala: аналог EVL</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Аналоги импорта · Pujol Muntala</div>
+  <h1>Цилиндрический редуктор Pujol Muntala и аналог EVL</h1>
+  <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
+  <p>Цилиндрические редукторы Pujol Muntala ценят за высокий КПД, соосную компоновку и способность передавать большие моменты при малых потерях. Когда импортный узел нужно заменить, важно сохранить передаточное число, момент и присоединительные размеры. Совместимый аналог выпускает «Завод Редукторов» под маркой EVL.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <p class="lead-p">Разбираем устройство цилиндрических редукторов Pujol Muntala, их характеристики и типоразмеры, показываем расчёт момента и передаточного числа и объясняем, как подобрать эквивалент EVL для замены без доработки оборудования.</p>
+  <h2>Конструкция цилиндрического редуктора</h2><p>В основе цилиндрического редуктора лежат зубчатые колёса с прямыми или косыми зубьями. Косозубое зацепление работает плавнее и тише, лучше переносит нагрузку за счёт большего числа одновременно контактирующих зубьев. В зависимости от требуемого передаточного числа передача бывает одно-, двух- или трёхступенчатой.</p><p>Соосное исполнение, когда входной и выходной валы лежат на одной оси, экономит место по длине привода. Корпус выполняется жёстким, с посадочными местами под подшипники, что обеспечивает точность зацепления и ресурс.</p><h2>Характеристики и типоразмеры</h2><p>Типоразмер цилиндрического редуктора выбирают по передаваемому моменту и мощности. Чем больше типоразмер, тем выше допустимая нагрузка на выходном валу и радиальная нагрузка на опоры.</p><p>Передаточные числа набираются числом ступеней: одна ступень даёт умеренное значение, две и три — высокие. Это позволяет получить нужные обороты выхода при стандартном асинхронном двигателе.</p><h2>Расчёт момента и передаточного числа</h2><p>Передаточное число рассчитывают как i = n1 / n2, где n1 — обороты входного вала (n1 ≈ 1450 об/мин для стандартного электродвигателя), n2 — требуемые обороты выхода. Для многоступенчатых редукторов общее i равно произведению передаточных чисел ступеней.</p><p>Выходной момент оценивают по формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, КПД — коэффициент полезного действия. У цилиндрических передач КПД одной ступени высок, поэтому даже в многоступенчатом исполнении суммарные потери остаются небольшими.</p><h2>КПД цилиндрической передачи</h2><p>Главное преимущество цилиндрического редуктора перед червячным — высокий КПД, слабо зависящий от передаточного числа. Это делает такие редукторы предпочтительными для приводов с длительной нагрузкой и высокими требованиями к энергоэффективности.</p><p>Даже при последовательном соединении нескольких ступеней общий КПД остаётся высоким, потому что потери каждой ступени малы. Это важно при расчёте нагрева и подборе двигателя по мощности.</p><h2>Области применения</h2><p>Цилиндрические редукторы применяют в конвейерах, насосных и вентиляционных установках, миксерах, экструдерах, металлообрабатывающем оборудовании и общепромышленных приводах, где нужна соосная передача большого момента.</p><p>Соосная компоновка удобна для встраивания в линию, где входной двигатель и рабочий орган расположены на одной оси. Это упрощает монтаж и снижает нагрузку на опоры.</p><h2>Аналог EVL и подбор замены</h2><p>«Завод Редукторов» (ООО «НИИ АТТ», Челябинск) производит цилиндрические редукторы EVL, совместимые с типоразмерами Pujol Muntala по присоединительным размерам, передаточным числам и моменту. Замена выполняется без переделки рамы и муфт.</p><p>Для подбора нужны три величины: мощность, обороты выхода и требуемый момент. По ним калькулятор подбора предложит типоразмер EVL с подходящей ступенчатостью и передаточным числом.</p>
+  <h3>Ключевые параметры цилиндрического редуктора</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Значение / описание</td></tr><tr><th>Тип зацепления</th><td>Цилиндрическое, прямо- или косозубое</td></tr><tr><th>Число ступеней</th><td>1, 2 или 3</td></tr><tr><th>Входные обороты n1</th><td>≈ 1450 об/мин</td></tr><tr><th>Передаточное число i</th><td>i = n1 / n2 (произведение ступеней)</td></tr><tr><th>КПД</th><td>Высокий, слабо зависит от i</td></tr><tr><th>Компоновка</th><td>Соосная / на лапах / фланцевая</td></tr></tbody></table><h3>Формулы для расчёта</h3><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Момент T</th><td>T = 9550 · P · КПД / n2</td></tr><tr><th>Передаточное число i</th><td>i = n1 / n2</td></tr><tr><th>Общее i многоступ.</th><td>i = i1 · i2 · i3</td></tr></tbody></table>
+  <div style="margin:22px 0;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px">
+    <b>Подберём аналог Pujol Muntala под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель EVL и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2>Частые вопросы: Pujol Muntala и аналоги EVL</h2>
+  <div class="cat-faq"><details><summary>Кто производит редукторы EVL?</summary><div>Редукторы EVL выпускает «Завод Редукторов» — ООО «НИИ АТТ» из Челябинска. Это российский производитель, а не переклеенный импорт.</div></details><details><summary>Чем цилиндрический редуктор лучше червячного?</summary><div>У цилиндрической передачи выше КПД и он слабо зависит от передаточного числа. Поэтому такие редукторы энергоэффективнее и меньше греются при длительной нагрузке, но не обладают выраженным самоторможением.</div></details><details><summary>Как рассчитать выходной момент?</summary><div>По формуле T = 9550 · P · КПД / n2, где P — мощность в кВт, КПД — коэффициент полезного действия, n2 — обороты выходного вала.</div></details><details><summary>Как посчитать передаточное число многоступенчатого редуктора?</summary><div>Общее передаточное число равно произведению передаточных чисел ступеней: i = i1 · i2 · i3. В целом i = n1 / n2 при n1 ≈ 1450 об/мин.</div></details><details><summary>Можно ли заменить Pujol Muntala на EVL без доработок?</summary><div>Да, аналог EVL подбирают по присоединительным размерам, передаточному числу и моменту, чтобы он встал на место импортного редуктора без переделки привода.</div></details><details><summary>Что такое соосный редуктор?</summary><div>Это редуктор, у которого входной и выходной валы лежат на одной оси. Такая компоновка экономит место по длине и удобна для встраивания в линию.</div></details><details><summary>Как быстро подобрать аналог?</summary><div>Введите мощность, обороты выхода и требуемый момент в калькулятор подбора — он предложит типоразмер EVL с нужной ступенчатостью и передаточным числом.</div></details></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+  <p class="seo-lead">Цилиндрический редуктор Pujol Muntala — высокоэффективный соосный привод, для которого «Завод Редукторов» предлагает совместимый аналог EVL с расчётом под вашу нагрузку.</p>
+  <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
+  <div class="seo-body"><p>При подборе цилиндрического редуктора отталкиваются от требуемого момента и оборотов выхода. Момент считают по формуле T = 9550 · P · КПД / n2, а передаточное число — как i = n1 / n2 при n1 ≈ 1450 об/мин. Для многоступенчатых редукторов общее передаточное число равно произведению ступеней.</p><p>Аналог EVL повторяет присоединительные размеры, передаточные числа и момент типоразмеров Pujol Muntala, поэтому замена не требует переделки привода. Производство находится в Челябинске, что сокращает сроки поставки и упрощает сервис по сравнению с импортом.</p><h3>Данные для подбора цилиндрического аналога</h3><table class="spec"><tbody><tr><th>Исходные данные</th><td>Назначение</td></tr><tr><th>Мощность P, кВт</th><td>Выбор типоразмера и расчёт момента</td></tr><tr><th>Обороты выхода n2</th><td>Определение i и числа ступеней</td></tr><tr><th>Требуемый момент T</th><td>Проверка нагрузочной способности</td></tr><tr><th>Тип монтажа</th><td>Совместимость по присоединению</td></tr></tbody></table>
+  <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
+  </div></details>
+</div></div></section>
+<section class="section"><div class="wrap" style="text-align:center">
+  <h2>Подберём аналог Pujol Muntala под вашу задачу</h2>
+  <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Читайте также</div>
+  <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора аналога редуктора</a><a href="../analog/">Аналоги импортных редукторов EVL</a><a href="../catalog/">Каталог редукторов EVL</a></div>
+</div></section>
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>
