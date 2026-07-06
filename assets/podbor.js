@@ -88,7 +88,7 @@
   var _selCache={};
   function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
+  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
 
   function curType(){
@@ -99,10 +99,12 @@
     var ti=curType();
     return DB.i.filter(function(it){var gt=DB.g[it[0]].t; return enabledIdx.indexOf(gt)>=0 && (ti<0||gt===ti);});
   }
-  // группа проходит текущий бренд? ('' = Наши EVL → все; иначе только с аналогом этого бренда)
+  // «наши» виды: ZR (k='') и EVL (k='__evl__') — показываем все наши модели
+  function isOurs(k){ return !k || k==='__evl__'; }
+  // группа проходит текущий бренд? (наши виды → все; иначе только с аналогом этого бренда)
   function groupHasBrand(g){
     var b=BMAP[selBrand];
-    if(!b||!b.k) return true;
+    if(!b||isOurs(b.k)) return true;
     return !!(g.a && g.a[b.k] && g.a[b.k][0]);
   }
   // базовый набор строк для диапазонов «от/до»: фильтр по типу + бренду + строке поиска
@@ -154,22 +156,33 @@
   // список моделей/аналогов для подсказок (datalist) — зависит от выбранного бренда и типа
   // (правки ТЗ №1, №2): «Наши EVL» → только EVL+ГОСТ; конкретный бренд → только его аналоги;
   // текущий тип → только модели этого типа.
+  // натуральная сортировка: числа сравниваем как числа (меньше→больше), а не как строки
+  // (правка №1): чтобы 080/777 шло раньше 080/7117, а не наоборот.
+  function natCmp(a,b){
+    var ra=String(a).match(/\d+|\D+/g)||[], rb=String(b).match(/\d+|\D+/g)||[];
+    for(var i=0;i<Math.min(ra.length,rb.length);i++){
+      var x=ra[i], y=rb[i], nx=parseInt(x,10), ny=parseInt(y,10);
+      if(!isNaN(nx)&&!isNaN(ny)){ if(nx!==ny)return nx-ny; }
+      else if(x!==y){ return x<y?-1:1; }
+    }
+    return ra.length-rb.length;
+  }
   function fillModels(){
     var dl=$('pfModels'); if(!dl||!DB)return;
-    var ti=curType(), b=BMAP[selBrand], names={};
+    var ti=curType(), b=BMAP[selBrand], brandKey=(b&&!isOurs(b.k))?b.k:'', names={};
     Object.keys(DB.g).forEach(function(k){
       var g=DB.g[k];
       if(enabledIdx.indexOf(g.t)<0) return;
       if(ti>=0 && g.t!==ti) return;
-      if(b&&b.k){
-        var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
+      if(brandKey){
+        var imp=(g.a&&g.a[brandKey])?g.a[brandKey][0]:null;
         if(imp)names[imp]=1;               // конкретный бренд → его аналоги
       }else{
-        if(g.e)names[g.e]=1;               // Наши EVL → обозначения EVL
+        if(g.e)names[g.e]=1;               // наши виды (ZR/EVL) → обозначения EVL
         if(g.p)names[g.p]=1;               // + ГОСТ (ПР/МР)
       }
     });
-    dl.innerHTML=Object.keys(names).sort().map(function(n){return '<option value="'+String(n).replace(/"/g,'&quot;')+'"></option>';}).join('');
+    dl.innerHTML=Object.keys(names).sort(natCmp).map(function(n){return '<option value="'+String(n).replace(/"/g,'&quot;')+'"></option>';}).join('');
   }
 
   // параметры из URL (приходят с мини-формы на главной): type, pw, os, tq
@@ -253,7 +266,8 @@
         selBrand=btn.getAttribute('data-bk')||'';
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
         btn.classList.add('is-active');
-        var th=root.querySelector('.pf-th-tz'); if(th)th.textContent=(selBrand&&BMAP[selBrand])?(BMAP[selBrand].n+' (наш аналог EVL)'):'Типоразмер редуктора';
+        var th=root.querySelector('.pf-th-tz'); var bb=BMAP[selBrand];
+        if(th)th.textContent=(bb&&!isOurs(bb.k))?(bb.n+' (наш аналог ZR)'):'Типоразмер редуктора';
         fillModels(); fillRanges(); syncRanges(); apply();
       });
     });
@@ -338,7 +352,7 @@
     var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).filter(Boolean);
     var tds=COLS.map(function(c){return '<td data-label="'+c.m+'">'+fmt(it[c.i],c.d)+'</td>';}).join('');
     var tz, ord, b=BMAP[selBrand];
-    if(b&&b.k){
+    if(b&&!isOurs(b.k)){
       var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
       if(imp){
         tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+(zrOf(g.e)||g.e)+'</span></td>';
@@ -351,15 +365,13 @@
         ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+g.e+'" href="#zayavka">Запрос</a></td>';
       }
     }else{
-      var ans=Object.keys(g.a||{}).slice(0,3).map(function(k){return g.a[k][0];});
-      var sub=[]; if(g.p)sub.push(g.p); gost.forEach(function(x){sub.push(x);});
-      var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
-      // ZR — наша маркировка, крупно красным; EVL — мелко в рамке (правка ТЗ №7)
-      var zr=zrOf(g.e);
-      var head=zr
-        ? '<b class="pf-zr">'+zr+'</b><span class="pf-evl" title="Обозначение EVL">'+g.e+'</span>'
-        : '<b>'+g.e+'</b>';
-      tz='<td class="pf-tz">'+head+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
+      // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
+      // EVL-вид: EVL крупно, ZR — серым кубиком. Импортные аналоги (≈) убраны (правка №2).
+      var zr=zrOf(g.e), head, badge;
+      if(selBrand==='__evl__'){ head=g.e; badge=zr; }
+      else { head=zr||g.e; badge=zr?g.e:null; }
+      var mark='<b class="pf-zr">'+head+'</b>'+(badge?'<span class="pf-evl">'+badge+'</span>':'');
+      tz='<td class="pf-tz">'+mark+(g.p?'<span class="pf-tr-gost">'+g.p+'</span>':'')+'</td>';
       ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
     }
     return '<tr>'+tz+tds+ord+'</tr>';

@@ -48,19 +48,19 @@
 .pf-count{color:var(--muted);font-size:13px;margin-left:4px}
 .pf-count b{color:var(--text)}
 
-/* тело — числа крупнее (правка №4) и по центру под заголовком (правка №6) */
-.pf-table tbody td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap;
-  text-align:center;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+/* тело — числа крупнее (правка №4), по центру (№6), строки компактные (№3) */
+.pf-table tbody td{padding:7px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap;
+  text-align:center;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;vertical-align:middle}
 .pf-table tbody tr:last-child td{border-bottom:0}
 .pf-table tbody tr:nth-child(even){background:var(--card2)}
 .pf-table tbody tr:hover{background:#16242f}
-.pf-tz{white-space:normal !important;min-width:160px;text-align:left;font-weight:400}
+.pf-tz{white-space:normal !important;min-width:150px;text-align:left;font-weight:400;line-height:1.2}
 .pf-tz b{display:block;color:var(--red2);font-weight:800;font-size:14px}
-/* маркировка ZR (наша) — крупно красным; EVL — мелко в рамке-бейдже */
-.pf-tz b.pf-zr{font-size:15.5px;line-height:1.15}
-.pf-evl{display:inline-block;margin-top:4px;padding:2px 8px;border:1px solid var(--line);border-radius:6px;
-  background:var(--card2);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
-.pf-tr-gost{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+/* маркировка ZR (наша) — крупно красным; EVL — мелким серым кубиком рядом с ГОСТ */
+.pf-tz b.pf-zr{font-size:15px;line-height:1.1;margin-bottom:2px}
+.pf-evl{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;
+  background:var(--card2);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap;vertical-align:middle}
+.pf-tr-gost{display:inline;color:var(--muted);font-size:11.5px;margin-left:7px}
 .pf-tr-an{display:block;color:var(--muted2);font-size:11px;margin-top:1px}
 .pf-empty{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
 .pf-loading-cell{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
