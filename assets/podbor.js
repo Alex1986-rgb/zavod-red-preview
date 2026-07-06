@@ -315,6 +315,22 @@
     return pfx+'podbor.html'+(q.length?'?'+q.join('&'):'');
   }
 
+  // Маркировка ZR (наша) по обозначению EVL — таблица соответствия из ТЗ.
+  // Сдвоенные редукторы EVL A/B расшифровываются как ZR(A)/ZR(B). Суффикс исполнения
+  // (напр. «Х») сохраняется. Если хоть одна часть без соответствия — ZR не показываем
+  // (не выдумываем номера, которые могут уйти клиенту).
+  var ZRMAP={193:939,194:949,195:959,196:969,197:979,198:989,199:999,1910:9109,1913:9139,1914:9149,1916:9169,
+    183:838,184:848,185:858,186:868,187:878,188:888,189:898,1810:8108,1812:8128,1815:8158,1816:8168,1818:8188,
+    737:603,747:604,757:605,767:606,777:607,797:609,7107:6011,7137:6113,7157:6115,
+    163:636,164:646,165:656,166:666,167:676,168:686,169:696,1610:6106,1612:6126,1615:6156};
+  function zrPart(p){var m=String(p).trim().match(/^(\d+)(.*)$/);if(!m)return null;var z=ZRMAP[parseInt(m[1],10)];return z==null?null:(z+m[2]);}
+  function zrOf(evl){
+    var m=String(evl).match(/^EVL\s+(.+)$/); if(!m)return null;
+    var parts=m[1].split('/').map(function(p){return zrPart(p);});
+    if(parts.some(function(z){return z==null;}))return null;
+    return 'ZR '+parts.join('/');
+  }
+
   function evlSlug(n){return n.toLowerCase().replace(/ /g,'-').replace(/\//g,'-').replace(/х/g,'x');}
   function frameSlug(s){return s.toLowerCase().replace(/х/g,'x').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
   function rowHtml(it){
@@ -325,7 +341,7 @@
     if(b&&b.k){
       var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
       if(imp){
-        tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+g.e+'</span></td>';
+        tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+(zrOf(g.e)||g.e)+'</span></td>';
         // хаб-страница есть только у брендов с b.s (SEW); у остальных ведём на нашу карточку EVL — без 404
         ord=b.s
           ? '<td class="pf-order"><a class="pf-ord" href="/analog/'+b.s+'-'+frameSlug(imp)+'">Заказать</a></td>'
@@ -338,7 +354,12 @@
       var ans=Object.keys(g.a||{}).slice(0,3).map(function(k){return g.a[k][0];});
       var sub=[]; if(g.p)sub.push(g.p); gost.forEach(function(x){sub.push(x);});
       var an=ans.length?'<span class="pf-tr-an">≈ '+ans.join(' · ')+'</span>':'';
-      tz='<td class="pf-tz"><b>'+g.e+'</b>'+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
+      // ZR — наша маркировка, крупно красным; EVL — мелко в рамке (правка ТЗ №7)
+      var zr=zrOf(g.e);
+      var head=zr
+        ? '<b class="pf-zr">'+zr+'</b><span class="pf-evl" title="Обозначение EVL">'+g.e+'</span>'
+        : '<b>'+g.e+'</b>';
+      tz='<td class="pf-tz">'+head+(sub.length?'<span class="pf-tr-gost">'+sub.join(' · ')+'</span>':'')+an+'</td>';
       ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
     }
     return '<tr>'+tz+tds+ord+'</tr>';
@@ -354,13 +375,13 @@
   function csvCell(v){ v=(v==null?'':String(v)); return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
   function exportCSV(){
     if(!CUR.length)return;
-    var head=['Типоразмер (EVL)','ПР','ГОСТ-обозначения','Импортные аналоги'].concat(COLS.map(function(c){return c.h;}));
+    var head=['Маркировка ZR','Типоразмер (EVL)','ПР','ГОСТ-обозначения','Импортные аналоги'].concat(COLS.map(function(c){return c.h;}));
     var lines=[head.map(csvCell).join(';')];
     CUR.forEach(function(it){
       var g=DB.g[it[0]];
       var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).join(' / ');
       var ans=Object.keys(g.a||{}).map(function(k){return g.a[k][0];}).join(' / ');
-      var row=[g.e, g.p||'', gost, ans].concat(COLS.map(function(c){return it[c.i]==null?'':fmt(it[c.i],c.d);}));
+      var row=[zrOf(g.e)||'', g.e, g.p||'', gost, ans].concat(COLS.map(function(c){return it[c.i]==null?'':fmt(it[c.i],c.d);}));
       lines.push(row.map(csvCell).join(';'));
     });
     var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
