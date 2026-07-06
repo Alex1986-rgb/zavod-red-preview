@@ -95,8 +95,28 @@
     var ti=curType();
     return DB.i.filter(function(it){var gt=DB.g[it[0]].t; return enabledIdx.indexOf(gt)>=0 && (ti<0||gt===ti);});
   }
+  // группа проходит текущий бренд? ('' = Наши EVL → все; иначе только с аналогом этого бренда)
+  function groupHasBrand(g){
+    var b=BMAP[selBrand];
+    if(!b||!b.k) return true;
+    return !!(g.a && g.a[b.k] && g.a[b.k][0]);
+  }
+  // базовый набор строк для диапазонов «от/до»: фильтр по типу + бренду + строке поиска
+  // (модель/аналог), но БЕЗ числовых фильтров — чтобы каскад «выбрал модель → в колонках
+  // только её значения» работал (правка ТЗ №3).
+  function rowsOfBase(){
+    var ti=curType();
+    return DB.i.filter(function(it){
+      var g=DB.g[it[0]];
+      if(enabledIdx.indexOf(g.t)<0) return false;
+      if(ti>=0 && g.t!==ti) return false;
+      if(!groupHasBrand(g)) return false;
+      if(!passQ(it)) return false;
+      return true;
+    });
+  }
   function fillRanges(){
-    var base=rowsOfType();
+    var base=rowsOfBase();
     COLS.forEach(function(c){
       var vals={}, _p=Math.pow(10,c.d==null?2:c.d);
       base.forEach(function(it){ if(it[c.i]!=null)vals[Math.round(it[c.i]*_p)/_p]=1; });
@@ -124,12 +144,24 @@
     });
   }
 
-  // список моделей/аналогов для подсказок (datalist) — удобно на телефоне
+  // список моделей/аналогов для подсказок (datalist) — зависит от выбранного бренда и типа
+  // (правки ТЗ №1, №2): «Наши EVL» → только EVL+ГОСТ; конкретный бренд → только его аналоги;
+  // текущий тип → только модели этого типа.
   function fillModels(){
     var dl=$('pfModels'); if(!dl||!DB)return;
-    var names={};
-    Object.keys(DB.g).forEach(function(k){var g=DB.g[k]; if(g.e)names[g.e]=1; if(g.p)names[g.p]=1;
-      Object.keys(g.a||{}).forEach(function(ak){if(g.a[ak]&&g.a[ak][0])names[g.a[ak][0]]=1;});});
+    var ti=curType(), b=BMAP[selBrand], names={};
+    Object.keys(DB.g).forEach(function(k){
+      var g=DB.g[k];
+      if(enabledIdx.indexOf(g.t)<0) return;
+      if(ti>=0 && g.t!==ti) return;
+      if(b&&b.k){
+        var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
+        if(imp)names[imp]=1;               // конкретный бренд → его аналоги
+      }else{
+        if(g.e)names[g.e]=1;               // Наши EVL → обозначения EVL
+        if(g.p)names[g.p]=1;               // + ГОСТ (ПР/МР)
+      }
+    });
     dl.innerHTML=Object.keys(names).sort().map(function(n){return '<option value="'+String(n).replace(/"/g,'&quot;')+'"></option>';}).join('');
   }
 
@@ -199,7 +231,7 @@
         selType=parseInt(b.getAttribute('data-ti'));
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
         b.classList.add('is-active');
-        fillRanges(); syncRanges(); apply();
+        fillModels(); fillRanges(); syncRanges(); apply();
       });
     });
   }
@@ -215,7 +247,7 @@
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
         btn.classList.add('is-active');
         var th=root.querySelector('.pf-th-tz'); if(th)th.textContent=(selBrand&&BMAP[selBrand])?(BMAP[selBrand].n+' (наш аналог EVL)'):'Типоразмер редуктора';
-        apply();
+        fillModels(); fillRanges(); syncRanges(); apply();
       });
     });
   }
@@ -333,13 +365,14 @@
 
   // события
   var t=null;
-  function deb(){clearTimeout(t);t=setTimeout(apply,160);}
+  // ввод модели/аналога → пересобрать диапазоны колонок под выбранную модель (каскад, правка №3)
+  function deb(){clearTimeout(t);t=setTimeout(function(){fillRanges();syncRanges();apply();},160);}
   qEl.addEventListener('input',deb);
   Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',function(){syncRanges();apply();});});
   $('pfReset').addEventListener('click',function(){
     qEl.value='';
     Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';});
-    syncRanges(); apply();
+    fillRanges(); syncRanges(); apply();
   });
   // «Получить выгрузку на почту» — открывает заявку с параметрами подбора (modal.js откроет форму по data-zayavka). Клиент не скачивает — мы отправляем сами.
   if($('pfExport'))$('pfExport').addEventListener('click',function(){

@@ -12,11 +12,11 @@
 .pf-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 .pf-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:1040px}
 
-/* шапка с заголовками */
-.pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:left;
+/* шапка с заголовками — числовые колонки по центру (значения пишутся под названием, правка №6) */
+.pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:center;
   vertical-align:bottom;padding:15px 14px 10px;font-size:11.5px;text-transform:uppercase;
   letter-spacing:.03em;line-height:1.32;border-bottom:1px solid var(--line)}
-.pf-th-tz{min-width:172px}
+.pf-th-tz{min-width:172px;text-align:left}
 
 /* строка фильтров */
 .pf-frow td{background:var(--bg2);padding:0 14px 15px;vertical-align:top;border-bottom:1px solid var(--line)}
@@ -48,12 +48,13 @@
 .pf-count{color:var(--muted);font-size:13px;margin-left:4px}
 .pf-count b{color:var(--text)}
 
-/* тело */
-.pf-table tbody td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap}
+/* тело — числа крупнее (правка №4) и по центру под заголовком (правка №6) */
+.pf-table tbody td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap;
+  text-align:center;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
 .pf-table tbody tr:last-child td{border-bottom:0}
 .pf-table tbody tr:nth-child(even){background:var(--card2)}
 .pf-table tbody tr:hover{background:#16242f}
-.pf-tz{white-space:normal !important;min-width:160px}
+.pf-tz{white-space:normal !important;min-width:160px;text-align:left;font-weight:400}
 .pf-tz b{display:block;color:var(--red2);font-weight:800;font-size:14px}
 .pf-tr-gost{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
 .pf-tr-an{display:block;color:var(--muted2);font-size:11px;margin-top:1px}
