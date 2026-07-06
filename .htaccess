@@ -30,6 +30,12 @@
   RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
 
+# YML-фид Яндекс.Маркета: отдавать как XML (без этого Content-Type пустой и Яндекс
+# не распознаёт файл как фид). application/xml также попадает под gzip ниже.
+<IfModule mod_mime.c>
+  AddType application/xml .yml
+</IfModule>
+
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
