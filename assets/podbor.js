@@ -83,6 +83,10 @@
 
   var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
+  // кеш ссылок на селекты от/до: элементы создаются один раз, меняются только их <option>,
+  // поэтому querySelector по каждой строке (был O(8763×14) на apply — ~2.6с) больше не нужен.
+  var _selCache={};
+  function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
   var BRANDS=[{k:'',n:'Наши EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
@@ -123,7 +127,7 @@
       var sorted=Object.keys(vals).map(parseFloat).sort(function(a,b){return a-b;});
       RANGE_VALS[c.i]=sorted;
       ['min','max'].forEach(function(mm){
-        var sel=root.querySelector('[data-'+mm+'="'+c.i+'"]'); if(!sel)return;
+        var sel=selEl(mm,c.i); if(!sel)return;
         var keep=sel.value;
         sel.innerHTML='<option value="">Все</option>'+sorted.map(function(v){return '<option value="'+v+'">'+fmt(v,c.d)+'</option>';}).join('');
         if(keep&&vals[keep])sel.value=keep; else sel.value='';
@@ -131,10 +135,13 @@
     });
   }
 
-  // зависимые от/до: «до» показывает значения ≥ «от», «от» — значения ≤ «до» (по каждой колонке)
-  function syncRanges(){
+  // зависимые от/до: «до» показывает значения ≥ «от», «от» — значения ≤ «до» (по каждой колонке).
+  // onlyCol — пересобрать только одну колонку (при change по конкретному селекту): не трогаем
+  // остальные 6 колонок → нет пересборки ~2000 <option> на каждый выбор (было медленно).
+  function syncRanges(onlyCol){
     COLS.forEach(function(c){
-      var mn=root.querySelector('[data-min="'+c.i+'"]'), mx=root.querySelector('[data-max="'+c.i+'"]');
+      if(onlyCol!=null && c.i!==onlyCol) return;
+      var mn=selEl('min',c.i), mx=selEl('max',c.i);
       if(!mn||!mx)return;
       var all=RANGE_VALS[c.i]||[];
       var lo=mn.value!==''?parseFloat(mn.value):null, hi=mx.value!==''?parseFloat(mx.value):null;
@@ -255,7 +262,7 @@
   function passRange(it){
     for(var ci=0;ci<COLS.length;ci++){
       var i=COLS[ci].i;
-      var mn=root.querySelector('[data-min="'+i+'"]'), mx=root.querySelector('[data-max="'+i+'"]');
+      var mn=selEl('min',i), mx=selEl('max',i);
       var v=it[i];
       if(mn&&mn.value!==''){ if(v==null||v<parseFloat(mn.value))return false; }
       if(mx&&mx.value!==''){ if(v==null||v>parseFloat(mx.value))return false; }
@@ -300,7 +307,7 @@
     var q=[];
     var ti=curType(); if(ti>=0) q.push('type='+encodeURIComponent(DB.t[ti]));
     COLS.forEach(function(c){
-      var mn=root.querySelector('[data-min="'+c.i+'"]'), mx=root.querySelector('[data-max="'+c.i+'"]');
+      var mn=selEl('min',c.i), mx=selEl('max',c.i);
       if(mn&&mn.value!=='')q.push('min'+c.i+'='+encodeURIComponent(mn.value));
       if(mx&&mx.value!=='')q.push('max'+c.i+'='+encodeURIComponent(mx.value));
     });
@@ -368,7 +375,10 @@
   // ввод модели/аналога → пересобрать диапазоны колонок под выбранную модель (каскад, правка №3)
   function deb(){clearTimeout(t);t=setTimeout(function(){fillRanges();syncRanges();apply();},160);}
   qEl.addEventListener('input',deb);
-  Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',function(){syncRanges();apply();});});
+  Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',function(){
+    var col=s.getAttribute('data-min')||s.getAttribute('data-max');
+    syncRanges(col?parseInt(col):undefined); apply();
+  });});
   $('pfReset').addEventListener('click',function(){
     qEl.value='';
     Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';});
