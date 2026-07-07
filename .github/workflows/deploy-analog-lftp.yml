@@ -1,0 +1,44 @@
+name: Deploy analog cards (lftp parallel)
+
+# Разовая массовая заливка /analog карточек: lftp с параллельными потоками —
+# 36К файлов за ~30-60 мин (обычный FTP-Deploy не успевает за 6ч). Пароль из секрета.
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build dist (Метрика + robots)
+        run: python3 deploy/build-dist.py
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Upload /analog + sitemap (parallel)
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+          set ftp:ssl-allow no;
+          set net:max-retries 2;
+          set net:timeout 25;
+          set mirror:parallel-transfer-count 20;
+          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
+          mirror -R --size-only --no-perms --parallel=20 dist/analog/ /public_html/analog/;
+          put -O /public_html dist/sitemap-analog.xml;
+          put -O /public_html/brands dist/brands/rossi.html;
+          "
