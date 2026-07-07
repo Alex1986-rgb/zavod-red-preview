@@ -1,4 +1,5 @@
 # Принудительный HTTPS + ЧИСТЫЕ URL (без .html)
+# (восстановление после перезаписи CRM-деплоем — 2026-07-07)
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
