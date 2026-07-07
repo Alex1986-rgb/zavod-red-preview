@@ -38,7 +38,7 @@ jobs:
           set net:timeout 25;
           set mirror:parallel-transfer-count 20;
           open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
-          mirror -R --size-only --no-perms --parallel=20 dist/analog/ /public_html/analog/;
+          mirror -R --ignore-time --no-perms --parallel=20 dist/analog/ /public_html/analog/;
           put -O /public_html dist/sitemap-analog.xml;
           put -O /public_html/brands dist/brands/rossi.html;
           "
