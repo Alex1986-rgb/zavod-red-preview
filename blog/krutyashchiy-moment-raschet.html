@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Крутящий момент редуктора: формула и подбор</title>
 <meta name="description" content="Расчёт крутящего момента на выходном валу редуктора по формуле T=9550·P·КПД/n2. Разбор примеров и подбор редуктора EVL по требуемому моменту." />
@@ -11,7 +11,7 @@
 <meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/blog/krutyashchiy-moment-raschet.html" />
 <meta property="og:title" content="Крутящий момент редуктора: формула и подбор" /><meta property="og:description" content="Расчёт крутящего момента на выходном валу редуктора по формуле T=9550·P·КПД/n2. Разбор примеров и подбор редуктора EVL по требуемому моменту." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
-<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<link rel="stylesheet" href="../assets/inner.css?v=291" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Крутящий момент редуктора: формула и подбор", "description": "Расчёт крутящего момента на выходном валу редуктора по формуле T=9550·P·КПД/n2. Разбор примеров и подбор редуктора EVL по требуемому моменту.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/krutyashchiy-moment-raschet.html", "image": "https://zavod-red.ru/og-image.jpg"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Крутящий момент редуктора: формула и подбор", "item": "https://zavod-red.ru/blog/krutyashchiy-moment-raschet.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "По какой формуле считают крутящий момент редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T=9550·P·КПД/n2, где P — мощность в кВт, КПД — доля, n2 — обороты выходного вала в об/мин. Момент получается в Н·м."}}, {"@type": "Question", "name": "Почему в формуле стоит коэффициент 9550?", "acceptedAnswer": {"@type": "Answer", "text": "Он связывает мощность в киловаттах и обороты в минуту с моментом в ньютон-метрах при переходе от мощности к моменту вращения."}}, {"@type": "Question", "name": "Что важнее при подборе — мощность или момент?", "acceptedAnswer": {"@type": "Answer", "text": "Момент. Именно располагаемый крутящий момент на выходе определяет, тронет ли привод нагрузку с места и выдержит ли рабочий режим."}}, {"@type": "Question", "name": "Зачем нужен сервис-фактор?", "acceptedAnswer": {"@type": "Answer", "text": "Он задаёт запас номинального момента редуктора над расчётным с учётом характера нагрузки и числа пусков. Для ударных нагрузок берут 1,5 и выше."}}, {"@type": "Question", "name": "Как обороты выхода влияют на момент?", "acceptedAnswer": {"@type": "Answer", "text": "Обратно пропорционально: чем ниже n2, тем больший момент можно снять с той же мощности. Снижение оборотов в два раза примерно удваивает момент."}}, {"@type": "Question", "name": "Что такое тепловая мощность редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Это способность рассеивать тепло от потерь при длительной работе. При её нехватке редуктор перегревается даже в пределах допустимого момента."}}, {"@type": "Question", "name": "Можно ли подобрать редуктор по моменту автоматически?", "acceptedAnswer": {"@type": "Answer", "text": "Да, через калькулятор подбора: он рассчитает требуемый момент по мощности и оборотам и предложит типоразмер EVL с нужным запасом."}}]}</script>
@@ -125,6 +125,6 @@
     <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
-<script src="../assets/inner.js?v=6"></script>
-<script defer src="../assets/modal.js?v=22"></script>
+<script src="../assets/inner.js?v=61"></script>
+<script defer src="../assets/modal.js?v=221"></script>
 </body></html>

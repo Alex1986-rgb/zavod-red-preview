@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 :root{
   --bg:#0b151d;--bg2:#0e1a24;--card:#14222e;--card2:#172836;--line:#22333f;
   --red:#e11b1b;--red2:#ff3b30;--blue:#2f7fc2;--steel:#7fa8c4;
@@ -5,7 +6,12 @@
   --light:#eef2f6;--ink:#13212c;
   --r:14px;--maxw:1240px;
   --font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+  --head:'Space Grotesk',var(--font);
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Consolas,monospace;
+  --glow:rgba(225,27,27,.16);
 }
+h1,h2,h3,.btn,.eyebrow{font-family:var(--head)}
+table.spec td{font-family:var(--mono);font-size:14px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -151,6 +157,8 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:48px 0 28px;c
 
 @media(max-width:1380px){.menu{gap:18px}.nav-phones span{display:none}}
 @media(max-width:1680px){.nav-phones{display:none}}
+@media(max-width:1640px){.nav{gap:20px}.nav-right{gap:14px}.menu{gap:13px}.menu a{font-size:14px}.menu-phone{display:none}.logo img{height:44px}}
+@media(max-width:1460px){.menu{gap:11px}.btn.sm{padding:11px 14px}}
 
 @media(max-width:900px){
   .nav-phones{display:none}
@@ -235,11 +243,18 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 [data-theme="light"] .theme-toggle .ic-moon{display:none}
 [data-theme="light"] .theme-toggle .ic-sun{display:inline}
 
-/* ===== Светлая тема ===== */
+/* ===== Светлая тема (палитра единого дизайна с каталогом) ===== */
 [data-theme="light"]{
-  --bg:#f5f7fa; --bg2:#eaeef3; --card:#ffffff; --card2:#f1f4f8; --line:#dce3ea;
-  --text:#17252f; --muted:#566873; --muted2:#7c8c98; --steel:#2f6ea3;
+  --bg:#eef0ec; --bg2:#e7eae5; --card:#ffffff; --card2:#f6f7f4; --line:rgba(10,20,28,.12);
+  --text:#101f2a; --muted:#5a6a75; --muted2:#7d8b95; --steel:#2f6f9f;
+  --red:#cf1616; --red2:#e11b1b; --glow:rgba(207,22,22,.10);
 }
+[data-theme="light"] .btn{box-shadow:0 4px 14px var(--glow)}
+[data-theme="light"] .btn:hover{background:#b91212}
+[data-theme="light"] .phero{background:linear-gradient(160deg,#e7eae5,#eef0ec)}
+[data-theme="light"] .xcard,[data-theme="light"] .pc-chip,[data-theme="light"] .ind-card,[data-theme="light"] .post-card{background:var(--card);box-shadow:0 2px 10px rgba(10,20,28,.05)}
+[data-theme="light"] table.spec th{background:var(--card2)}
+[data-theme="light"] .cat-faq details{background:var(--card)}
 [data-theme="light"] header{background:rgba(255,255,255,.9);border-bottom:1px solid var(--line)}
 [data-theme="light"] .menu a{color:#33424d}
 [data-theme="light"] .menu a:hover,[data-theme="light"] .menu a.active{color:var(--text)}

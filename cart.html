@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="ru"><head><title>Корзина | Завод Редукторов</title>
+<meta name="robots" content="noindex,follow" /><meta name="description" content="Корзина заказа редукторов и мотор-редукторов. Оформите счёт с НДС за 15 минут, отгрузка от 3 дней."><meta name="keywords" content="корзина, заказ редуктора, счёт с НДС"><meta name="theme-color" content="#ffffff"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:site_name" content="Завод Редукторов"><meta property="og:title" content="Корзина | Завод Редукторов"><meta property="og:description" content="Корзина заказа редукторов и мотор-редукторов. Оформите счёт с НДС за 15 минут, отгрузка от 3 дней."><meta name="twitter:card" content="summary_large_image"><style id="zr-theme">:root{--bg:#eef0ec;--bg2:#e6e9e3;--surface:#ffffff;--surface2:#f5f6f2;--border:rgba(10,20,28,0.12);--text:#101f2a;--dim:#5a6a75;--accent:#cf1616;--accent-ink:#ffffff;--glow:rgba(207,22,22,0.10);--logo-filter:brightness(0) saturate(0) opacity(.85);--brand-filter:brightness(0) opacity(.55);--good:#12915f;--bad:#c33b3b;}html[data-theme="dark"]{--bg:#0a1219;--bg2:#0d1a24;--surface:#12212d;--surface2:#182b39;--border:rgba(255,255,255,0.10);--text:#eef3f6;--dim:#8ea0ad;--accent:#e11b1b;--accent-ink:#0a1219;--glow:rgba(225,27,27,0.16);--logo-filter:none;--brand-filter:brightness(0) invert(1) opacity(.72);--good:#22c58b;--bad:#e05252;}#__bundler_err,#__bundler_loading,#__bundler_thumbnail{display:none!important}.zr-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:9999;background:var(--accent);color:var(--accent-ink);font:600 14px/1.3 Archivo,system-ui,sans-serif;padding:13px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.3s}.zr-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}[hidden]{display:none!important}</style><script>document.documentElement.setAttribute("data-theme","light");try{localStorage.setItem("zr_theme","light");}catch(e){}</script><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>x-dc{display:none!important}</style><style></style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><style>/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/9a70b41c-c776-4e33-84bb-7d3b86a840ad") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a8283ac0-485d-4a9c-8de9-09724af905c9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d30e7208-70aa-4e42-8a88-a4e08cefa838") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/9a70b41c-c776-4e33-84bb-7d3b86a840ad") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a8283ac0-485d-4a9c-8de9-09724af905c9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d30e7208-70aa-4e42-8a88-a4e08cefa838") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/9a70b41c-c776-4e33-84bb-7d3b86a840ad") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a8283ac0-485d-4a9c-8de9-09724af905c9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d30e7208-70aa-4e42-8a88-a4e08cefa838") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/9a70b41c-c776-4e33-84bb-7d3b86a840ad") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a8283ac0-485d-4a9c-8de9-09724af905c9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d30e7208-70aa-4e42-8a88-a4e08cefa838") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/9a70b41c-c776-4e33-84bb-7d3b86a840ad") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a8283ac0-485d-4a9c-8de9-09724af905c9") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d30e7208-70aa-4e42-8a88-a4e08cefa838") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/4cdcc1b0-a91d-48d7-ba9f-2b082cdcf890") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/c7757a72-5a57-497d-9233-f7b420e78992") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/d22d99c3-c092-49f1-8924-8f3f43473731") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/c14f8153-2470-41a7-b40e-80dceb984ae6") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/3ce19c40-fe6f-489f-8dc7-f89a8c552fce") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/0c760740-8969-41d4-95a5-45614b83f244") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/e353f233-8a14-4dff-ac2f-04e25053dfc9") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/f005b59a-6148-4b0f-9a62-556a706470a6") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/b75980b5-b7ed-4d0e-9a1d-45c4b5a013a5") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/879cb4ed-e2fa-407a-92aa-216ec33006b5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/1f337197-66d9-4120-9d98-5f3977c8b441") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/8e9bd6d3-6a6b-48b2-a04d-1a0a0923545b") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/c28e5493-0486-4f8e-9342-66a8c8ede761") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/31dabc17-58c9-42ba-ae7f-5ce0103c7cfd") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/db1669c6-ed0a-4faf-9eef-40d201cc1beb") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a77f46e6-2d9c-4d6e-a579-90a5acbc2690") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/b53da4ab-ef98-44dd-be98-a7fdec5e5885") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/43881a5f-98a5-44a9-bece-c32e4d4b8bc5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a77f46e6-2d9c-4d6e-a579-90a5acbc2690") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/b53da4ab-ef98-44dd-be98-a7fdec5e5885") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/43881a5f-98a5-44a9-bece-c32e4d4b8bc5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a77f46e6-2d9c-4d6e-a579-90a5acbc2690") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/b53da4ab-ef98-44dd-be98-a7fdec5e5885") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/43881a5f-98a5-44a9-bece-c32e4d4b8bc5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/a77f46e6-2d9c-4d6e-a579-90a5acbc2690") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/b53da4ab-ef98-44dd-be98-a7fdec5e5885") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("blob:http://localhost:8097/43881a5f-98a5-44a9-bece-c32e4d4b8bc5") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Archivo', system-ui, sans-serif; background: #0a1219; }
+  ::selection { background: #e11b1b; color: #0a1219; }
+  @media (max-width:1020px){
+    .m1{grid-template-columns:1fr !important;}
+    .mstat{position:static !important;}
+  }
+  @media (max-width:620px){
+    .sitem{grid-template-columns:72px 1fr !important;}
+  }
+
+@media (max-width:1020px){
+  .mhide{display:none !important;}
+  .msearch{flex-basis:100%;order:9;}
+  .fm2{grid-template-columns:repeat(2,1fr) !important;}
+}
+@media (max-width:620px){
+  .fs1{grid-template-columns:1fr !important;}
+}
+</style><!--zr-ld--><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Завод Редукторов", "legalName": "ООО «НИИ АТТ»", "url": "https://alex1986-rgb.github.io/zavod-red-catalog/", "logo": "https://alex1986-rgb.github.io/zavod-red-catalog/assets/zr_logo.webp", "telephone": "+7-495-151-41-02", "email": "zr@zavod-red.ru", "taxID": "7452136680", "address": {"@type": "PostalAddress", "addressLocality": "Челябинск", "streetAddress": "пр-т Ленина, 2, оф. 221", "addressCountry": "RU"}, "areaServed": "RU", "description": "Производство промышленных редукторов и мотор-редукторов EVL, ПР, МР. Оригиналы и габаритные аналоги импортных приводов."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://alex1986-rgb.github.io/zavod-red-catalog/index.html"}, {"@type": "ListItem", "position": 2, "name": "Корзина", "item": "https://alex1986-rgb.github.io/zavod-red-catalog/cart.html"}]}</script><!--zr-og--><meta property="og:url" content="https://alex1986-rgb.github.io/zavod-red-catalog/cart.html"><meta property="og:image" content="https://alex1986-rgb.github.io/zavod-red-catalog/assets/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://alex1986-rgb.github.io/zavod-red-catalog/assets/og-image.jpg"><!--zr-icons--><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png"><link rel="shortcut icon" href="/assets/favicon.ico"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><!--zr-cart--><script defer src="/assets/cart-mount.js?v=2"></script></head>
+<body>
+
+<div id="dc-root"><div class="sc-host"><div style="min-height: 100vh; background: var(--bg,#0a1219); color: var(--text,#eef3f6); font-family: Archivo, sans-serif; transition: background 0.35s, color 0.35s; display: flex; flex-direction: column;">
+
+  <div>
+  
+  <div style="background: var(--bg2,#0d1a24); border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--dim);">
+    <div style="max-width: 1280px; margin: 0px auto; padding: 8px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px; font-family: &quot;IBM Plex Mono&quot;, monospace; letter-spacing: 0.02em;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent,#e11b1b); box-shadow: 0 0 8px var(--accent); display: inline-block;"></span>
+        Собственное производство · Челябинск · отгрузка по всей России
+      </div>
+      <div style="display: flex; align-items: center; gap: 18px; font-family: &quot;IBM Plex Mono&quot;, monospace;">
+        <span>zr@zavod-red.ru</span>
+        <span style="opacity: 0.4;">·</span>
+        <span>+7 (904) 953-41-02</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <div style="position: sticky; top: 0px; z-index: 50; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1280px; margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; gap: 14px 22px; flex-wrap: wrap;">
+      <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0;">
+        <img src="/assets/zr_logo.webp" alt="Завод Редукторов" style="height: 38px; width: auto; display: block; filter: var(--logo-filter,none);">
+      </a>
+
+      <button style="text-decoration: none; display: flex; align-items: center; gap: 9px; background: var(--accent,#e11b1b); color: var(--accent-ink,#0a1219); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 11px; padding: 11px 16px; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; cursor: pointer; flex-shrink: 0; box-shadow: 0 4px 16px var(--glow);">
+        <span style="display: flex; flex-direction: column; gap: 3px;">
+          <span style="width: 16px; height: 2px; background: currentcolor; border-radius: 2px;"></span>
+          <span style="width: 16px; height: 2px; background: currentcolor; border-radius: 2px;"></span>
+          <span style="width: 16px; height: 2px; background: currentcolor; border-radius: 2px;"></span>
+        </span>
+        Каталог
+      </button>
+
+      <div class="msearch" style="flex: 1 1 0%; position: relative; min-width: 0px;">
+        <div style="display: flex; align-items: center; gap: 10px; background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 11px; padding: 11px 15px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" style="flex-shrink: 0;"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+          <input placeholder="Поиск по 50 000+ позициям: EVL 197, SEW R107, шильдик…" value="" style="flex: 1 1 0%; background: transparent; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; outline: none; color: var(--text); font-family: Archivo, sans-serif; font-size: 14px; min-width: 0px;">
+          
+          <span class="mhide" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; flex-shrink: 0;">по шильду</span>
+        </div>
+        
+      </div>
+
+      <button title="Переключить тему" style="display: flex; align-items: center; gap: 7px; background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 11px; padding: 10px 12px; cursor: pointer; color: var(--text); flex-shrink: 0;">
+        <span style="font-size: 15px; line-height: 1;"><span class="sc-interp">☀</span></span>
+        <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 12px; color: var(--dim);"><span class="sc-interp">Светлая</span></span>
+      </button>
+
+      <a href="/cabinet" title="Кабинет клиента" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 11px; padding: 10px 13px; cursor: pointer; color: var(--text); flex-shrink: 0;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"></path></svg>
+        <span class="mhide" style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px;">Кабинет</span>
+      </a>
+
+      <a href="/cart" style="text-decoration: none; position: relative; display: flex; align-items: center; gap: 9px; background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 11px; padding: 10px 14px; cursor: pointer; color: var(--text); flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h2.5l2.2 12.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.2L21 7H6"></path></svg>
+        <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px;">Корзина</span>
+        <span style="min-width: 20px; height: 20px; padding: 0px 5px; border-radius: 10px; background: var(--accent,#e11b1b); color: var(--accent-ink); font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;"><span class="sc-interp">4</span></span>
+      </a>
+    </div>
+
+    <div style="border-top: 1px solid var(--border);">
+      <div style="max-width: 1280px; margin: 0px auto; padding: 0px 24px; display: flex; align-items: center; gap: 4px; overflow-x: auto;">
+        
+          <a href="/catalog/" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Каталог</span></a>
+        
+          <a href="/podbor" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Подбор</span></a>
+        
+          <a href="/podbor" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Цены</span></a>
+        
+          <a href="/about" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Производителям</span></a>
+        
+          <a href="/blog/" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Импортозамещение</span></a>
+        
+          <a href="/blog/" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Блог</span></a>
+        
+          <a href="/about" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">О заводе</span></a>
+        
+          <a href="/about" class="scp1" style="white-space: nowrap; text-decoration: none; color: var(--dim); font-size: 13.5px; font-weight: 500; padding: 12px 14px; border-bottom: 2px solid transparent;"><span class="sc-interp">Контакты</span></a>
+        
+      </div>
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div style="position: fixed; right: 22px; bottom: 22px; z-index: 80; display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+    
+    <button style="display: flex; align-items: center; gap: 10px; background: var(--accent,#e11b1b); color: var(--accent-ink); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 100px; padding: 14px 20px; cursor: pointer; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 14.5px; box-shadow: 0 10px 30px var(--glow);">
+      <span style="font-size: 17px; line-height: 1;"><span class="sc-interp">⚙</span></span>
+      <span class="sc-interp">Подбор за 15 минут</span>
+    </button>
+  </div></div>
+
+  <div style="max-width: 1280px; width: 100%; margin: 0px auto; padding: 26px 24px 64px; flex: 1 1 0%;">
+    <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 12px; color: var(--dim); display: flex; gap: 8px; align-items: center; margin-bottom: 14px;">
+      <a href="/" style="color: var(--dim); text-decoration: none;">Главная</a>
+      <span style="opacity: 0.5;">/</span>
+      <span style="color: var(--text);">Корзина</span>
+    </div>
+    <h1 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.02em; margin: 0px 0px 6px; color: var(--text);">Корзина</h1>
+    <p style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--dim); margin: 0px 0px 26px;"><span class="sc-interp">4 поз. на сумму 153&nbsp;281 ₽</span></p>
+
+    <div class="m1" style="display: grid; grid-template-columns: 1fr 360px; gap: 26px; align-items: start;">
+
+      
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        
+          <div style="background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 16px; padding: 16px; display: grid; grid-template-columns: 96px 1fr auto; gap: 16px; align-items: center;">
+            <div style="width: 96px; height: 96px; border-radius: 12px; background: radial-gradient(80% 80% at 50% 30%, var(--surface2), var(--surface)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <img src="/assets/cat_coaxial.webp" alt="Мотор-редуктор EVL 197" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <div style="min-width: 0px;">
+              <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim); margin-bottom: 5px;"><span class="sc-interp">EVL-197-4-15 · аналог SEW R107</span></div>
+              <a href="/catalog/" class="scp2" style="text-decoration: none; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 16px; color: var(--text);"><span class="sc-interp">Мотор-редуктор EVL 197</span></a>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim);">
+                <span style="border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px;"><span class="sc-interp">0,55–7,5 кВт · i 5…140</span></span>
+                <span style="color: var(--good);">✓ в наличии</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+              <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: 18px; color: var(--text); white-space: nowrap;"><span class="sc-interp">128&nbsp;000</span> ₽</div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="display: flex; align-items: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">−</button>
+                  <span style="width: 34px; text-align: center; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 14px; color: var(--text);"><span class="sc-interp">1</span></span>
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">+</button>
+                </div>
+                <button title="Удалить" class="scp3" style="width: 38px; height: 38px; border: 1px solid var(--border); background: none; border-radius: 10px; cursor: pointer; color: var(--dim); display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div style="background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 16px; padding: 16px; display: grid; grid-template-columns: 96px 1fr auto; gap: 16px; align-items: center;">
+            <div style="width: 96px; height: 96px; border-radius: 12px; background: radial-gradient(80% 80% at 50% 30%, var(--surface2), var(--surface)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <img src="/assets/cat_worm.webp" alt="Червячный мотор-редуктор ЧМ 63" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <div style="min-width: 0px;">
+              <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim); margin-bottom: 5px;"><span class="sc-interp">ЧМ 63 · NMRV 063</span></div>
+              <a href="/catalog/" class="scp2" style="text-decoration: none; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 16px; color: var(--text);"><span class="sc-interp">Червячный мотор-редуктор ЧМ 63</span></a>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim);">
+                <span style="border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px;"><span class="sc-interp">0,12–1,5 кВт · i 7,5…100</span></span>
+                <span style="color: var(--good);">✓ в наличии</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+              <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: 18px; color: var(--text); white-space: nowrap;"><span class="sc-interp">13&nbsp;860</span> ₽</div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="display: flex; align-items: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">−</button>
+                  <span style="width: 34px; text-align: center; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 14px; color: var(--text);"><span class="sc-interp">2</span></span>
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">+</button>
+                </div>
+                <button title="Удалить" class="scp3" style="width: 38px; height: 38px; border: 1px solid var(--border); background: none; border-radius: 10px; cursor: pointer; color: var(--dim); display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        
+          <div style="background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 16px; padding: 16px; display: grid; grid-template-columns: 96px 1fr auto; gap: 16px; align-items: center;">
+            <div style="width: 96px; height: 96px; border-radius: 12px; background: radial-gradient(80% 80% at 50% 30%, var(--surface2), var(--surface)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 12px;">
+              <img src="/assets/cat_bevel.webp" alt="Цилиндро-конический EVL K" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+            <div style="min-width: 0px;">
+              <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim); margin-bottom: 5px;"><span class="sc-interp">EVL K · аналог NORD SK</span></div>
+              <a href="/catalog/" class="scp2" style="text-decoration: none; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 16px; color: var(--text);"><span class="sc-interp">Цилиндро-конический EVL K</span></a>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--dim);">
+                <span style="border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px;"><span class="sc-interp">0,75–15 кВт · i 8…200</span></span>
+                <span style="color: var(--good);">✓ в наличии</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+              <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: 18px; color: var(--text); white-space: nowrap;"><span class="sc-interp">24&nbsp;750</span> ₽</div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="display: flex; align-items: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">−</button>
+                  <span style="width: 34px; text-align: center; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 14px; color: var(--text);"><span class="sc-interp">1</span></span>
+                  <button style="width: 34px; height: 38px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; cursor: pointer; color: var(--text); font-size: 18px;">+</button>
+                </div>
+                <button title="Удалить" class="scp3" style="width: 38px; height: 38px; border: 1px solid var(--border); background: none; border-radius: 10px; cursor: pointer; color: var(--dim); display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        
+
+        
+
+        <a href="/catalog/" class="scp2" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--dim); padding: 6px 2px;">← Продолжить покупки</a>
+
+        
+        <div style="background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 16px; padding: 20px;">
+          <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; color: var(--accent,#e11b1b); letter-spacing: 0.05em; margin-bottom: 14px;">С ЭТИМИ ТОВАРАМИ ЗАКАЗЫВАЮТ</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 7px;"><img src="/assets/cat_variator.webp" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;"></span>
+                <div style="flex: 1 1 0%; min-width: 0px;">
+                  <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text); line-height: 1.2;"><span class="sc-interp">Ремкомплект сальников EVL 197</span></div>
+                  <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); margin-top: 2px;"><span class="sc-interp">продлевает ресурс на 40%</span></div>
+                </div>
+                <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--text); white-space: nowrap;"><span class="sc-interp">2 400</span> ₽</span>
+                <button style="width: 38px; height: 38px; flex-shrink: 0; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 10px; background: var(--accent,#e11b1b); color: var(--accent-ink); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px;">+</button>
+              </div>
+            
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 7px;"><img src="/assets/cat_flat.webp" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;"></span>
+                <div style="flex: 1 1 0%; min-width: 0px;">
+                  <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text); line-height: 1.2;"><span class="sc-interp">Муфта упругая МУВП-42</span></div>
+                  <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); margin-top: 2px;"><span class="sc-interp">для монтажа на штатное место</span></div>
+                </div>
+                <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--text); white-space: nowrap;"><span class="sc-interp">3 850</span> ₽</span>
+                <button style="width: 38px; height: 38px; flex-shrink: 0; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 10px; background: var(--accent,#e11b1b); color: var(--accent-ink); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px;">+</button>
+              </div>
+            
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 7px;"><img src="/assets/cat_bevel.webp" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;"></span>
+                <div style="flex: 1 1 0%; min-width: 0px;">
+                  <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 13.5px; color: var(--text); line-height: 1.2;"><span class="sc-interp">Масло редукторное синтетика 5 л</span></div>
+                  <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); margin-top: 2px;"><span class="sc-interp">первая заливка входит, запас на ТО</span></div>
+                </div>
+                <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--text); white-space: nowrap;"><span class="sc-interp">4 100</span> ₽</span>
+                <button style="width: 38px; height: 38px; flex-shrink: 0; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; border-radius: 10px; background: var(--accent,#e11b1b); color: var(--accent-ink); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px;">+</button>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="mstat" style="position: sticky; top: 96px; background: var(--surface,#12212d); border: 1px solid var(--border); border-radius: 18px; padding: 22px;">
+        <div style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 17px; color: var(--text); margin-bottom: 18px;">Итог заказа</div>
+
+        <div style="display: flex; align-items: center; gap: 9px; background: var(--surface2); border: 1px solid var(--border); border-radius: 11px; padding: 5px 5px 5px 14px; margin-bottom: 18px;">
+          <input placeholder="Промокод" style="flex: 1 1 0%; min-width: 0px; background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; outline: none; color: var(--text); font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px;">
+          <button style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 9px 15px; cursor: pointer; color: var(--text); font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 13px;">Применить</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 11px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; font-size: 14px;"><span style="color: var(--dim);">Товары, <span class="sc-interp">4</span> шт.</span><span style="font-family: &quot;IBM Plex Mono&quot;, monospace; color: var(--text);"><span class="sc-interp">166&nbsp;610</span> ₽</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px;"><span style="color: var(--dim);">Скидка от завода</span><span style="font-family: &quot;IBM Plex Mono&quot;, monospace; color: var(--good);">−<span class="sc-interp">13&nbsp;329</span> ₽</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 14px;"><span style="color: var(--dim);">Доставка</span><span style="font-family: &quot;IBM Plex Mono&quot;, monospace; color: var(--text);">расчёт при оформлении</span></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0px;">
+          <span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 16px; color: var(--text);">Итого</span>
+          <span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: 26px; color: var(--text);"><span class="sc-interp">153&nbsp;281</span> ₽</span>
+        </div>
+
+        <a href="/checkout" style="text-decoration: none; display: flex; align-items: center; justify-content: center; background: var(--accent,#e11b1b); color: var(--accent-ink); border-radius: 12px; padding: 15px; font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 15.5px; box-shadow: 0 6px 20px var(--glow); margin-bottom: 12px;">Оформить заказ</a>
+        <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); text-align: center; line-height: 1.6;">Счёт с НДС · гарантия 24 мес.<br>Инженер свяжется в течение 15 минут</div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background: var(--bg2,#0d1a24); border-top: 1px solid var(--border);">
+  <div class="fm2 fs1" style="max-width: 1280px; margin: 0px auto; padding: 56px 24px 32px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px;">
+    <div>
+      <img src="/assets/zr_logo.webp" alt="Завод Редукторов" style="height: 36px; margin-bottom: 16px; filter: var(--logo-filter,none);">
+      <p style="color: var(--dim); font-size: 13.5px; line-height: 1.6; margin: 0px 0px 16px; max-width: 320px;">Производство промышленных редукторов и мотор-редукторов. Оригиналы импорта и габаритные аналоги под заказ. Отгрузка по всей России.</p>
+      <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 13px; color: var(--text); display: flex; flex-direction: column; gap: 4px;">
+        <span>+7 (495) 151-41-02</span>
+        <span style="color: var(--dim);">zr@zavod-red.ru</span>
+      </div>
+    </div>
+    
+      <div>
+        <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); letter-spacing: 0.05em; margin-bottom: 14px;"><span class="sc-interp">КАТАЛОГ</span></div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Червячные</span></a>
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Цилиндрические</span></a>
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Соосные</span></a>
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Цилиндро-конические</span></a>
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Планетарные</span></a>
+          
+            <a href="/catalog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Весь каталог →</span></a>
+          
+        </div>
+      </div>
+    
+      <div>
+        <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); letter-spacing: 0.05em; margin-bottom: 14px;"><span class="sc-interp">РАЗДЕЛЫ</span></div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          
+            <a href="/podbor" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Подбор редуктора</span></a>
+          
+            <a href="/podbor" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Калькулятор цены</span></a>
+          
+            <a href="/cabinet" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Кабинет клиента</span></a>
+          
+            <a href="/blog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Импортозамещение</span></a>
+          
+            <a href="/blog/" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Блог</span></a>
+          
+            <a href="/cart" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Корзина</span></a>
+          
+        </div>
+      </div>
+    
+      <div>
+        <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; color: var(--dim); letter-spacing: 0.05em; margin-bottom: 14px;"><span class="sc-interp">КОМПАНИЯ</span></div>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+          
+            <a href="/about" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">О заводе</span></a>
+          
+            <a href="/about" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Сертификаты</span></a>
+          
+            <a href="/about" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Контакты</span></a>
+          
+            <a href="/about" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Оплата и реквизиты</span></a>
+          
+            <a href="/about" class="scp2" style="text-decoration: none; color: var(--text); font-size: 13.5px;"><span class="sc-interp">Гарантия</span></a>
+          
+        </div>
+      </div>
+    
+  </div>
+  <div style="border-top: 1px solid var(--border);">
+    <div style="max-width: 1280px; margin: 0px auto; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--dim);">
+      <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск · ИНН 7452136680</span>
+      <span style="font-family: &quot;IBM Plex Mono&quot;, monospace;">пр-т Ленина, 2, оф. 221</span>
+    </div>
+  </div></footer></div></div></div>
+
+
+
+<script src="/assets/site.js?v=3a1270b0"></script></body></html>

@@ -337,3 +337,18 @@
     });
   });
 })();
+
+/* Кабинет + Корзина в шапке (все страницы; идемпотентно) */
+(function(){
+  if(window.__zrCabBtns) return; window.__zrCabBtns=1;
+  var nr=document.querySelector('.nav-right'); if(!nr||nr.querySelector('[data-zr-cab]')) return;
+  function cnt(){try{var c=JSON.parse(localStorage.getItem('zr_cart')||'{"items":[]}');return (c.items||[]).reduce(function(s,i){return s+(i.qty||1)},0)}catch(e){return 0}}
+  var w=document.createElement('div'); w.setAttribute('data-zr-cab','1');
+  w.style.cssText='display:flex;gap:8px;align-items:center;margin-right:2px';
+  w.innerHTML='<a href="/cabinet" title="Кабинет клиента" aria-label="Кабинет" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--card,#14222e);border:1px solid var(--line,#22333f);border-radius:11px;color:var(--text,#e9eff4)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></a><a href="/cart" title="Корзина" aria-label="Корзина" style="position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--card,#14222e);border:1px solid var(--line,#22333f);border-radius:11px;color:var(--text,#e9eff4)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11h10.2L21 8H6.2"/></svg><span data-zr-badge style="position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;border-radius:9px;background:var(--red,#e11b1b);color:#fff;font-size:10.5px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px"></span></a>';
+  var tt=document.getElementById('themeToggle');
+  if(tt&&tt.parentNode===nr) nr.insertBefore(w,tt); else nr.insertBefore(w,nr.firstChild);
+  window.zrRefreshBadge=function(){var b=w.querySelector('[data-zr-badge]'),n=cnt();if(b){b.textContent=n;b.style.display=n?'flex':'none'}};
+  window.zrRefreshBadge();
+  window.addEventListener('storage',function(e){if(e.key==='zr_cart')window.zrRefreshBadge()});
+})();
