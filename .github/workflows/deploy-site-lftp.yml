@@ -26,9 +26,15 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 3; set net:persist-retries 3; set mirror:parallel-transfer-count 20; \
-          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
-          mirror -R --no-perms --parallel=20 --exclude ^analog/ dist/ /public_html/; \
+          # 2 прохода mirror с --ignore-time (по размеру): надёжно на нестабильном FTP Timeweb,
+          # льёт только изменённые файлы. Версии в ?v делаем размер-отличными (v=241, не v=24),
+          # иначе size-сравнение их пропустит. analog/ исключён (его льёт отдельный воркфлоу).
+          for pass in 1 2; do
+            lftp -c "set ftp:ssl-allow no; set net:timeout 30; set net:max-retries 5; set net:persist-retries 5; set mirror:parallel-transfer-count 20; \
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
+            mirror -R --ignore-time --no-perms --parallel=20 --exclude ^analog/ dist/ /public_html/;" || true
+          done
+          lftp -c "set ftp:ssl-allow no; set net:max-retries 5; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
           put -O /public_html dist/.htaccess; \
           put -O /public_html dist/sitemap.xml; \
           put -O /public_html dist/sitemap-index.xml; \
