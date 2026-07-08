@@ -34,13 +34,21 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -c "
-          set ftp:ssl-allow no;
-          set net:max-retries 2;
-          set net:timeout 25;
-          set mirror:parallel-transfer-count 20;
-          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
-          mirror -R --ignore-time --no-perms --parallel=20 dist/analog/ /public_html/analog/;
-          put -O /public_html dist/sitemap-analog.xml;
-          put -O /public_html/brands dist/brands/rossi.html;
-          "
+          # два прохода mirror: второй добивает файлы, пропущенные при обрыве соединений Timeweb
+          for pass in 1 2; do
+            echo "=== mirror pass $pass ==="
+            lftp -c "
+            set ftp:ssl-allow no;
+            set net:max-retries 5;
+            set net:persist-retries 5;
+            set net:timeout 30;
+            set net:reconnect-interval-base 5;
+            set mirror:parallel-transfer-count 20;
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
+            mirror -R --ignore-time --no-perms --parallel=20 dist/analog/ /public_html/analog/;
+            " || true
+          done
+          lftp -c "set ftp:ssl-allow no; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
+            put -O /public_html dist/sitemap-analog.xml; \
+            put -O /public_html dist/sitemap-analog-2.xml; \
+            put -O /public_html/brands dist/brands/rossi.html;"
