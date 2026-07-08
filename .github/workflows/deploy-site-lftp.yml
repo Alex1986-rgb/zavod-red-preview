@@ -1,0 +1,35 @@
+name: Deploy site (lftp parallel)
+# Надёжная параллельная заливка ядра сайта (blog, glossary, страницы, sitemap)
+# через lftp — FTP-Deploy-Action на этом аккаунте Timeweb зависает на объёме.
+on:
+  workflow_dispatch: {}
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python3 deploy/build-dist.py
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Upload core site (parallel)
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 3; set net:persist-retries 3; set mirror:parallel-transfer-count 20; \
+          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
+          mirror -R --ignore-time --no-perms --parallel=20 dist/blog/ /public_html/blog/; \
+          mirror -R --ignore-time --no-perms --parallel=20 dist/glossary/ /public_html/glossary/; \
+          put -O /public_html dist/sitemap.xml; \
+          put -O /public_html dist/sitemap-index.xml; \
+          put -O /public_html dist/sitemap-analog.xml; \
+          put -O /public_html dist/sitemap-analog-2.xml; \
+          put -O /public_html dist/robots.txt;"
