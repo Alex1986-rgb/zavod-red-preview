@@ -46,6 +46,7 @@ jobs:
             set mirror:parallel-transfer-count 20;
             open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
             mirror -R --ignore-time --no-perms --parallel=20 dist/analog/ /public_html/analog/;
+            mirror -R --ignore-time --no-perms --parallel=20 dist/ispolnenie/ /public_html/ispolnenie/;
             " || true
           done
           lftp -c "set ftp:ssl-allow no; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
