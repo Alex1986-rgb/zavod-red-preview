@@ -28,7 +28,7 @@ jobs:
         run: |
           lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 3; set net:persist-retries 3; set mirror:parallel-transfer-count 20; \
           open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
-          mirror -R --ignore-time --no-perms --parallel=20 --exclude ^analog/ dist/ /public_html/; \
+          mirror -R --no-perms --parallel=20 --exclude ^analog/ dist/ /public_html/; \
           put -O /public_html dist/.htaccess; \
           put -O /public_html dist/sitemap.xml; \
           put -O /public_html dist/sitemap-index.xml; \
