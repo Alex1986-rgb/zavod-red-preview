@@ -22,6 +22,8 @@
   RewriteRule ^glossary/tsilindricheskiy-reduktor/?$ /glossary/cilindricheskiy-reduktor [R=301,L,NE]
   RewriteRule ^glossary/moment-inertsii/?$ /glossary/moment-inercii [R=301,L,NE]
   RewriteRule ^glossary/vibratsiya-reduktora/?$ /glossary/vibraciya-reduktora [R=301,L,NE]
+  # Ошибочная атрибуция: 7Ч-М (советский червячный) был под брендом Varvel — редирект на каталог
+  RewriteRule ^analog/varvel-7-(.*)$ /catalog/chervyachnye [R=301,L]
 
   # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
   # при переименовании аналогов sew-k-57,-s-67 → sew-k-57-s-67. Работает и для нескольких запятых.
