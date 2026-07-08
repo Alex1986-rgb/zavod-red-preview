@@ -88,8 +88,13 @@
   var _selCache={};
   function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
+  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
+  // ключ кнопки → фактические ключи бренда в g.a (данные разбиты по под-сериям). 'Varvel серия 7МЧ'
+  // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных (Flender/Siemens/…) убраны из кнопок.
+  var BKEYS={'NORD':['NORD','Nord цилиндро-червячные'],'STM':['STM','STM AMP, AMF','STM серия RMI','STM серия UMI','STM серия WMI'],'TZ':['TZ','Tos Znojmo'],'SITI':['SITI','Siti BH','Siti серия MI','Siti серия MU','Siti PD','Siti Varmec RFV'],'Varmec':['VARMEC RCV','Siti Varmec RFV'],'Varvel':['Varvel MRD','Varvel MRN','Varvel RO, RV','Varvel серия SRS','Varvel серия SRT'],'Rossi':['Rossi артикулы R I, MR','Rossi серия AS(MRV)'],'InnoRed':['Innored'],'SEW-Tramec':['Tramec T','Tramec серия КМ','Tramec серия X','Tramec серия PA, PC']};
+  function bKeys(k){ return BKEYS[k]||[k]; }
+  function brandModel(g,k){ var ks=bKeys(k); for(var i=0;i<ks.length;i++){ var a=g.a&&g.a[ks[i]]; if(a&&a[0]) return a[0]; } return null; }
 
   function curType(){
     if(lockType) return DB?DB.t.indexOf(presetType):-1;
@@ -105,7 +110,7 @@
   function groupHasBrand(g){
     var b=BMAP[selBrand];
     if(!b||isOurs(b.k)) return true;
-    return !!(g.a && g.a[b.k] && g.a[b.k][0]);
+    return !!brandModel(g,b.k);
   }
   // базовый набор строк для диапазонов «от/до»: фильтр по типу + бренду + строке поиска
   // (модель/аналог), но БЕЗ числовых фильтров — чтобы каскад «выбрал модель → в колонках
@@ -175,7 +180,7 @@
       if(enabledIdx.indexOf(g.t)<0) return;
       if(ti>=0 && g.t!==ti) return;
       if(brandKey){
-        var imp=(g.a&&g.a[brandKey])?g.a[brandKey][0]:null;
+        var imp=brandModel(g,brandKey);
         if(imp)names[imp]=1;               // конкретный бренд → его аналоги
       }else{
         if(g.e)names[g.e]=1;               // наши виды (ZR/EVL) → обозначения EVL
@@ -353,7 +358,7 @@
     var tds=COLS.map(function(c){return '<td data-label="'+c.m+'">'+fmt(it[c.i],c.d)+'</td>';}).join('');
     var tz, ord, b=BMAP[selBrand];
     if(b&&!isOurs(b.k)){
-      var imp=(g.a&&g.a[b.k])?g.a[b.k][0]:null;
+      var imp=brandModel(g,b.k);
       if(imp){
         tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+(zrOf(g.e)||g.e)+'</span></td>';
         // хаб-страница есть только у брендов с b.s (SEW); у остальных ведём на нашу карточку EVL — без 404
