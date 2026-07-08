@@ -19,6 +19,9 @@
   # (mirror не удаляет), но URL склеивается на старую версию — против дубль-контента.
   RewriteRule ^glossary/koefficient-perekrytiya/?$ /glossary/koeffitsient-perekrytiya [R=301,L,NE]
   RewriteRule ^glossary/tihohodnyy-val/?$ /glossary/tikhokhodnyy-val [R=301,L,NE]
+  RewriteRule ^glossary/tsilindricheskiy-reduktor/?$ /glossary/cilindricheskiy-reduktor [R=301,L,NE]
+  RewriteRule ^glossary/moment-inertsii/?$ /glossary/moment-inercii [R=301,L,NE]
+  RewriteRule ^glossary/vibratsiya-reduktora/?$ /glossary/vibraciya-reduktora [R=301,L,NE]
 
   # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
   # при переименовании аналогов sew-k-57,-s-67 → sew-k-57-s-67. Работает и для нескольких запятых.
