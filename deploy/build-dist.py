@@ -29,7 +29,7 @@ shutil.copytree(SRC, DST, ignore=IGNORE)
 
 # robots.txt — открыт для индексации
 with open(os.path.join(DST, 'robots.txt'), 'w', encoding='utf-8') as f:
-    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\nSitemap: https://zavod-red.ru/sitemap-analog-2.xml\nSitemap: https://zavod-red.ru/sitemap-zr.xml\n")
+    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\nSitemap: https://zavod-red.ru/sitemap-analog-2.xml\nSitemap: https://zavod-red.ru/sitemap-zr.xml\nSitemap: https://zavod-red.ru/sitemap-hub.xml\n")
 
 # Метрика в <head> каждой HTML (если ещё не вставлена)
 n = 0
