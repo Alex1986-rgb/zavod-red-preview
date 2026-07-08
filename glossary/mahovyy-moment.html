@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Маховый момент (GD²): что это и как влияет на привод</title>
+<meta name="description" content="Маховый момент GD² редуктора: что это за параметр, связь с моментом инерции J=GD²/4g, единицы Н·м² и кг·м², влияние на разгон и подбор привода." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/mahovyy-moment" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/mahovyy-moment" />
+<meta property="og:title" content="Маховый момент (GD²): что это и как влияет на привод" />
+<meta property="og:description" content="Маховый момент GD² редуктора: что это за параметр, связь с моментом инерции J=GD²/4g, единицы Н·м² и кг·м², влияние на разгон и подбор привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Маховый момент (GD²) в приводе с редуктором", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Маховый момент GD² редуктора: что это за параметр, связь с моментом инерции J=GD²/4g, единицы Н·м² и кг·м², влияние на разгон и подбор привода.", "mainEntityOfPage": "https://zavod-red.ru/glossary/mahovyy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Маховый момент (GD²) — что это", "item": "https://zavod-red.ru/glossary/mahovyy-moment"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Маховый момент (GD²) в приводе с редуктором", "description": "Маховый момент GD² редуктора: что это за параметр, связь с моментом инерции J=GD²/4g, единицы Н·м² и кг·м², влияние на разгон и подбор привода.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/mahovyy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое маховый момент GD² простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Это мера инерции вращающейся массы: произведение веса тела на квадрат диаметра инерции. Чем больше GD², тем труднее раскрутить и остановить вал. Параметр показывает, сколько момента двигатель потратит на разгон механизма."}}, {"@type": "Question", "name": "Чем маховый момент отличается от момента инерции?", "acceptedAnswer": {"@type": "Answer", "text": "Это одна физическая суть — инерция вращения, но в разных системах единиц. Момент инерции J (кг·м²) — современный параметр, GD² (кгс·м²) — устаревший. Связь: J = GD²/4g, то есть GD² примерно в 39 раз больше J."}}, {"@type": "Question", "name": "Как перевести GD² в момент инерции?", "acceptedAnswer": {"@type": "Answer", "text": "Разделите маховый момент на 4g: J = GD²/(4g), где g = 9,81 м/с². Например, GD² = 39,24 кгс·м² соответствует J = 1 кг·м². Обязательно уточните, что дан именно вес в кгс, а не масса в кг."}}, {"@type": "Question", "name": "Зачем маховый момент нужен при подборе редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Он определяет динамический момент разгона и нагрев двигателя при частых пусках. Высокий GD² нагрузки требует запаса по моменту и ограничивает частоту включений. Учесть инерцию при подборе помогает калькулятор на /podbor."}}, {"@type": "Question", "name": "В каких единицах измеряется маховый момент?", "acceptedAnswer": {"@type": "Answer", "text": "В системе МКГСС — в кгс·м² (килограмм-сила на метр в квадрате), иногда записывают как Н·м². Сегодня вместо GD² применяют момент инерции J в кг·м² по системе СИ, что удобнее для расчётов."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Маховый момент (GD²) — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Маховый момент (GD²) в приводе с редуктором</h1>
+  <p>Маховый момент GD² — устаревшая инерционная характеристика вращающейся массы, равная произведению веса тела на квадрат диаметра инерции. Связан с моментом инерции соотношением J = GD²/4g и характеризует сопротивление разгону и торможению.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_coaxial.webp" alt="Маховый момент (GD²) в приводе с редуктором" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Маховый момент GD² долго применялся в приводной технике для оценки инерционности вращающихся масс — роторов, барабанов, маховиков. Сегодня его вытеснил момент инерции J, но GD² по-прежнему встречается в старых каталогах двигателей и расчётах разгона, поэтому инженеру важно понимать физику параметра и уметь переводить его в современные единицы.</p>
+<h2>Что такое маховый момент GD²</h2><p>Маховый момент — это инерционная характеристика вращающегося тела, записываемая как <b>GD²</b>, где G — вес тела (в системе МКГСС — в кгс), а D — диаметр инерции, то есть диаметр воображаемого тонкого кольца той же массы, дающего ту же инерцию. Параметр показывает, насколько «тяжело» раскрутить или остановить массу: чем больше GD², тем больше момент нужен для разгона за заданное время.</p><p>Исторически GD² применяли в системе единиц МКГСС, поэтому размерность — <b>кгс·м²</b> (иногда Н·м²). В современной технике его заменил <b>момент инерции J</b> в кг·м², но в паспортах старых электродвигателей и импортных каталогах величина ещё встречается.</p><h2>Формула и связь с моментом инерции</h2><p>Маховый момент связан с моментом инерции простым соотношением:</p><ul><li><b>J = GD² / (4g)</b>, где g = 9,81 м/с² — ускорение свободного падения;</li><li>численно <b>GD² ≈ 4·J·g</b>, то есть маховый момент примерно в 39,24 раза больше момента инерции в кг·м²;</li><li>приближённо для оценок применяют <b>GD² ≈ 4·J</b> при выражении массы в кг и без учёта g.</li></ul><div class="note">Не путайте GD² и J: это одна и та же физическая суть (инерция вращения), но в разных системах единиц. При переводе всегда уточняйте, дан вес G (кгс) или масса m (кг), иначе ошибка в 9,81 раза неизбежна.</div><h2>Влияние на разгон и подбор привода</h2><p>Маховый момент определяет динамический момент, который двигатель тратит на разгон массы: <b>M<sub>дин</sub> = J·ε</b>, где ε — угловое ускорение. Чем больше суммарный GD² (двигатель + редуктор + нагрузка), тем длиннее пусковой процесс и выше нагрев двигателя при частых пусках. Для приводов с большой инерцией (центрифуги, вентиляторы, барабаны) это критично.</p><p>При подборе редуктора инерционность нагрузки учитывают через сервис-фактор и допустимую частоту пусков. Российские аналоги EVL по габаритам от Завода Редукторов рассчитываются с запасом по динамике; корректно подобрать привод под инерционную нагрузку помогает <a href="/podbor">калькулятор подбора</a>, а типовые серии представлены в <a href="/catalog/">каталоге редукторов</a>.</p><h2>Связь со смежными терминами</h2><ul><li><b>Момент инерции J</b> — современная замена GD², измеряется в кг·м²;</li><li><b>Приведённый момент инерции</b> — инерция нагрузки, пересчитанная к валу двигателя через квадрат передаточного числа;</li><li><b>Ударная нагрузка</b> — резкое изменение момента, при котором инерция усиливает пиковые напряжения;</li><li><b>Частота пусков</b> — режим, где высокий GD² ограничивает число включений в час.</li></ul><p>Для подбора мотор-редуктора под инерционный механизм разумно заранее оценить суммарный GD² системы и сверить его с допустимым для выбранного типоразмера; при импортозамещении параметры сверяют по разделу <a href="/importozameshchenie">импортозамещения</a>.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое маховый момент GD² простыми словами?</summary><p>Это мера инерции вращающейся массы: произведение веса тела на квадрат диаметра инерции. Чем больше GD², тем труднее раскрутить и остановить вал. Параметр показывает, сколько момента двигатель потратит на разгон механизма.</p></details><details><summary>Чем маховый момент отличается от момента инерции?</summary><p>Это одна физическая суть — инерция вращения, но в разных системах единиц. Момент инерции J (кг·м²) — современный параметр, GD² (кгс·м²) — устаревший. Связь: J = GD²/4g, то есть GD² примерно в 39 раз больше J.</p></details><details><summary>Как перевести GD² в момент инерции?</summary><p>Разделите маховый момент на 4g: J = GD²/(4g), где g = 9,81 м/с². Например, GD² = 39,24 кгс·м² соответствует J = 1 кг·м². Обязательно уточните, что дан именно вес в кгс, а не масса в кг.</p></details></div><div class="cat-faq"><details><summary>Зачем маховый момент нужен при подборе редуктора?</summary><p>Он определяет динамический момент разгона и нагрев двигателя при частых пусках. Высокий GD² нагрузки требует запаса по моменту и ограничивает частоту включений. Учесть инерцию при подборе помогает калькулятор на /podbor.</p></details><details><summary>В каких единицах измеряется маховый момент?</summary><p>В системе МКГСС — в кгс·м² (килограмм-сила на метр в квадрате), иногда записывают как Н·м². Сегодня вместо GD² применяют момент инерции J в кг·м² по системе СИ, что удобнее для расчётов.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Маховый момент (GD²)</b> — устаревшая инерционная характеристика вращающейся массы, равная весу тела на квадрат диаметра инерции. Связан с моментом инерции соотношением J = GD²/4g и характеризует сопротивление разгону и торможению привода.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Маховый момент GD² определяет динамический момент, необходимый двигателю для разгона механизма: чем больше суммарный GD² двигателя, редуктора и нагрузки, тем длиннее пуск и выше нагрев при частых включениях. В современной технике параметр заменён моментом инерции J (кг·м²), но встречается в старых и импортных каталогах.</p><table class="spec"><tbody><tr><th>Обозначение</th><td>GD² (кгс·м²)</td></tr><tr><th>Связь с J</th><td>J = GD² / (4g), g = 9,81 м/с²</td></tr><tr><th>Пересчёт</th><td>GD² ≈ 39,24·J (при J в кг·м²)</td></tr><tr><th>Замена</th><td>момент инерции J в кг·м² (СИ)</td></tr></tbody></table><p>Учесть инерционность нагрузки при выборе привода помогает <a href="/podbor">калькулятор подбора</a>; готовые серии — в <a href="/catalog/">каталоге</a>, замена импортных приводов — в разделе <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

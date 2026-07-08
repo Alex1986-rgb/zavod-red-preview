@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Тепловой баланс редуктора: расчёт и тепловая мощность</title>
+<meta name="description" content="Тепловой баланс редуктора: что это, как связан с тепловой мощностью, КПД и потерями, почему ограничивает момент и как учитывается при подборе привода." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/teplovoy-balans-reduktora" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/teplovoy-balans-reduktora" />
+<meta property="og:title" content="Тепловой баланс редуктора: расчёт и тепловая мощность" />
+<meta property="og:description" content="Тепловой баланс редуктора: что это, как связан с тепловой мощностью, КПД и потерями, почему ограничивает момент и как учитывается при подборе привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Тепловой баланс редуктора и тепловая мощность", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Тепловой баланс редуктора: что это, как связан с тепловой мощностью, КПД и потерями, почему ограничивает момент и как учитывается при подборе привода.", "mainEntityOfPage": "https://zavod-red.ru/glossary/teplovoy-balans-reduktora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Тепловой баланс редуктора — что это", "item": "https://zavod-red.ru/glossary/teplovoy-balans-reduktora"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Тепловой баланс редуктора и тепловая мощность", "description": "Тепловой баланс редуктора: что это, как связан с тепловой мощностью, КПД и потерями, почему ограничивает момент и как учитывается при подборе привода.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/teplovoy-balans-reduktora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое тепловой баланс редуктора простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Это равновесие тепла: сколько тепла выделяется от трения внутри редуктора, столько же корпус отдаёт воздуху. Пока баланс держится, температура масла стабильна. Если тепла выделяется больше, чем отводится, масло перегревается и редуктор быстрее изнашивается."}}, {"@type": "Question", "name": "Чем тепловая мощность отличается от механической?", "acceptedAnswer": {"@type": "Answer", "text": "Механическая мощность ограничена прочностью зубьев и валов — это кратковременный предел. Тепловая мощность ограничена отводом тепла корпусом и действует при длительной работе. При подборе расчётная мощность не должна превышать ни одну из них."}}, {"@type": "Question", "name": "До какой температуры может греться редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Рабочая температура масла обычно допускается до 80–90 °C, кратковременно до 95 °C. Устойчивый нагрев выше говорит о нарушении теплового баланса: недостаточном отводе тепла, перегрузке или высокой температуре окружающего воздуха."}}, {"@type": "Question", "name": "Почему червячные редукторы греются сильнее?", "acceptedAnswer": {"@type": "Answer", "text": "У червячной передачи КПД ниже (0,7–0,9 против 0,96–0,98 у цилиндрической ступени), поэтому больше мощности переходит в тепло. Для них тепловой баланс часто становится главным ограничением, особенно при непрерывной работе и высоких передаточных числах."}}, {"@type": "Question", "name": "Как учесть тепловой баланс при подборе?", "acceptedAnswer": {"@type": "Answer", "text": "Нужно задать не только момент и обороты, но и режим работы (непрерывный S1 или повторно-кратковременный) и температуру среды. По этим данным сверяют тепловую мощность типоразмера. Расчёт удобно выполнить в /podbor."}}, {"@type": "Question", "name": "Что делать, если редуктор перегревается?", "acceptedAnswer": {"@type": "Answer", "text": "Проверить уровень и марку масла, нагрузку и вентиляцию. Варианты решения: обдув корпуса вентилятором, водяное охлаждение змеевиком или переход на больший типоразмер с большей поверхностью корпуса и тепловой мощностью."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Тепловой баланс редуктора — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Тепловой баланс редуктора и тепловая мощность</h1>
+  <p>Тепловой баланс редуктора — равновесие между теплом, которое выделяется от потерь на трение в зацеплении и подшипниках, и теплом, отводимым корпусом в окружающую среду. Он ограничивает предельную мощность при длительной работе.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_worm.webp" alt="Тепловой баланс редуктора и тепловая мощность" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Любой редуктор часть передаваемой мощности теряет на трение, и эти потери превращаются в тепло. Пока корпус успевает рассеивать столько же тепла, сколько выделяется, температура масла стабильна — это и есть тепловой баланс. Если баланс нарушается, масло перегревается, теряет свойства, и ресурс передачи резко падает.</p>
+<h2>Что такое тепловой баланс</h2><p>При работе редуктора механическая мощность частично теряется на трение зубьев, в подшипниках и уплотнениях, на перемешивание масла. Потерянная мощность полностью переходит в тепло: <b>P<sub>пот</sub> = P·(1 − η)</b>, где P — передаваемая мощность (кВт), η — КПД. Это тепло нагревает масло и корпус, а корпус отдаёт его воздуху. Установившийся режим, когда выделение и отвод тепла равны, называют тепловым балансом, а соответствующую мощность — <b>тепловой (термической) мощностью P<sub>T</sub></b>.</p><p>Важно различать два ограничения редуктора. <b>Механическая мощность</b> ограничена прочностью зубьев и валов — это кратковременный предел. <b>Тепловая мощность</b> ограничена отводом тепла и действует при длительной непрерывной работе. Для тихоходных и особенно червячных редукторов именно тепловой предел часто оказывается решающим.</p><h2>От чего зависит и типовые значения</h2><p>Отвод тепла пропорционален площади корпуса и разности температур масла и воздуха: <b>Q = k·A·(t<sub>м</sub> − t<sub>в</sub>)</b>, где k — коэффициент теплоотдачи, A — площадь поверхности. Отсюда следуют ключевые зависимости:</p><ul><li>рабочая температура масла обычно допускается до <b>80–90 °C</b>, кратковременно до 95 °C;</li><li>чем выше температура окружающего воздуха, тем ниже допустимая тепловая мощность;</li><li>малые обороты и плохая вентиляция снижают отвод тепла;</li><li>червячные передачи с их низким КПД (0,7–0,9) греются заметно сильнее цилиндрических (0,96–0,98 на ступень).</li></ul><div class="note">Если требуемая мощность близка к тепловому пределу типоразмера, применяют обдув вентилятором, змеевик водяного охлаждения или переходят на больший корпус. Игнорирование теплового баланса — частая причина преждевременного выхода редуктора из строя при круглосуточной работе.</div><h2>Влияние на подбор и эксплуатацию</h2><p>При подборе редуктора сверяют две мощности: механическую (по моменту и оборотам) и тепловую (по режиму работы и температуре среды). Расчётная мощность не должна превышать ни одну из них. Для повторно-кратковременных режимов (ПВ 25–60 %) тепловая мощность выше, чем для непрерывного S1, потому что редуктор успевает остывать в паузах. Учесть режим, температуру и тип передачи помогает <a href="/podbor">калькулятор подбора</a>, а для тяжёлых непрерывных нагрузок разумно смотреть <a href="/catalog/tihohodnye-reduktory">тихоходные редукторы</a> с увеличенным корпусом.</p><h2>Связь со смежными терминами</h2><p>Тепловой баланс напрямую связан с <b>КПД</b>: чем ниже КПД, тем больше тепла и жёстче тепловое ограничение. Он связан с <b>сервис-фактором</b> (запасом по нагрузке) и с <b>ресурсом</b>: перегрев масла ускоряет старение смазки и износ. Для червячных приводов, где нагрев критичен, при замене импорта учитывают именно тепловую мощность аналога — подобрать её можно в разделе <a href="/importozameshchenie">импортозамещения</a>.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое тепловой баланс редуктора простыми словами?</summary><p>Это равновесие тепла: сколько тепла выделяется от трения внутри редуктора, столько же корпус отдаёт воздуху. Пока баланс держится, температура масла стабильна. Если тепла выделяется больше, чем отводится, масло перегревается и редуктор быстрее изнашивается.</p></details><details><summary>Чем тепловая мощность отличается от механической?</summary><p>Механическая мощность ограничена прочностью зубьев и валов — это кратковременный предел. Тепловая мощность ограничена отводом тепла корпусом и действует при длительной работе. При подборе расчётная мощность не должна превышать ни одну из них.</p></details><details><summary>До какой температуры может греться редуктор?</summary><p>Рабочая температура масла обычно допускается до 80–90 °C, кратковременно до 95 °C. Устойчивый нагрев выше говорит о нарушении теплового баланса: недостаточном отводе тепла, перегрузке или высокой температуре окружающего воздуха.</p></details></div><div class="cat-faq"><details><summary>Почему червячные редукторы греются сильнее?</summary><p>У червячной передачи КПД ниже (0,7–0,9 против 0,96–0,98 у цилиндрической ступени), поэтому больше мощности переходит в тепло. Для них тепловой баланс часто становится главным ограничением, особенно при непрерывной работе и высоких передаточных числах.</p></details><details><summary>Как учесть тепловой баланс при подборе?</summary><p>Нужно задать не только момент и обороты, но и режим работы (непрерывный S1 или повторно-кратковременный) и температуру среды. По этим данным сверяют тепловую мощность типоразмера. Расчёт удобно выполнить в /podbor.</p></details><details><summary>Что делать, если редуктор перегревается?</summary><p>Проверить уровень и марку масла, нагрузку и вентиляцию. Варианты решения: обдув корпуса вентилятором, водяное охлаждение змеевиком или переход на больший типоразмер с большей поверхностью корпуса и тепловой мощностью.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Тепловой баланс редуктора</b> — равновесие между теплом от потерь на трение (P<sub>пот</sub> = P·(1−η)) и теплом, отводимым корпусом в среду. Он задаёт тепловую мощность и ограничивает длительную нагрузку, особенно у червячных передач.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Тепловая мощность зависит от площади корпуса, коэффициента теплоотдачи и разности температур масла и воздуха. При длительной работе именно она, а не прочность зубьев, часто ограничивает передаваемую мощность. Допустимая температура масла — до 80–90 °C.</p><table class="spec"><tbody><tr><th>Потери в тепло</th><td>P<sub>пот</sub> = P·(1 − η)</td></tr><tr><th>Отвод тепла</th><td>Q = k·A·(t<sub>м</sub> − t<sub>в</sub>)</td></tr><tr><th>Рабочая t° масла</th><td>до 80–90 °C</td></tr><tr><th>КПД червячной ступени</th><td>0,7–0,9 (греется сильнее)</td></tr></tbody></table><p>Учесть режим и температуру среды при подборе можно в <a href="/podbor">калькуляторе подбора</a>; для непрерывных нагрузок подойдут <a href="/catalog/tihohodnye-reduktory">тихоходные редукторы</a>, а тепловая мощность аналогов импорта — в разделе <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

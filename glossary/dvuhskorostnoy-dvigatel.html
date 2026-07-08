@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Двухскоростной двигатель: что это в приводе</title>
+<meta name="description" content="Двухскоростной двигатель мотор-редуктора: что это, схема Даландера, переключение числа полюсов, две частоты вращения и момента, влияние на подбор привода." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/dvuhskorostnoy-dvigatel" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/dvuhskorostnoy-dvigatel" />
+<meta property="og:title" content="Двухскоростной двигатель: что это в приводе" />
+<meta property="og:description" content="Двухскоростной двигатель мотор-редуктора: что это, схема Даландера, переключение числа полюсов, две частоты вращения и момента, влияние на подбор привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Двухскоростной электродвигатель в мотор-редукторе", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Двухскоростной двигатель мотор-редуктора: что это, схема Даландера, переключение числа полюсов, две частоты вращения и момента, влияние на подбор привода.", "mainEntityOfPage": "https://zavod-red.ru/glossary/dvuhskorostnoy-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Двухскоростной двигатель — что это", "item": "https://zavod-red.ru/glossary/dvuhskorostnoy-dvigatel"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Двухскоростной электродвигатель в мотор-редукторе", "description": "Двухскоростной двигатель мотор-редуктора: что это, схема Даландера, переключение числа полюсов, две частоты вращения и момента, влияние на подбор привода.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/dvuhskorostnoy-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое двухскоростной двигатель?", "acceptedAnswer": {"@type": "Answer", "text": "Это асинхронный двигатель, обмотка которого позволяет переключением числа полюсов получить две частоты вращения. Без частотного преобразователя он даёт две фиксированные скорости выходного вала мотор-редуктора, например быстрый и медленный режимы."}}, {"@type": "Question", "name": "Как двигатель меняет скорость?", "acceptedAnswer": {"@type": "Answer", "text": "Меняя число пар полюсов обмотки: синхронная скорость равна n₀ = 60·f/p. Это делают схемой Даландера (переключение одной обмотки между треугольником и двойной звездой, отношение 1:2) или двумя раздельными обмотками на разное число полюсов."}}, {"@type": "Question", "name": "Какие бывают пары скоростей?", "acceptedAnswer": {"@type": "Answer", "text": "Типовые пары синхронных скоростей при 50 Гц: 3000/1500, 1500/750 и 1000/500 об/мин при схеме 1:2. С двумя раздельными обмотками возможны и другие сочетания, например 1000/1500 об/мин. Реальная скорость под нагрузкой немного ниже синхронной."}}, {"@type": "Question", "name": "Меняется ли момент при переключении скорости?", "acceptedAnswer": {"@type": "Answer", "text": "Да. При смене скорости меняются момент и мощность. На низкой скорости момент обычно выше, а мощность ниже или сопоставима. Точное соотношение зависит от схемы обмотки, поэтому мощность указывают отдельно для каждой скорости."}}, {"@type": "Question", "name": "Что выбрать: двухскоростной двигатель или частотник?", "acceptedAnswer": {"@type": "Answer", "text": "Если достаточно двух-трёх фиксированных скоростей, двухскоростной двигатель дешевле и надёжнее — он не требует преобразователя. Частотный преобразователь даёт плавное регулирование в широком диапазоне, но дороже и сложнее в наладке."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Двухскоростной двигатель — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Двухскоростной электродвигатель в мотор-редукторе</h1>
+  <p>Двухскоростной двигатель — асинхронный двигатель, обмотка которого позволяет получить две частоты вращения переключением числа полюсов. Он даёт две фиксированные скорости выходного вала мотор-редуктора без частотного преобразователя.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_coaxial.webp" alt="Двухскоростной электродвигатель в мотор-редукторе" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Двухскоростной двигатель — простой способ получить две рабочие скорости без частотника. Переключая число пар полюсов обмотки, привод меняет синхронную частоту вращения — например, с 1500 на 3000 об/мин. Это востребовано там, где нужны «быстрый» и «медленный» режимы: лифты, вентиляция, станки. В мотор-редукторе обе скорости масштабируются его передаточным числом.</p>
+<h2>Что такое двухскоростной двигатель</h2><p>Двухскоростной (многоскоростной) двигатель — асинхронный электродвигатель, в котором изменением схемы соединения обмотки меняется число пар полюсов, а значит и синхронная частота вращения. Синхронная скорость связана с числом полюсов формулой <b>n₀ = 60·f / p</b>, где f — частота сети (50 Гц), p — число пар полюсов. Удваивая или уменьшая число полюсов, получают вдвое большую или иную скорость.</p><p>Типовые пары синхронных скоростей при 50 Гц: 3000/1500, 1500/750, 1000/500 об/мин. Реальная скорость под нагрузкой немного ниже синхронной на величину скольжения.</p><h2>Способы получения двух скоростей</h2><ul><li><b>Схема Даландера</b> — одна обмотка, переключаемая между соединениями «треугольник» и «двойная звезда»; даёт отношение скоростей 1:2 (например, 4/2 полюса);</li><li><b>Две раздельные обмотки</b> — в пазах уложены две независимые обмотки на разное число полюсов; позволяет получить произвольное соотношение скоростей, например 1000/1500 об/мин.</li></ul><table class="spec"><tbody><tr><th>Число полюсов</th><td>Синхронная скорость при 50 Гц</td></tr><tr><th>2</th><td>3000 об/мин</td></tr><tr><th>4</th><td>1500 об/мин</td></tr><tr><th>6</th><td>1000 об/мин</td></tr><tr><th>8</th><td>750 об/мин</td></tr></tbody></table><div class="note">При переключении скорости меняется не только частота вращения, но и момент с мощностью. На низкой скорости момент обычно выше, а мощность — ниже или сопоставима. Точное соотношение зависит от схемы обмотки, поэтому мощность указывают отдельно для каждой скорости.</div><h2>Двухскоростной двигатель и частотник</h2><p>Двухскоростной двигатель даёт лишь две-три фиксированные ступени скорости, но не требует частотного преобразователя и дополнительной электроники — это дёшево и надёжно. Частотный преобразователь, напротив, обеспечивает плавное регулирование в широком диапазоне, но дороже и сложнее. Выбор зависит от задачи: если достаточно двух режимов «быстро/медленно», двухскоростной двигатель экономичнее.</p><h2>Влияние на подбор привода</h2><p>В мотор-редукторе обе скорости двигателя делятся на передаточное число, давая две скорости выходного вала. При подборе учитывают требуемый момент на каждой скорости и режим переключения (число включений в час). Двухскоростной привод удобен для конвейеров с ускоренным и рабочим ходом, вентиляции и подъёмников с точной остановкой. Подобрать мотор-редуктор по скоростям и моменту можно в <a href="/podbor">калькуляторе подбора</a>, а серии — в <a href="/catalog/motor-reduktory-380v">каталоге мотор-редукторов 380В</a>. Смежные термины — <a href="/glossary/">векторное управление и число полюсов двигателя</a> — раскрывают другие способы регулирования скорости.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое двухскоростной двигатель?</summary><p>Это асинхронный двигатель, обмотка которого позволяет переключением числа полюсов получить две частоты вращения. Без частотного преобразователя он даёт две фиксированные скорости выходного вала мотор-редуктора, например быстрый и медленный режимы.</p></details><details><summary>Как двигатель меняет скорость?</summary><p>Меняя число пар полюсов обмотки: синхронная скорость равна n₀ = 60·f/p. Это делают схемой Даландера (переключение одной обмотки между треугольником и двойной звездой, отношение 1:2) или двумя раздельными обмотками на разное число полюсов.</p></details><details><summary>Какие бывают пары скоростей?</summary><p>Типовые пары синхронных скоростей при 50 Гц: 3000/1500, 1500/750 и 1000/500 об/мин при схеме 1:2. С двумя раздельными обмотками возможны и другие сочетания, например 1000/1500 об/мин. Реальная скорость под нагрузкой немного ниже синхронной.</p></details></div><div class="cat-faq"><details><summary>Меняется ли момент при переключении скорости?</summary><p>Да. При смене скорости меняются момент и мощность. На низкой скорости момент обычно выше, а мощность ниже или сопоставима. Точное соотношение зависит от схемы обмотки, поэтому мощность указывают отдельно для каждой скорости.</p></details><details><summary>Что выбрать: двухскоростной двигатель или частотник?</summary><p>Если достаточно двух-трёх фиксированных скоростей, двухскоростной двигатель дешевле и надёжнее — он не требует преобразователя. Частотный преобразователь даёт плавное регулирование в широком диапазоне, но дороже и сложнее в наладке.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Двухскоростной двигатель</b> — асинхронный двигатель, обмотка которого переключением числа полюсов даёт две частоты вращения. В мотор-редукторе он обеспечивает две фиксированные скорости выходного вала без частотного преобразователя.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Две скорости получают схемой Даландера (отношение 1:2) или двумя раздельными обмотками. Синхронная скорость зависит от числа полюсов: n₀ = 60·f/p. При переключении меняются момент и мощность, которые указывают для каждой ступени отдельно.</p><table class="spec"><tbody><tr><th>Схема Даландера</th><td>Одна обмотка, отношение 1:2</td></tr><tr><th>Две обмотки</th><td>Произвольное соотношение скоростей</td></tr><tr><th>Плюс</th><td>Не нужен частотный преобразователь</td></tr></tbody></table><p>Подобрать мотор-редуктор по скоростям и моменту поможет <a href="/podbor">калькулятор подбора</a>; серии — в <a href="/catalog/motor-reduktory-380v">каталоге мотор-редукторов 380В</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

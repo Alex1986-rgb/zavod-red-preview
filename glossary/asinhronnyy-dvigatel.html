@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Асинхронный электродвигатель: что это в редукторе</title>
+<meta name="description" content="Асинхронный электродвигатель мотор-редуктора: принцип работы, синхронные и рабочие обороты, скольжение, полюса, мощность и как двигатель влияет на подбор привода." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/asinhronnyy-dvigatel" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/asinhronnyy-dvigatel" />
+<meta property="og:title" content="Асинхронный электродвигатель: что это в редукторе" />
+<meta property="og:description" content="Асинхронный электродвигатель мотор-редуктора: принцип работы, синхронные и рабочие обороты, скольжение, полюса, мощность и как двигатель влияет на подбор привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Асинхронный электродвигатель в мотор-редукторе", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Асинхронный электродвигатель мотор-редуктора: принцип работы, синхронные и рабочие обороты, скольжение, полюса, мощность и как двигатель влияет на подбор привода.", "mainEntityOfPage": "https://zavod-red.ru/glossary/asinhronnyy-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Асинхронный электродвигатель — что это", "item": "https://zavod-red.ru/glossary/asinhronnyy-dvigatel"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Асинхронный электродвигатель в мотор-редукторе", "description": "Асинхронный электродвигатель мотор-редуктора: принцип работы, синхронные и рабочие обороты, скольжение, полюса, мощность и как двигатель влияет на подбор привода.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/asinhronnyy-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем асинхронный двигатель отличается от синхронного?", "acceptedAnswer": {"@type": "Answer", "text": "В асинхронном двигателе ротор вращается медленнее магнитного поля статора (со скольжением), а в синхронном — строго в такт с полем. Асинхронные машины проще, дешевле и надёжнее, поэтому они применяются в большинстве мотор-редукторов. Синхронные и серводвигатели используют там, где нужна точность позиционирования."}}, {"@type": "Question", "name": "Какие обороты у асинхронного двигателя мотор-редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего 4-полюсные двигатели с номинальными оборотами около 1400–1450 об/мин (синхронные 1500). Реже применяют 2-полюсные (2800–2900), 6-полюсные (около 950) и 8-полюсные (около 700). Эти обороты служат входными для расчёта передаточного числа редуктора."}}, {"@type": "Question", "name": "Что означает мощность двигателя в кВт?", "acceptedAnswer": {"@type": "Answer", "text": "Это номинальная механическая мощность на валу при длительной работе. Момент связан с ней формулой M = 9550·P/n. Мощность двигателя должна покрывать нагрузку привода с запасом; заниженная мощность ведёт к перегреву, завышенная — к лишним габаритам и расходам."}}, {"@type": "Question", "name": "Можно ли заменить импортный двигатель российским?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Присоединительные размеры двигателей стандартизованы по IEC (габариты 56–355), поэтому российский асинхронный двигатель того же габарита, мощности и числа полюсов встаёт на место импортного. ООО «НИИ АТТ» выпускает мотор-редукторы — аналоги EVL по посадочным размерам."}}, {"@type": "Question", "name": "Что такое класс энергоэффективности IE?", "acceptedAnswer": {"@type": "Answer", "text": "Это стандарт КПД двигателя по IEC 60034-30: IE1 (базовый), IE2 (высокий), IE3 (премиум), IE4 (супер-премиум). Чем выше класс, тем меньше потерь и ниже счета за электроэнергию при той же мощности на валу. Для длительной работы выгодны IE2–IE3."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Асинхронный электродвигатель — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Асинхронный электродвигатель в мотор-редукторе</h1>
+  <p>Асинхронный электродвигатель — трёхфазная или однофазная электрическая машина переменного тока, в которой ротор вращается медленнее магнитного поля статора. Это основной привод мотор-редукторов благодаря простоте, надёжности и низкой цене.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_coaxial.webp" alt="Асинхронный электродвигатель в мотор-редукторе" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Асинхронный двигатель — «сердце» подавляющего большинства мотор-редукторов. Он преобразует электроэнергию сети в механическое вращение, которое редуктор понижает до нужных оборотов и повышает по моменту. От параметров двигателя — мощности, числа полюсов, класса изоляции — напрямую зависят обороты на выходе привода и его допустимая нагрузка.</p>
+<h2>Как работает асинхронный двигатель</h2><p>Обмотки статора, подключённые к сети переменного тока, создают вращающееся магнитное поле. Оно наводит в короткозамкнутом роторе («беличья клетка») индукционные токи, а их взаимодействие с полем создаёт вращающий момент. Ротор всегда вращается чуть медленнее поля — эта разница называется <b>скольжением</b>. Именно из-за отставания («не в такт», асинхронно) машина и получила своё название.</p><p>Асинхронные двигатели бывают трёхфазными (сеть 380 В) и однофазными (220 В с пусковым конденсатором). В приводной технике доминируют трёхфазные машины как более мощные, экономичные и с большим пусковым моментом.</p><h2>Основные параметры</h2><p>Ключевые характеристики, которые указываются на шильдике двигателя:</p><ul><li><b>Мощность P</b>, кВт — номинальная механическая мощность на валу;</li><li><b>Синхронные обороты</b> n<sub>c</sub> = 60·f / p (при 50 Гц: 3000, 1500, 1000, 750 об/мин);</li><li><b>Номинальные обороты</b> — синхронные минус скольжение (например, 1420 вместо 1500);</li><li><b>Число полюсов</b> — определяет частоту вращения (2, 4, 6, 8 полюсов);</li><li><b>КПД и cos φ</b> — энергоэффективность (классы IE1–IE4);</li><li><b>Момент инерции ротора</b> J, кг·м<sup>2</sup> — важен для частых пусков.</li></ul><div class="note">Момент на валу двигателя связан с мощностью и оборотами формулой M = 9550·P / n, где P в кВт, n в об/мин, M в Н·м. Именно этот момент затем умножается редуктором на передаточное число.</div><h2>Влияние на подбор мотор-редуктора</h2><p>Двигатель и редуктор в мотор-редукторе подбираются в паре. Мощность двигателя должна покрывать нагрузку с запасом, а его обороты (обычно 1500 об/мин) служат входными для расчёта передаточного числа: i = n<sub>дв</sub> / n<sub>вых</sub>. Габарит крепления двигателя стандартизован по IEC, что позволяет ставить российский двигатель вместо импортного. Выполнить подбор двигателя и редуктора под нужный момент и обороты удобно в <a href="/podbor">калькуляторе подбора</a>, а готовые серии мотор-редукторов — в <a href="/catalog/motor-reduktory-380v">каталоге 380 В</a>.</p><h2>Связь со смежными терминами</h2><ul><li><b>Синхронные обороты</b> — теоретическая скорость поля; реальные всегда ниже;</li><li><b>Скольжение</b> — относительное отставание ротора, обычно 2–6 %;</li><li><b>Число полюсов</b> — задаёт синхронную скорость;</li><li><b>Тормозной двигатель</b> — асинхронный двигатель со встроенным электромагнитным тормозом.</li></ul><p>Российские аналоги двигателей и мотор-редукторов по габаритам EVL производит ООО «НИИ АТТ» (Челябинск) с гарантией 24 месяца — это ключевой ресурс <a href="/importozameshchenie">импортозамещения</a> приводной техники.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Чем асинхронный двигатель отличается от синхронного?</summary><p>В асинхронном двигателе ротор вращается медленнее магнитного поля статора (со скольжением), а в синхронном — строго в такт с полем. Асинхронные машины проще, дешевле и надёжнее, поэтому они применяются в большинстве мотор-редукторов. Синхронные и серводвигатели используют там, где нужна точность позиционирования.</p></details><details><summary>Какие обороты у асинхронного двигателя мотор-редуктора?</summary><p>Чаще всего 4-полюсные двигатели с номинальными оборотами около 1400–1450 об/мин (синхронные 1500). Реже применяют 2-полюсные (2800–2900), 6-полюсные (около 950) и 8-полюсные (около 700). Эти обороты служат входными для расчёта передаточного числа редуктора.</p></details><details><summary>Что означает мощность двигателя в кВт?</summary><p>Это номинальная механическая мощность на валу при длительной работе. Момент связан с ней формулой M = 9550·P/n. Мощность двигателя должна покрывать нагрузку привода с запасом; заниженная мощность ведёт к перегреву, завышенная — к лишним габаритам и расходам.</p></details></div><div class="cat-faq"><details><summary>Можно ли заменить импортный двигатель российским?</summary><p>Да. Присоединительные размеры двигателей стандартизованы по IEC (габариты 56–355), поэтому российский асинхронный двигатель того же габарита, мощности и числа полюсов встаёт на место импортного. ООО «НИИ АТТ» выпускает мотор-редукторы — аналоги EVL по посадочным размерам.</p></details><details><summary>Что такое класс энергоэффективности IE?</summary><p>Это стандарт КПД двигателя по IEC 60034-30: IE1 (базовый), IE2 (высокий), IE3 (премиум), IE4 (супер-премиум). Чем выше класс, тем меньше потерь и ниже счета за электроэнергию при той же мощности на валу. Для длительной работы выгодны IE2–IE3.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Асинхронный электродвигатель</b> — машина переменного тока с ротором, вращающимся медленнее поля статора (со скольжением). Это основной привод мотор-редукторов: надёжный, недорогой, с фланцем по IEC под замену импортных приводов.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Асинхронный двигатель характеризуется мощностью (кВт), числом полюсов, синхронными и номинальными оборотами. Момент на валу: M = 9550·P/n. В паре с редуктором двигатель задаёт входные обороты для расчёта передаточного числа i = n<sub>дв</sub>/n<sub>вых</sub>.</p><table class="spec"><tbody><tr><th>Тип</th><td>Переменного тока, ротор «беличья клетка»</td></tr><tr><th>Синхронные обороты</th><td>60·f/p (3000/1500/1000/750 об/мин)</td></tr><tr><th>Скольжение</th><td>2–6 % под нагрузкой</td></tr><tr><th>Габарит</th><td>IEC 56–355 (взаимозаменяемость)</td></tr></tbody></table><p>Подбор мотор-редуктора под нужный момент и обороты — в <a href="/podbor">калькуляторе</a>. Готовые серии — в <a href="/catalog/motor-reduktory-380v">каталоге мотор-редукторов</a>, замена импорта — в разделе <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

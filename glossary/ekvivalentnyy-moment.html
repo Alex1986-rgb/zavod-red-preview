@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Эквивалентный крутящий момент: что это в редукторе</title>
+<meta name="description" content="Эквивалентный крутящий момент редуктора: что это, формула приведения переменной нагрузки, зачем нужен для расчёта ресурса и как использовать при подборе привода." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/ekvivalentnyy-moment" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/ekvivalentnyy-moment" />
+<meta property="og:title" content="Эквивалентный крутящий момент: что это в редукторе" />
+<meta property="og:description" content="Эквивалентный крутящий момент редуктора: что это, формула приведения переменной нагрузки, зачем нужен для расчёта ресурса и как использовать при подборе привода." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Эквивалентный крутящий момент редуктора", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Эквивалентный крутящий момент редуктора: что это, формула приведения переменной нагрузки, зачем нужен для расчёта ресурса и как использовать при подборе привода.", "mainEntityOfPage": "https://zavod-red.ru/glossary/ekvivalentnyy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Эквивалентный крутящий момент — что это", "item": "https://zavod-red.ru/glossary/ekvivalentnyy-moment"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Эквивалентный крутящий момент редуктора", "description": "Эквивалентный крутящий момент редуктора: что это, формула приведения переменной нагрузки, зачем нужен для расчёта ресурса и как использовать при подборе привода.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/ekvivalentnyy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое эквивалентный крутящий момент?", "acceptedAnswer": {"@type": "Answer", "text": "Это условный постоянный момент, который изнашивает редуктор так же, как реальная переменная нагрузка за цикл. Он приводит меняющийся режим работы к одному расчётному значению, по которому подбирают типоразмер и оценивают ресурс привода."}}, {"@type": "Question", "name": "Как рассчитать эквивалентный момент?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле приведения: Mэкв = (Σ(Mi^p·ni·ti)/Σ(ni·ti))^(1/p), где Mi — момент ступени, ni — обороты, ti — доля времени, p — показатель кривой усталости. Усреднение ведётся не линейно, а по степенному закону, поэтому большие нагрузки весят сильнее."}}, {"@type": "Question", "name": "Чем эквивалентный момент отличается от среднего?", "acceptedAnswer": {"@type": "Answer", "text": "Среднее — это линейное усреднение, а эквивалентный момент считается по степенному закону усталости (p от 3 до 9). Из-за этого пиковые нагрузки вносят непропорционально больший вклад, и эквивалент всегда выше простого среднего арифметического."}}, {"@type": "Question", "name": "Зачем нужен эквивалентный момент при подборе?", "acceptedAnswer": {"@type": "Answer", "text": "Он позволяет не переразмеривать привод под редкие пики и не занижать его под средней нагрузкой. Для циклических механизмов типоразмер выбирают по эквивалентному моменту с сервис-фактором, а пики отдельно сверяют с максимальным допустимым моментом."}}, {"@type": "Question", "name": "Где применяют расчёт по эквивалентному моменту?", "acceptedAnswer": {"@type": "Answer", "text": "В приводах с переменной или циклической нагрузкой: краны, лифты, конвейеры с меняющейся загрузкой, мешалки, испытательные стенды. Везде, где момент за цикл меняется, эквивалент даёт корректную основу для расчёта ресурса и выбора редуктора."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Эквивалентный крутящий момент — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Эквивалентный крутящий момент редуктора</h1>
+  <p>Эквивалентный крутящий момент — постоянный момент, который по усталостному износу зацепления и подшипников равнозначен реальной переменной нагрузке за цикл работы. Он приводит меняющийся режим к одному расчётному значению для подбора редуктора.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_cylindrical.webp" alt="Эквивалентный крутящий момент редуктора" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Редко нагрузка на редуктор постоянна: конвейер то загружен, то пуст, мешалка меняет вязкость среды, привод работает в цикле. Чтобы подобрать привод под такой переменный режим, реальную нагрузку сводят к одному числу — эквивалентному моменту. Он показывает, какой постоянный момент изнашивает передачу так же, как весь реальный цикл, и по нему ведут расчёт ресурса.</p>
+<h2>Что такое эквивалентный крутящий момент</h2><p>Эквивалентный крутящий момент (обозначают M<sub>экв</sub> или M<sub>e</sub>) — это условный постоянный момент, вызывающий такой же усталостный износ зубьев и подшипников, как фактическая переменная нагрузка за полный цикл работы. Реальный привод часто нагружен ступенчато: доли времени работает с разными моментами и оборотами. Прямой расчёт по максимуму дал бы завышенный, а по среднему — заниженный типоразмер, поэтому нагрузку приводят к эквиваленту с учётом кривой усталости материала.</p><p>Эквивалентный момент не путают с <b>средним арифметическим</b> момента: усреднение ведётся не линейно, а по степенному закону усталости (показатель p зависит от механизма разрушения зубьев или подшипников), поэтому большие нагрузки «весят» сильнее.</p><h2>Формула приведения</h2><p>Для ступенчатого цикла эквивалентный момент вычисляют по формуле (приведение по наработке и оборотам):</p><p><b>M<sub>экв</sub> = ( Σ (M<sub>i</sub><sup>p</sup> · n<sub>i</sub> · t<sub>i</sub>) / Σ (n<sub>i</sub> · t<sub>i</sub>) )<sup>1/p</sup></b></p><p>где M<sub>i</sub> — момент на i-й ступени, n<sub>i</sub> — обороты, t<sub>i</sub> — доля времени, p — показатель степени кривой усталости.</p><table class="spec"><tbody><tr><th>Показатель p</th><th>Для чего</th></tr><tr><td>≈ 3</td><td>подшипники качения (шариковые)</td></tr><tr><td>≈ 10/3</td><td>роликовые подшипники</td></tr><tr><td>6…9</td><td>контактная/изгибная усталость зубьев</td></tr></tbody></table><div class="note">Эквивалентный момент — расчётная величина для оценки ресурса при переменной нагрузке, а не паспортный параметр редуктора. Его сравнивают с номинальным моментом типоразмера: M2N ≥ Mэкв. При этом отдельно проверяют, что пиковый момент цикла не превышает максимально допустимый.</div><h2>Влияние на подбор</h2><p>Расчёт по эквивалентному моменту позволяет не переразмеривать привод под редкие пики и не занижать его под средней нагрузкой. Для циклических механизмов (краны, лифты, конвейеры с переменной загрузкой, испытательные стенды) это ключевой инструмент экономичного и надёжного подбора: типоразмер выбирают по M<sub>экв</sub> с сервис-фактором, а пики отдельно сверяют с максимальным моментом.</p><p>На практике задать циклограмму нагрузки и получить требуемый типоразмер помогает <a href="/podbor">калькулятор подбора</a>. Готовые серии смотрите в <a href="/catalog/">каталоге редукторов</a>, а для конвейерных приводов — в разделе <a href="/catalog/reduktory-dlya-konveyera">редукторов для конвейеров</a>.</p><h2>Связь со смежными терминами</h2><ul><li><b>Номинальный крутящий момент</b> — с ним сравнивают эквивалентный при подборе;</li><li><b>Максимальный момент</b> — пики цикла проверяют отдельно;</li><li><b>Сервис-фактор Sf</b> — дополнительный запас поверх эквивалента;</li><li><b>Ресурс L10 подшипников</b> — рассчитывается по эквивалентной нагрузке.</li></ul>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое эквивалентный крутящий момент?</summary><p>Это условный постоянный момент, который изнашивает редуктор так же, как реальная переменная нагрузка за цикл. Он приводит меняющийся режим работы к одному расчётному значению, по которому подбирают типоразмер и оценивают ресурс привода.</p></details><details><summary>Как рассчитать эквивалентный момент?</summary><p>По формуле приведения: Mэкв = (Σ(Mi^p·ni·ti)/Σ(ni·ti))^(1/p), где Mi — момент ступени, ni — обороты, ti — доля времени, p — показатель кривой усталости. Усреднение ведётся не линейно, а по степенному закону, поэтому большие нагрузки весят сильнее.</p></details><details><summary>Чем эквивалентный момент отличается от среднего?</summary><p>Среднее — это линейное усреднение, а эквивалентный момент считается по степенному закону усталости (p от 3 до 9). Из-за этого пиковые нагрузки вносят непропорционально больший вклад, и эквивалент всегда выше простого среднего арифметического.</p></details></div><div class="cat-faq"><details><summary>Зачем нужен эквивалентный момент при подборе?</summary><p>Он позволяет не переразмеривать привод под редкие пики и не занижать его под средней нагрузкой. Для циклических механизмов типоразмер выбирают по эквивалентному моменту с сервис-фактором, а пики отдельно сверяют с максимальным допустимым моментом.</p></details><details><summary>Где применяют расчёт по эквивалентному моменту?</summary><p>В приводах с переменной или циклической нагрузкой: краны, лифты, конвейеры с меняющейся загрузкой, мешалки, испытательные стенды. Везде, где момент за цикл меняется, эквивалент даёт корректную основу для расчёта ресурса и выбора редуктора.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Эквивалентный крутящий момент</b> — постоянный момент, равнозначный реальной переменной нагрузке по усталостному износу зацепления и подшипников. Он приводит меняющийся режим к одному расчётному значению для подбора редуктора.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Эквивалент считают по степенному закону усталости: Mэкв = (Σ(Mi^p·ni·ti)/Σ(ni·ti))^(1/p), где p ≈ 3 для шариковых подшипников и 6…9 для зубьев. Типоразмер выбирают из условия M2N ≥ Mэкв, а пики цикла отдельно сверяют с максимальным моментом.</p><table class="spec"><tbody><tr><th>Обозначение</th><td>Mэкв, Н·м</td></tr><tr><th>Условие подбора</th><td>M2N ≥ Mэкв</td></tr><tr><th>Показатель p</th><td>3…9 (узел разрушения)</td></tr></tbody></table><p>Задайте циклограмму нагрузки в <a href="/podbor">калькуляторе подбора</a>. Серии — в <a href="/catalog/">каталоге</a> и среди <a href="/catalog/reduktory-dlya-konveyera">редукторов для конвейеров</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

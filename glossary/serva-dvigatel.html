@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Сервопривод (серводвигатель): что это</title>
+<meta name="description" content="Сервопривод и серводвигатель в приводе: что это, обратная связь по энкодеру, точное позиционирование, отличие от асинхронного двигателя, серворедуктор и подбор." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/serva-dvigatel" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/serva-dvigatel" />
+<meta property="og:title" content="Сервопривод (серводвигатель): что это" />
+<meta property="og:description" content="Сервопривод и серводвигатель в приводе: что это, обратная связь по энкодеру, точное позиционирование, отличие от асинхронного двигателя, серворедуктор и подбор." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Сервопривод и серводвигатель в приводной технике", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Сервопривод и серводвигатель в приводе: что это, обратная связь по энкодеру, точное позиционирование, отличие от асинхронного двигателя, серворедуктор и подбор.", "mainEntityOfPage": "https://zavod-red.ru/glossary/serva-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Сервопривод (серводвигатель) — что это", "item": "https://zavod-red.ru/glossary/serva-dvigatel"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Сервопривод и серводвигатель в приводной технике", "description": "Сервопривод и серводвигатель в приводе: что это, обратная связь по энкодеру, точное позиционирование, отличие от асинхронного двигателя, серворедуктор и подбор.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/serva-dvigatel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое сервопривод?", "acceptedAnswer": {"@type": "Answer", "text": "Это замкнутая система управления движением из серводвигателя, датчика обратной связи (энкодера) и сервоусилителя. Датчик измеряет положение вала, контроллер сравнивает его с заданием и корректирует ток. Так достигается точное позиционирование, скорость и момент."}}, {"@type": "Question", "name": "Чем серводвигатель отличается от обычного?", "acceptedAnswer": {"@type": "Answer", "text": "Серводвигатель имеет датчик обратной связи и рассчитан на высокую динамику, частые реверсы и точное удержание положения. Обычно это синхронный двигатель с постоянными магнитами. Асинхронный двигатель без обратной связи такой точности позиционирования не даёт."}}, {"@type": "Question", "name": "Что такое серворедуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Это прецизионный редуктор, работающий с серводвигателем, — чаще планетарный с малым угловым люфтом. Он повышает момент на выходном валу, согласует инерцию нагрузки с двигателем и сохраняет точность позиционирования за счёт минимального люфта."}}, {"@type": "Question", "name": "Чем сервопривод отличается от частотника?", "acceptedAnswer": {"@type": "Answer", "text": "Частотный привод с векторным управлением повышает точность асинхронного двигателя, но полноценное высокодинамичное позиционирование по замкнутому контуру обеспечивает сервопривод с энкодером. Сервопривод точнее и быстрее в отработке команд положения."}}, {"@type": "Question", "name": "Где применяют сервоприводы?", "acceptedAnswer": {"@type": "Answer", "text": "Там, где нужны точное позиционирование, синхронизация осей и высокая динамика: станки с ЧПУ, промышленные роботы, упаковочные и намоточные машины. Для задач с фиксированными скоростями без точного позиционирования экономичнее обычный асинхронный мотор-редуктор."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Сервопривод (серводвигатель) — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Сервопривод и серводвигатель в приводной технике</h1>
+  <p>Сервопривод — система из серводвигателя, датчика обратной связи и сервоусилителя, точно управляющая положением, скоростью и моментом вала. Серводвигатель — исполнительный двигатель этой системы с высокой динамикой и точностью позиционирования.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_coaxial.webp" alt="Сервопривод и серводвигатель в приводной технике" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Сервопривод — это двигатель с «глазами»: датчик обратной связи постоянно сообщает контроллеру реальное положение вала, а тот мгновенно корректирует управление. Так достигается точное позиционирование и стабильная скорость под меняющейся нагрузкой. В связке с прецизионным редуктором серводвигатель управляет осями станков, роботов и упаковочных линий.</p>
+<h2>Что такое сервопривод</h2><p>Сервопривод (следящий привод) — замкнутая система управления движением, состоящая из трёх частей: <b>серводвигателя</b>, <b>датчика обратной связи</b> (энкодера или резольвера) и <b>сервоусилителя</b> (контроллера). Датчик непрерывно измеряет фактическое положение и скорость вала, контроллер сравнивает их с заданием и корректирует ток двигателя. Такая обратная связь обеспечивает точное отслеживание команды — отсюда название «следящий».</p><p>Серводвигатель — исполнительный элемент системы. Обычно это синхронный двигатель с постоянными магнитами (реже асинхронный сервомотор), рассчитанный на высокую динамику, частые разгоны-торможения и точное удержание положения.</p><h2>Чем отличается от обычного двигателя</h2><table class="spec"><tbody><tr><th>Признак</th><td>Асинхронный двигатель</td><td>Серводвигатель</td></tr><tr><th>Обратная связь</th><td>Обычно нет</td><td>Энкодер / резольвер</td></tr><tr><th>Позиционирование</th><td>Неточное</td><td>Высокоточное</td></tr><tr><th>Динамика</th><td>Умеренная</td><td>Высокая, частые реверсы</td></tr><tr><th>Момент на 0 об/мин</th><td>Ограничен</td><td>Полный, с удержанием</td></tr></tbody></table><p>Ключевое отличие — наличие обратной связи и способность точно отрабатывать заданное положение, скорость и момент в динамике.</p><div class="note">Не путайте сервопривод с частотным приводом асинхронного двигателя. Векторное управление асинхронником повышает точность, но полноценное позиционирование по замкнутому контуру с высокой динамикой обеспечивает именно сервопривод с энкодером на серводвигателе.</div><h2>Серворедуктор</h2><p>Серводвигатель часто работает с редуктором — <b>серворедуктором</b> (планетарным или прецизионным цилиндрическим) с малым люфтом. Редуктор:</p><ul><li>повышает момент на выходном валу, снижая скорость;</li><li>согласует инерцию нагрузки с инерцией двигателя для устойчивого управления;</li><li>должен иметь малый угловой люфт, иначе точность позиционирования теряется.</li></ul><p>Для сервоприводов применяют преимущественно <a href="/catalog/planetarnye">планетарные редукторы</a> с низким люфтом.</p><h2>Влияние на подбор привода</h2><p>Сервопривод выбирают там, где нужны точное позиционирование, синхронизация осей и высокая динамика: станки с ЧПУ, роботы, упаковка, намоточные машины. При подборе учитывают требуемый момент, инерцию нагрузки, точность и допустимый люфт редуктора. Общепромышленные асинхронные мотор-редукторы для таких задач не подходят — там, где хватает фиксированных скоростей, экономичнее обычный привод. Подобрать редуктор по моменту и оборотам можно в <a href="/podbor">калькуляторе подбора</a>, а типы — в <a href="/catalog/">каталоге</a>. Смежные термины — <a href="/glossary/">векторное управление и момент удержания</a> — раскрывают близкие понятия управления движением.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое сервопривод?</summary><p>Это замкнутая система управления движением из серводвигателя, датчика обратной связи (энкодера) и сервоусилителя. Датчик измеряет положение вала, контроллер сравнивает его с заданием и корректирует ток. Так достигается точное позиционирование, скорость и момент.</p></details><details><summary>Чем серводвигатель отличается от обычного?</summary><p>Серводвигатель имеет датчик обратной связи и рассчитан на высокую динамику, частые реверсы и точное удержание положения. Обычно это синхронный двигатель с постоянными магнитами. Асинхронный двигатель без обратной связи такой точности позиционирования не даёт.</p></details><details><summary>Что такое серворедуктор?</summary><p>Это прецизионный редуктор, работающий с серводвигателем, — чаще планетарный с малым угловым люфтом. Он повышает момент на выходном валу, согласует инерцию нагрузки с двигателем и сохраняет точность позиционирования за счёт минимального люфта.</p></details></div><div class="cat-faq"><details><summary>Чем сервопривод отличается от частотника?</summary><p>Частотный привод с векторным управлением повышает точность асинхронного двигателя, но полноценное высокодинамичное позиционирование по замкнутому контуру обеспечивает сервопривод с энкодером. Сервопривод точнее и быстрее в отработке команд положения.</p></details><details><summary>Где применяют сервоприводы?</summary><p>Там, где нужны точное позиционирование, синхронизация осей и высокая динамика: станки с ЧПУ, промышленные роботы, упаковочные и намоточные машины. Для задач с фиксированными скоростями без точного позиционирования экономичнее обычный асинхронный мотор-редуктор.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Сервопривод</b> — система из серводвигателя, датчика обратной связи и сервоусилителя для точного управления положением, скоростью и моментом вала. <b>Серводвигатель</b> — её исполнительный двигатель с высокой динамикой и точностью позиционирования.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Сервопривод работает по замкнутому контуру: энкодер измеряет положение, контроллер корректирует ток двигателя. Серводвигатель часто дополняют прецизионным серворедуктором с малым люфтом, который повышает момент и согласует инерцию нагрузки.</p><table class="spec"><tbody><tr><th>Состав</th><td>Серводвигатель + энкодер + сервоусилитель</td></tr><tr><th>Отличие</th><td>Обратная связь и точное позиционирование</td></tr><tr><th>Редуктор</th><td>Планетарный, с малым люфтом</td></tr></tbody></table><p>Для сервоприводов применяют <a href="/catalog/planetarnye">планетарные редукторы</a>. Подобрать редуктор по моменту и оборотам поможет <a href="/podbor">калькулятор подбора</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>
