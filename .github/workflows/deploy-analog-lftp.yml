@@ -20,7 +20,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Build dist (Метрика + robots)
+      - name: Build dist (Метрика + robots, С analog)
+        env:
+          INCLUDE_ANALOG: "1"
         run: python3 deploy/build-dist.py
 
       - name: Install lftp

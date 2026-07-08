@@ -15,10 +15,13 @@ METRIKA = ('<!-- Yandex.Metrika counter -->\n'
 'ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>\n'
 '<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>')
 
-IGNORE = shutil.ignore_patterns('.git', '.github', 'deploy', 'dist', '*.py', '*.md',
-                                '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations',
-                                'analog')  # analog/ (72К файлов) заливается отдельным lftp-воркфлоу,
-                                           # НЕ через медленный одно-поточный FTP-Deploy-Action
+# analog/ (72К файлов) по умолчанию исключён из dist — его льёт отдельный lftp-воркфлоу
+# (deploy-analog-lftp.yml), который включает analog через INCLUDE_ANALOG=1.
+_ignore = ['.git', '.github', 'deploy', 'dist', '*.py', '*.md',
+           '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations']
+if not os.environ.get('INCLUDE_ANALOG'):
+    _ignore.append('analog')
+IGNORE = shutil.ignore_patterns(*_ignore)
 
 if os.path.exists(DST):
     shutil.rmtree(DST)
