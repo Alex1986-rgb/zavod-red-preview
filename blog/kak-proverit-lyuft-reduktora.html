@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Проверка люфта редуктора: как замерить мёртвый ход</title>
+<meta name="description" content="Проверка люфта редуктора: что такое мёртвый ход, как замерить индикатором, нормы по типам передач, когда люфт критичен и причины его роста." />
+<link rel="canonical" href="https://zavod-red.ru/blog/kak-proverit-lyuft-reduktora" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/kak-proverit-lyuft-reduktora" />
+<meta property="og:title" content="Проверка люфта редуктора: как замерить мёртвый ход" />
+<meta property="og:description" content="Проверка люфта редуктора: что такое мёртвый ход, как замерить индикатором, нормы по типам передач, когда люфт критичен и причины его роста." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Проверка люфта редуктора: как замерить мёртвый ход", "description": "Проверка люфта редуктора: что такое мёртвый ход, как замерить индикатором, нормы по типам передач, когда люфт критичен и причины его роста.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/kak-proverit-lyuft-reduktora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Проверка люфта редуктора", "item": "https://zavod-red.ru/blog/kak-proverit-lyuft-reduktora"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое люфт (мёртвый ход) редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Это угол свободного проворота выходного вала при неподвижном входном, вызванный боковыми зазорами в зацеплениях и зазорами в подшипниках и шлицах. Часть люфта закладывается конструктивно (для смазки и теплового расширения), часть растёт с износом. Измеряют в угловых минутах на выходном валу или в мм на плече."}}, {"@type": "Question", "name": "Как замерить люфт редуктора индикатором?", "acceptedAnswer": {"@type": "Answer", "text": "Застопорьте входной вал, закрепите индикатор ножкой на плече выходного вала длиной L. Приложите небольшой момент в одну сторону, обнулите; приложите такой же момент в обратную, снимите отсчёт δ. Люфт в радианах = δ/L. Момент выборки в обе стороны одинаков и мал, иначе добавится упругая деформация."}}, {"@type": "Question", "name": "Какой люфт нормален для редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Ориентировочно: цилиндрический и коническо-цилиндрический — 10–40 arcmin, червячный — 15–60 arcmin, стандартный планетарный — 3–15 arcmin, прецизионный планетарный — 1–6 arcmin. Для позиционных приводов берут редукторы с пониженным люфтом, для тягового привода люфт некритичен. Точные нормы — в паспорте изделия."}}, {"@type": "Question", "name": "Когда люфт редуктора критичен?", "acceptedAnswer": {"@type": "Answer", "text": "Там, где направление момента меняется под нагрузкой: реверсивные и позиционные приводы, ЧПУ, роботы, следящие системы. Люфт даёт ошибку позиционирования, удары при реверсе и раскачку в контуре регулирования. Для нереверсивного привода с постоянным направлением момента люфт на работу почти не влияет."}}, {"@type": "Question", "name": "Почему растёт люфт редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Из-за износа: рабочих профилей зубьев, подшипников (рост зазора), шлицев и шпоночных пазов, а у червячных — бронзового венца. Резкий рост люфта с ударами при реверсе — признак развитого износа и повод для дефектовки. Сравнение исходного и текущего люфта показывает степень выработки передачи."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Проверка люфта</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Диагностика</div>
+  <h1>Проверка люфта редуктора</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Люфт (мёртвый ход) редуктора — это угол свободного проворота выходного вала при неподвижном входном. Для конвейера лишний градус безразличен, а для позиционного привода станка или робота он рушит точность. Разберём, что такое люфт, как замерить его индикатором, какие нормы по типам передач и когда рост люфта сигналит об износе.</p>
+<h2>Что такое мёртвый ход</h2><p>Люфт складывается из боковых зазоров в зацеплениях всех ступеней и зазоров в подшипниках и шлицах. Часть его закладывается конструктивно (боковой зазор нужен для смазки и теплового расширения), часть появляется с износом. Измеряют люфт в угловых минутах на выходном валу (arcmin) или в миллиметрах на плече. Не путайте люфт с <b>упругим закручиванием</b> под нагрузкой — это разные вещи: мёртвый ход меряют без рабочего момента.</p><h2>Как замерить люфт индикатором</h2><p>Порядок замера: <br>1) застопорьте входной вал (двигатель обесточен, при самотормозящей червячной паре можно за вал двигателя); <br>2) закрепите стрелочный индикатор так, чтобы ножка касалась плеча на выходном валу (рычаг известной длины L); <br>3) приложите к выходному валу небольшой момент в одну сторону до выборки зазора, обнулите индикатор; <br>4) приложите такой же момент в обратную сторону, снимите отсчёт δ (мм); <br>5) переведите в угол: люфт (рад) = δ / L, в градусах — умножьте на 57,3; в arcmin — на 3438.</p><div class="note">Момент выборки должен быть небольшим и одинаковым в обе стороны, иначе к люфту добавится упругая деформация валов и вы получите завышенное значение. Замер повторяют в 3–4 положениях выходного вала за оборот и берут максимум — зазор неравномерен.</div><h2>Нормы люфта по типам</h2><p>Ориентировочные значения для промышленных (не прецизионных) редукторов:</p><table class="spec"><tbody><tr><th>Тип передачи</th><td>Типичный люфт</td></tr><tr><th>Цилиндрический, коническо-цилиндрический</th><td>10–40 arcmin</td></tr><tr><th>Червячный</th><td>15–60 arcmin (зависит от i)</td></tr><tr><th>Планетарный стандартный</th><td>3–15 arcmin</td></tr><tr><th>Планетарный прецизионный (low backlash)</th><td>1–6 arcmin</td></tr></tbody></table><p>Для позиционных задач (ЧПУ, робот, поворотный стол) выбирают планетарные редукторы с пониженным люфтом; для тягового привода люфт некритичен. Сравнение типов — в статье <a href="/blog/cilindricheskiy-ili-planetarnyy-reduktor">цилиндрический или планетарный редуктор</a>.</p><h2>Когда люфт критичен</h2><p>Мёртвый ход опасен там, где меняется направление движения под нагрузкой: реверсивные и позиционные приводы, следящие системы. Здесь люфт даёт ошибку позиционирования, удары при реверсе (зубья бьют по зазору) и раскачку в контуре регулирования. Для нереверсивного привода с постоянным направлением момента люфт практически не влияет на работу.</p><h2>Причины роста люфта</h2><p>Если люфт вырос против исходного — ищут износ: <br>— износ рабочих профилей зубьев (проверяют пятно контакта, слышен вой — см. <a href="/blog/diagnostika-reduktora-po-zvuku">диагностику по звуку</a>); <br>— износ или разрушение подшипников, рост осевого зазора; <br>— износ шлицев, шпоночных пазов, разбитые посадки; <br>— у червячных — износ бронзового венца. Резкий рост люфта с ударами при реверсе — повод для дефектовки. Если износ значителен, редуктор ремонтируют или меняют; российский аналог с исходным люфтом подбирают через <a href="/podbor">калькулятор подбора</a>, замена импорта — на странице <a href="/importozameshchenie">импортозамещения</a>.</p><h2>Люфт и точность позиционирования</h2><p>Чтобы перевести люфт в понятную инженеру величину, привяжите его к рабочему органу. Если люфт на выходном валу δφ (рад), а плечо (радиус барабана, длина рычага) равно R, то ошибка позиционирования на рабочем органе ≈ δφ·R. Например, люфт 10 arcmin (0,0029 рад) при плече 300 мм даёт около 0,9 мм неопределённости положения — для покрасочного робота это много, для конвейерной заслонки безразлично. Поэтому требования к люфту всегда формулируют не «в минутах вообще», а из допустимой погрешности конкретной операции. Для точных задач выбирают планетарный редуктор пониженного люфта и жёсткую беззазорную муфту; связь с упругим закручиванием под нагрузкой учитывают отдельно, так как оно добавляется к мёртвому ходу на рабочем моменте. Термины по точности привода — в <a href="/glossary/">глоссарии</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое люфт (мёртвый ход) редуктора?</summary><div>Это угол свободного проворота выходного вала при неподвижном входном, вызванный боковыми зазорами в зацеплениях и зазорами в подшипниках и шлицах. Часть люфта закладывается конструктивно (для смазки и теплового расширения), часть растёт с износом. Измеряют в угловых минутах на выходном валу или в мм на плече.</div></details><details><summary>Как замерить люфт редуктора индикатором?</summary><div>Застопорьте входной вал, закрепите индикатор ножкой на плече выходного вала длиной L. Приложите небольшой момент в одну сторону, обнулите; приложите такой же момент в обратную, снимите отсчёт δ. Люфт в радианах = δ/L. Момент выборки в обе стороны одинаков и мал, иначе добавится упругая деформация.</div></details><details><summary>Какой люфт нормален для редуктора?</summary><div>Ориентировочно: цилиндрический и коническо-цилиндрический — 10–40 arcmin, червячный — 15–60 arcmin, стандартный планетарный — 3–15 arcmin, прецизионный планетарный — 1–6 arcmin. Для позиционных приводов берут редукторы с пониженным люфтом, для тягового привода люфт некритичен. Точные нормы — в паспорте изделия.</div></details></div><div class="cat-faq"><details><summary>Когда люфт редуктора критичен?</summary><div>Там, где направление момента меняется под нагрузкой: реверсивные и позиционные приводы, ЧПУ, роботы, следящие системы. Люфт даёт ошибку позиционирования, удары при реверсе и раскачку в контуре регулирования. Для нереверсивного привода с постоянным направлением момента люфт на работу почти не влияет.</div></details><details><summary>Почему растёт люфт редуктора?</summary><div>Из-за износа: рабочих профилей зубьев, подшипников (рост зазора), шлицев и шпоночных пазов, а у червячных — бронзового венца. Резкий рост люфта с ударами при реверсе — признак развитого износа и повод для дефектовки. Сравнение исходного и текущего люфта показывает степень выработки передачи.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Проверка люфта редуктора</b> — это замер угла мёртвого хода выходного вала индикатором при застопоренном входе. Люфт нормируют по типу передачи (планетарные — единицы arcmin, червячные — десятки), и его рост против исходного сигналит об износе зубьев, подшипников или шлицев.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Люфт меряют небольшим одинаковым моментом в обе стороны, чтобы не захватить упругую деформацию, и берут максимум за оборот. Критичен он для реверсивных и позиционных приводов; для тягового направления некритичен. Рост люфта указывает на износ передачи.</p><table class="spec"><tbody><tr><th>Тип</th><td>Типичный люфт</td></tr><tr><th>Планетарный прецизионный</th><td>1–6 arcmin</td></tr><tr><th>Цилиндрический</th><td>10–40 arcmin</td></tr><tr><th>Червячный</th><td>15–60 arcmin</td></tr></tbody></table><p>Аналог с нужным люфтом подберёт <a href="/podbor">калькулятор подбора</a>. Термины по зазорам и зацеплению — в <a href="/glossary/">глоссарии</a>, замена импортного привода — на странице <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор с нужным люфтом</h2><p>Опишите задачу — позиционирование или тяговый привод — подберём тип редуктора и класс люфта под требуемую точность с паспортом и гарантией.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Аналог с нужным люфтом</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/blog/cilindricheskiy-ili-planetarnyy-reduktor"><b>Цилиндрический или планетарный</b><span>Что точнее держит позицию</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российские аналоги приводов</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

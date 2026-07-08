@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Как изменить обороты на выходе редуктора</title>
+<meta name="description" content="Как изменить обороты редуктора: через передаточное число, частотный преобразователь или замену двигателя. Связь оборотов, момента и мощности с формулами." />
+<link rel="canonical" href="https://zavod-red.ru/blog/kak-uvelichit-oboroty-na-vyhode" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/kak-uvelichit-oboroty-na-vyhode" />
+<meta property="og:title" content="Как изменить обороты на выходе редуктора" />
+<meta property="og:description" content="Как изменить обороты редуктора: через передаточное число, частотный преобразователь или замену двигателя. Связь оборотов, момента и мощности с формулами." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как изменить обороты на выходе редуктора", "description": "Как изменить обороты редуктора: через передаточное число, частотный преобразователь или замену двигателя. Связь оборотов, момента и мощности с формулами.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/kak-uvelichit-oboroty-na-vyhode"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Изменить обороты редуктора", "item": "https://zavod-red.ru/blog/kak-uvelichit-oboroty-na-vyhode"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как увеличить обороты на выходе редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Взять редуктор с меньшим передаточным числом i (n₂ = n₁/i), поставить частотный преобразователь и поднять частоту, либо заменить двигатель на более быстроходный (с меньшим числом полюсов). При увеличении оборотов во столько же раз падает крутящий момент — мощность постоянна, поэтому проверяют, хватит ли момента нагрузке."}}, {"@type": "Question", "name": "Как связаны обороты, момент и мощность?", "acceptedAnswer": {"@type": "Answer", "text": "Мощность P = M·n/9550 (кВт, Н·м, об/мин) при регулировании остаётся почти постоянной. Поэтому обороты и момент обратно пропорциональны: подняв обороты вдвое, вдвое теряете момент, и наоборот. Передаточное число задаёт n₂ = n₁/i и M₂ = M₁·i·η. Нельзя одновременно поднять и обороты, и момент без роста мощности."}}, {"@type": "Question", "name": "Можно ли изменить обороты редуктора частотником?", "acceptedAnswer": {"@type": "Answer", "text": "Да, это самый гибкий способ: частотник меняет обороты двигателя и вместе с ними выходные плавно, без замены механики. Ограничения: на малых оборотах самовентилируемый двигатель хуже охлаждается, выше 50 Гц падает момент, а обороты входного вала не должны превышать паспортный максимум редуктора."}}, {"@type": "Question", "name": "Как обороты зависят от числа полюсов двигателя?", "acceptedAnswer": {"@type": "Answer", "text": "Синхронная частота: 2 полюса ≈ 3000 об/мин, 4 ≈ 1500, 6 ≈ 1000, 8 ≈ 750 об/мин (при 50 Гц, минус скольжение). Заменив двигатель на другую полюсность при том же редукторе, меняют выходные обороты. Двигатель той же мощности, но тихоходнее, даёт больший момент."}}, {"@type": "Question", "name": "Не потеряю ли я момент, увеличив обороты?", "acceptedAnswer": {"@type": "Answer", "text": "Потеряете пропорционально. Мощность постоянна, поэтому при росте оборотов момент падает: M₂ = 9550·P·η/n₂. Прежде чем поднимать скорость, посчитайте требуемый момент нагрузки и убедитесь, что привод обеспечивает его с запасом (сервис-фактором). Иначе редуктор или двигатель уйдут в перегруз."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Изменить обороты</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Расчёты</div>
+  <h1>Изменить обороты редуктора</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Задача «изменить обороты редуктора» встречается постоянно: конвейер идёт слишком быстро, мешалка — слишком медленно. Способов три — сменить передаточное число, поставить частотник или заменить двигатель, и у каждого своя цена по моменту и мощности. Разберём все три с формулами, чтобы вы не потеряли крутящий момент там, где он критичен.</p>
+<h2>Базовая связь величин</h2><p>Выходные обороты редуктора считаются через передаточное число: <b>n₂ = n₁ / i</b>, где n₁ — обороты двигателя, i — передаточное число, n₂ — обороты выходного вала. При этом крутящий момент растёт во столько же раз, во сколько падают обороты (с учётом КПД): <b>M₂ = M₁ · i · η</b>. И ключевое ограничение — <b>мощность</b>: P = M·n/9550 остаётся практически постоянной (минус потери). Поэтому нельзя «бесплатно» поднять и обороты, и момент — увеличивая обороты, вы теряете момент, и наоборот.</p><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Обороты выхода</th><td>n₂ = n₁ / i</td></tr><tr><th>Момент выхода</th><td>M₂ = 9550·P·η / n₂ (Н·м)</td></tr><tr><th>Мощность</th><td>P = M·n / 9550 (кВт)</td></tr></tbody></table><h2>Способ 1: сменить передаточное число</h2><p>Чтобы <b>увеличить</b> обороты на выходе — берут редуктор с <b>меньшим</b> i; чтобы уменьшить — с большим. Это самый честный способ: КПД остаётся высоким, момент меняется предсказуемо по формуле. Минус — нужен другой типоразмер редуктора. При этом проверяют, что новый момент M₂ достаточен для нагрузки: подняв обороты вдвое, вы вдвое уменьшили момент. Как считать i — в статье <a href="/blog/kak-rasschitat-peredatochnoe-chislo">как рассчитать передаточное число</a>, момент — <a href="/blog/kak-rasschitat-krutyashchiy-moment">как рассчитать крутящий момент</a>.</p><h2>Способ 2: частотный преобразователь</h2><p>Частотник меняет частоту питания и вместе с ней обороты двигателя n₁, а значит и n₂ — плавно, без замены механики. Это самый гибкий способ регулирования. Ограничения: <br>— вниз от номинала момент двигателя сохраняется, но <b>ухудшается охлаждение</b> (самовентилируемый двигатель на малых оборотах греется — нужен независимый обдув или запас); <br>— вверх выше 50 Гц момент падает (зона постоянной мощности), и растут нагрузки на редуктор; <br>— на очень низких частотах асинхронный двигатель теряет момент без векторного управления. Частотник идеален, когда нужен диапазон регулирования, а не одна фиксированная скорость.</p><div class="note">Разгоняя двигатель частотником выше 50 Гц, проверьте предельные обороты входного вала редуктора и подшипников по паспорту. Превышение максимальных n₁ ведёт к перегреву подшипников и разбрызгиванию масла — редуктор не рассчитан на любые обороты.</div><h2>Способ 3: заменить двигатель</h2><p>Обороты двигателя задаёт число полюсов: 2 полюса ≈ 3000 об/мин, 4 ≈ 1500, 6 ≈ 1000, 8 ≈ 750 об/мин. Поставив двигатель с другой полюсностью, меняют n₁, а с ним и n₂ при том же редукторе. Способ разумен, когда нужна другая постоянная скорость и есть подходящий двигатель того же фланца IEC. Важно пересчитать момент и мощность: тихоходный двигатель той же мощности даёт больший момент, но и стоит дороже.</p><h2>Что выбрать</h2><p>Нужна одна фиксированная скорость — меняют i или двигатель; нужен диапазон и плавный разгон — ставят частотник. Во всех случаях сначала считают требуемый момент на выходе и проверяют, что привод его обеспечивает с сервис-фактором. Подобрать редуктор под нужные обороты и момент проще через <a href="/podbor">калькулятор подбора</a>; при замене импортного привода российский аналог по i и габаритам подбирают на странице <a href="/importozameshchenie">импортозамещения</a>.</p><p>Частая ошибка — менять обороты «на глаз», не проверив тепловой режим и предельные частоты. Например, разгон частотником выше номинала не только снижает момент, но и увеличивает потери и нагрев редуктора, а работа на пониженной частоте перегревает самовентилируемый двигатель. Поэтому любое изменение скорости сопровождают проверкой: хватает ли момента нагрузке с сервис-фактором, не превышены ли максимальные обороты входного вала и достаточно ли охлаждения двигателя в новом режиме. Если диапазон регулирования широкий, разумно заложить его в подбор заранее — выбрать мотор-редуктор с двигателем под частотник и запасом по тепловому режиму. Термины по оборотам, моменту и мощности собраны в <a href="/glossary/">глоссарии</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как увеличить обороты на выходе редуктора?</summary><div>Взять редуктор с меньшим передаточным числом i (n₂ = n₁/i), поставить частотный преобразователь и поднять частоту, либо заменить двигатель на более быстроходный (с меньшим числом полюсов). При увеличении оборотов во столько же раз падает крутящий момент — мощность постоянна, поэтому проверяют, хватит ли момента нагрузке.</div></details><details><summary>Как связаны обороты, момент и мощность?</summary><div>Мощность P = M·n/9550 (кВт, Н·м, об/мин) при регулировании остаётся почти постоянной. Поэтому обороты и момент обратно пропорциональны: подняв обороты вдвое, вдвое теряете момент, и наоборот. Передаточное число задаёт n₂ = n₁/i и M₂ = M₁·i·η. Нельзя одновременно поднять и обороты, и момент без роста мощности.</div></details><details><summary>Можно ли изменить обороты редуктора частотником?</summary><div>Да, это самый гибкий способ: частотник меняет обороты двигателя и вместе с ними выходные плавно, без замены механики. Ограничения: на малых оборотах самовентилируемый двигатель хуже охлаждается, выше 50 Гц падает момент, а обороты входного вала не должны превышать паспортный максимум редуктора.</div></details></div><div class="cat-faq"><details><summary>Как обороты зависят от числа полюсов двигателя?</summary><div>Синхронная частота: 2 полюса ≈ 3000 об/мин, 4 ≈ 1500, 6 ≈ 1000, 8 ≈ 750 об/мин (при 50 Гц, минус скольжение). Заменив двигатель на другую полюсность при том же редукторе, меняют выходные обороты. Двигатель той же мощности, но тихоходнее, даёт больший момент.</div></details><details><summary>Не потеряю ли я момент, увеличив обороты?</summary><div>Потеряете пропорционально. Мощность постоянна, поэтому при росте оборотов момент падает: M₂ = 9550·P·η/n₂. Прежде чем поднимать скорость, посчитайте требуемый момент нагрузки и убедитесь, что привод обеспечивает его с запасом (сервис-фактором). Иначе редуктор или двигатель уйдут в перегруз.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Изменить обороты редуктора</b> можно тремя способами: сменить передаточное число (n₂ = n₁/i), поставить частотный преобразователь для плавного регулирования или заменить двигатель на другую полюсность. При любом способе действует правило постоянной мощности: рост оборотов уменьшает крутящий момент.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Выходные обороты задаёт связка n₂ = n₁/i, а момент и обороты обратно пропорциональны при постоянной мощности. Для фиксированной скорости меняют i или двигатель, для диапазона — ставят частотник, следя за охлаждением двигателя и предельными оборотами входного вала.</p><table class="spec"><tbody><tr><th>Способ</th><td>Когда применять</td></tr><tr><th>Смена i</th><td>одна скорость, высокий КПД</td></tr><tr><th>Частотник</th><td>диапазон и плавный разгон</td></tr><tr><th>Замена двигателя</th><td>другая постоянная скорость</td></tr></tbody></table><p>Редуктор под нужные обороты и момент подберёт <a href="/podbor">калькулятор подбора</a>. Термины — в <a href="/glossary/">глоссарии</a>, аналог импортного привода — на странице <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор под нужные обороты</h2><p>Укажите требуемые обороты и момент на выходе — подберём передаточное число и привод или мотор-редуктор под частотник, с паспортом и гарантией.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Аналог под обороты и момент</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/blog/kak-rasschitat-peredatochnoe-chislo"><b>Расчёт передаточного числа</b><span>i под нужные обороты</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российские аналоги приводов</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для карусельного стола: расчёт и аналоги</title>
+<meta name="description" content="Как подобрать редуктор для карусельного стола: расчёт момента вращения планшайбы, инерция, обороты, тип передачи, точность позиционирования и аналоги EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-karusel" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-karusel" />
+<meta property="og:title" content="Подбор редуктора для карусельного стола: расчёт и аналоги" />
+<meta property="og:description" content="Как подобрать редуктор для карусельного стола: расчёт момента вращения планшайбы, инерция, обороты, тип передачи, точность позиционирования и аналоги EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для карусельного стола: расчёт и аналоги", "description": "Как подобрать редуктор для карусельного стола: расчёт момента вращения планшайбы, инерция, обороты, тип передачи, точность позиционирования и аналоги EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-karusel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор для карусельного стола", "item": "https://zavod-red.ru/blog/podbor-reduktora-karusel"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать момент для карусельного стола?", "acceptedAnswer": {"@type": "Answer", "text": "Момент на выходном валу M₂ = M_тр + J·ε: сумма момента трения в опоре и динамического момента разгона. Момент инерции диска J = m·R²/2, угловое ускорение ε = 2π·n₂/(60·t). При частом пуск-стоп индексировании динамическая составляющая часто в разы больше статической, поэтому её нельзя игнорировать."}}, {"@type": "Question", "name": "Какой редуктор выбрать для поворотного стола?", "acceptedAnswer": {"@type": "Answer", "text": "При равномерном вращении и невысоком моменте удобны червячные мотор-редукторы: компактны, дают большое передаточное и самотормозятся. При высоких моментах, точности и требовании к КПД лучше цилиндрические или соосные редукторы. Для центральной оси стола подходит исполнение с полым выходным валом."}}, {"@type": "Question", "name": "Как обеспечить точное позиционирование стола?", "acceptedAnswer": {"@type": "Answer", "text": "Для индексирования и дозирования важен минимальный люфт передачи и жёсткое удержание. Ставят редуктор с тормозом или червячную ступень с самоторможением, а само позиционирование выполняют частотным преобразователем или сервоприводом с обратной связью по датчику положения."}}, {"@type": "Question", "name": "Какой сервис-фактор для карусельного стола?", "acceptedAnswer": {"@type": "Answer", "text": "При равномерном непрерывном вращении достаточно SF = 1,25–1,5. Для столов с частым индексированием и режимом пуск-стоп берут 1,5–2,0, поскольку циклические динамические нагрузки при разгонах и торможениях существенно нагружают зубчатую передачу и подшипники."}}, {"@type": "Question", "name": "Зачем учитывать момент инерции планшайбы?", "acceptedAnswer": {"@type": "Answer", "text": "Тяжёлая планшайба с изделиями имеет большой момент инерции J = m·R²/2. При разгоне за короткое время возникает динамический момент J·ε, который может многократно превышать момент трения. Если его не учесть, редуктор будет перегружаться при каждом пуске и быстро выйдет из строя."}}, {"@type": "Question", "name": "Есть ли российский аналог редуктора карусельного стола?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных мотор-редукторов. По шильдику снимают момент, обороты, передаточное число, тип вала и монтаж — подбирается эквивалент, который встаёт на штатное место. Изделие поставляется с паспортом и гарантией 24 месяца."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для карусельного стола</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Редуктор для карусельного стола</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Карусельный стол — вращающаяся планшайба станка, разливочной линии, сборочного или упаковочного автомата. Главное здесь не столько установившийся момент, сколько инерция большой массы и требования к плавному разгону и точному позиционированию. Разберём, как подобрать <b>редуктор карусельного стола</b> по моменту, оборотам планшайбы и допустимой нагрузке на выходной вал.</p>
+<h2>Что вращает карусельный стол</h2><p>Карусельный (поворотный) стол встречается в металлообработке (карусельные станки), розливе, фасовке, сборочных линиях и на упаковочных автоматах. Планшайба несёт заготовки или изделия, поэтому основная нагрузка — момент инерции вращающейся массы и трение в опоре. Обороты обычно низкие: от долей до нескольких десятков об/мин. Исходные данные для подбора редуктора карусельного стола:</p><ul><li>масса и диаметр планшайбы с изделиями (для момента инерции J);</li><li>требуемые обороты стола n₂, об/мин;</li><li>время разгона до рабочей скорости t, с;</li><li>момент трения в опоре стола.</li></ul><h2>Расчёт момента: статика и динамика</h2><p>Полный момент на выходном валу складывается из момента трения M_тр и динамического момента разгона M_дин = J·ε, где ε = 2π·n₂/(60·t) — угловое ускорение. Момент инерции сплошного диска J = m·R²/2. Для столов с быстрым индексированием (пуск-стоп) динамическая составляющая нередко превышает статическую в разы.</p><table class="spec"><tbody><tr><th>Составляющая</th><td>Формула</td></tr><tr><th>J диска, кг·м²</th><td>m·R²/2</td></tr><tr><th>ε, рад/с²</th><td>2π·n₂/(60·t)</td></tr><tr><th>M_дин, Н·м</th><td>J·ε</td></tr><tr><th>M₂, Н·м</th><td>M_тр + M_дин</td></tr></tbody></table><p>Передаточное число i = n₁/n₂ при 4-полюсном двигателе часто оказывается большим (десятки-сотни), так как стол тихоходный. Сервис-фактор для равномерного вращения SF = 1,25–1,5, для частого пуск-стоп индексирования — 1,5–2,0.</p><div class="note">Если стол должен точно останавливаться в заданных позициях (индексирование, дозирование, сборка), важен минимальный люфт и жёсткое удержание. В таких приводах ставят редуктор с тормозом или червячную ступень с самоторможением, а позиционирование доверяют частотнику или сервоприводу.</div><h2>Тип передачи для поворотного стола</h2><p>При равномерном непрерывном вращении и невысоком моменте удобны <a href="/catalog/chervyachnye">червячные</a> мотор-редукторы: компактны, дают большое передаточное в одной ступени и самотормозятся, что упрощает удержание стола. При высоких моментах, точности и КПД предпочтительнее <a href="/catalog/cilindricheskie">цилиндрические</a> или <a href="/catalog/soosnye">соосные</a> редукторы. Для приводов с полым выходным валом под центральную ось стола удобны <a href="/catalog/reduktory-s-polym-valom">редукторы с полым валом</a>. Монтаж чаще фланцевый B5 или вертикальный V1 — под вертикальную ось планшайбы.</p><h2>Опора стола и нагрузка на выходной вал</h2><p>Важный момент, который часто упускают: как планшайба опирается на редуктор. Если стол установлен непосредственно на выходной вал редуктора, вал воспринимает не только крутящий момент, но и вес планшайбы с изделиями (осевая нагрузка) плюс опрокидывающий момент от несимметричной загрузки. В этом случае проверяют допустимые радиальную и осевую нагрузки на вал по каталогу и при необходимости берут больший типоразмер или выносят опору стола на отдельный подшипниковый узел. Для тяжёлых столов планшайбу опирают на самостоятельную поворотную опору, а редуктор через муфту передаёт только момент — так его подшипники не перегружаются.</p><h2>Аналог EVL для карусельного стола</h2><p>Мы (Завод Редукторов, ООО «НИИ АТТ», Челябинск) делаем российские аналоги EVL по габаритным и присоединительным размерам импортных мотор-редукторов. Чтобы заменить привод карусельного стола, снимите с шильдика момент M₂, обороты n₂, передаточное i, тип и диаметр вала (сплошной или полый), монтажное исполнение. По этим данным подбираем эквивалент. Про замену импорта — на странице <a href="/importozameshchenie">импортозамещения</a>, а расчёт под вашу планшайбу сделает <a href="/podbor">калькулятор подбора</a>. Нестандартную задачу с индексированием решит <a href="/uslugi/podbor">инженерный подбор</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как рассчитать момент для карусельного стола?</summary><div>Момент на выходном валу M₂ = M_тр + J·ε: сумма момента трения в опоре и динамического момента разгона. Момент инерции диска J = m·R²/2, угловое ускорение ε = 2π·n₂/(60·t). При частом пуск-стоп индексировании динамическая составляющая часто в разы больше статической, поэтому её нельзя игнорировать.</div></details><details><summary>Какой редуктор выбрать для поворотного стола?</summary><div>При равномерном вращении и невысоком моменте удобны червячные мотор-редукторы: компактны, дают большое передаточное и самотормозятся. При высоких моментах, точности и требовании к КПД лучше цилиндрические или соосные редукторы. Для центральной оси стола подходит исполнение с полым выходным валом.</div></details><details><summary>Как обеспечить точное позиционирование стола?</summary><div>Для индексирования и дозирования важен минимальный люфт передачи и жёсткое удержание. Ставят редуктор с тормозом или червячную ступень с самоторможением, а само позиционирование выполняют частотным преобразователем или сервоприводом с обратной связью по датчику положения.</div></details></div><div class="cat-faq"><details><summary>Какой сервис-фактор для карусельного стола?</summary><div>При равномерном непрерывном вращении достаточно SF = 1,25–1,5. Для столов с частым индексированием и режимом пуск-стоп берут 1,5–2,0, поскольку циклические динамические нагрузки при разгонах и торможениях существенно нагружают зубчатую передачу и подшипники.</div></details><details><summary>Зачем учитывать момент инерции планшайбы?</summary><div>Тяжёлая планшайба с изделиями имеет большой момент инерции J = m·R²/2. При разгоне за короткое время возникает динамический момент J·ε, который может многократно превышать момент трения. Если его не учесть, редуктор будет перегружаться при каждом пуске и быстро выйдет из строя.</div></details><details><summary>Есть ли российский аналог редуктора карусельного стола?</summary><div>Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных мотор-редукторов. По шильдику снимают момент, обороты, передаточное число, тип вала и монтаж — подбирается эквивалент, который встаёт на штатное место. Изделие поставляется с паспортом и гарантией 24 месяца.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор для карусельного стола</b> подбирают по суммарному моменту M₂ = M_тр + J·ε, где динамическая составляющая от разгона тяжёлой планшайбы часто превышает статическую. Обороты низкие, передаточное большое; для равномерного вращения удобны червячные, для точности и высокого КПД — цилиндрические редукторы.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Карусельный стол вращает планшайбу с изделиями, поэтому основная нагрузка — момент инерции массы и трение в опоре. При частом индексировании динамический момент разгона M_дин = J·ε выходит на первый план. Обороты низкие, передаточное число большое, важны точность позиционирования и удержание.</p><table class="spec"><tbody><tr><th>Задача стола</th><td>Рекомендация</td></tr><tr><th>Равномерное вращение</th><td>червячный мотор-редуктор, самотормоз</td></tr><tr><th>Высокий момент, КПД</th><td>цилиндрический / соосный</td></tr><tr><th>Индексирование</th><td>редуктор с тормозом + частотник/серво</td></tr><tr><th>Центральная ось</th><td>полый выходной вал</td></tr></tbody></table><p>Российский аналог EVL подберёт <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерная служба</a>. Смотрите также <a href="/catalog/reduktory-s-polym-valom">редукторы с полым валом</a> и <a href="/importozameshchenie">импортозамещение</a> Завода Редукторов.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор для вашего карусельного стола</h2><p>Пришлите массу и диаметр планшайбы, обороты и время разгона — рассчитаем момент с учётом инерции и подберём аналог EVL с КП.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/chervyachnye"><b>Червячные редукторы</b><span>Компактный самотормоз для стола</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный подбор</b><span>Расчёт индексирования и инерции</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Стандарт AGMA: расчёт зубчатых передач редуктора</title>
+<meta name="description" content="Стандарт AGMA — американская система норм на зубчатые передачи: классы точности, расчёт прочности и сервис-фактор, отличие от ISO 6336 и ГОСТ, влияние на подбор редуктора." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/agma-standart" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/agma-standart" />
+<meta property="og:title" content="Стандарт AGMA: расчёт зубчатых передач редуктора" />
+<meta property="og:description" content="Стандарт AGMA — американская система норм на зубчатые передачи: классы точности, расчёт прочности и сервис-фактор, отличие от ISO 6336 и ГОСТ, влияние на подбор редуктора." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Стандарт AGMA для зубчатых передач и редукторов", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Стандарт AGMA — американская система норм на зубчатые передачи: классы точности, расчёт прочности и сервис-фактор, отличие от ISO 6336 и ГОСТ, влияние на подбор редуктора.", "mainEntityOfPage": "https://zavod-red.ru/glossary/agma-standart"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Стандарт AGMA — что это", "item": "https://zavod-red.ru/glossary/agma-standart"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Стандарт AGMA для зубчатых передач и редукторов", "description": "Стандарт AGMA — американская система норм на зубчатые передачи: классы точности, расчёт прочности и сервис-фактор, отличие от ISO 6336 и ГОСТ, влияние на подбор редуктора.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/agma-standart"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое стандарт AGMA простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Это американские отраслевые стандарты на зубчатые передачи и редукторы, разработанные ассоциацией AGMA. Они задают классы точности колёс, методику расчёта на выкрашивание и поломку зуба и сервис-факторы. По назначению это аналог международного ISO 6336 и отечественного ГОСТ."}}, {"@type": "Question", "name": "Чем AGMA отличается от ISO 6336?", "acceptedAnswer": {"@type": "Answer", "text": "Оба описывают расчёт прочности зубьев на контакт и изгиб, но AGMA принят в США, использует дюймовую систему единиц и собственные обозначения (например, диаметральный питч вместо модуля). ISO 6336 — международный, метрический. Результаты сопоставимы, но методики и коэффициенты различаются."}}, {"@type": "Question", "name": "Как соотнести класс точности AGMA и ГОСТ?", "acceptedAnswer": {"@type": "Answer", "text": "Осторожно: логика нумерации разная. У старого AGMA большее число Q означает более высокую точность, а у ГОСТ 1643 и ISO 1328 — наоборот, меньшая степень точнее. Поэтому сравнивают не номера классов напрямую, а фактические допуски на профиль, шаг и биение зуба."}}, {"@type": "Question", "name": "Что такое сервис-фактор по AGMA?", "acceptedAnswer": {"@type": "Answer", "text": "Это коэффициент, учитывающий характер нагрузки и режим работы привода — равномерная нагрузка, толчки, удары, частота пусков и длительность. Мощность редуктора умножают на сервис-фактор при подборе, чтобы обеспечить нужный ресурс. По смыслу он соответствует коэффициенту KA в ISO 6336."}}, {"@type": "Question", "name": "Зачем знать AGMA при импортозамещении?", "acceptedAnswer": {"@type": "Answer", "text": "Паспорта импортных редукторов из США часто оперируют мощностью и сервис-фактором по AGMA. Чтобы корректно подобрать российский аналог, эти данные сопоставляют с номинальным моментом, сервис-фактором под ваш режим и классом точности отечественной серии. Иначе легко ошибиться в нагрузочной способности."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Стандарт AGMA — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Стандарт AGMA для зубчатых передач и редукторов</h1>
+  <p>AGMA — стандарты Американской ассоциации производителей зубчатых передач на геометрию, точность и расчёт прочности зубчатых колёс и редукторов. Определяют классы точности, методику расчёта на контакт и изгиб и сервис-факторы.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_cylindrical.webp" alt="Стандарт AGMA для зубчатых передач и редукторов" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">AGMA — это американский «свод правил» для зубчатых передач, аналог международного ISO 6336 и отечественного ГОСТ. Стандарты AGMA задают классы точности колёс, методику расчёта на выкрашивание и поломку зуба, а также сервис-факторы под разные применения. С ними часто сталкиваются, разбирая паспорта импортных редукторов и подбирая российские аналоги.</p>
+<h2>Что такое стандарт AGMA</h2><p>AGMA (American Gear Manufacturers Association) — американская ассоциация производителей зубчатых передач, выпускающая одноимённые отраслевые стандарты. Под «стандартом AGMA» обычно понимают комплекс норм на:</p><ul><li><b>Геометрию и качество</b> — классы точности зубчатых колёс;</li><li><b>Расчёт прочности</b> — методику проверки на контактную (питтинг) и изгибную выносливость (например, AGMA 2001 / 2101);</li><li><b>Сервис-факторы</b> — коэффициенты запаса под характер нагрузки и применения.</li></ul><p>По сути AGMA решает те же задачи, что и ISO 6336, но в американской системе единиц и с собственными обозначениями и классами. Это важно при работе с оборудованием из США.</p><h2>Классы точности и сервис-фактор</h2><p>Исторически точность по AGMA обозначалась классом Q (Quality number): чем выше число, тем точнее колесо. Новый стандарт AGMA 2015 (гармонизированный с ISO 1328) использует обозначение A с обратной логикой. Ориентировочное сопоставление:</p><table class="spec"><tbody><tr><th>Система</th><td>Обозначение точности</td></tr><tr><th>AGMA (старый)</th><td>Q3…Q15 (больше — точнее)</td></tr><tr><th>AGMA 2015 / ISO 1328</th><td>A2…A11 (меньше — точнее)</td></tr><tr><th>ГОСТ 1643</th><td>степени 3…12 (меньше — точнее)</td></tr></tbody></table><div class="note">Внимание на логику нумерации: у старого AGMA большее число Q — это выше точность, а у ISO 1328 и ГОСТ 1643 меньшая степень — это выше точность. Прямая замена «класс в класс» без пересчёта ошибочна. При подборе аналога сверяйте по фактическим допускам на профиль, шаг и биение, а не только по номеру класса.</div><h2>Влияние на подбор и эксплуатацию</h2><p>Для снабженца стандарт AGMA важен прежде всего как «язык» паспортов импортных редукторов. Заявленная по AGMA мощность и сервис-фактор позволяют корректно сопоставить импортный привод с российским аналогом: сравнивают номинальный момент, сервис-фактор под ваш режим и класс точности. Подбор аналога по габаритам и моменту удобно вести в <a href="/podbor">калькуляторе подбора</a>. Готовые серии — в <a href="/catalog/cilindricheskie">каталоге цилиндрических редукторов</a>, а раздел <a href="/importozameshchenie">импортозамещения</a> помогает заменить приводы, рассчитанные по AGMA.</p><h2>Связь со смежными терминами</h2><p>AGMA — прямой функциональный аналог <b>ISO 6336</b> (расчёт прочности) и <b>ISO 1328 / ГОСТ 1643</b> (точность). Он оперирует теми же понятиями: <b>сервис-фактор</b>, контактная и изгибная выносливость, <b>модуль</b> (в дюймовой системе — диаметральный питч DP). Смежные термины — в <a href="/glossary/">глоссарии</a>. Подбор замены импортных приводов SEW, NORD, Bonfiglioli — в <a href="/importozameshchenie">импортозамещении</a>.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое стандарт AGMA простыми словами?</summary><p>Это американские отраслевые стандарты на зубчатые передачи и редукторы, разработанные ассоциацией AGMA. Они задают классы точности колёс, методику расчёта на выкрашивание и поломку зуба и сервис-факторы. По назначению это аналог международного ISO 6336 и отечественного ГОСТ.</p></details><details><summary>Чем AGMA отличается от ISO 6336?</summary><p>Оба описывают расчёт прочности зубьев на контакт и изгиб, но AGMA принят в США, использует дюймовую систему единиц и собственные обозначения (например, диаметральный питч вместо модуля). ISO 6336 — международный, метрический. Результаты сопоставимы, но методики и коэффициенты различаются.</p></details><details><summary>Как соотнести класс точности AGMA и ГОСТ?</summary><p>Осторожно: логика нумерации разная. У старого AGMA большее число Q означает более высокую точность, а у ГОСТ 1643 и ISO 1328 — наоборот, меньшая степень точнее. Поэтому сравнивают не номера классов напрямую, а фактические допуски на профиль, шаг и биение зуба.</p></details></div><div class="cat-faq"><details><summary>Что такое сервис-фактор по AGMA?</summary><p>Это коэффициент, учитывающий характер нагрузки и режим работы привода — равномерная нагрузка, толчки, удары, частота пусков и длительность. Мощность редуктора умножают на сервис-фактор при подборе, чтобы обеспечить нужный ресурс. По смыслу он соответствует коэффициенту KA в ISO 6336.</p></details><details><summary>Зачем знать AGMA при импортозамещении?</summary><p>Паспорта импортных редукторов из США часто оперируют мощностью и сервис-фактором по AGMA. Чтобы корректно подобрать российский аналог, эти данные сопоставляют с номинальным моментом, сервис-фактором под ваш режим и классом точности отечественной серии. Иначе легко ошибиться в нагрузочной способности.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Стандарт AGMA</b> — американская система норм на зубчатые передачи и редукторы: классы точности, расчёт на контактную и изгибную прочность и сервис-факторы; функциональный аналог ISO 6336 и ГОСТ.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>AGMA задаёт классы точности (Q-номер в старой системе, A-класс в AGMA 2015), методику расчёта прочности зубьев и сервис-факторы. Логика нумерации точности обратна ГОСТ 1643, поэтому классы нельзя сопоставлять напрямую — сверяют фактические допуски. Стандарт важен при чтении паспортов импортных приводов.</p><table class="spec"><tbody><tr><th>AGMA (старый)</th><td>Q3…Q15, больше — точнее</td></tr><tr><th>AGMA 2015</th><td>A2…A11, меньше — точнее</td></tr><tr><th>Аналоги</th><td>ISO 6336, ГОСТ 21354/1643</td></tr></tbody></table><p>Сопоставить импортный привод и аналог помогает <a href="/podbor">калькулятор подбора</a>. Серии — в <a href="/catalog/cilindricheskie">каталоге</a>, замена импорта — в <a href="/importozameshchenie">импортозамещении</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

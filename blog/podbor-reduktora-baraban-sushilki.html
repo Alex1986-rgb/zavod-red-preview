@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для барабана сушилки: расчёт и аналоги EVL</title>
+<meta name="description" content="Как подобрать редуктор для барабана сушилки: расчёт момента на венцовой шестерне, обороты, тип передачи, сервис-фактор, температура и аналоги EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-baraban-sushilki" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-baraban-sushilki" />
+<meta property="og:title" content="Подбор редуктора для барабана сушилки: расчёт и аналоги EVL" />
+<meta property="og:description" content="Как подобрать редуктор для барабана сушилки: расчёт момента на венцовой шестерне, обороты, тип передачи, сервис-фактор, температура и аналоги EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для барабана сушилки: расчёт и аналоги EVL", "description": "Как подобрать редуктор для барабана сушилки: расчёт момента на венцовой шестерне, обороты, тип передачи, сервис-фактор, температура и аналоги EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-baraban-sushilki"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор для барабана сушилки", "item": "https://zavod-red.ru/blog/podbor-reduktora-baraban-sushilki"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать момент на приводе сушильного барабана?", "acceptedAnswer": {"@type": "Answer", "text": "Момент сопротивления барабана M_бар ≈ G_мат·e возникает из-за смещённого центра тяжести засыпанного материала: e — эксцентриситет засыпки, G_мат — вес материала. Момент на выходном валу редуктора получают делением на передаточное открытой венцовой пары с учётом её КПД. Затем применяют сервис-фактор."}}, {"@type": "Question", "name": "Какие обороты у барабана сушилки?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно 2–8 об/мин в зависимости от технологии сушки, диаметра барабана и материала. Из-за этого общее передаточное отношение от двигателя i = n₁/n_бар оказывается большим и делится между редуктором и открытой венцовой зубчатой парой на бандаже барабана."}}, {"@type": "Question", "name": "Какой сервис-фактор для сушильного барабана?", "acceptedAnswer": {"@type": "Answer", "text": "Берут SF = 1,5–2,0. Причины — непрерывная работа в режиме S1, налипание и слёживание материала, повышенный пусковой момент тяжёлого барабана и толчковые нагрузки. При пуске залежавшегося за простой материала пиковый момент резко возрастает, что и учитывает сервис-фактор."}}, {"@type": "Question", "name": "Влияет ли температура сушилки на выбор редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Редуктор часто работает рядом с горячим барабаном, поэтому проверяют допустимую температуру масла и корпуса. При высокой окружающей температуре снижают предельную тепловую мощность редуктора либо предусматривают охлаждение и теплостойкое масло, чтобы избежать перегрева и падения ресурса."}}, {"@type": "Question", "name": "Какой тип редуктора выбрать для сушилки?", "acceptedAnswer": {"@type": "Answer", "text": "Для больших моментов и непрерывной работы — цилиндрический или коническо-цилиндрический редуктор с КПД 0,96–0,98. Коническо-цилиндрический удобен при перпендикулярной установке двигателя. Для малых барабанов иногда достаточно червячного мотор-редуктора, но при высоких моментах его КПД ограничивает применение."}}, {"@type": "Question", "name": "Есть ли российский аналог редуктора сушилки?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных редукторов. По шильдику снимают момент, обороты, передаточное число, монтаж и параметры вала — подбирается эквивалент, который встаёт на штатную раму. Изделие поставляется с паспортом и гарантией 24 месяца."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для барабана сушилки</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Редуктор для барабана сушилки</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Барабанная сушилка — это тихоходный вращающийся барабан диаметром до нескольких метров, который непрерывно ворочает влажный материал. Привод работает часами в режиме S1, а нагрузка меняется по мере налипания материала и разгона тяжёлого барабана. Разберём, как подобрать <b>редуктор барабана сушилки</b> по моменту на венцовой шестерне, оборотам и сервис-фактору.</p>
+<h2>Как устроен привод сушильного барабана</h2><p>Классическая схема: электродвигатель → редуктор → подвенцовая (приводная) шестерня → венцовая шестерня на бандаже барабана. Барабан вращается медленно, обычно 2–8 об/мин, и опирается на роликовые опоры. Реже встречается фрикционный привод через опорные ролики. Редуктор барабана сушилки должен обеспечить большое понижение оборотов и высокий момент при непрерывной работе. Исходные данные для подбора:</p><ul><li>диаметр и масса барабана с материалом;</li><li>обороты барабана n_бар, об/мин;</li><li>число зубьев венцовой и подвенцовой шестерён (передаточное открытой пары);</li><li>момент сопротивления вращению (масса материала, угол засыпки, трение в опорах).</li></ul><h2>Расчёт момента и передаточного числа</h2><p>Момент сопротивления барабана возникает от смещённого центра тяжести засыпанного материала: M_бар ≈ G_мат·e, где G_мат — вес материала в барабане, e — эксцентриситет засыпки. Момент на выходном валу редуктора M₂ = M_бар / u_откр·η, где u_откр — передаточное открытой зубчатой пары. Общее передаточное от двигателя i_общ = n₁ / n_бар складывается из редуктора и открытой пары.</p><table class="spec"><tbody><tr><th>Величина</th><td>Как оценить</td></tr><tr><th>n_бар, об/мин</th><td>2–8 (по технологии сушки)</td></tr><tr><th>M_бар, Н·м</th><td>G_мат·e (смещение засыпки)</td></tr><tr><th>u_откр</th><td>z_венца / z_шестерни</td></tr><tr><th>i_общ</th><td>n₁ / n_бар</td></tr></tbody></table><p>Сервис-фактор для сушильного барабана берут SF = 1,5–2,0: непрерывная работа, налипание и слёживание материала, пусковой момент тяжёлого барабана, возможные толчки. При пуске залежавшегося за простой материала пиковый момент резко растёт.</p><div class="note">Сушилка — источник тепла. Редуктор нередко работает рядом с горячим барабаном, поэтому проверяют не только момент, но и допустимую температуру масла и корпуса. При высокой окружающей температуре снижают предельную тепловую мощность редуктора или предусматривают охлаждение и теплостойкое масло.</div><h2>Тип передачи для сушильного барабана</h2><p>Основную нагрузку несёт <a href="/catalog/cilindricheskie">цилиндрический</a> или <a href="/catalog/konichesko-cilindricheskie">коническо-цилиндрический</a> редуктор с высоким КПД 0,96–0,98 и большим ресурсом для непрерывной работы. Коническо-цилиндрический удобен, когда двигатель ставят перпендикулярно оси барабана. Большое общее понижение делят между редуктором и открытой венцовой парой. Для скромных барабанов малой сушилки иногда достаточно <a href="/catalog/chervyachnye">червячного</a> мотор-редуктора, но при больших моментах его КПД становится ограничением. Монтаж — горизонтальный на лапах B3, вал сплошной под приводную шестерню.</p><h2>Открытая венцовая пара и центровка</h2><p>Ресурс привода сушильного барабана во многом определяет не сам редуктор, а состояние открытой венцовой передачи. Барабан при нагреве и вращении на роликовых опорах немного смещается и деформируется, поэтому зазор в зацеплении подвенцовой и венцовой шестерён плавает. Его периодически регулируют, а зубья смазывают адгезионной смазкой через автоматическую систему. Редуктор устанавливают на регулируемой раме, позволяющей выставить правильное межосевое расстояние и пятно контакта. Перекос быстро разбивает зубья и перегружает подшипники, поэтому центровку выходного вала редуктора с приводной шестерней проверяют при монтаже и в ходе эксплуатации.</p><h2>Аналог EVL для сушилки</h2><p>Мы (Завод Редукторов, ООО «НИИ АТТ», Челябинск) делаем российские аналоги EVL по габаритным и присоединительным размерам импортных редукторов. Для замены привода сушильного барабана снимите с шильдика момент M₂, обороты n₂, передаточное i, монтаж и параметры вала — подберём эквивалент, встающий на штатную раму. О замене импорта — на странице <a href="/importozameshchenie">импортозамещения</a>, расчёт под ваш барабан сделает <a href="/podbor">калькулятор подбора</a>, а нестандартную задачу решит <a href="/uslugi/podbor">инженерный подбор</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как рассчитать момент на приводе сушильного барабана?</summary><div>Момент сопротивления барабана M_бар ≈ G_мат·e возникает из-за смещённого центра тяжести засыпанного материала: e — эксцентриситет засыпки, G_мат — вес материала. Момент на выходном валу редуктора получают делением на передаточное открытой венцовой пары с учётом её КПД. Затем применяют сервис-фактор.</div></details><details><summary>Какие обороты у барабана сушилки?</summary><div>Обычно 2–8 об/мин в зависимости от технологии сушки, диаметра барабана и материала. Из-за этого общее передаточное отношение от двигателя i = n₁/n_бар оказывается большим и делится между редуктором и открытой венцовой зубчатой парой на бандаже барабана.</div></details><details><summary>Какой сервис-фактор для сушильного барабана?</summary><div>Берут SF = 1,5–2,0. Причины — непрерывная работа в режиме S1, налипание и слёживание материала, повышенный пусковой момент тяжёлого барабана и толчковые нагрузки. При пуске залежавшегося за простой материала пиковый момент резко возрастает, что и учитывает сервис-фактор.</div></details></div><div class="cat-faq"><details><summary>Влияет ли температура сушилки на выбор редуктора?</summary><div>Да. Редуктор часто работает рядом с горячим барабаном, поэтому проверяют допустимую температуру масла и корпуса. При высокой окружающей температуре снижают предельную тепловую мощность редуктора либо предусматривают охлаждение и теплостойкое масло, чтобы избежать перегрева и падения ресурса.</div></details><details><summary>Какой тип редуктора выбрать для сушилки?</summary><div>Для больших моментов и непрерывной работы — цилиндрический или коническо-цилиндрический редуктор с КПД 0,96–0,98. Коническо-цилиндрический удобен при перпендикулярной установке двигателя. Для малых барабанов иногда достаточно червячного мотор-редуктора, но при высоких моментах его КПД ограничивает применение.</div></details><details><summary>Есть ли российский аналог редуктора сушилки?</summary><div>Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных редукторов. По шильдику снимают момент, обороты, передаточное число, монтаж и параметры вала — подбирается эквивалент, который встаёт на штатную раму. Изделие поставляется с паспортом и гарантией 24 месяца.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор для барабана сушилки</b> подбирают по моменту сопротивления M_бар ≈ G_мат·e от смещённой засыпки материала, разделяя понижение между редуктором и открытой венцовой парой. Сервис-фактор 1,5–2,0, важен учёт температуры и непрерывного режима S1.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Привод сушильного барабана — тихоходный высокомоментный узел режима S1. Схема: двигатель, редуктор, подвенцовая шестерня, венцовая пара на бандаже барабана. Обороты 2–8 об/мин, момент задаётся смещением засыпки материала, а выбор ограничивают ещё температура и налипание.</p><table class="spec"><tbody><tr><th>Параметр</th><td>Значение</td></tr><tr><th>Обороты барабана</th><td>2–8 об/мин</td></tr><tr><th>Тип редуктора</th><td>цилиндрический / коническо-цилиндрический</td></tr><tr><th>Сервис-фактор</th><td>1,5–2,0</td></tr><tr><th>Особенность</th><td>температура, налипание материала</td></tr></tbody></table><p>Российский аналог EVL подберёт <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерная служба</a>. Смотрите также <a href="/catalog/tihohodnye-reduktory">тихоходные редукторы</a> и <a href="/importozameshchenie">импортозамещение</a> Завода Редукторов.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор для вашего сушильного барабана</h2><p>Пришлите диаметр и обороты барабана, массу материала и число зубьев венца — рассчитаем момент и подберём аналог EVL с КП.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/konichesko-cilindricheskie"><b>Коническо-цилиндрические</b><span>Высокий момент, установка под 90°</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российский аналог по габаритам</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для кран-балки: расчёт и тип привода</title>
+<meta name="description" content="Редуктор кран-балки: как подобрать привод механизма передвижения и подъёма. Расчёт момента, оборотов, сервис-фактор, тип и монтаж, аналоги EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-kran-balka" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-kran-balka" />
+<meta property="og:title" content="Подбор редуктора для кран-балки: расчёт и тип привода" />
+<meta property="og:description" content="Редуктор кран-балки: как подобрать привод механизма передвижения и подъёма. Расчёт момента, оборотов, сервис-фактор, тип и монтаж, аналоги EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для кран-балки: расчёт и тип привода", "description": "Редуктор кран-балки: как подобрать привод механизма передвижения и подъёма. Расчёт момента, оборотов, сервис-фактор, тип и монтаж, аналоги EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-kran-balka"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор для кран-балки: как подобрать привод", "item": "https://zavod-red.ru/blog/podbor-reduktora-kran-balka"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой редуктор нужен для механизма передвижения кран-балки?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно коническо-цилиндрический или соосный мотор-редуктор 380 В. Момент считают от сопротивления движению и радиуса колеса, обороты — из скорости передвижения (20–40 м/мин). Закладывают сервис-фактор 1,5–2,0 из-за частых пусков и реверса."}}, {"@type": "Question", "name": "Нужен ли тормоз в приводе кран-балки?", "acceptedAnswer": {"@type": "Answer", "text": "Для механизма подъёма — обязательно: тормоз удерживает груз при отключении питания. Для передвижения тормоз нужен, чтобы точно останавливать кран и исключать выбег. Применяют мотор-редукторы со встроенным электромагнитным тормозом."}}, {"@type": "Question", "name": "Какой сервис-фактор закладывать для крана?", "acceptedAnswer": {"@type": "Answer", "text": "Краны работают в повторно-кратковременном режиме с ударной нагрузкой, поэтому SF берут 1,5–2,0 в зависимости от интенсивности циклов. Для редких подъёмов достаточно 1,25–1,5, для тяжёлого режима — до 2,0."}}, {"@type": "Question", "name": "Как рассчитать обороты выходного вала?", "acceptedAnswer": {"@type": "Answer", "text": "Обороты определяют из скорости передвижения и диаметра колеса: n2 = V·1000/(π·D). Передаточное число редуктора равно оборотам двигателя, делённым на n2. Для подъёма обороты считают из скорости подъёма и диаметра барабана."}}, {"@type": "Question", "name": "Можно ли заменить импортный привод крана аналогом EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Аналог EVL повторяет габариты, момент и монтаж импортных приводов (SEW, NORD, Bauer), поэтому встаёт на концевую балку без переделки. Достаточно снять параметры с шильдика и присоединительные размеры."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для кран-балки</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Редуктор для кран-балки: как подобрать привод</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Кран-балка имеет два-три привода: передвижение моста, передвижение тали и подъём груза. У каждого свой характер нагрузки, обороты и требования к монтажу. Ошибка в подборе редуктора для кран-балки оборачивается рывками, перегревом или обрывом. Разберём, как рассчитать момент и обороты и выбрать тип привода под каждый механизм.</p>
+<h2>Какие приводы есть в кран-балке</h2><p>Прежде чем считать, разделите задачу по механизмам — у них разная логика:</p><ul><li><b>Передвижение моста</b> — приводит в движение всю балку по подкрановым путям. Нагрузка инерционная, с частыми пусками и реверсом.</li><li><b>Передвижение тали (тележки)</b> — перемещает грузоподъёмный механизм вдоль балки. Момент небольшой, важна плавность.</li><li><b>Механизм подъёма</b> — самый ответственный: удерживает груз, требует тормоза и запаса по моменту.</li></ul><p>Для передвижения обычно применяют <a href="/catalog/motor-reduktory-380v">мотор-редукторы 380 В</a> цилиндрического или коническо-цилиндрического типа, для подъёма — привод с <a href="/catalog/reduktory-s-tormozom">встроенным тормозом</a>.</p><h2>Расчёт момента и оборотов</h2><p>Для механизма передвижения нужный крутящий момент считают от силы сопротивления движению и радиуса колеса. Обороты выходного вала связаны со скоростью передвижения:</p><table class="spec"><tbody><tr><th>n<sub>2</sub></th><td>обороты вала = V·1000 / (π·D<sub>колеса</sub>), об/мин</td></tr><tr><th>M<sub>2</sub></th><td>момент на валу = F·D<sub>колеса</sub> / 2, Н·м</td></tr><tr><th>i</th><td>передаточное = n<sub>дв</sub> / n<sub>2</sub></td></tr><tr><th>P</th><td>мощность = M·n / 9550, кВт</td></tr></tbody></table><p>Для механизма подъёма момент определяется весом груза, диаметром барабана и кратностью полиспаста. Обороты — из требуемой скорости подъёма. Именно здесь закладывают тормоз, удерживающий груз при отключении питания.</p><div class="note">Скорость передвижения крана обычно 20–40 м/мин, тали — 10–20 м/мин, подъёма — 8–12 м/мин. Отсюда получают n<sub>2</sub> и подбирают передаточное число.</div><h2>Сервис-фактор и режим работы</h2><p>Краны работают в повторно-кратковременном режиме (S3, S4) с частыми пусками и реверсами. Это ударная инерционная нагрузка, поэтому закладывают сервис-фактор SF 1,5–2,0. Меньший запас приведёт к усталостному износу зубьев и подшипников. Класс использования крана (по числу циклов) напрямую влияет на выбор SF.</p><ul><li>лёгкий режим, редкие подъёмы — SF ≈ 1,25–1,5;</li><li>средний, регулярная работа — SF ≈ 1,5;</li><li>тяжёлый, интенсивные циклы — SF ≈ 1,75–2,0.</li></ul><h2>Тип, монтаж и исполнение</h2><p>Для передвижения удобны коническо-цилиндрические мотор-редукторы (валы под 90°, компактная установка на концевой балке) или соосные для прямого привода колеса. Монтаж чаще фланцевый (B5) или на лапах (B3) в зависимости от узла. Для подъёма — привод с тормозом и, при необходимости, вторым концом вала под датчик. Смотрите <a href="/catalog/konichesko-cilindricheskie">коническо-цилиндрические</a> и <a href="/catalog/soosnye">соосные редукторы</a>.</p><h2>Типичные ошибки при подборе привода крана</h2><p>Разберём частые промахи, которые приводят к отказам уже в первые месяцы эксплуатации:</p><ul><li><b>Подбор по мощности вместо момента.</b> Двигатель нужной мощности не гарантирует нужный момент на выходе — считать надо M<sub>2</sub> при заданных оборотах.</li><li><b>Занижение сервис-фактора.</b> Для крана с частыми пусками SF 1,0 недопустим — зубья и подшипники изнашиваются от динамики.</li><li><b>Отсутствие тормоза на подъёме.</b> Без тормоза груз при пропадании питания опускается неконтролируемо.</li><li><b>Игнорирование числа включений в час.</b> Частые пуски перегревают двигатель; проверяют допустимую частоту включений.</li></ul><p>Отдельно контролируют плавность пуска: рывок при старте моста нагружает и привод, и металлоконструкцию. Для точного позиционирования применяют частотное управление, которое разгоняет и тормозит кран без ударов.</p><h2>Аналоги EVL и замена импорта</h2><p>Если на кран-балке стоял импортный привод (SEW, NORD, Bauer) и требуется замена, российская серия EVL повторяет его габариты, момент и монтаж. Замена идёт без переделки концевых балок — подробнее на странице <a href="/importozameshchenie">импортозамещения</a>. Рассчитать привод под ваши скорости и груз поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">услуга инженерного подбора</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Какой редуктор нужен для механизма передвижения кран-балки?</summary><div>Обычно коническо-цилиндрический или соосный мотор-редуктор 380 В. Момент считают от сопротивления движению и радиуса колеса, обороты — из скорости передвижения (20–40 м/мин). Закладывают сервис-фактор 1,5–2,0 из-за частых пусков и реверса.</div></details><details><summary>Нужен ли тормоз в приводе кран-балки?</summary><div>Для механизма подъёма — обязательно: тормоз удерживает груз при отключении питания. Для передвижения тормоз нужен, чтобы точно останавливать кран и исключать выбег. Применяют мотор-редукторы со встроенным электромагнитным тормозом.</div></details><details><summary>Какой сервис-фактор закладывать для крана?</summary><div>Краны работают в повторно-кратковременном режиме с ударной нагрузкой, поэтому SF берут 1,5–2,0 в зависимости от интенсивности циклов. Для редких подъёмов достаточно 1,25–1,5, для тяжёлого режима — до 2,0.</div></details></div><div class="cat-faq"><details><summary>Как рассчитать обороты выходного вала?</summary><div>Обороты определяют из скорости передвижения и диаметра колеса: n2 = V·1000/(π·D). Передаточное число редуктора равно оборотам двигателя, делённым на n2. Для подъёма обороты считают из скорости подъёма и диаметра барабана.</div></details><details><summary>Можно ли заменить импортный привод крана аналогом EVL?</summary><div>Да. Аналог EVL повторяет габариты, момент и монтаж импортных приводов (SEW, NORD, Bauer), поэтому встаёт на концевую балку без переделки. Достаточно снять параметры с шильдика и присоединительные размеры.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор кран-балки</b> подбирают отдельно для передвижения и подъёма: считают момент M<sub>2</sub> от нагрузки и радиуса колеса, обороты n<sub>2</sub> из скорости, а сервис-фактор берут 1,5–2,0 из-за ударного повторно-кратковременного режима.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Привод кран-балки — это механизмы передвижения моста, тележки и подъёма, каждый со своим моментом и оборотами. Для передвижения применяют коническо-цилиндрические и соосные мотор-редукторы, для подъёма — редукторы с тормозом. Ключевой запас задаёт сервис-фактор.</p><table class="spec"><tbody><tr><th>Механизм</th><td>Тип привода</td></tr><tr><th>Передвижение</th><td>коническо-цилиндрический / соосный</td></tr><tr><th>Подъём</th><td>редуктор с тормозом</td></tr></tbody></table><p>Рассчитать привод под ваши параметры поможет <a href="/podbor">калькулятор подбора</a> и <a href="/uslugi/podbor">услуга подбора</a>. Замена импортного привода — на странице <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём привод для вашей кран-балки</h2><p>Пришлите грузоподъёмность, скорости передвижения и подъёма — рассчитаем момент, обороты и подберём редукторы с тормозом.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/reduktory-s-tormozom"><b>Редукторы с тормозом</b><span>Для механизмов подъёма</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный подбор</b><span>Расчёт привода под задачу</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

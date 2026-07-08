@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для центрифуги: расчёт момента и аналоги</title>
+<meta name="description" content="Как подобрать редуктор для центрифуги: расчёт пускового момента, инерция ротора, обороты, тип передачи, режим разгона и российские аналоги EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-centrifuga" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-centrifuga" />
+<meta property="og:title" content="Подбор редуктора для центрифуги: расчёт момента и аналоги" />
+<meta property="og:description" content="Как подобрать редуктор для центрифуги: расчёт пускового момента, инерция ротора, обороты, тип передачи, режим разгона и российские аналоги EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для центрифуги: расчёт момента и аналоги", "description": "Как подобрать редуктор для центрифуги: расчёт пускового момента, инерция ротора, обороты, тип передачи, режим разгона и российские аналоги EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-centrifuga"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор для центрифуги", "item": "https://zavod-red.ru/blog/podbor-reduktora-centrifuga"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Почему для центрифуги важен пусковой момент?", "acceptedAnswer": {"@type": "Answer", "text": "Раскрутить тяжёлый заполненный ротор до рабочих оборотов требует момента M_пуск = J·ε + M_тр, где динамическая составляющая J·ε при большом моменте инерции и коротком разгоне велика. Установившийся момент вращения гораздо меньше, поэтому привод выбирают именно по пиковому пусковому режиму."}}, {"@type": "Question", "name": "Какой редуктор нужен для декантера?", "acceptedAnswer": {"@type": "Answer", "text": "Шнековая осадительная центрифуга (декантер) требует специального дифференциального редуктора — планетарного или циклоидного. Он создаёт разность оборотов Δn между барабаном и выгрузным шнеком, обычно от долей до нескольких десятков об/мин. Подбирается такой редуктор по крутящему моменту на шнеке и требуемой разности оборотов."}}, {"@type": "Question", "name": "Какой сервис-фактор для привода центрифуги?", "acceptedAnswer": {"@type": "Answer", "text": "Берут повышенный SF = 1,8–2,5. Причины — тяжёлый пуск загруженного барабана, возможный дисбаланс при неравномерной загрузке, ударные нагрузки и частые пуски в час. Высокий сервис-фактор обеспечивает ресурс зубчатой передачи и подшипников в этих условиях."}}, {"@type": "Question", "name": "Как рассчитать момент инерции ротора?", "acceptedAnswer": {"@type": "Answer", "text": "Момент инерции J зависит от массы вращающихся частей и распределения этой массы по радиусу. Для оценки барабан приближают полым цилиндром и учитывают массу продукта. При разгоне за время t возникает динамический момент J·ε, где ε = 2π·Δn/(60·t) — угловое ускорение до рабочих оборотов."}}, {"@type": "Question", "name": "Какой тип редуктора выбрать для центрифуги?", "acceptedAnswer": {"@type": "Answer", "text": "Для обычных центрифуг с понижением оборотов — цилиндрические или соосные редукторы с КПД 0,96–0,98 и запасом по пусковому моменту. Для декантеров — планетарные дифференциальные редукторы, дающие соосность, компактность и нужную разность оборотов между барабаном и шнеком."}}, {"@type": "Question", "name": "Есть ли российский аналог редуктора центрифуги?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных редукторов. Для замены снимите с шильдика момент, обороты, передаточное число и монтаж. Для дифференциального редуктора декантера дополнительно нужны момент на шнеке и разность оборотов Δn — подберём эквивалент под вашу машину."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для центрифуги</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Редуктор для центрифуги</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Центрифуга — привод с тяжёлым ротором и высокими требованиями к пусковому моменту: раскрутить заполненный барабан до рабочих оборотов сложнее, чем поддерживать вращение. Отдельная специфика — осадительные и фильтрующие центрифуги со шнековой выгрузкой, где нужен дифференциальный редуктор. Разберём, как подобрать <b>редуктор центрифуги</b> по инерции ротора, пусковому моменту и оборотам.</p>
+<h2>Виды центрифуг и их приводы</h2><p>Центрифуги делятся на фильтрующие, осадительные и разделяющие; по конструкции — на подвесные, горизонтальные, а также декантеры (шнековые осадительные центрифуги). У большинства редуктор понижает обороты двигателя до рабочих оборотов ротора и, главное, обеспечивает разгон тяжёлого заполненного барабана. У декантеров задача сложнее: планетарный или циклоидный редуктор создаёт разность оборотов между барабаном и шнеком для непрерывной выгрузки осадка.</p><ul><li>масса и радиус ротора (для момента инерции J);</li><li>рабочие обороты n₂ и фактор разделения;</li><li>время разгона до номинала t, с;</li><li>для декантера — требуемая разность оборотов барабана и шнека Δn.</li></ul><h2>Пусковой момент — главный расчётный фактор</h2><p>Основную нагрузку задаёт разгон ротора: M_пуск = J·ε + M_тр, где ε = 2π·(n₂_кон − n₂_нач)/(60·t). Момент инерции загруженного барабана велик, а разгон нередко длится десятки секунд, поэтому двигатель и редуктор выбирают именно по пусковому режиму, а не по установившемуся. Мощность оценивают по пиковому моменту: P = M·n/9550.</p><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>J, кг·м²</th><td>зависит от массы и радиуса ротора</td></tr><tr><th>ε, рад/с²</th><td>2π·Δn/(60·t)</td></tr><tr><th>M_пуск, Н·м</th><td>J·ε + M_тр</td></tr><tr><th>P, кВт</th><td>M·n/9550</td></tr></tbody></table><p>Сервис-фактор для центрифуги берут повышенный — SF = 1,8–2,5 из-за тяжёлого пуска, возможного дисбаланса и ударных нагрузок при неравномерной загрузке. Число пусков в час тоже влияет на нагрев.</p><div class="note">В шнековой осадительной центрифуге (декантере) применяют специальный дифференциальный (планетарный или циклоидный) редуктор. Он задаёт разность оборотов Δn между барабаном и шнеком — от долей до нескольких десятков об/мин. Это узкоспециальное изделие, подбирается по крутящему моменту на шнеке и требуемому Δn.</div><h2>Тип передачи</h2><p>Для обычных центрифуг с понижением оборотов подходят <a href="/catalog/cilindricheskie">цилиндрические</a> и <a href="/catalog/soosnye">соосные</a> редукторы с высоким КПД 0,96–0,98 и запасом по пусковому моменту. Для декантеров — <a href="/catalog/planetarnye">планетарные</a> редукторы, дающие компактность, соосность и большое передаточное. Клиноремённая передача от двигателя к ротору иногда заменяет редуктор на высокооборотных машинах, но при высоких моментах и точной синхронизации ставят зубчатый редуктор. Монтаж — по компоновке центрифуги, часто фланцевый B5.</p><h2>Дисбаланс, вибрация и число пусков</h2><p>Центрифуга чувствительна к дисбалансу: неравномерная загрузка продукта создаёт биение ротора и знакопеременную нагрузку на привод. Редуктор и его крепление должны переносить эту вибрацию, поэтому применяют эластичные муфты и виброустойчивое исполнение опор. Отдельно учитывают число пусков в час: при частых циклах разгон-торможение тепловыделение накапливается, и выбор ограничивает уже тепловая мощность, а не момент. Для машин с торможением выбегом проверяют, что редуктор допускает длительное торможение противовключением или что предусмотрен отдельный тормоз, гасящий кинетическую энергию тяжёлого ротора без перегрева передачи.</p><h2>Аналог EVL для центрифуги</h2><p>Мы (Завод Редукторов) делаем российские аналоги EVL по габаритным и присоединительным размерам импортных редукторов. Для замены привода центрифуги снимите с шильдика момент, обороты, передаточное число и монтаж — по ним подберём эквивалент. Для дифференциального редуктора декантера нужны момент на шнеке и разность оборотов Δn. О замене импорта читайте на странице <a href="/importozameshchenie">импортозамещения</a>, расчёт под вашу машину сделает <a href="/podbor">калькулятор подбора</a>, а сложную задачу с декантером возьмёт <a href="/uslugi/podbor">инженерный подбор</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Почему для центрифуги важен пусковой момент?</summary><div>Раскрутить тяжёлый заполненный ротор до рабочих оборотов требует момента M_пуск = J·ε + M_тр, где динамическая составляющая J·ε при большом моменте инерции и коротком разгоне велика. Установившийся момент вращения гораздо меньше, поэтому привод выбирают именно по пиковому пусковому режиму.</div></details><details><summary>Какой редуктор нужен для декантера?</summary><div>Шнековая осадительная центрифуга (декантер) требует специального дифференциального редуктора — планетарного или циклоидного. Он создаёт разность оборотов Δn между барабаном и выгрузным шнеком, обычно от долей до нескольких десятков об/мин. Подбирается такой редуктор по крутящему моменту на шнеке и требуемой разности оборотов.</div></details><details><summary>Какой сервис-фактор для привода центрифуги?</summary><div>Берут повышенный SF = 1,8–2,5. Причины — тяжёлый пуск загруженного барабана, возможный дисбаланс при неравномерной загрузке, ударные нагрузки и частые пуски в час. Высокий сервис-фактор обеспечивает ресурс зубчатой передачи и подшипников в этих условиях.</div></details></div><div class="cat-faq"><details><summary>Как рассчитать момент инерции ротора?</summary><div>Момент инерции J зависит от массы вращающихся частей и распределения этой массы по радиусу. Для оценки барабан приближают полым цилиндром и учитывают массу продукта. При разгоне за время t возникает динамический момент J·ε, где ε = 2π·Δn/(60·t) — угловое ускорение до рабочих оборотов.</div></details><details><summary>Какой тип редуктора выбрать для центрифуги?</summary><div>Для обычных центрифуг с понижением оборотов — цилиндрические или соосные редукторы с КПД 0,96–0,98 и запасом по пусковому моменту. Для декантеров — планетарные дифференциальные редукторы, дающие соосность, компактность и нужную разность оборотов между барабаном и шнеком.</div></details><details><summary>Есть ли российский аналог редуктора центрифуги?</summary><div>Да. Мы делаем аналоги EVL по габаритным и присоединительным размерам импортных редукторов. Для замены снимите с шильдика момент, обороты, передаточное число и монтаж. Для дифференциального редуктора декантера дополнительно нужны момент на шнеке и разность оборотов Δn — подберём эквивалент под вашу машину.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор для центрифуги</b> подбирают по пусковому моменту M_пуск = J·ε + M_тр, а не по установившемуся: раскрутка тяжёлого ротора нагружает привод сильнее всего. Сервис-фактор 1,8–2,5; для декантеров нужен дифференциальный планетарный редуктор с заданной разностью оборотов Δn.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Центрифуга — привод с тяжёлым ротором, где расчётным становится пусковой режим. Динамический момент разгона J·ε при большом моменте инерции превышает установившийся. Для шнековых осадительных центрифуг (декантеров) применяют специальный дифференциальный редуктор, задающий разность оборотов барабана и шнека.</p><table class="spec"><tbody><tr><th>Тип центрифуги</th><td>Редуктор</td></tr><tr><th>Фильтрующая / осадительная</th><td>цилиндрический / соосный</td></tr><tr><th>Декантер (шнек)</th><td>планетарный дифференциальный</td></tr><tr><th>Высокооборотная</th><td>ремень или зубчатый редуктор</td></tr></tbody></table><p>Российский аналог EVL под замену импорта подберёт <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерная служба</a>. Смотрите также <a href="/catalog/planetarnye">планетарные редукторы</a> и <a href="/importozameshchenie">импортозамещение</a> Завода Редукторов.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор для вашей центрифуги</h2><p>Пришлите массу ротора, рабочие обороты и время разгона — рассчитаем пусковой момент и подберём аналог EVL, для декантера учтём разность оборотов.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/planetarnye"><b>Планетарные редукторы</b><span>Соосность и большое передаточное</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российский аналог по габаритам</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

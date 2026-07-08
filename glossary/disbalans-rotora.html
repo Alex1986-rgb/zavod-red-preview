@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Дисбаланс ротора: что это в редукторе и мотор-редукторе</title>
+<meta name="description" content="Дисбаланс ротора в мотор-редукторе: что это, формула центробежной силы, единицы г·мм, классы балансировки по ГОСТ ИСО 1940 и влияние на вибрацию и подбор." />
+<link rel="canonical" href="https://zavod-red.ru/glossary/disbalans-rotora" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/glossary/disbalans-rotora" />
+<meta property="og:title" content="Дисбаланс ротора: что это в редукторе и мотор-редукторе" />
+<meta property="og:description" content="Дисбаланс ротора в мотор-редукторе: что это, формула центробежной силы, единицы г·мм, классы балансировки по ГОСТ ИСО 1940 и влияние на вибрацию и подбор." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.rich{max-width:860px}
+.rich p,.rich li{font-size:16px;line-height:1.7;color:var(--text)}
+.rich h2{font-size:24px;margin:34px 0 12px;letter-spacing:-.01em}
+.rich h3{font-size:19px;margin:24px 0 9px}
+.rich ul,.rich ol{margin:10px 0 10px 2px;padding-left:20px}.rich li{margin-bottom:8px}
+.rich a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}.rich a:hover{color:var(--red2)}
+.rich .lead-p{font-size:18px}
+.rich .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.rich table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.rich table.spec th,.rich table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.rich table.spec th{background:var(--card);white-space:nowrap;width:38%}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Дисбаланс ротора: причина вибрации на оборотной частоте", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Дисбаланс ротора в мотор-редукторе: что это, формула центробежной силы, единицы г·мм, классы балансировки по ГОСТ ИСО 1940 и влияние на вибрацию и подбор.", "mainEntityOfPage": "https://zavod-red.ru/glossary/disbalans-rotora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Дисбаланс ротора — что это", "item": "https://zavod-red.ru/glossary/disbalans-rotora"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Дисбаланс ротора: причина вибрации на оборотной частоте", "description": "Дисбаланс ротора в мотор-редукторе: что это, формула центробежной силы, единицы г·мм, классы балансировки по ГОСТ ИСО 1940 и влияние на вибрацию и подбор.", "inDefinedTermSet": "https://zavod-red.ru/glossary/", "url": "https://zavod-red.ru/glossary/disbalans-rotora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое дисбаланс ротора простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Это когда масса ротора распределена неравномерно и его центр тяжести не лежит на оси вращения. При вращении возникает центробежная сила, которая раскачивает механизм. В спектре вибрации дисбаланс виден как выраженный пик на оборотной частоте (1×)."}}, {"@type": "Question", "name": "В чём измеряют дисбаланс?", "acceptedAnswer": {"@type": "Answer", "text": "Величину дисбаланса измеряют в г·мм — это произведение неуравновешенной массы на её эксцентриситет (U = m·e). Удельный дисбаланс (на единицу массы ротора) выражают в г·мм/кг или через показатель e·ω в мм/с, по которому назначают класс балансировки G по ГОСТ ИСО 1940-1."}}, {"@type": "Question", "name": "Как отличить дисбаланс от расцентровки?", "acceptedAnswer": {"@type": "Answer", "text": "При дисбалансе доминирует пик на оборотной частоте 1× и вибрация в основном радиальная. При расцентровке сильна вторая гармоника 2×, заметна осевая вибрация и характерен сдвиг фазы на 180° по разные стороны муфты. Спектральный анализ позволяет их различить."}}, {"@type": "Question", "name": "Почему дисбаланс опаснее на высоких оборотах?", "acceptedAnswer": {"@type": "Answer", "text": "Потому что центробежная сила растёт пропорционально квадрату частоты вращения: F = m·e·ω². При удвоении оборотов сила и вибрация возрастают вчетверо. Поэтому высокооборотные роторы балансируют по более строгому классу (G2,5), чем тихоходные."}}, {"@type": "Question", "name": "Как устраняют дисбаланс?", "acceptedAnswer": {"@type": "Answer", "text": "Балансировкой: добавляют или снимают корректирующие массы так, чтобы центр масс совпал с осью вращения. Мелкие роторы балансируют на станке, крупные и собранные машины — в собственных опорах по показаниям виброанализатора. Также устраняют причину: чистят, восстанавливают геометрию, меняют изношенные детали."}}]}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Дисбаланс ротора — что это</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Глоссарий</div>
+  <h1>Дисбаланс ротора: причина вибрации на оборотной частоте</h1>
+  <p>Дисбаланс ротора — неравномерное распределение массы относительно оси вращения, при котором центр масс смещён от оси. Возникающая центробежная сила порождает вибрацию на оборотной частоте (1×) и растёт пропорционально квадрату оборотов.</p>
+</div></section>
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <img src="../assets/catalog/cat_coaxial.webp" alt="Дисбаланс ротора: причина вибрации на оборотной частоте" loading="lazy" style="width:100%;max-height:330px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:26px">
+  <div class="rich"><p class="lead-p">Дисбаланс — самая частая причина повышенной вибрации вращающихся машин. У мотор-редуктора неуравновешен обычно ротор электродвигателя или соединительная муфта. Смещённый центр масс создаёт центробежную силу, которая на каждом обороте раскачивает узел и передаётся на подшипники и корпус. В спектре дисбаланс проявляется чистым пиком на оборотной частоте (1×), что делает его легко распознаваемым.</p>
+<h2>Что такое дисбаланс ротора</h2><p>Дисбаланс — это несовпадение главной центральной оси инерции ротора с осью его вращения. Причины: неоднородность материала, погрешности изготовления, налипание грязи, износ, деформация вала, потеря балансировочного груза или лопасти вентилятора. При вращении несбалансированная масса создаёт центробежную силу, направленную наружу и вращающуюся вместе с ротором, — именно она и раскачивает механизм.</p><p>Различают статический дисбаланс (центр масс смещён, но ось инерции параллельна оси вращения), моментный (оси пересекаются в центре тяжести) и динамический — их комбинацию, характерную для реальных роторов. Статический выявляется даже на невращающемся роторе, динамический — только при вращении.</p><h2>Формула и единицы</h2><p>Центробежная сила от дисбаланса:</p><p><b>F = m · e · ω² = U · ω²</b>,</p><p>где m — неуравновешенная масса (кг), e — её эксцентриситет (м), ω — угловая скорость (рад/с), а произведение <b>U = m·e</b> — величина дисбаланса, измеряемая в <b>г·мм</b>. Ключевой вывод: сила растёт пропорционально <b>квадрату</b> оборотов, поэтому даже малый дисбаланс на высоких оборотах даёт заметную вибрацию.</p><table class="spec"><tbody><tr><th>Величина дисбаланса</th><td>U = m·e (г·мм)</td></tr><tr><th>Центробежная сила</th><td>F = m·e·ω²</td></tr><tr><th>Удельный дисбаланс</th><td>e<sub>per</sub> = U/M (г·мм/кг)</td></tr><tr><th>Признак в спектре</th><td>пик на 1× (оборотной частоте)</td></tr></tbody></table><div class="note">Качество балансировки нормируют классами G по ГОСТ ИСО 1940-1 (G0,4…G4000). Для роторов электродвигателей общего назначения типичен класс G6,3, для высокооборотных — G2,5. Класс задаёт допустимый удельный остаточный дисбаланс e<sub>per</sub>·ω в мм/с.</div><h2>Как распознать и типовые значения</h2><p>Дисбаланс диагностируют по спектру виброскорости: доминирующий пик приходится на оборотную частоту 1×, гармоники малы, вибрация примерно одинакова в горизонтальном и вертикальном направлениях и слабо зависит от нагрузки. Это отличает дисбаланс от расцентровки (сильная 2×) и механического ослабления (много гармоник). Общий уровень вибрации оценивают по ГОСТ ИСО 10816: для средних машин зона A (хорошо) — до 2,8 мм/с СКЗ, зона D (недопустимо) — свыше 7,1 мм/с.</p><ul><li>пик на 1× преобладает над остальными;</li><li>фаза стабильна, вибрация радиальная;</li><li>рост амплитуды с оборотами — квадратичный.</li></ul><h2>Влияние на эксплуатацию и подбор</h2><p>Дисбаланс перегружает подшипники знакопеременной радиальной силой, ускоряет их усталость и рост зазоров, повышает шум и может расшатать крепление. Лечится балансировкой ротора в собственных опорах или на станке. При подборе мотор-редуктора важно учитывать допустимую радиальную нагрузку на выходной вал и не превышать номинальные обороты двигателя — рассчитать это удобно в <a href="/podbor">калькуляторе подбора</a>. Готовые серии мотор-редукторов и соосных редукторов приведены в <a href="/catalog/soosnye">каталоге соосных редукторов</a> и общем <a href="/catalog/">каталоге</a>. Российские аналоги импортных приводов — в разделе <a href="/importozameshchenie">импортозамещения</a>.</p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <h3 style="margin-bottom:6px;font-size:22px">Подберём редуктор под вашу задачу</h3>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">Пришлите параметры, фото шильдика или маркировку — инженер рассчитает подбор и пришлёт КП.</p>
+    <a class="btn lg" data-zayavka href="#zayavka" style="min-width:240px;justify-content:center">Получить расчёт</a>
+    <p style="margin-top:14px"><a href="/podbor" style="color:var(--red2);font-weight:600">Калькулятор подбора по параметрам →</a></p>
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое дисбаланс ротора простыми словами?</summary><p>Это когда масса ротора распределена неравномерно и его центр тяжести не лежит на оси вращения. При вращении возникает центробежная сила, которая раскачивает механизм. В спектре вибрации дисбаланс виден как выраженный пик на оборотной частоте (1×).</p></details><details><summary>В чём измеряют дисбаланс?</summary><p>Величину дисбаланса измеряют в г·мм — это произведение неуравновешенной массы на её эксцентриситет (U = m·e). Удельный дисбаланс (на единицу массы ротора) выражают в г·мм/кг или через показатель e·ω в мм/с, по которому назначают класс балансировки G по ГОСТ ИСО 1940-1.</p></details><details><summary>Как отличить дисбаланс от расцентровки?</summary><p>При дисбалансе доминирует пик на оборотной частоте 1× и вибрация в основном радиальная. При расцентровке сильна вторая гармоника 2×, заметна осевая вибрация и характерен сдвиг фазы на 180° по разные стороны муфты. Спектральный анализ позволяет их различить.</p></details></div><div class="cat-faq"><details><summary>Почему дисбаланс опаснее на высоких оборотах?</summary><p>Потому что центробежная сила растёт пропорционально квадрату частоты вращения: F = m·e·ω². При удвоении оборотов сила и вибрация возрастают вчетверо. Поэтому высокооборотные роторы балансируют по более строгому классу (G2,5), чем тихоходные.</p></details><details><summary>Как устраняют дисбаланс?</summary><p>Балансировкой: добавляют или снимают корректирующие массы так, чтобы центр масс совпал с осью вращения. Мелкие роторы балансируют на станке, крупные и собранные машины — в собственных опорах по показаниям виброанализатора. Также устраняют причину: чистят, восстанавливают геометрию, меняют изношенные детали.</p></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Дисбаланс ротора</b> — смещение центра масс относительно оси вращения, порождающее центробежную силу F = m·e·ω² и вибрацию на оборотной частоте (1×). Величину дисбаланса измеряют в г·мм, качество балансировки нормируют классами G по ГОСТ ИСО 1940-1.</p><details class="seo-more"><summary>Подробнее: характеристики и таблицы</summary><div class="seo-body"><p>Дисбаланс — самая частая причина вибрации мотор-редукторов. Его сила растёт как квадрат оборотов, поэтому высокооборотные роторы требуют строгого класса балансировки. В спектре дисбаланс распознаётся по доминирующему пику 1× и радиальному характеру вибрации, что отличает его от расцентровки и ослабления.</p><table class="spec"><tbody><tr><th>Единица</th><td>г·мм (U = m·e)</td></tr><tr><th>Стандарт</th><td>ГОСТ ИСО 1940-1 (классы G)</td></tr><tr><th>Признак</th><td>пик на 1×, радиальная вибрация</td></tr></tbody></table><p>Корректный подбор по оборотам и радиальной нагрузке снижает риск перегруза подшипников: воспользуйтесь <a href="/podbor">калькулятором подбора</a>, изучите <a href="/catalog/soosnye">соосные редукторы</a> и подберите аналоги в разделе <a href="/importozameshchenie">импортозамещения</a>.</p></div></details></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>
