@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Расшифровка маркировки Varvel: как читать код</title>
+<meta name="description" content="Как расшифровать маркировку редуктора Varvel: серия, типоразмер, передаточное число, исполнение и монтаж. Как по шильдику подобрать российский аналог EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/rasshifrovka-markirovki-varvel" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/rasshifrovka-markirovki-varvel" />
+<meta property="og:title" content="Расшифровка маркировки Varvel: как читать код" />
+<meta property="og:description" content="Как расшифровать маркировку редуктора Varvel: серия, типоразмер, передаточное число, исполнение и монтаж. Как по шильдику подобрать российский аналог EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Расшифровка маркировки Varvel: как читать код", "description": "Как расшифровать маркировку редуктора Varvel: серия, типоразмер, передаточное число, исполнение и монтаж. Как по шильдику подобрать российский аналог EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/rasshifrovka-markirovki-varvel"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Как расшифровать маркировку Varvel", "item": "https://zavod-red.ru/blog/rasshifrovka-markirovki-varvel"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что означают буквы RS и RD в маркировке Varvel?", "acceptedAnswer": {"@type": "Answer", "text": "RS (и RT) — соосно-цилиндрический редуктор in-line: вход и выход на одной оси, компактный по длине. RD — цилиндрический с параллельными валами и полым валом, для навесного монтажа. Буквенный код всегда стоит первым и определяет тип передачи и геометрию корпуса."}}, {"@type": "Question", "name": "Что за число стоит после букв серии Varvel?", "acceptedAnswer": {"@type": "Answer", "text": "Число после буквенного кода — типоразмер корпуса (например RS 60, RS 70, RS 90). Чем оно больше, тем крупнее редуктор и выше допустимый крутящий момент. Для червячных серий число часто соответствует межосевому расстоянию в миллиметрах."}}, {"@type": "Question", "name": "Где на шильдике Varvel смотреть передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Передаточное число обозначено буквой i (ratio) и указано отдельным значением, часто дробным (например i=20, i=41,3). Рядом приводятся n₂ — обороты выходного вала и M₂ — крутящий момент. Эти три параметра — основа подбора аналога, они не зависят от фирменного кода."}}, {"@type": "Question", "name": "Можно ли подобрать аналог Varvel по стёртому шильдику?", "acceptedAnswer": {"@type": "Answer", "text": "Да. При нечитаемом шильдике тип определяют по расположению валов и корпусу, замеряют присоединительные размеры: диаметры и вылеты валов, фланец, лапы, входной фланец IEC. По типу и замерам инженер подберёт габаритный аналог без исходного обозначения."}}, {"@type": "Question", "name": "Чем червячные серии Varvel отличаются от соосных?", "acceptedAnswer": {"@type": "Answer", "text": "Соосные RS/RT дают КПД 0,96–0,98 и высокий ресурс, вход и выход на одной оси. Червячные MRS/VR/VS дают угол валов 90°, компактны и могут самотормозиться, но КПД ниже (0,7–0,9). Выбор зависит от компоновки привода и требований к КПД и самоторможению."}}, {"@type": "Question", "name": "Как расшифровать код двигателя мотор-редуктора Varvel?", "acceptedAnswer": {"@type": "Answer", "text": "В мотор-редукторе перед кодом редуктора идёт обозначение двигателя: мощность в кВт и число полюсов (4 полюса — 1500 об/мин, 6 — 1000, 2 — 3000). Габарит двигателя привязан к стандарту IEC, что позволяет подобрать российский двигатель к аналогу по фланцу и полюсности."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Маркировка Varvel</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Маркировки и обозначения</div>
+  <h1>Как расшифровать маркировку Varvel</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Обозначение Varvel редуктора кодирует тип передачи, типоразмер, передаточное число и исполнение в компактной строке букв и цифр. Научившись читать шильдик итальянского Varvel, вы за минуту определите характеристики привода и снимете данные для подбора российского аналога. Разберём структуру маркировки на примерах основных серий.</p>
+<h2>Серии Varvel и буквенные коды</h2><p>Итальянская марка Varvel строит обозначение по модульному принципу: буквенный код серии + типоразмер + передаточное + исполнение. Первый блок задаёт тип передачи:</p><ul><li><b>RS / RT</b> — соосно-цилиндрический (in-line, вход и выход на одной оси);</li><li><b>RD</b> — цилиндрический с параллельными валами, полый вал;</li><li><b>RN / RO / RV</b> — коническо-цилиндрический (валы под 90°);</li><li><b>FRS / FRT</b> — фланцевое исполнение соосных серий;</li><li><b>MRS</b> — червячные и червячно-цилиндрические серии (угол 90°);</li><li><b>VR / VS</b> — компактные червячные редукторы.</li></ul><p>Для мотор-редукторов перед кодом редуктора добавляется обозначение двигателя с мощностью и полюсностью, а типоразмер корпуса указывается числом сразу после букв серии.</p><h2>Пример: как читать RS 70 i=20</h2><p>Разберём типовое соосное обозначение Varvel по частям:</p><table class="spec"><tbody><tr><th>RS</th><td>соосно-цилиндрический редуктор (in-line)</td></tr><tr><th>70</th><td>типоразмер корпуса (крутящий момент до типоразмера)</td></tr><tr><th>i=20</th><td>передаточное число</td></tr><tr><th>B5 / IEC</th><td>монтаж и входной фланец под двигатель</td></tr></tbody></table><p>На шильдике всегда указаны фактические рабочие параметры: <b>n₂</b> — обороты выходного вала (об/мин), <b>M₂</b> — крутящий момент (Н·м) и <b>i</b> — передаточное число. Эти три числа не зависят от фирменного кода и служат основой при подборе замены.</p><div class="note">Для подбора российского аналога важны рабочие числа: тип передачи, момент M₂, передаточное i, мощность двигателя и монтажное исполнение. По ним <a href="/podbor">калькулятор подбора</a> находит эквивалент EVL по габаритам.</div><h2>Монтаж, вал и опции</h2><p>За передаточным числом идут коды исполнения: монтажное положение (B3, B5, B14, V1, V3), тип выходного вала (сплошной, полый под шпонку, под усадочный диск), входной фланец под IEC-двигатель (например 71B14, 90B5), наличие тормоза, второго конца вала и опций. Эти признаки переносят в аналог, чтобы редуктор встал на штатное место без переделки рамы.</p><h2>Как подобрать аналог Varvel по маркировке</h2><p>Алгоритм:<br>1) по буквам серии определяем тип передачи;<br>2) с шильдика снимаем M₂, n₂, i и мощность;<br>3) фиксируем монтаж, вал и фланец IEC;<br>4) подбираем габаритный аналог. Российская серия <a href="/reduktor/">EVL</a> повторяет присоединительные и габаритные размеры массовых типоразмеров Varvel по <a href="/catalog/soosnye">соосным</a>, <a href="/catalog/chervyachnye">червячным</a> и <a href="/catalog/konichesko-cilindricheskie">коническо-цилиндрическим</a> сериям. Про замену импорта — на странице <a href="/importozameshchenie">импортозамещения</a>, сопоставление серий — в разделе <a href="/brands/varvel">аналогов Varvel</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что означают буквы RS и RD в маркировке Varvel?</summary><div>RS (и RT) — соосно-цилиндрический редуктор in-line: вход и выход на одной оси, компактный по длине. RD — цилиндрический с параллельными валами и полым валом, для навесного монтажа. Буквенный код всегда стоит первым и определяет тип передачи и геометрию корпуса.</div></details><details><summary>Что за число стоит после букв серии Varvel?</summary><div>Число после буквенного кода — типоразмер корпуса (например RS 60, RS 70, RS 90). Чем оно больше, тем крупнее редуктор и выше допустимый крутящий момент. Для червячных серий число часто соответствует межосевому расстоянию в миллиметрах.</div></details><details><summary>Где на шильдике Varvel смотреть передаточное число?</summary><div>Передаточное число обозначено буквой i (ratio) и указано отдельным значением, часто дробным (например i=20, i=41,3). Рядом приводятся n₂ — обороты выходного вала и M₂ — крутящий момент. Эти три параметра — основа подбора аналога, они не зависят от фирменного кода.</div></details></div><div class="cat-faq"><details><summary>Можно ли подобрать аналог Varvel по стёртому шильдику?</summary><div>Да. При нечитаемом шильдике тип определяют по расположению валов и корпусу, замеряют присоединительные размеры: диаметры и вылеты валов, фланец, лапы, входной фланец IEC. По типу и замерам инженер подберёт габаритный аналог без исходного обозначения.</div></details><details><summary>Чем червячные серии Varvel отличаются от соосных?</summary><div>Соосные RS/RT дают КПД 0,96–0,98 и высокий ресурс, вход и выход на одной оси. Червячные MRS/VR/VS дают угол валов 90°, компактны и могут самотормозиться, но КПД ниже (0,7–0,9). Выбор зависит от компоновки привода и требований к КПД и самоторможению.</div></details><details><summary>Как расшифровать код двигателя мотор-редуктора Varvel?</summary><div>В мотор-редукторе перед кодом редуктора идёт обозначение двигателя: мощность в кВт и число полюсов (4 полюса — 1500 об/мин, 6 — 1000, 2 — 3000). Габарит двигателя привязан к стандарту IEC, что позволяет подобрать российский двигатель к аналогу по фланцу и полюсности.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Расшифровка маркировки Varvel</b> сводится к трём шагам: по буквам серии (RS, RD, RN, MRS) определяют тип передачи, по числу — типоразмер корпуса, а с шильдика снимают рабочие параметры M₂, n₂ и i. Именно рабочие числа, а не фирменный код, позволяют подобрать российский аналог по габаритам.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Маркировка редукторов Varvel построена по модульному принципу: блок редуктора (серия + типоразмер + передаточное) и блок исполнения (монтаж, вал, фланец IEC). Для подбора аналога достаточно определить тип передачи по буквам и снять с шильдика крутящий момент, передаточное число и мощность двигателя.</p><table class="spec"><tbody><tr><th>Серия</th><td>Тип передачи</td></tr><tr><th>RS / RT</th><td>соосно-цилиндрический, in-line</td></tr><tr><th>RD</th><td>цилиндрический, параллельные валы</td></tr><tr><th>RN / RO / RV</th><td>коническо-цилиндрический, 90°</td></tr><tr><th>MRS / VR / VS</th><td>червячный и червячно-цилиндрический</td></tr></tbody></table><p>Подобрать замену импортного Varvel можно через <a href="/podbor">калькулятор подбора</a> или на странице <a href="/importozameshchenie">импортозамещения</a>. Смотрите также <a href="/brands/varvel">аналоги Varvel</a> и весь <a href="/catalog/">каталог редукторов</a> Завода Редукторов (ООО «НИИ АТТ», Челябинск).</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём аналог Varvel по вашему шильдику</h2><p>Пришлите фото маркировки Varvel — определим тип, передаточное и присоединительные размеры и подберём российский аналог с КП за 15 минут.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/brands/varvel"><b>Аналоги Varvel</b><span>Российская замена по габаритам</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение редукторов</b><span>Замена импорта без переделки</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

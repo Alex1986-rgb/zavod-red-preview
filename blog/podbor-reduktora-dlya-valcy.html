@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для вальцов: момент, обороты, тип</title>
+<meta name="description" content="Как подобрать редуктор для вальцов: расчёт момента прокатки, обороты валка, сервис-фактор при ударной нагрузке и тип передачи. Аналоги EVL под замену импорта." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-dlya-valcy" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-dlya-valcy" />
+<meta property="og:title" content="Подбор редуктора для вальцов: момент, обороты, тип" />
+<meta property="og:description" content="Как подобрать редуктор для вальцов: расчёт момента прокатки, обороты валка, сервис-фактор при ударной нагрузке и тип передачи. Аналоги EVL под замену импорта." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для вальцов: момент, обороты, тип", "description": "Как подобрать редуктор для вальцов: расчёт момента прокатки, обороты валка, сервис-фактор при ударной нагрузке и тип передачи. Аналоги EVL под замену импорта.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-dlya-valcy"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Как подобрать редуктор для вальцов", "item": "https://zavod-red.ru/blog/podbor-reduktora-dlya-valcy"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какие обороты валка типичны для вальцов?", "acceptedAnswer": {"@type": "Answer", "text": "Для большинства дробильных, прокатных и пищевых вальцов рабочая частота вращения валка составляет 10–60 об/мин. Из-за низких оборотов и большого момента передаточные числа получаются высокими (40–150 и более), что часто требует многоступенчатого или тихоходного редуктора."}}, {"@type": "Question", "name": "Почему для вальцов важен стопорный момент?", "acceptedAnswer": {"@type": "Answer", "text": "При заклинивании материала между валками момент резко возрастает и может в разы превысить рабочий. Максимально допустимый (пиковый) момент редуктора должен покрывать этот стопорный пик. Иначе первой ломается тихоходная ступень или выходной вал. Поэтому подбор ведут с запасом по пиковому моменту, а не только по номиналу."}}, {"@type": "Question", "name": "Какой сервис-фактор брать для вальцов?", "acceptedAnswer": {"@type": "Answer", "text": "При ровной подаче достаточно SF 1,5–1,7, при ударной загрузке кусками — 1,75–2,0, для реверсивной прокатки — от 2,0. Знакопеременная нагрузка на реверсивных вальцах особенно тяжела для зубьев, поэтому запас берут максимальный."}}, {"@type": "Question", "name": "Можно ли ставить червячный редуктор на вальцы?", "acceptedAnswer": {"@type": "Answer", "text": "На тяжёлых дробильных и прокатных вальцах червячный редуктор не применяют: его КПД (0,7–0,9) и ресурс под ударной нагрузкой недостаточны, а тепловыделение велико. Предпочтительны цилиндрические и коническо-цилиндрические передачи с КПД 0,96–0,98. Червячный допустим только на лёгких малонагруженных вальцах."}}, {"@type": "Question", "name": "Как рассчитать передаточное число для вальцов?", "acceptedAnswer": {"@type": "Answer", "text": "Передаточное число i = n₁/n₂, где n₁ — обороты двигателя (около 1450 для 4-полюсного), n₂ — требуемые обороты валка. При n₂ около 20 об/мин получим i ≈ 72. Из стандартного ряда выбирают ближайшее значение; при очень больших i применяют трёхступенчатый или тихоходный редуктор."}}, {"@type": "Question", "name": "Как подобрать российский аналог редуктора вальцов?", "acceptedAnswer": {"@type": "Answer", "text": "Аналог подбирают по типу передачи, моменту M₂ с учётом стопорного пика, передаточному числу и монтажному исполнению. Российская серия EVL повторяет присоединительные и габаритные размеры массовых импортных типоразмеров, поэтому замена выполняется без переделки станины вальцов."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для вальцов</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Как подобрать редуктор для вальцов</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Вальцы — прокатный, дробильный или тестомесильный привод, где редуктор передаёт большой крутящий момент на медленно вращающийся валок. Нагрузка часто ударная, а на реверсивных вальцах ещё и знакопеременная. Редуктор для вальцов подбирают по моменту прокатки и оборотам валка, уделяя особое внимание запасу и прочности выходного вала. Разберём расчёт по шагам.</p>
+<h2>Характер нагрузки на вальцах</h2><p>В зависимости от применения вальцы бывают дробильные (измельчение), прокатные (металл, резина, полимеры) и пищевые (мукомольные, кондитерские). Общее у них — низкие обороты валка (обычно 10–60 об/мин) и высокий момент, а также склонность к пиковым перегрузкам при попадании крупного куска или неоднородного материала. На реверсивных вальцах добавляется знакопеременный характер нагрузки, тяжёлый для зубчатых передач.</p><ul><li>Обороты валка: как правило 10–60 об/мин;</li><li>Режим: чаще S1, на прокате возможны S4–S5 с реверсами;</li><li>Нагрузка: ударная, возможны стопорные пики.</li></ul><h2>Расчёт момента и передаточного</h2><p>Требуемый момент на валке определяют по усилию прокатки/дробления и радиусу валка либо по паспорту машины. Затем:</p><ul><li>n₂ — рабочие обороты валка (об/мин);</li><li>i = n₁ / n₂, где n₁ ≈ 1450 об/мин (4-полюсный двигатель);</li><li>M₂ = 9550·P / n₂ (Н·м) — момент на выходном валу.</li></ul><p>Поскольку обороты валка малы, а момент велик, передаточные числа получаются высокими (i от 40 до 150 и более), что часто требует двух- или трёхступенчатого редуктора либо тихоходного исполнения.</p><div class="note">На вальцах критичен запас по стопорному моменту. При заклинивании между валками момент резко возрастает — максимально допустимый момент редуктора должен покрывать этот пик, иначе ломается тихоходная ступень или выходной вал.</div><h2>Сервис-фактор</h2><table class="spec"><tbody><tr><th>Условие работы</th><td>Сервис-фактор SF</td></tr><tr><th>Ровная подача материала</th><td>1,5–1,7</td></tr><tr><th>Ударная загрузка кусками</th><td>1,75–2,0</td></tr><tr><th>Реверсивная прокатка</th><td>2,0 и выше</td></tr></tbody></table><p>Знакопеременная нагрузка и удары требуют высокого сервис-фактора; для дробильных и реверсивных вальцов берут SF от 1,75.</p><h2>Тип передачи и исполнение</h2><p>Для вальцов практически всегда применяют цилиндрические передачи из-за их высокого КПД (0,96–0,98) и стойкости к ударам:</p><ul><li><b>Соосно-цилиндрический</b> — для соосной установки на валок через муфту;</li><li><b>Коническо-цилиндрический</b> — при боковом расположении привода;</li><li><b>Тихоходный цилиндрический</b> с большим i — для очень низких оборотов и высокого момента.</li></ul><p>Червячные передачи на тяжёлых вальцах не применяют — их КПД и ресурс под ударной нагрузкой недостаточны. Подходящее исполнение подскажет <a href="/catalog/tihohodnye-reduktory">раздел тихоходных редукторов</a>, а для высоких передаточных — <a href="/catalog/reduktory-bolshogo-peredatochnogo">редукторы большого передаточного числа</a>.</p><h2>Монтаж и замена импорта</h2><p>Уточните монтажное положение (B3/B5/V1), тип выходного вала (сплошной под муфту или полый под усадочный диск) и нагрузку на конце вала от натяжения/муфты. По этим данным <a href="/podbor">калькулятор подбора</a> найдёт готовый типоразмер EVL. Если меняете импортный редуктор вальцов, таблицы соответствия — на странице <a href="/importozameshchenie">импортозамещения</a>.</p><h2>Защита от перегрузки на вальцах</h2><p>Стопорные перегрузки — главная причина поломок привода вальцов, поэтому защита обязательна:</p><ul><li><b>Предохранительная муфта.</b> Срезной штифт или фрикционная муфта размыкают привод при заклинивании материала между валками, спасая зубчатую передачу.</li><li><b>Реле момента / тока.</b> Электронная защита отключает двигатель при превышении момента; для реверсивных вальцов настраивают пороги в обе стороны.</li><li><b>Регулируемый зазор.</b> Возможность быстро развести валки снижает риск стопора при попадании крупного или твёрдого куска.</li><li><b>Плавный пуск.</b> Частотник смягчает разгон и снижает ударную нагрузку в момент захвата материала.</li></ul><p>Сочетание запаса по стопорному моменту и защиты от перегрузки обеспечивает приводу вальцов долгий ресурс. На каждое изделие выдаём паспорт, гарантия — 24 месяца.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Какие обороты валка типичны для вальцов?</summary><div>Для большинства дробильных, прокатных и пищевых вальцов рабочая частота вращения валка составляет 10–60 об/мин. Из-за низких оборотов и большого момента передаточные числа получаются высокими (40–150 и более), что часто требует многоступенчатого или тихоходного редуктора.</div></details><details><summary>Почему для вальцов важен стопорный момент?</summary><div>При заклинивании материала между валками момент резко возрастает и может в разы превысить рабочий. Максимально допустимый (пиковый) момент редуктора должен покрывать этот стопорный пик. Иначе первой ломается тихоходная ступень или выходной вал. Поэтому подбор ведут с запасом по пиковому моменту, а не только по номиналу.</div></details><details><summary>Какой сервис-фактор брать для вальцов?</summary><div>При ровной подаче достаточно SF 1,5–1,7, при ударной загрузке кусками — 1,75–2,0, для реверсивной прокатки — от 2,0. Знакопеременная нагрузка на реверсивных вальцах особенно тяжела для зубьев, поэтому запас берут максимальный.</div></details></div><div class="cat-faq"><details><summary>Можно ли ставить червячный редуктор на вальцы?</summary><div>На тяжёлых дробильных и прокатных вальцах червячный редуктор не применяют: его КПД (0,7–0,9) и ресурс под ударной нагрузкой недостаточны, а тепловыделение велико. Предпочтительны цилиндрические и коническо-цилиндрические передачи с КПД 0,96–0,98. Червячный допустим только на лёгких малонагруженных вальцах.</div></details><details><summary>Как рассчитать передаточное число для вальцов?</summary><div>Передаточное число i = n₁/n₂, где n₁ — обороты двигателя (около 1450 для 4-полюсного), n₂ — требуемые обороты валка. При n₂ около 20 об/мин получим i ≈ 72. Из стандартного ряда выбирают ближайшее значение; при очень больших i применяют трёхступенчатый или тихоходный редуктор.</div></details><details><summary>Как подобрать российский аналог редуктора вальцов?</summary><div>Аналог подбирают по типу передачи, моменту M₂ с учётом стопорного пика, передаточному числу и монтажному исполнению. Российская серия EVL повторяет присоединительные и габаритные размеры массовых импортных типоразмеров, поэтому замена выполняется без переделки станины вальцов.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Подбор редуктора для вальцов</b> ведётся по моменту на валке и его низким оборотам (10–60 об/мин), из-за чего передаточные числа велики. Ключевое требование — запас по стопорному моменту при заклинивании материала и высокий сервис-фактор при ударной или реверсивной нагрузке.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Привод вальцов подбирают по крутящему моменту прокатки/дробления, требуемым оборотам валка и передаточному числу. Применяют цилиндрические и коническо-цилиндрические редукторы с КПД 0,96–0,98, сервис-фактором 1,5–2,0+ и проверкой пикового момента против стопорной перегрузки.</p><table class="spec"><tbody><tr><th>Параметр вальцов</th><td>Значение</td></tr><tr><th>Обороты валка</th><td>10–60 об/мин</td></tr><tr><th>Передаточное i</th><td>40–150+</td></tr><tr><th>Сервис-фактор</th><td>1,5–2,0+</td></tr></tbody></table><p>Подберите привод через <a href="/podbor">калькулятор подбора</a>, посмотрите <a href="/catalog/tihohodnye-reduktory">тихоходные редукторы</a> и <a href="/catalog/reduktory-bolshogo-peredatochnogo">модели с большим передаточным числом</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор под ваши вальцы</h2><p>Сообщите обороты валка, момент прокатки и режим (реверс/удары) — подберём типоразмер EVL с запасом по стопорному моменту.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/tihohodnye-reduktory"><b>Тихоходные редукторы</b><span>Высокий момент, низкие обороты</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российские аналоги под замену</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

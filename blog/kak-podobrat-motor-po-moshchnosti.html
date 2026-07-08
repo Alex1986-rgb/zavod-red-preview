@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Как подобрать электродвигатель к редуктору</title>
+<meta name="description" content="Подбор двигателя к редуктору: расчёт мощности, число полюсов, фланец IEC, монтаж B5/B14. Когда брать готовый мотор-редуктор, а когда собирать привод отдельно." />
+<link rel="canonical" href="https://zavod-red.ru/blog/kak-podobrat-motor-po-moshchnosti" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/kak-podobrat-motor-po-moshchnosti" />
+<meta property="og:title" content="Как подобрать электродвигатель к редуктору" />
+<meta property="og:description" content="Подбор двигателя к редуктору: расчёт мощности, число полюсов, фланец IEC, монтаж B5/B14. Когда брать готовый мотор-редуктор, а когда собирать привод отдельно." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как подобрать электродвигатель к редуктору", "description": "Подбор двигателя к редуктору: расчёт мощности, число полюсов, фланец IEC, монтаж B5/B14. Когда брать готовый мотор-редуктор, а когда собирать привод отдельно.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/kak-podobrat-motor-po-moshchnosti"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Подбор двигателя к редуктору", "item": "https://zavod-red.ru/blog/kak-podobrat-motor-po-moshchnosti"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать мощность двигателя для редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Мощность считают по выходной нагрузке: P = M₂ · n₂ / (9550 · η), где M₂ — момент на выходе в Н·м, n₂ — обороты выхода, η — КПД редуктора. Результат округляют вверх до стандартного ряда (0,75; 1,1; 1,5; 2,2 кВт и т.д.). Небольшой запас нормален, двукратный — избыточен."}}, {"@type": "Question", "name": "Какое число полюсов двигателя выбрать?", "acceptedAnswer": {"@type": "Answer", "text": "Чаще всего берут 4-полюсный двигатель на 1500 об/мин — это оптимум по моменту, габариту и цене. 2 полюса (3000 об/мин) выбирают для высокооборотных приводов, 6 и 8 полюсов (1000 и 750 об/мин) — когда нужны низкие обороты и меньшее передаточное число редуктора."}}, {"@type": "Question", "name": "Что такое фланец IEC B5 и B14?", "acceptedAnswer": {"@type": "Answer", "text": "IEC — стандарт присоединительных размеров электродвигателей. B5 — большой фланец со сквозными отверстиями под болты, B14 — малый фланец с резьбовыми отверстиями. Габарит по высоте оси (71, 80, 90, 100…) и центрирующий буртик стандартизованы, поэтому моторы одного размера взаимозаменяемы."}}, {"@type": "Question", "name": "Что лучше — мотор-редуктор или редуктор с двигателем отдельно?", "acceptedAnswer": {"@type": "Answer", "text": "Готовый мотор-редуктор компактнее, собран соосно и не требует муфты — оптимален для типовых приводов. Отдельная сборка нужна, если требуется нестандартный или имеющийся двигатель, взрывозащита, особый частотный привод. Для большинства конвейеров и мешалок берут готовый мотор-редуктор."}}, {"@type": "Question", "name": "Можно ли поставить двигатель большей мощности на тот же редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Технически да, если фланец IEC совпадает, но важно не превысить допустимый момент редуктора. Более мощный мотор способен развить момент выше каталожного и перегрузить зубчатую передачу. Ограничивает не двигатель, а допустимый момент типоразмера редуктора с учётом сервис-фактора."}}, {"@type": "Question", "name": "Как обороты двигателя связаны с передаточным числом?", "acceptedAnswer": {"@type": "Answer", "text": "Требуемое передаточное число равно отношению входных оборотов к выходным: i = n₁/n₂. Чем ниже полюсность мотора (выше обороты), тем большее передаточное число нужно для тех же выходных оборотов. Поэтому выбор полюсности и передаточного делают совместно."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор двигателя</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Расчёты</div>
+  <h1>Подбор двигателя к редуктору</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Подбор двигателя к редуктору — это не только мощность в киловаттах. Нужно совпасть по числу полюсов, присоединительному фланцу IEC, монтажному исполнению и диаметру вала. Ошибка в любом пункте — и мотор либо не встанет, либо даст не те обороты. Разберём порядок подбора по шагам и подскажем, когда проще взять готовый мотор-редуктор.</p>
+<h2>Шаг 1. Требуемая мощность двигателя</h2><p>Подбор двигателя к редуктору начинается с расчёта мощности на выходном валу под нагрузку, а затем пересчёта её на вход с учётом КПД. Требуемая мощность мотора:</p><p><b>P<sub>дв</sub> = M₂ · n₂ / (9550 · η)</b></p><p>где M₂ — момент на выходе (Н·м), n₂ — обороты выхода (об/мин), η — КПД редуктора. Полученное значение округляют вверх до ближайшего стандартного ряда: 0,55; 0,75; 1,1; 1,5; 2,2; 3; 4; 5,5; 7,5; 11 кВт и т.д. Небольшой запас нормален, но избыток в 2 раза — это лишняя цена и заниженный КПД мотора на частичной нагрузке.</p><h2>Шаг 2. Число полюсов и синхронные обороты</h2><p>Обороты на входе редуктора задаёт полюсность двигателя. Для сети 50 Гц синхронные обороты:</p><table class="spec"><tbody><tr><th>Полюса</th><th>Синхронные об/мин</th><th>Под нагрузкой</th></tr><tr><td>2</td><td>3000</td><td>~2850–2900</td></tr><tr><td>4</td><td>1500</td><td>~1420–1470</td></tr><tr><td>6</td><td>1000</td><td>~940–970</td></tr><tr><td>8</td><td>750</td><td>~700–730</td></tr></tbody></table><p>Самый массовый вариант — 4 полюса (1500 об/мин): оптимальный баланс момента, габарита и цены. От входных оборотов и нужных выходных зависит требуемое передаточное число i = n₁/n₂.</p><h2>Шаг 3. Фланец IEC и монтажное исполнение</h2><p>Двигатель стыкуется с редуктором по стандарту IEC. Ключевые размеры — габарит по высоте оси (56, 63, 71, 80, 90, 100, 112, 132, 160…) и тип крепления:</p><ul><li><b>IM B5</b> — большой фланец с отверстиями под болты;</li><li><b>IM B14</b> — малый фланец с резьбовыми отверстиями;</li><li><b>IM B3</b> — на лапах;</li><li><b>B35</b> — комбинированный (лапы + фланец).</li></ul><div class="note">Габарит IEC двигателя должен совпадать с посадочным местом редуктора. Диаметр вала и центрирующий буртик тоже стандартизованы по IEC, поэтому мотор одного габарита от разных производителей взаимозаменяем.</div><h2>Шаг 4. Мотор-редуктор или сборка отдельно</h2><p>Есть два пути. <b>Готовый мотор-редуктор</b> — двигатель и редуктор в единой сборке, компактно, соосно, без промежуточной муфты; берут для типовых приводов конвейеров, мешалок, ворот. <b>Отдельная сборка</b> редуктора и двигателя через муфту или фланец нужна, когда требуется нестандартный или уже имеющийся мотор, взрывозащита, частотный привод особого типа. Каталог готовых приводов — <a href="/catalog/motor-reduktory-380v">мотор-редукторы 380В</a> и <a href="/catalog/motor-reduktory-220v">220В</a>.</p><h2>Шаг 5. Проверка режима и опций</h2><p>Останется учесть режим работы (S1–S8), класс изоляции, IP, наличие тормоза, датчика оборотов, принудительного обдува. Для частых пусков и частотного регулирования проверяют нагрев на низких оборотах.</p><h2>Особенности работы с частотным приводом</h2><p>Всё чаще двигатель питается не напрямую от сети, а через частотный преобразователь (ПЧ). Это снимает вопрос пусковых токов и позволяет плавно менять обороты, но добавляет два нюанса для подбора. Первый — охлаждение: на низких частотах встроенный вентилятор мотора вращается медленно и хуже обдувает корпус, поэтому при длительной работе на пониженных оборотах момент приходится снижать или ставить независимый обдув (принудительную вентиляцию). Второй — верхний диапазон: выше номинальной частоты (50 Гц) двигатель отдаёт постоянную мощность, но падающий момент, что важно учитывать, если планируется разгон выше синхронных оборотов. Для приводов с ПЧ выбирают моторы с изоляцией, стойкой к импульсным перенапряжениям, и при необходимости с датчиком обратной связи.</p><table class="spec"><tbody><tr><th>Режим ПЧ</th><th>Что учесть</th></tr><tr><td>Длительно &lt; 25 Гц</td><td>независимый обдув, снижение момента</td></tr><tr><td>25–50 Гц</td><td>номинальный момент доступен</td></tr><tr><td>&gt; 50 Гц</td><td>падение момента, постоянная мощность</td></tr></tbody></table><p>Подобрать связку двигатель + редуктор под конкретную машину удобно через <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный расчёт</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как рассчитать мощность двигателя для редуктора?</summary><div>Мощность считают по выходной нагрузке: P = M₂ · n₂ / (9550 · η), где M₂ — момент на выходе в Н·м, n₂ — обороты выхода, η — КПД редуктора. Результат округляют вверх до стандартного ряда (0,75; 1,1; 1,5; 2,2 кВт и т.д.). Небольшой запас нормален, двукратный — избыточен.</div></details><details><summary>Какое число полюсов двигателя выбрать?</summary><div>Чаще всего берут 4-полюсный двигатель на 1500 об/мин — это оптимум по моменту, габариту и цене. 2 полюса (3000 об/мин) выбирают для высокооборотных приводов, 6 и 8 полюсов (1000 и 750 об/мин) — когда нужны низкие обороты и меньшее передаточное число редуктора.</div></details><details><summary>Что такое фланец IEC B5 и B14?</summary><div>IEC — стандарт присоединительных размеров электродвигателей. B5 — большой фланец со сквозными отверстиями под болты, B14 — малый фланец с резьбовыми отверстиями. Габарит по высоте оси (71, 80, 90, 100…) и центрирующий буртик стандартизованы, поэтому моторы одного размера взаимозаменяемы.</div></details></div><div class="cat-faq"><details><summary>Что лучше — мотор-редуктор или редуктор с двигателем отдельно?</summary><div>Готовый мотор-редуктор компактнее, собран соосно и не требует муфты — оптимален для типовых приводов. Отдельная сборка нужна, если требуется нестандартный или имеющийся двигатель, взрывозащита, особый частотный привод. Для большинства конвейеров и мешалок берут готовый мотор-редуктор.</div></details><details><summary>Можно ли поставить двигатель большей мощности на тот же редуктор?</summary><div>Технически да, если фланец IEC совпадает, но важно не превысить допустимый момент редуктора. Более мощный мотор способен развить момент выше каталожного и перегрузить зубчатую передачу. Ограничивает не двигатель, а допустимый момент типоразмера редуктора с учётом сервис-фактора.</div></details><details><summary>Как обороты двигателя связаны с передаточным числом?</summary><div>Требуемое передаточное число равно отношению входных оборотов к выходным: i = n₁/n₂. Чем ниже полюсность мотора (выше обороты), тем большее передаточное число нужно для тех же выходных оборотов. Поэтому выбор полюсности и передаточного делают совместно.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Подбор двигателя к редуктору</b> ведут по пяти параметрам: мощность, число полюсов, фланец IEC, монтажное исполнение и режим работы. Совпадение по габариту IEC и диаметру вала обеспечивает взаимозаменяемость моторов разных производителей.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Двигатель к редуктору подбирают по требуемой мощности P = M₂ · n₂ / (9550 · η) и полюсности, задающей входные обороты. Присоединение стандартизовано по IEC: габарит по высоте оси и тип фланца (B5, B14, B3, B35) должны совпадать с посадочным местом редуктора.</p><table class="spec"><tbody><tr><th>Полюса</th><td>Синхронные об/мин</td></tr><tr><th>2</th><td>3000</td></tr><tr><th>4</th><td>1500</td></tr><tr><th>6</th><td>1000</td></tr><tr><th>8</th><td>750</td></tr></tbody></table><p>Готовые приводы — в разделах <a href="/catalog/motor-reduktory-380v">мотор-редукторы 380В</a> и <a href="/catalog/motor-reduktory-220v">220В</a>. Подобрать связку под задачу поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный расчёт</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Соберём привод под вашу нагрузку</h2><p>Пришлите момент, обороты и монтаж — подберём двигатель и редуктор, совместимые по IEC, с КП за 15 минут.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/catalog/motor-reduktory-380v"><b>Мотор-редукторы 380В</b><span>Готовые приводы в сборе</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Связка мотор + редуктор</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный расчёт</b><span>Проверка мощности и фланца</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Как рассчитать крутящий момент на выходе редуктора</title>
+<meta name="description" content="Расчёт крутящего момента редуктора по формуле M=9550·P/n: связь мощности, оборотов, передаточного числа и КПД. Формулы, примеры и подбор привода под нужный момент." />
+<link rel="canonical" href="https://zavod-red.ru/blog/kak-rasschitat-krutyashchiy-moment" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/kak-rasschitat-krutyashchiy-moment" />
+<meta property="og:title" content="Как рассчитать крутящий момент на выходе редуктора" />
+<meta property="og:description" content="Расчёт крутящего момента редуктора по формуле M=9550·P/n: связь мощности, оборотов, передаточного числа и КПД. Формулы, примеры и подбор привода под нужный момент." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Как рассчитать крутящий момент на выходе редуктора", "description": "Расчёт крутящего момента редуктора по формуле M=9550·P/n: связь мощности, оборотов, передаточного числа и КПД. Формулы, примеры и подбор привода под нужный момент.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/kak-rasschitat-krutyashchiy-moment"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Расчёт крутящего момента", "item": "https://zavod-red.ru/blog/kak-rasschitat-krutyashchiy-moment"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "По какой формуле считают крутящий момент редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Момент на валу считают по формуле M = 9550 · P / n, где P — мощность в кВт, n — обороты в об/мин, результат в Н·м. Момент на выходе редуктора получают умножением входного момента на передаточное число и КПД: M₂ = M₁ · i · η."}}, {"@type": "Question", "name": "Откуда берётся коэффициент 9550 в формуле?", "acceptedAnswer": {"@type": "Answer", "text": "9550 — это переводной коэффициент, равный 60000 / (2π). Он позволяет подставлять мощность сразу в киловаттах, а обороты в об/мин и получать момент в ньютон-метрах без промежуточного перевода в радианы в секунду. Для мощности в л.с. коэффициент другой."}}, {"@type": "Question", "name": "Нужно ли учитывать КПД при расчёте момента?", "acceptedAnswer": {"@type": "Answer", "text": "Да, особенно для червячных редукторов, где КПД составляет 0,7–0,9 и потери значительны. Момент на выходе всегда умножают на КПД: без этого расчётный момент окажется завышен на 10–30 %, а привод — недогружен по факту. Для цилиндрических передач КПД близок к 0,96–0,98."}}, {"@type": "Question", "name": "Чем отличается номинальный момент от допустимого каталожного?", "acceptedAnswer": {"@type": "Answer", "text": "Номинальный — это рабочий момент, который создаёт ваша нагрузка. Допустимый (каталожный) момент типоразмера должен быть выше номинального на величину сервис-фактора, учитывающего удары, число пусков и режим работы. Выбирают редуктор так, чтобы каталожный момент перекрывал рабочий с запасом."}}, {"@type": "Question", "name": "Как посчитать момент, если известны только обороты и нужная сила?", "acceptedAnswer": {"@type": "Answer", "text": "Если известна сила F на плече r (например, на барабане радиусом r), момент равен M = F · r. Отсюда, зная требуемые обороты, находят мощность P = M · n / (9550 · η) и подбирают двигатель. Это обратная задача подбора привода по нагрузке."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Крутящий момент</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Расчёты</div>
+  <h1>Расчёт крутящего момента</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Крутящий момент — главный параметр, по которому выбирают редуктор под задачу. Ошибиться на этапе расчёта означает получить перегруженный или, наоборот, избыточный по цене привод. Разберём, как за две минуты посчитать момент по мощности и оборотам, учесть КПД и передаточное число и не запутаться в единицах.</p>
+<h2>Базовая формула момента через мощность</h2><p>Расчёт крутящего момента начинается с простой связи мощности и оборотов. Для вращающегося вала момент равен:</p><p><b>M = 9550 · P / n</b></p><p>где M — крутящий момент в Н·м, P — мощность в кВт, n — частота вращения в об/мин. Число 9550 — переводной коэффициент (60000 / 2π), который сразу даёт результат в Н·м при мощности в кВт. Если мощность в ваттах, а обороты в рад/с, формула превращается в классическую M = P / ω.</p><div class="note">Пример: двигатель 4 кВт при 1500 об/мин развивает M = 9550 · 4 / 1500 = 25,5 Н·м на своём валу. Это момент <b>на входе</b> редуктора, не на выходе.</div><h2>Момент на выходе: передаточное число и КПД</h2><p>Редуктор снижает обороты в i раз и во столько же (за вычетом потерь) повышает момент. Момент на тихоходном валу:</p><p><b>M₂ = M₁ · i · η</b></p><p>где i — передаточное число (i = n₁/n₂), η — КПД передачи. Именно КПД отличает червячный привод от цилиндрического и сильно влияет на результат:</p><ul><li>цилиндрический и соосно-цилиндрический — η ≈ 0,96–0,98 на ступень;</li><li>коническо-цилиндрический — η ≈ 0,94–0,96;</li><li>червячный одноступенчатый — η ≈ 0,7–0,9 в зависимости от передаточного;</li><li>планетарный — η ≈ 0,95–0,98.</li></ul><p>Для многоступенчатых передач КПД перемножается: две цилиндрические ступени дают η ≈ 0,96 · 0,96 ≈ 0,92, а червячно-цилиндрическая комбинация — η ≈ 0,85 · 0,97 ≈ 0,82. Пренебрегать этим нельзя: разница в 10 % КПД напрямую переходит в 10 % расхождения по моменту на выходе.</p><h2>Момент, мощность и обороты: что первично</h2><p>Инженеры часто путают, что задаёт что. Мощность — это способность совершать работу в единицу времени, а момент — «крутящее усилие» в конкретной точке. Их связывает частота вращения: при одной и той же мощности низкие обороты означают высокий момент, и наоборот. Именно поэтому редуктор, снижая обороты, повышает момент — мощность (за вычетом потерь) сохраняется. Практический вывод: чтобы получить большой момент на выходе, не обязательно ставить мощный двигатель — достаточно большого передаточного числа. Но есть предел: слишком большое i при малой мощности даёт низкие выходные обороты, а тепловая мощность червячной ступени ограничивает передаваемую мощность. Поэтому момент, обороты и передаточное подбирают совместно.</p><table class="spec"><tbody><tr><th>P, кВт</th><th>n, об/мин</th><th>M, Н·м</th></tr><tr><td>1,5</td><td>1450</td><td>9,9</td></tr><tr><td>1,5</td><td>100</td><td>143</td></tr><tr><td>1,5</td><td>25</td><td>573</td></tr></tbody></table><p>Таблица наглядно показывает: при неизменной мощности 1,5 кВт снижение оборотов в 58 раз поднимает момент в те же 58 раз. Это и есть работа редуктора.</p><h2>Полный пример расчёта</h2><p>Пусть нужен привод конвейера: двигатель 5,5 кВт, 1450 об/мин, требуемые обороты на выходе — 45 об/мин, редуктор коническо-цилиндрический (η ≈ 0,95).</p><table class="spec"><tbody><tr><th>Момент на входе M₁</th><td>9550 · 5,5 / 1450 = 36,2 Н·м</td></tr><tr><th>Передаточное i</th><td>1450 / 45 ≈ 32,2</td></tr><tr><th>Момент на выходе M₂</th><td>36,2 · 32,2 · 0,95 ≈ 1107 Н·м</td></tr></tbody></table><p>Полученные ~1107 Н·м — это номинальный рабочий момент. Каталожный (допустимый) момент выбранного типоразмера должен быть выше с учётом <a href="/glossary/">сервис-фактора</a>, который отражает характер нагрузки и число пусков в час.</p><h2>Обратная задача: подбор по требуемому моменту</h2><p>Часто известен не двигатель, а нужный момент на исполнительном органе — например, 800 Н·м на барабане. Тогда идут в обратную сторону: задают обороты выхода, по ним и моменту находят требуемую мощность P = M₂ · n₂ / (9550 · η), а дальше подбирают ближайший стандартный двигатель вверх. Этот путь удобно проходить через <a href="/podbor">калькулятор подбора</a> — он сразу учитывает ряд стандартных передаточных и типоразмеров.</p><h2>Частые ошибки в расчёте момента</h2><p>Три ошибки встречаются чаще всего: считают момент по синхронным оборотам (1500), а не по фактическим под нагрузкой (1450–1470); забывают КПД у червячных передач и получают завышенный момент на 20–30 %; путают номинальный момент двигателя и пусковой. Для ответственных приводов момент проверяют ещё и по пиковой нагрузке при пуске и по <a href="/uslugi/podbor">инженерному расчёту</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>По какой формуле считают крутящий момент редуктора?</summary><div>Момент на валу считают по формуле M = 9550 · P / n, где P — мощность в кВт, n — обороты в об/мин, результат в Н·м. Момент на выходе редуктора получают умножением входного момента на передаточное число и КПД: M₂ = M₁ · i · η.</div></details><details><summary>Откуда берётся коэффициент 9550 в формуле?</summary><div>9550 — это переводной коэффициент, равный 60000 / (2π). Он позволяет подставлять мощность сразу в киловаттах, а обороты в об/мин и получать момент в ньютон-метрах без промежуточного перевода в радианы в секунду. Для мощности в л.с. коэффициент другой.</div></details><details><summary>Нужно ли учитывать КПД при расчёте момента?</summary><div>Да, особенно для червячных редукторов, где КПД составляет 0,7–0,9 и потери значительны. Момент на выходе всегда умножают на КПД: без этого расчётный момент окажется завышен на 10–30 %, а привод — недогружен по факту. Для цилиндрических передач КПД близок к 0,96–0,98.</div></details></div><div class="cat-faq"><details><summary>Чем отличается номинальный момент от допустимого каталожного?</summary><div>Номинальный — это рабочий момент, который создаёт ваша нагрузка. Допустимый (каталожный) момент типоразмера должен быть выше номинального на величину сервис-фактора, учитывающего удары, число пусков и режим работы. Выбирают редуктор так, чтобы каталожный момент перекрывал рабочий с запасом.</div></details><details><summary>Как посчитать момент, если известны только обороты и нужная сила?</summary><div>Если известна сила F на плече r (например, на барабане радиусом r), момент равен M = F · r. Отсюда, зная требуемые обороты, находят мощность P = M · n / (9550 · η) и подбирают двигатель. Это обратная задача подбора привода по нагрузке.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Расчёт крутящего момента</b> редуктора строится на двух формулах: момент на валу M = 9550 · P / n и момент на выходе M₂ = M₁ · i · η. Правильно учтённые передаточное число и КПД дают реальный рабочий момент, по которому подбирают типоразмер привода.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Крутящий момент связывает мощность двигателя, обороты и передаточное число редуктора. Чтобы получить момент на тихоходном валу, момент двигателя умножают на передаточное отношение и КПД передачи. Для червячных редукторов КПД низкий (0,7–0,9), для цилиндрических — высокий (0,96–0,98), и это принципиально меняет результат.</p><table class="spec"><tbody><tr><th>Тип передачи</th><td>КПД η</td></tr><tr><th>Цилиндрический / соосный</th><td>0,96–0,98</td></tr><tr><th>Коническо-цилиндрический</th><td>0,94–0,96</td></tr><tr><th>Червячный</th><td>0,70–0,90</td></tr><tr><th>Планетарный</th><td>0,95–0,98</td></tr></tbody></table><p>Подобрать редуктор под требуемый момент поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный расчёт</a> специалистов Завода Редукторов. Термины и обозначения — в <a href="/glossary/">глоссарии</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Проверим расчёт момента под вашу задачу</h2><p>Пришлите мощность, обороты и требуемый момент — подберём типоразмер с нужным запасом и КП за 15 минут.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/glossary/"><b>Глоссарий терминов</b><span>Момент, КПД, передаточное число</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный расчёт привода</b><span>Проверка момента и запаса</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

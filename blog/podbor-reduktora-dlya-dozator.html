@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для дозатора: момент, обороты, тип</title>
+<meta name="description" content="Как подобрать редуктор для дозатора: расчёт момента шнека, точные низкие обороты, стабильность частоты и монтаж. Мотор-редукторы EVL под замену импорта." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-dlya-dozator" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-dlya-dozator" />
+<meta property="og:title" content="Подбор редуктора для дозатора: момент, обороты, тип" />
+<meta property="og:description" content="Как подобрать редуктор для дозатора: расчёт момента шнека, точные низкие обороты, стабильность частоты и монтаж. Мотор-редукторы EVL под замену импорта." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для дозатора: момент, обороты, тип", "description": "Как подобрать редуктор для дозатора: расчёт момента шнека, точные низкие обороты, стабильность частоты и монтаж. Мотор-редукторы EVL под замену импорта.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-dlya-dozator"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Как подобрать редуктор для дозатора", "item": "https://zavod-red.ru/blog/podbor-reduktora-dlya-dozator"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Почему для дозатора важна стабильность оборотов?", "acceptedAnswer": {"@type": "Answer", "text": "Доза материала пропорциональна числу оборотов шнека или тарели, поэтому колебания частоты вращения дают разброс массы порции. Привод дозатора должен держать стабильные низкие обороты; при регулировке частотником проверяют равномерность подачи во всём рабочем диапазоне частот."}}, {"@type": "Question", "name": "Какие обороты нужны на выходе редуктора дозатора?", "acceptedAnswer": {"@type": "Answer", "text": "Для большинства шнековых и тарельчатых дозаторов рабочие обороты составляют 5–40 об/мин, иногда доли оборота в минуту. Из-за низких оборотов передаточные числа велики, поэтому применяют червячные, червячно-цилиндрические или двухступенчатые редукторы."}}, {"@type": "Question", "name": "Какой тип редуктора выбрать для шнекового дозатора?", "acceptedAnswer": {"@type": "Answer", "text": "Для компактных дозаторов удобны червячные редукторы: большое передаточное в малом корпусе и самоторможение, удерживающее шнек при остановке. Для точных регулируемых приводов берут соосно-цилиндрические с более высоким КПД (0,96–0,98). Выбор зависит от требований к точности и компоновке."}}, {"@type": "Question", "name": "Можно ли регулировать подачу дозатора частотником?", "acceptedAnswer": {"@type": "Answer", "text": "Да, регулировка частотным преобразователем — обычное решение для дозаторов. Но на низких частотах у самотормозящих червячных передач растёт нагрев, а обдув двигателя слабеет. В таких случаях предусматривают независимое охлаждение, датчик температуры или запас по типоразмеру."}}, {"@type": "Question", "name": "Какой класс защиты нужен приводу дозатора?", "acceptedAnswer": {"@type": "Answer", "text": "Дозаторы часто работают в пищевой, химической и комбикормовой отраслях с мойкой и пылью, поэтому берут двигатель с защитой не ниже IP55, при интенсивной мойке — выше. Важны стойкие уплотнения выходного вала и, при необходимости, гигиеническое исполнение корпуса."}}, {"@type": "Question", "name": "Как подобрать аналог импортного редуктора дозатора?", "acceptedAnswer": {"@type": "Answer", "text": "Аналог подбирают по типу передачи, моменту на шнеке, требуемым низким оборотам, передаточному числу и монтажному исполнению с IEC-фланцем. Российская серия EVL повторяет присоединительные и габаритные размеры массовых импортных мотор-редукторов, поэтому замена не требует переделки дозатора. Достаточно снять с шильдика мощность, обороты и передаточное, зафиксировать монтаж и диаметр полого вала — по этим данным подбирается точный эквивалент."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для дозатора</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Как подобрать редуктор для дозатора</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Дозатор — шнековый, тарельчатый или барабанный — отмеряет материал порциями, поэтому точность дозы напрямую зависит от стабильности оборотов привода. Редуктор для дозатора выбирают по моменту на шнеке и очень низким выходным оборотам, а часто ещё и под работу с частотным преобразователем для плавной регулировки подачи. Разберём порядок подбора.</p>
+<h2>Специфика дозирующего привода</h2><p>Главная особенность дозатора — низкие и точные обороты выходного вала. Доза пропорциональна числу оборотов шнека или тарели, поэтому колебания частоты вращения превращаются в разброс массы порции. Типичные рабочие обороты — от единиц до нескольких десятков в минуту. Нагрузка обычно умеренная, но у шнековых дозаторов сыпучих и вязких сред возможны пики при уплотнении и залипании материала.</p><ul><li>Обороты выхода: обычно 5–40 об/мин (иногда доли оборота);</li><li>Режим: чаще S1, у порционных дозаторов — циклический S3–S4;</li><li>Нагрузка: умеренная, с пиками при трогании уплотнённого материала.</li></ul><h2>Расчёт момента и передаточного</h2><p>Момент на шнеке считают по сопротивлению материала перемещению и трению в желобе либо берут из паспорта дозатора. Далее:</p><ul><li>n₂ — требуемые обороты шнека/тарели (об/мин);</li><li>i = n₁ / n₂ — при очень низких n₂ передаточное велико;</li><li>M₂ = 9550·P / n₂ (Н·м).</li></ul><p>Из-за низких оборотов передаточные числа получаются большими, поэтому часто применяют червячно-цилиндрические или двухступенчатые комбинации; при регулировке частотником диапазон оборотов расширяется программно.</p><div class="note">Если доза регулируется частотным преобразователем, проверьте работу привода на низких частотах: у самотормозящих червячных передач при малых оборотах растёт нагрев, а вентиляция двигателя ослабевает — возможно, понадобится независимое охлаждение или запас по типоразмеру.</div><h2>Тип передачи</h2><table class="spec"><tbody><tr><th>Тип</th><td>Особенности для дозатора</td></tr><tr><th>Червячный</th><td>компактен, самоторможение, большое i, КПД 0,7–0,9</td></tr><tr><th>Червячно-цилиндрический</th><td>очень большие i, низкие обороты</td></tr><tr><th>Соосно-цилиндрический</th><td>высокий КПД, для точных приводов</td></tr></tbody></table><p>Для компактных шнековых дозаторов удобны <a href="/catalog/chervyachnye">червячные редукторы</a> — они дают большое передаточное в малом корпусе и самотормозятся, удерживая шнек при остановке. Для точных приводов с регулировкой берут <a href="/catalog/soosnye">соосно-цилиндрические</a> с более высоким КПД.</p><h2>Монтаж и исполнение</h2><p>Дозаторы часто работают в пищевой, химической и комбикормовой отраслях — учитывайте требования к гигиене, мойке и защите (IP55 и выше). Уточните монтаж (B5/B14 фланец, B3 лапы), тип выходного вала (полый под вал шнека со шпонкой) и наличие обогрева/охлаждения. По расчёту <a href="/podbor">калькулятор подбора</a> предложит <a href="/catalog/motor-reduktory-380v">мотор-редуктор</a> серии EVL. Меняете импортный привод — таблицы на странице <a href="/importozameshchenie">импортозамещения</a>.</p><h2>Точность дозы и стабильность привода</h2><p>Погрешность дозирования складывается из нескольких источников, и привод влияет на них напрямую:</p><ul><li><b>Пульсация оборотов.</b> При неравномерной частоте вращения шнека объём порции «плавает». Стабильные обороты обеспечивают качественный частотник с обратной связью по скорости и жёсткая передача без люфтов.</li><li><b>Люфт в передаче.</b> При реверсивном или старт-стопном дозировании кинематический зазор редуктора вносит недобор в начале хода. Для точных доз берут передачи с малым люфтом.</li><li><b>Просыпь на остановке.</b> Самотормозящий червячный редуктор фиксирует шнек и предотвращает досыпку после команды «стоп».</li></ul><p>Для порционного дозирования (режим S3–S4) учитывают частоту циклов: множество пусков в час повышает нагрев двигателя и износ, поэтому берут запас по типоразмеру. На каждое изделие выдаём паспорт, гарантия — 24 месяца; весь ассортимент — в <a href="/reduktor/">каталоге серии EVL</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Почему для дозатора важна стабильность оборотов?</summary><div>Доза материала пропорциональна числу оборотов шнека или тарели, поэтому колебания частоты вращения дают разброс массы порции. Привод дозатора должен держать стабильные низкие обороты; при регулировке частотником проверяют равномерность подачи во всём рабочем диапазоне частот.</div></details><details><summary>Какие обороты нужны на выходе редуктора дозатора?</summary><div>Для большинства шнековых и тарельчатых дозаторов рабочие обороты составляют 5–40 об/мин, иногда доли оборота в минуту. Из-за низких оборотов передаточные числа велики, поэтому применяют червячные, червячно-цилиндрические или двухступенчатые редукторы.</div></details><details><summary>Какой тип редуктора выбрать для шнекового дозатора?</summary><div>Для компактных дозаторов удобны червячные редукторы: большое передаточное в малом корпусе и самоторможение, удерживающее шнек при остановке. Для точных регулируемых приводов берут соосно-цилиндрические с более высоким КПД (0,96–0,98). Выбор зависит от требований к точности и компоновке.</div></details></div><div class="cat-faq"><details><summary>Можно ли регулировать подачу дозатора частотником?</summary><div>Да, регулировка частотным преобразователем — обычное решение для дозаторов. Но на низких частотах у самотормозящих червячных передач растёт нагрев, а обдув двигателя слабеет. В таких случаях предусматривают независимое охлаждение, датчик температуры или запас по типоразмеру.</div></details><details><summary>Какой класс защиты нужен приводу дозатора?</summary><div>Дозаторы часто работают в пищевой, химической и комбикормовой отраслях с мойкой и пылью, поэтому берут двигатель с защитой не ниже IP55, при интенсивной мойке — выше. Важны стойкие уплотнения выходного вала и, при необходимости, гигиеническое исполнение корпуса.</div></details><details><summary>Как подобрать аналог импортного редуктора дозатора?</summary><div>Аналог подбирают по типу передачи, моменту на шнеке, требуемым низким оборотам, передаточному числу и монтажному исполнению с IEC-фланцем. Российская серия EVL повторяет присоединительные и габаритные размеры массовых импортных мотор-редукторов, поэтому замена не требует переделки дозатора. Достаточно снять с шильдика мощность, обороты и передаточное, зафиксировать монтаж и диаметр полого вала — по этим данным подбирается точный эквивалент.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Подбор редуктора для дозатора</b> определяется точными низкими оборотами: доза пропорциональна оборотам шнека, поэтому важна стабильность частоты. Момент считают по сопротивлению материала, а из-за малых оборотов применяют червячные и червячно-цилиндрические приводы с большим передаточным числом.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Привод дозатора подбирают по моменту на шнеке или тарели и требуемым оборотам (5–40 об/мин). Для компактных дозаторов берут червячные редукторы с самоторможением, для точных регулируемых — соосно-цилиндрические. При регулировке частотником проверяют нагрев на низких частотах.</p><table class="spec"><tbody><tr><th>Параметр дозатора</th><td>Значение</td></tr><tr><th>Обороты выхода</th><td>5–40 об/мин</td></tr><tr><th>Тип передачи</th><td>червячный / соосно-цилиндрический</td></tr><tr><th>Защита</th><td>IP55 и выше</td></tr></tbody></table><p>Подберите привод через <a href="/podbor">калькулятор подбора</a>, посмотрите <a href="/catalog/chervyachnye">червячные редукторы</a> и <a href="/catalog/motor-reduktory-380v">мотор-редукторы 380В</a>. При замене импортного привода снимите с шильдика мощность, обороты и передаточное число, зафиксируйте монтаж и диаметр полого вала под шнек — по этим данным подбирается точный габаритный эквивалент серии EVL без переделки дозатора.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор под ваш дозатор</h2><p>Сообщите тип дозатора, обороты шнека и способ регулировки — подберём мотор-редуктор EVL со стабильной подачей.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/chervyachnye"><b>Червячные редукторы</b><span>Большое передаточное, самотормоз</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/importozameshchenie"><b>Импортозамещение</b><span>Российские аналоги под замену</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

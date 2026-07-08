@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Подбор редуктора для ленточного конвейера: момент, обороты</title>
+<meta name="description" content="Как подобрать редуктор для ленточного конвейера: расчёт момента и оборотов барабана, выбор типа и передаточного, сервис-фактор, исполнение, типоразмеры EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-dlya-lentochnyy-konveyer" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-dlya-lentochnyy-konveyer" />
+<meta property="og:title" content="Подбор редуктора для ленточного конвейера: момент, обороты" />
+<meta property="og:description" content="Как подобрать редуктор для ленточного конвейера: расчёт момента и оборотов барабана, выбор типа и передаточного, сервис-фактор, исполнение, типоразмеры EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор редуктора для ленточного конвейера: момент, обороты", "description": "Как подобрать редуктор для ленточного конвейера: расчёт момента и оборотов барабана, выбор типа и передаточного, сервис-фактор, исполнение, типоразмеры EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-dlya-lentochnyy-konveyer"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Как подобрать редуктор для ленточного конвейера", "item": "https://zavod-red.ru/blog/podbor-reduktora-dlya-lentochnyy-konveyer"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как рассчитать редуктор для ленточного конвейера?", "acceptedAnswer": {"@type": "Answer", "text": "Определите тяговое усилие ленты F из массы ленты и груза, сопротивления роликов и угла наклона. Момент на барабане M₂ = F·R (R — радиус барабана), обороты n₂ = V/(2πR) по скорости ленты, передаточное i = n₁/n₂. Мощность P = F·V/(1000·η). Момент умножают на сервис-фактор режима."}}, {"@type": "Question", "name": "Какой сервис-фактор у ленточного конвейера?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно ниже, чем у скребкового, из-за равномерной нагрузки: 1,0–1,25 при плавном пуске и стабильной загрузке, 1,25–1,5 при колебаниях загрузки, 1,5 и выше для тяжёлых режимов с частыми пусками. Устройство плавного пуска или частотник снижают пиковые нагрузки и позволяют брать меньший запас."}}, {"@type": "Question", "name": "Какой редуктор лучше для ленточного конвейера?", "acceptedAnswer": {"@type": "Answer", "text": "Для непрерывной работы предпочтительны соосно-цилиндрические и коническо-цилиндрические редукторы с КПД 0,94–0,97 — они экономичнее и меньше греются, чем червячные. Коническо-цилиндрические удобны при приводе под 90°. Полый вал упрощает посадку на вал барабана без муфты."}}, {"@type": "Question", "name": "Как определить обороты приводного барабана?", "acceptedAnswer": {"@type": "Answer", "text": "По скорости ленты V и радиусу барабана R: n₂ = V / (2πR). Скорость ленты задаётся технологией транспортировки. Обороты барабана вместе с оборотами двигателя дают передаточное число i = n₁/n₂, по которому выбирают редуктор."}}, {"@type": "Question", "name": "Нужен ли тормоз на наклонном конвейере?", "acceptedAnswer": {"@type": "Answer", "text": "Да, при значительном уклоне. После остановки гружёная лента может поехать назад под действием веса груза. Для удержания применяют двигатель со встроенным тормозом или обратный стопор (храповой механизм). На горизонтальных конвейерах со спокойной нагрузкой тормоз обычно не нужен."}}, {"@type": "Question", "name": "Чем удобен редуктор с полым валом для конвейера?", "acceptedAnswer": {"@type": "Answer", "text": "Полый выходной вал насаживается прямо на вал приводного барабана и фиксируется, исключая муфту и упрощая монтаж и центровку. Это экономит место и снижает число деталей привода. Такие редукторы фиксируют реактивным упором. Смотрите раздел редукторов с полым валом в каталоге."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для ленточного конвейера</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Как подобрать редуктор для ленточного конвейера</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Ленточный конвейер работает с равномерной нагрузкой и длинными пробегами, поэтому его привод ценят за высокий КПД и надёжность при непрерывной работе. Редуктор для ленточного конвейера подбирают по тяговому усилию ленты и оборотам приводного барабана. Разберём порядок расчёта — от усилия до готового типоразмера EVL.</p>
+<h2>Особенности привода ленточного конвейера</h2><p>По сравнению со скребковым, ленточный конвейер обычно нагружен ровнее:</p><ul><li>плавный ход, равномерная нагрузка, редкие удары — режим ближе к S1;</li><li>длительная непрерывная работа — важен высокий КПД и умеренный нагрев;</li><li>тяговое усилие определяется массой ленты и груза, трением роликов и углом наклона;</li><li>плавный пуск (частотник или устройство плавного пуска) снижает пиковые нагрузки.</li></ul><p>Для непрерывной работы предпочтительны соосно-цилиндрические и коническо-цилиндрические редукторы с КПД 0,94–0,97 — они экономичнее червячных.</p><h2>Расчёт момента и оборотов</h2><p>Порядок расчёта привода приводного барабана:</p><ol><li>Тяговое усилие ленты F — из массы ленты и груза, коэффициента сопротивления роликов и угла наклона трассы;</li><li>Момент на барабане: M₂ = F·R, где R — радиус приводного барабана;</li><li>Обороты барабана из скорости ленты V: n₂ = V/(2πR);</li><li>Передаточное i = n₁/n₂ (n₁ обычно 1500 об/мин);</li><li>Мощность: P = F·V/(1000·η), кВт, где η — КПД привода.</li></ol><div class="note">Для длинных и наклонных конвейеров учитывайте пусковой момент и удержание при остановке под уклоном — может понадобиться тормоз или обратный стопор, чтобы лента не поехала назад.</div><h2>Пример прикидочного расчёта</h2><p>Разберём условный пример. Горизонтальный ленточный конвейер длиной 30 м перемещает 40 т/ч, приводной барабан радиусом 0,2 м, скорость ленты 1,0 м/с. Тяговое усилие складывается из сопротивления движению ленты и груза по роликам (коэффициент сопротивления ориентировочно 0,02–0,035) и, при наклоне, составляющей веса груза. Для горизонтальной трассы усилие получается сравнительно небольшим — допустим, около 3–4 кН. Мощность: P = F·V/1000 ≈ 3500 × 1,0 / 1000 ≈ 3,5 кВт, с учётом КПД берут двигатель 4 кВт. Момент на барабане: M₂ = F·R ≈ 3500 × 0,2 ≈ 700 Н·м. Обороты: n₂ = V/(2πR) ≈ 1,0/(2·3,14·0,2) ≈ 0,8 об/с ≈ 48 об/мин. Передаточное i = 1500/48 ≈ 31. С сервис-фактором 1,25 требуемый номинальный момент ≈ 875 Н·м. Видно, что при равной производительности ленточный конвейер требует меньшего усилия и запаса, чем скребковый, — за счёт качения по роликам вместо волочения.</p><h2>Сервис-фактор и исполнение</h2><p>Благодаря равномерной нагрузке сервис-фактор ниже, чем у скребкового конвейера:</p><table class="spec"><tbody><tr><th>Условия</th><td>Ориентировочный SF</td></tr><tr><th>Равномерная нагрузка, плавный пуск</th><td>1,0–1,25</td></tr><tr><th>Умеренные колебания загрузки</th><td>1,25–1,5</td></tr><tr><th>Тяжёлый режим, частые пуски</th><td>1,5 и выше</td></tr></tbody></table><p>Исполнение: горизонтальный или наклонный монтаж на лапах (B3) либо фланец, полый вал под вал барабана — удобны <a href="/catalog/reduktory-s-polym-valom">редукторы с полым валом</a>. Уплотнения — от пыли транспортируемого материала.</p><h2>Готовые типоразмеры и подбор</h2><p>Мы (Завод Редукторов, ООО «НИИ АТТ», Челябинск) выпускаем соосно-цилиндрические и коническо-цилиндрические редукторы серии EVL для приводов ленточных конвейеров, с паспортом и гарантией 24 месяца. Смотрите раздел <a href="/catalog/reduktory-dlya-konveyera">редукторов для конвейеров</a>. Типоразмер по вашему тяговому усилию, скорости ленты и монтажу подберёт <a href="/podbor">калькулятор подбора</a>, а расчёт под нестандартную трассу — <a href="/uslugi/podbor">услуга подбора</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как рассчитать редуктор для ленточного конвейера?</summary><div>Определите тяговое усилие ленты F из массы ленты и груза, сопротивления роликов и угла наклона. Момент на барабане M₂ = F·R (R — радиус барабана), обороты n₂ = V/(2πR) по скорости ленты, передаточное i = n₁/n₂. Мощность P = F·V/(1000·η). Момент умножают на сервис-фактор режима.</div></details><details><summary>Какой сервис-фактор у ленточного конвейера?</summary><div>Обычно ниже, чем у скребкового, из-за равномерной нагрузки: 1,0–1,25 при плавном пуске и стабильной загрузке, 1,25–1,5 при колебаниях загрузки, 1,5 и выше для тяжёлых режимов с частыми пусками. Устройство плавного пуска или частотник снижают пиковые нагрузки и позволяют брать меньший запас.</div></details><details><summary>Какой редуктор лучше для ленточного конвейера?</summary><div>Для непрерывной работы предпочтительны соосно-цилиндрические и коническо-цилиндрические редукторы с КПД 0,94–0,97 — они экономичнее и меньше греются, чем червячные. Коническо-цилиндрические удобны при приводе под 90°. Полый вал упрощает посадку на вал барабана без муфты.</div></details></div><div class="cat-faq"><details><summary>Как определить обороты приводного барабана?</summary><div>По скорости ленты V и радиусу барабана R: n₂ = V / (2πR). Скорость ленты задаётся технологией транспортировки. Обороты барабана вместе с оборотами двигателя дают передаточное число i = n₁/n₂, по которому выбирают редуктор.</div></details><details><summary>Нужен ли тормоз на наклонном конвейере?</summary><div>Да, при значительном уклоне. После остановки гружёная лента может поехать назад под действием веса груза. Для удержания применяют двигатель со встроенным тормозом или обратный стопор (храповой механизм). На горизонтальных конвейерах со спокойной нагрузкой тормоз обычно не нужен.</div></details><details><summary>Чем удобен редуктор с полым валом для конвейера?</summary><div>Полый выходной вал насаживается прямо на вал приводного барабана и фиксируется, исключая муфту и упрощая монтаж и центровку. Это экономит место и снижает число деталей привода. Такие редукторы фиксируют реактивным упором. Смотрите раздел редукторов с полым валом в каталоге.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор для ленточного конвейера</b> подбирают по тяговому усилию ленты и оборотам приводного барабана. Равномерная нагрузка позволяет брать умеренный сервис-фактор, а высокий КПД соосных и коническо-цилиндрических редукторов экономит энергию при непрерывной работе.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Привод ленточного конвейера рассчитывают по тяговому усилию ленты: момент M₂ = F·R на барабане, обороты n₂ = V/(2πR), мощность P = F·V/(1000·η). Равномерный режим позволяет брать сервис-фактор 1,0–1,25, а для непрерывной работы выбирают редукторы с высоким КПД.</p><table class="spec"><tbody><tr><th>Величина</th><td>Формула</td></tr><tr><th>Момент M₂</th><td>F·R × сервис-фактор</td></tr><tr><th>Обороты n₂</th><td>V/(2πR)</td></tr><tr><th>Мощность P</th><td>F·V/(1000·η)</td></tr></tbody></table><p>Готовые типоразмеры — в разделе <a href="/catalog/reduktory-dlya-konveyera">редукторов для конвейеров</a>. Подбор — через <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">услугу подбора</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём привод для ленточного конвейера</h2><p>Пришлите массу груза, скорость ленты, наклон и радиус барабана — рассчитаем момент и предложим типоразмер EVL с КП.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Типоразмер по усилию ленты</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/reduktory-dlya-konveyera"><b>Редукторы для конвейеров</b><span>Приводы для непрерывной работы</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Услуга подбора</b><span>Расчёт под трассу конвейера</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

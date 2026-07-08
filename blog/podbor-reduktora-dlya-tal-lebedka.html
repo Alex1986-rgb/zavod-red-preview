@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Редуктор для тали и лебёдки: подбор по моменту и тормозу</title>
+<meta name="description" content="Как подобрать редуктор для тали и лебёдки: расчёт момента подъёма, самоторможение, тормоз, кратность полиспаста, обороты барабана и типоразмеры EVL." />
+<link rel="canonical" href="https://zavod-red.ru/blog/podbor-reduktora-dlya-tal-lebedka" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-dlya-tal-lebedka" />
+<meta property="og:title" content="Редуктор для тали и лебёдки: подбор по моменту и тормозу" />
+<meta property="og:description" content="Как подобрать редуктор для тали и лебёдки: расчёт момента подъёма, самоторможение, тормоз, кратность полиспаста, обороты барабана и типоразмеры EVL." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Редуктор для тали и лебёдки: подбор по моменту и тормозу", "description": "Как подобрать редуктор для тали и лебёдки: расчёт момента подъёма, самоторможение, тормоз, кратность полиспаста, обороты барабана и типоразмеры EVL.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/podbor-reduktora-dlya-tal-lebedka"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Как подобрать редуктор для тали и лебёдки", "item": "https://zavod-red.ru/blog/podbor-reduktora-dlya-tal-lebedka"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как посчитать момент редуктора для лебёдки?", "acceptedAnswer": {"@type": "Answer", "text": "Сначала находят усилие на канате F = m·g/(a·η_п), где a — кратность полиспаста. Затем момент на барабане M = F·D/2, где D — диаметр барабана. Если барабан на выходном валу, это и есть момент редуктора. Полученное значение умножают на сервис-фактор по группе режима работы."}}, {"@type": "Question", "name": "Можно ли использовать самоторможение червяка вместо тормоза?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, как средство безопасности — нельзя. Самоторможение червячной передачи снижает КПД, но при вибрации и нагреве может ослабнуть и допустить сползание груза. По правилам подъёмный механизм обязательно комплектуют нормально-замкнутым тормозом, который удерживает груз при обесточивании двигателя."}}, {"@type": "Question", "name": "Как полиспаст влияет на подбор редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Полиспаст кратностью a снижает усилие на канате в a раз, но во столько же увеличивает длину и скорость выборки каната. Это уменьшает требуемый момент, но повышает обороты барабана. При подборе усилие считают как F = m·g/(a·η_п), а обороты барабана — с учётом кратности полиспаста."}}, {"@type": "Question", "name": "Какой сервис-фактор брать для тали и лебёдки?", "acceptedAnswer": {"@type": "Answer", "text": "Сервис-фактор берут по группе режима работы (по ISO/ГОСТ — от лёгкого до весьма тяжёлого), обычно 1,4–2,0. Чем чаще подъёмы, больше груз и продолжительность включения, тем выше группа режима и запас. Для редких подъёмов достаточно 1,4, для интенсивной крановой работы — до 2,0 и выше."}}, {"@type": "Question", "name": "Какой тип редуктора выбрать для лебёдки?", "acceptedAnswer": {"@type": "Answer", "text": "Для нечастых подъёмов подходит червячный или червячно-цилиндрический — компактный, но обязательно с тормозом. Для интенсивной работы выбирают цилиндрический или коническо-цилиндрический редуктор с высоким КПД и большим ресурсом. Во всех случаях привод комплектуют нормально-замкнутым тормозом."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для лебёдки</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Подбор под задачу</div>
+  <h1>Как подобрать редуктор для тали и лебёдки</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">В подъёмном механизме редуктор не имеет права на ошибку: <b>редуктор для тали и лебёдки</b> удерживает груз на весу, поэтому к моменту и передаточному добавляется главное требование — гарантированное торможение. Разберём, как посчитать момент на барабане с учётом полиспаста, выбрать тормоз и не спутать самоторможение с настоящей безопасностью.</p>
+<h2>Что считаем для подъёмного привода</h2><p>Исходные данные — грузоподъёмность и скорость подъёма. Усилие на канате зависит от массы груза и кратности полиспаста (полиспаст снижает усилие, но увеличивает длину каната). Дальше считаем момент на барабане:</p><ul><li>тяговое усилие F = m·g / (a·η_п), где a — кратность полиспаста, η_п — КПД полиспаста;</li><li>момент на барабане M = F·D/2, где D — диаметр барабана;</li><li>обороты барабана n₂ = v_подъёма·a·60 / (π·D).</li></ul><h2>Момент, обороты, передаточное</h2><p>Момент на выходном валу редуктора равен моменту на барабане (если барабан на выходном валу). Передаточное i = n₁ / n₂. Мощность привода P = F·v / (1000·η).</p><table class="spec"><tbody><tr><th>Параметр</th><td>Формула / ориентир</td></tr><tr><th>Усилие на канате F</th><td>m·g/(a·η_п)</td></tr><tr><th>Момент на барабане</th><td>F·D/2</td></tr><tr><th>Обороты барабана n₂</th><td>обычно 10–60 об/мин</td></tr><tr><th>Сервис-фактор Sf</th><td>1,4–2,0 (по группе режима)</td></tr></tbody></table><h2>Тормоз — главное требование</h2><p>Подъёмный механизм обязан удерживать груз при отключении двигателя. Это обеспечивает тормоз, а не самоторможение червячной передачи.</p><div class="note">Не полагайтесь на самоторможение червячного редуктора как на средство безопасности. Оно снижает КПД, но при вибрации и в горячем состоянии может «поплыть». По правилам подъёмный механизм комплектуют нормально-замкнутым тормозом, который держит груз при обесточивании. Используйте <a href="/catalog/reduktory-s-tormozom">редуктор с тормозом</a> или мотор-редуктор со встроенным тормозом.</div><h2>Тип редуктора и режим</h2><p>Выбор зависит от интенсивности работы (группы режима по ISO/ГОСТ — от лёгкого до весьма тяжёлого):</p><ul><li>для нечастых подъёмов — червячный или червячно-цилиндрический (компактно, но помним про тормоз);</li><li>для интенсивной работы — <a href="/catalog/cilindricheskie">цилиндрический</a> или коническо-цилиндрический с высоким КПД и ресурсом;</li><li>для больших передаточных — двухступенчатые схемы.</li></ul><p>Сервис-фактор берут по группе режима: чем чаще и тяжелее подъёмы, тем выше запас. Российская серия EVL заменяет импортные крановые и лебёдочные приводы по габаритам — подробнее на странице <a href="/importozameshchenie">импортозамещения</a>, подбор — через <a href="/podbor">калькулятор</a>.</p><h2>Пример подбора</h2><p>Лебёдка, груз 2000 кг, полиспаст 2, диаметр барабана 0,4 м, скорость подъёма 0,15 м/с. Усилие на канате F ≈ 2000·9,81/(2·0,96) ≈ 10220 Н. Момент на барабане ≈ 10220·0,2 ≈ 2044 Н·м. Обороты барабана n₂ ≈ 0,15·2·60/(π·0,4) ≈ 14,3 об/мин. С сервис-фактором 1,6 расчётный момент ≈ 3270 Н·м. Подбираем цилиндрический редуктор с тормозом под этот момент.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Как посчитать момент редуктора для лебёдки?</summary><div>Сначала находят усилие на канате F = m·g/(a·η_п), где a — кратность полиспаста. Затем момент на барабане M = F·D/2, где D — диаметр барабана. Если барабан на выходном валу, это и есть момент редуктора. Полученное значение умножают на сервис-фактор по группе режима работы.</div></details><details><summary>Можно ли использовать самоторможение червяка вместо тормоза?</summary><div>Нет, как средство безопасности — нельзя. Самоторможение червячной передачи снижает КПД, но при вибрации и нагреве может ослабнуть и допустить сползание груза. По правилам подъёмный механизм обязательно комплектуют нормально-замкнутым тормозом, который удерживает груз при обесточивании двигателя.</div></details><details><summary>Как полиспаст влияет на подбор редуктора?</summary><div>Полиспаст кратностью a снижает усилие на канате в a раз, но во столько же увеличивает длину и скорость выборки каната. Это уменьшает требуемый момент, но повышает обороты барабана. При подборе усилие считают как F = m·g/(a·η_п), а обороты барабана — с учётом кратности полиспаста.</div></details></div><div class="cat-faq"><details><summary>Какой сервис-фактор брать для тали и лебёдки?</summary><div>Сервис-фактор берут по группе режима работы (по ISO/ГОСТ — от лёгкого до весьма тяжёлого), обычно 1,4–2,0. Чем чаще подъёмы, больше груз и продолжительность включения, тем выше группа режима и запас. Для редких подъёмов достаточно 1,4, для интенсивной крановой работы — до 2,0 и выше.</div></details><details><summary>Какой тип редуктора выбрать для лебёдки?</summary><div>Для нечастых подъёмов подходит червячный или червячно-цилиндрический — компактный, но обязательно с тормозом. Для интенсивной работы выбирают цилиндрический или коническо-цилиндрический редуктор с высоким КПД и большим ресурсом. Во всех случаях привод комплектуют нормально-замкнутым тормозом.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Редуктор для тали и лебёдки</b> подбирают по моменту на барабане M = F·D/2 с учётом полиспаста и группы режима. Главное требование — нормально-замкнутый тормоз, удерживающий груз при обесточивании; самоторможение червяка средством безопасности не считается.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Подъёмный привод считают от усилия на канате с учётом полиспаста, переходя к моменту на барабане и оборотам. Ключевое отличие от других задач — обязательный тормоз, а не самоторможение. Применяют редукторы с тормозом: червячные для редких подъёмов, цилиндрические — для интенсивной работы.</p><table class="spec"><tbody><tr><th>Параметр</th><td>Ориентир</td></tr><tr><th>Обороты барабана n₂</th><td>10–60 об/мин</td></tr><tr><th>Сервис-фактор Sf</th><td>1,4–2,0</td></tr><tr><th>Обязательно</th><td>нормально-замкнутый тормоз</td></tr><tr><th>Тип</th><td>червячный / цилиндрический с тормозом</td></tr></tbody></table><p>Рассчитать подъёмный привод поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный подбор</a>. Весь ассортимент — в <a href="/catalog/">каталоге редукторов</a>.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Подберём редуктор под вашу лебёдку</h2><p>Пришлите грузоподъёмность, скорость подъёма, кратность полиспаста и диаметр барабана — рассчитаем момент и подберём редуктор с тормозом.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>Расчёт по параметрам за 15 минут</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/reduktory-s-tormozom"><b>Редукторы с тормозом</b><span>Удержание груза на весу</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный подбор</b><span>Расчёт привода под задачу</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>

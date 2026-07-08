@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"dark";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Тепловой расчёт редуктора: проверка по нагреву</title>
+<meta name="description" content="Тепловой расчёт редуктора: тепловая мощность, проверка по нагреву, влияние ПВ, температуры среды и обдува. Когда механической мощности мало и нужен запас по теплу." />
+<link rel="canonical" href="https://zavod-red.ru/blog/teplovoy-raschet-reduktora" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="../assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zavod-red.ru/blog/teplovoy-raschet-reduktora" />
+<meta property="og:title" content="Тепловой расчёт редуктора: проверка по нагреву" />
+<meta property="og:description" content="Тепловой расчёт редуктора: тепловая мощность, проверка по нагреву, влияние ПВ, температуры среды и обдува. Когда механической мощности мало и нужен запас по теплу." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="../assets/inner.css?v=29" />
+<style>
+.art{max-width:820px;margin:0 auto}
+.art p,.art li{font-size:16px;line-height:1.7;color:var(--text)}
+.art h2{font-size:26px;margin:38px 0 14px;letter-spacing:-.01em}
+.art h3{font-size:20px;margin:26px 0 10px;color:var(--text)}
+.art ul,.art ol{margin:10px 0 10px 2px;padding-left:20px}
+.art li{margin-bottom:8px}
+.art a{color:var(--steel);text-decoration:underline;text-underline-offset:2px}
+.art a:hover{color:var(--red2)}
+.art .lead-p{font-size:18px;color:var(--text)}
+.art .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin:22px 0;font-size:15px;color:var(--muted)}
+.art table.spec{width:100%;border-collapse:collapse;margin:18px 0}
+.art table.spec th,.art table.spec td{border:1px solid var(--line);padding:9px 12px;font-size:15px;text-align:left;vertical-align:top}
+.art table.spec th{background:var(--card);color:var(--text);white-space:nowrap;width:34%}
+.art-meta{color:var(--muted2);font-size:13.5px;margin-top:10px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Тепловой расчёт редуктора: проверка по нагреву", "description": "Тепловой расчёт редуктора: тепловая мощность, проверка по нагреву, влияние ПВ, температуры среды и обдува. Когда механической мощности мало и нужен запас по теплу.", "image": "https://zavod-red.ru/og-image.jpg", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/teplovoy-raschet-reduktora"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Тепловой расчёт редуктора", "item": "https://zavod-red.ru/blog/teplovoy-raschet-reduktora"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое тепловой расчёт редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Это проверка привода по допустимому нагреву масла при длительной работе. Он определяет тепловую мощность — максимальную передаваемую мощность, при которой температура масла стабилизируется в допустимых пределах (обычно до 80–95 °C). Редуктор должен проходить и по механической, и по тепловой мощности одновременно."}}, {"@type": "Question", "name": "Чем тепловая мощность отличается от механической?", "acceptedAnswer": {"@type": "Answer", "text": "Механическая мощность ограничена прочностью зубьев и подшипников, тепловая — способностью корпуса рассеять тепло потерь без перегрева масла. Рабочая мощность должна быть ниже обеих. Для червячных редукторов и непрерывного режима именно тепловая мощность обычно оказывается меньшей и определяющей."}}, {"@type": "Question", "name": "Почему червячные редукторы требуют теплового расчёта чаще?", "acceptedAnswer": {"@type": "Answer", "text": "У червячной передачи КПД низкий (0,7–0,9), поэтому в тепло уходит 10–30 % мощности — намного больше, чем у цилиндрической с КПД 0,96–0,98. При длительной работе это тепло сильно нагревает масло, и тепловая мощность становится главным ограничением, особенно при высоких передаточных числах."}}, {"@type": "Question", "name": "Как температура окружающей среды влияет на тепловой расчёт?", "acceptedAnswer": {"@type": "Answer", "text": "Отвод тепла пропорционален разности температур масла и воздуха. Чем выше температура среды, тем меньше этот перепад и тем хуже охлаждение, поэтому допустимая тепловая мощность падает. Каталожные значения дают для +20 °C; при +40 °C их корректируют понижающим коэффициентом."}}, {"@type": "Question", "name": "Как ПВ (продолжительность включения) влияет на нагрев?", "acceptedAnswer": {"@type": "Answer", "text": "При ПВ меньше 100 % редуктор работает с паузами и масло успевает остывать между циклами. Это повышает допустимую тепловую мощность: при ПВ 40 % привод может кратковременно передавать больше, чем в непрерывном режиме. Поэтому режим работы обязательно учитывают в тепловом расчёте."}}, {"@type": "Question", "name": "Как повысить тепловую мощность без замены редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Самый простой способ — принудительный обдув вентилятором на входном валу. Для крупных приводов ставят масляный радиатор или змеевик охлаждения. Помогает переход на синтетическое масло с меньшими потерями и лучшая вентиляция помещения. Если этого мало, берут типоразмер крупнее."}}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+    <nav class="menu">
+      <a href="/catalog/">Каталог редукторов</a>
+      <a href="/podbor">Подбор</a>
+      <a href="/ceny">Цены</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/" class="active">Блог</a>
+      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+        <a href="/contacts">Контакты</a>
+      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
+      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Тепловой расчёт</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Расчёты</div>
+  <h1>Тепловой расчёт редуктора</h1>
+  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+</div></section>
+
+<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
+  <p class="lead-p">Редуктор может выдержать нагрузку по прочности зубьев, но перегреться и заклинить. Тепловой расчёт редуктора отвечает на второй вопрос: сколько мощности привод способен рассеять без перегрева масла. Особенно это критично для червячных передач и непрерывной работы. Разберём тепловую мощность, влияние температуры среды, ПВ и обдува.</p>
+<h2>Зачем нужен тепловой расчёт</h2><p>При работе редуктора часть мощности теряется в зацеплении и подшипниках и превращается в тепло. Это тепло нагревает масло и корпус, пока не установится равновесие с отводом в окружающую среду. Если тепловыделение превышает теплоотвод, температура масла растёт выше допустимой (обычно 80–95 °C), падает вязкость, разрушается масляная плёнка — начинается ускоренный износ. Поэтому редуктор проверяют по двум независимым критериям:</p><ul><li><b>механическая мощность</b> (P<sub>мех</sub>) — по прочности зубьев и подшипников;</li><li><b>тепловая мощность</b> (P<sub>терм</sub>) — по допустимому нагреву при длительной работе.</li></ul><div class="note">Рабочая мощность должна быть меньше и механической, и тепловой одновременно. Для червячных редукторов и длительного режима именно тепловая мощность часто оказывается ограничением.</div><h2>Тепловая мощность и потери</h2><p>Тепловыделение равно мощности потерь: Q = P · (1 − η). Для червячного редуктора с η = 0,8 при передаваемых 5 кВт в тепло уходит 1 кВт — это заметная величина, которую корпус должен рассеять. Отвод тепла в среду примерно пропорционален площади поверхности корпуса и разности температур масло/воздух. Отсюда каталожная тепловая мощность P<sub>терм</sub> — это мощность, при которой масло стабилизируется на допустимой температуре в стандартных условиях.</p><h2>Поправки: температура среды, ПВ, высота</h2><p>Каталожная тепловая мощность даётся для базовых условий (обычно +20 °C, непрерывный режим). Реальную допустимую мощность корректируют коэффициентами:</p><table class="spec"><tbody><tr><th>Фактор</th><th>Влияние на P<sub>терм</sub></th></tr><tr><td>Температура среды выше +20 °C</td><td>снижает (меньше перепад для отвода)</td></tr><tr><td>ПВ (продолжительность включения) &lt; 100 %</td><td>повышает (есть время остыть)</td></tr><tr><td>Высокая запылённость / теснота</td><td>снижает (хуже конвекция)</td></tr><tr><td>Принудительный обдув вентилятором</td><td>повышает существенно</td></tr></tbody></table><p>Например, при среде +40 °C допустимая тепловая мощность падает, а при ПВ 40 % (частые паузы) — растёт, потому что масло успевает остыть между циклами.</p><h2>Как повысить тепловую мощность</h2><p>Если по расчёту тепла не хватает, есть несколько путей, не считая перехода на больший типоразмер:</p><ul><li>принудительный обдув вентилятором на входном валу — самый простой способ;</li><li>оребрение корпуса или установка змеевика/масляного радиатора для крупных приводов;</li><li>переход на синтетическое масло с более высоким рабочим диапазоном и меньшими потерями;</li><li>снижение температуры окружающей среды, улучшение вентиляции помещения.</li></ul><h2>Практический порядок проверки</h2><p>1) считаете рабочую мощность и КПД; 2) берёте из каталога механическую и тепловую мощность типоразмера; 3) вводите поправки на температуру среды и ПВ; 4) проверяете, что рабочая мощность ниже обеих. Если не проходит по теплу — добавляете обдув или берёте типоразмер крупнее. Для червячных приводов и круглосуточной работы этот шаг обязателен.</p><h2>Признаки теплового перегруза в эксплуатации</h2><p>Даже если расчёт не делали, перегрев легко заметить по косвенным признакам. Корпус нагревается так, что руку невозможно удержать дольше пары секунд (это уже за 60 °C), масло темнеет и пахнет гарью, из сапуна выдавливается масляный туман, а на сальниках появляется течь — всё это следствия высокой температуры. Инструментально температуру контролируют пирометром или наклейкой-термоиндикатором на корпусе рядом с масляной ванной. Ориентир: температура корпуса обычно на 5–10 °C ниже температуры масла, а безопасный потолок для масла — 80–95 °C в зависимости от типа. Если привод стабильно выходит за этот предел, тепловая мощность исчерпана, и без обдува или большего типоразмера ресурс будет падать.</p><table class="spec"><tbody><tr><th>Температура масла</th><th>Оценка</th></tr><tr><td>до 70 °C</td><td>норма</td></tr><tr><td>70–90 °C</td><td>допустимо, контролировать</td></tr><tr><td>выше 95 °C</td><td>перегруз, принять меры</td></tr></tbody></table><p>Подобрать привод с проверкой по нагреву поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный расчёт</a>, а сравнить КПД типов — раздел <a href="/catalog/chervyachnye">червячных редукторов</a>.</p>
+</div></div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq"><details><summary>Что такое тепловой расчёт редуктора?</summary><div>Это проверка привода по допустимому нагреву масла при длительной работе. Он определяет тепловую мощность — максимальную передаваемую мощность, при которой температура масла стабилизируется в допустимых пределах (обычно до 80–95 °C). Редуктор должен проходить и по механической, и по тепловой мощности одновременно.</div></details><details><summary>Чем тепловая мощность отличается от механической?</summary><div>Механическая мощность ограничена прочностью зубьев и подшипников, тепловая — способностью корпуса рассеять тепло потерь без перегрева масла. Рабочая мощность должна быть ниже обеих. Для червячных редукторов и непрерывного режима именно тепловая мощность обычно оказывается меньшей и определяющей.</div></details><details><summary>Почему червячные редукторы требуют теплового расчёта чаще?</summary><div>У червячной передачи КПД низкий (0,7–0,9), поэтому в тепло уходит 10–30 % мощности — намного больше, чем у цилиндрической с КПД 0,96–0,98. При длительной работе это тепло сильно нагревает масло, и тепловая мощность становится главным ограничением, особенно при высоких передаточных числах.</div></details></div><div class="cat-faq"><details><summary>Как температура окружающей среды влияет на тепловой расчёт?</summary><div>Отвод тепла пропорционален разности температур масла и воздуха. Чем выше температура среды, тем меньше этот перепад и тем хуже охлаждение, поэтому допустимая тепловая мощность падает. Каталожные значения дают для +20 °C; при +40 °C их корректируют понижающим коэффициентом.</div></details><details><summary>Как ПВ (продолжительность включения) влияет на нагрев?</summary><div>При ПВ меньше 100 % редуктор работает с паузами и масло успевает остывать между циклами. Это повышает допустимую тепловую мощность: при ПВ 40 % привод может кратковременно передавать больше, чем в непрерывном режиме. Поэтому режим работы обязательно учитывают в тепловом расчёте.</div></details><details><summary>Как повысить тепловую мощность без замены редуктора?</summary><div>Самый простой способ — принудительный обдув вентилятором на входном валу. Для крупных приводов ставят масляный радиатор или змеевик охлаждения. Помогает переход на синтетическое масло с меньшими потерями и лучшая вентиляция помещения. Если этого мало, берут типоразмер крупнее.</div></details></div></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead"><b>Тепловой расчёт редуктора</b> проверяет привод по допустимому нагреву масла: рабочая мощность должна быть ниже тепловой мощности типоразмера с поправками на температуру среды, ПВ и обдув. Для червячных передач это ограничение часто главнее прочности.</p><details class="seo-more"><summary>Подробнее: характеристики и полезные ссылки</summary><div class="seo-body"><p>Тепловыделение редуктора равно мощности потерь Q = P · (1 − η) и нагревает масло, пока не уравновесится теплоотводом в среду. Тепловая мощность — это мощность, при которой масло стабилизируется на допустимой температуре. Её корректируют на температуру воздуха, ПВ и наличие обдува.</p><table class="spec"><tbody><tr><th>Мера</th><td>Эффект</td></tr><tr><th>Обдув вентилятором</th><td>+ тепловая мощность</td></tr><tr><th>Синтетическое масло</th><td>меньше потерь и нагрева</td></tr><tr><th>Больший типоразмер</th><td>больше площадь отвода</td></tr></tbody></table><p>Проверить привод по нагреву и подобрать типоразмер поможет <a href="/podbor">калькулятор подбора</a> или <a href="/uslugi/podbor">инженерный расчёт</a>. КПД разных типов и <a href="/catalog/chervyachnye">червячные редукторы</a> — в каталоге Завода Редукторов.</p></div></details></div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="cta-band">
+  <h2>Проверим редуктор по теплу под ваш режим</h2><p>Укажите мощность, ПВ и температуру среды — рассчитаем тепловую мощность и подскажем, нужен ли обдув или больший типоразмер.</p>
+  <a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Блог</div><h2 style="font-size:26px">Читайте также</h2><div class="xgrid"><a class="xcard" href="/podbor"><b>Подбор редуктора</b><span>С проверкой по нагреву</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/catalog/chervyachnye"><b>Червячные редукторы</b><span>КПД и тепловые ограничения</span><span class="xcard-go">Читать →</span></a><a class="xcard" href="/uslugi/podbor"><b>Инженерный расчёт</b><span>Тепловой расчёт под режим</span><span class="xcard-go">Читать →</span></a></div></div></section>
+<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
+<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
+<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
+<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
+</div></div></section>
+    <footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="../assets/inner.js?v=6"></script>
+<script defer src="../assets/modal.js?v=22"></script>
+</body></html>
