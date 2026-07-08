@@ -17,27 +17,32 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Почему для линии резки важен малый люфт редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Точная остановка листа под режущей головкой зависит от повторяемости хода. Люфт в зацеплении и в муфте суммируется и превращается в разброс позиции, смещая линию реза и увеличивая отходы. Поэтому для позиционеров выбирают редукторы с малым угловым зазором и жёсткое беззазорное соединение с валом, а управление ведут через частотник или сервопривод."}}, {"@type": "Question", "name": "Как обеспечить плавный ход без боя стекла?", "acceptedAnswer": {"@type": "Answer", "text": "Плавность дают точное зацепление, мягкий разгон и торможение через частотник, а также малый люфт кинематики. Ограничение ускорения при старт-стопе снижает инерционные сдвиги листа и сколы кромки. На транспортных участках равномерность скорости важнее пиковой мощности: лист должен идти без проскальзывания и подёргиваний, что сохраняет поверхность и кромку."}}, {"@type": "Question", "name": "Как учесть частые пуски и остановы?", "acceptedAnswer": {"@type": "Answer", "text": "Позиционные конвейеры делают много циклов старт-стоп в час, и это нагружает привод даже при малом статическом моменте. Сервис-фактор закладывают с учётом числа циклов, а не только момента. Плавный разгон и торможение снижают инерционные удары, продлевая ресурс зубьев и подшипников выходного вала редуктора."}}, {"@type": "Question", "name": "Чем защитить редуктор от стеклянной крошки?", "acceptedAnswer": {"@type": "Answer", "text": "Стеклянная пыль абразивна, поэтому выбирают закрытое исполнение с надёжными уплотнениями и защищённым сапуном, а редуктор располагают с защитой от падающих осколков. Зону и корпус регулярно очищают от крошки: отложения ухудшают теплоотвод и способны заклинить открытые передачи. При влажной резке добавляют влагозащиту уплотнений и покрытия."}}, {"@type": "Question", "name": "Как посчитать момент и передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Момент оценивают по T=9550·P·КПД/n2 (Н·м, P в кВт, n2 — выходные обороты). Передаточное число берут из требуемой линейной скорости конвейера: i=n1/n2 при n1≈1450 об/мин для 4-полюсного двигателя. Значение выбирают так, чтобы обеспечить нужную разрешающую способность позиционирования и запас момента для точного торможения."}}, {"@type": "Question", "name": "Можно ли заменить импортный редуктор конвейера аналогом EVL?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Габаритный аналог EVL подбираем по присоединительным размерам, моменту и передаточному числу, чтобы редуктор встал на посадочные места конвейера или позиционера без переделок. Снимите размеры, скорость и точность позиции — точный аналог по этим данным даёт калькулятор подбора, а цену рассчитаем по запросу."}}, {"@type": "Question", "name": "Нужно ли учитывать натяжение ремня?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Натяжение ремня или цепи создаёт радиальную нагрузку на подшипник выходного вала редуктора. Её проверяют по каталогу и сопоставляют с допускаемой консольной нагрузкой типоразмера. Чрезмерное натяжение сокращает ресурс подшипникового узла, поэтому его учитывают вместе с крутящим моментом при подборе редуктора."}}, {"@type": "Question", "name": "Как заказать редуктор EVL и какие сроки и гарантия?", "acceptedAnswer": {"@type": "Answer", "text": "Пришлите параметры или фото заводского шильдика — инженер подберёт типоразмер EVL, рассчитает замену по моменту, передаточному числу и присоединительным размерам и пришлёт КП с ценой и сроком. Отгрузка типовых позиций от 3 рабочих дней, изготовление под заказ — по согласованию. Гарантия 24 месяца, производство ООО «НИИ АТТ» (Челябинск)."}}]}</script>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
-    <nav class="menu">
-      <a href="/catalog/">Каталог редукторов</a>
-      <a href="/podbor">Подбор</a>
-      <a href="/ceny">Цены</a>
-      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
-      <a href="/importozameshchenie">Импортозамещение</a>
-      <a href="/blog/" class="active">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
-        <a href="/contacts">Контакты</a>
-      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
-    </nav>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
-      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
-      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
+<header class="hdr2">
+<link rel="stylesheet" href="../assets/hdr.css?v=1" />
+<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · Челябинск · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+<div class="hmain"><div class="hm-in">
+<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+<a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: EVL 197, SEW R107, ZR 603…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+<div class="nav-right">
+<a data-zr-cab class="hic" href="/cabinet" title="Кабинет клиента" aria-label="Кабинет"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></a>
+<a class="hic" href="/cart" title="Корзина" aria-label="Корзина"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11h10.2L21 8H6.2"/></svg><span data-zr-badge class="hic-badge"></span></a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<a class="zbtn" data-zayavka href="#zayavka">Получить расчёт</a>
+<button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></div>
+<nav class="hnav"><div class="hn-in"><div class="menu">
+<a href="/catalog/">Каталог редукторов</a>
+<a href="/podbor">Подбор</a>
+<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+<a href="/ceny">Цены</a>
+<a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+<a href="/importozameshchenie">Импортозамещение</a>
+<a href="/blog/">Блог</a>
+<div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+<a href="/contacts">Контакты</a>
+<a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+</div></div></nav>
 </header>
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор линии резки и транспортировки стекла</div>
 <section class="phero"><div class="wrap">
@@ -128,5 +133,5 @@
   </div>
 </footer>
 <script src="../assets/inner.js?v=61"></script>
-<script defer src="../assets/modal.js?v=221"></script>
+<script defer src="../assets/modal.js?v=4"></script>
 </body></html>

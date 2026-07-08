@@ -18,27 +18,32 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое модуль зубчатого зацепления простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Модуль — это параметр, задающий размер зуба колеса. Численно он равен делительному диаметру колеса, делённому на число зубьев (m = d/z), и измеряется в миллиметрах. Можно представить модуль как «масштаб» зуба: чем больше модуль, тем крупнее и прочнее зуб. У двух колёс в зацеплении модуль обязательно одинаков, иначе зубья не войдут друг в друга правильно. Именно через модуль рассчитывают все остальные размеры передачи — диаметры, высоту зуба и межосевое расстояние."}}, {"@type": "Question", "name": "По какой формуле определяется модуль и в каких единицах он измеряется?", "acceptedAnswer": {"@type": "Answer", "text": "Основная формула: m = d/z, где d — делительный диаметр в миллиметрах, z — число зубьев. Через окружной шаг зацепления модуль равен m = p/π. Единица измерения модуля — миллиметр. Зная модуль, легко найти геометрию: делительный диаметр d = m·z, диаметр вершин da = m·(z+2), высота зуба h = 2,25·m, а межосевое расстояние прямозубой передачи aw = m·(z1+z2)/2. Для косозубых колёс различают нормальный и торцовый модуль, связанные через угол наклона зуба."}}, {"@type": "Question", "name": "Чем модуль отличается от шага зацепления?", "acceptedAnswer": {"@type": "Answer", "text": "Шаг зацепления p — это расстояние между одноимёнными точками двух соседних зубьев, измеренное по делительной окружности. Модуль связан с шагом через число пи: m = p/π. То есть модуль — это «нормированный» шаг, удобный для расчётов и стандартизации. Шаг — дробная величина (содержит π), а модуль подобран так, чтобы быть стандартным числом из предпочтительного ряда. Поэтому в инженерных расчётах и маркировке оперируют именно модулем, а не шагом."}}, {"@type": "Question", "name": "Как модуль влияет на прочность и передаваемый момент редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Модуль напрямую определяет несущую способность зуба: изгибная прочность растёт примерно пропорционально квадрату модуля. Увеличение модуля — основной способ повысить допустимый крутящий момент ступени без изменения числа зубьев. Однако крупный модуль при том же числе зубьев увеличивает диаметры колёс, межосевое расстояние и габарит редуктора. Поэтому проектировщик ищет баланс между модулем, числом зубьев и габаритом под требуемый момент. Рассчитать подходящий типоразмер удобно через /podbor."}}, {"@type": "Question", "name": "Какие стандартные значения модуля применяются в редукторах?", "acceptedAnswer": {"@type": "Answer", "text": "Модуль нормирован рядом предпочтительных чисел по ГОСТ 9563: 1; 1,25; 1,5; 2; 2,5; 3; 4; 5; 6; 8; 10; 12 мм и далее. Первый ряд предпочтительнее второго. Стандартизация нужна для унификации зуборезного инструмента — одной фрезой нарезают колёса с любым числом зубьев при одинаковом модуле. В редукторах общего назначения чаще встречаются модули 2–10 мм в зависимости от мощности и типоразмера; в тяжёлых тихоходных ступенях модуль выше."}}, {"@type": "Question", "name": "Как модуль связан с межосевым расстоянием и передаточным числом?", "acceptedAnswer": {"@type": "Answer", "text": "Модуль связывает геометрию всей передачи. Межосевое расстояние прямозубой ступени равно aw = m·(z1+z2)/2, то есть зависит и от модуля, и от суммы зубьев. Передаточное число ступени определяется отношением чисел зубьев u = z2/z1 и от модуля не зависит напрямую. На практике это означает, что при заданном межосевом расстоянии модуль и числа зубьев подбирают совместно: больше модуль — меньше зубьев и грубее ход; меньше модуль — больше зубьев и плавнее зацепление."}}, {"@type": "Question", "name": "Можно ли подобрать наш редуктор по модулю импортного SEW или NORD?", "acceptedAnswer": {"@type": "Answer", "text": "Модуль — один из параметров зацепления, но сам по себе он не определяет взаимозаменяемость редукторов. При импортозамещении SEW, NORD или Bonfiglioli мы сопоставляем редуктор по моменту, передаточному числу, монтажному исполнению и присоединительным размерам — диаметрам валов, размерам лап и фланцев. Модуль и межосевое расстояние служат ориентиром по классу прочности и габариту. Пришлите маркировку, шильдик или чертёж — инженер подберёт аналог EVL/ПР/МР через /podbor или из /catalog/."}}, {"@type": "Question", "name": "Каковы сроки поставки и гарантия на редукторы под нужный расчёт зацепления?", "acceptedAnswer": {"@type": "Answer", "text": "Ходовые типоразмеры обычно есть на складе либо изготавливаются в короткий срок; точный срок называем после уточнения момента, передаточного числа и исполнения. Модуль и геометрию зацепления завод рассчитывает под вашу задачу на этапе технического подбора. На всю продукцию EVL, ПР и МР действует гарантия 24 месяца, поставка по всей России. Чтобы зафиксировать типоразмер, момент и срок, оформите заявку через /podbor или выберите позицию в /catalog/; цена — по запросу."}}]}</script>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
-    <nav class="menu">
-      <a href="/catalog/" class="active">Каталог редукторов</a>
-      <a href="/podbor">Подбор</a>
-      <a href="/ceny">Цены</a>
-      <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
-      <a href="/importozameshchenie">Импортозамещение</a>
-      <a href="/blog/">Блог</a>
-      <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
-        <a href="/contacts">Контакты</a>
-      <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
-    </nav>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
-      <div class="nav-phones"><b>+7 (495) 151-41-02</b><span>+7 (904) 953-41-02 · <a class="nav-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></span></div>
-      <a class="btn sm" data-zayavka href="#zayavka" style="margin-right:2px">Оставить заявку</a>
-      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
+<header class="hdr2">
+<link rel="stylesheet" href="../assets/hdr.css?v=1" />
+<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · Челябинск · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+<div class="hmain"><div class="hm-in">
+<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+<a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: EVL 197, SEW R107, ZR 603…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+<div class="nav-right">
+<a data-zr-cab class="hic" href="/cabinet" title="Кабинет клиента" aria-label="Кабинет"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></a>
+<a class="hic" href="/cart" title="Корзина" aria-label="Корзина"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11h10.2L21 8H6.2"/></svg><span data-zr-badge class="hic-badge"></span></a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<a class="zbtn" data-zayavka href="#zayavka">Получить расчёт</a>
+<button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></div>
+<nav class="hnav"><div class="hn-in"><div class="menu">
+<a href="/catalog/">Каталог редукторов</a>
+<a href="/podbor">Подбор</a>
+<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+<a href="/ceny">Цены</a>
+<a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+<a href="/importozameshchenie">Импортозамещение</a>
+<a href="/blog/">Блог</a>
+<div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+<a href="/contacts">Контакты</a>
+<a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+</div></div></nav>
 </header>
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/glossary/">Глоссарий</a><span>›</span>Модуль зубчатого зацепления</div>
 <section class="phero"><div class="wrap"><div class="eyebrow">Глоссарий</div><h1>Модуль зубчатого зацепления</h1><p>Модуль зацепления (m) — базовый параметр зубчатого колеса, который задаёт размер зуба и связывает число зубьев, делительный диаметр и межосевое расстояние; во многом определяет несущую способность и габарит редуктора.</p></div></section>
@@ -120,5 +125,5 @@
   </div>
 </footer>
 <script src="../assets/inner.js?v=61"></script>
-<script defer src="../assets/modal.js?v=221"></script>
+<script defer src="../assets/modal.js?v=4"></script>
 </body></html>
