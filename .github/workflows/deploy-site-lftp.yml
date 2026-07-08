@@ -30,6 +30,7 @@ jobs:
           open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
           mirror -R --ignore-time --no-perms --parallel=20 dist/blog/ /public_html/blog/; \
           mirror -R --ignore-time --no-perms --parallel=20 dist/glossary/ /public_html/glossary/; \
+          put -O /public_html dist/.htaccess; \
           put -O /public_html dist/sitemap.xml; \
           put -O /public_html dist/sitemap-index.xml; \
           put -O /public_html dist/sitemap-analog.xml; \

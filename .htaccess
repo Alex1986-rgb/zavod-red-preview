@@ -15,6 +15,11 @@
   RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
   RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
 
+  # Дубли-транслитерации глоссария → канонический URL (301). Файлы на сервере остаются
+  # (mirror не удаляет), но URL склеивается на старую версию — против дубль-контента.
+  RewriteRule ^glossary/koefficient-perekrytiya/?$ /glossary/koeffitsient-perekrytiya [R=301,L,NE]
+  RewriteRule ^glossary/tihohodnyy-val/?$ /glossary/tikhokhodnyy-val [R=301,L,NE]
+
   # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
   # при переименовании аналогов sew-k-57,-s-67 → sew-k-57-s-67. Работает и для нескольких запятых.
   RewriteCond %{REQUEST_URI} ^/(.*),-?(.*)$
