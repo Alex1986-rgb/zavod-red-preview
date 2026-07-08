@@ -1,8 +1,8 @@
 name: Deploy to Timeweb (FTP)
 on:
-  push:
-    branches: [main]
   workflow_dispatch: {}
+# ВНИМАНИЕ: FTP-Deploy-Action на аккаунте Timeweb зависает на объёме (>700 файлов, 3ч+ и падает).
+# Штатная заливка идёт через deploy-site-lftp.yml (параллельный lftp). Этот воркфлоу — только вручную.
 concurrency:
   group: site-deploy
   cancel-in-progress: true

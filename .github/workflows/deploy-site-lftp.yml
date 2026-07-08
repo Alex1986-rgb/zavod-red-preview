@@ -2,6 +2,8 @@ name: Deploy site (lftp parallel)
 # Надёжная параллельная заливка ядра сайта (blog, glossary, страницы, sitemap)
 # через lftp — FTP-Deploy-Action на этом аккаунте Timeweb зависает на объёме.
 on:
+  push:
+    branches: [main]
   workflow_dispatch: {}
 concurrency:
   group: ftp-deploy
