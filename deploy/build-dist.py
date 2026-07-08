@@ -16,7 +16,9 @@ METRIKA = ('<!-- Yandex.Metrika counter -->\n'
 '<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>')
 
 IGNORE = shutil.ignore_patterns('.git', '.github', 'deploy', 'dist', '*.py', '*.md',
-                                '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations')
+                                '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations',
+                                'analog')  # analog/ (72К файлов) заливается отдельным lftp-воркфлоу,
+                                           # НЕ через медленный одно-поточный FTP-Deploy-Action
 
 if os.path.exists(DST):
     shutil.rmtree(DST)
@@ -24,7 +26,7 @@ shutil.copytree(SRC, DST, ignore=IGNORE)
 
 # robots.txt — открыт для индексации
 with open(os.path.join(DST, 'robots.txt'), 'w', encoding='utf-8') as f:
-    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\n")
+    f.write("User-agent: *\nAllow: /\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\nSitemap: https://zavod-red.ru/sitemap-analog-2.xml\n")
 
 # Метрика в <head> каждой HTML (если ещё не вставлена)
 n = 0
