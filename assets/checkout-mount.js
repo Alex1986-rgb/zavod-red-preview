@@ -60,16 +60,19 @@
     var sub = its.reduce(function (a, i) { return a + (i.price || 0) * (i.qty || 1); }, 0);
     var disc = Math.round(sub * DISCOUNT), total = sub - disc;
     var qty = its.reduce(function (a, i) { return a + (i.qty || 1); }, 0);
+    var hasPrice = sub > 0; // цены «по запросу» → денежные строки скрываем
     var rows = its.map(function (i) {
-      return '<div class="zr-co-it"><div class="n">' + esc(i.name) + ' <small>× ' + (i.qty || 1) + '</small></div><div class="s">' + rub((i.price || 0) * (i.qty || 1)) + '</div></div>';
+      return '<div class="zr-co-it"><div class="n">' + esc(i.name) + ' <small>× ' + (i.qty || 1) + '</small></div><div class="s">' + (i.price > 0 ? rub(i.price * (i.qty || 1)) : 'по запросу') + '</div></div>';
     }).join("");
     return '<aside class="zr-co-sum"><h2>Ваш заказ</h2><div class="zr-co-items">' + rows + '</div>' +
-      '<div class="sr"><span>Товары, ' + qty + ' шт.</span><b>' + rub(sub) + '</b></div>' +
-      '<div class="sr good"><span>Скидка от завода</span><b>−' + rub(disc) + '</b></div>' +
+      '<div class="sr"><span>Позиций</span><b>' + qty + ' шт.</b></div>' +
+      (hasPrice ? '<div class="sr good"><span>Скидка от завода</span><b>−' + rub(disc) + '</b></div>' : '') +
       '<div class="sr"><span>Доставка</span><span class="muted">расчёт при оформлении</span></div>' +
-      '<div class="sr total"><span>К оплате</span><b>' + rub(total) + '</b></div>' +
-      '<button class="zr-co-btn" id="zr-co-submit" type="button">Подтвердить заказ</button>' +
-      '<p class="sn">Счёт с НДС · гарантия 24 мес. После оформления инженер свяжется в течение 15 минут для подтверждения.</p></aside>';
+      (hasPrice
+        ? '<div class="sr total"><span>К оплате</span><b>' + rub(total) + '</b></div>'
+        : '<div class="sr total"><span>Стоимость</span><b>по запросу</b></div>') +
+      '<button class="zr-co-btn" id="zr-co-submit" type="button">' + (hasPrice ? 'Подтвердить заказ' : 'Отправить запрос на КП') + '</button>' +
+      '<p class="sn">Цена и срок — от производителя, счёт с НДС. Инженер свяжется в течение 15 минут и пришлёт коммерческое предложение.</p></aside>';
   }
 
   function formHTML() {
@@ -133,6 +136,21 @@
           "Состав": its.map(function (i) { return i.name + " ×" + (i.qty || 1); }).join("; "), "Сумма": rub(total)
         });
       }
+    } catch (e) {}
+    // надёжная доставка заказа менеджеру через feedback.php (email + Telegram + CRM) — не зависит от Web3Forms
+    try {
+      var fd = new FormData();
+      fd.append("work_email", "");
+      fd.append("text-562", val("person") || val("org") || "Заказ с сайта");
+      fd.append("tel-535", val("phone"));
+      fd.append("email", val("email"));
+      fd.append("company", val("org"));
+      var body = "Заказ " + no + " с сайта. " + (entity === "ind" ? "Физлицо" : "Юрлицо") +
+        ". ИНН: " + (val("inn") || "—") + ". Состав: " + its.map(function (i) { return i.name + " ×" + (i.qty || 1); }).join("; ") +
+        ". Адрес: " + (val("addr") || "—") + ". Комментарий: " + (val("comment") || "—");
+      fd.append("product_title", "Заказ " + no + " — " + body);
+      fetch("/api/feedback.php", { method: "POST", body: fd });
+      if (window.ym) ym(109758131, "reachGoal", "order");
     } catch (e) {}
     clearCart();
     host.innerHTML = '<div class="zr-co-ok"><div class="ic">✓</div><h2>Заказ принят</h2>' +

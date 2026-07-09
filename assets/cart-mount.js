@@ -73,12 +73,13 @@
     var sub = items.reduce(function (a, i) { return a + (i.price || 0) * (i.qty || 1); }, 0);
     var disc = Math.round(sub * DISCOUNT), total = sub - disc;
     var qtyTotal = items.reduce(function (a, i) { return a + (i.qty || 1); }, 0);
+    var hasPrice = sub > 0; // цены «по запросу» → денежные строки скрываем
     var rows = items.map(function (it, idx) {
       return '<div class="zr-ci" data-i="' + idx + '">' +
         '<div class="zr-ci-img">' + itemImg(it) + '</div>' +
-        '<div class="zr-ci-main"><div class="zr-ci-name">' + esc(it.name) + '</div><div class="zr-ci-unit">' + rub(it.price || 0) + ' / шт</div></div>' +
+        '<div class="zr-ci-main"><div class="zr-ci-name">' + esc(it.name) + '</div><div class="zr-ci-unit">' + (it.price > 0 ? rub(it.price) + ' / шт' : 'Цена по запросу') + '</div></div>' +
         '<div class="zr-ci-qty"><button class="q-dec" type="button" aria-label="Меньше">−</button><b>' + (it.qty || 1) + '</b><button class="q-inc" type="button" aria-label="Больше">+</button></div>' +
-        '<div class="zr-ci-sum">' + rub((it.price || 0) * (it.qty || 1)) + '</div>' +
+        '<div class="zr-ci-sum">' + (it.price > 0 ? rub(it.price * (it.qty || 1)) : '—') + '</div>' +
         '<button class="zr-ci-del" type="button" aria-label="Удалить">✕</button>' +
       '</div>';
     }).join("");
@@ -86,19 +87,21 @@
       '<div class="zr-cart-grid"><div class="zr-cart-list">' + rows +
         '<a class="zr-cart-back" href="/catalog/">← Продолжить покупки</a></div>' +
       '<aside class="zr-cart-sum"><h2>Итог заказа</h2>' +
-        '<div class="sr"><span>Товары, ' + qtyTotal + ' шт.</span><b>' + rub(sub) + '</b></div>' +
-        '<div class="sr good"><span>Скидка от завода</span><b>−' + rub(disc) + '</b></div>' +
+        '<div class="sr"><span>Позиций</span><b>' + qtyTotal + ' шт.</b></div>' +
+        (hasPrice ? '<div class="sr good"><span>Скидка от завода</span><b>−' + rub(disc) + '</b></div>' : '') +
         '<div class="sr"><span>Доставка</span><span class="muted">расчёт при оформлении</span></div>' +
-        '<div class="sr total"><span>Итого</span><b>' + rub(total) + '</b></div>' +
+        (hasPrice
+          ? '<div class="sr total"><span>Итого</span><b>' + rub(total) + '</b></div>'
+          : '<div class="sr total"><span>Стоимость</span><b>по запросу</b></div>') +
         '<a class="zr-cbtn primary wide" href="/checkout">Оформить заказ</a>' +
-        '<p class="sn">Счёт с НДС · гарантия 24 мес. Инженер свяжется в течение 15 минут.</p>' +
+        '<p class="sn">Цена и срок — от производителя. Инженер пришлёт КП в течение 15 минут.</p>' +
       '</aside></div>';
     updateSubtitle(items.length, total);
   }
 
   function updateSubtitle(count, total) {
     var el = [].slice.call(d.querySelectorAll("*")).filter(function (e) { return /поз\.\s*на сумму/.test(e.textContent) && e.children.length === 0; })[0];
-    if (el) el.textContent = count ? (count + " поз. на сумму " + rub(total)) : "Корзина пуста";
+    if (el) el.textContent = count ? (count + " поз." + (total > 0 ? " на сумму " + rub(total) : " · цена по запросу")) : "Корзина пуста";
   }
 
   d.addEventListener("click", function (e) {

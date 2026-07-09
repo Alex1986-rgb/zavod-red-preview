@@ -82,23 +82,24 @@
 
   var host, tab = "orders", editEntity = null;
 
-  function savings() { return orders().reduce(function (a, o) { var t = o.total || 0; return a + Math.round(t * 0.08 / 0.92); }, 0); }
   function statsHTML() {
-    var os = orders(), sum = os.reduce(function (a, o) { return a + (o.total || 0); }, 0);
-    var count = os.length, total = sum, sav = savings();
-    var big = function (n) { return n >= 1e6 ? (Math.round(n / 1e5) / 10 + " млн ₽") : rub(n); };
+    // честная статистика из реальных заказов (без выдуманных сумм; цены «по запросу»)
+    var os = orders(), count = os.length;
+    var positions = os.reduce(function (a, o) { return a + (o.items || []).reduce(function (x, i) { return x + (i.qty || 1); }, 0); }, 0);
+    var active = os.filter(function (o) { return stageOf(o) < 3; }).length;
     return '<div class="zr-cab-stats">' +
-      '<div class="zr-cab-stat"><div class="n">' + (count || 14) + '</div><div class="l">заказов' + (count ? "" : " за год") + '</div></div>' +
-      '<div class="zr-cab-stat"><div class="n">' + big(total || 1840000) + '</div><div class="l">сумма поставок</div></div>' +
-      '<div class="zr-cab-stat"><div class="n good">' + big(sav || 147200) + '</div><div class="l">экономия с заводом</div></div>' +
-      '<div class="zr-cab-stat"><div class="n acc">8%</div><div class="l">ваша скидка</div></div></div>';
+      '<div class="zr-cab-stat"><div class="n">' + count + '</div><div class="l">' + (count ? plural(count, "заказ", "заказа", "заказов") : "заказов") + '</div></div>' +
+      '<div class="zr-cab-stat"><div class="n">' + (count ? active : "—") + '</div><div class="l">в работе</div></div>' +
+      '<div class="zr-cab-stat"><div class="n">' + (positions || "—") + '</div><div class="l">позиций заказано</div></div>' +
+      '<div class="zr-cab-stat"><div class="n acc">до 10%</div><div class="l">опт-скидка</div></div></div>';
   }
   function loyaltyHTML() {
     var c = orders().length, need = Math.max(0, 10 - c), pct = Math.min(100, Math.round(c / 10 * 100));
-    if (c === 0) pct = 8;
     return '<div class="zr-loyal"><div><div class="lt">Программа лояльности</div><div class="ls">' +
-      (need > 0 ? ("До скидки 10% — ещё " + need + " " + plural(need, "заказ", "заказа", "заказов")) : "Максимальная скидка 10% активна") + '</div></div>' +
-      '<div class="bar"><span style="width:' + Math.max(pct, 6) + '%"></span></div></div>';
+      (c === 0 ? "Оформите первый заказ — начнём копить опт-скидку до 10%"
+       : need > 0 ? ("До скидки 10% — ещё " + need + " " + plural(need, "заказ", "заказа", "заказов"))
+       : "Максимальная скидка 10% активна") + '</div></div>' +
+      '<div class="bar"><span style="width:' + Math.max(pct, 4) + '%"></span></div></div>';
   }
   function plural(n, a, b, c) { n = Math.abs(n) % 100; var n1 = n % 10; if (n > 10 && n < 20) return c; if (n1 > 1 && n1 < 5) return b; if (n1 === 1) return a; return c; }
 
@@ -157,7 +158,7 @@
       '<button data-tab="docs" class="' + (tab === "docs" ? "on" : "") + '">Документы</button></div>';
     var content = tab === "profile" ? profileFormHTML() : tab === "docs" ? docsHTML() : ordersHTML();
     host.innerHTML = '<div class="zr-cab-in">' +
-      '<div class="zr-cab-head"><div class="zr-cab-ava">' + esc(init) + '</div><div><h1>' + esc(name) + '</h1><div class="sub">' + esc(sub) + '</div><span class="zr-cab-badge">Оптовые условия · скидка 8%</span></div></div>' +
+      '<div class="zr-cab-head"><div class="zr-cab-ava">' + esc(init) + '</div><div><h1>' + esc(name) + '</h1><div class="sub">' + esc(sub) + '</div><span class="zr-cab-badge">Оптовые условия · прямые цены завода</span></div></div>' +
       statsHTML() + loyaltyHTML() +
       '<div class="zr-cab-body"><div class="zr-cab-main">' + tabs + content + '</div>' + asideHTML() + '</div></div>';
   }

@@ -17,6 +17,12 @@
   function set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function del(k) { try { localStorage.removeItem(k); } catch (e) {} }
   function emailOk(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+  // единый профиль: и схема auth (name/company), и схема кабинета/checkout (person/org/inn/entity/addr)
+  function mkProfile(name, company, email, phone, manager) {
+    var ex = j(LS.profile, {}) || {};
+    return { name: name || "", company: company || "", email: email || "", phone: phone || "", manager: manager || null,
+             person: name || "", org: company || "", entity: ex.entity || "org", inn: ex.inn || "", addr: ex.addr || "" };
+  }
   function phoneOk(p) { return (p || "").replace(/\D/g, "").length >= 11; }
 
   /* --- определить, живой ли бэкенд аккаунтов (кэш на 1 час) --- */
@@ -86,7 +92,7 @@
       users[data.email.toLowerCase()] = { name: data.name, company: data.company || "", phone: data.phone, ts: new Date().toISOString() };
       set(LS.users, users);
       set(LS.session, { email: data.email, name: data.name, mode: mode });
-      set(LS.profile, { name: data.name, company: data.company || "", email: data.email, phone: data.phone, manager: null });
+      set(LS.profile, mkProfile(data.name, data.company, data.email, data.phone, null));
       if (window.ym) try { ym(109758131, "reachGoal", "registration"); } catch (_) {}
       return { ok: true, mode: mode, msg: mode === "account" ? "Аккаунт создан." : "Регистрация принята — менеджер свяжется с вами." };
     },
@@ -100,7 +106,7 @@
         var res = await r.json().catch(function () { return {}; });
         if (res.status === "success" && res.user) {
           set(LS.session, { email: res.user.email, name: res.user.name, mode: "account" });
-          set(LS.profile, { name: res.user.name, company: res.user.company || "", email: res.user.email, phone: res.user.phone || "", manager: null });
+          set(LS.profile, mkProfile(res.user.name, res.user.company, res.user.email, res.user.phone, null));
           return true;
         }
       } catch (e) {}
@@ -120,18 +126,19 @@
           var res = await r.json().catch(function () { return {}; });
           if (r.ok && res.status === "success") {
             set(LS.session, { email: email, name: (res.user && res.user.name) || email, mode: "account" });
-            if (res.user) set(LS.profile, { name: res.user.name, company: res.user.company || "", email: email, phone: res.user.phone || "", manager: res.user.manager || null });
+            if (res.user) set(LS.profile, mkProfile(res.user.name, res.user.company, email, res.user.phone, res.user.manager));
             return { ok: true, msg: "Вход выполнен." };
           }
-          return { ok: false, msg: res.message || "Неверный e-mail или пароль." };
-        } catch (e) { return { ok: false, msg: "Сервер недоступен, попробуйте позже." }; }
+          // бэкенд есть, но БД аккаунтов не настроена (501 / «не настроен») → пробуем локальный режим ниже
+          if (r.status !== 501 && !/не настро/i.test(res.message || "")) return { ok: false, msg: res.message || "Неверный e-mail или пароль." };
+        } catch (e) { /* сервер недоступен → локальный режим ниже */ }
       }
       // локальный режим: восстановить сессию, если на этом устройстве регистрировались
       var users = j(LS.users, {});
       var u = users[email.toLowerCase()];
       if (!u) return { ok: false, msg: "На этом устройстве нет такого аккаунта. Зарегистрируйтесь или войдите с устройства регистрации." };
       set(LS.session, { email: email, name: u.name, mode: "local" });
-      set(LS.profile, { name: u.name, company: u.company || "", email: email, phone: u.phone || "", manager: null });
+      set(LS.profile, mkProfile(u.name, u.company, email, u.phone, null));
       return { ok: true, msg: "Вход выполнен." };
     }
   };
