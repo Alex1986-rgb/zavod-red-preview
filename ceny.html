@@ -58,48 +58,148 @@
   <p>Понижающие мотор-редукторы собственного производства — <b style="color:#fff">по запросу</b>. Продаём напрямую, без дилерской наценки и посредников, поэтому дешевле перепродавцов импортных приводов. Ниже — базовые типоразмеры трёх линеек EVL, ПР и МР; точную цену под вашу задачу инженер рассчитает за 15 минут.</p>
 </div></section>
 
-<section class="section" style="padding-top:34px"><div class="wrap">
-  <div class="price-hl">
-    <div class="ph-item"><b>по запросу</b><span>червячный мотор-редуктор</span></div>
-    <div class="ph-item"><b>по запросу</b><span>соосно-цилиндрический</span></div>
-    <div class="ph-item"><b>−15–30%</b><span>к прайсам дилеров импорта</span></div>
-    <div class="ph-item"><b>от 3 дней</b><span>отгрузка со склада</span></div>
+<section class="section cfg-sec"><div class="wrap">
+<style>
+.cfg-sec{padding:8px 0 6px}
+.cfg{display:grid;grid-template-columns:1fr 372px;gap:22px;align-items:start}
+.cfg-step{background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);border-radius:18px;padding:22px 24px;margin-bottom:18px}
+.cfg-sh{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.cfg-sh .cfg-n{width:28px;height:28px;border-radius:50%;background:var(--red,#cf1616);color:#fff;display:flex;align-items:center;justify-content:center;font:700 14px/1 'Space Grotesk',sans-serif;flex:none}
+.cfg-sh h2{font:700 17px/1.1 'Space Grotesk',sans-serif;color:var(--text,#101f2a);margin:0}
+.cfg-types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cfg-type{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 10px;border:1.5px solid var(--line,#e6eae6);border-radius:14px;background:var(--bg,#f7f9f8);cursor:pointer;text-align:center;transition:.15s;font:inherit}
+.cfg-type:hover{border-color:#cdd6ce}
+.cfg-type.is-on{border-color:var(--red,#cf1616);background:color-mix(in srgb,var(--red,#cf1616) 6%,#fff)}
+.cfg-type img{width:74px;height:56px;object-fit:contain;mix-blend-mode:multiply}
+.cfg-type b{font:700 13.5px/1.15 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.cfg-type span{font-size:11px;color:var(--muted,#7c8b95);line-height:1.3}
+.cfg-slider{margin-bottom:20px}.cfg-slider:last-child{margin-bottom:2px}
+.cfg-sl-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.cfg-sl-h label{font:600 14px 'Archivo',sans-serif;color:var(--text,#26333c)}
+.cfg-sl-h b{font:700 15px 'IBM Plex Mono',ui-monospace,monospace;color:var(--red,#cf1616)}
+.cfg input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:5px;background:linear-gradient(90deg,var(--red,#cf1616) var(--p,50%),#e2e6e0 var(--p,50%));cursor:pointer}
+.cfg input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--red,#cf1616);box-shadow:0 2px 6px rgba(16,31,42,.2);cursor:pointer}
+.cfg input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--red,#cf1616);cursor:pointer}
+.cfg-sl-scale{display:flex;justify-content:space-between;margin-top:7px;font:500 11.5px 'IBM Plex Mono',monospace;color:var(--muted2,#9aa7b0)}
+.cfg-qty{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line,#e2e6e0);border-radius:11px;overflow:hidden}
+.cfg-qty button{width:42px;height:42px;border:0;background:var(--bg,#f7f9f8);color:var(--text,#101f2a);font-size:20px;cursor:pointer}
+.cfg-qty button:hover{background:#eef2ee}
+.cfg-qty b{min-width:52px;text-align:center;font:700 16px 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.cfg-sum{background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);border-radius:18px;padding:22px 22px 24px;position:sticky;top:14px}
+.cfg-sum-top{display:flex;align-items:center;gap:13px;padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--line,#eef1ee)}
+.cfg-sum-top img{width:56px;height:46px;object-fit:contain;background:var(--bg,#f2f5f2);border-radius:10px;padding:5px;mix-blend-mode:multiply}
+.cfg-sum-top b{font:700 16px/1.15 'Space Grotesk',sans-serif;color:var(--text,#101f2a);display:block}
+.cfg-sum-top span{font-size:12.5px;color:var(--muted,#7c8b95)}
+.cfg-r{display:flex;align-items:center;justify-content:space-between;padding:9px 0;font-size:14px;color:var(--muted,#5c6b76)}
+.cfg-r b{color:var(--text,#101f2a);font-weight:700;font-family:'IBM Plex Mono',monospace}
+.cfg-price{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line,#eef1ee);margin-top:6px;padding-top:15px}
+.cfg-price span{font-size:14px;color:var(--muted,#5c6b76)}
+.cfg-price b{font:700 22px 'Space Grotesk',sans-serif;color:var(--red,#cf1616)}
+.cfg-cta{width:100%;margin-top:16px;padding:14px;border:0;border-radius:12px;background:var(--red,#cf1616);color:#fff;font:600 15px 'Space Grotesk',sans-serif;cursor:pointer;transition:.15s}
+.cfg-cta:hover{filter:brightness(.93)}
+.cfg-cart{width:100%;margin-top:9px;padding:12px;border:1px solid var(--line,#e2e6e0);border-radius:12px;background:var(--card,#fff);color:var(--text,#101f2a);font:600 14px 'Archivo',sans-serif;cursor:pointer;transition:.15s}
+.cfg-cart:hover{border-color:var(--red,#cf1616);color:var(--red,#cf1616)}
+.cfg-cart.added{background:#12915f;color:#fff;border-color:#12915f}
+.cfg-note{color:var(--muted,#8a97a1);font-size:12px;line-height:1.5;margin:13px 0 0;text-align:center}
+@media(max-width:960px){.cfg{grid-template-columns:1fr}.cfg-sum{position:static}}
+@media(max-width:560px){.cfg-types{grid-template-columns:1fr 1fr}}
+</style>
+<div class="cfg">
+  <div class="cfg-mainc">
+    <div class="cfg-step">
+      <div class="cfg-sh"><span class="cfg-n">1</span><h2>Тип редуктора</h2></div>
+      <div class="cfg-types" id="cfgTypes">
+        <button type="button" class="cfg-type is-on" data-t="0" data-mk="ЧМ" data-nm="Червячный" data-img="/assets/catalog/cat_worm.webp"><img src="/assets/catalog/cat_worm.webp" alt="Червячный редуктор" onerror="this.style.visibility='hidden'"><b>Червячный</b><span>ЧМ · самоторможение</span></button>
+        <button type="button" class="cfg-type" data-t="4" data-mk="Ц" data-nm="Цилиндрический" data-img="/assets/catalog/cat_cylindrical.webp"><img src="/assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор" onerror="this.style.visibility='hidden'"><b>Цилиндрический</b><span>Ц · высокий КПД</span></button>
+        <button type="button" class="cfg-type" data-t="1" data-mk="EVL" data-nm="Соосно-цилиндрический" data-img="/assets/catalog/cat_coaxial.webp"><img src="/assets/catalog/cat_coaxial.webp" alt="Соосно-цилиндрический редуктор" onerror="this.style.visibility='hidden'"><b>Соосный</b><span>EVL · вход-выход соосно</span></button>
+        <button type="button" class="cfg-type" data-t="2" data-mk="КЦ" data-nm="Коническо-цилиндрический" data-img="/assets/catalog/cat_bevel.webp"><img src="/assets/catalog/cat_bevel.webp" alt="Коническо-цилиндрический редуктор" onerror="this.style.visibility='hidden'"><b>Кониче-цилиндр.</b><span>КЦ · валы под 90°</span></button>
+      </div>
+    </div>
+    <div class="cfg-step">
+      <div class="cfg-sh"><span class="cfg-n">2</span><h2>Мощность и передаточное число</h2></div>
+      <div class="cfg-slider">
+        <div class="cfg-sl-h"><label>Мощность двигателя</label><b id="cfgPwV">4 кВт</b></div>
+        <input type="range" id="cfgPw" min="0" max="27" value="12" aria-label="Мощность двигателя">
+        <div class="cfg-sl-scale"><span>0,06 кВт</span><span>200 кВт</span></div>
+      </div>
+      <div class="cfg-slider">
+        <div class="cfg-sl-h"><label>Передаточное число</label><b id="cfgIV">i = 25</b></div>
+        <input type="range" id="cfgI" min="0" max="17" value="6" aria-label="Передаточное число">
+        <div class="cfg-sl-scale"><span>i 5</span><span>i 315</span></div>
+      </div>
+    </div>
+    <div class="cfg-step">
+      <div class="cfg-sh"><span class="cfg-n">3</span><h2>Количество</h2></div>
+      <div class="cfg-qty"><button type="button" id="cfgQd" aria-label="Меньше">−</button><b id="cfgQv">1</b><button type="button" id="cfgQi" aria-label="Больше">+</button></div>
+    </div>
   </div>
-
-  <div class="eyebrow" style="margin-top:40px">Прайс по линейкам</div>
-  <h2 style="font-size:26px">Цены по маркировкам EVL · ПР · МР</h2>
-  <p class="lead" style="margin-bottom:18px">Каждый тип редуктора выпускается в трёх линейках. Указана цена «от» для базового типоразмера 0,12–0,55 кВт; точную цену под мощность, передаточное и исполнение пришлём по заявке.</p>
-  <div style="overflow-x:auto">
-  <table class="xref" style="min-width:560px"><thead><tr><th>Тип редуктора</th><th>EVL</th><th>ПР</th><th>МР</th></tr></thead><tbody>
-    <tr><td><a href="/catalog/chervyachnye">Червячный</a></td><td>по запросу</td><td><b>по запросу</b></td><td>по запросу</td></tr>
-    <tr><td><a href="/catalog/soosnye">Соосно-цилиндрический</a></td><td>по запросу</td><td>по запросу</td><td><b>по запросу</b></td></tr>
-    <tr><td><a href="/catalog/konichesko-cilindricheskie">Цилиндро-конический</a></td><td>по запросу</td><td>по запросу</td><td><b>по запросу</b></td></tr>
-    <tr><td><a href="/catalog/ploskie">Плоский цилиндрический</a></td><td><b>по запросу</b></td><td>по запросу</td><td>по запросу</td></tr>
-  </tbody></table>
-  </div>
-  <p style="color:var(--muted);font-size:13px;margin-top:8px">Цены ориентировочные, в рублях с НДС, по состоянию на 2026 год. Не являются публичной офертой. Жирным выделена самая низкая цена по типу.</p>
-  <p style="margin-top:18px"><a class="btn lg" data-zayavka href="#zayavka">Получить актуальный прайс и расчёт</a></p>
-
-  <div class="eyebrow" style="margin-top:44px">Примеры конфигураций</div>
-  <h2 style="font-size:26px">Реальные позиции и цены</h2>
-  <p class="lead" style="margin-bottom:18px">Примеры отгруженных мотор-редукторов с полной маркировкой по счёту — чтобы вы понимали порядок цен под конкретное исполнение.</p>
-  <div style="overflow-x:auto">
-  <table class="xref" style="min-width:640px"><thead><tr><th>Тип</th><th>Маркировка</th><th>Цена</th></tr></thead><tbody>
-    <tr><td>Червячный</td><td>EVL 737.10-0,18*1400-15-93-14-1,3-В3-FL100/80/60-SC14</td><td><b>по запросу</b></td></tr>
-    <tr><td>Конический</td><td>EVL 183.113-0,37*1400-13,08-105-34-4,9-M1-FL160/130/110-S3C20</td><td>по запросу</td></tr>
-    <tr><td>Соосный</td><td>EVL 193.01-0,25*1400-48,08-27-63-3,2-M2-SC25</td><td>по запросу</td></tr>
-    <tr><td>Плоско-цилиндрический</td><td>EVL 163.00/G-0,12*1400-5,21-265-4,3-29-M3-SP30</td><td>по запросу</td></tr>
-    <tr><td>Червячный</td><td>ПР 430 (П)-20-70-0,12кВт*1400, В3, вал 14 мм</td><td><b>по запросу</b></td></tr>
-    <tr><td>Конический</td><td>ПР 313 (ФП)-28.83-47-0,55кВт*1400, М1, вал 30 мм</td><td>по запросу</td></tr>
-    <tr><td>Соосный</td><td>ПР 113 (Ц)-26,03-53-0,37кВт*1400, М2, вал 25 мм</td><td>по запросу</td></tr>
-    <tr><td>Плоско-цилиндрический</td><td>ПР 213 (П)-7,44-175-0,25кВт*1400, М3, вал 30 мм</td><td>по запросу</td></tr>
-    <tr><td>Червячный</td><td>МР 430 (ФЦ)-7,5-373-0.25*2800 (0-Х), В3, фланец 160 мм</td><td>по запросу</td></tr>
-    <tr><td>Конический</td><td>МР 313 (ФП)-72.54-19-0.37*1400 (0-Х), М1</td><td>по запросу</td></tr>
-    <tr><td>Соосный</td><td>МР 113 (Ц)-84,61-16об-0.18кВт*1400 (0-Х), М2, вал 25 мм</td><td><b>по запросу</b></td></tr>
-    <tr><td>Плоско-цилиндрический</td><td>МР 213 (П)-12,87-107-0.18кВт*1400 (0-Х), М3, вал 30 мм</td><td>по запросу</td></tr>
-  </tbody></table>
-  </div>
+  <aside class="cfg-sum">
+    <div class="cfg-sum-top"><img id="cfgSImg" src="/assets/catalog/cat_worm.webp" alt="" onerror="this.style.visibility='hidden'"><div><b id="cfgSTitle">ЧМ · Червячный</b><span id="cfgSSub">4 кВт · i 25</span></div></div>
+    <div class="cfg-r"><span>Тип</span><b id="cfgRType">Червячный</b></div>
+    <div class="cfg-r"><span>Мощность</span><b id="cfgRPw">4 кВт</b></div>
+    <div class="cfg-r"><span>Передаточное</span><b id="cfgRi">i 25</b></div>
+    <div class="cfg-r"><span>Количество</span><b id="cfgRq">1 шт.</b></div>
+    <div class="cfg-price"><span>Цена завода</span><b>по запросу</b></div>
+    <button type="button" class="cfg-cta" id="cfgReq">Запросить точную цену</button>
+    <button type="button" class="cfg-cart" id="cfgCart">Добавить в корзину</button>
+    <p class="cfg-note">Прямые цены от производителя, без наценки посредников. Инженер пришлёт расчёт, срок и КП за 15 минут.</p>
+  </aside>
+</div>
 </div></section>
+<script>
+(function(){
+  var PW=[0.06,0.09,0.12,0.18,0.25,0.37,0.55,0.75,1.1,1.5,2.2,3,4,5.5,7.5,11,15,18.5,22,30,45,55,75,90,110,132,160,200];
+  var RI=[5,7.5,10,12.5,16,20,25,31.5,40,50,63,80,100,125,160,200,250,315];
+  var $=function(id){return document.getElementById(id);};
+  var st={t:0,mk:'ЧМ',nm:'Червячный',img:'/assets/catalog/cat_worm.webp',pw:12,i:6,q:1};
+  function fnum(n){return String(n).replace('.',',');}
+  function bg(el){var mn=+el.min,mx=+el.max,p=(el.value-mn)/(mx-mn)*100;el.style.setProperty('--p',p+'%');}
+  function render(){
+    var pw=fnum(PW[st.pw])+' кВт', ii='i '+fnum(RI[st.i]);
+    $('cfgPwV').textContent=pw; $('cfgIV').textContent='i = '+fnum(RI[st.i]);
+    $('cfgSImg').src=st.img; $('cfgSTitle').textContent=st.mk+' · '+st.nm; $('cfgSSub').textContent=pw+' · '+ii;
+    $('cfgRType').textContent=st.nm; $('cfgRPw').textContent=pw; $('cfgRi').textContent=ii; $('cfgRq').textContent=st.q+' шт.';
+  }
+  function cfgStr(){return st.mk+' '+st.nm.toLowerCase()+', '+fnum(PW[st.pw])+' кВт, i='+fnum(RI[st.i])+', '+st.q+' шт.';}
+  var types=$('cfgTypes');
+  if(types)types.addEventListener('click',function(e){
+    var b=e.target.closest('.cfg-type'); if(!b)return;
+    types.querySelectorAll('.cfg-type').forEach(function(x){x.classList.remove('is-on');}); b.classList.add('is-on');
+    st.t=+b.getAttribute('data-t'); st.mk=b.getAttribute('data-mk'); st.nm=b.getAttribute('data-nm'); st.img=b.getAttribute('data-img'); render();
+  });
+  var pwEl=$('cfgPw'), iEl=$('cfgI');
+  if(pwEl){pwEl.addEventListener('input',function(){st.pw=+this.value;bg(this);render();});bg(pwEl);}
+  if(iEl){iEl.addEventListener('input',function(){st.i=+this.value;bg(this);render();});bg(iEl);}
+  var qd=$('cfgQd'),qi=$('cfgQi');
+  if(qd)qd.addEventListener('click',function(){if(st.q>1){st.q--;$('cfgQv').textContent=st.q;render();}});
+  if(qi)qi.addEventListener('click',function(){if(st.q<999){st.q++;$('cfgQv').textContent=st.q;render();}});
+  var req=$('cfgReq');
+  if(req)req.addEventListener('click',function(){
+    var trg=document.querySelector('[data-zayavka]'); // открыть модалку заявки
+    if(trg){trg.click();} else {var a=document.createElement('a');a.href='#zayavka';a.setAttribute('data-zayavka','');document.body.appendChild(a);a.click();a.remove();}
+    // подставить тип в <select> и конфигурацию в поле описания задачи (ждём появления модалки)
+    var msg='Расчёт цены под задачу: '+cfgStr();
+    var TMAP={0:'Червячный',4:'Цилиндрический',1:'Соосно-цилиндрический',2:'Цилиндро-конический',3:'Плоский цилиндрический'};
+    var n=0, iv=setInterval(function(){
+      var sel=document.getElementById('zrType'), ta=document.getElementById('zrMsg');
+      if(sel){ var want=TMAP[st.t]; for(var k=0;k<sel.options.length;k++){ if(sel.options[k].text===want){ if(sel.selectedIndex!==k)sel.selectedIndex=k; break; } } }
+      if(ta && document.activeElement!==ta && !ta.value){ ta.value=msg; }
+      if(++n>14) clearInterval(iv);
+    },40);
+  });
+  var cart=$('cfgCart');
+  if(cart)cart.addEventListener('click',function(){
+    try{var c=JSON.parse(localStorage.getItem('zr_cart')||'{"items":[]}');if(!c.items)c.items=[];
+      c.items.push({name:cfgStr(),price:0,qty:st.q,img:st.img});
+      localStorage.setItem('zr_cart',JSON.stringify(c));
+      cart.textContent='✓ В корзине';cart.classList.add('added');
+      setTimeout(function(){cart.textContent='Добавить в корзину';cart.classList.remove('added');},1700);
+      if(window.zrRefreshBadge)window.zrRefreshBadge();
+    }catch(e){}
+  });
+  render();
+})();
+</script>
 
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="grid-2" style="gap:48px;align-items:start">
