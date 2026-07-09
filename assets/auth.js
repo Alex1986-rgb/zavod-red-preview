@@ -10,7 +10,8 @@
    избранное) — аккаунт на этом устройстве. */
 (function () {
   "use strict";
-  var API = "/api/";
+  var API = "/api/";                 // общий бэкенд сайта (feedback.php — лиды в CRM)
+  var AUTH_API = "/api/cabinet/";     // бэкенд аккаунтов кабинета (register/login/me) — отдельная папка, НЕ пересекается с CRM
   var LS = { session: "zr_session", profile: "zr_profile", users: "zr_users", backend: "zr_backend" };
 
   function j(k, d) { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } }
@@ -32,7 +33,7 @@
     if (c && c.t && (Date.now() - c.t) < 3600000) return c.live;
     var live = false;
     try {
-      var r = await fetch(API + "register.php", { method: "GET", cache: "no-store" });
+      var r = await fetch(AUTH_API + "register.php", { method: "GET", cache: "no-store" });
       // 404 => файла нет (бэкенд не развёрнут). Любой иной ответ (405/400/200/501) => есть.
       live = r.status !== 404;
     } catch (e) { live = false; }
@@ -73,7 +74,7 @@
       var mode = "local", accountMsg = "";
       if (await probeBackend()) {
         try {
-          var r = await fetch(API + "register.php", {
+          var r = await fetch(AUTH_API + "register.php", {
             method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: data.name, email: data.email, phone: data.phone, company: data.company, password: data.password })
           });
@@ -102,7 +103,7 @@
       if (this.isAuthed()) return true;
       if (!(await probeBackend())) return false;
       try {
-        var r = await fetch(API + "me.php", { credentials: "include", cache: "no-store" });
+        var r = await fetch(AUTH_API + "me.php", { credentials: "include", cache: "no-store" });
         var res = await r.json().catch(function () { return {}; });
         if (res.status === "success" && res.user) {
           set(LS.session, { email: res.user.email, name: res.user.name, mode: "account" });
@@ -119,7 +120,7 @@
       if (!password) return { ok: false, msg: "Введите пароль." };
       if (await probeBackend()) {
         try {
-          var r = await fetch(API + "login.php", {
+          var r = await fetch(AUTH_API + "login.php", {
             method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: email, password: password })
           });

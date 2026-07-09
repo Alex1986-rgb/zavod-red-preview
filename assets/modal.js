@@ -356,4 +356,59 @@
   window.zrRefreshBadge=function(){var b=host.querySelector('[data-zr-badge]'),n=cnt();if(b){b.textContent=n;b.style.display=n?'flex':'none'}};
   window.zrRefreshBadge();
   window.addEventListener('storage',function(e){if(e.key==='zr_cart')window.zrRefreshBadge()});
+
+  /* ===== Быстрый поиск в шапке: кнопка «Найти» + живые подсказки-карточки (RU/EN, приблизительно) ===== */
+  try{ (function(){
+    var form=document.querySelector('form.msearch'); if(!form) return;
+    var input=form.querySelector('input[name=q]'); if(!input || form.__zrEnh) return; form.__zrEnh=1;
+    var go=document.createElement('button'); go.type='submit'; go.className='ms-go'; go.setAttribute('aria-label','Найти'); go.textContent='Найти'; form.appendChild(go);
+    var dd=document.createElement('div'); dd.className='ms-dd'; dd.hidden=true; form.appendChild(dd);
+    var BRAND_RU={sew:['сью','сев','сэв'],nord:['норд'],bonfiglioli:['бонфильоли','бонфиглиоли','бонфилиоли'],motovario:['мотоварио'],bauer:['бауэр','бауер'],lenze:['ленце','лензе'],varvel:['варвель','варвел'],siti:['сити'],stm:['стм'],rossi:['росси'],watt:['ватт'],yilmaz:['йилмаз','йылмаз'],transtecno:['транстекно'],innovari:['инновари'],vemper:['вемпер']};
+    var TYPE_EN={0:['worm'],1:['coaxial','inline'],2:['bevel'],3:['flat'],4:['helical','cylindrical']};
+    var STOP={редуктор:1,редуктора:1,редукторы:1,мотор:1,моторредуктор:1,привод:1,купить:1,аналог:1,цена:1};
+    var IMG={0:'cat_worm',1:'cat_coaxial',2:'cat_bevel',3:'cat_flat',4:'cat_cylindrical'};
+    function nn(s){return String(s==null?'':s).toLowerCase().replace(/ё/g,'е').replace(/[^0-9a-zа-я]+/g,'');}
+    function tk(s){return String(s==null?'':s).toLowerCase().replace(/ё/g,'е').split(/[^0-9a-zа-я]+/).filter(Boolean);}
+    function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+    function lev1(a,b){if(a===b)return true;var la=a.length,lb=b.length;if(Math.abs(la-lb)>1)return false;var i=0,j=0,d=0;while(i<la&&j<lb){if(a[i]===b[j]){i++;j++;}else{if(++d>1)return false;if(la>lb)i++;else if(lb>la)j++;else{i++;j++;}}}if(i<la||j<lb)d++;return d<=1;}
+    var IDX=null,DF=null,T=null,loading=false;
+    function prep(data){ T=data.t;
+      var arr=data.g.map(function(gr){ var t={}; function add(s){tk(s).forEach(function(x){t[x]=1;});}
+        add(gr.e); add(gr.p); if(gr.z)add(gr.z); add(T[gr.t]); (TYPE_EN[gr.t]||[]).forEach(function(w){t[w]=1;});
+        gr.b.forEach(function(b){add(b);(BRAND_RU[nn(b.split(' ')[0])]||[]).forEach(function(r){t[r]=1;});}); gr.m.forEach(add);
+        t[nn(gr.e)]=1; if(gr.p)t[nn(gr.p)]=1; if(gr.z)t[nn(gr.z)]=1; gr.m.forEach(function(m){t[nn(m)]=1;});
+        gr.__t=t; gr.__b=Object.keys(t).join(' '); return gr; });
+      DF={}; arr.forEach(function(gr){for(var x in gr.__t)DF[x]=(DF[x]||0)+1;}); return arr;
+    }
+    function brandFor(x){ if(BRAND_RU[x])return x; for(var k in BRAND_RU)if(BRAND_RU[k].indexOf(x)>=0)return k; return x; }
+    function score(qt,qf,gr){ var s=0,m=0,cm=IDX.length*0.9;
+      if(qf&&gr.__t[qf]){s+=90;m++;}
+      for(var i=0;i<qt.length;i++){var q=qt[i],b=0,h=false;
+        if(gr.__t[q]){ if((DF[q]||0)>=cm)b=4; else {b=(/\d/.test(q)?55:26);h=true;} }
+        else if(q.length>=3&&gr.__b.indexOf(q)>=0){b=12;h=true;}
+        else if(q.length>=4){for(var t in gr.__t){if(Math.abs(t.length-q.length)<=1&&lev1(t,q)){b=9;h=true;break;}}}
+        if(h)m++; s+=b; }
+      if(!m)return 0; if(qt.length>=2&&m<Math.ceil(qt.length/2))return 0; return s+m*4;
+    }
+    function rank(query){ var qt=tk(query).filter(function(t){return !STOP[nn(t)];}).map(nn).filter(Boolean);
+      if(!qt.length)return[]; var qf=nn(query),qb=qt.map(brandFor);
+      var sc=IDX.map(function(gr){return {gr:gr,s:score(qt,qf,gr)};}).filter(function(x){return x.s>0;});
+      sc.sort(function(a,b){return b.s-a.s;}); return sc.slice(0,7).map(function(x){x.qb=qb;return x;});
+    }
+    function analog(gr,qb){ for(var i=0;i<gr.b.length;i++){ if(qb.indexOf(nn(gr.b[i].split(' ')[0]))>=0) return gr.b[i].split(' ')[0]+' '+(gr.m[i]||''); } return gr.b.length?(gr.b[0].split(' ')[0]+' '+(gr.m[0]||'')):''; }
+    function row(x){ var gr=x.gr,mark=gr.z||gr.e,sub=gr.z?gr.e:gr.p,an=analog(gr,x.qb);
+      return '<a class="ms-row" href="/podbor?q='+encodeURIComponent(gr.e)+'"><img src="/assets/catalog/'+(IMG[gr.t]||'cat_cylindrical')+'.webp" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'"><span class="ms-rb"><span class="ms-rm">'+esc(mark)+(sub?' <em>'+esc(sub)+'</em>':'')+'</span><span class="ms-rt">'+esc(T[gr.t])+(an?' · '+esc(an):'')+' · '+esc(gr.pw)+' кВт · i '+esc(gr.i)+'</span></span><span class="ms-rp">по запросу</span></a>';
+    }
+    function render(q){ var top=rank(q);
+      if(!top.length){ dd.innerHTML='<div class="ms-empty">По «'+esc(q)+'» точных карточек нет. Нажмите «Найти» — откроем полный подбор.</div>'; dd.hidden=false; return; }
+      dd.innerHTML=top.map(row).join('')+'<a class="ms-all" href="/podbor?q='+encodeURIComponent(q)+'">Показать все результаты в подборе →</a>'; dd.hidden=false;
+    }
+    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
+    var t; function deb(){ clearTimeout(t); var q=input.value.trim(); if(q.length<2){dd.hidden=true;return;} t=setTimeout(function(){ if(IDX)render(q); else load(function(){render(q);}); },140); }
+    input.addEventListener('focus',function(){ load(); if(input.value.trim().length>=2)deb(); });
+    input.addEventListener('input',deb);
+    input.addEventListener('keydown',function(e){ if(e.key==='Escape'){dd.hidden=true;} });
+    document.addEventListener('click',function(e){ if(!form.contains(e.target))dd.hidden=true; });
+  })(); }catch(e){}
+
 })();
