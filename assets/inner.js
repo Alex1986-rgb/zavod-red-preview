@@ -8,8 +8,15 @@
   });
   document.querySelectorAll('.menu .drop-toggle').forEach(function(t){
     t.addEventListener('click',function(e){
+      var dd=t.closest('.dropdown');
+      // десктоп (есть ховер): клик по «О заводе» ведёт на страницу, сабменю раскрывается наведением.
+      // мобилка (тач): клик раскрывает сабменю.
+      if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){
+        var main=dd.querySelector('.submenu a[href$="/about"]')||dd.querySelector('.submenu a[href]');
+        if(main){ location.href=main.getAttribute('href'); return; }
+      }
       e.preventDefault();
-      var dd=t.closest('.dropdown');var open=dd.classList.toggle('open');
+      var open=dd.classList.toggle('open');
       t.setAttribute('aria-expanded',open?'true':'false');
     });
   });

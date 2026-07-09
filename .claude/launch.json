@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "4137", "--directory", "/Users/macbook/Downloads/zavod_preview"],
       "port": 4137
+    },
+    {
+      "name": "zavod-preview-local",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4188", "--directory", "/Users/alexandr/projects/zavod-red-preview"],
+      "port": 4188
     }
   ]
 }
