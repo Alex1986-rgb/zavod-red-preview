@@ -34,7 +34,7 @@ function wireLeadForm(formId, opts){
   function show(msg,type){res.className='form-result show'+(type?' '+type:'');res.innerHTML=msg;}
   if(ph){
     ph.addEventListener('input',function(){
-      var x=this.value.replace(/\D/g,'').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+      var dg=this.value.replace(/\D/g,'');if(dg[0]==='7'||dg[0]==='8')dg=dg.slice(1);dg=dg.slice(0,10);var x=('7'+dg).match(/(\d{1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
       if(!x)return;
       if(x[1]!=='7'&&x[1]!=='8'&&x[1]!=='')x[2]=x[1]+(x[2]||'');
       x[1]='7';
