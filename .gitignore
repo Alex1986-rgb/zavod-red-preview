@@ -1,3 +1,6 @@
 .index-state.json
 index-accelerator.log
 .DS_Store
+
+# backend secrets (never commit)
+api/config.local.php

@@ -380,3 +380,32 @@ html,body{overflow-x:clip}
 [data-theme="light"] .field select:focus,[data-theme="light"] .field input:focus,[data-theme="light"] .pf-in:focus{border-color:var(--red)}
 [data-theme="light"] .sel-result,[data-theme="light"] .sel-result b{color:#16242e}
 [data-theme="light"] ::placeholder{color:#7d8e9b;opacity:1}
+
+/* ===== Модернизированный подвал (site-footer) — 2026 ===== */
+.site-footer{position:relative;background:linear-gradient(180deg,#f7f9fb 0%,#e9edf1 100%);border-top:0;padding:0 0 24px;overflow:hidden}
+[data-theme="light"] .site-footer{background:linear-gradient(180deg,#f7f9fb 0%,#e9edf1 100%)}
+.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red,#cf1616),#ff6a3d)}
+.site-footer .sf-top{padding:54px 0 34px;grid-template-columns:1.7fr 1fr 1.2fr 1fr}
+.sf-brand img{height:44px;margin-bottom:16px;filter:none}
+.sf-brand p{color:#5a6b76;font-size:13.5px;line-height:1.65;max-width:330px}
+.sf-contacts-inline{gap:9px;margin-top:6px}
+.sf-contacts-inline a{display:inline-flex;align-items:center;gap:9px;color:#101f2a;font-weight:700;font-size:16px;width:max-content}
+.sf-contacts-inline a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red,#cf1616);flex-shrink:0;box-shadow:0 0 0 3px rgba(207,22,22,.14)}
+.sf-contacts-inline a.sf-mail{font-weight:600;font-size:14px;color:#5a6b76}
+.sf-contacts-inline a.sf-mail::before{background:#9fb0bb;box-shadow:none}
+.sf-contacts-inline a:hover{color:var(--red,#cf1616)}
+.sf-col h4{color:#101f2a;font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;padding-bottom:12px;margin-bottom:8px;position:relative}
+.sf-col h4::after{content:"";position:absolute;left:0;bottom:0;width:26px;height:2px;background:var(--red,#cf1616)}
+.sf-col a{display:block;color:#5a6b76;padding:5px 0;font-size:13.5px;border:0;transition:color .16s,transform .16s}
+.sf-col a:hover{color:var(--red,#cf1616);transform:translateX(3px)}
+.sf-req{margin-top:16px;padding-top:14px;border-top:1px solid #dde3e8;color:#8393a0;font-size:12.5px;line-height:1.7}
+.sf-bottom{border-top:1px solid #dde3e8;margin-top:10px;padding-top:22px;color:#8393a0;font-size:12.5px}
+.sf-bottom a{color:#8393a0;text-decoration:none;border-bottom:1px solid transparent}
+.sf-bottom a:hover{color:var(--red,#cf1616);border-bottom-color:currentColor}
+/* тёмная тема сохраняет глубину */
+[data-theme="dark"] .site-footer{background:linear-gradient(180deg,#0c1822 0%,#070f16 100%)}
+[data-theme="dark"] .sf-brand p,[data-theme="dark"] .sf-col a,[data-theme="dark"] .sf-bottom,[data-theme="dark"] .sf-req,[data-theme="dark"] .sf-bottom a{color:#94a8b5}
+[data-theme="dark"] .sf-col h4,[data-theme="dark"] .sf-contacts-inline a{color:#e9eff4}
+[data-theme="dark"] .sf-req,[data-theme="dark"] .sf-bottom{border-top-color:#1c2b36}
+@media(max-width:860px){.site-footer .sf-top{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:26px}}
