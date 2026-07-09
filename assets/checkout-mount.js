@@ -93,7 +93,7 @@
 
   function render() {
     if (!items().length) {
-      host.innerHTML = '<div class="zr-co-ok"><div class="ic" style="background:#eef2f6;color:#8a97a1">🛒</div><h2>Корзина пуста</h2><p>Добавьте товары, чтобы оформить заказ.</p><div class="btns"><a class="pri" href="catalog.html">В каталог</a><a class="gh" href="podbor.html">Подбор редуктора</a></div></div>';
+      host.innerHTML = '<div class="zr-co-ok"><div class="ic" style="background:#eef2f6;color:#8a97a1">🛒</div><h2>Корзина пуста</h2><p>Добавьте товары, чтобы оформить заказ.</p><div class="btns"><a class="pri" href="/catalog/">В каталог</a><a class="gh" href="/podbor">Подбор редуктора</a></div></div>';
       return;
     }
     host.innerHTML = '<div class="zr-co-grid"><form id="zr-co-form" onsubmit="return false">' + formHTML() + '</form>' + summaryHTML() + '</div>';
@@ -138,7 +138,7 @@
     host.innerHTML = '<div class="zr-co-ok"><div class="ic">✓</div><h2>Заказ принят</h2>' +
       '<p>Спасибо! Мы получили заявку. Инженер свяжется с вами в течение 15 минут в рабочее время, подтвердит наличие, рассчитает доставку и выставит счёт.</p>' +
       '<div class="ord">Номер заказа: ' + no + '</div>' +
-      '<div class="btns"><a class="pri" href="index.html">На главную</a><a class="gh" href="catalog.html">Продолжить покупки</a></div></div>';
+      '<div class="btns"><a class="pri" href="index.html">На главную</a><a class="gh" href="/catalog/">Продолжить покупки</a></div></div>';
     try { window.scrollTo({ top: host.getBoundingClientRect().top + window.scrollY - 90, behavior: "smooth" }); } catch (e) {}
   }
 

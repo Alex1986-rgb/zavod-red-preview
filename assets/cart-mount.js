@@ -66,7 +66,7 @@
   function render() {
     var c = getCart(), items = (c.items || []).filter(function (i) { return i && i.name; });
     if (!items.length) {
-      host.innerHTML = '<div class="zr-cart-empty"><div class="ec-ic">🛒</div><h2>Корзина пуста</h2><p>Добавьте редукторы из каталога или подберите по параметрам.</p><div class="ec-btns"><a class="zr-cbtn primary" href="catalog.html">В каталог</a><a class="zr-cbtn ghost" href="podbor.html">Подбор редуктора</a></div></div>';
+      host.innerHTML = '<div class="zr-cart-empty"><div class="ec-ic">🛒</div><h2>Корзина пуста</h2><p>Добавьте редукторы из каталога или подберите по параметрам.</p><div class="ec-btns"><a class="zr-cbtn primary" href="/catalog/">В каталог</a><a class="zr-cbtn ghost" href="/podbor">Подбор редуктора</a></div></div>';
       updateSubtitle(0, 0);
       return;
     }
@@ -84,13 +84,13 @@
     }).join("");
     host.innerHTML =
       '<div class="zr-cart-grid"><div class="zr-cart-list">' + rows +
-        '<a class="zr-cart-back" href="catalog.html">← Продолжить покупки</a></div>' +
+        '<a class="zr-cart-back" href="/catalog/">← Продолжить покупки</a></div>' +
       '<aside class="zr-cart-sum"><h2>Итог заказа</h2>' +
         '<div class="sr"><span>Товары, ' + qtyTotal + ' шт.</span><b>' + rub(sub) + '</b></div>' +
         '<div class="sr good"><span>Скидка от завода</span><b>−' + rub(disc) + '</b></div>' +
         '<div class="sr"><span>Доставка</span><span class="muted">расчёт при оформлении</span></div>' +
         '<div class="sr total"><span>Итого</span><b>' + rub(total) + '</b></div>' +
-        '<a class="zr-cbtn primary wide" href="checkout.html">Оформить заказ</a>' +
+        '<a class="zr-cbtn primary wide" href="/checkout">Оформить заказ</a>' +
         '<p class="sn">Счёт с НДС · гарантия 24 мес. Инженер свяжется в течение 15 минут.</p>' +
       '</aside></div>';
     updateSubtitle(items.length, total);

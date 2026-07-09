@@ -110,7 +110,7 @@
   }
   function ordersHTML() {
     var os = orders();
-    if (!os.length) return '<div class="zr-cab-panel"><div class="zr-cab-empty"><div class="ic">📦</div><h3>Заказов пока нет</h3><p>Оформите первый заказ — он появится здесь с историей и трекингом статуса.</p><a class="zr-cab-btn" href="catalog.html">Перейти в каталог</a></div></div>';
+    if (!os.length) return '<div class="zr-cab-panel"><div class="zr-cab-empty"><div class="ic">📦</div><h3>Заказов пока нет</h3><p>Оформите первый заказ — он появится здесь с историей и трекингом статуса.</p><a class="zr-cab-btn" href="/catalog/">Перейти в каталог</a></div></div>';
     return os.map(function (o, idx) {
       var st = stageOf(o), done = st >= 3;
       var its = (o.items || []).map(function (i) { return '<div class="zr-ord-it"><span><b>' + esc(i.name) + '</b> × ' + (i.qty || 1) + '</span><span>' + rub((i.price || 0) * (i.qty || 1)) + '</span></div>'; }).join("");
@@ -134,15 +134,15 @@
   }
   function docsHTML() {
     var docs = [["Счёт на оплату", "формируется после подтверждения", "📄"], ["Договор поставки", "типовой, с НДС", "📝"], ["Паспорт изделия", "к каждой позиции", "📘"], ["Сертификат ГОСТ 31592-2012", "соответствие", "🏅"]];
-    return '<div class="zr-cab-panel">' + docs.map(function (x) { return '<div class="zr-doc"><span class="di">' + x[2] + '</span><div><div class="dn">' + x[0] + '</div><div class="dd">' + x[1] + '</div></div><a href="contacts.html">Запросить</a></div>'; }).join("") + "</div>";
+    return '<div class="zr-cab-panel">' + docs.map(function (x) { return '<div class="zr-doc"><span class="di">' + x[2] + '</span><div><div class="dn">' + x[0] + '</div><div class="dd">' + x[1] + '</div></div><a href="/contacts">Запросить</a></div>'; }).join("") + "</div>";
   }
   function asideHTML() {
     return '<aside class="zr-cab-aside">' +
       '<div class="zr-aside-card"><div class="zr-mgr"><div class="ma">СК</div><div><div class="mn">Сергей К.</div><div class="mr">ваш персональный менеджер</div></div></div>' +
       '<div class="row">📞 <a href="tel:+74951514102">+7 (495) 151-41-02</a></div>' +
       '<div class="row">✉ <a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></div>' +
-      '<a class="zr-cab-btn wide gh" href="contacts.html" style="margin-top:12px">Написать менеджеру</a></div>' +
-      '<div class="zr-aside-card"><h3>Нужен подбор?</h3><p>Пришлите фото шильдика или параметры — инженер подберёт аналог и цену за 15 минут.</p><a class="zr-cab-btn wide" href="podbor.html">Подобрать редуктор</a></div>' +
+      '<a class="zr-cab-btn wide gh" href="/contacts" style="margin-top:12px">Написать менеджеру</a></div>' +
+      '<div class="zr-aside-card"><h3>Нужен подбор?</h3><p>Пришлите фото шильдика или параметры — инженер подберёт аналог и цену за 15 минут.</p><a class="zr-cab-btn wide" href="/podbor">Подобрать редуктор</a></div>' +
       '</aside>';
   }
 
@@ -182,7 +182,7 @@
       if (o && o.items) {
         var c = getCart();
         o.items.forEach(function (it) { var ex = c.items.filter(function (x) { return x.name === it.name; })[0]; if (ex) ex.qty = (ex.qty || 1) + (it.qty || 1); else c.items.push({ name: it.name, price: it.price, qty: it.qty || 1, img: "" }); });
-        saveCart(c); location.href = "cart.html";
+        saveCart(c); location.href = "/cart";
       }
     }
   });
