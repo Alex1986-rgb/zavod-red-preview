@@ -288,12 +288,28 @@
     }
     return true;
   }
+  function normQ(s){ return String(s==null?'':s).toLowerCase().replace(/ё/g,'е').replace(/[^0-9a-zа-я]+/g,''); }
+  function hayOf(g){
+    if(g._nh!=null) return g._nh;
+    var parts=[g.e,g.p];
+    // ЗР-маркировка из номера(ов) EVL (заявлена в подсказке поиска: «ZR 603»)
+    var mm=String(g.e||'').match(/EVL\s+([\d\/]+)/);
+    if(mm){ mm[1].split('/').forEach(function(np){ var z=ZRMAP[parseInt(np,10)]; if(z!=null) parts.push('ZR '+z); }); }
+    if(DB&&DB.t&&DB.t[g.t]!=null) parts.push(DB.t[g.t]);
+    var a=g.a||{};
+    // ВСЕ бренды + ВСЕ модели аналогов (не только первую)
+    Object.keys(a).forEach(function(b){ parts.push(b); (a[b]||[]).forEach(function(m){ parts.push(m); }); });
+    return (g._nh=normQ(parts.join(' ')));
+  }
+  var QSTOP={'редуктор':1,'редуктора':1,'редукторы':1,'мотор':1,'моторредуктор':1,'мотредуктор':1,'привод':1,'приводы':1,'купить':1,'аналог':1,'аналоги':1,'цена':1,'цены':1};
   function passQ(it){
-    var q=(qEl.value||'').trim().toLowerCase(); if(!q)return true;
-    var g=DB.g[it[0]];
-    var hay=[g.e,g.p].concat(Object.keys(g.g||{}).map(function(k){return g.g[k];}))
-            .concat(Object.keys(g.a||{}).map(function(k){return g.a[k][0];})).join(' ').toLowerCase();
-    return hay.indexOf(q)>=0;
+    var raw=(qEl.value||'').trim(); if(!raw)return true;
+    var hay=hayOf(DB.g[it[0]]);
+    // токенный AND по нормализованной строке, общие слова («редуктор», «мотор»…) отбрасываем:
+    // «SEW R107», «R 107», «ZR 603», «ЧМ 63», «мотор-редуктор SEW» — всё матчится
+    var toks=raw.toLowerCase().split(/\s+/).map(normQ).filter(function(n){ return n && !QSTOP[n]; });
+    if(!toks.length) return true;
+    return toks.every(function(n){ return hay.indexOf(n)>=0; });
   }
 
   function apply(){
