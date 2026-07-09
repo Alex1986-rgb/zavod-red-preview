@@ -15,6 +15,8 @@
     a.unshift(obj); save(a); return true;
   }
   function priceFrom(txt) { var m = String(txt || "").replace(/[\s ]/g, "").match(/(\d{3,})/); return m ? parseInt(m[1], 10) : 0; }
+  function acct() { try { var s = JSON.parse(localStorage.getItem("zr_session")); return !!(s && s.mode === "account"); } catch (e) { return false; } }
+  function pushServer() { if (!acct()) return; try { fetch("/api/cabinet/store.php", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k: "favorites", v: list() }) }); } catch (e) {} }
   function toast(m, warn) {
     var t = d.getElementById("zr-fav-toast");
     if (!t) { t = d.createElement("div"); t.id = "zr-fav-toast"; d.body.appendChild(t); }
@@ -42,6 +44,7 @@
       ev.preventDefault(); ev.stopPropagation();
       var added = toggle(obj); b.classList.toggle("on", added);
       toast(added ? "Добавлено в избранное" : "Убрано из избранного");
+      pushServer();
     });
     card.appendChild(b);
   }

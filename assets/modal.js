@@ -363,6 +363,14 @@
     var input=form.querySelector('input[name=q]'); if(!input || form.__zrEnh) return; form.__zrEnh=1;
     var go=document.createElement('button'); go.type='submit'; go.className='ms-go'; go.setAttribute('aria-label','Найти'); go.textContent='Найти'; form.appendChild(go);
     var dd=document.createElement('div'); dd.className='ms-dd'; dd.hidden=true; form.appendChild(dd);
+    // «по шильду» — кликабельно: открывает заявку с загрузкой фото шильдика
+    var chip=form.querySelector('.ms-chip');
+    if(chip){
+      chip.setAttribute('data-zayavka',''); chip.setAttribute('role','button'); chip.setAttribute('tabindex','0');
+      chip.setAttribute('title','Подбор по фото шильдика — прикрепите фото, инженер определит модель и аналог');
+      chip.style.cursor='pointer';
+      chip.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); chip.click(); } });
+    }
     var BRAND_RU={sew:['сью','сев','сэв'],nord:['норд'],bonfiglioli:['бонфильоли','бонфиглиоли','бонфилиоли'],motovario:['мотоварио'],bauer:['бауэр','бауер'],lenze:['ленце','лензе'],varvel:['варвель','варвел'],siti:['сити'],stm:['стм'],rossi:['росси'],watt:['ватт'],yilmaz:['йилмаз','йылмаз'],transtecno:['транстекно'],innovari:['инновари'],vemper:['вемпер']};
     var TYPE_EN={0:['worm'],1:['coaxial','inline'],2:['bevel'],3:['flat'],4:['helical','cylindrical']};
     var STOP={редуктор:1,редуктора:1,редукторы:1,мотор:1,моторредуктор:1,привод:1,купить:1,аналог:1,цена:1};

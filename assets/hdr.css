@@ -79,3 +79,5 @@ header.hdr2{position:relative;top:auto;z-index:auto;background:transparent;backd
 .hdr2 .ms-all{display:block;text-align:center;padding:11px;color:var(--h-red);font-weight:600;font-size:13px;text-decoration:none;border-top:1px solid var(--h-line);margin-top:4px}
 .hdr2 .ms-empty{padding:14px;color:var(--h-dim);font-size:13px}
 @media(max-width:860px){.hdr2 .ms-go{padding:8px 12px;font-size:12.5px}.hdr2 .ms-row img{width:38px;height:28px}}
+.hdr2 .ms-chip[data-zayavka]{cursor:pointer;transition:.14s}
+.hdr2 .ms-chip[data-zayavka]:hover{border-color:var(--h-red);color:var(--h-red)}

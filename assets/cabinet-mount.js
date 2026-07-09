@@ -21,6 +21,38 @@
   function getCart() { return jget("zr_cart", { items: [] }); }
   function saveCart(c) { jset("zr_cart", c); if (window.zrRefreshBadge) try { window.zrRefreshBadge(); } catch (_) {} }
 
+  /* ---------- server sync (аккаунт на сервере → доступ с любого устройства) ---------- */
+  var STORE = AUTH_API + "store.php";
+  function isAccount() { var s = session(); return !!(s && s.mode === "account"); }
+  var SYNC_KEYS = {
+    favorites: function (x) { return x && x.name; },
+    orders: function (x) { return x && x.no; },
+    requests: function (x) { return x && ((x.title || "") + (x.date || "")); },
+    addresses: function (x) { return x; }
+  };
+  function mergeUnion(server, local, keyFn) {
+    var seen = {}, out = [];
+    (server || []).concat(local || []).forEach(function (x) { var k = keyFn(x); if (k && !seen[k]) { seen[k] = 1; out.push(x); } });
+    return out;
+  }
+  function pushStore(k) {
+    if (!isAccount()) return;
+    try { fetch(STORE, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k: k, v: jget("zr_" + k, []) }) }); } catch (e) {}
+  }
+  function pullAll(done) {
+    if (!isAccount()) { done && done(); return; }
+    var keys = Object.keys(SYNC_KEYS), left = keys.length, changed = false;
+    keys.forEach(function (k) {
+      fetch(STORE + "?k=" + k, { credentials: "include", cache: "no-store" }).then(function (r) { return r.json(); }).then(function (res) {
+        if (res && res.status === "success" && Array.isArray(res.data)) {
+          var merged = mergeUnion(res.data, jget("zr_" + k, []), SYNC_KEYS[k]);
+          jset("zr_" + k, merged); changed = true;
+          try { fetch(STORE, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k: k, v: merged }) }); } catch (e) {}
+        }
+      }).catch(function () {}).then(function () { if (--left === 0) done && done(changed); });
+    });
+  }
+
   /* ---------- utils ---------- */
   function rub(n) { return Math.round(n).toLocaleString("ru-RU") + " ₽"; }
   function esc(s) { return String(s == null ? "" : s).replace(/[<>&"]/g, function (c) { return { "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c]; }); }
@@ -311,9 +343,9 @@
     if (e.target.closest("#zr-addr-add")) {
       var inp = d.getElementById("zr-addr-new"); var val = inp ? inp.value.trim() : "";
       if (val.length < 5) return toast("Укажите адрес подробнее", true);
-      var a = addresses(); a.push(val); jset("zr_addresses", a); render(); toast("Адрес добавлен"); return;
+      var a = addresses(); a.push(val); jset("zr_addresses", a); pushStore("addresses"); render(); toast("Адрес добавлен"); return;
     }
-    if ((t = e.target.closest("[data-adrdel]"))) { var a2 = addresses(); a2.splice(parseInt(t.getAttribute("data-adrdel"), 10), 1); jset("zr_addresses", a2); render(); return; }
+    if ((t = e.target.closest("[data-adrdel]"))) { var a2 = addresses(); a2.splice(parseInt(t.getAttribute("data-adrdel"), 10), 1); jset("zr_addresses", a2); pushStore("addresses"); render(); return; }
 
     if ((t = e.target.closest("[data-favcart]"))) {
       var fx = favorites()[parseInt(t.getAttribute("data-favcart"), 10)]; if (!fx) return;
@@ -321,7 +353,7 @@
       if (ex) ex.qty = (ex.qty || 1) + 1; else c.items.push({ name: fx.name, price: fx.price || 0, qty: 1, img: fx.img || "" });
       saveCart(c); toast("Добавлено в корзину"); return;
     }
-    if ((t = e.target.closest("[data-favdel]"))) { var ff = favorites(); ff.splice(parseInt(t.getAttribute("data-favdel"), 10), 1); jset("zr_favorites", ff); render(); return; }
+    if ((t = e.target.closest("[data-favdel]"))) { var ff = favorites(); ff.splice(parseInt(t.getAttribute("data-favdel"), 10), 1); jset("zr_favorites", ff); pushStore("favorites"); render(); return; }
 
     if ((t = e.target.closest("[data-repeat]"))) {
       var o = orders()[parseInt(t.getAttribute("data-repeat"), 10)];
@@ -366,8 +398,8 @@
 
   /* ---------- public API for other pages ---------- */
   window.zrCab = {
-    addFavorite: function (obj) { if (!obj || !obj.name) return; var f = favorites(); if (f.some(function (x) { return x.name === obj.name; })) return; f.unshift({ name: obj.name, price: obj.price || 0, spec: obj.spec || "", img: obj.img || "", url: obj.url || "" }); jset("zr_favorites", f); },
-    addRequest: function (obj) { if (!obj) return; var r = requests(); r.unshift({ title: obj.title || "Запрос подбора", params: obj.params || "", status: obj.status || "На рассмотрении", date: new Date().toISOString() }); jset("zr_requests", r); }
+    addFavorite: function (obj) { if (!obj || !obj.name) return; var f = favorites(); if (f.some(function (x) { return x.name === obj.name; })) return; f.unshift({ name: obj.name, price: obj.price || 0, spec: obj.spec || "", img: obj.img || "", url: obj.url || "" }); jset("zr_favorites", f); pushStore("favorites"); },
+    addRequest: function (obj) { if (!obj) return; var r = requests(); r.unshift({ title: obj.title || "Запрос подбора", params: obj.params || "", status: obj.status || "На рассмотрении", date: new Date().toISOString() }); jset("zr_requests", r); pushStore("requests"); }
   };
 
   /* ---------- mount ---------- */
@@ -378,11 +410,15 @@
     cand.sort(function (a, b) { return b.textContent.length - a.textContent.length; });
     if (cand[0]) cand[0].style.display = "none";
   }
+  var synced = false;
   function build() {
     var mockup = d.querySelector(".m1"); if (!mockup) return false;
     mockup.style.display = "none"; hideMock(); css();
     if (!host) { host = d.createElement("section"); host.className = "zr-cab"; mockup.parentNode.insertBefore(host, mockup); }
-    render(); return true;
+    render();
+    // один раз подтянуть данные аккаунта с сервера и перерисовать
+    if (!synced && isAccount()) { synced = true; pullAll(function (changed) { if (changed) render(); }); }
+    return true;
   }
   var n = 0; (function loop() { if (build()) return; if (n++ < 60) setTimeout(loop, 80); })();
 })();

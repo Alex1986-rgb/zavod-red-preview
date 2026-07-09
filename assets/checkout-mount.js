@@ -124,7 +124,10 @@
     var sub = its.reduce(function (a, i) { return a + (i.price || 0) * (i.qty || 1); }, 0);
     var total = sub - Math.round(sub * DISCOUNT);
     var order = { no: no, date: new Date().toISOString(), items: its.map(function (i) { return { name: i.name, price: i.price, qty: i.qty }; }), total: total, entity: entity, org: val("org"), person: val("person"), phone: val("phone"), email: val("email"), status: "Принят" };
-    try { var arr = JSON.parse(localStorage.getItem("zr_orders") || "[]"); arr.unshift(order); localStorage.setItem("zr_orders", JSON.stringify(arr.slice(0, 50))); } catch (e) {}
+    try { var arr = JSON.parse(localStorage.getItem("zr_orders") || "[]"); arr.unshift(order); arr = arr.slice(0, 50); localStorage.setItem("zr_orders", JSON.stringify(arr));
+      // синхронизация заказов с сервером (аккаунт → любое устройство)
+      try { var sess = JSON.parse(localStorage.getItem("zr_session")); if (sess && sess.mode === "account") fetch("/api/cabinet/store.php", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k: "orders", v: arr }) }); } catch (e2) {}
+    } catch (e) {}
     try { localStorage.setItem("zr_profile", JSON.stringify({ entity: entity, org: val("org"), inn: val("inn"), person: val("person"), phone: val("phone"), email: val("email"), addr: val("addr") })); } catch (e) {}
     // отправка заявки на почту (если настроен Web3Forms) — fire-and-forget
     try {
