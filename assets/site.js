@@ -338,7 +338,7 @@
     });
   }
   /* ----- Mobile navigation drawer ----- */
-  var MENU = [["Каталог", "/catalog/"], ["Подбор", "/podbor"], ["Цены", "calculator.html"], ["Производителям", "/about"], ["Импортозамещение", "blog.html"], ["Блог", "blog.html"], ["О заводе", "/about"], ["Контакты", "/contacts"]];
+  var MENU = [["Каталог", "/catalog/"], ["Подбор", "/podbor"], ["Цены", "/ceny"], ["Производителям", "/about"], ["Импортозамещение", "/importozameshchenie"], ["Блог", "/blog"], ["О заводе", "/about"], ["Контакты", "/contacts"]];
   function setupMobileNav() {
     // tag the desktop main-menu row (parent of the "Подбор" nav link)
     var items = [].slice.call(d.querySelectorAll("a")).filter(function (a) { return norm(a.textContent) === "Подбор" && a.querySelectorAll("*").length < 2; });
@@ -348,7 +348,7 @@
       var dr = d.createElement("div"); dr.id = "zr-drawer";
       var html = '<div class="zr-dp"><button class="zr-dc" aria-label="Закрыть">✕</button>';
       MENU.forEach(function (m) { html += '<a href="' + m[1] + '">' + m[0] + "</a>"; });
-      html += '<a href="/cart">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>';
+      html += '<a href="/cart">Корзина</a><a href="/cabinet">Личный кабинет</a></div>';
       dr.innerHTML = html;
       d.body.appendChild(dr);
       dr.addEventListener("click", function (e) { if (e.target === dr || e.target.closest(".zr-dc")) dr.classList.remove("on"); });
@@ -419,14 +419,14 @@
       ["Планетарные редукторы","тип","/podbor?q="+encodeURIComponent("планетар")],
       ["Мотор-редукторы","тип","/podbor?q="+encodeURIComponent("мотор")],
       ["Вариаторы","тип","/podbor?q="+encodeURIComponent("вариатор")],
-      ["EVL 197 — аналог SEW R107","товар","product.html"],
+      ["EVL 197 — аналог SEW R107","товар","/podbor?q="+encodeURIComponent("SEW R107")],
       ["Аналоги SEW","бренд","/podbor?q=SEW"],
       ["Аналоги NORD","бренд","/podbor?q=NORD"],
       ["Аналоги Bonfiglioli","бренд","/podbor?q=Bonfiglioli"],
       ["Аналоги Motovario","бренд","/podbor?q=Motovario"],
       ["Подбор по параметрам","калькулятор","/podbor"],
-      ["Подбор по фото шильдика","сервис","shildik.html"],
-      ["Калькулятор цены","цены","calculator.html"]
+      ["Подбор по фото шильдика","сервис","/podbor"],
+      ["Калькулятор цены","цены","/podbor"]
     ];
     if(!d.getElementById("zr-search-css")){
       var st=d.createElement("style"); st.id="zr-search-css";
@@ -473,7 +473,7 @@
     [].forEach.call(d.querySelectorAll("button,span,div,a"), function (el) {
       if (norm(el.textContent) === "по шильду" && el.childElementCount === 0 && !el._zrS) {
         el._zrS = 1; el.style.cursor = "pointer"; el.title = "Подбор по фото шильдика";
-        el.addEventListener("click", function (ev) { ev.preventDefault(); ev.stopPropagation(); location.href = "shildik.html"; }, true);
+        el.addEventListener("click", function (ev) { ev.preventDefault(); ev.stopPropagation(); location.href = "/podbor"; }, true);
       }
     });
   }

@@ -138,7 +138,7 @@
     host.innerHTML = '<div class="zr-co-ok"><div class="ic">✓</div><h2>Заказ принят</h2>' +
       '<p>Спасибо! Мы получили заявку. Инженер свяжется с вами в течение 15 минут в рабочее время, подтвердит наличие, рассчитает доставку и выставит счёт.</p>' +
       '<div class="ord">Номер заказа: ' + no + '</div>' +
-      '<div class="btns"><a class="pri" href="index.html">На главную</a><a class="gh" href="/catalog/">Продолжить покупки</a></div></div>';
+      '<div class="btns"><a class="pri" href="/">На главную</a><a class="gh" href="/catalog/">Продолжить покупки</a></div></div>';
     try { window.scrollTo({ top: host.getBoundingClientRect().top + window.scrollY - 90, behavior: "smooth" }); } catch (e) {}
   }
 
