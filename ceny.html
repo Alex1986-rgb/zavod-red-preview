@@ -81,6 +81,17 @@
 .cfg input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--red,#cf1616);box-shadow:0 2px 6px rgba(16,31,42,.2);cursor:pointer}
 .cfg input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--red,#cf1616);cursor:pointer}
 .cfg-sl-scale{display:flex;justify-content:space-between;margin-top:7px;font:500 11.5px 'IBM Plex Mono',monospace;color:var(--muted2,#9aa7b0)}
+.cfg-opt-h{font:500 12px/1 'Archivo',sans-serif;color:var(--muted2,#9aa7b0)}
+.cfg-opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cfg-opt label.ol{display:block;font:600 12.5px 'Archivo',sans-serif;color:var(--muted,#5c6b76);margin:0 0 6px}
+.cfg-opt select{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid var(--line,#e2e6e0);border-radius:10px;background:var(--card,#fff);color:var(--text,#101f2a);font:500 14px 'Archivo',sans-serif;cursor:pointer}
+.cfg-opt select:focus{outline:0;border-color:var(--red,#cf1616)}
+.cfg-opt.full{grid-column:1/-1}
+.cfg-checks{display:flex;flex-wrap:wrap;gap:8px}
+.cfg-chk{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line,#e6eae6);border-radius:10px;background:var(--bg,#f7f9f8);cursor:pointer;font:500 12.5px 'Archivo',sans-serif;color:var(--text,#26333c);user-select:none}
+.cfg-chk input{accent-color:var(--red,#cf1616);cursor:pointer}
+.cfg-chk:has(input:checked){border-color:var(--red,#cf1616);background:color-mix(in srgb,var(--red,#cf1616) 6%,#fff);color:var(--red,#cf1616)}
+@media(max-width:560px){.cfg-opts{grid-template-columns:1fr}}
 .cfg-seg{display:flex;flex-wrap:wrap;gap:8px}
 .cfg-seg button{padding:11px 16px;border:1.5px solid var(--line,#e6eae6);border-radius:11px;background:var(--bg,#f7f9f8);color:var(--text,#26333c);font:600 13.5px 'Archivo',sans-serif;cursor:pointer;transition:.14s}
 .cfg-seg button:hover{border-color:#cdd6ce}
@@ -142,7 +153,11 @@
       </div>
     </div>
     <div class="cfg-step">
-      <div class="cfg-sh"><span class="cfg-n">4</span><h2>Количество</h2></div>
+      <div class="cfg-sh"><span class="cfg-n">4</span><h2>Опции и маркировка <span class="cfg-opt-h">— необязательно, дополнят обозначение</span></h2></div>
+      <div class="cfg-opts" id="cfgOpts"></div>
+    </div>
+    <div class="cfg-step">
+      <div class="cfg-sh"><span class="cfg-n">5</span><h2>Количество</h2></div>
       <div class="cfg-qty"><button type="button" id="cfgQd" aria-label="Меньше">−</button><b id="cfgQv">1</b><button type="button" id="cfgQi" aria-label="Больше">+</button></div>
     </div>
   </div>
@@ -153,6 +168,7 @@
     <div class="cfg-r"><span>Передаточное</span><b id="cfgRi">i 25</b></div>
     <div class="cfg-r"><span>Количество</span><b id="cfgRq">1 шт.</b></div>
     <div class="cfg-r"><span>Исполнение</span><b id="cfgRex">на лапах</b></div>
+    <div class="cfg-r" id="cfgRowOpts" style="display:none;align-items:flex-start"><span>Опции</span><b id="cfgRopts" style="text-align:right;max-width:62%;font-size:12.5px;line-height:1.4"></b></div>
     <div class="cfg-price"><span>Цена завода</span><b>по запросу</b></div>
     <div class="cfg-r" style="border-top:1px solid var(--line,#eef1ee);margin-top:2px;padding-top:12px"><span>Срок изготовления</span><b>от 3 дней</b></div>
     <button type="button" class="cfg-cta" id="cfgReq">Запросить точную цену</button>
@@ -169,18 +185,62 @@
   var st={t:0,mk:'ЧМ',nm:'Червячный',img:'/assets/catalog/cat_worm.webp',pw:12,i:6,q:1,ex:'на лапах'};
   function fnum(n){return String(n).replace('.',',');}
   function bg(el){var mn=+el.min,mx=+el.max,p=(el.value-mn)/(mx-mn)*100;el.style.setProperty('--p',p+'%');}
+
+  // ---- опции и маркировка ----
+  var OPT_SEL=[
+    {k:'shaft',l:'Сторона выхода вала',only:[0,2],o:[['','—'],['SS1','SS1 · левая'],['SS2','SS2 · правая']]},
+    {k:'fa',l:'Сторона фланца',o:[['','—'],['FA1','FA1'],['FA2','FA2']]},
+    {k:'flange',l:'Фланец, размер',o:[['','—'],['Ф220','Ф220'],['Ф200','Ф200'],['Ф180','Ф180']]},
+    {k:'t',l:'Тяга',o:[['','—'],['T1','T1 · сторона'],['T2','T2 · сторона'],['T3','T3 · спец']]},
+    {k:'cm',l:'Стяжная муфта',o:[['','—'],['СМ1','СМ1 · слева'],['МС2','МС2 · справа'],['СМ30','СМ30 · 30 мм']]},
+    {k:'brake',l:'Тормоз',o:[['','нет'],['ED','ED · 220В'],['ET','ET · 380В'],['ED2','ED2 · 220В + ручка'],['ET2','ET2 · 380В + ручка']]},
+    {k:'sensor',l:'Датчик температуры',o:[['','нет'],['Б1','Б1 · биметалл'],['Б3','Б3 · термистор']]},
+    {k:'ip',l:'Защита двигателя',o:[['','стандарт'],['IP65','IP65'],['IP66','IP66']]},
+    {k:'fan',l:'Принуд. вентиляция',o:[['','нет'],['V1','V1 · 220В'],['V2','V2 · 380В']]},
+    {k:'box',l:'Клеммная коробка',o:[['','стандарт'],['270/R','270° · вывод справа'],['270/L','270° · вывод слева']]},
+    {k:'enc',l:'Энкодер',o:[['','нет'],['ES24/1024/HTL','ES24/1024/HTL · 24В'],['SE8','SE8 · вал под энкодер 8 мм']]}
+  ];
+  var OPT_CHK=[['G','Резиновый буфер (G)'],['K','Шпонка/паз (K)'],['XV15','2-й конец вала (XV15)'],['AD','Цельный входной вал (AD)'],['ВЗР','Взрывозащита (ВЗР)'],['Z','Зонтик двигателя (Z)'],['VA010','Вариатор VA010 · 1,8–9,2 об/мин']];
+  function optsHost(){return document.getElementById('cfgOpts');}
+  function renderOpts(){
+    var h=optsHost(); if(!h)return;
+    var html='';
+    OPT_SEL.forEach(function(g){
+      if(g.only && g.only.indexOf(st.t)<0) return; // только для нужных типов
+      html+='<div class="cfg-opt"><label class="ol">'+g.l+'</label><select data-k="'+g.k+'">'+
+        g.o.map(function(o){return '<option value="'+o[0]+'">'+o[1]+'</option>';}).join('')+'</select></div>';
+    });
+    html+='<div class="cfg-opt full"><label class="ol">Дополнительно</label><div class="cfg-checks">'+
+      OPT_CHK.map(function(c){return '<label class="cfg-chk"><input type="checkbox" value="'+c[0]+'">'+c[1]+'</label>';}).join('')+'</div></div>';
+    // сохранить текущий выбор при перерисовке (смена типа прячет/показывает SS)
+    var prev=getOpts(true);
+    h.innerHTML=html;
+    // восстановить
+    h.querySelectorAll('select').forEach(function(s){ if(prev.sel[s.getAttribute('data-k')]) s.value=prev.sel[s.getAttribute('data-k')]; });
+    h.querySelectorAll('.cfg-chk input').forEach(function(c){ if(prev.chk.indexOf(c.value)>=0) c.checked=true; });
+    if(!h.__wired){ h.__wired=1; h.addEventListener('change',function(){render();}); }
+  }
+  function getOpts(raw){
+    var h=optsHost(); if(!h)return raw?{sel:{},chk:[]}:[];
+    var sel={},chk=[],codes=[];
+    h.querySelectorAll('select').forEach(function(s){var v=s.value;sel[s.getAttribute('data-k')]=v;if(v)codes.push(v);});
+    h.querySelectorAll('.cfg-chk input:checked').forEach(function(c){chk.push(c.value);codes.push(c.value);});
+    return raw?{sel:sel,chk:chk}:codes;
+  }
+
   function render(){
     var pw=fnum(PW[st.pw])+' кВт', ii='i '+fnum(RI[st.i]);
     $('cfgPwV').textContent=pw; $('cfgIV').textContent='i = '+fnum(RI[st.i]);
     $('cfgSImg').src=st.img; $('cfgSTitle').textContent=st.mk+' · '+st.nm; $('cfgSSub').textContent=pw+' · '+ii;
     $('cfgRType').textContent=st.nm; $('cfgRPw').textContent=pw; $('cfgRi').textContent=ii; $('cfgRq').textContent=st.q+' шт.'; var rex=$('cfgRex'); if(rex)rex.textContent=st.ex;
+    var oc=getOpts(), rowO=$('cfgRowOpts'); if(rowO){ if(oc.length){ rowO.style.display=''; $('cfgRopts').textContent=oc.join(' · '); } else rowO.style.display='none'; }
   }
-  function cfgStr(){return st.mk+' '+st.nm.toLowerCase()+', '+fnum(PW[st.pw])+' кВт, i='+fnum(RI[st.i])+', '+st.ex+', '+st.q+' шт.';}
+  function cfgStr(){var oc=getOpts();return st.mk+' '+st.nm.toLowerCase()+', '+fnum(PW[st.pw])+' кВт, i='+fnum(RI[st.i])+', '+st.ex+(oc.length?', опции: '+oc.join(' '):'')+', '+st.q+' шт.';}
   var types=$('cfgTypes');
   if(types)types.addEventListener('click',function(e){
     var b=e.target.closest('.cfg-type'); if(!b)return;
     types.querySelectorAll('.cfg-type').forEach(function(x){x.classList.remove('is-on');}); b.classList.add('is-on');
-    st.t=+b.getAttribute('data-t'); st.mk=b.getAttribute('data-mk'); st.nm=b.getAttribute('data-nm'); st.img=b.getAttribute('data-img'); render();
+    st.t=+b.getAttribute('data-t'); st.mk=b.getAttribute('data-mk'); st.nm=b.getAttribute('data-nm'); st.img=b.getAttribute('data-img'); renderOpts(); render();
   });
   var exSeg=$('cfgExec');
   if(exSeg)exSeg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;exSeg.querySelectorAll('button').forEach(function(x){x.classList.remove('is-on');});b.classList.add('is-on');st.ex=b.getAttribute('data-ex');render();});
@@ -214,6 +274,7 @@
       if(window.zrRefreshBadge)window.zrRefreshBadge();
     }catch(e){}
   });
+  renderOpts();
   render();
 })();
 </script>
