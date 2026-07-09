@@ -338,7 +338,7 @@
     });
   }
   /* ----- Mobile navigation drawer ----- */
-  var MENU = [["Каталог", "catalog.html"], ["Подбор", "podbor.html"], ["Цены", "calculator.html"], ["Производителям", "about.html"], ["Импортозамещение", "blog.html"], ["Блог", "blog.html"], ["О заводе", "about.html"], ["Контакты", "contacts.html"]];
+  var MENU = [["Каталог", "/catalog/"], ["Подбор", "/podbor"], ["Цены", "calculator.html"], ["Производителям", "/about"], ["Импортозамещение", "blog.html"], ["Блог", "blog.html"], ["О заводе", "/about"], ["Контакты", "/contacts"]];
   function setupMobileNav() {
     // tag the desktop main-menu row (parent of the "Подбор" nav link)
     var items = [].slice.call(d.querySelectorAll("a")).filter(function (a) { return norm(a.textContent) === "Подбор" && a.querySelectorAll("*").length < 2; });
@@ -348,7 +348,7 @@
       var dr = d.createElement("div"); dr.id = "zr-drawer";
       var html = '<div class="zr-dp"><button class="zr-dc" aria-label="Закрыть">✕</button>';
       MENU.forEach(function (m) { html += '<a href="' + m[1] + '">' + m[0] + "</a>"; });
-      html += '<a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>';
+      html += '<a href="/cart">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>';
       dr.innerHTML = html;
       d.body.appendChild(dr);
       dr.addEventListener("click", function (e) { if (e.target === dr || e.target.closest(".zr-dc")) dr.classList.remove("on"); });
@@ -382,9 +382,9 @@
     });
   }
   function repointContacts() {
-    // отдельная страница «Контакты» — уводим ссылки с about.html на contacts.html
+    // отдельная страница «Контакты» — уводим ссылки с /about на /contacts
     [].forEach.call(d.querySelectorAll("a"), function (a) {
-      if (norm(a.textContent) === "Контакты") a.setAttribute("href", "contacts.html");
+      if (norm(a.textContent) === "Контакты") a.setAttribute("href", "/contacts");
     });
   }
   function _esc(s){return String(s==null?"":s).replace(/[<>&"]/g,function(c){return {"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c];});}
@@ -406,25 +406,25 @@
     var grid=cards[0].parentElement;
     var b=d.getElementById("zr-search-banner");
     if(!b){ b=d.createElement("div"); b.id="zr-search-banner"; grid.parentElement.insertBefore(b,grid); }
-    if(shown>0) b.innerHTML='<span>По запросу <b>«'+_esc(q)+'»</b> найдено: '+shown+'</span><a href="catalog.html">Сбросить ✕</a>';
-    else b.innerHTML='<span>По запросу <b>«'+_esc(q)+'»</b> ничего не найдено. Уточните название или <a href="podbor.html" style="color:#e11b1b">подберите по параметрам</a>.</span><a href="catalog.html">Сбросить ✕</a>';
+    if(shown>0) b.innerHTML='<span>По запросу <b>«'+_esc(q)+'»</b> найдено: '+shown+'</span><a href="/catalog/">Сбросить ✕</a>';
+    else b.innerHTML='<span>По запросу <b>«'+_esc(q)+'»</b> ничего не найдено. Уточните название или <a href="/podbor" style="color:#e11b1b">подберите по параметрам</a>.</span><a href="/catalog/">Сбросить ✕</a>';
   }
   function setupSearch(){
     var inputs=[].slice.call(d.querySelectorAll("input")).filter(function(i){return /[Пп]оиск/.test(i.getAttribute("placeholder")||"");});
     var INDEX=[
-      ["Червячные редукторы","тип","catalog.html?q="+encodeURIComponent("червяч")],
-      ["Цилиндрические редукторы","тип","catalog.html?q="+encodeURIComponent("цилиндрическ")],
-      ["Соосно-цилиндрические","тип","catalog.html?q="+encodeURIComponent("соосно")],
-      ["Коническо-цилиндрические","тип","catalog.html?q="+encodeURIComponent("коническо")],
-      ["Планетарные редукторы","тип","catalog.html?q="+encodeURIComponent("планетар")],
-      ["Мотор-редукторы","тип","catalog.html?q="+encodeURIComponent("мотор")],
-      ["Вариаторы","тип","catalog.html?q="+encodeURIComponent("вариатор")],
+      ["Червячные редукторы","тип","/podbor?q="+encodeURIComponent("червяч")],
+      ["Цилиндрические редукторы","тип","/podbor?q="+encodeURIComponent("цилиндрическ")],
+      ["Соосно-цилиндрические","тип","/podbor?q="+encodeURIComponent("соосно")],
+      ["Коническо-цилиндрические","тип","/podbor?q="+encodeURIComponent("коническо")],
+      ["Планетарные редукторы","тип","/podbor?q="+encodeURIComponent("планетар")],
+      ["Мотор-редукторы","тип","/podbor?q="+encodeURIComponent("мотор")],
+      ["Вариаторы","тип","/podbor?q="+encodeURIComponent("вариатор")],
       ["EVL 197 — аналог SEW R107","товар","product.html"],
-      ["Аналоги SEW","бренд","catalog.html?q=SEW"],
-      ["Аналоги NORD","бренд","catalog.html?q=NORD"],
-      ["Аналоги Bonfiglioli","бренд","catalog.html?q=Bonfiglioli"],
-      ["Аналоги Motovario","бренд","catalog.html?q=Motovario"],
-      ["Подбор по параметрам","калькулятор","podbor.html"],
+      ["Аналоги SEW","бренд","/podbor?q=SEW"],
+      ["Аналоги NORD","бренд","/podbor?q=NORD"],
+      ["Аналоги Bonfiglioli","бренд","/podbor?q=Bonfiglioli"],
+      ["Аналоги Motovario","бренд","/podbor?q=Motovario"],
+      ["Подбор по параметрам","калькулятор","/podbor"],
       ["Подбор по фото шильдика","сервис","shildik.html"],
       ["Калькулятор цены","цены","calculator.html"]
     ];
@@ -450,7 +450,7 @@
         INDEX.filter(function(x){return x[0].toLowerCase().indexOf(q)>=0||x[1].indexOf(q)>=0;}).slice(0,6).forEach(function(x){
           html+='<a href="'+x[2]+'"><span>'+x[0]+'</span><span class="tp">'+x[1]+'</span></a>';
         });
-        html+='<a class="go" href="catalog.html?q='+encodeURIComponent(inp.value)+'"><span>Искать «'+_esc(norm(inp.value))+'» в каталоге</span><span class="tp">enter</span></a>';
+        html+='<a class="go" href="/podbor?q='+encodeURIComponent(inp.value)+'"><span>Искать «'+_esc(norm(inp.value))+'» в каталоге</span><span class="tp">enter</span></a>';
       }
       sug.innerHTML=html;
       if(html){ place(inp); sug.classList.add("on"); } else sug.classList.remove("on");
@@ -460,7 +460,7 @@
       inp.addEventListener("input",function(){ active=inp; render(inp); });
       inp.addEventListener("focus",function(){ active=inp; if(norm(inp.value))render(inp); });
       inp.addEventListener("keydown",function(e){
-        if(e.key==="Enter"){ e.preventDefault(); var v=norm(inp.value); if(v)location.href="catalog.html?q="+encodeURIComponent(v); }
+        if(e.key==="Enter"){ e.preventDefault(); var v=norm(inp.value); if(v)location.href="/podbor?q="+encodeURIComponent(v); }
         else if(e.key==="Escape"){ sug.classList.remove("on"); }
       });
       inp.addEventListener("blur",function(){ setTimeout(function(){ sug.classList.remove("on"); },180); });
