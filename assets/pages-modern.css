@@ -73,6 +73,12 @@
 .zr-modern .cat-faq details>div{padding:0 18px 16px;color:var(--m-mut);font-size:14px;line-height:1.62}
 .zr-modern .cat-faq details>div a{color:var(--m-red)}
 
+/* ---------- ФИКС: инлайн-белый текст (наследие тёмной темы) на светлом фоне → красный акцент.
+   Тёмные панели (.abt-facts / .lead-form) НЕ трогаем — там белый нужен. ---------- */
+.zr-modern .phero [style*="color:#fff"],.zr-modern .phero [style*="color: #fff"],
+.zr-modern .seo-text [style*="color:#fff"],.zr-modern .rich [style*="color:#fff"],
+.zr-modern .section>.wrap>[style*="color:#fff"]{color:var(--m-red)!important}
+
 /* ---------- SEO-текст ---------- */
 .zr-modern .seo-text{background:#fff;border:1px solid var(--m-line);border-radius:18px;padding:28px 30px;box-shadow:0 2px 10px rgba(16,31,42,.04)}
 .zr-modern .seo-lead{font-size:16px;line-height:1.65;color:#3f4b55}
