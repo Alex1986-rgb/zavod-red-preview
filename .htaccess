@@ -11,6 +11,13 @@
   RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  # Директория без слэша (/catalog) → 301 на https СО слэшем, одним хопом.
+  # Без этого Apache за nginx-прокси генерит DirectorySlash-редирект на http:// —
+  # даунгрейд схемы + лишний хоп. Наш rewrite срабатывает раньше DirectorySlash.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
   # index.html → / (каталог), сразу на https
   RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
   RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
