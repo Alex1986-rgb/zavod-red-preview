@@ -217,6 +217,7 @@
     });
   }
 
+  function loadDB(){ if(loadDB._d)return; loadDB._d=1;
   fetch(DATA_URL).then(function(r){return r.json();}).then(function(d){
     DB=d;
     enabledIdx=d.t.map(function(n,i){return ENABLED.indexOf(n)>=0?i:-1;}).filter(function(x){return x>=0;});
@@ -242,6 +243,18 @@
     var tb=$('pfTable').tBodies[0];
     if(tb)tb.innerHTML='<tr><td colspan="'+NCOL+'" class="pf-empty">Не удалось загрузить базу. Обновите страницу или оставьте заявку — инженер подберёт.</td></tr>';
   });
+  }
+  // На /podbor калькулятор — основной контент, грузим базу сразу.
+  // На главной это компактный мини-виджет (data-compact=1) — грузим базу (390КБ)
+  // лениво, при приближении к виджету, чтобы не тормозить загрузку главной.
+  if(compact && ('IntersectionObserver' in window)){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ loadDB(); io.disconnect(); } }); }, {rootMargin:'700px'});
+    io.observe(root);
+    root.addEventListener('focusin', loadDB, {once:true});
+    root.addEventListener('click', loadDB, {once:true});
+  } else {
+    loadDB();
+  }
 
   function buildPills(){
     var box=$('pfTypes'); if(!box)return;
