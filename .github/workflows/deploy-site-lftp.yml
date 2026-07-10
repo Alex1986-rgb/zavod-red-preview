@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - run: python3 -m pip install --quiet rcssmin rjsmin
       - run: python3 deploy/build-dist.py
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp

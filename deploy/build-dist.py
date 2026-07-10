@@ -41,4 +41,17 @@ for f in glob.glob(os.path.join(DST, '**', '*.html'), recursive=True):
     open(f, 'w', encoding='utf-8').write(t)
     n += 1
 
+# Минификация ассетов (CSS/JS) — безопасные rcssmin/rjsmin. Нет модулей → просто пропускаем.
+try:
+    import rcssmin, rjsmin
+    mn = sb = sa = 0
+    for af in glob.glob(os.path.join(DST, 'assets', '**', '*.css'), recursive=True) + \
+              glob.glob(os.path.join(DST, 'assets', '**', '*.js'), recursive=True):
+        src = open(af, encoding='utf-8').read(); sb += len(src)
+        out = rcssmin.cssmin(src) if af.endswith('.css') else rjsmin.jsmin(src)
+        sa += len(out); open(af, 'w', encoding='utf-8').write(out); mn += 1
+    print(f'минификация: {mn} ассетов, {sb//1024}КБ -> {sa//1024}КБ')
+except ImportError:
+    print('минификация пропущена (rcssmin/rjsmin не установлены)')
+
 print(f'dist/ собран: Метрика добавлена на {n} страниц, robots.txt открыт')
