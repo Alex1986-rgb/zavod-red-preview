@@ -1,3 +1,6 @@
+/* Только светлая тема (переключатель темы убран) */
+try{document.documentElement.setAttribute('data-theme','light');try{localStorage.setItem('zr_theme','light');}catch(_){}}catch(e){}
+
 /* Мобильное меню */
 (function(){
   var burger=document.querySelector('.burger'),header=document.querySelector('header');
@@ -70,3 +73,6 @@ function wireLeadForm(formId, opts){
     }catch(err){show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');}
   });
 }
+
+/* Энхансер карточек (♥ в избранное + Подробнее) — подключается на всех страницах сайта */
+(function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=3';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();

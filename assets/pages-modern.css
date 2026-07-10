@@ -1,0 +1,102 @@
+/* Модернизация страниц «Контакты» и «О заводе». Scoped под .zr-modern — глобально
+   ничего не задевает. Подключать ПОСЛЕ inner.css. Красный бренд #e11b1b. */
+
+.zr-modern{--m-ink:#0f1c26;--m-mut:#5a6a75;--m-line:rgba(12,20,28,.08);--m-red:#e11b1b;--m-bg:#f4f7f9}
+.zr-modern .wrap{max-width:1200px}
+
+/* ---------- HERO ---------- */
+.zr-modern .phero{position:relative;background:radial-gradient(1200px 400px at 15% -10%,rgba(225,27,27,.06),transparent 60%),linear-gradient(180deg,#fff,#f4f7f9);border-bottom:1px solid var(--m-line);padding:56px 0 52px;overflow:hidden}
+.zr-modern .phero .wrap{position:relative;z-index:1}
+.zr-modern .phero .eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 'Archivo',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--m-red);background:rgba(225,27,27,.09);padding:9px 16px;border-radius:999px;margin-bottom:18px}
+.zr-modern .phero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--m-red)}
+.zr-modern .phero h1{font:700 clamp(28px,4.4vw,46px)/1.06 'Space Grotesk',sans-serif;color:var(--m-ink);letter-spacing:-.02em;margin:0 0 16px;max-width:900px}
+.zr-modern .phero p{color:var(--m-mut);font-size:clamp(15px,1.5vw,18px);line-height:1.62;max-width:720px;margin:0}
+
+/* ---------- SECTIONS / HEADINGS ---------- */
+.zr-modern .section{padding:56px 0}
+.zr-modern .eyebrow{display:inline-block;font:700 12px/1 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--m-red);margin-bottom:12px}
+.zr-modern .section h2{font:700 clamp(24px,2.8vw,32px)/1.15 'Space Grotesk',sans-serif;color:var(--m-ink);letter-spacing:-.01em;margin:0 0 22px}
+
+/* ---------- CARDS ---------- */
+.zr-modern .card{background:#fff;border:1px solid var(--m-line);border-radius:18px;padding:26px;box-shadow:0 2px 10px rgba(16,31,42,.04);transition:transform .18s,box-shadow .18s,border-color .18s}
+.zr-modern .card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(16,31,42,.09);border-color:rgba(225,27,27,.25)}
+.zr-modern .card .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(225,27,27,.12),rgba(225,27,27,.05));color:var(--m-red);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+.zr-modern .card h3{font:700 18px 'Space Grotesk',sans-serif;color:var(--m-ink);margin:0 0 8px}
+.zr-modern .card p{color:var(--m-mut);font-size:14.5px;line-height:1.6;margin:0}
+.zr-modern .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* ---------- О ЗАВОДЕ: цифры-факты ---------- */
+.zr-modern .abt-facts{background:linear-gradient(135deg,#0f1c26,#182a38);border-radius:22px;padding:38px 32px;margin:8px 0}
+.zr-modern .abt-facts .afg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.zr-modern .abt-facts .af{text-align:center;position:relative;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+.zr-modern .abt-facts .af .ic,.zr-modern .abt-facts .af>img{display:none}
+.zr-modern .abt-facts .af:not(:last-child)::after{content:"";position:absolute;right:-12px;top:10%;height:80%;width:1px;background:rgba(255,255,255,.12)}
+.zr-modern .abt-facts .afn{font:800 clamp(30px,4vw,44px)/1 'Space Grotesk',sans-serif;background:linear-gradient(90deg,#ff6a3d,#e11b1b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+.zr-modern .abt-facts .afl{color:rgba(255,255,255,.72);font-size:13.5px;margin-top:8px;line-height:1.4}
+
+/* ---------- КОНТАКТЫ: инфо-сетка ---------- */
+.zr-modern .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.zr-modern .cinfo{background:#fff;border:1px solid var(--m-line);border-radius:20px;padding:8px 28px;box-shadow:0 2px 10px rgba(16,31,42,.04)}
+.zr-modern .crow{padding:20px 0;border-bottom:1px solid var(--m-line);position:relative}
+.zr-modern .crow:last-child{border-bottom:0}
+.zr-modern .crow .clbl{font:700 11.5px/1 'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8a97a1;margin-bottom:10px}
+.zr-modern .crow .cval{font-size:19px;font-weight:600;color:var(--m-ink);margin-bottom:2px}
+.zr-modern .crow .cval a{color:var(--m-ink);text-decoration:none;transition:.15s}
+.zr-modern .crow .cval a:hover{color:var(--m-red)}
+.zr-modern .crow .creq{color:var(--m-mut);font-size:14.5px;line-height:1.65}
+
+/* лид-панель справа */
+.zr-modern .lead-form{background:linear-gradient(160deg,#e11b1b,#b31212);color:#fff;border-radius:20px;padding:34px 30px!important;text-align:center;box-shadow:0 18px 40px rgba(225,27,27,.22)}
+.zr-modern .lead-form h3{color:#fff!important;font:700 24px 'Space Grotesk',sans-serif;margin-bottom:10px!important}
+.zr-modern .lead-form p{color:rgba(255,255,255,.9)!important}
+.zr-modern .lead-form .btn.lg{background:#fff;color:var(--m-red);border:0}
+.zr-modern .lead-form .btn.lg:hover{background:#f1f1f1}
+
+/* ---------- КАРТА ---------- */
+.zr-modern .map{border-radius:20px;overflow:hidden;border:1px solid var(--m-line);box-shadow:0 2px 10px rgba(16,31,42,.05)}
+.zr-modern .map iframe{display:block;width:100%;min-height:380px;border:0}
+
+/* ---------- КНОПКИ ---------- */
+.zr-modern .btn.lg{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:14px;font:700 15.5px 'Archivo',sans-serif;background:var(--m-red);color:#fff;text-decoration:none;border:0;transition:.16s;box-shadow:0 8px 20px rgba(225,27,27,.18)}
+.zr-modern .btn.lg:hover{background:#cf1616;transform:translateY(-2px)}
+.zr-modern .btn.lg.ghost{background:#fff;color:var(--m-ink);border:1px solid var(--m-line);box-shadow:none}
+.zr-modern .btn.lg.ghost:hover{border-color:var(--m-red);color:var(--m-red)}
+
+/* ---------- FAQ ---------- */
+.zr-modern .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.zr-modern .cat-faq details{background:#fff;border:1px solid var(--m-line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.zr-modern .cat-faq details[open]{border-color:rgba(225,27,27,.3);box-shadow:0 6px 18px rgba(16,31,42,.06)}
+.zr-modern .cat-faq summary{list-style:none;cursor:pointer;padding:16px 46px 16px 18px;font:600 15px 'Archivo',sans-serif;color:var(--m-ink);position:relative}
+.zr-modern .cat-faq summary::-webkit-details-marker{display:none}
+.zr-modern .cat-faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:400 24px/1 'Space Grotesk',sans-serif;color:var(--m-red);transition:transform .18s}
+.zr-modern .cat-faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.zr-modern .cat-faq details>div{padding:0 18px 16px;color:var(--m-mut);font-size:14px;line-height:1.62}
+.zr-modern .cat-faq details>div a{color:var(--m-red)}
+
+/* ---------- SEO-текст ---------- */
+.zr-modern .seo-text{background:#fff;border:1px solid var(--m-line);border-radius:18px;padding:28px 30px;box-shadow:0 2px 10px rgba(16,31,42,.04)}
+.zr-modern .seo-lead{font-size:16px;line-height:1.65;color:#3f4b55}
+.zr-modern .rich{font-size:15.5px;line-height:1.7;color:#3f4b55}
+
+/* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
+.zr-modern .crumbs{padding-top:18px;color:#8a97a1;font-size:13.5px}
+.zr-modern .crumbs a{color:#8a97a1;text-decoration:none}.zr-modern .crumbs a:hover{color:var(--m-red)}
+
+/* ---------- АДАПТИВ ---------- */
+@media(max-width:900px){
+  .zr-modern .contact-grid{grid-template-columns:1fr}
+  .zr-modern .grid-3{grid-template-columns:1fr 1fr}
+  .zr-modern .abt-facts .afg{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .zr-modern .abt-facts .af:nth-child(2)::after{display:none}
+  .zr-modern .faq-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .zr-modern .section{padding:40px 0}
+  .zr-modern .phero{padding:40px 0 36px}
+  .zr-modern .grid-3{grid-template-columns:1fr}
+  .zr-modern .abt-facts{padding:30px 20px}
+  .zr-modern .abt-facts .afg{grid-template-columns:1fr 1fr;gap:24px 16px}
+  .zr-modern .abt-facts .af::after{display:none!important}
+  .zr-modern .cinfo{padding:6px 20px}
+  .zr-modern .lead-form{padding:28px 22px!important}
+}

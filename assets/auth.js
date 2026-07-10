@@ -62,7 +62,7 @@
     isAuthed: function () { return !!(this.user() && this.user().email); },
     profile: function () { return j(LS.profile, null); },
 
-    logout: function () { del(LS.session); },
+    logout: function () { try { fetch(AUTH_API + "logout.php", { method: "POST", credentials: "include", keepalive: true }); } catch (e) {} del(LS.session); },
 
     /* Регистрация: лид ВСЕГДА + аккаунт если бэкенд живой + сессия локально */
     register: async function (data) {

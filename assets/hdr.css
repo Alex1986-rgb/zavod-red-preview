@@ -81,3 +81,18 @@ header.hdr2{position:relative;top:auto;z-index:auto;background:transparent;backd
 @media(max-width:860px){.hdr2 .ms-go{padding:8px 12px;font-size:12.5px}.hdr2 .ms-row img{width:38px;height:28px}}
 .hdr2 .ms-chip[data-zayavka]{cursor:pointer;transition:.14s}
 .hdr2 .ms-chip[data-zayavka]:hover{border-color:var(--h-red);color:var(--h-red)}
+
+/* Подписи «Кабинет»/«Корзина» у кнопок в шапке + убран переключатель темы (только светлая) */
+.hdr2 .theme-toggle{display:none!important}
+.hdr2 .hic[href="/cabinet"],.hdr2 .hic[href="/cart"]{width:auto;gap:8px;padding:0 15px;font:600 14px/1 'Archivo',-apple-system,BlinkMacSystemFont,sans-serif;white-space:nowrap}
+.hdr2 .hic[href="/cabinet"]::after{content:"Кабинет"}
+.hdr2 .hic[href="/cart"]::after{content:"Корзина"}
+@media(max-width:560px){.hdr2 .hic[href="/cabinet"],.hdr2 .hic[href="/cart"]{width:40px;padding:0;gap:0}.hdr2 .hic[href="/cabinet"]::after,.hdr2 .hic[href="/cart"]::after{display:none}}
+
+/* ВЕСЬ САЙТ ТОЛЬКО В СВЕТЛОЙ ТЕМЕ — форс светлых переменных для :root и застрявших в dark.
+   CSS-бэкстоп (переживает JS-минификацию inner.js). */
+:root,html[data-theme="dark"]{--bg:#eef0ec!important;--bg2:#e7eae5!important;--card:#ffffff!important;--card2:#f6f7f4!important;--line:rgba(10,20,28,.12)!important;--text:#101f2a!important;--muted:#5a6a75!important;--muted2:#7d8b95!important;--steel:#2f6f9f!important;--red:#cf1616!important;--red2:#e11b1b!important;--glow:rgba(207,22,22,.10)!important}
+html[data-theme="dark"] body{background:#eef0ec!important;color:#101f2a!important}
+html[data-theme="dark"] .phero{background:linear-gradient(160deg,#e7eae5,#eef0ec)!important}
+html[data-theme="dark"] header{background:rgba(255,255,255,.9)!important}
+html[data-theme="dark"] .site-footer{background:#0f1c26}

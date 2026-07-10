@@ -116,6 +116,22 @@
     save(c); render();
   });
 
+  // синхронизация корзины с сервером (аккаунт → корзина на любом устройстве)
+  function isAccount() { try { var s = JSON.parse(localStorage.getItem("zr_session")); return !!(s && s.mode === "account"); } catch (e) { return false; } }
+  function pullServerCart(cb) {
+    if (!isAccount()) { cb && cb(); return; }
+    fetch("/api/cabinet/store.php?k=cart", { credentials: "include", cache: "no-store" })
+      .then(function (r) { return r.json(); }).then(function (res) {
+        if (res && res.status === "success" && res.data && res.data.items) {
+          var local = getCart();
+          if (!local.items || !local.items.length) { save(res.data); }         // локальная пуста → берём серверную
+          else { var seen = {}; local.items.forEach(function (i) { seen[i.name] = 1; }); res.data.items.forEach(function (i) { if (!seen[i.name]) local.items.push(i); }); save(local); }
+          try { fetch("/api/cabinet/store.php", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ k: "cart", v: getCart() }) }); } catch (e) {}
+        }
+        cb && cb();
+      }).catch(function () { cb && cb(); });
+  }
+  var synced = false;
   function build() {
     var mockup = d.querySelector(".m1");
     if (!mockup) return false;
@@ -123,6 +139,7 @@
     css();
     if (!host) { host = d.createElement("section"); host.className = "zr-cart"; mockup.parentNode.insertBefore(host, mockup); }
     render();
+    if (!synced) { synced = true; pullServerCart(function () { render(); }); }
     return true;
   }
   var n = 0; (function loop() { if (build()) return; if (n++ < 60) setTimeout(loop, 80); })();

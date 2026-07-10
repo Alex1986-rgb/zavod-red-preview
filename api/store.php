@@ -16,7 +16,7 @@ if (!$uid) json_out(['status' => 'guest', 'data' => []], 200);
 $pdo = db();
 if (!$pdo) json_out(['status' => 'error', 'message' => 'Бэкенд не настроен.'], 501);
 
-$ALLOWED = ['favorites', 'orders', 'requests', 'addresses'];
+$ALLOWED = ['favorites', 'orders', 'requests', 'addresses', 'cart'];
 
 try {
   $pdo->exec(

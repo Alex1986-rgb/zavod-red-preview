@@ -75,8 +75,13 @@
     var form = wrap.querySelector("#ac-form"), msg = wrap.querySelector("#ac-msg"),
         submit = wrap.querySelector("#ac-submit"), title = wrap.querySelector("#ac-title");
     var phone = form.querySelector('input[name=phone]'); maskPhone(phone);
+    // Защита: скрипты сайта (site.js аккордеоны/панели) могут навесить hidden/display:none
+    // на форму по своим правилам. Форма кабинета обязана оставаться видимой — снимаем это.
+    function keepFormVisible() { if (form.hasAttribute("hidden")) form.removeAttribute("hidden"); if (form.style.display === "none") form.style.display = ""; }
+    try { new MutationObserver(keepFormVisible).observe(form, { attributes: true, attributeFilter: ["hidden", "style"] }); } catch (e) {}
 
     function setMode(m) {
+      keepFormVisible();
       mode = m;
       wrap.querySelectorAll(".ac-tab").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-t") === m); });
       wrap.querySelectorAll(".reg-only").forEach(function (n) { n.style.display = m === "reg" ? "" : "none"; });
@@ -92,7 +97,7 @@
     });
 
     form.addEventListener("submit", async function (e) {
-      e.preventDefault();
+      e.preventDefault(); e.stopPropagation();
       var v = function (n) { var x = form.querySelector('input[name=' + n + ']'); return x ? x.value.trim() : ""; };
       submit.disabled = true; showMsg("Отправляем…", "ok");
       var res;

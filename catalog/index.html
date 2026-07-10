@@ -79,29 +79,36 @@
 .flt-row span{flex:1;line-height:1.25}
 .flt-row b{color:var(--muted2,#9aa7b0);font-weight:500;font-size:12.5px}
 .flt-row:hover span{color:var(--red,#cf1616)}
-.pcard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pcard{display:flex;flex-direction:column;background:var(--card,#fff);border:1px solid var(--line,#e6eae6);border-radius:15px;overflow:hidden;transition:box-shadow .16s,transform .16s,border-color .16s}
-.pcard:hover{box-shadow:0 14px 34px rgba(16,31,42,.1);transform:translateY(-3px);border-color:#d6ddd6}
-.pcard-media{position:relative;aspect-ratio:1/.72;background:linear-gradient(160deg,#f4f7f9,#e9eef1);display:flex;align-items:center;justify-content:center;padding:14px}
-.pcard-media img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
+.pcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.pcard{position:relative;display:flex;flex-direction:column;background:var(--card,#fff);border:1px solid var(--line,#e6eae6);border-radius:16px;overflow:hidden;transition:box-shadow .18s ease,transform .18s ease,border-color .18s ease}
+.pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red,#cf1616),rgba(225,27,27,0));opacity:0;transition:opacity .18s;z-index:3}
+.pcard:hover{box-shadow:0 16px 40px rgba(16,31,42,.13);transform:translateY(-4px);border-color:var(--red,#cf1616)}
+.pcard:hover::before{opacity:1}
+.pcard-media{position:relative;aspect-ratio:1/.76;background:linear-gradient(160deg,#f6f8fa,#e7edf1);display:flex;align-items:center;justify-content:center;padding:18px}
+.pcard-media img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s ease}
+.pcard:hover .pcard-media img{transform:scale(1.045)}
 .pcard-media.noimg::after{content:"ЗР";font:700 30px/1 'Space Grotesk',sans-serif;color:#c3ccd2}
-.pcard-badge{position:absolute;top:11px;left:11px;background:var(--red,#cf1616);color:#fff;font:700 10.5px/1 inherit;letter-spacing:.03em;text-transform:uppercase;padding:5px 9px;border-radius:6px}
-.pcard-stock{position:absolute;top:11px;right:11px;background:rgba(26,150,80,.14);color:#1a8f4c;font:600 11px/1 inherit;padding:5px 9px;border-radius:6px}
-.pcard-body{display:flex;flex-direction:column;gap:9px;padding:15px 16px 16px;flex:1}
-.pcard-type{font-size:11.5px;color:var(--muted,#7c8b95);text-transform:uppercase;letter-spacing:.04em}
-.pcard-title{font:700 16px/1.25 'Space Grotesk',sans-serif;color:var(--text,#101f2a);text-decoration:none}
+.pcard-badge{position:absolute;top:12px;left:12px;background:var(--red,#cf1616);color:#fff;font:700 10px/1.15 inherit;letter-spacing:.03em;text-transform:uppercase;padding:5px 9px;border-radius:7px;max-width:calc(100% - 62px);box-shadow:0 2px 9px rgba(207,22,22,.3)}
+.pcard-stock{position:absolute;left:12px;bottom:12px;top:auto;right:auto;background:rgba(26,150,80,.16);color:#12915f;font:600 11px/1 inherit;padding:5px 9px;border-radius:7px;backdrop-filter:blur(3px)}
+.pcard-body{display:flex;flex-direction:column;gap:10px;padding:16px 16px 18px;flex:1}
+.pcard-type{font-size:11px;color:var(--muted,#7c8b95);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.pcard-title{font:700 15.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);text-decoration:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pcard-title:hover{color:var(--red,#cf1616)}
-.pcard-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:1px}
-.pcard-chips span{font:500 11.5px/1 'IBM Plex Mono',ui-monospace,monospace;color:var(--muted,#5c6b76);background:var(--bg,#f2f5f2);border:1px solid var(--line,#e6eae6);border-radius:6px;padding:5px 8px}
-.pcard-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px}
-.pcard-price{font-size:12.5px;color:var(--muted,#5c6b76)}
-.pcard-price b{color:var(--text,#101f2a);font-weight:700}
-.pcard-cart{width:100%;margin-top:2px;border:0;background:var(--red,#cf1616);color:#fff;font:600 13.5px/1 'Space Grotesk',sans-serif;padding:11px;border-radius:10px;cursor:pointer;transition:filter .15s}
+.pcard-chips{display:flex;flex-wrap:wrap;gap:6px}
+.pcard-chips span{font:500 11px/1 'IBM Plex Mono',ui-monospace,monospace;color:var(--muted,#5c6b76);background:var(--bg,#f2f5f2);border:1px solid var(--line,#e6eae6);border-radius:7px;padding:5px 8px;white-space:nowrap}
+.pcard-foot{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:auto;padding-top:14px}
+.pcard-price{flex:1 0 100%;font-size:12.5px;color:var(--muted,#5c6b76);display:flex;align-items:baseline;gap:6px}
+.pcard-price b{color:var(--text,#101f2a);font-weight:700;font-size:14px}
+.pcard-cart{flex:1 1 130px;margin:0;border:0;background:var(--red,#cf1616);color:#fff;font:600 13.5px/1 'Space Grotesk',sans-serif;padding:12px 14px;border-radius:11px;cursor:pointer;transition:filter .15s,transform .1s}
 .pcard-cart:hover{filter:brightness(.93)}
-.pcard-cart.added{background:#1a8f4c}
+.pcard-cart:active{transform:scale(.98)}
+.pcard-cart.added{background:#12915f}
+/* «Подробнее» дорисовывает fav.js — выравниваем в один ряд с «В корзину» */
+.pcard-foot .zr-more-btn{flex:1 1 120px;margin:0!important;justify-content:center;padding:11px 14px;border-radius:11px;font:600 13px/1 'Space Grotesk',sans-serif;color:var(--text,#101f2a);border-color:var(--line,#e6eae6);background:var(--card,#fff)}
 .cat-empty{grid-column:1/-1;text-align:center;color:var(--muted,#5c6b76);padding:50px 0}
-@media(max-width:1000px){.cat-layout{grid-template-columns:1fr}.cat-filters{position:fixed;inset:0;z-index:200;border-radius:0;overflow:auto;display:none}.cat-filters.open{display:block}.cat-flttoggle{display:inline-flex}.pcard-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.pcard-grid{grid-template-columns:1fr 1fr;gap:11px}.pcard-title{font-size:14.5px}.pcard-cart{font-size:12.5px;padding:10px}}
+@media(max-width:1000px){.cat-layout{grid-template-columns:1fr}.cat-filters{position:fixed;inset:0;z-index:200;border-radius:0;overflow:auto;display:none}.cat-filters.open{display:block}.cat-flttoggle{display:inline-flex}.pcard-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+@media(max-width:560px){.pcard-grid{grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}.pcard-body{padding:13px 13px 15px;gap:9px}.pcard-title{font-size:14px}.pcard-media{padding:14px}.pcard-cart,.pcard-foot .zr-more-btn{flex:1 1 100%;padding:11px}}
+@media(max-width:360px){.pcard-grid{grid-template-columns:1fr}}
 </style>
 <section class="catmain"><div class="wrap">
   <div class="cat-bar">
@@ -412,5 +419,5 @@
 <script src="../assets/inner.js?v=615"></script>
 
 <script>wireLeadForm('catForm',{title:'Заявка из каталога (хаб)'});</script>
-<script defer src="../assets/modal.js?v=556"></script><script defer src="../assets/fav.js?v=1"></script>
+<script defer src="../assets/modal.js?v=556"></script><script defer src="../assets/fav.js?v=3"></script>
 </body></html>
