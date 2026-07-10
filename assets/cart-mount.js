@@ -55,11 +55,14 @@
   }
 
   function itemImg(it) {
-    var s = it.img || "";
-    if (s && /^(assets\/|https?:)/.test(s) && s.indexOf("blob:") < 0) {
-      return '<img src="' + esc(s) + '" alt="" onerror="this.remove()">';
+    var s = (it.img || "").trim();
+    if (!s || s.indexOf("blob:") === 0) return '<span>ЗР</span>';
+    if (!/^https?:/.test(s)) {                 // локальный путь карточки: ../assets/ , assets/ , /assets/
+      var m = s.match(/assets\/.+$/);
+      if (!m) return '<span>ЗР</span>';
+      s = "/" + m[0];                          // → абсолютный /assets/… (резолвится с любой страницы)
     }
-    return '<span>ЗР</span>';
+    return '<img src="' + esc(s) + '" alt="" loading="lazy" onerror="var p=this.parentNode;this.remove();if(p)p.innerHTML=\'<span>ЗР</span>\'">';
   }
 
   var host;
@@ -79,7 +82,7 @@
         '<div class="zr-ci-img">' + itemImg(it) + '</div>' +
         '<div class="zr-ci-main"><div class="zr-ci-name">' + esc(it.name) + '</div><div class="zr-ci-unit">' + (it.price > 0 ? rub(it.price) + ' / шт' : 'Цена по запросу') + '</div></div>' +
         '<div class="zr-ci-qty"><button class="q-dec" type="button" aria-label="Меньше">−</button><b>' + (it.qty || 1) + '</b><button class="q-inc" type="button" aria-label="Больше">+</button></div>' +
-        '<div class="zr-ci-sum">' + (it.price > 0 ? rub(it.price * (it.qty || 1)) : '—') + '</div>' +
+        '<div class="zr-ci-sum">' + (it.price > 0 ? rub(it.price * (it.qty || 1)) : '') + '</div>' +
         '<button class="zr-ci-del" type="button" aria-label="Удалить">✕</button>' +
       '</div>';
     }).join("");
