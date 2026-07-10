@@ -411,7 +411,20 @@ select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
 .cat-actions{display:flex;gap:10px;margin-top:auto}
 .btn-sm{padding:10px 18px;font-size:13px;border-radius:8px}
 .btn-out{background:transparent;border:1.5px solid var(--line);color:#cdd9e1}
-.btn-out:hover{border-color:var(--red);color:#fff}
+.btn-out:hover{border-color:var(--red);background:var(--red);color:#fff}
+/* light-тема: базовые цвета акцентов рассчитаны на тёмную тему и невидимы на светлом фоне — переопределяем на читаемые */
+[data-theme="light"] .vs-ic-good{color:#0e8a54}
+[data-theme="light"] .vs-banner-good{color:#0e8a54;border-color:rgba(14,138,84,.4)}
+[data-theme="light"] .vs-ic-bad{color:#c8321f}
+[data-theme="light"] .vs-banner-bad{color:#c8321f;border-color:rgba(200,50,31,.4)}
+[data-theme="light"] .vs-price{color:#c8321f}
+[data-theme="light"] .vs-price-good{color:#0e8a54}
+[data-theme="light"] .vs-badge{background:var(--red);border-color:transparent;color:#fff}
+[data-theme="light"] .btn-out{color:#33424d}
+[data-theme="light"] .rev .rev-stars{color:#e8900c}
+[data-theme="light"] .rev-ava{color:#fff}
+[data-theme="light"] .role-good li{color:var(--text)}
+[data-theme="light"] .role-pain li{color:#5a6a75}
 
 /* IMPORT */
 .adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:42px}
@@ -679,7 +692,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 .cmp th,.cmp td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 .cmp thead th{background:var(--card);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
 .cmp td:first-child{color:var(--text);font-weight:600;white-space:nowrap}
-.cmp td{color:var(--muted)}.cmp .cmp-acc{color:#dfe7ec}.cmp thead .cmp-acc{color:var(--red2)}
+.cmp td{color:var(--muted)}.cmp .cmp-acc{color:var(--text);font-weight:600}.cmp thead .cmp-acc{color:var(--red2)}
 .cmp tbody tr:last-child td{border-bottom:0}.cmp td.cmp-acc{background:rgba(225,27,27,.06)}
 .cmp-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
 .final-cta .fcta{background:linear-gradient(120deg,rgba(225,27,27,.14),rgba(47,127,194,.12));border:1px solid var(--line);border-radius:18px;padding:40px 42px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
