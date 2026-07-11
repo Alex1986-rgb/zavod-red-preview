@@ -327,6 +327,46 @@
   </div>
 </div></section>
 
+<style>
+.zvd{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.zvd-card{border:1px solid var(--line,#e6eae6);border-radius:18px;padding:26px 24px;background:var(--card,#fff)}
+.zvd-card.bad{background:var(--card2,#f6f7f4)}
+.zvd-card.good{border-color:rgba(207,22,22,.35);box-shadow:0 12px 34px rgba(207,22,22,.08)}
+.zvd-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:800 18px/1.2 'Space Grotesk',sans-serif;margin-bottom:18px;color:var(--text,#101f2a)}
+.zvd-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:4px 9px;border-radius:20px}
+.zvd-tag.bad{background:#eaeeeb;color:#7a8b97}
+.zvd-tag.good{background:color-mix(in srgb,var(--red,#cf1616) 10%,#fff);color:var(--red,#cf1616)}
+.zvd-row{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line,#eef1ee)}
+.zvd-row:first-of-type{border-top:0;padding-top:2px}
+.zvd-ic{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px}
+.zvd-ic.bad{background:#e7ebe8;color:#95a2ab}
+.zvd-ic.good{background:color-mix(in srgb,#12915f 12%,#fff);color:#12915f}
+.zvd-t b{color:var(--text,#101f2a);font-weight:700;display:block;font-size:13px;margin-bottom:2px}
+.zvd-t span{color:var(--muted,#5a6a75);font-size:13px;line-height:1.4}
+@media(max-width:640px){.zvd{grid-template-columns:1fr;gap:14px}}
+</style>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Сравните</div>
+  <h2 style="font-size:26px">Завод-производитель или дилер</h2>
+  <div class="zvd">
+    <div class="zvd-card bad">
+      <div class="zvd-h">Через дилера / перекупщика <span class="zvd-tag bad">посредник</span></div>
+      <div class="zvd-row"><span class="zvd-ic bad">✕</span><div class="zvd-t"><b>Цена</b><span>+15–30% наценка посредника поверх заводской</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic bad">✕</span><div class="zvd-t"><b>Срок</b><span>недели–месяцы: наличие, логистика, растаможка</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic bad">✕</span><div class="zvd-t"><b>Гарантия</b><span>условия поставщика, спорные случаи «футболят»</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic bad">✕</span><div class="zvd-t"><b>Документы</b><span>не всегда полный пакет и корректный НДС</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic bad">✕</span><div class="zvd-t"><b>Спецзаказ</b><span>нестандартный вал / исполнение — почти нереально</span></div></div>
+    </div>
+    <div class="zvd-card good">
+      <div class="zvd-h">Напрямую от завода <span class="zvd-tag good">производитель</span></div>
+      <div class="zvd-row"><span class="zvd-ic good">✓</span><div class="zvd-t"><b>Цена</b><span>заводская, без наценок посредников</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic good">✓</span><div class="zvd-t"><b>Срок</b><span>от 3 дней — изготавливаем сами в Челябинске</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic good">✓</span><div class="zvd-t"><b>Гарантия</b><span>24 месяца от изготовителя, отвечаем за качество</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic good">✓</span><div class="zvd-t"><b>Документы</b><span>паспорт, РЭ, декларация ЕАС, счёт-фактура / УПД</span></div></div>
+      <div class="zvd-row"><span class="zvd-ic good">✓</span><div class="zvd-t"><b>Спецзаказ</b><span>спецвал, фланец, тормоз — делаем под вашу задачу</span></div></div>
+    </div>
+  </div>
+</div></section>
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="eyebrow">Вопросы и ответы</div>
   <h2 style="font-size:26px">Частые вопросы о ценах</h2>
