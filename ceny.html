@@ -280,6 +280,27 @@
 })();
 </script>
 
+<style>
+.pfac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:24px}
+.pfac-card{background:var(--card,#fff);border:1px solid var(--line,#e6eae6);border-radius:16px;padding:22px 20px;transition:box-shadow .18s ease,transform .18s ease,border-color .18s ease}
+.pfac-card:hover{box-shadow:0 12px 30px rgba(16,31,42,.1);transform:translateY(-3px);border-color:var(--red,#cf1616)}
+.pfac-ic{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--red,#cf1616) 8%,#fff);color:var(--red,#cf1616);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pfac-ic svg{width:23px;height:23px}
+.pfac-card h3{font:700 15.5px/1.3 'Space Grotesk',sans-serif;margin:0 0 6px;color:var(--text,#101f2a)}
+.pfac-card p{font-size:12.8px;line-height:1.5;color:var(--muted,#5a6a75);margin:0}
+</style>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Прозрачно</div>
+  <h2 style="font-size:26px">Из чего складывается цена</h2>
+  <p style="color:var(--muted);max-width:72ch;margin-top:10px">Стоимость зависит от конфигурации — поэтому цена «по запросу»: инженер рассчитает её под вашу задачу за 15 минут. Вот что на неё влияет:</p>
+  <div class="pfac-grid">
+    <div class="pfac-card"><div class="pfac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H2a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V2a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H22a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Тип передачи</h3><p>Червячный — дешевле, конический и соосный — дороже.</p></div>
+    <div class="pfac-card"><div class="pfac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Мощность двигателя</h3><p>От 0,12 до 200 кВт: выше мощность — выше цена.</p></div>
+    <div class="pfac-card"><div class="pfac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3>Передаточное число</h3><p>Больше ступеней — сложнее сборка и выше стоимость.</p></div>
+    <div class="pfac-card"><div class="pfac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Исполнение и опции</h3><p>Лапы, фланец, полый вал, тормоз, спецвал.</p></div>
+    <div class="pfac-card"><div class="pfac-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3>Объём заказа</h3><p>Серийная партия — скидка по договору.</p></div>
+  </div>
+</div></section>
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="grid-2" style="gap:48px;align-items:start">
     <div>
