@@ -95,11 +95,17 @@
       <div class="crow"><div class="clbl">График</div><div class="creq">Пн–Пт, 8:00–17:00 (МСК+2)<br />Заявки с сайта принимаем круглосуточно.</div></div>
     </div>
 
-    <div class="lead-form" style="max-width:760px;margin:0 auto;text-align:center">
+    <form class="lead-form" novalidate>
       <h3 style="margin-bottom:6px;font-size:24px">Оставить заявку</h3>
-      <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>
-      <a class="btn lg" data-zayavka href="#zayavka" style="min-width:260px;justify-content:center">Получить КП</a>
-    </div>
+      <p style="font-size:14px;margin-bottom:18px;opacity:.92">Инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>
+      <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
+      <div class="field"><label>Ваше имя</label><input type="text" placeholder="Как к вам обращаться" required /></div>
+      <div class="field"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+      <div class="field"><label>Сообщение (необязательно)</label><textarea name="textarea-725" rows="3" placeholder="Что подобрать: бренд, модель, мощность, задача"></textarea></div>
+      <label class="consent"><input type="checkbox" required /> Отправляя заявку, я даю согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      <button class="btn lg" type="submit" style="width:100%;justify-content:center">Получить КП</button>
+      <div class="form-result"></div>
+    </form>
   </div>
 
   <div class="wrap" style="margin-top:34px">
@@ -186,7 +192,8 @@
 </footer>
 
 <script src="assets/inner.js?v=615"></script>
-<script>wireLeadForm('contactForm',{title:'Заявка со страницы Контакты'});</script>
+<!-- форму .lead-form обрабатывает делегированный обработчик modal.js (feedback.php + textarea + UTM) -->
+
 <script defer src="assets/modal.js?v=5565"></script>
 </body>
 </html>
