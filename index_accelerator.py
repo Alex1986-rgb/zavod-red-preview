@@ -4,19 +4,21 @@
 Ускоритель индексации zavod-red.ru.
 
 Что делает при каждом запуске:
-  1. Читает sitemap.xml и сопоставляет каждый URL с локальным HTML-файлом.
-  2. Сравнивает хэши содержимого с прошлым запуском (.index-state.json)
-     и отправляет НОВЫЕ и ИЗМЕНЁННЫЕ страницы в IndexNow (Яндекс + Bing).
+  1. Читает ВСЕ sitemap-файлы сайта (в порядке приоритета разделов)
+     и сопоставляет каждый URL с локальным HTML-файлом.
+  2. Находит НОВЫЕ и ИЗМЕНЁННЫЕ страницы (быстро: сначала mtime+размер,
+     содержимое хэшируется только у затронутых файлов) и шлёт их
+     в IndexNow (Яндекс + Bing) пакетами по 10 000.
   3. Сплошная индексация через очередь переобхода Яндекс.Вебмастера:
-     ежедневная квота (~150 URL) заполняется по приоритету —
-     сначала изменённые страницы, потом ни разу не отправлявшиеся,
-     потом самые давние. Так весь сайт проходит через переобход по кругу.
+     дневная квота (~150 URL) заполняется по приоритету —
+     изменённые → ни разу не отправлявшиеся (важные разделы первыми) →
+     самые давние. Так весь сайт проходит через переобход по кругу.
 
 Запуск:
-  python3 index_accelerator.py              # обычный ежедневный проход
+  python3 index_accelerator.py              # обычный проход
   python3 index_accelerator.py --dry-run    # показать, что ушло бы, без отправки
-  python3 index_accelerator.py --all        # принудительно отправить весь sitemap в IndexNow
-  python3 index_accelerator.py --status     # состояние, квота, прогресс сплошной индексации
+  python3 index_accelerator.py --all        # принудительно отправить все URL в IndexNow
+  python3 index_accelerator.py --status     # состояние, квота, прогресс
 
 Токен Вебмастера: переменная YANDEX_WEBMASTER_TOKEN
 или файл ~/.config/zavod/yandex_webmaster_token
@@ -32,12 +34,22 @@ from datetime import datetime, timezone
 BASE = os.path.dirname(os.path.abspath(__file__))
 HOST = "zavod-red.ru"
 KEY = "051a8bb09331b03c5e35d4a40339b5b3"
-SITEMAP = os.path.join(BASE, "sitemap.xml")
+# Порядок = приоритет для очереди переобхода (важные разделы первыми).
+# sitemap-images.xml не включаем — это ссылки на картинки, не страницы.
+PAGE_SITEMAPS = [
+    "sitemap.xml",             # основные страницы, блог, каталог
+    "sitemap-hub.xml",         # хабы
+    "sitemap-zr.xml",          # карточки ZR
+    "sitemap-tiporazmer.xml",  # типоразмеры
+    "sitemap-ispolnenie.xml",  # исполнения
+    "sitemap-analog.xml",      # аналоги (длинный хвост)
+    "sitemap-analog-2.xml",
+]
 STATE_FILE = os.path.join(BASE, ".index-state.json")
 LOG_FILE = os.path.join(BASE, "index-accelerator.log")
 INDEXNOW_ENDPOINTS = ["https://yandex.com/indexnow", "https://api.indexnow.org/indexnow"]
 INDEXNOW_BATCH = 10000          # лимит IndexNow на один POST
-RECRAWL_MAX_PER_RUN = 140       # сколько квоты переобхода тратить за запуск (10 — резерв)
+RECRAWL_MAX_PER_RUN = 145       # квота переобхода за запуск (5 — резерв)
 TOKEN_FILE = os.path.expanduser("~/.config/zavod/yandex_webmaster_token")
 
 
@@ -52,8 +64,18 @@ def log(msg):
 
 
 def sitemap_urls():
-    sm = open(SITEMAP, encoding="utf-8").read()
-    return re.findall(r"<loc>([^<]+)</loc>", sm)
+    """Все URL страниц в порядке приоритета разделов (без дублей)."""
+    seen, out = set(), []
+    for sm in PAGE_SITEMAPS:
+        path = os.path.join(BASE, sm)
+        if not os.path.isfile(path):
+            log(f"  ВНИМАНИЕ: {sm} не найден локально — раздел пропущен")
+            continue
+        for u in re.findall(r"<loc>([^<]+)</loc>", open(path, encoding="utf-8").read()):
+            if u not in seen:
+                seen.add(u)
+                out.append(u)
+    return out
 
 
 def local_file_for(url):
@@ -71,15 +93,25 @@ def local_file_for(url):
     return None
 
 
-def content_hash(url):
-    f = local_file_for(url)
-    if f is None:
-        return "no-local-file"  # страница есть в sitemap, файла нет — считаем стабильной
+def sha256_file(path):
     h = hashlib.sha256()
-    with open(f, "rb") as fh:
+    with open(path, "rb") as fh:
         for chunk in iter(lambda: fh.read(65536), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def fingerprint(url, prev):
+    """{'h': sha256, 'ms': 'mtime-size'}. Содержимое хэшируем только если
+    mtime+размер изменились — иначе слишком долго на 90k+ файлов."""
+    f = local_file_for(url)
+    if f is None:
+        return {"h": "no-local-file", "ms": ""}
+    st = os.stat(f)
+    ms = f"{int(st.st_mtime)}-{st.st_size}"
+    if prev and prev.get("ms") == ms:
+        return prev
+    return {"h": sha256_file(f), "ms": ms}
 
 
 def load_state():
@@ -89,6 +121,10 @@ def load_state():
         s = {}
     s.setdefault("urls", {})
     s.setdefault("recrawl", {})   # url -> ISO-дата последней постановки в переобход
+    # миграция старого формата (url -> строка-хэш)
+    for u, v in list(s["urls"].items()):
+        if isinstance(v, str):
+            s["urls"][u] = {"h": v, "ms": ""}
     return s
 
 
@@ -101,7 +137,7 @@ def post_json(url, payload, headers=None):
     hdrs = {"Content-Type": "application/json; charset=utf-8"}
     hdrs.update(headers or {})
     req = urllib.request.Request(url, data=data, headers=hdrs, method="POST")
-    return urllib.request.urlopen(req, timeout=30)
+    return urllib.request.urlopen(req, timeout=60)
 
 
 def get_json(url, headers=None):
@@ -136,7 +172,7 @@ def webmaster_token():
 
 
 def webmaster_session():
-    """(user_id, host_id, headers) или None, если токена нет/хост не найден."""
+    """(api, user_id, host_id, headers) или None."""
     token = webmaster_token()
     if not token:
         return None
@@ -151,11 +187,23 @@ def webmaster_session():
     return api, uid, host_id, hdr
 
 
+def priority_patterns():
+    """Подстроки из .index-priority (по одной на строку) — такие URL идут в переобход первыми."""
+    p = os.path.join(BASE, ".index-priority")
+    if not os.path.isfile(p):
+        return []
+    return [ln.strip().lower() for ln in open(p, encoding="utf-8") if ln.strip()]
+
+
 def recrawl_candidates(changed, all_urls, recrawl_map):
-    """Приоритет: изменённые → ни разу не отправлявшиеся → самые давние."""
-    never = [u for u in all_urls if u not in recrawl_map and u not in changed]
-    oldest = sorted((u for u in all_urls if u in recrawl_map and u not in changed),
-                    key=lambda u: recrawl_map[u])
+    """Приоритет: изменённые → ни разу не отправлявшиеся (в порядке разделов) → самые давние.
+    URL, содержащие подстроки из .index-priority, поднимаются в начало своей группы."""
+    pats = priority_patterns()
+    boost = (lambda lst: [u for u in lst if any(p in u.lower() for p in pats)] +
+                         [u for u in lst if not any(p in u.lower() for p in pats)]) if pats else (lambda lst: lst)
+    never = boost([u for u in all_urls if u not in recrawl_map and u not in changed])
+    oldest = boost(sorted((u for u in all_urls if u in recrawl_map and u not in changed),
+                          key=lambda u: recrawl_map[u]))
     seen, order = set(), []
     for u in changed + never + oldest:
         if u not in seen:
@@ -166,7 +214,11 @@ def recrawl_candidates(changed, all_urls, recrawl_map):
 
 def webmaster_recrawl(changed, all_urls, state, dry_run=False):
     """Сплошная индексация: заполняет дневную квоту переобхода по приоритету."""
-    sess = webmaster_session()
+    try:
+        sess = webmaster_session()
+    except Exception as e:
+        log(f"  Переобход Вебмастера недоступен (сеть?): {str(e)[:100]}")
+        return
     if sess is None:
         if not webmaster_token():
             log("  Переобход Вебмастера: токен не задан — пропускаю (только IndexNow)")
@@ -209,11 +261,14 @@ def webmaster_recrawl(changed, all_urls, state, dry_run=False):
 def cmd_status():
     state = load_state()
     urls = sitemap_urls()
+    print(f"URL всего (7 sitemap):    {len(urls)}")
+    for sm in PAGE_SITEMAPS:
+        p = os.path.join(BASE, sm)
+        n = len(re.findall(r"<loc>", open(p, encoding="utf-8").read())) if os.path.isfile(p) else 0
+        print(f"  {sm:26s} {n}")
     covered = sum(1 for u in urls if u in state["recrawl"])
-    print(f"URL в sitemap.xml:        {len(urls)}")
     print(f"URL в состоянии:          {len(state['urls'])}")
     print(f"Прогресс переобхода:      {covered}/{len(urls)} страниц отправлено хотя бы раз")
-    print(f"Файл состояния:           {STATE_FILE}")
     print(f"Токен Вебмастера:         {'есть' if webmaster_token() else 'НЕТ (только IndexNow)'}")
     sess = webmaster_session() if webmaster_token() else None
     if sess:
@@ -224,7 +279,7 @@ def cmd_status():
 
 def main():
     p = argparse.ArgumentParser(description="Ускоритель индексации zavod-red.ru")
-    p.add_argument("--all", action="store_true", help="отправить весь sitemap в IndexNow, игнорируя состояние")
+    p.add_argument("--all", action="store_true", help="отправить все URL в IndexNow, игнорируя состояние")
     p.add_argument("--dry-run", action="store_true", help="ничего не отправлять, только показать")
     p.add_argument("--status", action="store_true", help="показать состояние, квоту и прогресс")
     args = p.parse_args()
@@ -237,13 +292,14 @@ def main():
     state = load_state()
     known = state["urls"]
 
-    log(f"=== Запуск: {len(urls)} URL в sitemap, {len(known)} в состоянии ===")
+    log(f"=== Запуск: {len(urls)} URL в {len(PAGE_SITEMAPS)} sitemap, {len(known)} в состоянии ===")
 
-    changed, hashes = [], {}
+    changed, fresh = [], {}
     for u in urls:
-        h = content_hash(u)
-        hashes[u] = h
-        if args.all or known.get(u) != h:
+        prev = known.get(u)
+        fp = fingerprint(u, prev)
+        fresh[u] = fp
+        if args.all or prev is None or prev.get("h") != fp["h"]:
             changed.append(u)
 
     indexnow_ok = True
@@ -254,14 +310,14 @@ def main():
     else:
         log("IndexNow: изменений нет — ничего не отправляю.")
 
-    # Сплошная индексация работает каждый день, даже без изменений на сайте
+    # Сплошная индексация работает каждый запуск, даже без изменений на сайте
     webmaster_recrawl(changed, urls, state, dry_run=args.dry_run)
 
     if not args.dry_run:
         if indexnow_ok:
-            state["urls"] = hashes
+            state["urls"] = fresh
         else:
-            log("Были ошибки IndexNow — хэши НЕ сохранены, изменения уйдут при следующем запуске.")
+            log("Были ошибки IndexNow — отпечатки НЕ сохранены, изменения уйдут при следующем запуске.")
         state["last_run"] = datetime.now(timezone.utc).isoformat()
         save_state(state)
         log("Состояние сохранено.")

@@ -1,0 +1,38 @@
+# Ускоритель индексации: IndexNow (Яндекс+Bing) + переобход Яндекс.Вебмастера.
+# Работает в облаке 4 раза в день — не зависит от Мака и домашней сети.
+# Состояние (.index-state.json) переезжает между запусками через actions/cache;
+# при потере кэша скрипт просто отправит всё заново — это безопасно.
+name: index-accelerator
+
+on:
+  schedule:
+    - cron: '15 5,11,17,23 * * *'   # UTC; 4 раза в сутки
+  workflow_dispatch: {}
+
+concurrency:
+  group: index-accelerator
+  cancel-in-progress: false
+
+jobs:
+  accelerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Восстановить состояние прошлых запусков
+        uses: actions/cache@v4
+        with:
+          path: .index-state.json
+          key: index-state-${{ github.run_id }}
+          restore-keys: |
+            index-state-
+
+      - name: Запустить ускоритель
+        env:
+          YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
+        run: python3 index_accelerator.py
+
+      - name: Итог
+        if: always()
+        run: tail -20 index-accelerator.log || true
