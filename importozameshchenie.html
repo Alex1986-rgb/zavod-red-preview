@@ -273,7 +273,8 @@
 var BRANDS=[['sew','SEW-Eurodrive'],['nord','NORD'],['bonfiglioli','Bonfiglioli'],['motovario','Motovario'],['flender','Flender'],['siemens','Siemens'],['lenze','Lenze'],['bauer','Bauer'],['varvel','Varvel'],['sew-tramec','Tramec'],['siti','SITI'],['stm','STM'],['transtecno','Transtecno'],['innovari','Innovari'],['varmec','Varmec'],['yilmaz','Yilmaz'],['keb','KEB'],['watt-drive','Watt Drive'],['boneng','Boneng'],['innored','Innored'],['guomao','Guomao'],['unidrive','UNI Drive']];
 var br=document.getElementById('brands');
 BRANDS.forEach(function(b){br.insertAdjacentHTML('beforeend','<a class="brand" href="/brands/'+b[0]+'" title="'+b[1]+' — поставка оригинала и аналог"><img src="assets/brands/'+b[0]+'.webp" alt="'+b[1]+' редуктор — оригинал и аналог" loading="lazy"><span class="brand-name">'+b[1]+'</span></a>');});
-wireLeadForm('impForm',{title:'Заявка: импортозамещение'});
+/* заявку impForm обрабатывает делегированный обработчик modal.js (.lead-form):
+   читает textarea/email + UTM + page_url. wireLeadForm убран — иначе двойной сабмит. */
 </script>
 <script defer src="assets/modal.js?v=556"></script>
 <script defer src="assets/podbor.js?v=24135"></script>
