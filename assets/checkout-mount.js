@@ -100,6 +100,18 @@
       return;
     }
     host.innerHTML = '<div class="zr-co-grid"><form id="zr-co-form" onsubmit="return false">' + formHTML() + '</form>' + summaryHTML() + '</div>';
+    var ph = host.querySelector('input[name="phone"]');
+    if (ph) {
+      ph.addEventListener("focus", function () { if (this.value === "") this.value = "+7 ("; });
+      ph.addEventListener("keydown", function (e) { if (e.key === "Backspace" && this.value.length <= 4) e.preventDefault(); });
+      ph.addEventListener("input", function () {
+        var dg = this.value.replace(/\D/g, ""); if (dg[0] === "7" || dg[0] === "8") dg = dg.slice(1); dg = dg.slice(0, 10);
+        var x = ("7" + dg).match(/(\d)(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/); if (!x) return;
+        this.value = !x[2] ? "+7 (" : "+7 (" + x[2] + (x[3] ? ") " + x[3] : "") + (x[4] ? "-" + x[4] : "") + (x[5] ? "-" + x[5] : "");
+      });
+    }
+    var innEl = host.querySelector('input[name="inn"]');
+    if (innEl) innEl.addEventListener("input", function () { this.value = this.value.replace(/\D/g, "").slice(0, 12); });
   }
 
   function orderNo() {
@@ -111,7 +123,10 @@
     var form = d.getElementById("zr-co-form"); if (!form) return;
     var ok = true, first = null;
     [].forEach.call(form.querySelectorAll("[data-req]"), function (inp) {
-      var bad = !inp.value.trim();
+      var v = inp.value.trim(), name = inp.getAttribute("name"), bad = !v;
+      if (!bad && name === "phone") bad = v.replace(/\D/g, "").length < 10;       // телефон: минимум 10 цифр
+      if (!bad && name === "email") bad = !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);    // email: базовый формат
+      if (!bad && name === "inn")   bad = !/^(\d{10}|\d{12})$/.test(v.replace(/\D/g, "")); // ИНН: 10 (юрлицо) или 12 (ИП)
       inp.closest(".zr-field").classList.toggle("err", bad);
       if (bad && !first) first = inp;
       if (bad) ok = false;
