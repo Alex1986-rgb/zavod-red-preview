@@ -63,6 +63,7 @@
         '<div class="fld"><label>E-mail</label><input name="email" type="email" autocomplete="email" placeholder="you@company.ru"></div>' +
         '<div class="fld reg-only" style="display:none"><label>Телефон</label><input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>' +
         '<div class="fld"><label>Пароль</label><input name="password" type="password" autocomplete="current-password" placeholder="••••••"><div class="ac-hint reg-only" style="display:none">Минимум 6 символов.</div></div>' +
+        '<div class="login-only" style="text-align:right;margin:-6px 0 4px"><a href="#" id="ac-forgot" style="font-size:12.5px;color:var(--muted,#5c6b76);text-decoration:none">Забыли пароль?</a></div>' +
         '<button class="ac-btn" type="submit" id="ac-submit">Войти</button>' +
         '<div class="ac-msg" id="ac-msg"></div>' +
       '</form>' +
@@ -85,6 +86,7 @@
       mode = m;
       wrap.querySelectorAll(".ac-tab").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-t") === m); });
       wrap.querySelectorAll(".reg-only").forEach(function (n) { n.style.display = m === "reg" ? "" : "none"; });
+      wrap.querySelectorAll(".login-only").forEach(function (n) { n.style.display = m === "reg" ? "none" : ""; });
       submit.textContent = m === "reg" ? "Зарегистрироваться" : "Войти";
       title.textContent = m === "reg" ? "Регистрация" : "Личный кабинет";
       form.querySelector('input[name=password]').setAttribute("autocomplete", m === "reg" ? "new-password" : "current-password");
@@ -106,6 +108,24 @@
       submit.disabled = false;
       if (res.ok) { showMsg(res.msg + " Входим…", "ok"); setTimeout(function () { location.reload(); }, 700); }
       else showMsg(res.msg, "err");
+    });
+
+    // «Забыли пароль?» — автоматического сброса нет, отправляем заявку менеджеру через feedback.php
+    var forgot = wrap.querySelector("#ac-forgot");
+    if (forgot) forgot.addEventListener("click", async function (e) {
+      e.preventDefault();
+      var email = ((form.querySelector('input[name=email]') || {}).value || "").trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showMsg("Введите e-mail в поле выше — вышлем инструкции по сбросу.", "err"); return; }
+      showMsg("Отправляем запрос…", "ok");
+      try {
+        var fd = new FormData();
+        fd.append("work_email", ""); fd.append("text-562", "Сброс пароля кабинета");
+        fd.append("email-727", email); fd.append("tel-535", "");
+        fd.append("product_title", "Запрос на сброс пароля кабинета: " + email);
+        fd.append("page_url", location.href);
+        await fetch("/api/feedback.php", { method: "POST", body: fd });
+        showMsg("Запрос на сброс отправлен. Менеджер свяжется и поможет восстановить доступ.", "ok");
+      } catch (err) { showMsg("Не удалось отправить. Позвоните: +7 (495) 151-41-02.", "err"); }
     });
   }
 
