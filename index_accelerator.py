@@ -205,7 +205,7 @@ def recrawl_candidates(changed, all_urls, recrawl_map):
     oldest = boost(sorted((u for u in all_urls if u in recrawl_map and u not in changed),
                           key=lambda u: recrawl_map[u]))
     seen, order = set(), []
-    for u in changed + never + oldest:
+    for u in boost(changed) + never + oldest:
         if u not in seen:
             seen.add(u)
             order.append(u)
