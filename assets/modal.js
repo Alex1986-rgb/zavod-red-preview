@@ -82,11 +82,21 @@
   var fileInp=document.getElementById('zrFile');
   var res=modal.querySelector('.zr-res');
   function show(m,t){res.className='zr-res show'+(t?' '+t:'');res.innerHTML=m;var box=modal.querySelector('.zr-modal__box');if(box)box.scrollTop=0;}
-  function open(e){if(e)e.preventDefault();res.className='zr-res';res.innerHTML='';form.style.display='';var i=document.getElementById('zrIntro');if(i)i.style.display='';modal.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('zrType').focus();},50);}
-  function close(){modal.hidden=true;document.body.style.overflow='';}
+  var _lastFocus=null;
+  function open(e){if(e)e.preventDefault();_lastFocus=document.activeElement;res.className='zr-res';res.innerHTML='';form.style.display='';var i=document.getElementById('zrIntro');if(i)i.style.display='';modal.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('zrType').focus();},50);}
+  function close(){modal.hidden=true;document.body.style.overflow='';if(_lastFocus&&_lastFocus.focus){try{_lastFocus.focus();}catch(e){}}}
+  function trapTab(e){
+    if(modal.hidden||e.key!=='Tab')return;
+    var box=modal.querySelector('.zr-modal__box'); if(!box)return;
+    var f=[].slice.call(box.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(el){return el.offsetParent!==null;});
+    if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
 
   modal.addEventListener('click',function(e){if(e.target.hasAttribute('data-close'))close();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();else trapTab(e);});
   // триггеры: [data-zayavka] или ссылки на #zayavka
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-zayavka],a[href="#zayavka"],a[href$="#zayavka"]');
