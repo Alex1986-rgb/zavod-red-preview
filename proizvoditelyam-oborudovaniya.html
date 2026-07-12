@@ -183,7 +183,17 @@
     <div class="cta-band">
       <h2>Обсудим условия для вашего производства</h2>
       <p>Расскажите, какое оборудование выпускаете и сколько редукторов нужно в месяц — подготовим персональные условия, цену и график поставок.</p>
-      <a class="btn lg" data-zayavka href="#zayavka">Получить условия для производителя</a>
+      <form class="lead-form" style="max-width:480px;margin:24px auto 0;text-align:left">
+        <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
+        <div class="grid-2" style="gap:14px">
+          <div class="field"><label>Ваше имя</label><input type="text" placeholder="Как к вам обращаться" required /></div>
+          <div class="field"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__" required /></div>
+        </div>
+        <div class="field"><label>Что выпускаете и сколько редукторов в месяц</label><textarea name="textarea-725" rows="2" placeholder="Напр.: конвейеры, ~50 червячных редукторов в месяц"></textarea></div>
+        <label class="consent"><input type="checkbox" required /> Согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+        <button class="btn lg" type="submit" style="width:100%;justify-content:center">Получить условия для производителя</button>
+        <div class="form-result"></div>
+      </form>
     </div>
   </div>
 </section>
