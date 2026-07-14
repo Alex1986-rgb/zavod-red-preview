@@ -78,7 +78,7 @@
      +tbody
    +'</table></div>'
    +(compact?'':'<button type="button" class="pf-more" id="pfMore" hidden>Показать ещё</button>')
-   +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (обозначения EVL и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
+   +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (маркировка ZR и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
   var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
@@ -88,7 +88,7 @@
   var _selCache={};
   function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
+  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
   // ключ кнопки → фактические ключи бренда в g.a (данные разбиты по под-сериям). 'Varvel серия 7МЧ'
   // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных (Flender/Siemens/…) убраны из кнопок.
@@ -231,7 +231,7 @@
       var _bo=BMAP[selBrand];
       var _bl=$('pfBrandLock');
       if(_bl) _bl.innerHTML='<span class="pf-brands-lbl">Показываем аналоги:</span><span class="pf-pill pf-pill--brand is-active" aria-current="true">'+((_bo&&_bo.n)||selBrand)+'</span>';
-      var _th=root.querySelector('.pf-th-tz'); if(_th) _th.textContent=((_bo&&_bo.n)||selBrand)+' (наш аналог EVL)';
+      var _th=root.querySelector('.pf-th-tz'); if(_th) _th.textContent=((_bo&&_bo.n)||selBrand)+' (наш аналог ZR)';
     }
     fillRanges();
     preApplyNumeric();
@@ -369,8 +369,9 @@
   // (напр. «Х») сохраняется. Если хоть одна часть без соответствия — ZR не показываем
   // (не выдумываем номера, которые могут уйти клиенту).
   var ZRMAP={193:939,194:949,195:959,196:969,197:979,198:989,199:999,1910:9109,1913:9139,1914:9149,1916:9169,
-    183:838,184:848,185:858,186:868,187:878,188:888,189:898,1810:8108,1812:8128,1815:8158,1816:8168,1818:8188,
-    737:603,747:604,757:605,767:606,777:607,797:609,7107:6011,7137:6113,7157:6115,
+    183:838,184:848,185:858,186:868,187:878,188:888,189:898,1810:8108,1812:8128,1815:8158,1816:8168,1817:8178,1818:8188,
+    737:603,747:604,757:605,767:606,777:607,797:609,7107:6010,7117:6010,7137:6013,7157:6015,
+    63:606,71:607,80:608,90:609,
     163:636,164:646,165:656,166:666,167:676,168:686,169:696,1610:6106,1612:6126,1615:6156};
   function zrPart(p){var m=String(p).trim().match(/^(\d+)(.*)$/);if(!m)return null;var z=ZRMAP[parseInt(m[1],10)];return z==null?null:(z+m[2]);}
   function zrOf(evl){
@@ -402,10 +403,8 @@
     }else{
       // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
       // EVL-вид: EVL крупно, ZR — серым кубиком. Импортные аналоги (≈) убраны (правка №2).
-      var zr=zrOf(g.e), head, badge;
-      if(selBrand==='__evl__'){ head=g.e; badge=zr; }
-      else { head=zr||g.e; badge=zr?g.e:null; }
-      var mark='<b class="pf-zr">'+head+'</b>'+(badge?'<span class="pf-evl">'+badge+'</span>':'');
+      var zr=zrOf(g.e);
+      var mark='<b class="pf-zr">'+(zr||g.e)+'</b>';
       tz='<td class="pf-tz">'+mark+(g.p?'<span class="pf-tr-gost">'+g.p+'</span>':'')+'</td>';
       ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
     }
@@ -422,13 +421,13 @@
   function csvCell(v){ v=(v==null?'':String(v)); return /[";\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
   function exportCSV(){
     if(!CUR.length)return;
-    var head=['Маркировка ZR','Типоразмер (EVL)','ПР','ГОСТ-обозначения','Импортные аналоги'].concat(COLS.map(function(c){return c.h;}));
+    var head=['Маркировка ZR','ПР','ГОСТ-обозначения','Импортные аналоги'].concat(COLS.map(function(c){return c.h;}));
     var lines=[head.map(csvCell).join(';')];
     CUR.forEach(function(it){
       var g=DB.g[it[0]];
       var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).join(' / ');
       var ans=Object.keys(g.a||{}).map(function(k){return g.a[k][0];}).join(' / ');
-      var row=[zrOf(g.e)||'', g.e, g.p||'', gost, ans].concat(COLS.map(function(c){return it[c.i]==null?'':fmt(it[c.i],c.d);}));
+      var row=[zrOf(g.e)||'', g.p||'', gost, ans].concat(COLS.map(function(c){return it[c.i]==null?'':fmt(it[c.i],c.d);}));
       lines.push(row.map(csvCell).join(';'));
     });
     var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
