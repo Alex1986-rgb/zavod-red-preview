@@ -422,6 +422,96 @@ def topics_for(slug, name, country, rows):
     return arts
 
 
+# ------------------------------------------------------- обогащение до эталона
+TYPE_IMG = {
+    "червячн":   ("cat_worm.webp", "Червячный мотор-редуктор"),
+    "соосн":     ("cat_coaxial.webp", "Соосно-цилиндрический мотор-редуктор"),
+    "коническ":  ("cat_bevel.webp", "Коническо-цилиндрический редуктор"),
+    "плоск":     ("cat_flat.webp", "Плоский цилиндрический редуктор с полым валом"),
+    "цилиндрич": ("cat_cylindrical.webp", "Цилиндрический редуктор"),
+}
+
+
+def fig(src, alt, caption):
+    return (f'  <figure class="art-fig"><img src="../assets/{src}" alt="{alt}" loading="lazy">'
+            f"<figcaption>{caption}</figcaption></figure>")
+
+
+def pick_img(context_text):
+    low = context_text.lower()
+    for key, (img, alt) in TYPE_IMG.items():
+        if key in low:
+            return img, alt
+    return "cat_cylindrical.webp", "Промышленный редуктор"
+
+
+def params_section(subject):
+    return "\n".join([
+        h2("Какие данные собрать перед заказом"),
+        p("Чтобы подбор прошёл с первого раза, соберите параметры по чек-листу — каждый из них влияет на типоразмер и цену:"),
+        '  <table class="xref">\n    <thead><tr><th>Параметр</th><th>Где взять</th></tr></thead>\n    <tbody>\n'
+        '      <tr><td>Момент на выходе, Н·м</td><td><b>Расчёт от механизма</b> или шильдик старого редуктора</td></tr>\n'
+        '      <tr><td>Обороты выхода, об/мин</td><td><b>Технология</b>: скорость ленты, мешалки, барабана</td></tr>\n'
+        '      <tr><td>Мощность двигателя, кВт</td><td><b>Шильдик двигателя</b> или расчёт от момента</td></tr>\n'
+        '      <tr><td>Режим работы</td><td><b>Часы в сутки, пуски в час</b>, реверс, удары</td></tr>\n'
+        '      <tr><td>Монтаж</td><td><b>Лапы/фланец</b>, положение M1–M6</td></tr>\n'
+        '      <tr><td>Среда</td><td><b>Температура, пыль, влага</b>, требования IP</td></tr>\n'
+        '    </tbody>\n  </table>',
+        p('Собранные данные вводите в <a href="/podbor">калькулятор подбора</a> — он покажет подходящие типоразмеры '
+          'с обозначениями ZR и ГОСТ и импортными аналогами, а результат выгрузит в CSV для спецификации.'),
+    ])
+
+
+def delivery_section():
+    return "\n".join([
+        h2("Доставка, оплата и гарантия"),
+        p('Отгружаем со склада в Челябинске любой транспортной компанией по всей России и СНГ: счёт для юрлиц, '
+          'оплата картой для частных заказчиков, отсрочка — по договору поставки. Каждый редуктор проходит обкатку '
+          'и ОТК, в комплекте паспорт с характеристиками и гарантия завода 12 месяцев с ввода в эксплуатацию. '
+          'Ходовые типоразмеры отгружаем за 1–3 дня, изготовление под заказ — 2–3 недели.'),
+    ])
+
+
+def vyvod_section(subject):
+    return "\n".join([
+        h2("Вывод"),
+        p(f"Правильный путь к решению задачи короткий: соберите параметры по чек-листу, прогоните их через "
+          f'<a href="/podbor">калькулятор</a> или пришлите шильдик инженеру — и получите КП с точной ценой и сроком '
+          f"в тот же день. Подбор бесплатный, ответственность за соответствие несёт завод, а склад и производство "
+          f"в Челябинске закрывают и срочные замены, и плановые программы."),
+    ])
+
+
+FAQ_POOL = [
+    ("Как оформить заказ?", "Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."),
+    ("Какая доставка по России?", "Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."),
+    ("Даёте ли документы для бухгалтерии и тендера?", "Полный пакет: счёт, УПД, паспорт изделия, сертификаты и справки о производителе."),
+    ("Можно ли получить консультацию инженера?", "Да, бесплатно: подбор, проверка вашего расчёта, вопросы эксплуатации — по телефону или почте."),
+]
+
+
+def enrich(art, faq, subject, img_context):
+    """Дотягивает статью до эталона: 2 фото, чек-лист, доставка, вывод, 6 FAQ."""
+    img, alt = pick_img(img_context)
+    f1 = fig("catalog/" + img, f"{alt} — {subject}", f"{alt} производства «Завода Редукторов»")
+    f2 = fig("production/p01.webp", f"Производство редукторов — {subject}",
+             "Производство «Завода Редукторов»: механообработка, сборка, обкатка, ОТК")
+    parts = art.split("  <h2>")
+    if len(parts) > 2:
+        parts[1] = parts[1] + "\n" + f1 + "\n"
+        art = "  <h2>".join(parts)
+    else:
+        art = art + "\n" + f1
+    art = "\n".join([art, params_section(subject), f2, delivery_section(), vyvod_section(subject)])
+    seen = {q for q, _ in faq}
+    for q, a in FAQ_POOL:
+        if len(faq) >= 6:
+            break
+        if q not in seen:
+            faq = faq + [(q, a)]
+    return art, faq
+
+
 # ------------------------------------------------------- 20 общих статей
 def general_topics():
     """(slug, eyebrow, short, title, desc, h1, minutes, art, faq)"""
@@ -815,52 +905,63 @@ def general_topics():
 
 
 # ---------------------------------------------------------------- main
-def main():
-    dry = "--dry-run" in sys.argv
+PROTECTED = {"reduktor-dlya-konveyera-vybor", "reduktor-dlya-meshalki",
+             "reduktor-s-elektrodvigatelem"}  # существовали до генератора, в топе — не трогать
+
+
+def run_generator(article_iter, argv):
+    """Общий main для генераторов: --dry-run, --rebuild (перезапись существующих)."""
+    dry = "--dry-run" in argv
+    rebuild = "--rebuild" in argv
     sk = Skeleton()
-    series = load_series()
     made, skipped = [], []
 
-    def emit(slug, eyebrow, short, title, desc, h1, minutes, art, faq):
+    for slug, eyebrow, short, title, desc, h1, minutes, art, faq in article_iter:
         path = os.path.join(BASE, "blog", f"{slug}.html")
-        if os.path.exists(path):
+        if slug in PROTECTED or (os.path.exists(path) and not rebuild):
             skipped.append(slug)
-            return
+            continue
+        art, faq = enrich(art, faq, short, h1 + " " + art[:600])
         html = sk.render(slug, title, desc, h1, eyebrow, short, art, faq, minutes)
         if not dry:
             open(path, "w", encoding="utf-8").write(html)
         made.append((slug, eyebrow, h1, desc))
 
-    for slug, (name, country) in BRANDS.items():
-        for a in topics_for(slug, name, country, series[slug]):
-            emit(*a)
-    for a in general_topics():
-        emit(*a)
-
-    print(f"создано статей: {len(made)}, пропущено (уже есть): {len(skipped)}")
-    if skipped:
-        print("пропущены:", ", ".join(skipped[:10]), "..." if len(skipped) > 10 else "")
+    print(f"записано статей: {len(made)}, пропущено: {len(skipped)}")
     if dry or not made:
         return
 
-    # карточки в blog/index.html
-    idx_p = os.path.join(BASE, "blog", "index.html")
-    idx = open(idx_p, encoding="utf-8").read()
-    anchor = idx.find('<a class="post-card"')
-    cards = "".join(
-        f'<a class="post-card" href="/blog/{s}"><span class="pcat">{eb}</span>'
-        f'<h2>{h}</h2><p>{d}</p><span class="pgo">Читать →</span></a>\n'
-        for s, eb, h, d in made)
-    open(idx_p, "w", encoding="utf-8").write(idx[:anchor] + cards + idx[anchor:])
-
-    # sitemap.xml
+    # карточки и sitemap — только для URL, которых там ещё нет
     sm_p = os.path.join(BASE, "sitemap.xml")
     sm = open(sm_p, encoding="utf-8").read()
-    urls = "".join(
-        f"  <url><loc>{SITE}/blog/{s}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n"
-        for s, _, _, _ in made)
-    open(sm_p, "w", encoding="utf-8").write(sm.replace("</urlset>", urls + "</urlset>"))
-    print("blog/index.html и sitemap.xml обновлены")
+    fresh = [(s, eb, h, d) for s, eb, h, d in made if f"/blog/{s}<" not in sm]
+    if fresh:
+        idx_p = os.path.join(BASE, "blog", "index.html")
+        idx = open(idx_p, encoding="utf-8").read()
+        anchor = idx.find('<a class="post-card"')
+        cards = "".join(
+            f'<a class="post-card" href="/blog/{s}"><span class="pcat">{eb}</span>'
+            f'<h2>{h}</h2><p>{d}</p><span class="pgo">Читать →</span></a>\n'
+            for s, eb, h, d in fresh)
+        open(idx_p, "w", encoding="utf-8").write(idx[:anchor] + cards + idx[anchor:])
+        urls = "".join(
+            f"  <url><loc>{SITE}/blog/{s}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n"
+            for s, _, _, _ in fresh)
+        open(sm_p, "w", encoding="utf-8").write(sm.replace("</urlset>", urls + "</urlset>"))
+    print(f"новых в индексе/sitemap: {len(fresh)}")
+
+
+def main():
+    series = load_series()
+
+    def gen():
+        for slug, (name, country) in BRANDS.items():
+            for a in topics_for(slug, name, country, series[slug]):
+                yield a
+        for a in general_topics():
+            yield a
+
+    run_generator(gen(), sys.argv)
 
 
 if __name__ == "__main__":

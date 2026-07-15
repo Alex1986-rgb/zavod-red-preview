@@ -16,7 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_brand_articles import (BASE, SITE, BRANDS, Skeleton, load_series,
-                                p, h2, note, cta)
+                                p, h2, note, cta, run_generator)
 
 # type_key: (слаг, имя, имя-мн, наши серии, каталог, кпд, keyword для серий брендов)
 TYPES = {
@@ -531,47 +531,14 @@ def topics_for_type(tslug, T, series):
 
 
 def main():
-    dry = "--dry-run" in sys.argv
-    sk = Skeleton()
     series = load_series()
-    made, skipped = [], []
 
-    def emit(slug, eyebrow, short, title, desc, h1, minutes, art, faq):
-        path = os.path.join(BASE, "blog", f"{slug}.html")
-        if os.path.exists(path):
-            skipped.append(slug)
-            return
-        html = sk.render(slug, title, desc, h1, eyebrow, short, art, faq, minutes)
-        if not dry:
-            open(path, "w", encoding="utf-8").write(html)
-        made.append((slug, eyebrow, h1, desc))
+    def gen():
+        for tslug, T in TYPES.items():
+            for a in topics_for_type(tslug, T, series):
+                yield a
 
-    for tslug, T in TYPES.items():
-        for a in topics_for_type(tslug, T, series):
-            emit(*a)
-
-    print(f"создано статей: {len(made)}, пропущено (уже есть): {len(skipped)}")
-    if skipped:
-        print("пропущены:", ", ".join(skipped))
-    if dry or not made:
-        return
-
-    idx_p = os.path.join(BASE, "blog", "index.html")
-    idx = open(idx_p, encoding="utf-8").read()
-    anchor = idx.find('<a class="post-card"')
-    cards = "".join(
-        f'<a class="post-card" href="/blog/{s}"><span class="pcat">{eb}</span>'
-        f'<h2>{h}</h2><p>{d}</p><span class="pgo">Читать →</span></a>\n'
-        for s, eb, h, d in made)
-    open(idx_p, "w", encoding="utf-8").write(idx[:anchor] + cards + idx[anchor:])
-
-    sm_p = os.path.join(BASE, "sitemap.xml")
-    sm = open(sm_p, encoding="utf-8").read()
-    urls = "".join(
-        f"  <url><loc>{SITE}/blog/{s}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n"
-        for s, _, _, _ in made)
-    open(sm_p, "w", encoding="utf-8").write(sm.replace("</urlset>", urls + "</urlset>"))
-    print("blog/index.html и sitemap.xml обновлены")
+    run_generator(gen(), sys.argv)
 
 
 if __name__ == "__main__":
