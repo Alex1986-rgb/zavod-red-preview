@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /cart
+Disallow: /checkout
+Disallow: /cabinet
+Disallow: /api/
+Disallow: /*?
 
 Sitemap: https://zavod-red.ru/sitemap-index.xml
 Sitemap: https://zavod-red.ru/sitemap.xml
@@ -7,3 +12,6 @@ Sitemap: https://zavod-red.ru/sitemap-images.xml
 Sitemap: https://zavod-red.ru/sitemap-tiporazmer.xml
 Sitemap: https://zavod-red.ru/sitemap-ispolnenie.xml
 Sitemap: https://zavod-red.ru/sitemap-analog.xml
+Sitemap: https://zavod-red.ru/sitemap-analog-2.xml
+Sitemap: https://zavod-red.ru/sitemap-zr.xml
+Sitemap: https://zavod-red.ru/sitemap-hub.xml
