@@ -183,7 +183,7 @@
         var imp=brandModel(g,brandKey);
         if(imp)names[imp]=1;               // конкретный бренд → его аналоги
       }else{
-        if(g.e)names[g.e]=1;               // наши виды (ZR/EVL) → обозначения EVL
+        if(g.e){ var ze=zrOf(g.e); names[ze||g.e]=1; }   // наши виды → маркировка ZR
         if(g.p)names[g.p]=1;               // + ГОСТ (ПР/МР)
       }
     });

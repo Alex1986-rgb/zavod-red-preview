@@ -414,14 +414,14 @@
       sc.sort(function(a,b){return b.s-a.s;}); return sc.slice(0,7).map(function(x){x.qb=qb;return x;});
     }
     function analog(gr,qb){ for(var i=0;i<gr.b.length;i++){ if(qb.indexOf(nn(gr.b[i].split(' ')[0]))>=0) return gr.b[i].split(' ')[0]+' '+(gr.m[i]||''); } return gr.b.length?(gr.b[0].split(' ')[0]+' '+(gr.m[0]||'')):''; }
-    function row(x){ var gr=x.gr,mark=gr.z||gr.e,sub=gr.z?gr.e:gr.p,an=analog(gr,x.qb);
-      return '<a class="ms-row" href="/podbor?q='+encodeURIComponent(gr.e)+'"><img src="/assets/catalog/'+(IMG[gr.t]||'cat_cylindrical')+'.webp" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'"><span class="ms-rb"><span class="ms-rm">'+esc(mark)+(sub?' <em>'+esc(sub)+'</em>':'')+'</span><span class="ms-rt">'+esc(T[gr.t])+(an?' · '+esc(an):'')+' · '+esc(gr.pw)+' кВт · i '+esc(gr.i)+'</span></span><span class="ms-rp">по запросу</span></a>';
+    function row(x){ var gr=x.gr,mark=gr.z||gr.e,sub=gr.p,an=analog(gr,x.qb);
+      return '<a class="ms-row" href="/podbor?q='+encodeURIComponent(gr.z||gr.e)+'"><img src="/assets/catalog/'+(IMG[gr.t]||'cat_cylindrical')+'.webp" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'"><span class="ms-rb"><span class="ms-rm">'+esc(mark)+(sub?' <em>'+esc(sub)+'</em>':'')+'</span><span class="ms-rt">'+esc(T[gr.t])+(an?' · '+esc(an):'')+' · '+esc(gr.pw)+' кВт · i '+esc(gr.i)+'</span></span><span class="ms-rp">по запросу</span></a>';
     }
     function render(q){ var top=rank(q);
       if(!top.length){ dd.innerHTML='<div class="ms-empty">По «'+esc(q)+'» точных карточек нет. Нажмите «Найти» — откроем полный подбор.</div>'; dd.hidden=false; return; }
       dd.innerHTML=top.map(row).join('')+'<a class="ms-all" href="/podbor?q='+encodeURIComponent(q)+'">Показать все результаты в подборе →</a>'; dd.hidden=false;
     }
-    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
+    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json?v=2').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
     var t; function deb(){ clearTimeout(t); var q=input.value.trim(); if(q.length<2){dd.hidden=true;return;} t=setTimeout(function(){ if(IDX)render(q); else load(function(){render(q);}); },140); }
     input.addEventListener('focus',function(){ load(); if(input.value.trim().length>=2)deb(); });
     input.addEventListener('input',deb);
