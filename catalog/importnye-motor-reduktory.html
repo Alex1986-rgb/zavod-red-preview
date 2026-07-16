@@ -110,6 +110,8 @@
     <div class="imp-fgroup"><label>Тип привода</label><select id="fT"><option value="">Все типы</option></select></div>
     <div class="imp-fgroup"><label>Бренд</label><select id="fB"><option value="">Все бренды</option></select></div>
     <div class="imp-fgroup"><label>Страна</label><select id="fC"><option value="">Все страны</option></select></div>
+    <div class="imp-fgroup"><label>Мощность, кВт</label><select id="fP"><option value="">Любая</option><option value="0-1">до 1 кВт</option><option value="1-5">1–5 кВт</option><option value="5-15">5–15 кВт</option><option value="15-99999">15+ кВт</option></select></div>
+    <div class="imp-fgroup"><label>Передаточное число i</label><select id="fR"><option value="">Любое</option><option value="0-20">до 20</option><option value="20-60">20–60</option><option value="60-150">60–150</option><option value="150-999999">150+</option></select></div>
     <button class="imp-reset" id="fReset">Сбросить фильтр</button>
   </aside>
   <div>
@@ -131,7 +133,9 @@
 <script>
 (function(){
   var G=document.getElementById('impGrid'),CNT=document.getElementById('impCount'),MORE=document.getElementById('impMore'),EMPTY=document.getElementById('impEmpty');
-  var fQ=document.getElementById('fQ'),fT=document.getElementById('fT'),fB=document.getElementById('fB'),fC=document.getElementById('fC'),fReset=document.getElementById('fReset');
+  var fQ=document.getElementById('fQ'),fT=document.getElementById('fT'),fB=document.getElementById('fB'),fC=document.getElementById('fC'),fP=document.getElementById('fP'),fR=document.getElementById('fR'),fReset=document.getElementById('fReset');
+  function rng(s){var m=String(s||'').replace(/,/g,'.').match(/[0-9.]+/g);if(!m||!m.length)return null;var n=m.map(parseFloat);return[Math.min.apply(null,n),Math.max.apply(null,n)];}
+  function overlaps(card,sel){if(!sel)return true;var a=rng(card);if(!a)return true;var p=sel.split('-').map(parseFloat);return a[1]>=p[0]&&a[0]<=p[1];}
   var CHIPS=document.getElementById('impBrandChips');
   var DATA=null,TYPES=[],CUR=[],SHOWN=0,STEP=24;
   function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
@@ -150,11 +154,13 @@
       '<a class="zr-more-btn" href="'+url+'">Оригинал и аналог →</a></div></div></article>';
   }
   function apply(){
-    var q=(fQ.value||'').trim().toLowerCase(),t=fT.value,b=fB.value,c=fC.value;
+    var q=(fQ.value||'').trim().toLowerCase(),t=fT.value,b=fB.value,c=fC.value,p=fP.value,r=fR.value;
     CUR=DATA.filter(function(x){
       if(t!==''&&String(x.t)!==t)return false;
       if(b&&x.b!==b)return false;
       if(c&&x.c!==c)return false;
+      if(p&&!overlaps(x.pw,p))return false;
+      if(r&&!overlaps(x.i,r))return false;
       if(q&&(x.b+' '+x.m+' '+x.z).toLowerCase().indexOf(q)<0)return false;
       return true;
     });
@@ -183,8 +189,8 @@
       ch.onclick=function(){fB.value=(fB.value===b?'':b);apply();};CHIPS.appendChild(ch);});
     apply();
   }).catch(function(){CNT.textContent='Не удалось загрузить каталог. Откройте подбор по параметрам.';});
-  [fQ,fT,fB,fC].forEach(function(el){el.addEventListener('input',apply);el.addEventListener('change',apply);});
-  fReset.onclick=function(){fQ.value='';fT.value='';fB.value='';fC.value='';apply();};
+  [fQ,fT,fB,fC,fP,fR].forEach(function(el){el.addEventListener('input',apply);el.addEventListener('change',apply);});
+  fReset.onclick=function(){fQ.value='';fT.value='';fB.value='';fC.value='';fP.value='';fR.value='';apply();};
   MORE.onclick=more;
 })();
 </script><footer class="site-footer">
