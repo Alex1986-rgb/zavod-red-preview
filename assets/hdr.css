@@ -62,7 +62,7 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
   .hdr2.open .submenu{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;padding:0 0 0 14px}
   .hdr2 .msearch input::placeholder{font-size:12.5px}
 }
-@media(max-width:560px){.hdr2 .logo img{height:34px}.hdr2 .msearch{padding:9px 12px}}
+@media(max-width:560px){.hdr2 .logo img{height:34px}.hdr2 .hm-in{flex-wrap:wrap;row-gap:9px}.hdr2 .msearch{order:5;flex:1 1 100%;padding:9px 12px}}
 /* Кнопка «Найти» + живые подсказки быстрого поиска */
 .hdr2 .msearch{position:relative}
 .hdr2 .ms-go{flex-shrink:0;background:var(--h-red);color:#fff;border:0;border-radius:8px;padding:8px 16px;font:600 13.5px/1 'Space Grotesk',sans-serif;cursor:pointer;margin-left:2px;white-space:nowrap}
