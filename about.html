@@ -54,7 +54,7 @@
 <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
 <a href="/importozameshchenie">Импортозамещение</a>
 <a href="/blog/">Блог</a>
-<div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+<div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
 <a href="/contacts">Контакты</a>
 <a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
 </div></div></nav>
@@ -147,6 +147,84 @@
   </div>
 </div></section>
 
+
+<style id="team-css">.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.tcard img{width:100%;aspect-ratio:1;object-fit:cover}
+.tcard-vid-native{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#000;cursor:pointer}
+.vfac{position:relative;display:block;cursor:pointer;overflow:hidden;background:#000;line-height:0;border-radius:14px}
+.vfac>img{width:100%;height:100%;object-fit:cover;display:block}
+.vfac-sq{aspect-ratio:1;border-radius:0}
+.vfac .vbadge{pointer-events:none}
+.vfac-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border:0;border-radius:50%;background:rgba(225,27,27,.9);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:.15s;pointer-events:none}
+.vfac:hover .vfac-btn{background:#e11b1b;transform:translate(-50%,-50%) scale(1.07)}
+.vfac-btn svg{width:32px;height:32px;margin-left:3px}
+.vfac-video{width:100%;display:block;background:#000;border-radius:14px}
+.vfac-video.vfac-sq{aspect-ratio:1;object-fit:cover;border-radius:0}
+.tcard .t-body{padding:15px 18px}
+.tcard h4{font-size:16px;margin-bottom:3px}
+.tcard span{color:var(--muted);font-size:13px}
+.tcard-vid{aspect-ratio:1;background-position:center top}
+.tcard-vid .vid-play{width:54px;height:54px}
+.tcard-vid .vbadge{position:absolute;top:10px;left:10px;z-index:3;background:var(--red);color:#fff;font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
+.team-carousel{position:relative;margin-top:8px}
+.team-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none;-ms-overflow-style:none}
+.team-track::-webkit-scrollbar{display:none}
+.team-track .tcard{flex:0 0 230px;width:230px;max-width:230px;scroll-snap-align:start}
+@media(max-width:560px){.team-track .tcard{flex-basis:80%;width:80%}}
+.tc-arrow{position:absolute;top:40%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--text);font:400 24px/1 inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.4);transition:.15s}
+.tc-arrow:hover{background:var(--red);border-color:var(--red);color:#fff}
+.vid-frame{max-width:900px;margin:18px auto 0;position:relative;border-radius:18px;padding:8px;background:linear-gradient(160deg,rgba(225,27,27,.25),rgba(47,127,194,.18));box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.vid-frame .vfac{border-radius:12px}</style>
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="eyebrow">Команда</div>
+    <h2>Люди нашего производства</h2>
+    <p class="lead">За каждым редуктором — реальные специалисты завода в Челябинске: конструкторы, технологи и производственники. Настоящие люди и настоящий цех — без стоковых фото и нейросетей.</p>
+    <div class="team-carousel"><button class="tc-arrow tc-prev" type="button" aria-label="Назад">‹</button><div class="team-track" id="teamGrid"></div><button class="tc-arrow tc-next" type="button" aria-label="Вперёд">›</button></div>
+  </div>
+</section>
+<section class="section" id="video" style="padding-top:48px;background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Видео</div>
+    <h2>Завод изнутри</h2>
+    <p class="lead">Короткий ролик о производстве — цех, оборудование и выпуск редукторов.</p>
+    <div class="vid-frame"><div class="vfac" data-src="assets/video/zavod-2026.mp4" style="aspect-ratio:16/9">
+      <img src="assets/video/zavod-2026.webp" alt="Завод изнутри — видео производства" loading="lazy">
+      <button class="vfac-btn" type="button" aria-label="Смотреть видео"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+  </div>
+</section>
+<script>const TEAM=[
+ {f:'t1',n:'Александр Николаевич',r:'Оператор-наладчик ЧПУ',v:[{f:'aleksandr-nik',c:'Фрезерный центр IMV-12.60: косозубые шестерни и валы'}]},
+ {f:'t2',n:'Василий Георгиевич',r:'Оператор-наладчик ЧПУ',v:[{f:'vasiliy',c:'Обработка валов и шестерён на ЧПУ'}]},
+ {f:'t3',n:'Константин Эдуардович',r:'Токарь 5-го разряда',v:[{f:'konstantin',c:'Токарно-винторезный станок: валы, оси, резьба'}]},
+ {f:'t5',n:'Андрей Николаевич',r:'Главный сварщик',v:[{f:'andrey-svarka',c:'Сварка корпусов мотор-редукторов'},{f:'lentochka',c:'Ленточнопильный станок: резка крупных деталей'}]},
+ {f:'aleksandr',n:'Александр Иванович',r:'Начальник производства',v:[]},
+ {f:'vladislav',n:'Владислав Фригатович',r:'Директор по качеству',v:[]},
+ {f:'sergey',n:'Сергей Александрович',r:'Главный конструктор',v:[]},
+];
+const tmg=document.getElementById('teamGrid');
+TEAM.forEach(p=>{
+ tmg.insertAdjacentHTML('beforeend',
+  `<div class="tcard"><img src="assets/team/${p.f}.webp" alt="${p.n}" loading="lazy">
+   <div class="t-body"><h4>${p.n}</h4><span>${p.r}</span></div></div>`);
+ (p.v||[]).forEach(vid=>{
+  tmg.insertAdjacentHTML('beforeend',
+   `<div class="tcard"><div class="vfac vfac-sq" data-src="assets/video/team/${vid.f}.mp4"><img src="assets/video/team/${vid.f}.webp" alt="${p.n} — видео" loading="lazy"><span class="vbadge">Видео</span><button class="vfac-btn" type="button" aria-label="Смотреть видео"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+    <div class="t-body"><h4>${p.n}</h4><span>${vid.c}</span></div></div>`);
+ });
+});
+/* клик по постеру → подмена на autoplay-видео (надёжный 1-клик по всему кадру) */
+document.querySelectorAll('.vfac').forEach(function(f){
+ f.addEventListener('click',function(){
+  var v=document.createElement('video');v.src=f.dataset.src;v.controls=true;v.autoplay=true;v.playsInline=true;
+  v.setAttribute('controlsList','nodownload noremoteplayback');v.setAttribute('disablePictureInPicture','');v.setAttribute('oncontextmenu','return false');
+  v.className='vfac-video'+(f.classList.contains('vfac-sq')?' vfac-sq':'');
+  f.replaceWith(v);v.play().catch(function(){});
+ },{once:true});
+});
+</script>
+<script>(function(){var tr=document.getElementById('teamGrid');if(!tr)return;function step(){return Math.min(tr.clientWidth*0.85,248*2);}var p=document.querySelector('.tc-prev'),n=document.querySelector('.tc-next');if(p)p.addEventListener('click',function(){tr.scrollBy({left:-step(),behavior:'smooth'});});if(n)n.addEventListener('click',function(){tr.scrollBy({left:step(),behavior:'smooth'});});})();</script>
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="cta-band">
