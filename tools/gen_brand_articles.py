@@ -98,10 +98,14 @@ def xref_table(rows, brand):
 
 
 def faq_html(faq):
-    items = "\n".join(
-        f"      <details><summary>{q}</summary><div>{a}</div></details>" for q, a in faq
-    )
-    return f'<div class="faq-grid">\n    <div class="cat-faq">\n{items}\n    </div>'
+    """Как в эталоне: faq-grid из ДВУХ блоков cat-faq по 3 вопроса."""
+    half = (len(faq) + 1) // 2
+
+    def block(items):
+        rows = "\n".join(f"      <details><summary>{q}</summary><div>{a}</div></details>" for q, a in items)
+        return f'<div class="cat-faq">\n{rows}\n    </div>'
+
+    return f'<div class="faq-grid">\n    {block(faq[:half])}\n    {block(faq[half:])}'
 
 
 def faq_ld(faq):
