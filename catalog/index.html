@@ -81,6 +81,9 @@
 .cat-filters{background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);border-radius:16px;padding:20px 18px;position:sticky;top:14px}
 .cat-filters .flt-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .cat-filters .flt-top h3{font:600 16px/1 'Space Grotesk',sans-serif;margin:0;color:var(--text,#101f2a)}
+.cat-filters .flt-inp{width:100%;padding:10px 12px;border:1px solid var(--line,#e2e6e0);border-radius:10px;background:#fff;font:500 14px/1.3 inherit;color:var(--text,#101f2a)}
+.cat-filters .flt-group{margin-bottom:14px}
+.cat-filters .flt-group h4{font:600 12.5px/1 inherit;text-transform:uppercase;letter-spacing:.04em;color:var(--muted,#5c6b66);margin:0 0 8px}
 .cat-filters .flt-reset{background:none;border:0;color:var(--red,#cf1616);font:600 13px/1 inherit;cursor:pointer;padding:0}
 .flt-group{border-top:1px solid var(--line,#eef1ee);padding:15px 0 4px}
 .flt-group>h4{font:700 12px/1 inherit;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#5c6b76);margin:0 0 11px}
@@ -135,8 +138,38 @@
   <div class="cat-layout">
     <aside class="cat-filters" id="cat-filters">
       <div class="flt-top"><h3>Фильтры</h3><button class="flt-reset" type="button" id="flt-reset">Сбросить</button></div>
-      <div class="flt-group"><h4>Тип редуктора</h4><label class="flt-row"><input type="checkbox" class="flt-type" value="0"><span>Червячный</span><b>914</b></label><label class="flt-row"><input type="checkbox" class="flt-type" value="1"><span>Соосно-цилиндрический</span><b>2719</b></label><label class="flt-row"><input type="checkbox" class="flt-type" value="2"><span>Коническо-цилиндрический</span><b>2540</b></label><label class="flt-row"><input type="checkbox" class="flt-type" value="3"><span>Плоско-цилиндрический</span><b>2042</b></label><label class="flt-row"><input type="checkbox" class="flt-type" value="4"><span>Цилиндрический</span><b>548</b></label></div>
-      <div class="flt-group"><h4>Бренд / аналог</h4><label class="flt-row"><input type="checkbox" class="flt-brand" value="motovario"><span>Motovario</span><b>57</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="vemper"><span>Vemper</span><b>45</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="sew"><span>SEW</span><b>40</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="bonfiglioli"><span>Bonfiglioli</span><b>40</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="nord"><span>NORD</span><b>36</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="bauer"><span>Bauer</span><b>31</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="yilmaz"><span>Yilmaz</span><b>29</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="watt"><span>Watt</span><b>27</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="innovari"><span>INNOVARI</span><b>26</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="lenze"><span>Lenze</span><b>26</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="stm"><span>STM</span><b>17</b></label><label class="flt-row"><input type="checkbox" class="flt-brand" value="transtecno"><span>Transtecno</span><b>15</b></label></div>
+      <div class="flt-group"><h4>Поиск по модели / аналогу</h4><input type="search" id="flt-q" class="flt-inp" placeholder="напр. ZR 606 или NMRV" autocomplete="off"></div>
+      <div class="flt-group"><h4>Тип редуктора</h4><select id="flt-type" class="flt-inp"><option value="">Все типы</option>
+<option value="0">Червячный (30)</option>
+<option value="1">Соосно-цилиндрический (23)</option>
+<option value="2">Коническо-цилиндрический (27)</option>
+<option value="3">Плоско-цилиндрический (19)</option>
+<option value="4">Цилиндрический (5)</option>
+</select></div>
+      <div class="flt-group"><h4>Бренд / аналог</h4><select id="flt-brand" class="flt-inp"><option value="">Все бренды</option>
+<option value="motovario">Motovario (57)</option>
+<option value="vemper">Vemper (45)</option>
+<option value="bonfiglioli">Bonfiglioli (40)</option>
+<option value="siti">SITI (40)</option>
+<option value="sew">SEW (40)</option>
+<option value="nord">NORD (36)</option>
+<option value="varvel">Varvel (33)</option>
+<option value="bauer">Bauer (31)</option>
+<option value="yilmaz">Yilmaz (29)</option>
+<option value="stm">STM (28)</option>
+<option value="tramec">Tramec (28)</option>
+<option value="rossi">Rossi (27)</option>
+<option value="watt">Watt Drive (27)</option>
+<option value="innovari">Innovari (26)</option>
+<option value="lenze">Lenze (26)</option>
+<option value="tz">TZ (23)</option>
+<option value="transtecno">Transtecno (15)</option>
+<option value="innored">InnoRed (9)</option>
+<option value="tos">TOS Znojmo (9)</option>
+<option value="varmec">Varmec (4)</option>
+</select></div>
+      <div class="flt-group"><h4>Мощность, кВт</h4><select id="flt-pw" class="flt-inp"><option value="">Любая</option><option value="0-1">до 1 кВт</option><option value="1-5">1–5 кВт</option><option value="5-15">5–15 кВт</option><option value="15-99999">15+ кВт</option></select></div>
+      <div class="flt-group"><h4>Передаточное число i</h4><select id="flt-i" class="flt-inp"><option value="">Любое</option><option value="0-20">до 20</option><option value="20-60">20–60</option><option value="60-150">60–150</option><option value="150-999999">150+</option></select></div>
     </aside>
     <div class="cat-content"><div class="pcard-grid" id="pcard-grid">
 <article class="pcard" data-type="0" data-brands="motovario"><div class="pcard-media"><img src="../assets/catalog/cat_worm.webp" alt="ZR 606/604 — червячный редуктор и мотор-редуктор" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="pcard-badge">Аналог Motovario</span><span class="pcard-stock">под заказ</span></div><div class="pcard-body"><span class="pcard-type">Червячный</span><a class="pcard-title" href="/podbor?q=ZR%20606/604">ZR 606/604 · Motovario PCRV 063/040</a><div class="pcard-chips"><span>0,1–0,2 кВт</span><span>i 75–18</span><span>42–85 Н·м</span><span>лапы</span></div><div class="pcard-foot"><span class="pcard-price">Цена: <b>по запросу</b></span><button class="pcard-cart" type="button" data-name="ZR 606/604 · Motovario PCRV 063/040" data-img="../assets/catalog/cat_worm.webp" aria-label="Добавить ZR 606/604 · Motovario PCRV 063/040 в запрос">В корзину</button></div></div></article>
@@ -251,21 +284,29 @@
 (function(){
   var grid=document.getElementById('pcard-grid');if(!grid)return;
   var cards=[].slice.call(grid.querySelectorAll('.pcard'));
-  var tBoxes=document.querySelectorAll('.flt-type'),bBoxes=document.querySelectorAll('.flt-brand');
+  var fQ=document.getElementById('flt-q'),fT=document.getElementById('flt-type'),fB=document.getElementById('flt-brand'),fP=document.getElementById('flt-pw'),fI=document.getElementById('flt-i');
+  var meta=cards.map(function(c){
+    var chips=c.querySelectorAll('.pcard-chips span');
+    var title=c.querySelector('.pcard-title');
+    return {pw:chips[0]?chips[0].textContent:'', i:chips[1]?chips[1].textContent:'', txt:((title?title.textContent:'')+' '+(c.dataset.brands||'')).toLowerCase()};
+  });
+  function rng(s){var m=String(s||'').replace(/,/g,'.').match(/[0-9.]+/g);if(!m||!m.length)return null;var n=m.map(parseFloat);return[Math.min.apply(null,n),Math.max.apply(null,n)];}
+  function overlaps(txt,sel){if(!sel)return true;var a=rng(txt);if(!a)return true;var p=sel.split('-').map(parseFloat);return a[1]>=p[0]&&a[0]<=p[1];}
   function apply(){
-    var ts=[].filter.call(tBoxes,function(b){return b.checked;}).map(function(b){return b.value;});
-    var bs=[].filter.call(bBoxes,function(b){return b.checked;}).map(function(b){return b.value;});
-    var n=0;
-    cards.forEach(function(c){
-      var okT=!ts.length||ts.indexOf(c.dataset.type)>=0;
-      var okB=!bs.length||bs.some(function(b){return (' '+c.dataset.brands+' ').indexOf(' '+b+' ')>=0;});
-      var show=okT&&okB;c.style.display=show?'':'none';if(show)n++;
+    var q=(fQ.value||'').trim().toLowerCase(),t=fT.value,b=fB.value,p=fP.value,r=fI.value,n=0;
+    cards.forEach(function(c,idx){
+      var m=meta[idx];
+      var show=(!t||c.dataset.type===t)
+        &&(!b||(' '+(c.dataset.brands||'')+' ').indexOf(' '+b+' ')>=0)
+        &&overlaps(m.pw,p)&&overlaps(m.i,r)
+        &&(!q||m.txt.indexOf(q)>=0);
+      c.style.display=show?'':'none';if(show)n++;
     });
     document.getElementById('cat-count').textContent=n;
     document.getElementById('cat-empty').style.display=n?'none':'block';
   }
-  [].forEach.call(document.querySelectorAll('.flt-type,.flt-brand'),function(b){b.addEventListener('change',apply);});
-  document.getElementById('flt-reset').addEventListener('click',function(){document.querySelectorAll('.flt-type,.flt-brand').forEach(function(b){b.checked=false;});apply();});
+  [fQ,fT,fB,fP,fI].forEach(function(el){el.addEventListener('input',apply);el.addEventListener('change',apply);});
+  document.getElementById('flt-reset').addEventListener('click',function(){fQ.value='';fT.value='';fB.value='';fP.value='';fI.value='';apply();});
   var open=document.getElementById('flt-open'),panel=document.getElementById('cat-filters');
   if(open)open.addEventListener('click',function(){panel.classList.toggle('open');});
   // sort
@@ -274,20 +315,8 @@
   sort.addEventListener('change',function(){
     var v=sort.value,arr=cards.slice();
     if(v==='az')arr.sort(function(a,b){return a.querySelector('.pcard-title').textContent.localeCompare(b.querySelector('.pcard-title').textContent,'ru');});
-    else if(v==='power')arr.sort(function(a,b){return num(b,0)-num(a,0);});
-    arr.forEach(function(c){grid.insertBefore(c,document.getElementById('cat-empty'));});
-  });
-  // add to cart (запрос КП)
-  grid.querySelectorAll('.pcard-cart').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      try{var c=JSON.parse(localStorage.getItem('zr_cart')||'{"items":[]}');if(!c.items)c.items=[];
-        c.items.push({name:btn.dataset.name,price:0,qty:1,img:btn.dataset.img});
-        localStorage.setItem('zr_cart',JSON.stringify(c));
-        btn.textContent='✓ В корзине';btn.classList.add('added');
-        setTimeout(function(){btn.textContent='В корзину';btn.classList.remove('added');},1600);
-        if(window.zrRefreshBadge)window.zrRefreshBadge();
-      }catch(e){}
-    });
+    else if(v==='power')arr.sort(function(a,b){return num(a,0)-num(b,0);});
+    arr.forEach(function(c){grid.appendChild(c);});
   });
 })();
 </script>
