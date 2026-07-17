@@ -371,13 +371,13 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 
 /* ===== Светлая тема (палитра единого дизайна с каталогом) ===== */
 [data-theme="light"]{
-  --bg:#eef0ec; --bg2:#e7eae5; --card:#ffffff; --card2:#f6f7f4; --line:rgba(10,20,28,.12);
+  --bg:#ffffff; --bg2:#f7f8f9; --card:#ffffff; --card2:#f8f9fa; --line:rgba(10,20,28,.12);
   --text:#101f2a; --muted:#5a6a75; --muted2:#7d8b95; --steel:#2f6f9f;
   --red:#cf1616; --red2:#e11b1b; --glow:rgba(207,22,22,.10);
 }
 [data-theme="light"] .btn{box-shadow:0 4px 14px var(--glow)}
 [data-theme="light"] .btn:hover{background:#b91212}
-[data-theme="light"] .phero{background:linear-gradient(160deg,#e7eae5,#eef0ec)}
+[data-theme="light"] .phero{background:linear-gradient(160deg,#f7f8f9,#ffffff)}
 [data-theme="light"] .xcard,[data-theme="light"] .pc-chip,[data-theme="light"] .ind-card,[data-theme="light"] .post-card{background:var(--card);box-shadow:0 2px 10px rgba(10,20,28,.05)}
 [data-theme="light"] table.spec th{background:var(--card2)}
 [data-theme="light"] .cat-faq details{background:var(--card)}

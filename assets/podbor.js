@@ -280,10 +280,23 @@
 
   function buildBrands(){
     var box=$('pfBrands'); if(!box||!DB)return;
-    box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'+BRANDS.map(function(b){
-      return '<button type="button" class="pf-pill pf-pill--brand'+(selBrand===b.k?' is-active':'')+'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'+b.n+'</button>';
-    }).join('');
-    Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(btn){
+    // По умолчанию показываем только наш бренд ZR (просьба заказчика: не отвлекать от
+    // собственной марки). Импортные бренды свёрнуты за кнопкой; раскрываются кликом,
+    // а также автоматически при переходе из рекламы/лендингов с выбранным брендом
+    // (selBrand задан) — брендовые кампании Директа продолжают работать как раньше.
+    var expanded=!!selBrand;
+    box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'
+      +'<span class="pf-brands-set" '+(expanded?'':'hidden')+'>'
+      +BRANDS.map(function(b){
+        return '<button type="button" class="pf-pill pf-pill--brand'+(selBrand===b.k?' is-active':'')+'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'+b.n+'</button>';
+      }).join('')+'</span>'
+      +(expanded?'':'<button type="button" class="pf-pill" id="pfBrandsMore">Аналоги импортных брендов (SEW, NORD…) ▾</button>');
+    var more=$('pfBrandsMore');
+    if(more)more.addEventListener('click',function(){
+      more.remove();
+      var s=box.querySelector('.pf-brands-set'); if(s)s.hidden=false;
+    });
+    Array.prototype.forEach.call(box.querySelectorAll('.pf-pill--brand'),function(btn){
       btn.addEventListener('click',function(){
         selBrand=btn.getAttribute('data-bk')||'';
         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
