@@ -46,6 +46,7 @@ if __name__=='__main__':
         from collections import Counter
         c=Counter()
         for f in glob.glob('analog/*.html'):
+            if f.endswith('/index.html'): continue   # хаб раздела — не карточка
             try: c[transform(f)]+=1
             except Exception: c['ERR']+=1
         print(dict(c))

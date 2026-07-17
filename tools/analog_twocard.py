@@ -23,31 +23,41 @@ import re, html, sys, glob
 def transform(f):
     t=open(f,encoding='utf-8').read()
     if 'cmp-card' in t: return 'already'
-    lm=re.search(r'<p class="pc-lead">(.*?)</p>',t,re.S)
-    if not lm: return 'no-lead'
-    imp_full=re.search(r'<b>([^<]*)</b>',lm.group(1)); imp_full=imp_full.group(1) if imp_full else ''
-    h1m=re.search(r'<h1>([^<]*)</h1>',t)
+    h1m=re.search(r'<h1[^>]*>([^<]*)</h1>',t)
     if not h1m: return 'no-h1'
-    h1=h1m.group(1); imp_short=h1.split(' — ')[0].strip()
-    zrm=re.search(r'аналог (ZR [0-9/]+)',h1)
+    h1=h1m.group(1)
+    # маркировка ZR: «аналог ZR 939», «— редуктор ZR 848», «российский ZR 999», «замена на ZR 858»…
+    zrm=re.search(r'(?:аналог|редуктор) (ZR [0-9/]+)',h1) or re.search(r'\bZR\s+([0-9][0-9/]*)\b',h1)
     if not zrm: return 'no-zr'
-    zr=zrm.group(1)
-    typ=re.search(r'pc-badge">Аналог · ([^<]*)</span>',t); typ=typ.group(1) if typ else ''
-    img=re.search(r'pc-media.*?<img src="([^"]*)"',t,re.S); img=img.group(1) if img else '../assets/catalog/cat_cylindrical.webp'
+    zr=zrm.group(1) if zrm.group(1).startswith('ZR') else 'ZR '+zrm.group(1)
+    imp_short=h1.split(' — ')[0].strip()
+    imp_short=re.sub(r'^Аналог\s+(редуктора\s+)?','',imp_short)  # «Аналог редуктора SEW R 97» → «SEW R 97»
+    imp_short=re.sub(r'\s+купить$','',imp_short)                 # «NORD 13063 купить» → «NORD 13063»
+    lm=re.search(r'<p class="pc-lead">(.*?)</p>',t,re.S)
+    if lm:  # основной pc-шаблон
+        imp_full=re.search(r'<b>([^<]*)</b>',lm.group(1)); imp_full=imp_full.group(1) if imp_full else ''
+        typ=re.search(r'pc-badge">Аналог · ([^<]*)</span>',t); typ=typ.group(1) if typ else ''
+        img=re.search(r'pc-media.*?<img src="([^"]*)"',t,re.S); img=img.group(1) if img else '../assets/catalog/cat_cylindrical.webp'
+    else:   # старый «купить»-шаблон (без pc-блоков): тип из eyebrow, картинка первая на странице
+        imp_full=''
+        typ=re.search(r'eyebrow">Купить · аналог · ([^<]*)<',t); typ=typ.group(1) if typ else ''
+        img=re.search(r'<img src="([^"]*)"',t); img=img.group(1) if img else '../assets/catalog/cat_cylindrical.webp'
     red=re.search(r'href="(/reduktor/[^"]*)"',t); red=red.group(1) if red else '/podbor?q='+zr.replace(' ','%20')
     chips=dict(re.findall(r'<span>(Мощность|Момент|Передаточное)</span><b>([^<]*)</b>',t))
     pw=chips.get('Мощность','—'); tq=chips.get('Момент','—'); ig=chips.get('Передаточное','—')
     COUNTRY={'SEW':'Германия','NORD':'Германия','Bauer':'Германия','Lenze':'Германия','Watt':'Австрия','Bonfiglioli':'Италия','Motovario':'Италия','Rossi':'Италия','SITI':'Италия','Siti':'Италия','Varvel':'Италия','Innovari':'Италия','STM':'Италия','Transtecno':'Италия','Tramec':'Италия','Yilmaz':'Турция','Guomao':'Китай','Innored':'Китай'}
     country=next((v for k,v in COUNTRY.items() if k.lower() in imp_short.lower()),'импорт')
     e=html.escape
+    # спеки: показываем только при наличии данных (у старого «купить»-шаблона их нет)
+    specs='' if pw=='—' and tq=='—' and ig=='—' else f'<ul class="cmp-specs"><li>{pw}</li><li>{tq}</li><li>i={ig}</li></ul>'
     imgtag=f'<div class="cmp-media"><img src="{img}" alt="{e(imp_short)}" loading="lazy"></div>'
     imp_card=(f'<div class="cmp-card cmp-import"><span class="cmp-tag">Импортный оригинал</span>{imgtag}'
       f'<div class="cmp-name">{e(imp_full or imp_short)}</div><div class="cmp-sub">{country} · поставка под заказ</div>'
-      f'<ul class="cmp-specs"><li>{pw}</li><li>{tq}</li><li>i={ig}</li></ul>'
+      f'{specs}'
       f'<div class="cmp-tail">Оригинал — сроки и цена от поставщика</div></div>')
     our_card=(f'<div class="cmp-card cmp-ours"><span class="cmp-tag red">Наш аналог ZR</span>{imgtag}'
       f'<div class="cmp-name cmp-zr">{e(zr)}</div><div class="cmp-sub">Завод Редукторов · собственное производство</div>'
-      f'<ul class="cmp-specs"><li>{pw}</li><li>{tq}</li><li>i={ig}</li></ul>'
+      f'{specs}'
       f'<ul class="cmp-adv"><li>Совпадает по размерам — замена без переделки</li><li>Цена ниже · отгрузка от 3 дней · гарантия 24 мес</li></ul>'
       f'<div class="cmp-buy"><span class="pp">Цена по запросу</span><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт и КП</a><a class="btn ghost" href="{red}" style="text-align:center">Карточка ZR &rarr;</a></div></div>')
     HERO=(f'<section class="section" style="padding-top:20px"><div class="wrap">'
@@ -94,6 +104,7 @@ if __name__=='__main__':
         from collections import Counter
         c=Counter()
         for f in glob.glob('analog/*.html'):
+            if f.endswith('/index.html'): continue   # хаб раздела — не карточка
             try: c[transform(f)]+=1
             except Exception: c['ERR']+=1
         print(dict(c))
