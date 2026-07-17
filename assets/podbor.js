@@ -132,7 +132,11 @@
       var vals={}, _p=Math.pow(10,c.d==null?2:c.d);
       base.forEach(function(it){ if(it[c.i]!=null)vals[Math.round(it[c.i]*_p)/_p]=1; });
       var sorted=Object.keys(vals).map(parseFloat).sort(function(a,b){return a-b;});
+      var prev=RANGE_VALS[c.i];
       RANGE_VALS[c.i]=sorted;
+      // набор значений не изменился с прошлого раза → не трогаем DOM: экономим перестройку
+      // 8 <select> с сотнями <option> на каждое нажатие клавиши (текущий выбор остаётся валидным).
+      if(prev && prev.length===sorted.length && prev.join(',')===sorted.join(',')) return;
       ['min','max'].forEach(function(mm){
         var sel=selEl(mm,c.i); if(!sel)return;
         var keep=sel.value;
@@ -475,14 +479,14 @@
     return SIDX;
   }
   function _lev1(a,b){ if(a===b)return true; var la=a.length,lb=b.length; if(Math.abs(la-lb)>1)return false; var i=0,j=0,d=0; while(i<la&&j<lb){ if(a[i]===b[j]){i++;j++;} else { if(++d>1)return false; if(la>lb)i++; else if(lb>la)j++; else{i++;j++;} } } if(i<la||j<lb)d++; return d<=1; }
-  function scoreGroup(qtoks,qfull,rec){
+  function scoreGroup(qtoks,qfull,rec,qexp){
     var score=0,matched=0,common=SIDX.length*0.9;
     // точное совпадение всей маркировки одним словом («evl197», «zr603», «r107») — топ
     if(qfull&&rec.toks[qfull]){ score+=90; matched++; }
     for(var qi=0;qi<qtoks.length;qi++){ var qt=qtoks[qi],best=0,isMatch=false;
       if(rec.toks[qt]){ if((SIDX_DF[qt]||0)>=common){ best=4; } else { best=(/\d/.test(qt)?55:26); isMatch=true; } }
       else if(qt.length>=3&&rec.blob.indexOf(qt)>=0){ best=12; isMatch=true; }
-      else if(qt.length>=4){ for(var t in rec.toks){ if(Math.abs(t.length-qt.length)<=1&&_lev1(t,qt)){best=9;isMatch=true;break;} } }
+      else { var near=qexp&&qexp[qi]; if(near){ for(var t in near){ if(rec.toks[t]){best=9;isMatch=true;break;} } } }
       if(isMatch)matched++;
       score+=best;
     }
@@ -494,7 +498,17 @@
     var qtoks=_stoks(query).filter(function(t){return !QSTOP[_sn(t)];}).map(_sn).filter(Boolean);
     if(!qtoks.length)return[];
     var qfull=_sn(query);
-    var scored=buildSIDX().map(function(rec){return {rec:rec,s:scoreGroup(qtoks,qfull,rec)};}).filter(function(x){return x.s>0;});
+    buildSIDX();
+    // fuzzy-раскрытие опечаток ОДИН раз по словарю, а не Левенштейном в цикле по токенам
+    // каждой из ~1800 групп (это давало 500+ мс на запрос). Раскрываем только те токены,
+    // которых в базе вообще нет; существующие покрываются точным/подстрочным совпадением.
+    var qexp=qtoks.map(function(qt){
+      if(qt.length<4 || SIDX_DF[qt]) return null;
+      var near=null;
+      for(var t in SIDX_DF){ if(Math.abs(t.length-qt.length)<=1 && _lev1(t,qt)){ (near||(near={}))[t]=1; } }
+      return near;
+    });
+    var scored=SIDX.map(function(rec){return {rec:rec,s:scoreGroup(qtoks,qfull,rec,qexp)};}).filter(function(x){return x.s>0;});
     scored.sort(function(a,b){return b.s-a.s || a.rec.gid-b.rec.gid;});
     return scored.slice(0,24);
   }
