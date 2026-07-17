@@ -535,3 +535,5 @@ html,body{overflow-x:clip}
 [data-theme="dark"] .sf-req,[data-theme="dark"] .sf-bottom{border-top-color:#1c2b36}
 @media(max-width:860px){.site-footer .sf-top{grid-template-columns:1fr 1fr;gap:28px}}
 @media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:26px}}
+
+/*cb*/.zr-cb-w2{--zrcb:2}
