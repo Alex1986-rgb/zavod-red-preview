@@ -157,7 +157,7 @@
   function slug(s){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
   function card(c){
     var name=c.b+' '+c.m, q=encodeURIComponent(name);
-    var url=c.u?('/analog/'+c.u):('/podbor?q='+q);
+    var url=c.r?('/reduktor/'+c.r):(c.u?('/analog/'+c.u):('/podbor?q='+q));
     var chips=[]; if(c.pw)chips.push(c.pw+' кВт'); if(c.i)chips.push('i '+c.i);
     return '<article class="pcard" data-type="'+esc(TYPES[c.t]||'')+'">'+
       '<div class="pcard-media"><img src="../assets/catalog/'+esc(c.im)+'.webp" alt="'+esc(name)+' — импортный мотор-редуктор" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')">'+
@@ -166,7 +166,7 @@
       '<a class="pcard-title" href="'+url+'">'+esc(name)+' — аналог '+esc(c.z||'ZR')+'</a>'+
       '<div class="pcard-chips">'+chips.map(function(x){return '<span>'+esc(x)+'</span>';}).join('')+'</div>'+
       '<div class="pcard-foot"><span class="pcard-price">Цена: <b>по запросу</b></span>'+
-      '<a class="zr-more-btn" href="'+url+'">Оригинал и аналог →</a></div></div></article>';
+      '<a class="zr-more-btn" href="'+url+'">Подробнее →</a></div></div></article>';
   }
   function apply(){
     var q=(fQ.value||'').trim().toLowerCase(),t=fT.value,b=fB.value,c=fC.value,p=fP.value,r=fR.value;
