@@ -175,6 +175,10 @@
       ".zr-mgr{display:flex;align-items:center;gap:12px;margin-bottom:12px}.zr-mgr .ma{width:44px;height:44px;border-radius:50%;background:#0f1c26;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}.zr-mgr .mn{font-weight:700;color:#0f1c26}.zr-mgr .mr{color:#8a97a1;font-size:12.5px}",
       ".zr-row{display:flex;align-items:center;gap:8px;font-size:14px;color:#0f1c26;font-weight:600;padding:5px 0}.zr-row a{color:#0f1c26;text-decoration:none}.zr-row a:hover{color:#e11b1b}",
       "#zr-cab-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:100002;background:#12915f;color:#fff;font-weight:600;font-size:14px;padding:12px 22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.3s}#zr-cab-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}#zr-cab-toast.warn{background:#c0392b}",
+      ".zr-quicks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}",
+      ".zr-quickq{border:1px solid rgba(12,20,28,.12);background:#f5f7f9;color:#3f4b55;font:600 12.5px 'Archivo',sans-serif;padding:7px 13px;border-radius:999px;cursor:pointer;transition:.14s}",
+      ".zr-quickq:hover{border-color:#e11b1b;color:#e11b1b;background:rgba(225,27,27,.05)}",
+      ".zr-ord-foot .fb-row{display:flex;gap:8px;flex-wrap:wrap}",
       /* полировка: глубина, ховеры, микро-анимации */
       ".zr-cab{background:linear-gradient(180deg,#f2f5f8 0,#eef2f6 220px)}",
       ".zr-cab-ava{box-shadow:0 6px 16px rgba(225,27,27,.28)}",
@@ -263,7 +267,8 @@
       return '<div class="zr-ord"><div class="zr-ord-top"><div><span class="zr-ord-no">' + esc(o.no) + '</span><span class="zr-ord-date">' + dmy(o.date) + '</span></div><span class="zr-st ' + (done ? "done" : "") + '">' + STAGES[st] + '</span></div>' +
         stepperHTML(o) + '<div class="zr-ord-items">' + its + '</div>' +
         '<div class="zr-ord-foot"><div class="zr-ord-total"><span>Итого: </span><b>' + rub(o.total || 0) + '</b></div>' +
-        '<button class="zr-btn gh sm" data-repeat="' + r.i + '" type="button">Повторить заказ</button></div></div>';
+        '<div class="fb-row"><button class="zr-btn gh sm" data-supq="Прошу счёт и документы по заказу ' + esc(o.no) + '. " type="button">Счёт / документы</button>' +
+        '<button class="zr-btn gh sm" data-repeat="' + r.i + '" type="button">Повторить заказ</button></div></div></div>';
     }).join("") : '<div class="zr-card"><p class="cap" style="margin:0;text-align:center">Нет заказов в этой категории.</p></div>';
     return chips + list;
   }
@@ -286,7 +291,8 @@
   function secRequests() {
     var r = requests();
     if (!r.length) return card(empty("🔍", "Здесь будут ваши подборы", "Не нашли модель? Подберите аналог по параметрам или сфотографируйте шильдик — инженер ответит и рассчитает за 15 минут. Все запросы сохранятся здесь.", "/shildik", "Подобрать по фото"));
-    return r.map(function (x) {
+    var head = '<div class="zr-card" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 20px"><div style="flex:1;min-width:180px"><div style="font-weight:700;color:#0f1c26">Нужен ещё один подбор?</div><div class="cap" style="margin:2px 0 0">Инженер рассчитает аналог за 15 минут</div></div><a class="zr-btn sm" href="/podbor">🎯 По параметрам</a><a class="zr-btn gh sm" href="/shildik">📷 По шильдику</a></div>';
+    return head + r.map(function (x) {
       var st = x.status || "На рассмотрении", ready = /готов/i.test(st);
       var action = ready
         ? '<button class="zr-btn sm" data-go="support" type="button">Запросить КП</button>'
@@ -298,9 +304,23 @@
   }
 
   function secDocs() {
-    var docs = [["Счёт на оплату", "формируется после подтверждения", "📄"], ["Договор поставки", "типовой, с НДС", "📝"], ["Паспорт изделия", "к каждой позиции", "📘"], ["Сертификат ГОСТ 31592-2012", "соответствие", "🏅"]];
-    return '<div class="zr-card"><h2>Документы</h2><p class="cap">Запросите у менеджера — пришлём на почту в течение рабочего дня.</p>' +
-      docs.map(function (x) { return '<div class="zr-doc"><span class="di">' + x[2] + '</span><div><div class="dn">' + x[0] + '</div><div class="dd">' + x[1] + '</div></div><a href="#" data-go="support">Запросить</a></div>'; }).join("") + '</div>';
+    var certs = [1, 2, 3, 4].map(function (n) {
+      return '<div class="zr-doc"><span class="di">🏅</span><div><div class="dn">Сертификат соответствия №' + n + '</div><div class="dd">ГОСТ, редукторы и мотор-редукторы ZR</div></div><a href="/assets/certs/sert' + n + '.webp" target="_blank" rel="noopener">Открыть</a></div>';
+    }).join("");
+    var docs = [["Счёт на оплату", "формируется после подтверждения заказа", "📄"], ["Договор поставки", "типовой, с НДС", "📝"], ["Паспорт изделия", "к каждой позиции при отгрузке", "📘"]];
+    return '<div class="zr-card"><h2>Реквизиты и сертификаты</h2><p class="cap">Доступны сразу — скачивайте и передавайте в бухгалтерию.</p>' +
+      '<div class="zr-doc"><span class="di">🏭</span><div><div class="dn">Карточка предприятия</div><div class="dd">ООО «НИИ АТТ» · ИНН 7452136680 · Челябинск</div></div><a href="#" data-reqdl="1">Скачать</a></div>' +
+      certs + '</div>' +
+      '<div class="zr-card"><h2>По запросу</h2><p class="cap">Запросите у менеджера — пришлём на почту в течение рабочего дня.</p>' +
+      docs.map(function (x) { return '<div class="zr-doc"><span class="di">' + x[2] + '</span><div><div class="dn">' + x[0] + '</div><div class="dd">' + x[1] + '</div></div><a href="#" data-supq="Прошу прислать: ' + x[0].toLowerCase() + '. ">Запросить</a></div>'; }).join("") + '</div>';
+  }
+  function downloadRequisites() {
+    var txt = 'КАРТОЧКА ПРЕДПРИЯТИЯ\n\nПолное наименование: ООО «НИИ АТТ» (Завод Редукторов)\nИНН: 7452136680\nАдрес: 454007, г. Челябинск, пр-т Ленина, 2, оф. 221\nТелефон: +7 (495) 151-41-02\nE-mail: zr@zavod-red.ru\nСайт: https://zavod-red.ru/\n\nПродукция: промышленные редукторы и мотор-редукторы ZR, ПР, МР;\nгабаритные аналоги SEW, NORD, Bonfiglioli и других импортных приводов.';
+    var a = d.createElement("a");
+    a.href = "data:text/plain;charset=utf-8," + encodeURIComponent(txt);
+    a.download = "rekvizity-zavod-reduktorov.txt";
+    d.body.appendChild(a); a.click(); a.remove();
+    toast("Реквизиты скачаны");
   }
 
   function secProfile() {
@@ -323,8 +343,12 @@
     var th = support();
     var greeting = '<div class="zr-msg mgr">Здравствуйте! Напишите вопрос — менеджер ответит в течение рабочего дня.<div class="mt">Поддержка ЗР</div></div>';
     var thread = greeting + th.map(function (m) { return '<div class="zr-msg ' + (m.from === "me" ? "me" : "mgr") + '">' + esc(m.text) + '<div class="mt">' + dmy(m.date) + '</div></div>'; }).join("");
+    var quick = ["Запросить счёт", "Статус моего заказа?", "Нужен подбор аналога", "Сроки производства и доставки?"].map(function (q) {
+      return '<button class="zr-quickq" type="button" data-supfill="' + esc(q) + '">' + esc(q) + '</button>';
+    }).join("");
     return '<div class="zr-card"><h2>Поддержка</h2><p class="cap">Сообщение уйдёт вашему менеджеру.</p>' +
       '<div class="zr-thread" id="zr-thread">' + thread + '</div>' +
+      '<div class="zr-quicks">' + quick + '</div>' +
       '<div class="zr-field"><textarea id="zr-sup-text" placeholder="Ваш вопрос или запрос документа…"></textarea></div>' +
       '<button class="zr-btn" id="zr-sup-send" type="button">Отправить менеджеру</button></div>' +
       asideManager();
@@ -419,6 +443,19 @@
     }
     if ((t = e.target.closest("[data-sw]"))) { var nt = notify(), key = t.getAttribute("data-sw"); nt[key] = !nt[key]; jset("zr_notify", nt); t.classList.toggle("on", nt[key]); return; }
 
+    if ((t = e.target.closest("[data-reqdl]"))) { e.preventDefault(); return downloadRequisites(); }
+    if ((t = e.target.closest("[data-supq]"))) {
+      e.preventDefault();
+      var q = t.getAttribute("data-supq") || "";
+      go("support");
+      setTimeout(function () { var ta = d.getElementById("zr-sup-text"); if (ta) { ta.value = q; ta.focus(); } }, 60);
+      return;
+    }
+    if ((t = e.target.closest("[data-supfill]"))) {
+      var ta2 = d.getElementById("zr-sup-text");
+      if (ta2) { ta2.value = t.getAttribute("data-supfill") + " "; ta2.focus(); }
+      return;
+    }
     if (e.target.closest("#zr-sup-send")) return sendSupport();
     if (e.target.closest("#zr-pwd-save")) return changePwd();
   });
