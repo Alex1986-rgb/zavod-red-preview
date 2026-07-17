@@ -236,7 +236,7 @@
   var ordFilter = "all";
   function secOrders() {
     var os = orders();
-    if (!os.length) return card(empty("📦", "Заказов пока нет", "Оформите первый заказ — он появится здесь с трекингом статуса.", "/catalog/", "В каталог"));
+    if (!os.length) return card(empty("📦", "Здесь появятся ваши заказы", "Оформите первый — увидите статус производства и отгрузки, документы и сможете повторить заказ в один клик. Оптовым клиентам — прямые цены завода без наценки.", "/catalog/", "Перейти в каталог"));
     var filtered = os.map(function (o, i) { return { o: o, i: i }; }).filter(function (r) { var st = stageOf(r.o); return ordFilter === "all" || (ordFilter === "active" && st < 3) || (ordFilter === "done" && st >= 3); });
     var chips = '<div class="zr-chips">' +
       chip("all", "Все", os.length) + chip("active", "В работе", os.filter(function (o) { return stageOf(o) < 3; }).length) + chip("done", "Завершённые", os.filter(function (o) { return stageOf(o) >= 3; }).length) + '</div>';
@@ -254,7 +254,7 @@
 
   function secFavorites() {
     var f = favorites();
-    if (!f.length) return card(empty("❤", "Избранное пусто", "Добавляйте редукторы из каталога — чтобы быстро вернуться и заказать.", "/catalog/", "В каталог"));
+    if (!f.length) return card(empty("❤", "Сохраняйте нужные редукторы", "Отмечайте ♥ на карточках в каталоге — они соберутся здесь, чтобы заказать не искав заново. Избранное синхронизируется между устройствами.", "/catalog/", "Открыть каталог"));
     return '<div class="zr-fav">' + f.map(function (x, i) {
       var img = favImg(x);
       var nameEl = x.url ? '<a class="fn" href="' + esc(x.url) + '">' + esc(x.name) + '</a>' : '<div class="fn">' + esc(x.name) + '</div>';
@@ -268,7 +268,7 @@
 
   function secRequests() {
     var r = requests();
-    if (!r.length) return card(empty("🔍", "Подборов пока нет", "Подберите аналог или пришлите фото шильдика — запросы сохранятся здесь.", "/podbor", "Подобрать"));
+    if (!r.length) return card(empty("🔍", "Здесь будут ваши подборы", "Не нашли модель? Подберите аналог по параметрам или сфотографируйте шильдик — инженер ответит и рассчитает за 15 минут. Все запросы сохранятся здесь.", "/shildik", "Подобрать по фото"));
     return r.map(function (x) {
       var st = x.status || "На рассмотрении", ready = /готов/i.test(st);
       var action = ready
