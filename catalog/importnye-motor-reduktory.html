@@ -163,7 +163,7 @@
       '<div class="pcard-media"><img src="../assets/catalog/'+esc(c.im)+'.webp" alt="'+esc(name)+' — импортный мотор-редуктор" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')">'+
       '<span class="pcard-badge imp">'+esc(name)+'</span><span class="pcard-stock">под заказ</span></div>'+
       '<div class="pcard-body"><span class="pcard-type">'+esc(TYPES[c.t]||'')+(c.c?' · '+esc(c.c):'')+'</span>'+
-      '<a class="pcard-title" href="'+url+'">'+esc(name)+' — аналог '+esc(c.z||'ZR')+'</a>'+
+      '<a class="pcard-title" href="'+url+'">'+esc(name)+' &rarr; '+esc(c.z||'ZR')+'</a>'+
       '<div class="pcard-chips">'+chips.map(function(x){return '<span>'+esc(x)+'</span>';}).join('')+'</div>'+
       '<div class="pcard-foot"><span class="pcard-price">Цена: <b>по запросу</b></span>'+
       '<a class="zr-more-btn" href="'+url+'">Подробнее →</a></div></div></article>';
