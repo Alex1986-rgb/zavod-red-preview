@@ -70,8 +70,20 @@ CSS=('<style id="apro-css">'
  '.seo-tbl th{background:var(--bg2);font-weight:600}'
  '.seo-tbl caption{caption-side:top;text-align:left;font-weight:600;color:var(--muted);font-size:12.5px;padding:0 0 7px}'
  '@media(max-width:760px){.faq2{grid-template-columns:1fr}.seo-tbl{display:block;overflow-x:auto;white-space:nowrap}}'
+ # блок преимуществ (баланс правой колонки)
+ '.p2-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 0}'
+ '.p2-trust>div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}'
+ '.p2-trust b{display:block;font:700 14px/1.25 "Space Grotesk",sans-serif;color:var(--text)}'
+ '.p2-trust span{font-size:12px;color:var(--muted);line-height:1.4}'
+ # липкая якорная навигация
+ '.apro-nav{position:sticky;top:64px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;align-items:center;'
+ 'margin:0;padding:11px 0;background:var(--bg);border-bottom:1px solid var(--line)}'
+ '.apro-nav a{font-size:13.5px;color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:9px;border:1px solid transparent}'
+ '.apro-nav a:hover{color:var(--text);border-color:var(--line)}.apro-nav .sp{flex:1}'
+ '.apro-nav a.red{border:1px solid var(--red);color:var(--red);font-weight:600}'
  # мобайл: кнопки в столбец на всю ширину (в один ряд 3 кнопки не влезают)
- '@media(max-width:560px){.p2-cta1{flex-direction:column}.p2-cta1 .btn{flex:1 1 auto;width:100%;min-width:0}}'
+ '@media(max-width:560px){.p2-cta1{flex-direction:column}.p2-cta1 .btn{flex:1 1 auto;width:100%;min-width:0}'
+ '.p2-trust{grid-template-columns:1fr}.apro-nav{overflow-x:auto;flex-wrap:nowrap}}'
  '</style>')
 
 def brand_photos(imp_short):
@@ -153,6 +165,13 @@ def transform(f):
       f'<a class="btn ghost lg" data-zayavka data-req="Подбор аналога {e(imp_short)}" href="#zayavka">Подобрать аналог</a>'
       f'<a class="btn ghost lg" data-zayavka data-req="{e(imp_short)}" href="#zayavka">Запросить оригинал</a></div>'
       f'<p class="p2-desc" style="margin-top:16px">На странице — характеристики {e(imp_short)}, таблица исполнений и наш аналог {e(zr)}. Пришлите шильд или модель — инженер подтвердит замену и рассчитает цену за 15 минут.</p>'
+      # блок преимуществ в правой колонке (баланс с длинной таблицей слева)
+      f'<div class="p2-trust">'
+      f'<div><b>Собственное производство</b><span>механообработка, сборка, испытания</span></div>'
+      f'<div><b>Гарантия 24 месяца</b><span>или переделаем за наш счёт</span></div>'
+      f'<div><b>Отгрузка от 3 дней</b><span>серийное — со склада</span></div>'
+      f'<div><b>Инженер за 15 минут</b><span>подбор по шильду, фото, параметрам</span></div>'
+      f'</div>'
       f'</div></div></div></section>'
       '<script>document.querySelectorAll(".p2-thumbs button").forEach(function(b){b.addEventListener("click",function(){document.getElementById("p2img").src=b.dataset.src;document.querySelectorAll(".p2-thumbs button").forEach(function(x){x.classList.remove("act")});b.classList.add("act");});});'
       'document.addEventListener("click",function(ev){var el=ev.target.closest&&ev.target.closest("[data-req]");if(!el)return;var m=document.getElementById("zrMsg");if(m&&!m.value)m.value="Запрос: "+el.getAttribute("data-req")+". Прошу дать цену и срок.";});</script>')
@@ -163,7 +182,7 @@ def transform(f):
       f'<div class="p2-lspec" style="max-width:620px">{specrows}</div></div></section>')
     # исполнения
     ispn_cards=''.join(f'<a href="{e(h)}"><b>{e(zr)} · {e(n)}</b><span>{e(s)}</span></a>' for h,n,s in inds[:12])
-    ISPN=(f'<section class="section" style="padding-top:20px"><div class="wrap">'
+    ISPN=(f'<section class="section" id="ispn" style="padding-top:20px"><div class="wrap">'
       f'<h2 class="sec-h">Исполнения {e(imp_short)} — {e(ispn_n or "")} типоразмеров</h2>'
       f'<p class="lead" style="max-width:76ch">Каждое исполнение {e(imp_short)} по мощности и передаточному числу имеет свой аналог {e(zr)}. Откройте нужное или подберите в калькуляторе.</p>'
       f'<div class="ispn">{ispn_cards}</div>'
@@ -186,7 +205,7 @@ def transform(f):
     bsl=bslug or 'importnye-motor-reduktory'
     brand_link=('/brands/'+bslug) if bslug else '/catalog/importnye-motor-reduktory'
     tbl1_rows=''.join(f'<tr><td>{e(imp_short)} · {e(s)}</td><td>{e(z)}</td></tr>' for h,n,s in inds[:5]) or f'<tr><td>{e(imp_short)}</td><td>{e(z)}</td></tr>'
-    SEO=(f'<section class="section seo-pro" style="padding-top:14px"><div class="wrap">'
+    SEO=(f'<section class="section seo-pro" id="seo" style="padding-top:14px"><div class="wrap">'
       f'<h2 class="sec-h">{e(b)} — аналог {e(z)}: подбор, замена и поставка</h2>'
       f'<p>Редуктор <b>{e(b)}</b> ({e(typ)}) применяется в конвейерах, приводных механизмах и промышленном оборудовании. Российский аналог — <a href="{red}">{e(z)}</a> производства Завода Редукторов (ООО «НИИ АТТ», Челябинск): совпадают присоединительные и габаритные размеры, поэтому {e(z)} встаёт на место {e(b)} без переделки рамы и переходных деталей. Изготавливаем как редуктор под отдельный двигатель, так и готовый мотор-редуктор 220/380 В.</p>'
       f'<p>{("Диапазон мощности "+e(pw)+", ") if pw else ""}{("передаточное число "+e(ig)+", ") if ig else ""}{("крутящий момент "+e(tq)+". ") if tq else ". "}Подбор аналога {e(b)} ведём по мощности, крутящему моменту, передаточному числу и присоединительным размерам — по шильду, фото или параметрам. Инженер подтверждает совместимость и рассчитывает замену за 15 минут.</p>'
@@ -209,7 +228,11 @@ def transform(f):
       f'<h2>Нужен {e(b)} или аналог {e(z)}? Рассчитаем и пришлём КП в течение дня</h2>'
       f'<a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>'
       f'<p>Инженер подтвердит подбор по шильду или параметрам · гарантия 24 месяца · отгрузка по всей России</p></div></div></section>')
-    body='<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/analog/">Аналоги импорта</a><span>›</span>'+e(imp_short)+'</div>'+HERO+SPEC+ISPN+FAQ+SEO+BAND
+    NAV=(f'<div class="wrap"><nav class="apro-nav">'
+      f'<a href="#spec">Характеристики</a>'+('<a href="#ispn">Исполнения</a>' if ispn_cards else '')+
+      f'<a href="#faq">Вопросы</a><a href="#seo">Описание</a>'
+      f'<span class="sp"></span><a class="red" data-zayavka href="#zayavka">Получить расчёт</a></nav></div>')
+    body='<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/analog/">Аналоги импорта</a><span>›</span>'+e(imp_short)+'</div>'+HERO+NAV+SPEC+ISPN+FAQ+SEO+BAND
     # собрать: head(chrome) + header + новый body + footer
     head_end=t.find('</head>')
     head=t[:head_end]
