@@ -240,13 +240,9 @@ def transform(f):
       f'<div class="p2-lspec">{lspec}</div>'
       f'<div><h3>Применение</h3><ul class="opis-apps">'+''.join(f'<li>{e(a)}</li>' for a in apps)+'</ul></div>'
       f'</div></div></section>')
-    # исполнения
-    ispn_cards=''.join(f'<a href="{e(h)}"><b>{e(zr)} · {e(n)}</b><span>{e(s)}</span></a>' for h,n,s in inds[:12])
-    ISPN=(f'<section class="section" id="ispn" style="padding-top:20px"><div class="wrap">'
-      f'<h2 class="sec-h">Исполнения {e(imp_short)} — {e(ispn_n or "")} типоразмеров</h2>'
-      f'<p class="lead" style="max-width:76ch">Каждое исполнение {e(imp_short)} по мощности и передаточному числу имеет свой аналог {e(zr)}. Откройте нужное или подберите в калькуляторе.</p>'
-      f'<div class="ispn">{ispn_cards}</div>'
-      f'<p style="margin-top:14px"><a class="btn ghost" href="/podbor?q={e(zr).replace(" ","%20")}">Все исполнения в подборе →</a></p></div></section>' if ispn_cards else '')
+    # секция «Исполнения» убрана по просьбе заказчика (список исполнений — в подборе)
+    ispn_cards=''
+    ISPN=''
     # FAQ 8 в 2 блока
     b=imp_short; z=zr
     FAQ=(f'<section class="section" id="faq" style="padding-top:12px"><div class="wrap"><h2 class="sec-h">Частые вопросы: {e(b)}</h2>'
