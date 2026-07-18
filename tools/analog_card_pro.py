@@ -62,9 +62,7 @@ CSS=('<style id="apro-css">'
  '.faq2 details[open] summary::after{content:"\\2013"}'
  '.faq2 details[open] summary{border-bottom:1px solid var(--line)}'
  '.faq2 details p{margin:0;padding:12px 0 15px;color:var(--muted);font-size:13.5px;line-height:1.55}'
- # SEO
- '.seo-pro h2{font-size:22px;margin:0 0 14px}.seo-pro p{color:var(--text);font-size:14.5px;line-height:1.65;margin:0 0 14px;max-width:none}'
- '.seo-pro a{color:var(--red)}'
+ # SEO-таблицы (внутри .seo-body)
  '.seo-tbl{width:100%;border-collapse:collapse;margin:6px 0 20px;font-size:13.5px}'
  '.seo-tbl th,.seo-tbl td{border:1px solid var(--line);padding:9px 12px;text-align:left}'
  '.seo-tbl th{background:var(--bg2);font-weight:600}'
@@ -147,8 +145,8 @@ def transform(f):
       f'<div class="p2-gal"><div class="p2-main"><img id="p2img" src="{main}" alt="{e(imp_short)} — {e(typ)} мотор-редуктор"></div>'
       f'<div class="p2-thumbs">{thumbs_html}</div>'
       f'<div class="p2-note-dw">Фото {e(imp_short.split()[0] if imp_short else "")} · ракурсы и габаритный чертёж (пример), точный чертёж исполнения — с КП</div>'
-      # таблица в левой колонке (заполняет пустое место)
-      f'<div class="p2-lspec">{lspec}</div>'
+      # таблица в левой колонке (заполняет пустое место); id=spec — якорь «Характеристики»
+      f'<div class="p2-lspec" id="spec">{lspec}</div>'
       f'{docs}</div>'
       # правая колонка
       f'<div class="p2-info">'
@@ -175,11 +173,7 @@ def transform(f):
       f'</div></div></div></section>'
       '<script>document.querySelectorAll(".p2-thumbs button").forEach(function(b){b.addEventListener("click",function(){document.getElementById("p2img").src=b.dataset.src;document.querySelectorAll(".p2-thumbs button").forEach(function(x){x.classList.remove("act")});b.classList.add("act");});});'
       'document.addEventListener("click",function(ev){var el=ev.target.closest&&ev.target.closest("[data-req]");if(!el)return;var m=document.getElementById("zrMsg");if(m&&!m.value)m.value="Запрос: "+el.getAttribute("data-req")+". Прошу дать цену и срок.";});</script>')
-    # секция характеристик (#spec) — дублирует таблицу крупно
-    specrows=lspec
-    SPEC=(f'<section class="section" id="spec" style="padding-top:8px"><div class="wrap">'
-      f'<h2 class="sec-h">Характеристики {e(imp_short)} и аналога {e(zr)}</h2>'
-      f'<div class="p2-lspec" style="max-width:620px">{specrows}</div></div></section>')
+    # отдельной секции характеристик нет — таблица одна, в hero (id=spec), без дублей
     # исполнения
     ispn_cards=''.join(f'<a href="{e(h)}"><b>{e(zr)} · {e(n)}</b><span>{e(s)}</span></a>' for h,n,s in inds[:12])
     ISPN=(f'<section class="section" id="ispn" style="padding-top:20px"><div class="wrap">'
@@ -205,9 +199,11 @@ def transform(f):
     bsl=bslug or 'importnye-motor-reduktory'
     brand_link=('/brands/'+bslug) if bslug else '/catalog/importnye-motor-reduktory'
     tbl1_rows=''.join(f'<tr><td>{e(imp_short)} · {e(s)}</td><td>{e(z)}</td></tr>' for h,n,s in inds[:5]) or f'<tr><td>{e(imp_short)}</td><td>{e(z)}</td></tr>'
-    SEO=(f'<section class="section seo-pro" id="seo" style="padding-top:14px"><div class="wrap">'
-      f'<h2 class="sec-h">{e(b)} — аналог {e(z)}: подбор, замена и поставка</h2>'
-      f'<p>Редуктор <b>{e(b)}</b> ({e(typ)}) применяется в конвейерах, приводных механизмах и промышленном оборудовании. Российский аналог — <a href="{red}">{e(z)}</a> производства Завода Редукторов (ООО «НИИ АТТ», Челябинск): совпадают присоединительные и габаритные размеры, поэтому {e(z)} встаёт на место {e(b)} без переделки рамы и переходных деталей. Изготавливаем как редуктор под отдельный двигатель, так и готовый мотор-редуктор 220/380 В.</p>'
+    # SEO: лид виден, остальные 4 абзаца + 2 таблицы — под стрелкой (фирменный паттерн .seo-text)
+    SEO=(f'<section class="section" id="seo" style="padding-top:14px"><div class="wrap"><div class="seo-text">'
+      f'<h2 class="sec-h" style="margin-bottom:14px">{e(b)} — аналог {e(z)}: подбор, замена и поставка</h2>'
+      f'<p class="seo-lead">Редуктор <b>{e(b)}</b> ({e(typ)}) применяется в конвейерах, приводных механизмах и промышленном оборудовании. Российский аналог — <a href="{red}">{e(z)}</a> производства Завода Редукторов (ООО «НИИ АТТ»): совпадают присоединительные и габаритные размеры, поэтому {e(z)} встаёт на место {e(b)} без переделки рамы и переходных деталей. Изготавливаем как редуктор под отдельный двигатель, так и готовый мотор-редуктор 220/380 В.</p>'
+      f'<details class="seo-more"><summary>Подробнее: характеристики, соответствие исполнений, условия поставки</summary><div class="seo-body">'
       f'<p>{("Диапазон мощности "+e(pw)+", ") if pw else ""}{("передаточное число "+e(ig)+", ") if ig else ""}{("крутящий момент "+e(tq)+". ") if tq else ". "}Подбор аналога {e(b)} ведём по мощности, крутящему моменту, передаточному числу и присоединительным размерам — по шильду, фото или параметрам. Инженер подтверждает совместимость и рассчитывает замену за 15 минут.</p>'
       f'<table class="seo-tbl"><caption>Соответствие исполнений {e(b)} и аналога {e(z)}</caption>'
       f'<thead><tr><th>Импортное исполнение</th><th>Наш аналог</th></tr></thead><tbody>{tbl1_rows}</tbody></table>'
@@ -222,7 +218,7 @@ def transform(f):
       f'<tr><td>Документы</td><td>паспорт, декларация соответствия, УПД</td></tr></tbody></table>'
       f'<p>Отгрузка серийных типоразмеров — в короткие сроки напрямую от производителя. Для производителей оборудования делаем серийные поставки с резервом на складе и фиксированной ценой по договору — приводная часть вашей серии всегда в наличии. Оригинал {e(b.split()[0])} поставляем под заказ с гарантией производителя.</p>'
       f'<p>Смотрите также: <a href="{brand_link}">все модели {e(b.split()[0])} и аналоги</a>, <a href="/catalog/">каталог редукторов</a>, <a href="/importozameshchenie">импортозамещение приводов</a>, <a href="/podbor">подбор по параметрам</a> и карточку модели <a href="{red}">{e(z)}</a>. Нужен аналог другого импортного редуктора — пришлите шильд, подберём замену за 15 минут.</p>'
-      f'</div></section>')
+      f'</div></details></div></div></section>')
     # финальная CTA-полоса
     BAND=(f'<section class="section" style="padding-top:0"><div class="wrap"><div class="p2-band">'
       f'<h2>Нужен {e(b)} или аналог {e(z)}? Рассчитаем и пришлём КП в течение дня</h2>'
@@ -232,7 +228,7 @@ def transform(f):
       f'<a href="#spec">Характеристики</a>'+('<a href="#ispn">Исполнения</a>' if ispn_cards else '')+
       f'<a href="#faq">Вопросы</a><a href="#seo">Описание</a>'
       f'<span class="sp"></span><a class="red" data-zayavka href="#zayavka">Получить расчёт</a></nav></div>')
-    body='<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/analog/">Аналоги импорта</a><span>›</span>'+e(imp_short)+'</div>'+HERO+NAV+SPEC+ISPN+FAQ+SEO+BAND
+    body='<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/analog/">Аналоги импорта</a><span>›</span>'+e(imp_short)+'</div>'+HERO+NAV+ISPN+FAQ+SEO+BAND
     # собрать: head(chrome) + header + новый body + footer
     head_end=t.find('</head>')
     head=t[:head_end]
