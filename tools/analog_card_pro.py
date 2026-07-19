@@ -105,11 +105,16 @@ CSS=('<style id="apro-css">'
  '</style>')
 
 def brand_photos(imp_short):
-    """список br-{brand}-t*.webp по бренду (2 ракурса), иначе []"""
+    """список br-{brand}-t*.webp по бренду (2 ракурса), иначе [].
+    bslug — для ссылки /brands/{bslug}; для фото при отсутствии пробуем короткий
+    слаг (sew-tramec → br-tramec)."""
     bl=imp_short.lower()
     slug=next((s for k,s in BRAND_SLUG if k in bl),None)
     if not slug: return [],None
-    ph=sorted(glob.glob(os.path.join(BASE,'assets','catalog','br-'+slug+'-t*.webp')))
+    def _glob(sl): return sorted(glob.glob(os.path.join(BASE,'assets','catalog','br-'+sl+'-t*.webp')))
+    ph=_glob(slug)
+    if not ph and '-' in slug:            # sew-tramec → tramec
+        ph=_glob(slug.split('-')[-1])
     return ['../assets/catalog/'+os.path.basename(p) for p in ph], slug
 
 def load_copy(f):
