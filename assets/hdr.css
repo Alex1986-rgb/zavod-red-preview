@@ -91,7 +91,7 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
 
 /* ВЕСЬ САЙТ ТОЛЬКО В СВЕТЛОЙ ТЕМЕ — форс светлых переменных для :root и застрявших в dark.
    CSS-бэкстоп (переживает JS-минификацию inner.js). */
-:root,html[data-theme="dark"]{--bg:#ffffff!important;--bg2:#f7f8f9!important;--card:#ffffff!important;--card2:#f8f9fa!important;--line:rgba(10,20,28,.12)!important;--text:#101f2a!important;--muted:#5a6a75!important;--muted2:#7d8b95!important;--steel:#2f6f9f!important;--red:#cf1616!important;--red2:#e11b1b!important;--glow:rgba(207,22,22,.10)!important}
+:root,html[data-theme="dark"]{--bg:#ffffff!important;--bg2:#f4f6f8!important;--card:#ffffff!important;--card2:#f6f8fa!important;--line:rgba(14,26,36,.14)!important;--text:#0e1a24!important;--muted:#526069!important;--muted2:#66747e!important;--steel:#1f5f8b!important;--red:#cf1616!important;--red2:#db1818!important;--glow:rgba(207,22,22,.12)!important}
 html[data-theme="dark"] body{background:#ffffff!important;color:#101f2a!important}
 html[data-theme="dark"] .phero{background:linear-gradient(160deg,#f7f8f9,#ffffff)!important}
 html[data-theme="dark"] header{background:rgba(255,255,255,.9)!important}

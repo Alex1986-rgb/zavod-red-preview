@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){try{var t=localStorage.getItem("zr_theme")||"light";document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Калькулятор подбора редуктора по параметрам | ЗР</title>
+<meta name="description" content="Онлайн-калькулятор подбора редуктора и мотор-редуктора по параметрам: тип, мощность, обороты, момент, передаточное. Подходящие модели и КП от завода." />
+<meta name="keywords" content="подбор редуктора, подбор мотор-редуктора по параметрам, понижающий редуктор, расчёт передаточного числа, мотор-редуктор цена от производителя, купить редуктор" />
+<link rel="canonical" href="https://zavod-red.ru/podbor" />
+<meta name="theme-color" content="#0b151d" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fav-32x32.png" />
+<link rel="apple-touch-icon" href="assets/favicons/fav-180x180.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://zavod-red.ru/podbor" />
+<meta property="og:title" content="Подбор редуктора по параметрам | Завод Редукторов" />
+<meta property="og:description" content="Подберите понижающий редуктор по моменту, передаточному числу, оборотам и мощности — с расчётом и ценой от производителя." />
+<meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+<link rel="stylesheet" href="assets/inner.css?v=2924" />
+<link rel="stylesheet" href="assets/podbor.css?v=8" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Подбор редуктора по параметрам","description":"Онлайн-подбор и расчёт редуктора и мотор-редуктора по мощности, оборотам, моменту и передаточному числу.","provider":{"@type":"Organization","name":"Завод Редукторов","url":"https://zavod-red.ru/"},"areaServed":"RU"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Подбор редуктора","item":"https://zavod-red.ru/podbor"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как рассчитать передаточное число редуктора?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число i равно отношению входных оборотов к выходным: i = n1 / n2. Например, двигатель 1500 об/мин и требуемые 50 об/мин на выходе дают i = 30. Калькулятор считает это автоматически."}},{"@type":"Question","name":"Как определить крутящий момент на выходном валу?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходе ориентировочно равен T = 9550 × P × КПД / n2, где P — мощность двигателя в кВт, n2 — выходные обороты. КПД зависит от типа передачи: у цилиндрических выше, у червячных ниже."}},{"@type":"Question","name":"Что такое понижающий редуктор?","acceptedAnswer":{"@type":"Answer","text":"Понижающий редуктор снижает обороты двигателя и пропорционально повышает крутящий момент на выходном валу. Это самый распространённый тип привода для конвейеров, мешалок, подъёмных и производственных механизмов."}},{"@type":"Question","name":"Точный ли подбор даёт калькулятор?","acceptedAnswer":{"@type":"Answer","text":"Калькулятор даёт предварительную оценку передаточного числа и момента. Точный подбор типоразмера с учётом режима работы, сервис-фактора и присоединительных размеров выполняет инженер по вашей заявке — с расчётом и ценой от производителя."}},{"@type":"Question","name":"Что прислать для точного подбора?","acceptedAnswer":{"@type":"Answer","text":"Лучше всего — данные с шильда (типоразмер, передаточное число, мощность, обороты) или фото таблички редуктора. Подойдут также чертёж, габаритный эскиз или заполненный опросный лист. Чем больше исходных данных, тем точнее инженер подберёт типоразмер и аналог."}},{"@type":"Question","name":"Подберёте ли по фото шильдика или замерам?","acceptedAnswer":{"@type":"Answer","text":"Да. По фото заводской таблички мы определим модель и присоединительные размеры, а при отсутствии шильда подберём по вашим замерам валов, межосевого расстояния и монтажных отверстий. Это рабочий способ заменить импортный редуктор габаритным аналогом."}},{"@type":"Question","name":"Сколько занимает расчёт?","acceptedAnswer":{"@type":"Answer","text":"Предварительный подбор инженер делает примерно за 15 минут после получения данных. Точный расчёт с учётом режима работы и сервис-фактора, а также подбор аналога занимает от нескольких часов до рабочего дня. Срок зависит от полноты исходных данных и наличия позиции."}},{"@type":"Question","name":"Что такое сервис-фактор и зачем он в калькуляторе?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (SF) — это запас прочности привода под реальные условия: ударные нагрузки, частые пуски, продолжительность работы. Номинальный момент редуктора умножают на SF, чтобы он не работал на пределе. Поэтому подбор только по расчётному моменту без сервис-фактора может оказаться заниженным."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Как подобрать редуктор по параметрам", "step": [{"@type": "HowToStep", "name": "Задайте параметры", "text": "Укажите мощность двигателя, обороты на выходе, крутящий момент и передаточное число — диапазоны «от/до»."}, {"@type": "HowToStep", "name": "Посмотрите подходящие модели", "text": "Калькулятор покажет подходящие типоразмеры редукторов EVL с обозначениями ГОСТ и импортными аналогами (SEW, NORD, Motovario)."}, {"@type": "HowToStep", "name": "Подтвердите подбор и получите КП", "text": "Оставьте заявку — инженер подтвердит точный подбор, рассчитает стоимость и срок поставки."}]}</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+</head>
+<body>
+
+<header class="hdr2">
+<link rel="stylesheet" href="assets/hdr.css?v=71354" />
+<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · Челябинск · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+<div class="hmain"><div class="hm-in">
+<a class="logo" href="/"><img src="assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
+<a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: EVL 197, SEW R107, ZR 603…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+<div class="nav-right">
+<a data-zr-cab class="hic" href="/cabinet" title="Кабинет клиента" aria-label="Кабинет"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></a>
+<a class="hic" href="/cart" title="Корзина" aria-label="Корзина"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11h10.2L21 8H6.2"/></svg><span data-zr-badge class="hic-badge"></span></a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Светлая или тёмная тема" title="Светлая / тёмная тема"><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+<a class="zbtn" data-zayavka href="#zayavka">Получить расчёт</a>
+<button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></div>
+<nav class="hnav"><div class="hn-in"><div class="menu">
+<a href="/catalog/">Каталог редукторов</a>
+<a href="/podbor">Подбор</a>
+<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+<a href="/ceny">Цены</a>
+<a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+<a href="/importozameshchenie">Импортозамещение</a>
+<a href="/blog/">Блог</a>
+<div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/#about">Фотографии производства</a><a href="/#team">Люди производства</a><a href="/#certs">Сертификаты</a><a href="/about">О заводе — подробно</a></div></div>
+<a href="/contacts">Контакты</a>
+<a class="menu-phone" href="tel:+74951514102">+7 (495) 151-41-02</a>
+</div></div></nav>
+</header>
+
+<div class="wrap crumbs"><a href="/">Главная</a><span>›</span>Подбор редуктора</div>
+<section class="phero"><div class="wrap">
+  <div class="eyebrow">Конфигуратор</div>
+  <h1>Подбор редуктора по параметрам</h1>
+  <p>Выберите тип и задайте диапазоны по мощности, оборотам, моменту и передаточному числу — таблица покажет подходящие типоразмеры нашего производства с обозначениями EVL, ГОСТ и импортными аналогами. По выбранной позиции инженер подтвердит точный подбор, цену и срок от производителя.</p>
+</div></section>
+
+<section id="kalkulyator" class="section" style="padding-top:34px"><div class="wrap">
+  <div class="eyebrow">База типоразмеров</div>
+  <h2 style="font-size:24px;margin-bottom:8px">Калькулятор подбора редуктора по параметрам</h2>
+  <p style="color:var(--muted);max-width:860px;margin:0 0 18px;line-height:1.6">Выберите тип редуктора и задайте диапазоны «от/до»: мощность двигателя, обороты на выходе, крутящий момент, передаточное число. Покажем подходящие типоразмеры нашего производства — с обозначениями EVL и ГОСТ и импортными аналогами (SEW, NORD, Motovario). Результат можно выгрузить в CSV. Параметры — из заводской таблицы подбора; точный подбор под нагрузку и режим подтвердит инженер.</p>
+  <div id="pfRoot"></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="grid-2" style="gap:40px;align-items:start">
+
+    <div>
+      <div style="background:rgba(225,27,27,.08);border:1px solid rgba(225,27,27,.3);border-radius:14px;padding:20px 22px;margin-bottom:22px"><div style="font-weight:700;font-size:17px;margin-bottom:6px"><span class="hd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span> Не знаете параметры?</div><p style="color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 14px">Сфотографируйте заводской шильдик (табличку) редуктора или пришлите замеры — инженер определит модель и подберёт точный аналог. Разбираться в таблице для этого не обязательно.</p><a class="btn" data-zayavka href="#zayavka" style="width:100%;justify-content:center">Подобрать по фото шильдика</a></div>
+      <div class="feats" style="grid-template-columns:1fr;margin-top:0">
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div><div><h4>Цена от производителя</h4><p>Без посредников и наценок дилеров — понижающие мотор-редукторы по запросу.</p></div></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div><div><h4>8000+ типоразмеров</h4><p>Серии EVL, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow">Что учитываем</div>
+      <h2 style="font-size:24px">Параметры для точного подбора</h2>
+      <table class="spec"><tbody>
+        <tr><th>Мощность</th><td>двигателя и на выходном валу, кВт</td></tr>
+        <tr><th>Обороты</th><td>входные и выходные, передаточное число U</td></tr>
+        <tr><th>Момент</th><td>крутящий момент на выходе, Н·м</td></tr>
+        <tr><th>Режим</th><td>S1–S8, число пусков, реверсы (сервис-фактор)</td></tr>
+        <tr><th>Нагрузки</th><td>радиальная (консольная) и осевая на вал</td></tr>
+        <tr><th>Монтаж</th><td>исполнение, присоединительные размеры</td></tr>
+      </tbody></table>
+      <p style="color:var(--muted2);font-size:13px;line-height:1.55;margin-top:14px">Таблица слева — справочная, по нашему производству. Точный типоразмер с учётом сервис-фактора, присоединительных размеров, наличие, цену и срок подтверждает инженер по заявке.</p>
+    </div>
+
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Ориентиры</div>
+  <h2 style="font-size:24px;margin-bottom:8px">Типы редукторов: ориентиры для подбора</h2>
+  <div style="overflow-x:auto">
+    <table class="spec"><tbody>
+      <tr><th>Тип</th><th>КПД</th><th>Когда выбирают</th></tr>
+      <tr><th>Червячный</th><td>0,70–0,90</td><td>нужно самоторможение, валы под 90°, большое передаточное число в одной ступени, тихий ход</td></tr>
+      <tr><th>Цилиндрический</th><td>0,96–0,98</td><td>длительный режим S1, высокие мощности и моменты, важна экономичность и ресурс</td></tr>
+      <tr><th>Соосный</th><td>0,94–0,97</td><td>вход и выход на одной оси, компактный монтаж в линию, насосы и конвейеры</td></tr>
+      <tr><th>Конический</th><td>0,92–0,96</td><td>валы под 90° с высоким КПД, большие моменты, замена червячного без потерь</td></tr>
+      <tr><th>Планетарный</th><td>0,96–0,98</td><td>максимальный момент при малых габаритах, высокие передаточные числа, точные приводы</td></tr>
+      <tr><th>Вариатор</th><td>0,80–0,92</td><td>нужна плавная регулировка оборотов на ходу без замены ступеней передачи</td></tr>
+    </tbody></table>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Вопросы и ответы</div>
+  <h2 style="font-size:26px">Частые вопросы по подбору</h2>
+  <div class="faq-grid"><div class="cat-faq">
+    <details><summary>Как рассчитать передаточное число редуктора?</summary><p>Передаточное число i равно отношению входных оборотов к выходным: i = n1 / n2. Например, двигатель 1500 об/мин и требуемые 50 об/мин на выходе дают i = 30. Калькулятор выше считает это автоматически.</p></details>
+    <details><summary>Как определить крутящий момент на выходном валу?</summary><p>Момент на выходе ориентировочно равен T = 9550 × P × КПД / n2, где P — мощность двигателя в кВт, n2 — выходные обороты. КПД зависит от типа: у цилиндрических передач он выше, у червячных ниже из-за трения в зацеплении.</p></details>
+    <details><summary>Что такое понижающий редуктор?</summary><p>Понижающий редуктор снижает обороты двигателя и пропорционально повышает крутящий момент на выходном валу. Это самый распространённый привод для конвейеров, мешалок, подъёмных и производственных механизмов.</p></details>
+    <details><summary>Точный ли подбор даёт калькулятор?</summary><p>Калькулятор даёт предварительную оценку i и момента. Точный типоразмер с учётом режима работы, сервис-фактора и присоединительных размеров подберёт инженер по вашей заявке — с расчётом и ценой от производителя.</p></details>
+  </div><div class="cat-faq">
+    <details><summary>Что прислать для точного подбора?</summary><p>Лучше всего — данные с шильда (типоразмер, передаточное число, мощность, обороты) или фото таблички редуктора. Подойдут также чертёж, габаритный эскиз или заполненный опросный лист. Чем больше исходных данных, тем точнее инженер подберёт типоразмер и аналог.</p></details>
+    <details><summary>Подберёте ли по фото шильдика или замерам?</summary><p>Да. По фото заводской таблички мы определим модель и присоединительные размеры, а при отсутствии шильда подберём по вашим замерам валов, межосевого расстояния и монтажных отверстий. Это рабочий способ заменить импортный редуктор габаритным аналогом.</p></details>
+    <details><summary>Сколько занимает расчёт?</summary><p>Предварительный подбор инженер делает примерно за 15 минут после получения данных. Точный расчёт с учётом режима работы и сервис-фактора, а также подбор аналога занимает от нескольких часов до рабочего дня. Срок зависит от полноты исходных данных и наличия позиции.</p></details>
+    <details><summary>Что такое сервис-фактор и зачем он в калькуляторе?</summary><p>Сервис-фактор (SF) — это запас прочности привода под реальные условия: ударные нагрузки, частые пуски, продолжительность работы. Номинальный момент редуктора умножают на SF, чтобы он не работал на пределе. Поэтому подбор только по расчётному моменту без сервис-фактора может оказаться заниженным.</p></details>
+  </div></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Каталог</div>
+  <h2 style="font-size:26px">Выбрать редуктор по типу</h2>
+  <div class="xgrid">
+    <a class="xcard" href="/catalog/chervyachnye"><b>Червячные</b><span>Самоторможение, валы под 90°, по запросу</span><span class="xcard-go">Смотреть →</span></a>
+    <a class="xcard" href="/catalog/cilindricheskie"><b>Цилиндрические</b><span>Высокий КПД, режим S1</span><span class="xcard-go">Смотреть →</span></a>
+    <a class="xcard" href="/ceny"><b>Цены от производителя</b><span>EVL, ПР, МР — прайс по типам</span><span class="xcard-go">Смотреть →</span></a>
+    <a class="xcard" href="/dostavka-raschet"><b>Расчёт доставки</b><span>Калькуляторы ТК, вес и габариты</span><span class="xcard-go">Открыть →</span></a>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="seo-text"><p class="seo-lead">Подбор редуктора и мотор-редуктора по параметрам — это выбор типоразмера под мощность двигателя, требуемые обороты на выходе, крутящий момент и передаточное число. Таблица выше показывает позиции нашего производства с обозначениями EVL и ГОСТ и импортными аналогами (SEW, NORD, Motovario), чтобы можно было быстро сопоставить замену импортного привода.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Чтобы подобрать понижающий редуктор, задайте тип передачи и диапазоны параметров — калькулятор отфильтрует подходящие типоразмеры. Передаточное число рассчитывается как отношение оборотов двигателя к требуемым выходным (i = n1 / n2), а крутящий момент на выходе ориентировочно равен T = 9550 · P · КПД / n2.</p><p>Если параметры неизвестны, пришлите фото шильдика — инженер определит модель и подберёт аналог. По выбранной позиции мы подтвердим точный подбор с учётом сервис-фактора и присоединительных размеров, рассчитаем цену от производителя и срок изготовления.</p><h3>Параметры подбора редуктора</h3><table class="spec"><tbody>
+      <tr><th>Параметр</th><td>Что задаёт</td></tr>
+      <tr><th>Мощность двигателя</th><td>P, кВт — от 0,12 до 200 кВт</td></tr>
+      <tr><th>Обороты на выходе</th><td>n2, об/мин — требуемая скорость вала</td></tr>
+      <tr><th>Крутящий момент</th><td>T, Н·м — нагрузка на выходном валу</td></tr>
+      <tr><th>Передаточное число</th><td>i = n1 / n2 — число ступеней</td></tr>
+      <tr><th>Режим работы</th><td>сервис-фактор, число пусков, длительность</td></tr>
+    </tbody></table><h3>Монтажное исполнение</h3><table class="spec"><tbody>
+      <tr><th>Характеристика</th><td>Варианты</td></tr>
+      <tr><th>Тип передачи</th><td>червячная, цилиндрическая, соосная, коническая</td></tr>
+      <tr><th>Крепление</th><td>на лапах, фланцевое, насадной вал</td></tr>
+      <tr><th>Вал</th><td>цельный, полый, под шпонку или шлицы</td></tr>
+      <tr><th>Двигатель</th><td>220 В / 380 В, с тормозом по запросу</td></tr>
+      <tr><th>Импортный аналог</th><td>SEW, NORD, Motovario по габаритам</td></tr>
+    </tbody></table><p>Чтобы подобрать понижающий редуктор, задайте тип передачи и диапазоны параметров — калькулятор отфильтрует подходящие типоразмеры. Передаточное число рассчитывается как отношение оборотов двигателя к требуемым выходным (i = n1 / n2), а крутящий момент на выходе ориентировочно равен T = 9550 · P · КПД / n2. Если параметры неизвестны, пришлите фото шильдика — инженер определит модель и подберёт аналог.</p><h3>Что дальше</h3><p>По выбранной позиции инженер подтвердит точный подбор с учётом сервис-фактора и присоединительных размеров, рассчитает <a href="/ceny">цену от производителя</a> и срок, а также <a href="/dostavka-raschet">стоимость доставки</a>. Для замены импортного редуктора удобнее начать с раздела <a href="/importozameshchenie">импортозамещения</a> или со <a href="/brands/">страниц брендов</a>.</p></div></details></div>
+</div></section>
+
+<footer class="site-footer">
+  <div class="wrap sf-top">
+    <div class="sf-brand">
+      <img src="assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
+      <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+      <div class="sf-contacts-inline">
+        <a href="tel:+74951514102">+7 (495) 151-41-02</a>
+        <a href="tel:+79049534102">+7 (904) 953-41-02</a>
+        <a class="sf-mail" href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a>
+      </div>
+    </div>
+    <div class="sf-col">
+      <h4>Каталог</h4>
+      <a href="/catalog/chervyachnye">Червячные</a>
+      <a href="/catalog/cilindricheskie">Цилиндрические</a>
+      <a href="/catalog/soosnye">Соосные</a>
+      <a href="/catalog/konichesko-cilindricheskie">Цилиндро-конические</a>
+      <a href="/catalog/planetarnye">Планетарные</a>
+      <a href="/reduktor/">Модели редукторов</a><a href="/catalog/">Весь каталог →</a>
+    </div>
+    <div class="sf-col">
+      <h4>Разделы</h4>
+      <a href="/podbor">Подбор редуктора</a>
+      <a href="/ceny">Цены</a>
+      <a href="/dostavka-raschet">Расчёт доставки</a>
+      <a href="/proizvoditelyam-oborudovaniya">Производителям оборудования</a>
+      <a href="/importozameshchenie">Импортозамещение</a>
+      <a href="/blog/">Блог</a>
+      <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+    </div>
+    <div class="sf-col">
+      <h4>Компания</h4>
+      <a href="/about">О заводе</a>
+      <a href="/sertifikaty">Сертификаты и качество</a>
+      <a href="/contacts">Контакты</a><a href="/oplata">Оплата и реквизиты</a><a href="/garantiya">Гарантия</a>
+      <div class="sf-req">ООО «НИИ АТТ» · ИНН 7452136680<br>454007, г. Челябинск,<br>пр-т Ленина, 2, оф. 221</div>
+    </div>
+  </div>
+  <div class="wrap sf-bottom">
+    <span>© Завод Редукторов · ООО «НИИ АТТ», Челябинск</span>
+    <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
+  </div>
+</footer>
+
+<script src="assets/inner.js?v=615"></script>
+<script defer src="assets/podbor.js?v=24135"></script>
+<script defer src="assets/modal.js?v=556"></script>
+</body>
+</html>
