@@ -185,7 +185,7 @@ def transform(f):
       +(f'<div><span>Момент</span><b>{e(tq)}</b></div>' if tq else '')
       +(f'<div><span>Передаточное</span><b>{e(ig)}</b></div>' if ig else '')
       +(f'<div><span>Исполнений</span><b>{e(ispn_n)}</b></div>' if ispn_n else '')
-      +f'</div>{docs}</div>'
+      +f'</div></div>'
       # правая колонка
       f'<div class="p2-info">'
       f'<span style="display:inline-block;color:var(--red);font-weight:700;font-size:12px;letter-spacing:.05em;text-transform:uppercase">Импортозамещение · {e(typ)}</span>'
@@ -200,8 +200,7 @@ def transform(f):
       f'<div class="p2-cta1"><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт и КП</a>'
       f'<a class="btn ghost lg" data-zayavka data-req="Подбор аналога {e(imp_short)}" href="#zayavka">Подобрать аналог</a>'
       f'<a class="btn ghost lg" data-zayavka data-req="{e(imp_short)}" href="#zayavka">Запросить оригинал</a></div>'
-      f'<p class="p2-desc" style="margin-top:16px">На странице — характеристики {e(imp_short)}, таблица исполнений и наш аналог {e(zr)}. Пришлите шильд или модель — инженер подтвердит замену и рассчитает цену за 15 минут.</p>'
-      # блок преимуществ в правой колонке (баланс с длинной таблицей слева)
+      # блок преимуществ в правой колонке (баланс с левой)
       f'<div class="p2-trust">'
       f'<div><b>Собственное производство</b><span>механообработка, сборка, испытания</span></div>'
       f'<div><b>Гарантия 24 месяца</b><span>или переделаем за наш счёт</span></div>'
@@ -239,7 +238,7 @@ def transform(f):
       f'<div class="opis-grid">'
       f'<div class="p2-lspec">{lspec}</div>'
       f'<div><h3>Применение</h3><ul class="opis-apps">'+''.join(f'<li>{e(a)}</li>' for a in apps)+'</ul></div>'
-      f'</div></div></section>')
+      f'</div>{docs}</div></section>')
     # секция «Исполнения» убрана по просьбе заказчика (список исполнений — в подборе)
     ispn_cards=''
     ISPN=''
