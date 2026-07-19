@@ -127,20 +127,35 @@ def load_copy(f):
 
 def transform(f):
     t=open(f,encoding='utf-8').read()
+    if '<!--apro-->' in t: return 'already'   # уже pro — не перечитывать pro-структуру как a2
     CO=load_copy(f) or {}
     # данные из a2-карточки
     zr=re.search(r'аналог (ZR [0-9/ХX]+)',t); zr=zr.group(1) if zr else 'ZR'
     imp_full=re.search(r'Заменяет:</span><span class="v">([^(<]+?)(?: \(|<)',t)
     imp_full=imp_full.group(1).strip() if imp_full else ''
-    h1old=re.search(r'аналог ([^<&]+)',re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S).group(1))
-    imp_short=(h1old.group(1).strip() if h1old else imp_full)
+    h1m=re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S)
+    h1old=re.search(r'аналог ([^<&]+)',h1m.group(1)) if h1m else None
+    imp_short=(h1old.group(1).strip() if h1old else imp_full).strip()
+    if not imp_short: return 'no-model'   # без модели карточку не строим
+    b0=imp_short.split()[0] if imp_short.split() else imp_short   # бренд-слово (безопасно)
     typ=re.search(r'Импортозамещение · ([^<]+)</span>',t); typ=typ.group(1).strip() if typ else ''
-    # спеки из старой таблицы .spec (если есть) или из hero
-    def sp(k):
-        m=re.search(r'<th>'+k+r'</th><td>([^<]*)</td>',t); return m.group(1).strip() if m else ''
-    pw=sp('Мощность'); ig=sp('Передаточное число'); tq=sp('Крутящий момент'); ispn_n=sp('Исполнений')
+    # спеки из старой таблицы .spec — гибко (метки разнятся: «Мощность»/«Мощность двигателя»,
+    # «Момент»/«Крутящий момент»); фолбэк — из строки em h1 «X кВт · Y Н·м · i=Z».
+    def spx(pat):
+        m=re.search(r'<th>'+pat+r'</th><td>([^<]*)</td>',t); return m.group(1).strip() if m else ''
+    pw=spx(r'Мощность(?: двигателя)?')
+    ig=spx(r'Передаточное(?: число)?')
+    tq=spx(r'(?:Крутящий )?[Мм]омент(?: на выходе)?')
+    ispn_n=spx(r'Исполнени[ейя]+')
+    # фолбэк из em h1 (a2-карточка)
+    em=re.search(r'<em>([^<]*)</em>',t)
+    if em:
+        eparts=[x.strip() for x in em.group(1).split('·')]
+        if not pw: pw=next((x for x in eparts if 'кВт' in x),'')
+        if not tq: tq=next((x for x in eparts if 'Н·м' in x or 'Нм' in x),'')
+        if not ig: ig=next((x.replace('i=','').replace('i ','') for x in eparts if x.startswith('i')),'')
     pr=''
-    ra=sp('Российский аналог')
+    ra=spx(r'Российский аналог')
     m=re.search(r'ПР ?\d+',ra); pr=m.group(0) if m else ''
     red=re.search(r'href="(/reduktor/[^"]*)"',t); red=red.group(1) if red else '/podbor'
     # исполнения-ссылки
@@ -161,7 +176,7 @@ def transform(f):
     thumbs_html=''.join(_thumb(i,th) for i,th in enumerate(thumbs))
     cat=CATN.get(typ,typ.capitalize())+' редукторы'
     # таблица характеристик (левая колонка)
-    rows=[('Бренд',imp_short.split()[0] if imp_short else ''),('Модель',imp_short),
+    rows=[('Бренд',b0),('Модель',imp_short),
       ('Наш аналог',zr+((' · '+pr) if pr else '')),('Тип передачи',typ)]
     if pw: rows.append(('Мощность',pw))
     if ig: rows.append(('Передаточное число',ig))
@@ -178,7 +193,7 @@ def transform(f):
     HERO=(f'<section class="section" style="padding-top:20px"><div class="wrap"><div class="p2">'
       f'<div class="p2-gal"><div class="p2-main"><img id="p2img" src="{main}" alt="{e(imp_short)} — {e(typ)} мотор-редуктор"></div>'
       f'<div class="p2-thumbs">{thumbs_html}</div>'
-      f'<div class="p2-note-dw">Фото {e(imp_short.split()[0] if imp_short else "")} · ракурсы и габаритный чертёж (пример), точный чертёж исполнения — с КП</div>'
+      f'<div class="p2-note-dw">Фото {e(b0)} · ракурсы и габаритный чертёж (пример), точный чертёж исполнения — с КП</div>'
       # тех.документация под галереей (сводку параметров убрали — дублировала таблицу)
       f'{docs}</div>'
       # правая колонка
@@ -188,7 +203,7 @@ def transform(f):
       f'<div class="p2-price-row"><span class="p2-price" style="font-size:24px">Цена по запросу</span><span class="p2-stock">В наличии / под заказ</span></div>'
       f'<div class="p2-offer">{ib}<div>Поставим оригинал <b>{e(imp_short)}</b> под заказ или подберём российский аналог <b>{e(zr)}</b> собственного производства — те же присоединительные размеры, замена без переделки узла, цена ниже и отгрузка от 3 дней.</div></div>'
       f'<div class="p2-rows">'
-      f'<div><span class="k">Бренд</span><span class="v">{e(imp_short.split()[0] if imp_short else "")} (импорт)</span></div>'
+      f'<div><span class="k">Бренд</span><span class="v">{e(b0)} (импорт)</span></div>'
       f'<div><span class="k">Модель</span><span class="v">{e(imp_short)}</span></div>'
       f'<div><span class="k">Наш аналог</span><span class="v">{e(zr)}{(" · "+e(pr)) if pr else ""}</span></div>'
       f'<div><span class="k">Категория</span><span class="v">Промышленное оборудование / {e(cat)}</span></div></div>'
@@ -206,12 +221,13 @@ def transform(f):
       '<script>document.querySelectorAll(".p2-thumbs button").forEach(function(b){b.addEventListener("click",function(){document.getElementById("p2img").src=b.dataset.src;document.querySelectorAll(".p2-thumbs button").forEach(function(x){x.classList.remove("act")});b.classList.add("act");});});'
       'document.addEventListener("click",function(ev){var el=ev.target.closest&&ev.target.closest("[data-req]");if(!el)return;var m=document.getElementById("zrMsg");if(m&&!m.value)m.value="Запрос: "+el.getAttribute("data-req")+". Прошу дать цену и срок.";});</script>')
     # --- ПОДРОБНОЕ ОПИСАНИЕ (сразу после hero, видимое, id=opis) ---
-    b0=imp_short.split()[0] if imp_short else ''
-    # override-абзацы уже содержат HTML (b/a) — НЕ экранируем; шаблонные строим сами
+    # ссылка на бренд-раздел (для перелинковки в описании)
+    _blink=('/brands/'+bslug) if bslug else '/catalog/importnye-motor-reduktory'
+    # override-абзацы уже содержат HTML (b/a) — НЕ экранируем; шаблонные строим сами (с перелинковкой)
     opis_paras=CO.get('opis_paragraphs') or [
-      f'<b>{e(imp_short)}</b> — {e(typ)} мотор-редуктор (угловой привод с валами под 90°) бренда {e(b0)}. Российский аналог собственного производства — <a href="{red}">{e(zr)}</a>{(" (обозначение "+e(pr)+")") if pr else ""} от Завода Редукторов, ООО «НИИ АТТ». Аналог повторяет присоединительные и габаритные размеры оригинала — валы, фланцы, расположение лап и монтажное положение, поэтому встаёт на штатное место {e(imp_short)} без переделки рамы и переходных деталей.',
-      f'Диапазон параметров: мощность {e(pw) or "по запросу"}, передаточное число {e(ig) or "—"}, крутящий момент {e(tq) or "—"}, {e(ispn_n) or ""} исполнений по редукции, валам и фланцам. Взаимозаменяемость подтверждает инженер по мощности, моменту, передаточному числу, консольной нагрузке и монтажному положению — по шильду, фото или параметрам за 15 минут. Переходные фланцы и спецвалы изготавливаем по чертежам.',
-      f'Замена {e(imp_short)} на {e(zr)} выгодна по цене и срокам: поставляем напрямую от производителя, без валютных рисков, с гарантией 24 месяца и полным пакетом документов. Серийные типоразмеры отгружаем от 3 дней со склада. При необходимости поставим и сам оригинал {e(b0)} под заказ.',
+      f'<b>{e(imp_short)}</b> — {e(typ)} мотор-редуктор бренда <a href="{_blink}">{e(b0)}</a>. Российский аналог собственного производства — <a href="{red}">{e(zr)}</a>{(" (обозначение "+e(pr)+")") if pr else ""} от Завода Редукторов, ООО «НИИ АТТ». Аналог повторяет присоединительные и габаритные размеры оригинала — валы, фланцы, расположение лап и монтажное положение, поэтому встаёт на штатное место {e(imp_short)} без переделки рамы и переходных деталей.',
+      f'Диапазон параметров: мощность {e(pw) or "по запросу"}, передаточное число {e(ig) or "—"}, крутящий момент {e(tq) or "—"}, {e(ispn_n) or ""} исполнений по редукции, валам и фланцам. Взаимозаменяемость подтверждает инженер по мощности, моменту, передаточному числу, консольной нагрузке и монтажному положению — по шильду, фото или параметрам за 15 минут (<a href="/podbor">подбор по параметрам</a>). Переходные фланцы и спецвалы изготавливаем по чертежам.',
+      f'Замена {e(imp_short)} на {e(zr)} выгодна по цене и срокам: поставляем напрямую от производителя, без валютных рисков, с гарантией 24 месяца и полным пакетом документов. Серийные типоразмеры отгружаем от 3 дней со склада. При необходимости поставим и сам оригинал {e(b0)} под заказ. Смотрите также <a href="{_blink}">все модели {e(b0)} и аналоги</a>, <a href="/importozameshchenie">импортозамещение приводов</a> и <a href="/catalog/">каталог редукторов</a>.',
     ]
     why=CO.get('why_analog') or [
       {'t':'Замена без переделки','d':'те же присоединительные и габаритные размеры'},
@@ -244,12 +260,12 @@ def transform(f):
       f'<details><summary>Чем заменить {e(b)}?</summary><p>Прямая замена — редуктор {e(z)} нашего производства: совпадают присоединительные и габаритные размеры, узел встаёт на штатное место без переделки. Отличается ценой и сроком поставки.</p></details>'
       f'<details><summary>Какой российский аналог у {e(b)}?</summary><p>Аналог {e(b)} — {e(z)}{(" (обозначение "+e(pr)+")") if pr else ""}, {e(typ)} редуктор. Совпадает по валам, фланцам и монтажным размерам.</p></details>'
       f'<details><summary>Аналог {e(z)} встанет без переделки?</summary><p>Да. {e(z)} повторяет присоединительные размеры {e(b)} — валы, фланцы, расположение лап и положение в пространстве. Переходные фланцы и спецвалы при необходимости изготовим по чертежам.</p></details>'
-      f'<details><summary>Чем аналог отличается от оригинала {e(b.split()[0])}?</summary><p>Характеристики и размеры сопоставимы, гарантия 24 месяца. Аналог обычно дешевле импорта и отгружается быстрее — от 3 дней со склада или под заказ.</p></details>'
+      f'<details><summary>Чем аналог отличается от оригинала {e(b0)}?</summary><p>Характеристики и размеры сопоставимы, гарантия 24 месяца. Аналог обычно дешевле импорта и отгружается быстрее — от 3 дней со склада или под заказ.</p></details>'
       f'</div><div>'
       f'<details><summary>Сколько стоит {e(b)} и аналог?</summary><p>Цена и оригинала, и аналога — по запросу: зависит от типоразмера, передаточного числа и комплектации. Пришлите модель или шильд — рассчитаем оба варианта и пришлём КП в течение дня.</p></details>'
       f'<details><summary>Какие характеристики у {e(b)}?</summary><p>{("Мощность "+e(pw)+", ") if pw else ""}{("передаточное "+e(ig)+", ") if ig else ""}{("крутящий момент "+e(tq)+", ") if tq else ""}{(e(ispn_n)+" исполнений, ") if ispn_n else ""}тип — {e(typ)}. Точные параметры исполнения — в таблице выше.</p></details>'
-      f'<details><summary>Можно ли купить оригинал {e(b)}?</summary><p>Да, поставляем оригинальные редукторы {e(b.split()[0])} под заказ — с гарантией производителя. Срок зависит от модели и наличия у поставщика; сообщим при запросе.</p></details>'
-      f'<details><summary>Как подобрать по шильду или модели?</summary><p>Пришлите фото шильда или обозначение — инженер определит типоразмер, передаточное число и мощность, подберёт оригинал {e(b.split()[0])} и аналог {e(z)} за 15 минут.</p></details>'
+      f'<details><summary>Можно ли купить оригинал {e(b)}?</summary><p>Да, поставляем оригинальные редукторы {e(b0)} под заказ — с гарантией производителя. Срок зависит от модели и наличия у поставщика; сообщим при запросе.</p></details>'
+      f'<details><summary>Как подобрать по шильду или модели?</summary><p>Пришлите фото шильда или обозначение — инженер определит типоразмер, передаточное число и мощность, подберёт оригинал {e(b0)} и аналог {e(z)} за 15 минут.</p></details>'
       f'</div></div></div></section>')
     # DEEP-SEO (низ, свёрнуто под стрелкой): не дублирует OPIS — про подбор исполнения, соответствие, заказ
     brand_link=('/brands/'+bslug) if bslug else '/catalog/importnye-motor-reduktory'
@@ -298,7 +314,16 @@ def transform(f):
     return 'ok'
 
 if __name__=='__main__':
-    if len(sys.argv)>1 and sys.argv[1]!='--all':
+    if len(sys.argv)>1 and sys.argv[1]=='--all':
+        from collections import Counter
+        import time
+        c=Counter(); t0=time.time()
+        for f in glob.glob(os.path.join(BASE,'analog','*.html')):
+            if f.endswith('/index.html'): continue
+            try: c[transform(f)]+=1
+            except Exception as ex: c['ERR:'+str(ex)[:40]]+=1
+        print(f'время: {time.time()-t0:.0f}с | {dict(c)}')
+    elif len(sys.argv)>1:
         print(transform(sys.argv[1]))
     else:
-        print('точечный режим: передай путь к файлу')
+        print('режим: --all или путь к файлу')
