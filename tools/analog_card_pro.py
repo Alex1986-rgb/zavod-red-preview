@@ -179,13 +179,8 @@ def transform(f):
       f'<div class="p2-gal"><div class="p2-main"><img id="p2img" src="{main}" alt="{e(imp_short)} — {e(typ)} мотор-редуктор"></div>'
       f'<div class="p2-thumbs">{thumbs_html}</div>'
       f'<div class="p2-note-dw">Фото {e(imp_short.split()[0] if imp_short else "")} · ракурсы и габаритный чертёж (пример), точный чертёж исполнения — с КП</div>'
-      # компактная сводка ключевых параметров под фото (баланс левой колонки + быстрые цифры)
-      f'<div class="p2-kspec">'
-      +(f'<div><span>Мощность</span><b>{e(pw)}</b></div>' if pw else '')
-      +(f'<div><span>Момент</span><b>{e(tq)}</b></div>' if tq else '')
-      +(f'<div><span>Передаточное</span><b>{e(ig)}</b></div>' if ig else '')
-      +(f'<div><span>Исполнений</span><b>{e(ispn_n)}</b></div>' if ispn_n else '')
-      +f'</div></div>'
+      # тех.документация под галереей (сводку параметров убрали — дублировала таблицу)
+      f'{docs}</div>'
       # правая колонка
       f'<div class="p2-info">'
       f'<span style="display:inline-block;color:var(--red);font-weight:700;font-size:12px;letter-spacing:.05em;text-transform:uppercase">Импортозамещение · {e(typ)}</span>'
@@ -238,7 +233,7 @@ def transform(f):
       f'<div class="opis-grid">'
       f'<div class="p2-lspec">{lspec}</div>'
       f'<div><h3>Применение</h3><ul class="opis-apps">'+''.join(f'<li>{e(a)}</li>' for a in apps)+'</ul></div>'
-      f'</div>{docs}</div></section>')
+      f'</div></div></section>')
     # секция «Исполнения» убрана по просьбе заказчика (список исполнений — в подборе)
     ispn_cards=''
     ISPN=''
