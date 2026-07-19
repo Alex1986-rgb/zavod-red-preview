@@ -15,8 +15,9 @@ try{document.documentElement.setAttribute('data-theme','light');try{localStorage
       // десктоп (есть ховер): клик по «О заводе» ведёт на страницу, сабменю раскрывается наведением.
       // мобилка (тач): клик раскрывает сабменю.
       if(window.matchMedia&&window.matchMedia('(hover:hover)').matches){
-        var main=dd.querySelector('.submenu a[href$="/about"]')||dd.querySelector('.submenu a[href]');
-        if(main){ location.href=main.getAttribute('href'); return; }
+        var mainHref=t.getAttribute('href');
+        if(!mainHref){var main=dd.querySelector('.submenu a[href$="/about"]')||dd.querySelector('.submenu a[href]');mainHref=main&&main.getAttribute('href');}
+        if(mainHref){ location.href=mainHref; return; }
       }
       e.preventDefault();
       var open=dd.classList.toggle('open');
