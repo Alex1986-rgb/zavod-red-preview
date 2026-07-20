@@ -25,6 +25,9 @@
   var compact=root.getAttribute('data-compact')==='1'; // только фильтры + счётчик, без списка строк
   var presetBrand=(root.getAttribute('data-brand')||'').trim(); // предустановленный бренд (ключ как в g.a), для страниц брендов
   var lockBrand=root.getAttribute('data-lockbrand')==='1';      // зафиксировать бренд (страница конкретной фирмы)
+  // бренд может прийти и из URL: /podbor?brand=SEW+EURODRIVE — переход «полный подбор» со страницы бренда
+  (function(){ var m=(location.search||'').match(/[?&]brand=([^&]*)/);
+    if(m && !presetBrand){ presetBrand=decodeURIComponent(m[1].replace(/\+/g,' ')).trim(); if(presetBrand) lockBrand=true; } })();
 
   var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический','цилиндрический'];
   var enabledIdx=[];
@@ -350,6 +353,8 @@
     for(var k=0;k<DB.i.length;k++){
       var it=DB.i[k], gt=DB.g[it[0]].t;
       if(enabledIdx.indexOf(gt)<0)continue;
+      // выбран бренд импорта → показываем только позиции, у которых есть его аналог
+      if(!groupHasBrand(DB.g[it[0]]))continue;
       if(ti>=0 && gt!==ti)continue;
       if(!passQ(it))continue;
       if(!passRange(it))continue;
@@ -415,8 +420,10 @@
           ? '<td class="pf-order"><a class="pf-ord" href="/analog/'+b.s+'-'+frameSlug(imp)+'">Заказать</a></td>'
           : '<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
       }else{
-        tz='<td class="pf-tz"><b>'+g.e+'</b><span class="pf-tr-an">аналог '+b.n+' — по запросу</span></td>';
-        ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+g.e+'" href="#zayavka">Запрос</a></td>';
+        // EVL — внутренний код, наружу и в CRM уходит только маркировка ZR
+        var _zrx=zrOf(g.e)||g.e;
+        tz='<td class="pf-tz"><b>'+_zrx+'</b><span class="pf-tr-an">аналог '+b.n+' — по запросу</span></td>';
+        ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+_zrx+'" href="#zayavka">Запрос</a></td>';
       }
     }else{
       // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
@@ -478,7 +485,10 @@
       function add(s){ _stoks(s).forEach(function(t){toks[t]=1;}); }
       add(g.e); add(g.p);
       var mm=String(g.e||'').match(/EVL\s+([\d\/]+)/), zr=null;
-      if(mm)mm[1].split('/').forEach(function(np){var z=ZRMAP[parseInt(np,10)]; if(z!=null){add('ZR '+z); if(zr==null)zr='ZR '+z;}});
+      if(mm)mm[1].split('/').forEach(function(np){var z=ZRMAP[parseInt(np,10)]; if(z!=null)add('ZR '+z);});
+      // отображаемая маркировка — из единого источника zrOf(), иначе составные типоразмеры
+      // («EVL 063/747») расходятся: карточка «ZR 606», строка таблицы «ZR 606/604» (57 групп из 104)
+      zr=zrOf(g.e)||zr;
       add(DB.t[g.t]); (TYPE_EN[g.t]||[]).forEach(function(w){toks[w]=1;});
       var top=null;
       Object.keys(g.a||{}).forEach(function(b){ add(b); if(!top){var ms=g.a[b];top=(b.split(' ')[0]+' '+((ms&&ms[0])||'')).trim();} (BRAND_RU[_sn(b.split(' ')[0])]||[]).forEach(function(rw){toks[rw]=1;}); (g.a[b]||[]).forEach(function(m){add(m);}); });
@@ -533,6 +543,9 @@
   }
   function _analogFor(g,qBrands){ // аналог искомого бренда, иначе первый
     var a=g.a||{};
+    // приоритет — бренд страницы/URL: на /brands/sew чужой бренд в карточке недопустим
+    var _b=BMAP[selBrand];
+    if(_b&&!isOurs(_b.k)){ var _m=brandModel(g,_b.k); if(_m) return (_b.n+' '+_m).trim(); }
     if(qBrands&&qBrands.length){
       var keys=Object.keys(a);
       for(var i=0;i<keys.length;i++){ var b=keys[i], bn=_sn(b.split(' ')[0]);
@@ -543,14 +556,20 @@
     return (kk[0].split(' ')[0]+' '+((mm&&mm[0])||'')).trim();
   }
   function _cardHTML(x,qBrands){
-    var rec=x.rec,g=rec.g,mark=rec.zr||g.e,sub=rec.zr?g.e:(g.p||''),img='/assets/catalog/'+(IMGT[g.t]||'cat_cylindrical')+'.webp';
+    var rec=x.rec,g=rec.g,img='/assets/catalog/'+(IMGT[g.t]||'cat_cylindrical')+'.webp';
     var an=_analogFor(g,qBrands)||rec.top;
+    // Если пользователь пришёл с бренда импорта (или назвал его в запросе) — карточка принадлежит
+    // импорту: бренд крупно, наш ZR вторичной строкой. Иначе прежний порядок (ZR крупно).
+    var _b=BMAP[selBrand], _bctx=((_b&&!isOurs(_b.k))||(qBrands&&qBrands.length))&&an;
+    var _zr=rec.zr||zrOf(g.e)||g.e;
+    // в брендовом режиме заголовок — чистая импортная модель (ГОСТ-код ПР/МР тут лишний шум)
+    var mark=_bctx?an:_zr, sub=_bctx?'':(g.p||''), anLine=_bctx?('наш аналог '+_zr):(an?('Аналог: '+an):'');
     var chips=(rec.power?'<span>'+rec.power+' кВт</span>':'')+(rec.ratio?'<span>i '+rec.ratio+'</span>':'');
     return '<button type="button" class="pfc" data-evl="'+_esc(g.e)+'">'
       +'<span class="pfc-media"><img src="'+img+'" alt="'+_esc(mark)+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')"></span>'
       +'<span class="pfc-b"><span class="pfc-type">'+_esc(DB.t[g.t]||'')+'</span>'
       +'<span class="pfc-mark">'+_esc(mark)+(sub?' <em>'+_esc(sub)+'</em>':'')+'</span>'
-      +(an?'<span class="pfc-an">Аналог: '+_esc(an)+'</span>':'')
+      +(anLine?'<span class="pfc-an">'+_esc(anLine)+'</span>':'')
       +'<span class="pfc-chips">'+chips+'</span>'
       +'<span class="pfc-foot"><span class="pfc-price">по запросу</span><span class="pfc-cta">Показать →</span></span>'
       +'</span></button>';
@@ -589,6 +608,8 @@
     var host=_ensureHost(), q=(qEl.value||'').trim();
     if(!q){host.style.display='none';host.innerHTML='';return;}
     var top=rankGroups(q); host.style.display='';
+    // на странице бренда (или при ?brand=) в карточки не должен попадать чужой бренд
+    top=top.filter(function(x){ return groupHasBrand(x.rec.g); });
     if(!top.length){ host.innerHTML='<div class="pf-ch"><h2>Наиболее подходящие</h2></div><p class="pf-cempty">По запросу «'+_esc(q)+'» точную карточку не нашли — проверьте написание модели или подберите фильтрами ниже, либо <a href="#" data-zayavka>оставьте заявку</a> — инженер подберёт за 15 минут.</p>'; return; }
     var qBrands=_stoks(q).map(_sn).filter(Boolean).map(_brandFromToken);
     host.innerHTML='<div class="pf-ch"><h2>Наиболее подходящие</h2><span>'+top.length+(top.length>=24?'+':'')+' по запросу «'+_esc(q)+'»</span></div><div class="pf-cgrid">'+top.map(function(x){return _cardHTML(x,qBrands);}).join('')+'</div>';

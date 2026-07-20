@@ -77,3 +77,17 @@ function wireLeadForm(formId, opts){
 
 /* Энхансер карточек (♥ в избранное + Подробнее) — подключается на всех страницах сайта */
 (function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=3';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
+
+/* Карточка аналога: бренд импорта — крупно и жирно, наш аналог ZR — вторичной строкой.
+   Работает на /analog/* (H1 вида «SEW F 107 — мотор-редуктор и российский аналог ZR 6106»). */
+(function(){try{
+  var h1=document.querySelector('h1.p2-h1');
+  if(!h1||h1.querySelector('.p2-h1-imp'))return;
+  var t=(h1.textContent||'').trim();
+  var i=t.indexOf(' \u2014 ');
+  if(i<1||!/\bZR\b/.test(t.slice(i)))return;
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  h1.innerHTML='<span class="p2-h1-imp">'+esc(t.slice(0,i))+'</span>'
+              +'<span class="p2-h1-zr">'+esc(t.slice(i+3))+'</span>';
+}catch(e){}})();

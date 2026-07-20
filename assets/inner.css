@@ -440,3 +440,8 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 @media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:22px;padding:28px 0 18px}}
 
 /*cb*/.zr-cb-w2{--zrcb:2}
+
+/* Карточка аналога: импортный оригинал — главный, наш ZR — вторичный */
+.p2-h1-imp{display:block;font-size:1em;font-weight:800;letter-spacing:-.01em}
+.p2-h1-zr{display:block;margin-top:9px;font:500 15px/1.35 'IBM Plex Mono',ui-monospace,monospace;color:var(--muted,#7c8b95);letter-spacing:.01em}
+@media(max-width:560px){.p2-h1-zr{font-size:13.5px;margin-top:7px}}

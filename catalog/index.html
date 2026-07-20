@@ -45,7 +45,7 @@
 <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></div></div>
 <nav class="hnav"><div class="hn-in"><div class="menu">
-<div class="dropdown"><a class="drop-toggle" href="/catalog/" role="button" aria-haspopup="true" aria-expanded="false">Каталог редукторов</a><div class="submenu"><a href="/brands/">Импортные мотор-редукторы</a><a href="/podbor">Калькулятор подбора</a><a href="/motor-reduktor-zr/">Под маркой ZR</a><a href="/catalog/evl">Мотор-редукторы EVL</a><a href="/catalog/pr">Мотор-редукторы ПР</a><a href="/catalog/mr">Мотор-редукторы МР</a></div></div>
+<div class="dropdown"><a class="drop-toggle" href="/catalog/" role="button" aria-haspopup="true" aria-expanded="false">Каталог редукторов</a><div class="submenu"><a href="/brands/">Импортные мотор-редукторы</a><a href="/podbor">Калькулятор подбора</a><a href="/motor-reduktor-zr/">Под маркой ZR</a><a href="/catalog/evl">Мотор-редукторы ZR</a><a href="/catalog/pr">Мотор-редукторы ПР</a><a href="/catalog/mr">Мотор-редукторы МР</a></div></div>
 <a href="/podbor">Подбор</a>
 <a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
 <a href="/ceny">Цены</a>
@@ -175,7 +175,8 @@
   function pwv(c){var m=String(c.pw||'').replace(',','.').match(/[0-9.]+/);return m?parseFloat(m[0]):0;}
   function card(c){
     var name=esc(c.b+' '+c.m);
-    var url=c.u?('/analog/'+c.u):('/reduktor/'+c.r);
+    var iq=encodeURIComponent(c.b+' '+c.m);
+    var url=c.u?('/analog/'+c.u):(c.r?('/reduktor/'+c.r+'?imp='+iq):('/podbor?q='+iq));
     var chips=[];if(c.pw)chips.push(c.pw+' кВт');if(c.i)chips.push('i '+c.i);
     return '<article class="pcard">'
       +'<div class="pcard-media"><img src="/assets/catalog/'+esc(c.im||'cat_worm')+'.webp" alt="'+name+' — мотор-редуктор" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')">'
