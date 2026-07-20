@@ -180,6 +180,10 @@
         '</div>' +
         '<div class="shd-card"><h2>2. Маркировка</h2><p class="cap">Распознанный текст можно поправить. Или впишите марку вручную (напр. «SEW WA 20», «NORD SK», «NMRV 030»).</p>' +
           '<div class="shd-field"><label>Текст с шильдика / маркировка</label><textarea id="shd-text" placeholder="SEW WA 20 · NORD SK · Motovario NMRV 030 · EVL 197…"></textarea><div class="shd-hint">Поиск идёт по 20+ импортным маркам (SEW, NORD, Bonfiglioli, Motovario, STM, Siti, Bauer…).</div></div>' +
+          // Имя и телефон обязательны: без них сервер отклоняет заявку, и раньше
+          // ВСЕ обращения «Отправить инженеру» терялись, а человеку писали «принято».
+          '<div class="shd-field"><label>Ваше имя</label><input type="text" id="shd-name" placeholder="Как к вам обращаться"></div>' +
+          '<div class="shd-field"><label>Телефон для ответа</label><input type="tel" id="shd-phone" placeholder="+7 (___) ___-__-__"><div class="shd-hint">Инженер перезвонит и пришлёт подбор с ценой.</div></div>' +
           '<div class="shd-actions"><button class="shd-btn" id="shd-find">Найти аналог</button><button class="shd-btn gh" id="shd-send">Отправить инженеру</button></div>' +
         '</div>' +
       '</div>' +
@@ -203,9 +207,19 @@
 
   function sendEngineer() {
     var text = (root.querySelector("#shd-text") || {}).value || "";
+    var nm   = ((root.querySelector("#shd-name")  || {}).value || "").trim();
+    var ph   = ((root.querySelector("#shd-phone") || {}).value || "").trim();
     if (text.trim().length < 2 && !curImageDataUrl) { renderNote("Впишите маркировку или загрузите фото."); return; }
+    // Проверяем ДО отправки: сервер требует имя и телефон, иначе заявка отклоняется.
+    if (nm.length < 2) { renderNote("Укажите имя — без него инженер не сможет ответить."); return; }
+    // Считаем цифры, а не длину строки: так проходят и не-российские номера.
+    if (ph.replace(/\D/g, "").length < 10) { renderNote("Укажите телефон — без него заявку принять нельзя."); return; }
     var fd = new FormData();
     fd.append("work_email", "");
+    fd.append("text-562", nm);
+    fd.append("tel-535", ph);
+    fd.append("message", "Подбор по шильдику. Маркировка: " + text.slice(0, 500));
+    try { fd.append("page_url", location.href); fd.append("page_title", document.title || "Подбор по шильдику"); } catch (e) {}
     fd.append("product_title", "Подбор по шильдику: " + text.slice(0, 300));
     // фото прикладываем как файл, если есть
     if (curImageDataUrl) {
@@ -213,7 +227,12 @@
     }
     var btn = root.querySelector("#shd-send"); if (btn) { btn.disabled = true; btn.textContent = "Отправляем…"; }
     fetch(FEEDBACK, { method: "POST", body: fd }).then(function (r) { return r.json().catch(function () { return {}; }); }).then(function (res) {
-      renderNote(res && res.status === "success" ? "Отправлено инженеру — подберём аналог и пришлём цену. Можно указать телефон в форме «Получить расчёт»." : "Заявка принята. Инженер свяжется с вами.");
+      // Честный результат: раньше при ЛЮБОМ отказе показывали «Заявка принята»,
+      // и человек ждал звонка по заявке, которой не существует.
+      var ok = res && (res.status === "success" || res.ok);
+      renderNote(ok
+        ? "Отправлено инженеру — подберём аналог и пришлём цену."
+        : ((res && res.message) || "Не удалось отправить заявку.") + " Позвоните: +7 (495) 151-41-02.");
     }).catch(function () { renderNote("Не удалось отправить. Позвоните: +7 (495) 151-41-02."); })
       .then(function () { if (btn) { btn.disabled = false; btn.textContent = "Отправить инженеру"; } });
   }

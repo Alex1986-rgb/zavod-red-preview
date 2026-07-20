@@ -116,15 +116,29 @@
       e.preventDefault();
       var email = ((form.querySelector('input[name=email]') || {}).value || "").trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showMsg("Введите e-mail в поле выше — вышлем инструкции по сбросу.", "err"); return; }
+      // Телефон обязателен: раньше сюда уходила пустая строка, сервер отклонял
+      // КАЖДЫЙ запрос на сброс, а человеку писали «Менеджер свяжется».
+      var phone = (window.prompt("Укажите телефон для связи — менеджер перезвонит и восстановит доступ:", "") || "").trim();
+      if (phone.replace(/\D/g, "").length < 10) {
+        showMsg("Нужен телефон для связи. Или позвоните: +7 (495) 151-41-02.", "err");
+        return;
+      }
       showMsg("Отправляем запрос…", "ok");
       try {
         var fd = new FormData();
         fd.append("work_email", ""); fd.append("text-562", "Сброс пароля кабинета");
-        fd.append("email-727", email); fd.append("tel-535", "");
+        fd.append("email-727", email); fd.append("tel-535", phone);
+        fd.append("message", "Запрос на восстановление доступа в личный кабинет. E-mail: " + email);
         fd.append("product_title", "Запрос на сброс пароля кабинета: " + email);
         fd.append("page_url", location.href);
-        await fetch("/api/feedback.php", { method: "POST", body: fd });
-        showMsg("Запрос на сброс отправлен. Менеджер свяжется и поможет восстановить доступ.", "ok");
+        var r = await fetch("/api/feedback.php", { method: "POST", body: fd });
+        var res = await r.json().catch(function () { return {}; });
+        // Говорим правду о результате, а не обещаем звонок по заявке, которой нет.
+        if (res && (res.status === "success" || res.ok)) {
+          showMsg("Запрос на сброс отправлен. Менеджер свяжется и поможет восстановить доступ.", "ok");
+        } else {
+          showMsg((res && res.message ? res.message : "Не удалось отправить запрос.") + " Позвоните: +7 (495) 151-41-02.", "err");
+        }
       } catch (err) { showMsg("Не удалось отправить. Позвоните: +7 (495) 151-41-02.", "err"); }
     });
   }

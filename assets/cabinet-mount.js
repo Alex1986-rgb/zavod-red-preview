@@ -235,14 +235,18 @@
 
   /* ---------- sections ---------- */
   function secOverview() {
-    var os = orders(), name = displayName().split(" ")[0] || "клиент";
+    // displayName() без профиля отдаёт «Личный кабинет» — первое слово давало
+    // «Здравствуйте, Личный!». Обращаемся по имени только когда оно реально известно.
+    var p0 = profile() || {}, s0 = session() || {};
+    var realName = (p0.person || p0.org || s0.name || "").trim();
+    var os = orders(), name = realName ? (realName.split(" ")[0] || realName) : "";
     var recent = os[0];
     var recentHTML = recent
       ? '<div class="zr-card"><div class="zr-h"><h2>Последний заказ</h2><button class="zr-btn gh sm" data-go="orders">Все заказы</button></div>' +
         '<div class="zr-ord-top"><div><span class="zr-ord-no">' + esc(recent.no) + '</span><span class="zr-ord-date">' + dmy(recent.date) + '</span></div><span class="zr-st ' + (stageOf(recent) >= 3 ? "done" : "") + '">' + STAGES[stageOf(recent)] + '</span></div>' +
         stepperHTML(recent) + '</div>'
       : "";
-    return '<div class="zr-card"><h2>Здравствуйте, ' + esc(name) + '! 👋</h2><p class="cap">Заказы, подборы, документы и персональный менеджер — всё здесь.</p>' + kpis().replace('<div class="zr-kpis">', '<div class="zr-kpis" style="margin:0">') + '</div>' +
+    return '<div class="zr-card"><h2>' + (name ? 'Здравствуйте, ' + esc(name) + '! 👋' : 'Здравствуйте! 👋') + '</h2><p class="cap">Заказы, подборы, документы и персональный менеджер — всё здесь.</p>' + kpis().replace('<div class="zr-kpis">', '<div class="zr-kpis" style="margin:0">') + '</div>' +
       '<div class="zr-card"><h2>Быстрые действия</h2><p class="cap">Самое нужное в один клик</p>' +
       '<div class="zr-qa">' +
         qa("/podbor", "🎯", "Подобрать редуктор", "калькулятор аналогов") +
@@ -465,14 +469,29 @@
     if (text.length < 3) return toast("Напишите сообщение", true);
     var th = support(); th.push({ from: "me", text: text, date: new Date().toISOString() }); jset("zr_support", th);
     var p = profile() || {}, s = session() || {};
-    try {
-      var fd = new FormData();
-      fd.append("work_email", ""); fd.append("text-562", p.person || s.name || "Клиент кабинета");
-      fd.append("tel-535", p.phone || ""); fd.append("email", s.email || p.email || ""); fd.append("company", p.org || "");
-      fd.append("product_title", "Кабинет · обращение: " + text.slice(0, 400));
-      fetch(FEEDBACK, { method: "POST", body: fd });
-    } catch (er) {}
-    render(); toast("Сообщение отправлено");
+    // Сервер обязательно требует телефон. Раньше при пустом телефоне в профиле
+    // обращение молча отклонялось, а клиенту показывали «Сообщение отправлено».
+    var phone = (p.phone || "").trim();
+    if (phone.replace(/\D/g, "").length < 10) {
+      render();
+      toast("Добавьте телефон в профиле — без него менеджер не сможет ответить", true);
+      return;
+    }
+    render();
+    var fd = new FormData();
+    fd.append("work_email", ""); fd.append("text-562", p.person || s.name || "Клиент кабинета");
+    fd.append("tel-535", phone); fd.append("email", s.email || p.email || ""); fd.append("company", p.org || "");
+    fd.append("message", "Обращение из личного кабинета:\n" + text.slice(0, 1000));
+    try { fd.append("page_url", location.href); fd.append("page_title", "Личный кабинет · обращение"); } catch (e) {}
+    fd.append("product_title", "Кабинет · обращение: " + text.slice(0, 400));
+    // Ждём ответ и говорим правду: молчаливая потеря обращения недопустима.
+    fetch(FEEDBACK, { method: "POST", body: fd })
+      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (res) {
+        if (res && (res.status === "success" || res.ok)) toast("Сообщение отправлено");
+        else toast((res && res.message) || "Не удалось отправить. Позвоните: +7 (495) 151-41-02", true);
+      })
+      .catch(function () { toast("Сбой связи. Позвоните: +7 (495) 151-41-02", true); });
     setTimeout(function () { var el = d.getElementById("zr-thread"); if (el) el.scrollTop = el.scrollHeight; }, 60);
   }
 

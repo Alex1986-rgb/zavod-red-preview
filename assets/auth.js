@@ -51,8 +51,15 @@
       fd.append("email", data.email || "");
       fd.append("company", data.company || "");
       fd.append("product_title", (kind || "Регистрация в кабинете") + " · " + (data.email || ""));
+      fd.append("message", (kind || "Регистрация в кабинете")
+        + ".\nE-mail: " + (data.email || "—")
+        + "\nОрганизация: " + (data.company || "—"));
+      try { fd.append("page_url", location.href); fd.append("page_title", document.title || ""); } catch (e) {}
       var r = await fetch(API + "feedback.php", { method: "POST", body: fd });
-      return r.ok;
+      // Сервер отдаёт HTTP 200 и при отказе ({ok:false}) — раньше r.ok считался успехом,
+      // и отклонённая регистрация выглядела как созданный лид.
+      var res = await r.json().catch(function () { return {}; });
+      return !!(res && (res.status === "success" || res.ok));
     } catch (e) { return false; }
   }
 
