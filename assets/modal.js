@@ -69,7 +69,7 @@
    + '<input class="zr-in" type="text" id="zrName" placeholder="Ваше имя" required>'
    + '<input class="zr-in" type="tel" id="zrPhone" placeholder="+7 (___) ___-__-__" required>'
    + '<input class="zr-in" type="email" id="zrEmail" placeholder="Почта (необязательно)">'
-   + '<div class="zr-file" id="zrFileBox"><label for="zrFile"><span class="zr-fico">📎</span><span id="zrFileLbl">Фото шильда, чертёж или спецификация · JPG, PDF, до 10 МБ</span></label><input type="file" id="zrFile" name="file-174" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.dwg"></div>'
+   + '<div class="zr-file" id="zrFileBox"><label for="zrFile"><span class="zr-fico">📎</span><span id="zrFileLbl">Фото шильда, чертёж или спецификация · JPG, PDF, до 10 МБ</span></label><input type="file" id="zrFile" name="file-174" accept="image/*,.jfif,.heic,.heif,.avif,.tif,.tiff,.pdf,.doc,.docx,.xls,.xlsx,.csv,.dwg,.dxf,.stp,.step,.zip,.rar"></div>'
    + '<textarea class="zr-in" id="zrMsg" rows="2" placeholder="Или опишите задачу: мощность, обороты, что заменяем"></textarea>'
    + '<label class="zr-consent"><input type="checkbox" id="zrConsent" required> Отправляя заявку, я даю согласие на обработку персональных данных в соответствии с <a href="'+PRIVACY+'" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>'
    + '<button class="zr-btn" type="submit">Получить расчёт</button>'
@@ -305,9 +305,11 @@
     var res=form.querySelector('.form-result');
     function show(msg,cls){ if(res){res.textContent=msg;res.className='form-result '+(cls||'');} else { alert(msg); } }
     // поля по типу
-    var nameEl=form.querySelector('input[type="text"]:not([name="work_email"])');
-    var phoneEl=form.querySelector('input[type="tel"]');
-    var emailEl=form.querySelector('input[type="email"]');
+    // Поля ищем не только по type: на части страниц телефон/почта размечены как text,
+    // из-за чего контакты раньше вообще не уходили (заявки приходили без телефона и почты).
+    var nameEl=form.querySelector('input[type="text"]:not([name="work_email"]):not([name*="phone"]):not([name*="mail"])');
+    var phoneEl=form.querySelector('input[type="tel"],input[name*="phone"],input[name*="tel"],input[id*="phone"],input[id*="tel"],input[placeholder*="елефон"]');
+    var emailEl=form.querySelector('input[type="email"],input[name*="email"]:not([name="work_email"]),input[id*="email"],input[placeholder*="mail"]');
     var msgEl=form.querySelector('textarea');
     var consent=form.querySelector('input[type="checkbox"]');
     var name=nameEl?nameEl.value.trim():'';
