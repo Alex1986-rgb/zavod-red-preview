@@ -32,6 +32,17 @@
   # Ошибочная атрибуция: 7Ч-М (советский червячный) был под брендом Varvel — редирект на каталог
   RewriteRule ^analog/varvel-7-(.*)$ /catalog/chervyachnye [R=301,L]
 
+  # Выдуманный бренд «SEW Tramec» → реальный Tramec (Италия). SEW-Eurodrive — отдельная
+  # немецкая фирма со своей страницей /brands/sew; склейка двух брендов в одном слаге была
+  # ошибкой атрибуции. Одним правилом накрываем и страницу бренда, и 16 статей блога,
+  # и 20 страниц аналогов — везде слаг отличается только префиксом sew-.
+  RewriteRule ^brands/sew-tramec/?$ https://%{HTTP_HOST}/brands/tramec [R=301,L,NE]
+  RewriteRule ^blog/(.*)sew-tramec(.*)$ https://%{HTTP_HOST}/blog/$1tramec$2 [R=301,L,NE]
+  # analog/ льётся ОТДЕЛЬНЫМ ручным воркфлоу, поэтому редирект включаем только когда новый
+  # файл реально доехал на сервер — иначе до деплоя analog/ отправляли бы 20 живых URL в 404.
+  RewriteCond %{DOCUMENT_ROOT}/analog/tramec-$1.html -f
+  RewriteRule ^analog/sew-tramec-(.*?)/?$ https://%{HTTP_HOST}/analog/tramec-$1 [R=301,L,NE]
+
   # Исправление устаревшей маркировки ZR в URL: червячные рамы 130/150 были 6113/6115 → верно 6013/6015. Защита индексации (одним хопом на https).
   RewriteRule ^motor-reduktor-zr/(.*)6113(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16013$2 [R=301,L,NE]
   RewriteRule ^motor-reduktor-zr/(.*)6115(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16015$2 [R=301,L,NE]

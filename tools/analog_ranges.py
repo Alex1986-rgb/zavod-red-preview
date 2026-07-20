@@ -37,7 +37,10 @@ for c in d["cards"]:
         if m:
             LK[(b.lower(), m.lower())] = (c["pw"], c["i"])
 
-ALIAS = {"sew": "SEW-Eurodrive", "sew tramec": "Tramec", "sew-tramec": "Tramec"}
+# «sew tramec»/«tramec» — только ВХОДНЫЕ алиасы для разбора старых заголовков:
+# бренда с таким именем не существует, оба сводятся к настоящему Tramec.
+# Удалять нельзя, иначе унаследованные страницы перестанут распознаваться.
+ALIAS = {"sew": "SEW-Eurodrive", "sew tramec": "Tramec", "tramec": "Tramec"}
 # бренды по убыванию длины — для сопоставления самого длинного префикса
 BRAND_LIST = sorted(BRANDS | set(ALIAS.keys()), key=len, reverse=True)
 

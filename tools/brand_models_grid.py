@@ -16,7 +16,8 @@ import re, sys, glob, os
 # слаг страницы -> значение поля b в import-catalog.json
 BMAP={'bauer':'Bauer','bonfiglioli':'Bonfiglioli','innored':'Innored','innovari':'Innovari',
  'lenze':'Lenze','motovario':'Motovario','nord':'NORD','rossi':'Rossi','sew':'SEW-Eurodrive',
- 'sew-tramec':'Tramec','siti':'SITI','stm':'STM','transtecno':'Transtecno','varmec':'Varmec',
+ # слаг совпадает с брендом: 'tramec' был склейкой двух разных фирм, убран
+ 'tramec':'Tramec','siti':'SITI','stm':'STM','transtecno':'Transtecno','varmec':'Varmec',
  'varvel':'Varvel','vemper':'Vemper','watt-drive':'Watt Drive','yilmaz':'Yilmaz'}
 
 CSS_FILE=os.path.join(os.path.dirname(__file__),'..','catalog','importnye-motor-reduktory.html')

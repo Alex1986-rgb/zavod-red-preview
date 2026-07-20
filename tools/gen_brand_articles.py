@@ -24,7 +24,10 @@ SKELETON = os.path.join(BASE, "blog", "analogi-bonfiglioli.html")
 # ---------------------------------------------------------------- данные
 BRANDS = {
     "sew":          ("SEW-Eurodrive", "Германия"),
-    "sew-tramec":   ("SEW Tramec", "Италия"),
+    # Слаг "tramec", а не "tramec": Tramec — независимый завод в Италии,
+    # SEW-Eurodrive — другая (немецкая) фирма. Смешение брендов породило 16 статей
+    # с несуществующим «Tramec»; они переименованы, старые слаги под 301.
+    "tramec":       ("Tramec", "Италия"),
     "nord":         ("NORD Drivesystems", "Германия"),
     "bonfiglioli":  ("Bonfiglioli", "Италия"),
     "motovario":    ("Motovario", "Италия"),

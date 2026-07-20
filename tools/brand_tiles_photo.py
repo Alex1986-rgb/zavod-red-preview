@@ -31,7 +31,10 @@ BRANDS = [
     ("varmec", "Varmec", "Италия"),
     ("innored", "Innored", "Китай"),
     ("vemper", "Vemper", "Импорт"),
-    ("sew-tramec", "SEW Tramec", "Италия"),
+    # Слаг именно "tramec": Tramec — самостоятельный итальянский завод, к немецкой
+    # SEW-Eurodrive отношения не имеет. Прежний "tramec" был выдуманным брендом,
+    # его страницы отданы 301-редиректом на /tramec. Не возвращать обратно.
+    ("tramec", "Tramec", "Италия"),
     ("flender", "Flender", "Германия"),
     ("siemens", "Siemens", "Германия"),
     ("keb", "KEB", "Германия"),

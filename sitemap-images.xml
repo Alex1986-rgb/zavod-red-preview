@@ -29,7 +29,7 @@
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/lenze.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/motovario.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/nord.png</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/brands-float/sew-tramec.png</image:loc></image:image>
+    <image:image><image:loc>https://zavod-red.ru/assets/brands-float/tramec.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/sew.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/siemens.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/siti.png</image:loc></image:image>
@@ -160,7 +160,7 @@
     <image:image><image:loc>https://zavod-red.ru/assets/brands/lenze.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands/motovario.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands/nord.webp</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/brands/sew-tramec.webp</image:loc></image:image>
+    <image:image><image:loc>https://zavod-red.ru/assets/brands/tramec.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands/sew.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands/siemens.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands/siti.webp</image:loc></image:image>
@@ -194,8 +194,8 @@
     <image:image><image:loc>https://zavod-red.ru/assets/zr_logo.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://zavod-red.ru/brands/sew-tramec</loc>
-    <image:image><image:loc>https://zavod-red.ru/assets/brands/sew-tramec.webp</image:loc></image:image>
+    <loc>https://zavod-red.ru/brands/tramec</loc>
+    <image:image><image:loc>https://zavod-red.ru/assets/brands/tramec.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/zr_logo.webp</image:loc></image:image>
   </url>
   <url>

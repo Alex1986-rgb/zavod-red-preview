@@ -25,7 +25,9 @@ CATN={'червячный':'Червячные','соосно-цилиндрич
 BRAND_SLUG=[('siti','siti'),('sew','sew'),('nord','nord'),('bonfiglioli','bonfiglioli'),('motovario','motovario'),
  ('bauer','bauer'),('lenze','lenze'),('varvel','varvel'),('stm','stm'),('rossi','rossi'),('watt','watt-drive'),
  ('yilmaz','yilmaz'),('transtecno','transtecno'),('innovari','innovari'),('vemper','vemper'),('innored','innored'),
- ('tramec','sew-tramec'),('varmec','varmec')]
+ # слаг 'tramec', а не 'tramec': Tramec (Италия) и SEW-Eurodrive (Германия) —
+ # разные фирмы, склейка была ошибкой; фото и /brands/ лежат под именем бренда
+ ('tramec','tramec'),('varmec','varmec')]
 
 CSS=('<style id="apro-css">'
  # липкая галерея — прокручивается вместе с правой колонкой, убирает «мёртвое» пустое место
@@ -107,13 +109,13 @@ CSS=('<style id="apro-css">'
 def brand_photos(imp_short):
     """список br-{brand}-t*.webp по бренду (2 ракурса), иначе [].
     bslug — для ссылки /brands/{bslug}; для фото при отсутствии пробуем короткий
-    слаг (sew-tramec → br-tramec)."""
+    слаг по последнему сегменту (watt-drive → br-drive)."""
     bl=imp_short.lower()
     slug=next((s for k,s in BRAND_SLUG if k in bl),None)
     if not slug: return [],None
     def _glob(sl): return sorted(glob.glob(os.path.join(BASE,'assets','catalog','br-'+sl+'-t*.webp')))
     ph=_glob(slug)
-    if not ph and '-' in slug:            # sew-tramec → tramec
+    if not ph and '-' in slug:            # составной слаг → короткое имя файла
         ph=_glob(slug.split('-')[-1])
     return ['../assets/catalog/'+os.path.basename(p) for p in ph], slug
 

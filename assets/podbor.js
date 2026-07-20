@@ -23,11 +23,18 @@
   var presetType=(root.getAttribute('data-type')||'').trim();
   var lockType=root.getAttribute('data-locktype')==='1';
   var compact=root.getAttribute('data-compact')==='1'; // только фильтры + счётчик, без списка строк
-  var presetBrand=(root.getAttribute('data-brand')||'').trim(); // предустановленный бренд (ключ как в g.a), для страниц брендов
+  // старые ключи брендов → актуальные. 'SEW-Tramec' — выдуманная фирма (реальная — Tramec, Италия);
+  // алиас нужен, чтобы уцелевший где-то в HTML или в рекламной ссылке старый ключ не промахнулся
+  // мимо BMAP: при неизвестном ключе groupHasBrand молча пропускает все группы (фильтр деградирует).
+  // 'Tos Znojmo' — страница brands/tos-znojmo.html ставит человекочитаемое имя, а ключ
+  // в данных короткий ('TZ'); без алиаса фильтр по бренду на той странице молча отключался.
+  var BALIAS={'SEW-Tramec':'Tramec','SEW Tramec':'Tramec','Tos Znojmo':'TZ'};
+  function normBrand(k){ k=(k||'').trim(); return BALIAS[k]||k; }
+  var presetBrand=normBrand(root.getAttribute('data-brand')); // предустановленный бренд (ключ как в g.a), для страниц брендов
   var lockBrand=root.getAttribute('data-lockbrand')==='1';      // зафиксировать бренд (страница конкретной фирмы)
   // бренд может прийти и из URL: /podbor?brand=SEW+EURODRIVE — переход «полный подбор» со страницы бренда
   (function(){ var m=(location.search||'').match(/[?&]brand=([^&]*)/);
-    if(m && !presetBrand){ presetBrand=decodeURIComponent(m[1].replace(/\+/g,' ')).trim(); if(presetBrand) lockBrand=true; } })();
+    if(m && !presetBrand){ presetBrand=normBrand(decodeURIComponent(m[1].replace(/\+/g,' '))); if(presetBrand) lockBrand=true; } })();
 
   var ENABLED=['червячный','соосно-цилиндрический','коническо-цилиндрический','плоско-цилиндрический','цилиндрический'];
   var enabledIdx=[];
@@ -91,12 +98,28 @@
   var _selCache={};
   function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'TZ',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'SEW-Tramec',n:'SEW-Tramec',s:''}];
+  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'Tos Znojmo',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'Tramec',n:'Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
   // ключ кнопки → фактические ключи бренда в g.a (данные разбиты по под-сериям). 'Varvel серия 7МЧ'
-  // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных (Flender/Siemens/…) убраны из кнопок.
-  var BKEYS={'NORD':['NORD','Nord цилиндро-червячные'],'STM':['STM','STM AMP, AMF','STM серия RMI','STM серия UMI','STM серия WMI'],'TZ':['TZ','Tos Znojmo'],'SITI':['SITI','Siti BH','Siti серия MI','Siti серия MU','Siti PD','Siti Varmec RFV'],'Varmec':['VARMEC RCV','Siti Varmec RFV'],'Varvel':['Varvel MRD','Varvel MRN','Varvel RO, RV','Varvel серия SRS','Varvel серия SRT'],'Rossi':['Rossi артикулы R I, MR','Rossi серия AS(MRV)'],'InnoRed':['Innored'],'SEW-Tramec':['Tramec T','Tramec серия КМ','Tramec серия X','Tramec серия PA, PC']};
-  function bKeys(k){ return BKEYS[k]||[k]; }
+  // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных отсеиваются на лету — см. brandHasData().
+  var BKEYS={'NORD':['NORD','Nord цилиндро-червячные'],'STM':['STM','STM AMP, AMF','STM серия RMI','STM серия UMI','STM серия WMI'],'TZ':['TZ','Tos Znojmo'],'SITI':['SITI','Siti BH','Siti серия MI','Siti серия MU','Siti PD','Siti Varmec RFV'],'Varmec':['VARMEC RCV','Siti Varmec RFV'],'Varvel':['Varvel MRD','Varvel MRN','Varvel RO, RV','Varvel серия SRS','Varvel серия SRT'],'Rossi':['Rossi артикулы R I, MR','Rossi серия AS(MRV)'],'InnoRed':['Innored'],'Tramec':['Tramec T','Tramec серия КМ','Tramec серия X','Tramec серия PA, PC']};
+  function bKeys(k){ return BKEYS[normBrand(k)]||[k]; }
+  // какие бренды реально представлены в podbor-data.json. Список кнопок строим по данным, а не
+  // по константе: иначе бренд без единой группы (Flender, Siemens, KEB, Boneng, Guomao, Unidrive)
+  // даёт пустую таблицу, а при следующем обновлении данных список снова разъедется.
+  var _availKeys=null;
+  function availKeys(){
+    if(_availKeys) return _availKeys;
+    _availKeys={};
+    if(DB&&DB.g) for(var i in DB.g){ var a=DB.g[i]&&DB.g[i].a; for(var k in a) _availKeys[k]=1; }
+    return _availKeys;
+  }
+  function brandHasData(k){
+    if(isOurs(k)) return true;                 // «Наши ZR» — не по g.a, показываем всегда
+    var ks=bKeys(k), set=availKeys();
+    for(var i=0;i<ks.length;i++) if(set[ks[i]]) return true;
+    return false;
+  }
   function brandModel(g,k){ var ks=bKeys(k); for(var i=0;i<ks.length;i++){ var a=g.a&&g.a[ks[i]]; if(a&&a[0]) return a[0]; } return null; }
 
   function curType(){
@@ -109,11 +132,15 @@
   }
   // «наши» виды: ZR (k='') и EVL (k='__evl__') — показываем все наши модели
   function isOurs(k){ return !k || k==='__evl__'; }
+  // отображаемое имя выбранного импортного бренда ('' — если выбраны наши ZR)
+  function brandLabel(){ if(isOurs(selBrand)) return ''; var b=BMAP[selBrand]; return (b&&b.n)||selBrand; }
   // группа проходит текущий бренд? (наши виды → все; иначе только с аналогом этого бренда)
   function groupHasBrand(g){
     var b=BMAP[selBrand];
-    if(!b||isOurs(b.k)) return true;
-    return !!brandModel(g,b.k);
+    if(isOurs(selBrand)) return true;
+    // ключа нет в BMAP (чужой/новый data-brand) — не пропускаем всё подряд, а фильтруем
+    // по самому значению: пустая выдача честнее, чем таблица чужих брендов на брендовой странице.
+    return !!brandModel(g,b?b.k:selBrand);
   }
   // базовый набор строк для диапазонов «от/до»: фильтр по типу + бренду + строке поиска
   // (модель/аналог), но БЕЗ числовых фильтров — чтобы каскад «выбрал модель → в колонках
@@ -291,7 +318,7 @@
     var expanded=!!selBrand;
     box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'
       +'<span class="pf-brands-set" '+(expanded?'':'hidden')+'>'
-      +BRANDS.map(function(b){
+      +BRANDS.filter(function(b){ return brandHasData(b.k)||b.k===selBrand; }).map(function(b){
         return '<button type="button" class="pf-pill pf-pill--brand'+(selBrand===b.k?' is-active':'')+'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'+b.n+'</button>';
       }).join('')+'</span>'
       +(expanded?'':'<button type="button" class="pf-pill" id="pfBrandsMore">Аналоги импортных брендов (SEW, NORD…) ▾</button>');
@@ -628,7 +655,11 @@
     var parts=[];
     COLS.forEach(function(c){var mn=root.querySelector('[data-min="'+c.i+'"]'),mx=root.querySelector('[data-max="'+c.i+'"]');var f=mn&&mn.value,t2=mx&&mx.value;if(f||t2)parts.push(c.h.split(',')[0]+': '+(f?'от '+f:'')+(t2?' до '+t2:''));});
     if(qEl&&qEl.value.trim())parts.push('модель/аналог: '+qEl.value.trim());
-    var msg='Прошу прислать на почту выгрузку подходящих типоразмеров ('+(CUR?CUR.length:0)+' шт) по параметрам: '+(parts.length?parts.join('; '):'без фильтра')+'.';
+    // бренд отдельной фразой, а не в списке параметров: менеджеру в CRM важнее всего, с какой
+    // брендовой страницы пришёл лид, и в тексте это должно читаться сразу.
+    var _bn=brandLabel();
+    var msg='Прошу прислать на почту выгрузку подходящих типоразмеров ('+(CUR?CUR.length:0)+' шт)'
+      +(_bn?' по бренду '+_bn:'')+' по параметрам: '+(parts.length?parts.join('; '):'без фильтра')+'.';
     var m=document.getElementById('zrMsg'); if(m){ m.value=msg; }
   });
   if($('pfMore'))$('pfMore').addEventListener('click',more);
@@ -648,6 +679,11 @@
     var tname=(DB&&selType>=0)?DB.t[selType]:presetType;
     var want=TYPE_LABEL[tname]||tname;
     var msg=document.getElementById('zrMsg');
-    if(want&&msg&&!msg.value){ msg.value='Интересует '+want.toLowerCase()+' редуктор (из таблицы подбора). Прошу подобрать типоразмер, цену и срок.'; }
+    // бренд в тексте заявки обязателен: иначе менеджер в CRM не видит, что лид пришёл с /brands/sew
+    var bn=brandLabel();
+    if((want||bn)&&msg&&!msg.value){
+      msg.value='Интересует '+(want?want.toLowerCase()+' редуктор':'редуктор')+(bn?', бренд '+bn:'')
+        +' (из таблицы подбора). Прошу подобрать типоразмер, цену и срок.';
+    }
   });
 })();

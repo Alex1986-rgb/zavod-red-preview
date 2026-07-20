@@ -15,7 +15,7 @@ import re, sys, glob, os, json, html
 BASE=os.path.join(os.path.dirname(__file__),'..')
 D=json.load(open(os.path.join(BASE,'assets','podbor-data.json')))
 BRAND_SLUG=[('motovario','motovario'),('sew','sew'),('bonfiglioli','bonfiglioli'),('nord','nord'),
- ('bauer','bauer'),('lenze','lenze'),('stm','stm'),('siti','siti'),('tramec','sew-tramec'),
+ ('bauer','bauer'),('lenze','lenze'),('stm','stm'),('siti','siti'),('tramec','tramec'),  # НЕ 'tramec': Tramec и SEW — разные производители
  ('varvel','varvel'),('vemper','vemper'),('watt','watt-drive'),('yilmaz','yilmaz'),
  ('rossi','rossi'),('transtecno','transtecno'),('innovari','innovari'),('innored','innored'),
  ('guomao','guomao'),('flender','flender'),('keb','keb'),('siemens','siemens')]
