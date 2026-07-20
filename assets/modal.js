@@ -177,10 +177,13 @@
         show('Заявка принята. Инженер свяжется с вами и пришлёт КП.','ok');
         var i=document.getElementById('zrIntro');if(i)i.style.display='none';form.style.display='none';
       } else {
+        // Цель на ОШИБКУ: раньше неуспешные отправки были невидимы в Метрике
+        // (цель слалась только при success) — потери заявок никак не проявлялись.
+        if(window.ym)ym(109758131,'reachGoal','zayavka_error');
         show((d.message||'Не удалось отправить заявку.')+' Позвоните: +7 (495) 151-41-02.','err');
       }
     };
-    xhr.onerror=function(){unlock();show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');};
+    xhr.onerror=function(){unlock();if(window.ym)ym(109758131,'reachGoal','zayavka_error');show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');};
     xhr.send(fd);
   });
 })();
@@ -341,10 +344,12 @@
         form.reset();
         show('Заявка принята. Инженер свяжется с вами и пришлёт КП.','ok');
       } else {
+        if(window.ym)ym(109758131,'reachGoal','zayavka_error');
         show((d.message||'Не удалось отправить.')+' Позвоните: +7 (495) 151-41-02.','err');
       }
     }).catch(function(){
       if(btn){btn.disabled=false;btn.textContent=_t;}
+      if(window.ym)ym(109758131,'reachGoal','zayavka_error');
       show('Ошибка сети. Позвоните: +7 (495) 151-41-02.','err');
     });
   });
