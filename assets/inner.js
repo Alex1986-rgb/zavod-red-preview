@@ -76,7 +76,7 @@ function wireLeadForm(formId, opts){
 }
 
 /* Энхансер карточек (♥ в избранное + Подробнее) — подключается на всех страницах сайта */
-(function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=3';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
+(function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=2607c09d12d0';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
 
 /* Карточка аналога: бренд импорта — крупно и жирно, наш аналог ZR — вторичной строкой.
    Работает на /analog/* (H1 вида «SEW F 107 — мотор-редуктор и российский аналог ZR 6106»). */

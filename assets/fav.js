@@ -133,6 +133,12 @@
     var name = (cartEl && cartEl.getAttribute("data-name")) || txt(card, ".pcard-title");
     if (!name) return;
     var img = (cartEl && cartEl.getAttribute("data-img")) || ""; var im = card.querySelector("img"); if (!img && im) img = im.getAttribute("src") || "";
+    // Путь берётся со страницы каталога и часто относительный («../assets/…»). Корзина и
+    // кабинет живут в корне, поэтому сохранённый как есть путь там уже никуда не ведёт —
+    // приводим к абсолютному от текущей страницы, пока контекст ещё известен.
+    if (img && img.charAt(0) !== "/" && !/^(https?:|data:)/.test(img)) {
+      try { img = new URL(img, location.href).pathname; } catch (e) {}
+    }
     var slug = slugify((name.split("·")[0] || name).trim());  // «EVL 063/747 · Motovario …» → evl-063-747
     var detail = "/reduktor/" + slug;
     var obj = { name: name, price: 0, spec: txt(card, ".pcard-type"), img: img, url: detail };

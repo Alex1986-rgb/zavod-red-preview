@@ -266,6 +266,8 @@
     else { selType=-1; }
     if(!lockType) buildPills();
     buildBrands();
+    // бренд мог прийти со страницы бренда (data-brand) или из ?brand= — индекс нужен сразу
+    var _b0=BMAP[selBrand]; if(_b0&&!isOurs(_b0.k))loadAnalogIdx(_b0);
     if(lockBrand){
       var _bo=BMAP[selBrand];
       var _bl=$('pfBrandLock');
@@ -315,10 +317,10 @@
 
   function buildBrands(){
     var box=$('pfBrands'); if(!box||!DB)return;
-    // П.12 заказчика: на ОБЩЕМ калькуляторе показываем только нашу марку ZR — без
-    // переключателя импортных брендов. Переключатель оставляем лишь для брендовых
-    // рекламных переходов (selBrand задан из URL/лендинга) — кампании Директа работают.
-    if(!selBrand){ box.style.display='none'; box.innerHTML=''; return; }
+    // Раньше здесь стоял ранний выход: без выбранного бренда переключатель прятался целиком
+    // (п.12 прежней программы — «на общем подборе только наша марка ZR»). Заказчик отменил
+    // 20.07.2026: на подборе по параметрам нужно выбирать и импортные бренды, а не только ZR.
+    // Свёрнутый вид уже был написан ниже, но из-за этого выхода оставался недостижим.
     box.style.display='';
     var expanded=!!selBrand;
     box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'
@@ -339,6 +341,7 @@
         btn.classList.add('is-active');
         var th=root.querySelector('.pf-th-tz'); var bb=BMAP[selBrand];
         if(th)th.textContent=(bb&&!isOurs(bb.k))?(bb.n+' (наш аналог ZR)'):'Типоразмер редуктора';
+        if(bb&&!isOurs(bb.k))loadAnalogIdx(bb);   // ссылки «Заказать» ведут на карточки этого бренда
         fillModels(); fillRanges(); syncRanges(); apply();
       });
     });
@@ -438,6 +441,48 @@
 
   function evlSlug(n){return n.toLowerCase().replace(/ /g,'-').replace(/\//g,'-').replace(/х/g,'x');}
   function frameSlug(s){return s.toLowerCase().replace(/х/g,'x').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+
+  /* ---- карточки /analog/ для таблицы подбора --------------------------------
+     Индекс строится скриптом tools/gen_analog_index.py из реальных файлов analog/
+     и лежит по одному файлу на бренд (самый крупный — nord, ~360 КБ), поэтому
+     грузим только выбранный бренд и только когда его выбрали. */
+  var AIDX={}, AIDX_LOADING={};
+  var AIDX_NAME={'SEW EURODRIVE':'sew'};              // остальные совпадают с ключом в нижнем регистре
+  function aidxName(b){ return AIDX_NAME[b.k] || b.k.toLowerCase().split(' ')[0]; }
+  function loadAnalogIdx(b){
+    var n=aidxName(b);
+    if(AIDX[n]!==undefined||AIDX_LOADING[n])return;
+    AIDX_LOADING[n]=1;
+    fetch(pfx+'assets/analog-idx/'+n+'.json')
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(j){ AIDX[n]=j; AIDX_LOADING[n]=0; if(j)apply(); })   // пришёл — перерисуем ссылки
+      .catch(function(){ AIDX[n]=null; AIDX_LOADING[n]=0; });
+  }
+  function analogSlug(b,model,kw,ratio){
+    var n=aidxName(b), idx=AIDX[n];
+    if(!idx)return null;
+    // В базе подбора модель часто записана несколькими обозначениями через запятую
+    // («RV 32, MRV 32, MRV 118») — страница есть у каждого по отдельности, поэтому
+    // берём первое, для которого нашлась запись, а не склеенную строку целиком.
+    var ms=null, list=null, parts=String(model).split(',');
+    for(var pi=0;pi<parts.length;pi++){
+      var cand=frameSlug(parts[pi]);
+      if(cand&&idx[cand]&&idx[cand].length){ ms=cand; list=idx[cand]; break; }
+    }
+    if(!list)return null;
+    // Передаточные в базе подбора и в именах страниц не совпадают до цифры, поэтому берём
+    // ближайшую реальную страницу: сначала с той же мощностью (она дискретна и точна),
+    // и уже среди них — с минимальным расхождением по передаточному.
+    var best=null,bestScore=Infinity;
+    for(var i=0;i<list.length;i++){
+      var e=list[i];
+      var dkw=Math.abs(e[1]-kw)/Math.max(kw,0.01);
+      var di=Math.abs(e[0]-ratio)/Math.max(ratio,0.01);
+      var score=dkw*10+di;                        // мощность важнее: её клиент задаёт точно
+      if(score<bestScore){bestScore=score;best=e;}
+    }
+    return best?(n+'-'+ms+best[2]):null;
+  }
   function rowHtml(it){
     var g=DB.g[it[0]];
     var gost=Object.keys(g.g||{}).map(function(k){return g.g[k];}).filter(Boolean);
@@ -447,10 +492,14 @@
       var imp=brandModel(g,b.k);
       if(imp){
         tz='<td class="pf-tz"><b>'+b.n+' '+imp+'</b><span class="pf-tr-gost">наш аналог '+(zrOf(g.e)||g.e)+'</span></td>';
-        // хаб-страница есть только у брендов с b.s (SEW); у остальных ведём на нашу карточку EVL — без 404
-        ord=b.s
-          ? '<td class="pf-order"><a class="pf-ord" href="/analog/'+b.s+'-'+frameSlug(imp)+'">Заказать</a></td>'
-          : '<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
+        // «Заказать» ведёт на БРЕНДОВУЮ карточку /analog/ — для всех брендов, а не только
+        // для SEW (раньше у остальных стояла обезличенная карточка ZR, и бренд терялся).
+        // Слаг не склеиваем: в именах файлов передаточные целые, в базе подбора дробные,
+        // у дублей есть суффикс — берём ближайшую реальную страницу из индекса analog-idx.
+        var au=analogSlug(b, imp, it[1], it[4]);
+        ord=au
+          ? '<td class="pf-order"><a class="pf-ord" href="/analog/'+au+'">Заказать</a></td>'
+          : '<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'?imp='+encodeURIComponent(b.n+' '+imp)+'">Заказать</a></td>';
       }else{
         // EVL — внутренний код, наружу и в CRM уходит только маркировка ZR
         var _zrx=zrOf(g.e)||g.e;

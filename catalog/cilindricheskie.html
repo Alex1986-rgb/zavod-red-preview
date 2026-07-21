@@ -289,15 +289,21 @@
   </div>
 </footer>
 
-<script src="../assets/inner.js?v=260780aa13ff"></script>
+<script src="../assets/inner.js?v=2607ee9da6a3"></script>
 
 <script>wireLeadForm('catForm',{title:'Заявка: Цилиндрические редукторы'});</script>
-<script defer src="../assets/modal.js?v=260702335bdf"></script><script defer src="../assets/fav.js?v=3"></script>
-<script defer src="../assets/podbor.js?v=26075b96ef85"></script>
+<script defer src="../assets/modal.js?v=260702335bdf"></script><script defer src="../assets/fav.js?v=2607c09d12d0"></script>
+<script defer src="../assets/podbor.js?v=2607bfe95fa1"></script>
 <script>
 (function(){document.querySelectorAll('.pcard-cart').forEach(function(btn){
  btn.addEventListener('click',function(){try{var c=JSON.parse(localStorage.getItem('zr_cart')||'{"items":[]}');if(!c.items)c.items=[];
-  c.items.push({name:btn.dataset.name,price:0,qty:1,img:btn.dataset.img});
+  var im=btn.dataset.img||'';
+  /* путь к картинке на плитке относительный («../assets/…»), а корзина и кабинет
+     лежат в корне — там он уже никуда не ведёт; приводим к абсолютному */
+  if(im&&im.charAt(0)!=='/'&&!/^(https?:|data:)/.test(im)){try{im=new URL(im,location.href).pathname;}catch(e){}}
+  var ex=c.items.filter(function(i){return i.name===btn.dataset.name;})[0];
+  /* повторный клик раньше плодил дубль вместо увеличения количества */
+  if(ex)ex.qty=(ex.qty||1)+1; else c.items.push({name:btn.dataset.name,price:0,qty:1,img:im});
   localStorage.setItem('zr_cart',JSON.stringify(c));
   btn.textContent='\u2713 \u0412 \u043a\u043e\u0440\u0437\u0438\u043d\u0435';btn.classList.add('added');
   setTimeout(function(){btn.textContent='\u0412 \u043a\u043e\u0440\u0437\u0438\u043d\u0443';btn.classList.remove('added');},1600);
