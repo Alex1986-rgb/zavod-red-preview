@@ -4,6 +4,10 @@ name: Deploy site (lftp parallel)
 on:
   push:
     branches: [main]
+    # Правки самой автоматизации содержимое сайта не меняют — не гоняем часовой
+    # деплой впустую. Нужно залить принудительно — Run workflow вручную.
+    paths-ignore:
+      - '.github/**'
   workflow_dispatch: {}
 concurrency:
   group: ftp-deploy

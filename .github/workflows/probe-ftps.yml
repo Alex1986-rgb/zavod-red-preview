@@ -1,0 +1,79 @@
+name: Проверка канала заливки (FTPS/SFTP)
+# Диагностика, а НЕ деплой: ничего не заливает и не удаляет, только логинится
+# и читает. Отвечает на вопрос «чем можно заливать сайт в шифрованном виде».
+#
+# УЖЕ УСТАНОВЛЕНО (прогоны 21.07.26, см. шаги ниже):
+#   FTPS explicit  — НЕТ. ProFTPD не объявляет AUTH TLS, curl и lftp получают отказ.
+#   FTPS implicit  — НЕТ. Порт 990 не отвечает TLS-рукопожатием (шаг висел до таймаута).
+#   SSH / SFTP     — ЕСТЬ. Порт 22, баннер OpenSSH_8.9p1 Ubuntu-3ubuntu0.16.
+# Вывод: шифрованная заливка возможна только через SFTP/rsync поверх SSH.
+#
+# Запуск вручную: Actions → этот воркфлоу → Run workflow.
+on:
+  workflow_dispatch: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: 1. Что сервер объявляет в FEAT (без пароля)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          printf 'FEAT\r\nQUIT\r\n' | timeout 20 nc "$FTP_HOST" 21 || true
+
+      - name: 2. FTPS explicit через lftp — конфигурация «как в деплое»
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          timeout 60 lftp -c "
+          set ftp:ssl-force yes;
+          set ftp:ssl-protect-data yes;
+          set ssl:verify-certificate no;
+          set net:timeout 15; set net:max-retries 1;
+          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
+          cls -l /public_html/ | head -3;
+          " && echo "==> FTPS explicit: OK" || echo "==> FTPS explicit: FAIL (ожидаемо)"
+
+      - name: 3. FTPS implicit, порт 990 (жёсткий таймаут — раньше висел)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          echo | timeout 15 openssl s_client -connect "$FTP_HOST:990" 2>&1 \
+            | grep -iE "protocol|cipher is|verify return|connect:" | head -5 \
+            || echo "==> 990: TLS-ответа нет"
+
+      - name: 4. SSH доступен? (порт 22 + баннер)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          timeout 12 nc -zv "$FTP_HOST" 22 && echo "==> порт 22 открыт" || echo "==> порт 22 закрыт"
+          timeout 12 nc -w 8 "$FTP_HOST" 22 </dev/null | head -1 || true
+
+      - name: 5. Вход деплой-ключом по SSH (главная проверка)
+        continue-on-error: true
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          # Ключ ещё может быть не авторизован в панели — тогда ждём внятный отказ,
+          # а не зависание. BatchMode=yes запрещает интерактивный запрос пароля.
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          set +e
+          timeout 40 ssh -v -o StrictHostKeyChecking=no -o BatchMode=yes \
+              -o ConnectTimeout=15 -o PreferredAuthentications=publickey \
+              -i ~/.ssh/id_ed25519 "$SSH_USER@$SSH_HOST" \
+              'echo "==> SSH ВХОД OK"; echo "pwd: $(pwd)"; echo "rsync: $(command -v rsync || echo НЕТ)"; ls -d ~/public_html 2>/dev/null || echo "public_html не в домашней"' 2>&1 \
+            | grep -viE "^debug[123]: (kex|cipher|compress|rekey|SSH2_MSG|Local version|expecting|will send|pledge)" | tail -30
+          echo "--- итог входа: код ${PIPESTATUS[0]} (0 = ключ авторизован) ---"
