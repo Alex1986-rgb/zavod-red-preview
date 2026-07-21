@@ -50,6 +50,18 @@ code, h = get('/reduktor/evl-737')
 check('Карточка ZR: плашка-оффер и блок доверия', 'p2-offer' in h and 'p2-trust' in h,
       'карточка осталась в старом виде')
 
+# ── 3b. «Тонкие» карточки: исполнения, мотор-редукторы ZR, типоразмеры ───────
+# 19 358 страниц, которые дольше всех оставались в старом виде — их не задел ни один
+# из прежних проходов, и заметил это заказчик, а не проверка.
+for path in ['/ispolnenie/evl-1810-i26_32-30kvt',
+             '/motor-reduktor-zr/zr-959-i5-4kvt',
+             '/tiporazmer/evl-198x-i1_39']:
+    code, h = get(path)
+    check(f'{path} — в новом виде',
+          code == 200 and 'p2-offer' in h and 'p2-trust' in h,
+          f'код {code}, оффер {"есть" if "p2-offer" in h else "нет"}, '
+          f'плитки {"есть" if "p2-trust" in h else "нет"}')
+
 # ── 4. Кнопки карточки аналога: две, оригинал первым ─────────────────────────
 code, h = get('/analog/lenze-gfl-04-i128-51-0-12kvt')
 m = re.search(r'<div class="p2-cta1">(.*?)</div>', h, re.S)
