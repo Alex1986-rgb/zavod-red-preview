@@ -448,7 +448,10 @@
      грузим только выбранный бренд и только когда его выбрали. */
   var AIDX={}, AIDX_LOADING={};
   // «Watt Drive» в именах файлов — двусловный слаг watt-drive, а не watt
-  var AIDX_NAME={'SEW EURODRIVE':'sew','Watt Drive':'watt-drive'};
+  // 'TZ' — короткий ключ Tos Znojmo в базе подбора, а файлы называются tos-znojmo-*.
+  // Без этой строки aidxName давал 'tz', индекс не находился, и все 30 карточек бренда
+  // уходили на обезличенную карточку ZR — ровно тот баг, который вся правка и закрывает.
+  var AIDX_NAME={'SEW EURODRIVE':'sew','Watt Drive':'watt-drive','TZ':'tos-znojmo'};
   function aidxName(b){ return AIDX_NAME[b.k] || b.k.toLowerCase().split(' ')[0]; }
   // Варианты написания модели для поиска в индексе. В базе подбора попадаются кириллические
   // «В»/«С» вместо латинских B/C («112В, 100С»), а страницы Tramec названы просто по
