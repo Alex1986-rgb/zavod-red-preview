@@ -1,0 +1,59 @@
+name: Проверка канала заливки (FTPS/SFTP)
+# Диагностика, а НЕ деплой: ничего не заливает и не удаляет, только логинится
+# и читает список файлов. Отвечает на вопрос «поддерживает ли Timeweb шифрование».
+# Запуск вручную: Actions → этот воркфлоу → Run workflow.
+on:
+  workflow_dispatch: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: 1. Что сервер объявляет в FEAT (без пароля)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          echo "host: $FTP_HOST"
+          printf 'FEAT\r\nQUIT\r\n' | timeout 20 nc "$FTP_HOST" 21 || true
+
+      - name: 2. FTPS с обязательным шифрованием (curl, реальный логин)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          # --ftp-ssl-reqd = упасть, если TLS недоступен. Только листинг, ничего не пишем.
+          curl -sS -v --max-time 40 --ftp-ssl-reqd --ftp-pasv \
+               -u "$FTP_USER:$FTP_PASS" "ftp://$FTP_HOST/" -o /dev/null 2>&1 \
+            | grep -viE "^\* (TLSv|SSL connection using|ALPN)" | tail -40
+          echo "RESULT_CURL_FTPS=$?"
+
+      - name: 3. FTPS через lftp — ровно та конфигурация, что пойдёт в деплой
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+          set ftp:ssl-force yes;
+          set ftp:ssl-protect-data yes;
+          set ssl:verify-certificate no;
+          set net:timeout 20;
+          open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\";
+          cls -l /public_html/ | head -5;
+          " && echo "==> LFTP FTPS: OK (шифрование работает)" \
+            || echo "==> LFTP FTPS: FAIL (сервер не принял TLS)"
+
+      - name: 4. Доступен ли SSH/SFTP (порт 22)
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          timeout 12 nc -zv "$FTP_HOST" 22 && echo "==> порт 22 открыт" || echo "==> порт 22 закрыт"
+          timeout 12 nc -w 8 "$FTP_HOST" 22 </dev/null | head -1 || true
