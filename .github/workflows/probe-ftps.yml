@@ -57,3 +57,18 @@ jobs:
         run: |
           timeout 12 nc -zv "$FTP_HOST" 22 && echo "==> порт 22 открыт" || echo "==> порт 22 закрыт"
           timeout 12 nc -w 8 "$FTP_HOST" 22 </dev/null | head -1 || true
+
+      - name: 5. Implicit FTPS (порт 990) — есть ли там настоящий TLS
+        continue-on-error: true
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "--- TLS-рукопожатие на 990 ---"
+          echo | timeout 20 openssl s_client -connect "$FTP_HOST:990" 2>&1 \
+            | grep -iE "protocol|cipher is|subject=|verify return|refused|no peer" | head -8
+          echo "--- lftp implicit ftps ---"
+          lftp -c "set ssl:verify-certificate no; set net:timeout 15; \
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftps://$FTP_HOST:990\"; cls -l /public_html/ | head -3;" \
+            && echo "==> IMPLICIT FTPS: OK" || echo "==> IMPLICIT FTPS: FAIL"
