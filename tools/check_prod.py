@@ -114,6 +114,23 @@ vis = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', h, flags=re.S)
 vis = re.sub(r'<[^>]+>', ' ', vis)
 check('EVL не виден в тексте главной', 'EVL' not in vis, 'старая марка на месте')
 
+# ── 10. Боевые ассеты совпадают со сборкой ───────────────────────────────────
+# Главная ловушка деплоя: lftp mirror сравнивает файлы ПО РАЗМЕРУ. Правка, не изменившая
+# длину (перестановка блоков, замена версии той же длины), молча не заливается, а Actions
+# показывает успех. Дважды за сессию поймали именно так — теперь проверяется всегда.
+import hashlib, os
+_dist = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'dist')
+for a in ['podbor.js', 'inner.css', 'modal.js', 'inner.js']:
+    p = os.path.join(_dist, 'assets', a)
+    if not os.path.exists(p):
+        continue
+    code, live = get('/assets/' + a)
+    same = code == 200 and hashlib.sha1(live.encode('utf-8')).hexdigest() == \
+        hashlib.sha1(open(p, encoding='utf-8').read().encode('utf-8')).hexdigest()
+    check(f'/assets/{a} совпадает со сборкой', same,
+          f'код {code}, размеры: прод {len(live)}, сборка {os.path.getsize(p)}'
+          + (' — РАЗМЕР СОВПАЛ, lftp пропустил файл' if len(live) == os.path.getsize(p) else ''))
+
 print()
 bad = [r for r in results if not r[0]]
 print(f'Проверок: {len(results)} | провалено: {len(bad)}')
