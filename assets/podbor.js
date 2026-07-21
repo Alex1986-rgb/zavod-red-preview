@@ -345,18 +345,21 @@
     // 20.07.2026: на подборе по параметрам нужно выбирать и импортные бренды, а не только ZR.
     // Свёрнутый вид уже был написан ниже, но из-за этого выхода оставался недостижим.
     box.style.display='';
-    var expanded=!!selBrand;
-    box.innerHTML='<span class="pf-brands-lbl">Показать в марках:</span>'
-      +'<span class="pf-brands-set" '+(expanded?'':'hidden')+'>'
-      +BRANDS.filter(function(b){ return brandHasData(b.k)||b.k===selBrand; }).map(function(b){
-        return '<button type="button" class="pf-pill pf-pill--brand'+(selBrand===b.k?' is-active':'')+'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'+b.n+'</button>';
+    // Показываем ВСЕ марки, а не только те, у кого есть данные аналогов (решение заказчика):
+    // отсутствие бренда в списке читается как «не работаем с ним», хотя мы работаем — просто
+    // подбор по параметрам для него не построен. Такие марки помечаем и подписываем.
+    box.className='pf-brands pf-brands--panel';
+    box.innerHTML='<span class="pf-brands-lbl">Показать в марках</span>'
+      +'<span class="pf-brands-set">'
+      +BRANDS.map(function(b){
+        var noData=!isOurs(b.k)&&!brandHasData(b.k);
+        return '<button type="button" class="pf-pill pf-pill--brand'
+          +(selBrand===b.k?' is-active':'')+(noData?' is-nodata':'')
+          +'" data-bk="'+b.k.replace(/"/g,'&quot;')+'"'
+          +(noData?' title="Подбор по параметрам для этой марки не построен — покажем всю базу ZR, аналог подтвердит инженер"':'')
+          +'>'+b.n+'</button>';
       }).join('')+'</span>'
-      +(expanded?'':'<button type="button" class="pf-pill" id="pfBrandsMore">Аналоги импортных брендов (SEW, NORD…) ▾</button>');
-    var more=$('pfBrandsMore');
-    if(more)more.addEventListener('click',function(){
-      more.remove();
-      var s=box.querySelector('.pf-brands-set'); if(s)s.hidden=false;
-    });
+      +'<span class="pf-brands-hint">Выберите марку — в таблице появится её модель и наш аналог ZR</span>';
     Array.prototype.forEach.call(box.querySelectorAll('.pf-pill--brand'),function(btn){
       btn.addEventListener('click',function(){
         selBrand=btn.getAttribute('data-bk')||'';

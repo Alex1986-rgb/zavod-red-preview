@@ -134,3 +134,19 @@
 .pf-pill--brand.is-active{background:var(--red);color:#fff;border-color:var(--red)}
 .pf-ord--req{background:transparent !important;border:1.5px solid var(--red) !important;color:var(--red) !important}
 .pf-ord--req:hover{background:var(--red) !important;color:#fff !important}
+
+/* Переключатель марок — выделенный блок, а не строчка пилюль в общем потоке.
+   Заказчик: «показать в марках добавь все модели и както выдели». Раньше он был свёрнут
+   за кнопкой и терялся; теперь это первое, что видно над таблицей подбора. */
+.pf-brands--panel{display:block;background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);
+  border-left:3px solid var(--red,#cf1616);border-radius:14px;padding:14px 16px;margin-bottom:16px}
+.pf-brands--panel .pf-brands-lbl{display:block;font:700 13px/1.2 'Space Grotesk',sans-serif;
+  color:var(--text,#101f2a);text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px}
+.pf-brands--panel .pf-brands-set{display:flex;flex-wrap:wrap;gap:7px}
+.pf-brands--panel .pf-brands-hint{display:block;font-size:12px;color:var(--muted,#7c8b95);margin-top:10px}
+.pf-brands--panel .pf-pill--brand{transition:.14s}
+.pf-brands--panel .pf-pill--brand.is-active{box-shadow:0 0 0 3px rgba(207,22,22,.16)}
+/* Марки без построенного подбора — приглушены, но кликабельны: скрывать их нельзя,
+   иначе читается как «не работаем с брендом». */
+.pf-brands--panel .pf-pill--brand.is-nodata{opacity:.55;border-style:dashed}
+.pf-brands--panel .pf-pill--brand.is-nodata:hover{opacity:1}
