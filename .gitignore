@@ -4,3 +4,4 @@ index-accelerator.log
 
 # backend secrets (never commit)
 api/config.local.php
+.imggen-state.json
