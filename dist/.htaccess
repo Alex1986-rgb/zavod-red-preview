@@ -1,0 +1,249 @@
+# Принудительный HTTPS + ЧИСТЫЕ URL (без .html)
+# (восстановление после перезаписи CRM-деплоем — 2026-07-07)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www → без www (единое зеркало, сразу на https) — против дублей хоста в индексе
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # http→https через X-Forwarded-Proto (Timeweb за nginx — иначе цикл)
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Директория без слэша (/catalog) → 301 на https СО слэшем, одним хопом.
+  # Без этого Apache за nginx-прокси генерит DirectorySlash-редирект на http:// —
+  # даунгрейд схемы + лишний хоп. Наш rewrite срабатывает раньше DirectorySlash.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+  # index.html → / (каталог), сразу на https
+  RewriteCond %{THE_REQUEST} \s/+(([^?\s]+/)?)index\.html[\s?] [NC]
+  RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
+
+  # Дубли-транслитерации глоссария → канонический URL (301). Файлы на сервере остаются
+  # (mirror не удаляет), но URL склеивается на старую версию — против дубль-контента.
+  RewriteRule ^glossary/koefficient-perekrytiya/?$ /glossary/koeffitsient-perekrytiya [R=301,L,NE]
+  RewriteRule ^glossary/tihohodnyy-val/?$ /glossary/tikhokhodnyy-val [R=301,L,NE]
+  RewriteRule ^glossary/tsilindricheskiy-reduktor/?$ /glossary/cilindricheskiy-reduktor [R=301,L,NE]
+  RewriteRule ^glossary/moment-inertsii/?$ /glossary/moment-inercii [R=301,L,NE]
+  RewriteRule ^glossary/vibratsiya-reduktora/?$ /glossary/vibraciya-reduktora [R=301,L,NE]
+  # Ошибочная атрибуция: 7Ч-М (советский червячный) был под брендом Varvel — редирект на каталог
+  RewriteRule ^analog/varvel-7-(.*)$ /catalog/chervyachnye [R=301,L]
+
+  # Выдуманный бренд «SEW Tramec» → реальный Tramec (Италия). SEW-Eurodrive — отдельная
+  # немецкая фирма со своей страницей /brands/sew; склейка двух брендов в одном слаге была
+  # ошибкой атрибуции. Одним правилом накрываем и страницу бренда, и 16 статей блога,
+  # и 20 страниц аналогов — везде слаг отличается только префиксом sew-.
+  RewriteRule ^brands/sew-tramec/?$ https://%{HTTP_HOST}/brands/tramec [R=301,L,NE]
+  RewriteRule ^blog/(.*)sew-tramec(.*)$ https://%{HTTP_HOST}/blog/$1tramec$2 [R=301,L,NE]
+  # analog/ льётся ОТДЕЛЬНЫМ ручным воркфлоу, поэтому редирект включаем только когда новый
+  # файл реально доехал на сервер — иначе до деплоя analog/ отправляли бы 20 живых URL в 404.
+  RewriteCond %{DOCUMENT_ROOT}/analog/tramec-$1.html -f
+  RewriteRule ^analog/sew-tramec-(.*?)/?$ https://%{HTTP_HOST}/analog/tramec-$1 [R=301,L,NE]
+
+  # Исправление устаревшей маркировки ZR в URL: червячные рамы 130/150 были 6113/6115 → верно 6013/6015. Защита индексации (одним хопом на https).
+  RewriteRule ^motor-reduktor-zr/(.*)6113(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16013$2 [R=301,L,NE]
+  RewriteRule ^motor-reduktor-zr/(.*)6115(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16015$2 [R=301,L,NE]
+
+  # ZR-слаги карточек редукторов → внутренние EVL-слаги (сайт в маркировке ZR, URL исторически EVL). 301, 104 шт.
+  RewriteRule ^reduktor/zr-6010/?$ https://%{HTTP_HOST}/reduktor/evl-7117 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6013/?$ https://%{HTTP_HOST}/reduktor/evl-7137 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6015/?$ https://%{HTTP_HOST}/reduktor/evl-7157 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-603/?$ https://%{HTTP_HOST}/reduktor/evl-737 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-603-604/?$ https://%{HTTP_HOST}/reduktor/evl-737-747 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-603-605/?$ https://%{HTTP_HOST}/reduktor/evl-737-757 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-603-606/?$ https://%{HTTP_HOST}/reduktor/evl-737-767 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-604/?$ https://%{HTTP_HOST}/reduktor/evl-747 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-604-607/?$ https://%{HTTP_HOST}/reduktor/evl-747-777 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-604-609/?$ https://%{HTTP_HOST}/reduktor/evl-747-797 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-605/?$ https://%{HTTP_HOST}/reduktor/evl-757 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-605-6010/?$ https://%{HTTP_HOST}/reduktor/evl-757-7117 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606/?$ https://%{HTTP_HOST}/reduktor/evl-767 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606-6013/?$ https://%{HTTP_HOST}/reduktor/evl-767-7137 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606-6015/?$ https://%{HTTP_HOST}/reduktor/evl-767-7157 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606-604/?$ https://%{HTTP_HOST}/reduktor/evl-063-747 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606-605/?$ https://%{HTTP_HOST}/reduktor/evl-063-757 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-606-606/?$ https://%{HTTP_HOST}/reduktor/evl-063-767 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-607/?$ https://%{HTTP_HOST}/reduktor/evl-777 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-607-605/?$ https://%{HTTP_HOST}/reduktor/evl-071-757 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-607-606/?$ https://%{HTTP_HOST}/reduktor/evl-071-767 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-607-607/?$ https://%{HTTP_HOST}/reduktor/evl-071-777 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-607-609/?$ https://%{HTTP_HOST}/reduktor/evl-071-797 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-608-6010/?$ https://%{HTTP_HOST}/reduktor/evl-080-7117 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-608-6013/?$ https://%{HTTP_HOST}/reduktor/evl-080-7137 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-608-607/?$ https://%{HTTP_HOST}/reduktor/evl-080-777 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-608-609/?$ https://%{HTTP_HOST}/reduktor/evl-080-797 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-609/?$ https://%{HTTP_HOST}/reduktor/evl-797 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-609-6010/?$ https://%{HTTP_HOST}/reduktor/evl-090-7117 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-609-6013/?$ https://%{HTTP_HOST}/reduktor/evl-090-7137 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6106/?$ https://%{HTTP_HOST}/reduktor/evl-1610 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6106-979/?$ https://%{HTTP_HOST}/reduktor/evl-1610-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6126/?$ https://%{HTTP_HOST}/reduktor/evl-1612 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6126-979/?$ https://%{HTTP_HOST}/reduktor/evl-1612-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6126-989/?$ https://%{HTTP_HOST}/reduktor/evl-1612-198 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6156/?$ https://%{HTTP_HOST}/reduktor/evl-1615 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-6156-999/?$ https://%{HTTP_HOST}/reduktor/evl-1615-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-636/?$ https://%{HTTP_HOST}/reduktor/evl-163 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-646/?$ https://%{HTTP_HOST}/reduktor/evl-164 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-656/?$ https://%{HTTP_HOST}/reduktor/evl-165 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-656-939/?$ https://%{HTTP_HOST}/reduktor/evl-165-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-666/?$ https://%{HTTP_HOST}/reduktor/evl-166 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-666-939/?$ https://%{HTTP_HOST}/reduktor/evl-166-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-676/?$ https://%{HTTP_HOST}/reduktor/evl-167 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-676-939/?$ https://%{HTTP_HOST}/reduktor/evl-167-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-686/?$ https://%{HTTP_HOST}/reduktor/evl-168 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-686-959/?$ https://%{HTTP_HOST}/reduktor/evl-168-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-696/?$ https://%{HTTP_HOST}/reduktor/evl-169 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-696-959/?$ https://%{HTTP_HOST}/reduktor/evl-169-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8108/?$ https://%{HTTP_HOST}/reduktor/evl-1810 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8108-979/?$ https://%{HTTP_HOST}/reduktor/evl-1810-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8128/?$ https://%{HTTP_HOST}/reduktor/evl-1812 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8128-979/?$ https://%{HTTP_HOST}/reduktor/evl-1812-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8128-989/?$ https://%{HTTP_HOST}/reduktor/evl-1812-198 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8158/?$ https://%{HTTP_HOST}/reduktor/evl-1815 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8158-9109/?$ https://%{HTTP_HOST}/reduktor/evl-1815-1910 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8158-999/?$ https://%{HTTP_HOST}/reduktor/evl-1815-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8168/?$ https://%{HTTP_HOST}/reduktor/evl-1816 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8168-9109/?$ https://%{HTTP_HOST}/reduktor/evl-1816-1910 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8168-999/?$ https://%{HTTP_HOST}/reduktor/evl-1816-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8178/?$ https://%{HTTP_HOST}/reduktor/evl-1817 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8188-9109/?$ https://%{HTTP_HOST}/reduktor/evl-1818-1910 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-8188-999/?$ https://%{HTTP_HOST}/reduktor/evl-1818-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-838/?$ https://%{HTTP_HOST}/reduktor/evl-183 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-848/?$ https://%{HTTP_HOST}/reduktor/evl-184 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-848-939/?$ https://%{HTTP_HOST}/reduktor/evl-184-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-858/?$ https://%{HTTP_HOST}/reduktor/evl-185 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-858-939/?$ https://%{HTTP_HOST}/reduktor/evl-185-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-868/?$ https://%{HTTP_HOST}/reduktor/evl-186 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-868-939/?$ https://%{HTTP_HOST}/reduktor/evl-186-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-878/?$ https://%{HTTP_HOST}/reduktor/evl-187 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-878-939/?$ https://%{HTTP_HOST}/reduktor/evl-187-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-888/?$ https://%{HTTP_HOST}/reduktor/evl-188 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-888-959/?$ https://%{HTTP_HOST}/reduktor/evl-188-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-898/?$ https://%{HTTP_HOST}/reduktor/evl-189 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-898-959/?$ https://%{HTTP_HOST}/reduktor/evl-189-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9109/?$ https://%{HTTP_HOST}/reduktor/evl-1910 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9109-979/?$ https://%{HTTP_HOST}/reduktor/evl-1910-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9109x/?$ https://%{HTTP_HOST}/reduktor/evl-1910x [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9139/?$ https://%{HTTP_HOST}/reduktor/evl-1913 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9139-979/?$ https://%{HTTP_HOST}/reduktor/evl-1913-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9149/?$ https://%{HTTP_HOST}/reduktor/evl-1914 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9149-979/?$ https://%{HTTP_HOST}/reduktor/evl-1914-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9149-989/?$ https://%{HTTP_HOST}/reduktor/evl-1914-198 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9169/?$ https://%{HTTP_HOST}/reduktor/evl-1916 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9169-9109/?$ https://%{HTTP_HOST}/reduktor/evl-1916-1910 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-9169-999/?$ https://%{HTTP_HOST}/reduktor/evl-1916-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-939/?$ https://%{HTTP_HOST}/reduktor/evl-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-949/?$ https://%{HTTP_HOST}/reduktor/evl-194 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-949-939/?$ https://%{HTTP_HOST}/reduktor/evl-194-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-959/?$ https://%{HTTP_HOST}/reduktor/evl-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-959-939/?$ https://%{HTTP_HOST}/reduktor/evl-195-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-959x/?$ https://%{HTTP_HOST}/reduktor/evl-195x [R=301,L,NE]
+  RewriteRule ^reduktor/zr-969/?$ https://%{HTTP_HOST}/reduktor/evl-196 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-969-939/?$ https://%{HTTP_HOST}/reduktor/evl-196-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-969x/?$ https://%{HTTP_HOST}/reduktor/evl-196x [R=301,L,NE]
+  RewriteRule ^reduktor/zr-979/?$ https://%{HTTP_HOST}/reduktor/evl-197 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-979-939/?$ https://%{HTTP_HOST}/reduktor/evl-197-193 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-979x/?$ https://%{HTTP_HOST}/reduktor/evl-197x [R=301,L,NE]
+  RewriteRule ^reduktor/zr-989/?$ https://%{HTTP_HOST}/reduktor/evl-198 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-989-959/?$ https://%{HTTP_HOST}/reduktor/evl-198-195 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-989x/?$ https://%{HTTP_HOST}/reduktor/evl-198x [R=301,L,NE]
+  RewriteRule ^reduktor/zr-999/?$ https://%{HTTP_HOST}/reduktor/evl-199 [R=301,L,NE]
+  RewriteRule ^reduktor/zr-999-959/?$ https://%{HTTP_HOST}/reduktor/evl-199-195 [R=301,L,NE]
+
+  # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
+  # при переименовании аналогов sew-k-57,-s-67 → sew-k-57-s-67. Работает и для нескольких запятых.
+  RewriteCond %{REQUEST_URI} ^/(.*),-?(.*)$
+  RewriteRule ^ /%1-%2 [R=301,L,NE]
+
+  # любой /страница.html → /страница (301), сразу на https
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+  RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
+
+  # внутренне отдаём .html для чистого URL (если такой файл есть)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# YML-фид Яндекс.Маркета: отдавать как XML (без этого Content-Type пустой и Яндекс
+# не распознаёт файл как фид). application/xml также попадает под gzip ниже.
+<IfModule mod_mime.c>
+  AddType application/xml .yml
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  # JSON-данные (podbor-data, import-catalog, search-index) версионируются через ?v= — кэшируем надолго
+  ExpiresByType application/json "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  # HTML — не кэшируем: страницы должны обновляться сразу (ассеты бьём через ?v=)
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTML всегда ревалидируется на сервере (отдаётся 304, если не менялся) — клиент не залипает на старой версии
+  <FilesMatch "\.(?:html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # --- Защитные заголовки (РКН-аудит S01, 2026-06-16) ---
+  # Принудительный HTTPS на год (сайт уже на валидном TLS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # Запрет встраивания сайта в чужие iframe (clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Запрет MIME-sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # Не утекать полный URL рефереру на чужие домены
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Отключить ненужные браузерные API
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # Мягкий CSP: только апгрейд http-подресурсов в https (не ломает inline-скрипты/Метрику/model-viewer)
+  Header always set Content-Security-Policy "upgrade-insecure-requests"
+</IfModule>
+
+# Кастомная 404-страница (мягкая для пользователя + не «жёсткий» Apache-404 для роботов)
+ErrorDocument 404 /404.html
+
+# --- Защита бэкенда CRM (живёт в этом же корне; правила безвредны, даже если CRM нет) ---
+Options -Indexes
+<FilesMatch "^config\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+# Каталог данных/загрузок CRM — закрыт от прямого доступа
+RedirectMatch 403 ^/crm-data/.*$

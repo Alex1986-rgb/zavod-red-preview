@@ -1,0 +1,28 @@
+[2026-07-11 08:05:04] === Запуск: 94164 URL в 7 sitemap, 94164 в состоянии ===
+[2026-07-11 08:05:06] IndexNow: 1 URL (новых: 0, изменённых: 1)
+[2026-07-11 08:16:02]   https://yandex.com/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 08:49:24]   https://api.indexnow.org/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 09:17:00]   Переобход Вебмастера недоступен (сеть?): <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 09:17:00] Были ошибки IndexNow — отпечатки НЕ сохранены, изменения уйдут при следующем запуске.
+[2026-07-11 09:17:00] Состояние сохранено.
+[2026-07-11 12:07:23] === Запуск: 94164 URL в 7 sitemap, 94164 в состоянии ===
+[2026-07-11 12:07:25] IndexNow: 1 URL (новых: 0, изменённых: 1)
+[2026-07-11 12:08:04]   https://yandex.com/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 12:08:35]   https://api.indexnow.org/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 12:09:05]   Переобход Вебмастера недоступен (сеть?): <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 12:09:05] Были ошибки IndexNow — отпечатки НЕ сохранены, изменения уйдут при следующем запуске.
+[2026-07-11 12:09:06] Состояние сохранено.
+[2026-07-11 16:03:17] === Запуск: 94164 URL в 7 sitemap, 94164 в состоянии ===
+[2026-07-11 16:03:18] IndexNow: 1 URL (новых: 0, изменённых: 1)
+[2026-07-11 16:03:48]   https://yandex.com/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 17:04:17]   https://api.indexnow.org/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 17:04:47]   Переобход Вебмастера недоступен (сеть?): <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 17:04:47] Были ошибки IndexNow — отпечатки НЕ сохранены, изменения уйдут при следующем запуске.
+[2026-07-11 17:04:48] Состояние сохранено.
+[2026-07-11 20:07:21] === Запуск: 94164 URL в 7 sitemap, 94164 в состоянии ===
+[2026-07-11 20:07:23] IndexNow: 1 URL (новых: 0, изменённых: 1)
+[2026-07-11 20:07:53]   https://yandex.com/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 20:21:41]   https://api.indexnow.org/indexnow → ОШИБКА: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 20:22:11]   Переобход Вебмастера недоступен (сеть?): <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[2026-07-11 20:22:11] Были ошибки IndexNow — отпечатки НЕ сохранены, изменения уйдут при следующем запуске.
+[2026-07-11 20:22:11] Состояние сохранено.
