@@ -83,6 +83,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return None
         return super().send_head()
 
+    def end_headers(self):
+        # Предпросмотр обязан показывать текущее состояние файлов. Без этого браузер
+        # кэширует страницу по Last-Modified и продолжает рисовать прежнюю вёрстку —
+        # проверяющий видит «ничего не изменилось», хотя сервер отдаёт новое.
+        self.send_header('Cache-Control', 'no-store, must-revalidate')
+        self.send_header('Pragma', 'no-cache')
+        super().end_headers()
+
     def send_error(self, code, message=None, explain=None):
         page = os.path.join(DIST, '404.html')
         if code == 404 and os.path.isfile(page):

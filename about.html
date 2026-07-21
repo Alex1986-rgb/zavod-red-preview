@@ -29,7 +29,40 @@
 <!-- (Метрика отключена) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"О заводе","item":"https://zavod-red.ru/about"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что вы производите и где находитесь?","acceptedAnswer":{"@type":"Answer","text":"Завод Редукторов (ООО «НИИ АТТ») — производитель промышленных редукторов и мотор-редукторов с собственным производством в Челябинске. Проектируем приводы под задачу и ведём прямые поставки конечным потребителям по всей России."}},{"@type":"Question","name":"Работаете ли вы с производителями оборудования и серийно?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы поставляем редукторы производителям оборудования, в том числе серийными партиями, с согласованием чертежей и стабильным качеством от партии к партии."}},{"@type":"Question","name":"Поставляете ли вы оригиналы импорта и делаете аналоги?","acceptedAnswer":{"@type":"Answer","text":"Да. Поставляем оригинальные импортные редукторы, а также изготавливаем функциональные аналоги взамен снятых с поставки и недоступных моделей для задач импортозамещения."}},{"@type":"Question","name":"Какая гарантия и какие документы вы предоставляете?","acceptedAnswer":{"@type":"Answer","text":"На продукцию предоставляется гарантия 24 месяца. К каждому изделию прилагается паспорт, производство и приёмка ведутся в соответствии с требованиями ГОСТ."}},{"@type":"Question","name":"Какой у вас станочный парк и полный ли цикл производства?","acceptedAnswer":{"@type":"Answer","text":"Производство ведётся на собственной площадке в Челябинске и охватывает полный цикл — от проектирования и механической обработки до сборки и приёмки готового изделия. Это позволяет контролировать каждый этап и изготавливать редукторы по чертежу заказчика."}},{"@type":"Question","name":"Работаете ли вы по всей России и как организована доставка?","acceptedAnswer":{"@type":"Answer","text":"Да, мы ведём прямые поставки конечным потребителям по всей России. Доставка организуется транспортными компаниями до вашего города или склада; конкретные условия и сроки согласовываются под каждый заказ."}},{"@type":"Question","name":"Делаете ли вы нестандартные исполнения под заказ?","acceptedAnswer":{"@type":"Answer","text":"Да. Проектируем приводы под конкретную задачу и изготавливаем нестандартные исполнения по образцу или чертежу заказчика. Так мы закрываем в том числе задачи импортозамещения, когда нужный редуктор снят с поставки."}},{"@type":"Question","name":"Как вы контролируете качество продукции?","acceptedAnswer":{"@type":"Answer","text":"Производство и приёмка ведутся в соответствии с требованиями ГОСТ, на каждое изделие оформляется паспорт. Контроль на этапах изготовления обеспечивает стабильное качество от партии к партии, поэтому мы даём гарантию 24 месяца."}}]}</script>
-</head>
+<style id="abt-redesign-css">
+/* Герой: заявление и доказательство рядом. Фото цеха — главный сигнал доверия
+   для завода, до него страница была текстом без единого подтверждения. */
+.abt-hero{padding:34px 0 10px}
+.abt-hero .ah-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+.abt-hero h1{margin:6px 0 14px}
+.abt-hero p{color:var(--muted,#5c6b76);font-size:15.5px;line-height:1.6;max-width:60ch}
+.ah-proof{display:flex;flex-direction:column;gap:9px;margin:20px 0 0;padding:16px 18px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff)}
+.ah-proof span{display:flex;flex-direction:column;gap:2px;font-size:12.5px;color:var(--muted,#5c6b76);line-height:1.4}
+.ah-proof b{font:700 14px/1.25 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.ah-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ah-media{position:relative}
+.ah-media img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line,#e2e6e0);box-shadow:0 18px 44px rgba(14,26,36,.12)}
+.ah-cap{position:absolute;left:14px;bottom:14px;background:rgba(12,22,30,.82);color:#fff;font-size:12px;padding:7px 12px;border-radius:9px;backdrop-filter:blur(3px)}
+@media(max-width:900px){.abt-hero .ah-grid{grid-template-columns:1fr;gap:22px}.ah-media{order:-1}}
+
+/* Цифры без эмодзи: для промышленного B2B они удешевляли сильные числа */
+.abt-facts .af{align-items:flex-start;position:relative;padding-top:20px}
+.abt-facts .af::before{content:"";position:absolute;top:0;left:20px;right:20px;height:3px;background:var(--red,#cf1616);border-radius:0 0 3px 3px;opacity:.85}
+
+/* Документы: то, что снабженец спрашивает первым */
+.abt-docs{padding-top:46px}
+.ad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0 0}
+.ad-cert{display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);border-radius:14px;padding:14px;transition:.16s}
+.ad-cert:hover{border-color:var(--red,#cf1616);transform:translateY(-3px);box-shadow:0 12px 28px rgba(14,26,36,.10)}
+.ad-cert img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:9px}
+.ad-cert span{font-size:13px;font-weight:600;color:var(--text,#101f2a);text-align:center}
+.ad-req{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 0;padding:18px 20px;border:1px solid var(--line,#e2e6e0);border-radius:15px;background:var(--bg,#f6f8f6)}
+.ad-req>div{display:flex;flex-direction:column;gap:3px}
+.ad-req .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600}
+.ad-req .v{font:600 14.5px/1.35 'IBM Plex Mono',ui-monospace,monospace;color:var(--text,#101f2a)}
+@media(max-width:900px){.ad-grid{grid-template-columns:1fr 1fr}.ad-req{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ad-grid{grid-template-columns:1fr}.ad-req{grid-template-columns:1fr}}
+</style></head>
 <body class="zr-modern">
 
 <header class="hdr2">
@@ -62,13 +95,24 @@
 
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span>О заводе</div>
 
-<section class="phero">
-  <div class="wrap">
-    <div class="eyebrow">О заводе</div>
-    <h1>Собственное производство редукторов в Челябинске</h1>
-    <p>Завод Редукторов (ООО «НИИ АТТ») проектирует и выпускает промышленные редукторы и мотор-редукторы, а также изготавливает точные аналоги импортных приводов. Полный цикл — от расчёта и механической обработки до сборки, испытаний и отгрузки.</p>
-  </div>
-</section>
+<section class="phero abt-hero"><div class="wrap"><div class="ah-grid">
+<div class="ah-txt">
+<div class="eyebrow">О заводе</div>
+<h1>Собственное производство редукторов в Челябинске</h1>
+<p>Завод Редукторов (ООО «НИИ АТТ») проектирует и выпускает промышленные редукторы и мотор-редукторы, а также изготавливает точные аналоги импортных приводов. Полный цикл — от расчёта и механической обработки до сборки, испытаний и отгрузки.</p>
+<div class="ah-proof">
+<span><b>с 2016 года</b>ООО «НИИ АТТ», ОГРН 1167456120391</span>
+<span><b>полный цикл</b>механообработка, термообработка, сборка, испытания</span>
+<span><b>ГОСТ Р ИСО 9001-2015</b>система менеджмента качества, сертификат до 2028 года</span>
+<span><b>паспорт на изделие</b>с каждым редуктором</span>
+</div>
+<div class="ah-cta"><a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a><a class="btn ghost lg" href="/contacts">Приехать на производство</a></div>
+</div>
+<div class="ah-media">
+<img src="assets/production/p01.webp" alt="Цех механической обработки Завода Редукторов в Челябинске" width="720" height="520" loading="eager">
+<div class="ah-cap">Наш цех, Челябинск — механообработка и сборка</div>
+</div>
+</div></div></section>
 
 <section class="section abt-facts"><div class="wrap">
 <style>
@@ -82,10 +126,10 @@
 @media(max-width:440px){.abt-facts .afn{font-size:21px}}
 </style>
 <div class="afg">
-<div class="af"><span class="afi">🏭</span><div class="afn">Челябинск</div><div class="afl">собственное производство, ООО «НИИ АТТ» — оригинал, не перекуп</div></div>
-<div class="af"><span class="afi">📦</span><div class="afn">8 763</div><div class="afl">исполнения в каталоге: ZR, ПР, МР и аналоги импорта</div></div>
-<div class="af"><span class="afi">🛡️</span><div class="afn">24 мес</div><div class="afl">гарантия завода на редукторы и мотор-редукторы</div></div>
-<div class="af"><span class="afi">🚚</span><div class="afn">Вся Россия</div><div class="afl">отгрузка со склада и под заказ, паспорт на изделие</div></div>
+<div class="af"><div class="afn">Челябинск</div><div class="afl">собственное производство, ООО «НИИ АТТ» — оригинал, не перекуп</div></div>
+<div class="af"><div class="afn">8 763</div><div class="afl">исполнения в каталоге: ZR, ПР, МР и аналоги импорта</div></div>
+<div class="af"><div class="afn">24 мес</div><div class="afl">гарантия завода на редукторы и мотор-редукторы</div></div>
+<div class="af"><div class="afn">Вся Россия</div><div class="afl">отгрузка со склада и под заказ, паспорт на изделие</div></div>
 </div>
 </div></section>
 
@@ -261,7 +305,23 @@ document.querySelectorAll('.vfac').forEach(function(f){
   </div></div>
 </div></section>
 
-<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead">Завод Редукторов (ООО «НИИ АТТ») — производитель редукторов и изготовитель мотор-редукторов с собственным производством в Челябинске. Проектируем и выпускаем промышленные приводы, ведём прямые поставки конечным потребителям по всей России без посредников.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Завод работает по полному циклу: расчёт под задачу, механическая обработка, зубонарезание и зубошлифовка, термообработка, сборка и стендовые испытания — всё на собственных мощностях в Челябинске. Инженерный опыт позволяет воспроизводить редкие и снятые с производства модели по образцу и чертежу заказчика.</p><p>Мы работаем напрямую с промышленными предприятиями в формате B2B: поставки от изготовителя конечным потребителям без наценки торговых сетей, с понятной документацией и финансовой ответственностью за результат. На каждое изделие предоставляем паспорт, декларацию соответствия ГОСТ и гарантию 24 месяца.</p><h3>Реквизиты и данные предприятия</h3><table class="spec"><tbody>
+<section class="section abt-docs" id="docs"><div class="wrap">
+<div class="eyebrow">Документы</div>
+<h2 class="sec-h">Сертификаты и реквизиты</h2>
+<p class="lead" style="max-width:70ch">Мы производитель, а не посредник. Ниже — документы на продукцию и реквизиты юридического лица: их можно проверить в открытых реестрах до того, как вы отправите заявку.</p>
+<div class="ad-grid">
+<a class="ad-cert" href="/sertifikaty"><img src="assets/certs/sert1.webp" alt="Сертификат соответствия ГОСТ 31592-2012 на редукторы" loading="lazy"><span>Сертификат соответствия ГОСТ 31592-2012</span></a>
+<a class="ad-cert" href="/sertifikaty"><img src="assets/certs/sert2.webp" alt="Сертификат соответствия ЕАЭС ТР ТС 010/2011" loading="lazy"><span>Сертификат ЕАЭС · ТР ТС 010/2011</span></a>
+<a class="ad-cert" href="/sertifikaty"><img src="assets/certs/sert3.webp" alt="Сертификат ГОСТ Р ИСО 9001-2015 системы менеджмента качества" loading="lazy"><span>ГОСТ Р ИСО 9001-2015 · менеджмент качества</span></a>
+<a class="ad-cert" href="/sertifikaty"><img src="assets/certs/sert4.webp" alt="Приложение с перечнем сертифицированной продукции" loading="lazy"><span>Перечень сертифицированной продукции</span></a>
+</div>
+<div class="ad-req">
+<div><span class="k">Юридическое лицо</span><span class="v">ООО «НИИ АТТ»</span></div>
+<div><span class="k">ИНН</span><span class="v">7452136680</span></div>
+<div><span class="k">ОГРН</span><span class="v">1167456120391</span></div>
+<div><span class="k">Адрес</span><span class="v">Челябинск, пр-т Ленина, 2, оф. 221</span></div>
+</div>
+</div></section><section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead">Завод Редукторов (ООО «НИИ АТТ») — производитель редукторов и изготовитель мотор-редукторов с собственным производством в Челябинске. Проектируем и выпускаем промышленные приводы, ведём прямые поставки конечным потребителям по всей России без посредников.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Завод работает по полному циклу: расчёт под задачу, механическая обработка, зубонарезание и зубошлифовка, термообработка, сборка и стендовые испытания — всё на собственных мощностях в Челябинске. Инженерный опыт позволяет воспроизводить редкие и снятые с производства модели по образцу и чертежу заказчика.</p><p>Мы работаем напрямую с промышленными предприятиями в формате B2B: поставки от изготовителя конечным потребителям без наценки торговых сетей, с понятной документацией и финансовой ответственностью за результат. На каждое изделие предоставляем паспорт, декларацию соответствия ГОСТ и гарантию 24 месяца.</p><h3>Реквизиты и данные предприятия</h3><table class="spec"><tbody>
     <tr><th>Полное наименование</th><td>ООО «НИИ АТТ» (Завод Редукторов)</td></tr>
     <tr><th>Город производства</th><td>Челябинск, пр-т Ленина, 2</td></tr>
     <tr><th>Продукция</th><td>редукторы и мотор-редукторы серий ZR, ПР, МР</td></tr>

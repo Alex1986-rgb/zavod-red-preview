@@ -43,7 +43,43 @@
 {"@type":"Question","name":"Есть ли самовывоз со склада в Челябинске?","acceptedAnswer":{"@type":"Answer","text":"Да. Готовую продукцию можно забрать самовывозом со склада в Челябинске (пр-т Ленина, 2). Перед приездом согласуйте с менеджером дату и время отгрузки. Для других регионов отправляем продукцию транспортными компаниями."}}
 ]}
 </script>
-</head>
+<style id="ct-redesign-css">
+/* Герой: рядом с приглашением связаться — снимок производства. Контакты без картинки
+   выглядят как страница посредника; фото цеха отвечает на немой вопрос «вы вообще кто». */
+.ct-hero{padding:34px 0 10px}
+.ct-hero .ch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+.ct-hero h1{margin:6px 0 14px}
+.ct-hero p{color:var(--muted,#5c6b76);font-size:15.5px;line-height:1.6;max-width:58ch}
+.ch-promise{display:flex;gap:11px;align-items:flex-start;margin-top:20px;padding:15px 17px;border:1px solid color-mix(in srgb,var(--red,#cf1616) 28%,var(--line,#e2e6e0));border-radius:14px;background:linear-gradient(120deg,rgba(207,22,22,.06),rgba(207,22,22,.015));font-size:13.5px;color:var(--muted,#5c6b76);line-height:1.5}
+.ch-promise b{display:block;font:700 14.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);margin-bottom:2px}
+.chp-dot{width:9px;height:9px;border-radius:50%;background:#17a55c;flex:none;margin-top:5px;box-shadow:0 0 0 4px rgba(23,165,92,.16)}
+.ch-media{position:relative}
+.ch-media img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line,#e2e6e0);box-shadow:0 18px 44px rgba(14,26,36,.12)}
+.ch-cap{position:absolute;left:14px;bottom:14px;background:rgba(12,22,30,.82);color:#fff;font-size:12px;padding:7px 12px;border-radius:9px;backdrop-filter:blur(3px)}
+@media(max-width:900px){.ct-hero .ch-grid{grid-template-columns:1fr;gap:22px}.ch-media{order:-1}}
+
+/* Способы связи — карточки-действия вместо плоского списка полей: видно, что делать */
+.ct-ways{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ct-way{display:flex;flex-direction:column;gap:2px;padding:15px 16px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff);text-decoration:none;transition:.16s}
+.ct-way:hover{border-color:var(--red,#cf1616);transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,26,36,.09)}
+.ct-ico{font-size:17px;color:var(--red,#cf1616);line-height:1}
+.ct-k{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600;margin-top:6px}
+.ct-v{font:700 16px/1.25 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.ct-way:hover .ct-v{color:var(--red,#cf1616)}
+.ct-s{font-size:12px;color:var(--muted,#7c8b95)}
+.ct-hours{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;padding:14px 16px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--bg,#f6f8f6)}
+.ct-hours .k{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600}
+.ct-hours .v{font:600 14.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.ct-hours em{font-style:normal;color:var(--muted,#7c8b95);font-weight:500}
+
+/* Реквизиты подняты из сноски в полноценный блок: их проверяемость и есть доверие */
+.ct-req{margin-top:12px;padding:16px 18px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff)}
+.ct-req-h{font:700 13.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);margin-bottom:12px}
+.ct-req-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ct-req-g .k{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600}
+.ct-req-g .v{font:600 13.5px/1.4 'IBM Plex Mono',ui-monospace,monospace;color:var(--text,#101f2a)}
+@media(max-width:560px){.ct-ways,.ct-hours,.ct-req-g{grid-template-columns:1fr}}
+</style></head>
 <body class="zr-modern">
 
 <header class="hdr2">
@@ -76,26 +112,65 @@
 
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span>Контакты</div>
 
-<section class="phero">
-  <div class="wrap">
-    <div class="eyebrow">Контакты</div>
-    <h1>Свяжитесь с Заводом Редукторов</h1>
-    <p>Подберём редуктор под вашу задачу, рассчитаем передаточное число и присоединительные размеры, изготовим аналог импортного привода. Производство — Челябинск, отгрузка по всей России.</p>
-  </div>
-</section>
+<section class="phero ct-hero"><div class="wrap"><div class="ch-grid">
+<div class="ch-txt">
+<div class="eyebrow">Контакты</div>
+<h1>Свяжитесь с Заводом Редукторов</h1>
+<p>Подберём редуктор под вашу задачу, рассчитаем передаточное число и присоединительные размеры, изготовим аналог импортного привода. Производство — Челябинск, отгрузка по всей России.</p>
+<div class="ch-promise">
+<span class="chp-dot"></span>
+<div><b>Инженер отвечает за 15 минут</b>в рабочее время. Заявки с сайта принимаем круглосуточно — ответим утром следующего рабочего дня.</div>
+</div>
+</div>
+<div class="ch-media">
+<img src="assets/production/p07.webp" alt="Склад и отгрузка Завода Редукторов в Челябинске" width="720" height="500" loading="eager">
+<div class="ch-cap">Наш склад и отгрузка · Челябинск — приезжайте, покажем</div>
+</div>
+</div></div></section>
 
 <section class="section">
   <div class="wrap contact-grid">
-    <div class="cinfo">
-      <div class="crow"><div class="clbl">Телефоны</div><div class="cval"><a href="tel:+74951514102">+7 (495) 151-41-02</a></div><div class="cval"><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div>
-      <div class="crow"><div class="clbl">Электронная почта</div><div class="cval"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a></div></div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px"><a class="btn lg" data-zayavka href="#zayavka">Оставить заявку</a><a class="btn lg ghost" href="mailto:zr@zavod-red.ru">Написать на почту</a></div>
-      <div class="crow"><div class="clbl">Адрес</div><div class="cval" style="font-size:17px">454007, г. Челябинск, пр-т Ленина, д. 2, офис 221</div></div>
-      <div class="crow"><div class="clbl">Реквизиты</div><div class="creq">ООО «НИИ АТТ»<br />ИНН 7452136680 · ОГРН 1167456120391<br />454007, г. Челябинск, пр-т Ленина, д. 2, офис 221</div></div>
-      <div class="crow"><div class="clbl">График</div><div class="creq">Пн–Пт, 8:00–17:00 (МСК+2)<br />Заявки с сайта принимаем круглосуточно.</div></div>
-    </div>
-
-    <form class="lead-form" novalidate>
+    <div class="cinfo ct-info">
+<div class="ct-ways">
+<a class="ct-way" href="tel:+74951514102">
+<span class="ct-ico">☎</span>
+<span class="ct-k">Позвонить</span>
+<span class="ct-v">+7 (495) 151-41-02</span>
+<span class="ct-s">Москва · многоканальный</span>
+</a>
+<a class="ct-way" href="tel:+79049534102">
+<span class="ct-ico">✆</span>
+<span class="ct-k">Мобильный</span>
+<span class="ct-v">+7 (904) 953-41-02</span>
+<span class="ct-s">звонок и сообщения</span>
+</a>
+<a class="ct-way" href="mailto:zr@zavod-red.ru">
+<span class="ct-ico">✉</span>
+<span class="ct-k">Написать</span>
+<span class="ct-v">zr@zavod-red.ru</span>
+<span class="ct-s">пришлите шильд или чертёж</span>
+</a>
+<a class="ct-way" href="#map">
+<span class="ct-ico">⚑</span>
+<span class="ct-k">Приехать</span>
+<span class="ct-v">пр-т Ленина, 2</span>
+<span class="ct-s">Челябинск, офис 221</span>
+</a>
+</div>
+<div class="ct-hours">
+<div><span class="k">Режим работы</span><span class="v">Пн–Пт, 8:00–17:00 <em>(МСК+2)</em></span></div>
+<div><span class="k">Заявки с сайта</span><span class="v">круглосуточно</span></div>
+</div>
+<div class="ct-req">
+<div class="ct-req-h">Реквизиты — проверьте нас до заявки</div>
+<div class="ct-req-g">
+<div><span class="k">Юрлицо</span><span class="v">ООО «НИИ АТТ»</span></div>
+<div><span class="k">ИНН</span><span class="v">7452136680</span></div>
+<div><span class="k">ОГРН</span><span class="v">1167456120391</span></div>
+<div><span class="k">Адрес</span><span class="v">454007, Челябинск, пр-т Ленина, 2, оф. 221</span></div>
+</div>
+</div>
+</div><form class="lead-form" novalidate>
       <h3 style="margin-bottom:6px;font-size:24px">Оставить заявку</h3>
       <p style="font-size:14px;margin-bottom:18px;opacity:.92">Инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>
       <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
@@ -108,7 +183,7 @@
     </form>
   </div>
 
-  <div class="wrap" style="margin-top:34px">
+  <div class="wrap" id="map" style="margin-top:34px">
     <div class="map">
       <iframe src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%202&z=16" loading="lazy" title="Завод Редукторов на карте — Челябинск, пр-т Ленина, 2" allowfullscreen></iframe>
     </div>
