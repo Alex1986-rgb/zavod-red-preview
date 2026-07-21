@@ -445,3 +445,15 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .p2-h1-imp{display:block;font-size:1em;font-weight:800;letter-spacing:-.01em}
 .p2-h1-zr{display:block;margin-top:9px;font:500 15px/1.35 'IBM Plex Mono',ui-monospace,monospace;color:var(--muted,#7c8b95);letter-spacing:.01em}
 @media(max-width:560px){.p2-h1-zr{font-size:13.5px;margin-top:7px}}
+
+/* Оффер и блок доверия карточки товара. Раньше жили инлайном только на страницах /analog/,
+   из-за чего карточки /reduktor/ выглядели «старым видом»: без плашки-оффера под ценой и
+   без четырёх плиток преимуществ. Вынесено сюда, чтобы оба типа карточек были одинаковыми. */
+.p2-offer{display:flex;gap:10px;align-items:flex-start;background:linear-gradient(120deg,rgba(207,22,22,.07),rgba(207,22,22,.02));border:1px solid color-mix(in srgb,var(--red) 30%,var(--line));border-radius:13px;padding:13px 15px;margin:12px 0 0;font-size:13.5px}
+.p2-offer b{color:var(--red)}
+.p2-offer svg{width:20px;height:20px;color:var(--red);flex:none;margin-top:1px}
+.p2-trust{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0 0}
+.p2-trust>div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.p2-trust b{display:block;font:700 14px/1.25 'Space Grotesk',sans-serif;color:var(--text)}
+.p2-trust span{font-size:12px;color:var(--muted);line-height:1.4}
+@media(min-width:720px){.p2-trust{grid-template-columns:1fr 1fr}}
