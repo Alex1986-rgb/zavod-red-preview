@@ -447,8 +447,19 @@
      и лежит по одному файлу на бренд (самый крупный — nord, ~360 КБ), поэтому
      грузим только выбранный бренд и только когда его выбрали. */
   var AIDX={}, AIDX_LOADING={};
-  var AIDX_NAME={'SEW EURODRIVE':'sew'};              // остальные совпадают с ключом в нижнем регистре
+  // «Watt Drive» в именах файлов — двусловный слаг watt-drive, а не watt
+  var AIDX_NAME={'SEW EURODRIVE':'sew','Watt Drive':'watt-drive'};
   function aidxName(b){ return AIDX_NAME[b.k] || b.k.toLowerCase().split(' ')[0]; }
+  // Варианты написания модели для поиска в индексе. В базе подбора попадаются кириллические
+  // «В»/«С» вместо латинских B/C («112В, 100С»), а страницы Tramec названы просто по
+  // типоразмеру («tramec-112») — поэтому пробуем и транслитерацию, и голое число.
+  function modelKeys(part){
+    var s=String(part).trim(), out=[], t=s.replace(/[ВB]/g,'b').replace(/[СC]/g,'c')
+                                          .replace(/[АA]/g,'a').replace(/[КK]/g,'k').replace(/[РP]/g,'p');
+    [s,t].forEach(function(v){ var f=frameSlug(v); if(f&&out.indexOf(f)<0)out.push(f); });
+    var num=(s.match(/\d+/)||[])[0]; if(num&&out.indexOf(num)<0)out.push(num);
+    return out;
+  }
   function loadAnalogIdx(b){
     var n=aidxName(b);
     if(AIDX[n]!==undefined||AIDX_LOADING[n])return;
@@ -465,11 +476,23 @@
     // («RV 32, MRV 32, MRV 118») — страница есть у каждого по отдельности, поэтому
     // берём первое, для которого нашлась запись, а не склеенную строку целиком.
     var ms=null, list=null, parts=String(model).split(',');
-    for(var pi=0;pi<parts.length;pi++){
-      var cand=frameSlug(parts[pi]);
-      if(cand&&idx[cand]&&idx[cand].length){ ms=cand; list=idx[cand]; break; }
+    for(var pi=0;pi<parts.length&&!list;pi++){
+      var ks=modelKeys(parts[pi]);
+      for(var ki=0;ki<ks.length;ki++){
+        if(idx[ks[ki]]&&idx[ks[ki]].length){ ms=ks[ki]; list=idx[ms]; break; }
+      }
     }
-    if(!list)return null;
+    if(!list){
+      // Параметрической страницы нет — берём карточку уровня модели («yilmaz-e-030»).
+      // У Yilmaz, Watt Drive, STM, Transtecno и Tramec это вообще единственный вид
+      // карточки аналога, и без этой ветки они уходили на обезличенную карточку ZR.
+      var mm=idx._m||[];
+      for(var pj=0;pj<parts.length;pj++){
+        var ks2=modelKeys(parts[pj]);
+        for(var kj=0;kj<ks2.length;kj++){ if(mm.indexOf(ks2[kj])>=0)return n+'-'+ks2[kj]; }
+      }
+      return null;
+    }
     // Передаточные в базе подбора и в именах страниц не совпадают до цифры, поэтому берём
     // ближайшую реальную страницу: сначала с той же мощностью (она дискретна и точна),
     // и уже среди них — с минимальным расхождением по передаточному.

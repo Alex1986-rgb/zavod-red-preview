@@ -112,7 +112,14 @@ if os.path.isdir(idx_dir):
     bad_slug = []
     for brand in list(man)[:3]:
         data = json.loads(read(os.path.join(idx_dir, brand + '.json')))
+        # «_m» — не модель, а список страниц уровня модели («yilmaz-e-030»): у них нет
+        # передаточного и мощности, поэтому проверяются отдельно
+        for name in (data.get('_m') or [])[:20]:
+            if not os.path.exists(os.path.join(ANALOG, f'{brand}-{name}.html')):
+                bad_slug.append(f'{brand}-{name}')
         for model, rows in list(data.items())[:20]:
+            if model == '_m':
+                continue
             for r in rows[:3]:
                 if not os.path.exists(os.path.join(ANALOG, f'{brand}-{model}{r[2]}.html')):
                     bad_slug.append(f'{brand}-{model}{r[2]}')

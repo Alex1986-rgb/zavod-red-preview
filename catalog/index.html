@@ -211,7 +211,7 @@
   if(MB)MB.addEventListener('click',more);
   var open=document.getElementById('flt-open'),panel=document.getElementById('cat-filters');
   if(open)open.addEventListener('click',function(){panel.classList.toggle('open');});
-  fetch('/assets/import-catalog.json?v=311').then(function(r){return r.json();}).then(function(data){
+  fetch('/assets/import-catalog.json?v=313').then(function(r){return r.json();}).then(function(data){
     ALL=data.cards||[];refilter();
   }).catch(function(){GRID.innerHTML='<p class="lead" style="grid-column:1/-1">Каталог временно недоступен — воспользуйтесь калькулятором подбора.</p>';});
 })();

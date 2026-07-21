@@ -52,7 +52,7 @@
    + '<h3>Получите расчёт стоимости</h3>'
    + '<p id="zrIntro">Заполните форму — инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>'
    + '<div class="zr-res"></div>'
-   + '<form id="zrModalForm" novalidate>'
+   + '<form id="zrModalForm">'
    + '<div class="zr-hp"><input type="text" name="work_email" tabindex="-1" autocomplete="off"></div>'
    + '<select class="zr-sel" id="zrType">'
    + '<option value="" selected>Какой редуктор нужен?</option>'
@@ -67,7 +67,7 @@
    + '<option>Другое / затрудняюсь ответить</option>'
    + '</select>'
    + '<input class="zr-in" type="text" id="zrName" placeholder="Ваше имя" required>'
-   + '<input class="zr-in" type="tel" id="zrPhone" placeholder="+7 (___) ___-__-__" required>'
+   + '<input class="zr-in" type="tel" id="zrPhone" placeholder="+7 (___) ___-__-__" required pattern="\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}" title="Введите телефон полностью: +7 (XXX) XXX-XX-XX">'
    + '<input class="zr-in" type="email" id="zrEmail" placeholder="Почта (необязательно)">'
    + '<div class="zr-file" id="zrFileBox"><label for="zrFile"><span class="zr-fico">📎</span><span id="zrFileLbl">Фото шильда, чертёж или спецификация · JPG, PDF, до 10 МБ</span></label><input type="file" id="zrFile" name="file-174" accept="image/*,.jfif,.heic,.heif,.avif,.tif,.tiff,.pdf,.doc,.docx,.xls,.xlsx,.csv,.dwg,.dxf,.stp,.step,.zip,.rar"></div>'
    + '<textarea class="zr-in" id="zrMsg" rows="2" placeholder="Или опишите задачу: мощность, обороты, что заменяем"></textarea>'
@@ -126,6 +126,7 @@
 
   form.addEventListener('submit',async function(e){
     e.preventDefault();
+    if(form.__zrSending)return;                 // отправка уже идёт — второй submit игнорируем
     if(form.querySelector('input[name="work_email"]').value!=='')return;
     var type=document.getElementById('zrType').value;
     if(document.getElementById('zrName').value.trim()===''){show('Укажите, как к вам обращаться.','err');return;}
@@ -156,8 +157,8 @@
 
     var hasFile=fileInp.files&&fileInp.files[0];
     var btn=form.querySelector('.zr-btn');
-    function unlock(){btn.disabled=false;btn.textContent='Получить расчёт';}
-    btn.disabled=true;btn.textContent='Отправляем…';
+    function unlock(){form.__zrSending=0;btn.disabled=false;btn.textContent='Получить расчёт';}
+    form.__zrSending=1;btn.disabled=true;btn.textContent='Отправляем…';
     show((hasFile?'Загружаем файл…':'Отправляем заявку…')+'<div class="zr-prog"><i id="zrBar"></i></div>','busy');
 
     var xhr=new XMLHttpRequest();
