@@ -244,6 +244,22 @@
       });
     });
     if(Q.q && qEl){ qEl.value=Q.q; }
+    // Бренд, названный прямо в запросе («Varvel 7Ч-М 150»), должен переключить и ТАБЛИЦУ.
+    // Раньше карточки сверху показывали «Varvel 7Ч-М 150», а строки под ними — «ZR 6015 /
+    // ПР 4150», потому что активным оставался бренд «Наши ZR»: человек искал Varvel,
+    // а в колонке «Типоразмер» видел нашу марку.
+    // Пишем в selBrand, а не в presetBrand: selBrand вычисляется при инициализации модуля
+    // (строка 94), а этот код выполняется позже — присваивание presetBrand уже ни на что
+    // не повлияло бы. lockBrand не трогаем: бренд подставлен как догадка по запросу,
+    // человек должен иметь возможность переключить его вручную.
+    if(Q.q && !selBrand){
+      var _qs=_sn(Q.q);
+      for(var _bi=0;_bi<BRANDS.length;_bi++){
+        var _b=BRANDS[_bi]; if(isOurs(_b.k)||!brandHasData(_b.k))continue;
+        var _names=[_sn(_b.k),_sn(_b.n)].concat(BRAND_RU[_sn(_b.n)]||BRAND_RU[_sn(_b.k)]||[]);
+        if(_names.some(function(n){return n&&n.length>2&&_qs.indexOf(n)>=0;})){ selBrand=_b.k; break; }
+      }
+    }
     // legacy: pw/os/tq как одиночное значение → ближайший диапазон
     var map={pw:1, os:2, tq:3};
     Object.keys(map).forEach(function(k){
@@ -276,6 +292,13 @@
     }
     fillRanges();
     preApplyNumeric();
+    // бренд мог быть распознан в строке запроса уже ПОСЛЕ отрисовки переключателя —
+    // приводим в соответствие подпись колонки и активную кнопку
+    (function(){ var _b=BMAP[selBrand];
+      if(!_b||isOurs(_b.k))return;
+      var th=root.querySelector('.pf-th-tz'); if(th)th.textContent=_b.n+' (наш аналог ZR)';
+      try{ buildBrands(); }catch(e){}
+    })();
     fillModels();
     syncRanges();
     apply();
@@ -650,7 +673,20 @@
   }
   function _analogFor(g,qBrands){ // аналог искомого бренда, иначе первый
     var a=g.a||{};
-    // приоритет — бренд страницы/URL: на /brands/sew чужой бренд в карточке недопустим
+    // 1) Если человек назвал в запросе КОНКРЕТНУЮ модель — показываем именно её.
+    //    Иначе поиск «Varvel 7Ч-М 150» подменялся на «Varvel SRS 150»: бренд совпадал,
+    //    а модель — нет, и пользователь видел не то, что искал.
+    var _q=qEl&&qEl.value?_sn(qEl.value):'';
+    if(_q){
+      var _ks=Object.keys(a);
+      for(var _i=0;_i<_ks.length;_i++){
+        var _mm=a[_ks[_i]]||[];
+        for(var _j=0;_j<_mm.length;_j++){
+          if(_mm[_j]&&_q.indexOf(_sn(_mm[_j]))>=0) return (_ks[_i].split(' ')[0]+' '+_mm[_j]).trim();
+        }
+      }
+    }
+    // 2) бренд страницы/URL: на /brands/sew чужой бренд в карточке недопустим
     var _b=BMAP[selBrand];
     if(_b&&!isOurs(_b.k)){ var _m=brandModel(g,_b.k); if(_m) return (_b.n+' '+_m).trim(); }
     if(qBrands&&qBrands.length){
