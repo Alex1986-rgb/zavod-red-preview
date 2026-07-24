@@ -12,6 +12,18 @@
 .pf-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 .pf-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:1040px}
 
+/* Таблица шире 1040 px, поэтому на планшете и на телефоне в альбомной ориентации
+   (681–1118 px) правые колонки уезжают за край: при ширине окна 820 скрыто 426 px,
+   и колонка «Заказ» не видна вообще. Полоса прокрутки при этом внизу блока высотой
+   больше двух тысяч точек — то есть вне экрана, а на iPad её не видно совсем.
+   Прижимаем колонку заказа к правому краю, чтобы кнопка была на виду всегда;
+   лёгкая тень слева показывает, что за ней таблица продолжается.
+   На широких экранах прокрутки нет и правило ничего не меняет. */
+.pf-table td.pf-order{position:sticky;right:0;z-index:2;background:var(--card);
+  box-shadow:-8px 0 12px -8px rgba(14,26,36,.18)}
+.pf-table thead th:last-child{position:sticky;right:0;z-index:3;background:var(--bg2);
+  box-shadow:-8px 0 12px -8px rgba(14,26,36,.18)}
+
 /* шапка с заголовками — числовые колонки по центру (значения пишутся под названием, правка №6) */
 .pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:center;
   vertical-align:bottom;padding:15px 14px 10px;font-size:11.5px;text-transform:uppercase;
