@@ -217,6 +217,119 @@ def passport_image(card, brand_logo, w=1240, h=1754):
     return im
 
 
+def certificate_image(card, w=1240, h=1754):
+    """Сертификат соответствия — лист на поддоне рядом с паспортом.
+
+    Повторяет вид эталонной карточки: эмблема, крупный номер стандарта,
+    держатель сертификата, область подписей.
+    """
+    import math
+    im = Image.new("RGBA", (w, h), (253, 253, 251, 255))
+    d = ImageDraw.Draw(im)
+    navy = (18, 52, 104, 255)
+    ink = (32, 38, 48, 255)
+    grey = (128, 136, 148, 255)
+
+    d.rectangle([54, 54, w - 54, h - 54], outline=navy, width=6)
+    d.rectangle([70, 70, w - 70, h - 70], outline=(196, 206, 220, 255), width=2)
+
+    cx, cy, r = w // 2, 216, 62
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=navy, width=5)
+    d.ellipse([cx - r + 16, cy - r + 16, cx + r - 16, cy + r - 16],
+              outline=navy, width=3)
+    for k in range(12):
+        an = math.radians(k * 30)
+        d.line([cx + math.cos(an) * (r - 14), cy + math.sin(an) * (r - 14),
+                cx + math.cos(an) * (r + 14), cy + math.sin(an) * (r + 14)],
+               fill=navy, width=3)
+
+    def centre(text, y, fnt, fill):
+        d.text(((w - d.textlength(text, font=fnt)) / 2, y), text,
+               font=fnt, fill=fill)
+
+    suffix = {"Италия": " S.p.A.", "Германия": " GmbH"}.get(card["country"], "")
+    centre("CERTIFICATE", 330, ImageFont.truetype(F_BOLD, 82), navy)
+    centre(card["brand"] + suffix, 452, ImageFont.truetype(F_BOLD, 46), ink)
+    centre("СЕРТИФИКАТ СООТВЕТСТВИЯ СИСТЕМЫ", 536,
+           ImageFont.truetype(F_REG, 30), grey)
+    centre("МЕНЕДЖМЕНТА КАЧЕСТВА", 578, ImageFont.truetype(F_REG, 30), grey)
+    centre("ISO 9001:2015", 664, ImageFont.truetype(F_BOLD, 76), navy)
+
+    d.line([180, 800, w - 180, 800], fill=(206, 214, 226, 255), width=3)
+    lines = [f"Изделие: {card['gear']} редуктор {card['model']}",
+             f"Аналог «Завод Редукторов»: {card['zr']}",
+             f"Страна происхождения: {card['country']}",
+             f"Регистрационный номер: {card['sn']}"]
+    for i, t in enumerate(lines):
+        d.text((180, 850 + i * 56), t, font=ImageFont.truetype(F_REG, 32),
+               fill=ink)
+
+    d.line([200, h - 380, 520, h - 380], fill=ink, width=3)
+    d.line([w - 520, h - 380, w - 200, h - 380], fill=ink, width=3)
+    d.text((200, h - 366), "Руководитель органа",
+           font=ImageFont.truetype(F_REG, 26), fill=grey)
+    d.text((w - 520, h - 366), "Дата выдачи",
+           font=ImageFont.truetype(F_REG, 26), fill=grey)
+    return im
+
+
+def brochure_image(card, brand_logo, w=1000, h=1400):
+    """Обложка буклета: тёмная подложка, логотип бренда, подпись каталога."""
+    im = Image.new("RGBA", (w, h), (22, 42, 78, 255))
+    d = ImageDraw.Draw(im)
+    for y in range(h):
+        k = int(22 + 26 * (y / h))
+        d.line([0, y, w, y], fill=(k, 42 + k // 3, 78 + k // 2, 255))
+
+    if brand_logo and os.path.isfile(brand_logo):
+        lg = Image.open(brand_logo).convert("RGBA")
+        px = lg.load()
+        for yy in range(lg.height):
+            for xx in range(lg.width):
+                r, g, b, a = px[xx, yy]
+                if r > 238 and g > 238 and b > 238:
+                    px[xx, yy] = (r, g, b, 0)
+                elif a > 0 and r < 130 and g < 130:
+                    px[xx, yy] = (255, 255, 255, a)   # тёмный знак на тёмном фоне
+        bb = lg.split()[3].getbbox()
+        if bb:
+            lg = lg.crop(bb)
+        rr = min((w - 220) / lg.width, 210 / lg.height)
+        lg = lg.resize((int(lg.width * rr), int(lg.height * rr)), Image.LANCZOS)
+        im.alpha_composite(lg, ((w - lg.width) // 2, 150))
+
+    f = ImageFont.truetype(F_BOLD, 62)
+    for i, t in enumerate(("INDUSTRIAL", "GEARBOXES")):
+        d.text(((w - d.textlength(t, font=f)) / 2, h - 320 + i * 76), t,
+               font=f, fill=(255, 255, 255, 235))
+    d.line([w // 2 - 150, h - 150, w // 2 + 150, h - 150],
+           fill=(255, 255, 255, 150), width=4)
+    return im
+
+
+def flagcard_image(card, w=900, h=520):
+    """Карточка «MADE IN …» с флагом страны — как в эталоне."""
+    im = Image.new("RGBA", (w, h), (252, 252, 250, 255))
+    d = ImageDraw.Draw(im)
+    stripes = {
+        "Италия": [(0, 140, 69), (255, 255, 255), (206, 43, 55)],
+        "Германия": [(0, 0, 0), (221, 0, 0), (255, 206, 0)],
+        "Турция": [(227, 10, 23)],
+        "Австрия": [(237, 41, 57), (255, 255, 255), (237, 41, 57)],
+        "Китай": [(238, 28, 37)],
+        "Чехия": [(255, 255, 255), (215, 20, 26)],
+    }.get(card["country"], [(120, 130, 145)])
+    fw = 250
+    n = len(stripes)
+    for i, c in enumerate(stripes):
+        d.rectangle([40, 40 + i * (h - 80) // n, 40 + fw,
+                     40 + (i + 1) * (h - 80) // n], fill=c)
+    d.rectangle([40, 40, 40 + fw, h - 40], outline=(160, 168, 180, 255), width=3)
+    d.text((40 + fw + 60, h // 2 - 36), "MADE IN " + card["country_en"].upper(),
+           font=ImageFont.truetype(F_BOLD, 62), fill=(24, 30, 40, 255))
+    return im
+
+
 COUNTRY_EN = {
     "Италия": "Italy", "Германия": "Germany", "Турция": "Turkey",
     "Австрия": "Austria", "Китай": "China", "Чехия": "Czech Republic",
@@ -280,6 +393,16 @@ def main():
     if lq:
         im = paste_quad(im, label_image(card, logo), parse_quad(lq, im.size))
         print("этикетка на ящик впечатана")
+
+    for name, maker in (("--cert", certificate_image),
+                        ("--broch", brochure_image),
+                        ("--flag", flagcard_image)):
+        q = opt(name, 4)
+        if not q:
+            continue
+        art = maker(card, logo) if name == "--broch" else maker(card)
+        im = paste_quad(im, art, parse_quad(q, im.size))
+        print(f"{name[2:]} впечатан")
 
     dq = opt("--doc", 4)
     if dq:
