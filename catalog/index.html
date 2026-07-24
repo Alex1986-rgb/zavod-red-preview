@@ -211,7 +211,7 @@
   if(MB)MB.addEventListener('click',more);
   var open=document.getElementById('flt-open'),panel=document.getElementById('cat-filters');
   if(open)open.addEventListener('click',function(){panel.classList.toggle('open');});
-  fetch('/assets/import-catalog.json?v=313').then(function(r){return r.json();}).then(function(data){
+  fetch('/assets/import-catalog.json?v=3140').then(function(r){return r.json();}).then(function(data){
     ALL=data.cards||[];refilter();
   }).catch(function(){GRID.innerHTML='<p class="lead" style="grid-column:1/-1">Каталог временно недоступен — воспользуйтесь калькулятором подбора.</p>';});
 })();
@@ -358,5 +358,5 @@
 <script src="../assets/inner.js?v=2607ee9da6a3"></script>
 
 <script>wireLeadForm('catForm',{title:'Заявка из каталога (хаб)'});</script>
-<script defer src="../assets/modal.js?v=260702335bdf"></script><script defer src="../assets/fav.js?v=2607c09d12d0"></script>
+<script defer src="../assets/modal.js?v=2607lightform1"></script><script defer src="../assets/fav.js?v=2607c09d12d0"></script>
 </body></html>

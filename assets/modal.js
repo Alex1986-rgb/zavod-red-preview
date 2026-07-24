@@ -10,37 +10,38 @@
   var css = ''
    + '.zr-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}'
    + '.zr-modal[hidden]{display:none}'
-   + '.zr-modal__ov{position:absolute;inset:0;background:rgba(5,10,14,.72);backdrop-filter:blur(4px);animation:zrf .2s}'
-   + '.zr-modal__box{position:relative;width:100%;max-width:460px;max-height:calc(100vh - 40px);overflow-y:auto;background:linear-gradient(160deg,#15242f,#101c26);border:1px solid #22333f;border-radius:18px;padding:30px 28px;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:zru .25s}'
+   + '.zr-modal__ov{position:absolute;inset:0;background:rgba(14,26,36,.55);backdrop-filter:blur(4px);animation:zrf .2s}'
+   + '.zr-modal__box{position:relative;width:100%;max-width:460px;max-height:calc(100vh - 40px);overflow-y:auto;background:#fff;border:1px solid rgba(14,26,36,.14);border-radius:18px;padding:30px 28px;box-shadow:0 30px 80px rgba(14,26,36,.22);animation:zru .25s}'
    + '@keyframes zrf{from{opacity:0}}@keyframes zru{from{opacity:0;transform:translateY(16px)}}'
-   + '.zr-modal__x{position:absolute;top:12px;right:14px;background:none;border:0;color:#94a8b5;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}'
-   + '.zr-modal__x:hover{color:#fff}'
-   + '.zr-modal h3{color:#e9eff4;font-size:23px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}'
-   + '.zr-modal p{color:#94a8b5;font-size:14px;margin:0 0 18px;line-height:1.45}'
-   + '.zr-in,.zr-sel{width:100%;background:#0c161e;border:1px solid #22333f;color:#fff;padding:14px 16px;border-radius:10px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box}'
+   + '.zr-modal__x{position:absolute;top:12px;right:14px;background:none;border:0;color:#66747e;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}'
+   + '.zr-modal__x:hover{color:#0e1a24}'
+   + '.zr-modal h3{color:#0e1a24;font-size:23px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}'
+   + '.zr-modal p{color:#526069;font-size:14px;margin:0 0 18px;line-height:1.45}'
+   + '.zr-in,.zr-sel{width:100%;background:#fff;border:1px solid rgba(14,26,36,.22);color:#0e1a24;padding:14px 16px;border-radius:10px;font-size:15px;font-family:inherit;margin-bottom:12px;box-sizing:border-box}'
+   + '.zr-in::placeholder{color:#66747e;opacity:1}'
    + '.zr-sel{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23e11b1b\' stroke-width=\'3\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M6 9l6 6 6-6\'/></svg>");background-repeat:no-repeat;background-position:right 15px center;padding-right:44px}'
-   + '.zr-sel:invalid{color:#7e93a2}'
-   + '.zr-sel option{color:#13212c;background:#fff}'
-   + '.zr-in:focus,.zr-sel:focus{outline:none;border-color:#e11b1b}'
+   + '.zr-sel:invalid{color:#66747e}'
+   + '.zr-sel option{color:#0e1a24;background:#fff}'
+   + '.zr-in:focus,.zr-sel:focus{outline:none;border-color:#cf1616;box-shadow:0 0 0 3px rgba(207,22,22,.12)}'
    + '.zr-file{margin-bottom:12px}'
-   + '.zr-file label{display:flex;align-items:center;gap:10px;background:#0c161e;border:1px dashed #33485a;color:#94a8b5;padding:13px 16px;border-radius:10px;font-size:13.5px;cursor:pointer;transition:.15s}'
-   + '.zr-file label:hover{border-color:#e11b1b;color:#cdd9e1}'
+   + '.zr-file label{display:flex;align-items:center;gap:10px;background:#f6f8fa;border:1px dashed rgba(14,26,36,.28);color:#526069;padding:13px 16px;border-radius:10px;font-size:13.5px;cursor:pointer;transition:.15s}'
+   + '.zr-file label:hover{border-color:#cf1616;color:#0e1a24}'
    + '.zr-file input{position:absolute;left:-9999px}'
    + '.zr-file .zr-fico{font-size:17px}'
-   + '.zr-file.has label{border-style:solid;border-color:#2ea043;color:#b7f0c4}'
-   + '.zr-consent{display:block;position:relative;padding-left:26px;font-size:12.5px;color:#94a8b5;line-height:1.45;margin:4px 0 16px}'
-   + '.zr-consent input{position:absolute;left:0;top:1px;width:16px;height:16px;accent-color:#e11b1b}'
-   + '.zr-consent a{color:#7fa8c4;text-decoration:underline}'
-   + '.zr-btn{width:100%;background:#e11b1b;color:#fff;font-weight:700;font-size:16px;padding:15px;border:0;border-radius:10px;cursor:pointer;transition:.18s}'
-   + '.zr-btn:hover{background:#c81414}'
+   + '.zr-file.has label{border-style:solid;border-color:#1a7f37;color:#1a7f37;background:#f2fbf4}'
+   + '.zr-consent{display:block;position:relative;padding-left:26px;font-size:12.5px;color:#526069;line-height:1.45;margin:4px 0 16px}'
+   + '.zr-consent input{position:absolute;left:0;top:1px;width:16px;height:16px;accent-color:#cf1616}'
+   + '.zr-consent a{color:#1f5f8b;text-decoration:underline}'
+   + '.zr-btn{width:100%;background:#cf1616;color:#fff;font-weight:700;font-size:16px;padding:15px;border:0;border-radius:10px;cursor:pointer;transition:.18s}'
+   + '.zr-btn:hover{background:#b01212}'
    + '.zr-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}'
    + '.zr-res{margin-top:14px;padding:13px 15px;border-radius:10px;font-size:14px;font-weight:500;display:none}'
    + '.zr-res.show{display:block}'
-   + '.zr-res.err{background:rgba(225,27,27,.14);border:1px solid #ff3b30;color:#ffc9c9}'
-   + '.zr-res.ok{background:rgba(46,160,67,.16);border:1px solid #2ea043;color:#b7f0c4}'
-   + '.zr-res.busy{background:rgba(127,168,196,.12);border:1px solid #33485a;color:#cdd9e1}'
-   + '.zr-prog{height:8px;background:#0c161e;border:1px solid #22333f;border-radius:6px;overflow:hidden;margin-top:9px}'
-   + '.zr-prog i{display:block;height:100%;width:0;background:#e11b1b;border-radius:6px;transition:width .15s ease}'
+   + '.zr-res.err{background:#fdeceb;border:1px solid #cf1616;color:#a51212}'
+   + '.zr-res.ok{background:#f2fbf4;border:1px solid #1a7f37;color:#14682c}'
+   + '.zr-res.busy{background:#f4f6f8;border:1px solid rgba(14,26,36,.18);color:#526069}'
+   + '.zr-prog{height:8px;background:#eef2f6;border:1px solid rgba(14,26,36,.14);border-radius:6px;overflow:hidden;margin-top:9px}'
+   + '.zr-prog i{display:block;height:100%;width:0;background:#cf1616;border-radius:6px;transition:width .15s ease}'
    + '.zr-btn[disabled]{opacity:.55;cursor:default}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
@@ -550,6 +551,68 @@
       var k = kindOf(a.getAttribute('href') || '');
       if (k) track(k, (a.getAttribute('href') || '').slice(0, 200));
     }, true);
+  })(); } catch(e){}
+
+  /* Клик по e-mail: у посетителя без настроенного почтового клиента ссылка mailto:
+     не делает НИЧЕГО видимого — человек решает, что сайт сломан, и уходит.
+     Поведение mailto не отменяем (у кого клиент есть — письмо откроется), но
+     дополнительно копируем адрес и показываем подсказку с переходом на форму. */
+  try { (function(){
+    var TOAST_CSS = ''
+     + '.zr-mailhint{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(12px);z-index:1200;'
+     + 'display:flex;align-items:center;gap:12px;max-width:calc(100vw - 28px);background:#fff;color:#0e1a24;'
+     + 'border:1px solid rgba(14,26,36,.14);border-left:4px solid #cf1616;border-radius:12px;padding:13px 16px;'
+     + 'box-shadow:0 16px 44px rgba(14,26,36,.22);font-size:14px;line-height:1.4;opacity:0;transition:.22s}'
+     + '.zr-mailhint.show{opacity:1;transform:translateX(-50%) translateY(0)}'
+     + '.zr-mailhint b{display:block;font-size:14.5px;margin-bottom:2px}'
+     + '.zr-mailhint span{color:#526069;font-size:13px}'
+     + '.zr-mailhint button{flex:none;background:#cf1616;color:#fff;border:0;border-radius:8px;'
+     + 'padding:9px 14px;font-size:13.5px;font-weight:700;font-family:inherit;cursor:pointer}'
+     + '.zr-mailhint button:hover{background:#b01212}'
+     + '@media(max-width:520px){.zr-mailhint{flex-direction:column;align-items:stretch;gap:9px;bottom:76px}'
+     + '.zr-mailhint button{width:100%}}';
+    var st = document.createElement('style'); st.textContent = TOAST_CSS; document.head.appendChild(st);
+
+    var box = null, timer = null;
+    function toast(mail, copied){
+      if (box) { clearTimeout(timer); box.remove(); }
+      box = document.createElement('div');
+      box.className = 'zr-mailhint';
+      box.innerHTML = '<div><b>' + (copied ? 'Адрес скопирован: ' : 'Наша почта: ') + mail + '</b>'
+        + '<span>Не открылся почтовый клиент? Напишите нам прямо здесь — ответим за 15 минут.</span></div>'
+        + '<button type="button">Написать здесь</button>';
+      document.body.appendChild(box);
+      requestAnimationFrame(function(){ box.classList.add('show'); });
+      box.querySelector('button').addEventListener('click', function(){
+        box.remove(); box = null;
+        // модалка вешается на клик по [data-zayavka] / ссылке #zayavka (см. выше)
+        var trigger = document.querySelector('[data-zayavka],a[href="#zayavka"],a[href$="#zayavka"]');
+        if (trigger) { trigger.click(); return; }
+        location.href = '/#zayavka';
+      });
+      timer = setTimeout(function(){ if (box) { box.classList.remove('show');
+        setTimeout(function(){ if (box) { box.remove(); box = null; } }, 260); } }, 9000);
+    }
+
+    document.addEventListener('click', function(e){
+      var a = e.target && e.target.closest && e.target.closest('a[href^="mailto:"]');
+      if (!a) return;
+      var mail = (a.getAttribute('href') || '').replace(/^mailto:/i, '').split('?')[0];
+      if (!mail) return;
+      var done = function(ok){ toast(mail, ok); };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(mail).then(function(){ done(true); }, function(){ done(false); });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = mail; ta.setAttribute('readonly','');
+          ta.style.cssText = 'position:absolute;left:-9999px';
+          document.body.appendChild(ta); ta.select();
+          var ok = false; try { ok = document.execCommand('copy'); } catch(e2) {}
+          ta.remove(); done(ok);
+        }
+      } catch (e3) { done(false); }
+    }, false);
   })(); } catch(e){}
 
 })();
