@@ -210,7 +210,14 @@
    +'.zrw__toggle .zrw__dot{width:9px;height:9px;border-radius:50%;background:#37e06a;box-shadow:0 0 0 3px rgba(55,224,106,.22)}'
    +'.zrw__toggle svg{width:20px;height:20px}'
    +'.zrw.open .zrw__lbl-open{display:none}.zrw__lbl-close{display:none}.zrw.open .zrw__lbl-close{display:inline}'
-   +'@media(max-width:600px){.zrw{right:14px}.zrw__panel{width:208px}.zrw__toggle{padding:12px 18px;font-size:14px}}'
+   /* На телефоне широкая плашка «Напишите нам» (208 px из 375) висит поверх страницы
+      и накрывает правую часть кнопок «Заказать» в таблице подбора — палец попадает
+      в чат вместо карточки товара. Сворачиваем её в компактный кружок с иконкой:
+      канал связи остаётся, перекрытие падает с 208 px до 52 px. */
+   +'@media(max-width:600px){.zrw{right:14px}.zrw__panel{width:208px}'
+   +'.zrw__toggle{padding:0;width:52px;height:52px;justify-content:center;gap:0;border-radius:50%}'
+   +'.zrw__toggle .zrw__lbl-open,.zrw__toggle .zrw__lbl-close{display:none}'
+   +'.zrw.open .zrw__toggle{width:52px;height:52px}}'
    +'@media(max-width:720px){.zrw{bottom:80px}}';
   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 

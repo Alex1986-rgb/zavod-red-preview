@@ -19,7 +19,7 @@
 .p2{display:grid;grid-template-columns:minmax(0,480px) 1fr;gap:36px;align-items:start;margin-top:10px}
 .p2-gal .p2-main{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;aspect-ratio:1/.9;display:flex;align-items:center;justify-content:center;padding:14px}
 .p2-gal .p2-main img{max-width:VRC 215%;max-height:VRC 215%;object-fit:contain;mix-blend-mode:multiply}
-.p2-thumbs{display:flex;gap:10px;margin-top:12px}
+.p2-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.p2-thumbs::-webkit-scrollbar{display:none}.p2-thumbs button{scroll-snap-align:start}
 .p2-thumbs button{flex:0 0 92px;height:76px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:6px;cursor:pointer;transition:.15s}
 .p2-thumbs button.act{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
 .p2-thumbs img{width:VRC 215%;height:VRC 215%;object-fit:contain;mix-blend-mode:multiply}
@@ -123,6 +123,6 @@
     <span><a href="/privacy">Политика конфиденциальности</a> · <a href="/agreement">Пользовательское соглашение</a> · <a href="/sitemap">Карта сайта</a></span>
   </div>
 </footer>
-<script src="../assets/inner.js?v=2607ee9da6a3"></script><script defer src="../assets/modal.js?v=2607lightform1"></script>
+<script src="../assets/inner.js?v=2607ee9da6a3"></script><script defer src="../assets/modal.js?v=2607mobfix12"></script>
 <script id="origreq-js">document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-req]");if(!b)return;var m=document.getElementById("zrMsg");if(m&&!m.value)m.value="Нужен ОРИГИНАЛ: "+b.getAttribute("data-req")+". Прошу дать цену и срок поставки.";});</script>
 </body></html><!--apro-->
