@@ -436,25 +436,25 @@ def process(js, man):
         im = Image.open(base).convert("RGBA")
         logo = os.path.join(BASE, "assets", "brands", j["brand_slug"] + ".webp")
 
-        # Впечатка шильдика и паспорта в партии выключена намеренно.
-        # find_regions() ловит площадки лишь на части кадров и даёт ложные
-        # срабатывания на кожухе вентилятора и на бетоне: штамп, посаженный
-        # мимо, портит фото сильнее, чем его отсутствие. Пустой шильдик на
-        # каталожном снимке — нормальная практика. Для конкретного кадра
-        # координаты задаются вручную через stamp.py, как в карточке-образце.
+        # Площадки размечены вручную в frames.py: автопоиск по кадру не
+        # справился (путал шильдик с кожухом вентилятора, а лист с бетоном).
+        # Кадров десяток, поэтому разовая разметка окупается — из неё
+        # собирается сколько угодно выходных файлов.
+        import frames
+        areas = frames.QUADS.get(os.path.basename(base)[:-4], {})
         marks = []
-        if STAMP:
-            plate, doc = find_regions(base)
-            if plate:
-                im = stampmod.paste_quad(
-                    im, stampmod.plate_image(c),
-                    [(x * im.width, y * im.height) for x, y in quad(plate)])
-                marks.append("шильдик")
-            if doc:
-                im = stampmod.paste_quad(
-                    im, stampmod.passport_image(c, logo),
-                    [(x * im.width, y * im.height) for x, y in quad(doc, 0.03)])
-                marks.append("паспорт")
+        pq = areas.get("plate")
+        if pq:
+            im = stampmod.paste_quad(
+                im, stampmod.plate_image(c),
+                [(x * im.width, y * im.height) for x, y in pq])
+            marks.append("шильдик")
+        dq = areas.get("doc")
+        if dq:
+            im = stampmod.paste_quad(
+                im, stampmod.passport_image(c, logo),
+                [(x * im.width, y * im.height) for x, y in dq])
+            marks.append("паспорт")
 
         out = os.path.join(OUT, j["key"] + ".webp")
         im.convert("RGB").resize((SITE_W, SITE_H), Image.LANCZOS).save(
