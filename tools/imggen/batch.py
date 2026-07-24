@@ -220,8 +220,33 @@ def find_regions(path):
     sat = a.max(axis=2) - a.min(axis=2)
     val = a.mean(axis=2)
 
-    def pick(mask, lo, hi, aspect_rng, fill_min):
-        cand = []
+    def ring_share(box, test):
+        """Доля пикселей в рамке вокруг области, удовлетворяющих test.
+
+        Главный признак настоящей площадки: шильдик со всех сторон окружён
+        синим корпусом, лист — деревом поддона. Без этой проверки детектор
+        уверенно принимал за табличку кожух вентилятора и светлый бетон.
+        """
+        x0, y0, x1, y1 = box
+        px0, py0 = int(x0 * w), int(y0 * h)
+        px1, py1 = int(x1 * w), int(y1 * h)
+        pad = max(3, int(min(px1 - px0, py1 - py0) * 0.28))
+        ax0, ay0 = max(0, px0 - pad), max(0, py0 - pad)
+        ax1, ay1 = min(w, px1 + pad + 1), min(h, py1 + pad + 1)
+        outer = np.zeros((h, w), dtype=bool)
+        outer[ay0:ay1, ax0:ax1] = True
+        outer[py0:py1 + 1, px0:px1 + 1] = False
+        if outer.sum() < 20:
+            return 0.0
+        return float(test[outer].mean())
+
+    # синий корпус: синий канал заметно выше красного при живой насыщенности
+    blue = (a[:, :, 2] > a[:, :, 0] + 12) & (sat > 28)
+    # дерево поддона: тёплый оттенок, красный выше синего
+    wood = (a[:, :, 0] > a[:, :, 2] + 10) & (val > 70)
+
+    def pick(mask, lo, hi, aspect_rng, fill_min, around, need):
+        best = None
         for c in components(mask):
             x0, y0, x1, y1 = c["box"]
             # композиция кладёт всё в правые две трети: пятно, дотянувшееся
@@ -234,19 +259,25 @@ def find_regions(path):
                 continue
             if not aspect_rng[0] <= c["aspect"] <= aspect_rng[1]:
                 continue
-            cand.append(c)
-        return max(cand, key=lambda c: c["area"])["box"] if cand else None
+            if ring_share(c["box"], around) < need:
+                continue
+            if best is None or c["area"] > best["area"]:
+                best = c
+        return best["box"] if best else None
 
     # шильдик: металл на корпусе — светлее фона, но не белый, и не у низа кадра
     plate_mask = (sat < 44) & (val > 112) & (val < 240)
     plate_mask[int(h * 0.82):] = False
     plate_mask[:int(h * 0.08)] = False
-    plate = pick(plate_mask, 0.0025, 0.07, (0.45, 2.8), 0.60)
+    plate = pick(plate_mask, 0.0025, 0.07, (0.45, 2.8), 0.58, blue, 0.42)
 
-    # лист бумаги: самое белое крупное пятно в нижней половине
+    # Лист бумаги: самое белое крупное пятно в нижней части кадра. Требовать
+    # дерево по всему периметру нельзя — лист часто выступает за доски, и
+    # снизу от него оказывается бетон. Достаточно, что он ниже шильдика.
     doc_mask = (sat < 30) & (val > 190)
-    doc_mask[:int(h * 0.48)] = False
-    doc = pick(doc_mask, 0.008, 0.22, (0.8, 5.0), 0.55)
+    cut = 0.55 if plate is None else max(0.50, plate[3] - 0.02)
+    doc_mask[:int(h * cut)] = False
+    doc = pick(doc_mask, 0.012, 0.22, (0.9, 5.0), 0.55, wood, 0.18)
     return plate, doc
 
 
