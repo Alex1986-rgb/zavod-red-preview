@@ -125,7 +125,8 @@ def build_prompt(card):
     style = BRAND_STYLE.get(card["brand"], DEFAULT_STYLE)
     geo = GEO.get(g, GEO["червячный"])
     flag_adj, made = FLAG.get(card["country"], ("", card["country"].upper()))
-    table = "\n".join(f"{k} | {v}" for k, v in rows(card))
+    rr = rows(card)
+    table = "\n".join(f"{k} | {v}" for k, v in rr)
     logo = card["brand"]
     return (
         "Recreate this exact marketing product card layout, same composition, "
@@ -133,9 +134,10 @@ def build_prompt(card):
         "below.\n\n"
         "LEFT SIDE — white panel with a specifications table. Dark blue bold "
         "title «ПРОМЫШЛЕННЫЙ РЕДУКТОР», subtitle «ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ». "
-        "Then a clean bordered two-column table, Russian labels left and values "
-        "right, EXACTLY these rows, crisp correctly spelled Russian, black on "
-        f"white:\n{table}\n"
+        f"Then a clean bordered two-column table with EXACTLY {len(rr)} rows, "
+        "no duplicate rows, no repeated labels, Russian labels left and values "
+        "right, crisp correctly spelled Russian, black on white:\n"
+        f"{table}\n"
         "At the bottom left three compliance marks «CE», «ISO 9001», «EAC», and "
         f"below them {flag_adj} flag with «{made}».\n\n"
         f"TOP LEFT corner: the {logo} company logo. TOP RIGHT corner: a red "
@@ -143,9 +145,10 @@ def build_prompt(card):
         f"RIGHT SIDE — {geo}, {style}, standing on a wooden pallet in a "
         "warehouse, soft daylight from the left, photorealistic. A large blank "
         "polished steel nameplate on the housing. On the pallet in front: an "
-        "ISO 9001:2015 certificate sheet, a dark blue product booklet with the "
-        f"{logo} logo, and a small {flag_adj} flag «MADE IN» card. Behind it a "
-        f"wooden shipping crate with a {logo} label.\n\n"
+        f"ISO 9001:2015 certificate titled «{logo}» as the certificate holder, "
+        f"a dark blue product booklet with the {logo} logo, and a small "
+        f"{flag_adj} flag «MADE IN» card. Behind it a wooden shipping crate "
+        f"with a {logo} label.\n\n"
         "Faint repeated «ЗАВОД РЕДУКТОРОВ» watermark tiled across the whole "
         "image. Catalogue-quality product photography, sharp, 2K.")
 
