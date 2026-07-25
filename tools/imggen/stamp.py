@@ -218,58 +218,145 @@ def passport_image(card, brand_logo, w=1240, h=1754):
 
 
 def certificate_image(card, w=1240, h=1754):
-    """Сертификат соответствия — лист на поддоне рядом с паспортом.
+    """Сертификат соответствия — лист на поддоне рядом с изделием.
 
-    Повторяет вид эталонной карточки: эмблема, крупный номер стандарта,
-    держатель сертификата, область подписей.
+    Первая версия читалась как нарисованная: плоский белый лист с парой строк.
+    Настоящий бланк узнаётся по мелочам, поэтому здесь есть гильошная сетка,
+    рельефная печать с лучами, ленты, две подписи от руки и блок
+    аккредитации. Тон бумаги тёплый, не чисто белый — иначе на фото лист
+    выглядит вставленным прямоугольником.
     """
     import math
-    im = Image.new("RGBA", (w, h), (253, 253, 251, 255))
+    paper = (250, 248, 242, 255)
+    im = Image.new("RGBA", (w, h), paper)
     d = ImageDraw.Draw(im)
-    navy = (18, 52, 104, 255)
-    ink = (32, 38, 48, 255)
-    grey = (128, 136, 148, 255)
+    navy = (20, 48, 96, 255)
+    gold = (172, 132, 48, 255)
+    ink = (38, 42, 52, 255)
+    grey = (122, 128, 140, 255)
+    hair = (206, 214, 228, 255)
 
-    d.rectangle([54, 54, w - 54, h - 54], outline=navy, width=6)
-    d.rectangle([70, 70, w - 70, h - 70], outline=(196, 206, 220, 255), width=2)
+    # гильош: тонкая волновая сетка по краям, как защитная печать бланка
+    guilloche = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(guilloche)
+    for k in range(46):
+        amp = 16 + (k % 7) * 3
+        ph = k * 0.42
+        for band_y in (150, h - 150):
+            pts = []
+            for x in range(60, w - 60, 6):
+                pts.append((x, band_y + math.sin(x / 46.0 + ph) * amp
+                            + math.cos(x / 121.0 + ph) * amp * 0.45))
+            gd.line(pts, fill=(150, 172, 206, 42), width=1)
+    im.alpha_composite(guilloche)
 
-    cx, cy, r = w // 2, 216, 62
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=navy, width=5)
-    d.ellipse([cx - r + 16, cy - r + 16, cx + r - 16, cy + r - 16],
-              outline=navy, width=3)
-    for k in range(12):
-        an = math.radians(k * 30)
-        d.line([cx + math.cos(an) * (r - 14), cy + math.sin(an) * (r - 14),
-                cx + math.cos(an) * (r + 14), cy + math.sin(an) * (r + 14)],
-               fill=navy, width=3)
+    # рамки с уголками
+    d.rectangle([48, 48, w - 48, h - 48], outline=navy, width=7)
+    d.rectangle([66, 66, w - 66, h - 66], outline=gold, width=2)
+    for cx0, cy0, sx, sy in ((66, 66, 1, 1), (w - 66, 66, -1, 1),
+                             (66, h - 66, 1, -1), (w - 66, h - 66, -1, -1)):
+        d.line([cx0, cy0 + sy * 54, cx0 + sx * 54, cy0 + sy * 54], fill=gold, width=2)
+        d.line([cx0 + sx * 54, cy0, cx0 + sx * 54, cy0 + sy * 54], fill=gold, width=2)
 
-    def centre(text, y, fnt, fill):
-        d.text(((w - d.textlength(text, font=fnt)) / 2, y), text,
-               font=fnt, fill=fill)
+    def centre(text, y, fnt, fill, spacing=0):
+        if spacing:
+            total = sum(d.textlength(ch, font=fnt) + spacing for ch in text) - spacing
+            x = (w - total) / 2
+            for ch in text:
+                d.text((x, y), ch, font=fnt, fill=fill)
+                x += d.textlength(ch, font=fnt) + spacing
+        else:
+            d.text(((w - d.textlength(text, font=fnt)) / 2, y), text,
+                   font=fnt, fill=fill)
 
-    suffix = {"Италия": " S.p.A.", "Германия": " GmbH"}.get(card["country"], "")
-    centre("CERTIFICATE", 330, ImageFont.truetype(F_BOLD, 82), navy)
-    centre(card["brand"] + suffix, 452, ImageFont.truetype(F_BOLD, 46), ink)
-    centre("СЕРТИФИКАТ СООТВЕТСТВИЯ СИСТЕМЫ", 536,
-           ImageFont.truetype(F_REG, 30), grey)
-    centre("МЕНЕДЖМЕНТА КАЧЕСТВА", 578, ImageFont.truetype(F_REG, 30), grey)
-    centre("ISO 9001:2015", 664, ImageFont.truetype(F_BOLD, 76), navy)
+    centre("CERTIFICATE OF REGISTRATION", 150, ImageFont.truetype(F_REG, 26),
+           grey, spacing=5)
+    centre("CERTIFICATE", 202, ImageFont.truetype(F_BOLD, 90), navy)
+    d.line([300, 322, w - 300, 322], fill=gold, width=3)
 
-    d.line([180, 800, w - 180, 800], fill=(206, 214, 226, 255), width=3)
-    lines = [f"Изделие: {card['gear']} редуктор {card['model']}",
-             f"Аналог «Завод Редукторов»: {card['zr']}",
-             f"Страна происхождения: {card['country']}",
-             f"Регистрационный номер: {card['sn']}"]
-    for i, t in enumerate(lines):
-        d.text((180, 850 + i * 56), t, font=ImageFont.truetype(F_REG, 32),
-               fill=ink)
+    centre("This is to certify that the Quality Management System of",
+           360, ImageFont.truetype(F_REG, 27), grey)
+    suffix = {"Италия": " S.p.A.", "Германия": " GmbH",
+              "Австрия": " GmbH", "Турция": " A.\u015e."}.get(card["country"], "")
+    centre(card["brand"] + suffix, 408, ImageFont.truetype(F_BOLD, 52), ink)
+    centre("has been assessed and registered as conforming to",
+           486, ImageFont.truetype(F_REG, 25), grey)
+    centre("ISO 9001:2015", 528, ImageFont.truetype(F_BOLD, 74), navy)
 
-    d.line([200, h - 380, 520, h - 380], fill=ink, width=3)
-    d.line([w - 520, h - 380, w - 200, h - 380], fill=ink, width=3)
-    d.text((200, h - 366), "Руководитель органа",
-           font=ImageFont.truetype(F_REG, 26), fill=grey)
-    d.text((w - 520, h - 366), "Дата выдачи",
-           font=ImageFont.truetype(F_REG, 26), fill=grey)
+    d.line([230, 640, w - 230, 640], fill=hair, width=2)
+    centre("ОБЛАСТЬ СЕРТИФИКАЦИИ", 664, ImageFont.truetype(F_BOLD, 26), navy)
+    f_s = ImageFont.truetype(F_REG, 28)
+    rows = [
+        ("Изделие", f"{card['gear']} редуктор {card['model']}"),
+        ("Аналог ZR", card["zr"]),
+        ("Страна", card["country"]),
+        ("Сертификат №", f"RU.{card['sn']}.QMS"),
+    ]
+    y = 716
+    for k, v in rows:
+        d.text((236, y), k, font=f_s, fill=grey)
+        d.text((520, y), str(v), font=f_s, fill=ink)
+        y += 50
+    d.line([230, y + 14, w - 230, y + 14], fill=hair, width=2)
+
+    # рельефная печать с лучами и лентами
+    cx, cy, r = w // 2, h - 520, 108
+    for rr, col in ((r, (198, 164, 82, 255)), (r - 12, gold), (r - 34, gold)):
+        d.ellipse([cx - rr, cy - rr, cx + rr, cy + rr], outline=col, width=4)
+    for k in range(36):
+        an = math.radians(k * 10)
+        d.line([cx + math.cos(an) * (r - 34), cy + math.sin(an) * (r - 34),
+                cx + math.cos(an) * (r - 14), cy + math.sin(an) * (r - 14)],
+               fill=(200, 172, 104, 200), width=3)
+    f_seal = ImageFont.truetype(F_BOLD, 30)
+    d.text((cx - d.textlength("ISO", font=f_seal) / 2, cy - 34), "ISO",
+           font=f_seal, fill=gold)
+    f_seal2 = ImageFont.truetype(F_BOLD, 24)
+    d.text((cx - d.textlength("9001", font=f_seal2) / 2, cy + 4), "9001",
+           font=f_seal2, fill=gold)
+    for sx in (-1, 1):
+        d.polygon([(cx + sx * 34, cy + r - 26), (cx + sx * 70, cy + r + 74),
+                   (cx + sx * 30, cy + r + 60)], fill=(168, 34, 44, 235))
+
+    # подписи: линия, росчерк, должность
+    f_sig = ImageFont.truetype(F_REG, 24)
+    x0 = 196
+    d.line([x0, h - 268, x0 + 330, h - 268], fill=ink, width=2)
+    d.text((x0, h - 254), "Руководитель органа", font=f_sig, fill=grey)
+    # росчерк: несколько петель разной амплитуды — ровная синусоида читалась
+    # как график, а не как подпись
+    pts = []
+    for i in range(90):
+        t = i / 89.0
+        pts.append((x0 + 18 + t * 268,
+                    h - 292 - math.sin(t * 11.0) * (20 - t * 9)
+                    - math.sin(t * 3.4 + 1.1) * 13 + math.sin(t * 27) * 3))
+    d.line(pts, fill=(28, 42, 92, 225), width=3, joint="curve")
+
+    x1 = w - 196 - 330
+    d.line([x1, h - 268, x1 + 330, h - 268], fill=ink, width=2)
+    d.text((x1, h - 254), "Дата выдачи", font=f_sig, fill=grey)
+    # дата детерминирована от номера: пересборка не меняет бланк
+    day = 1 + int(card["sn"]) % 28
+    month = 1 + (int(card["sn"]) // 28) % 12
+    d.text((x1 + 60, h - 306), f"{day:02d}.{month:02d}.2024",
+           font=ImageFont.truetype(F_REG, 34), fill=ink)
+
+    # блок аккредитации
+    d.rectangle([w // 2 - 96, h - 190, w // 2 + 96, h - 118], outline=navy, width=3)
+    centre("IAF", h - 182, ImageFont.truetype(F_BOLD, 40), navy)
+    centre("ACCREDITED", h - 138, ImageFont.truetype(F_BOLD, 18), navy, spacing=2)
+
+    # лёгкое зерно бумаги, чтобы лист не читался как вставленный прямоугольник
+    import random
+    rnd = random.Random(int(card["sn"]))
+    grain = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    gp = grain.load()
+    for _ in range(w * h // 260):
+        gx, gy = rnd.randrange(w), rnd.randrange(h)
+        v = rnd.randrange(18)
+        gp[gx, gy] = (120, 116, 104, v)
+    im.alpha_composite(grain)
     return im
 
 
