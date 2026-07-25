@@ -173,8 +173,11 @@ def transform(f):
     bphotos,bslug=brand_photos(imp_short)
     catimg='../assets/catalog/'+IMGT.get(typ,'cat_cylindrical')+'.webp'
     DW='../assets/drawings/zr-demo-drawing.png'
-    main=bphotos[0] if bphotos else catimg
-    thumbs=list(bphotos)+[catimg,DW]
+    # персональная карточка модели assets/cards/{slug}.webp — главное фото, если есть
+    _slug=os.path.basename(f)[:-5]
+    cardimg=('../assets/cards/'+_slug+'.webp') if os.path.exists(os.path.join(BASE,'assets','cards',_slug+'.webp')) else None
+    main=cardimg or (bphotos[0] if bphotos else catimg)
+    thumbs=([cardimg] if cardimg else [])+list(bphotos)+[catimg,DW]
     thumbs=thumbs[:4]
     while len(thumbs)<4: thumbs.append(catimg)
     def _thumb(i,th):

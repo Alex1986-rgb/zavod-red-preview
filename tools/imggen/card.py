@@ -71,22 +71,128 @@ def load_cards():
     return d["cards"], d["t"]
 
 
+def strip_variant(slug):
+    """Отбрасывает вариант -iX-…-…kvt, оставляя модель: bauer-bf-06-i25-… → bauer-bf-06."""
+    return re.sub(r"-i[0-9].*$", "", slug)
+
+
+def series_prefix(slug):
+    """Модель без числа типоразмера: bonfiglioli-a-60 → bonfiglioli-a,
+    watt-drive-a-56c → watt-drive-a. По нему ищем карточку той же серии,
+    которая покрывает нужный типоразмер (в её поле m перечислены размеры)."""
+    return re.sub(r"-\d+[a-z]*$", "", strip_variant(slug))
+
+
+def slug_size(slug):
+    """Число типоразмера в конце слага: bonfiglioli-a-60 → 60, nord-sk-2382 → 2382."""
+    m = re.search(r"-(\d+)[a-z]*$", strip_variant(slug))
+    return int(m.group(1)) if m else None
+
+
+def brand_prefix_map(cards):
+    """Для каждой фирмы — ведущие токены слага, относящиеся к бренду
+    (watt-drive, tos-znojmo, sew…). Это самый длинный общий нечисловой
+    префикс u всех карточек фирмы; на нём отделяем бренд от серии+типоразмера."""
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for c in cards:
+        u = c.get("u", "")
+        if u:
+            groups[u.split("-")[0]].append(strip_variant(u).split("-"))
+    out = {}
+    for k, rows in groups.items():
+        pref = []
+        for i in range(min(len(r) for r in rows)):
+            tok = rows[0][i]
+            if any(ch.isdigit() for ch in tok):
+                break
+            if all(len(r) > i and r[i] == tok for r in rows):
+                pref.append(tok)
+            else:
+                break
+        out[k] = pref
+    return out
+
+
+def designation(slug, brand_map):
+    """Обозначение типоразмера из самого слага — на случай, когда карточка
+    каталога не перечисляет его номер (карточка-семейство): tos-znojmo-tz-6210
+    → «TZ 6210», bonfiglioli-a-60 → «A 60». Так в строку «Типоразмер» не
+    попадёт чужой номер из карточки соседней модели."""
+    toks = strip_variant(slug).split("-")
+    pref = brand_map.get(toks[0], [toks[0]])
+    while pref and toks[:len(pref)] != pref:
+        pref = pref[:-1]
+    tail = toks[len(pref):]
+    return " ".join(t.upper() for t in tail) if tail else strip_variant(slug).upper()
+
+
 _RATIO_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            ".ratio-index.json")
+                            ".ratio-index-v2.json")
+
+# Реалистичный потолок передаточного числа по типу передачи. И имена вариантов
+# /analog/ (…-i5240-…, …-i14767-…), и поле `i` каталога (…–967, …–14767)
+# местами содержат мусорные и многоступенчатые значения, от которых верхняя
+# граница улетает в неправдоподобие. Одноступенчатые редукторы всех
+# цилиндрических/червячных рядов реально не превышают ~300; шире — только
+# вариатор (перекрывает огромный диапазон) и многоступенчатый планетарный.
+RATIO_CEIL_DEFAULT = 315
+RATIO_CEIL_BY_GEAR = {"вариатор": 10 ** 6, "планетарный": 600}
+
+
+def _ratio_ceiling(gear):
+    return RATIO_CEIL_BY_GEAR.get(gear, RATIO_CEIL_DEFAULT)
+
+
+def _clamp_ratio(ratio, gear):
+    """Отсекает выбросы передаточного числа реалистичным пределом типа передачи.
+
+    Значения из [1, потолок] оставляем как есть (строку не трогаем, чтобы не
+    менять запятые на точки без нужды); если попались выбросы — пересобираем
+    диапазон из уцелевших значений. Работает и с диапазоном из имён файлов,
+    и с полем `i` каталога."""
+    nums = re.findall(r"[0-9]+(?:[.,][0-9]+)?", str(ratio))
+    if not nums:
+        return ratio
+    ceil = _ratio_ceiling(gear)
+    vals = [float(n.replace(",", ".")) for n in nums]
+    kept = [v for v in vals if 1 <= v <= ceil]
+    if len(kept) == len(vals):
+        return ratio                       # всё в пределах — строку не портим
+    if not kept:
+        return ratio                       # чистить нечем — оставляем как есть
+    lo, hi = min(kept), max(kept)
+    return f"{lo:g}–{hi:g}" if lo != hi else f"{lo:g}"
 
 
 def ratio_index():
-    """Истинные диапазоны передаточных чисел, собранные из имён файлов /analog/.
+    """Истинные диапазоны передаточных чисел из имён файлов /analog/,
+    с отсечкой неправдоподобных выбросов по типу передачи.
 
     В import-catalog.json поле `i` побито у 172 записей из 498: у NMRV 050
-    стоит «8–1» вместо реальных 7,5–100. Тот же мусор уже попал и в HTML
-    страниц. Имена вариантов (…-i7-5-…, …-i100-…) сохранили правду,
-    поэтому диапазон пересобираем из них, а JSON оставляем запасным.
+    стоит «8–1» вместо реальных 7,5–100. Имена вариантов (…-i7-5-…, …-i100-…)
+    сохранили правду, поэтому диапазон пересобираем из них. Но там же попадаются
+    мусорные i (…-i5240-…, …-i14767-…) — битые или комбинированные значения,
+    от которых верхний предел раздувается (A-55 давал «7.21–5240»). Значения
+    выше физического потолка серии отбрасываем.
     """
     if os.path.isfile(_RATIO_CACHE):
         return json.load(open(_RATIO_CACHE, encoding="utf-8"))
 
     from collections import defaultdict
+    cards, types = load_cards()
+    exact_g, series_g = {}, {}
+    for c in cards:
+        u = c.get("u", "")
+        if not u:
+            continue
+        g = types[c["t"]] if isinstance(c.get("t"), int) else str(c.get("t"))
+        exact_g.setdefault(strip_variant(u), g)
+        series_g.setdefault(series_prefix(u), g)
+
+    def gear_of_key(key):
+        return exact_g.get(key) or series_g.get(series_prefix(key))
+
     vals = defaultdict(set)
     d = os.path.join(BASE, "analog")
     for f in os.listdir(d):
@@ -102,7 +208,9 @@ def ratio_index():
 
     idx = {}
     for model, v in vals.items():
-        lo, hi = min(v), max(v)
+        ceil = _ratio_ceiling(gear_of_key(model))
+        kept = [x for x in v if 1 <= x <= ceil] or list(v)
+        lo, hi = min(kept), max(kept)
         if lo != hi:
             idx[model] = f"{lo:g}–{hi:g}"
     json.dump(idx, open(_RATIO_CACHE, "w", encoding="utf-8"), ensure_ascii=False)
@@ -124,8 +232,9 @@ def normalize(c, types, ratios=None):
     slug = c.get("u", "")
     ratio = c.get("i", "")
     if ratios:
-        key = re.sub(r"-i[0-9].*$", "", slug)
+        key = strip_variant(slug)
         ratio = ratios.get(key, ratio)
+    ratio = _clamp_ratio(ratio, gear)
     return {
         "brand": _clean(c.get("b", "")), "model": _clean(c.get("m", "")),
         "gear": gear, "zr": _clean(c.get("z", "")),
