@@ -496,5 +496,53 @@
 "motovario-ba-52": {
 "done": true,
 "ai": true
+},
+"motovario-cs-80": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-040": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-050": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-063": {
+"done": true,
+"ai": true
+},
+"motovario-drv-040-075": {
+"done": true,
+"ai": true
+},
+"motovario-drv-040-090": {
+"done": true,
+"ai": true
+},
+"motovario-drv-063-130": {
+"done": true,
+"ai": true
+},
+"motovario-drv-063-150": {
+"done": true,
+"ai": true
+},
+"motovario-drv050-110": {
+"done": true,
+"ai": true
+},
+"motovario-ha-100": {
+"done": true,
+"ai": true
+},
+"motovario-ha-125": {
+"done": true,
+"ai": true
+},
+"motovario-ha-140": {
+"done": true,
+"ai": true
 }
 }
