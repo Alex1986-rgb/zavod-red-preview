@@ -592,5 +592,53 @@
 "motovario-nmrv-150": {
 "done": true,
 "ai": true
+},
+"motovario-pcrv-063-040": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-063-050": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-063-063": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-050": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-063": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-075": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-090": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-075": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-090": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-110": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-130": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-090-110": {
+"done": true,
+"ai": true
 }
 }
