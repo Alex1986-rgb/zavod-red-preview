@@ -109,6 +109,16 @@ def ratio_index():
     return idx
 
 
+def _clean(v):
+    """Схлопывает пробелы и переносы в одну строку.
+
+    В данных каталога у части моделей значения содержат перенос строки;
+    Pillow textlength не умеет мерить многострочный текст и валит сборку
+    шильдика/сертификата. Чистим на входе, чтобы все потребители получали
+    однострочные значения."""
+    return " ".join(str(v).split())
+
+
 def normalize(c, types, ratios=None):
     gear = types[c["t"]] if isinstance(c.get("t"), int) else str(c.get("t", ""))
     slug = c.get("u", "")
@@ -117,9 +127,10 @@ def normalize(c, types, ratios=None):
         key = re.sub(r"-i[0-9].*$", "", slug)
         ratio = ratios.get(key, ratio)
     return {
-        "brand": c.get("b", ""), "model": c.get("m", ""), "gear": gear,
-        "zr": c.get("z", ""), "power": c.get("pw", ""), "ratio": ratio,
-        "country": c.get("c", ""), "slug": slug,
+        "brand": _clean(c.get("b", "")), "model": _clean(c.get("m", "")),
+        "gear": gear, "zr": _clean(c.get("z", "")),
+        "power": _clean(c.get("pw", "")), "ratio": _clean(ratio),
+        "country": _clean(c.get("c", "")), "slug": slug,
     }
 
 
