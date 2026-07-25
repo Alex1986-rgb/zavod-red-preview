@@ -21,7 +21,8 @@
 "done": true
 },
 "rossi-ecft-070-146": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "sew-f-107": {
 "done": true
@@ -36,7 +37,8 @@
 "done": true
 },
 "tramec-100": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "transtecno-cm-030": {
 "done": true
@@ -54,7 +56,8 @@
 "done": true
 },
 "varvel-33": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bf-10": {
 "done": true
@@ -84,7 +87,8 @@
 "done": true
 },
 "bauer-bf-40": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bf-60": {
 "done": true
@@ -102,7 +106,8 @@
 "done": true
 },
 "bauer-bg-10x": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bg-50": {
 "done": true
@@ -111,13 +116,16 @@
 "done": true
 },
 "bauer-bg-70": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bg-15": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bg-20": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bk-20": {
 "done": true
@@ -132,7 +140,8 @@
 "done": true
 },
 "bauer-bk-60": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bs-02": {
 "done": true
@@ -141,7 +150,8 @@
 "done": true
 },
 "bauer-bs-04": {
-"done": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bauer-bk-70": {
 "done": true
@@ -172,8 +182,8 @@
 "ai": true
 },
 "bonfiglioli-a-55": {
-"done": true,
-"ai": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bonfiglioli-a-70": {
 "done": true,
@@ -188,8 +198,8 @@
 "ai": true
 },
 "bonfiglioli-c-22": {
-"done": true,
-"ai": true
+"done": false,
+"regen": "series/ratio data fix"
 },
 "bonfiglioli-c-36": {
 "done": true,
@@ -292,6 +302,54 @@
 "ai": true
 },
 "innored-irwd-150": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-70": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-41": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-70": {
+"done": true,
+"ai": true
+},
+"innovari-402a": {
+"done": true,
+"ai": true
+},
+"innovari-602a": {
+"done": true,
+"ai": true
+},
+"innovari-801c": {
+"done": true,
+"ai": true
+},
+"innovari-851c": {
+"done": true,
+"ai": true
+},
+"innovari-901c": {
+"done": true,
+"ai": true
+},
+"innovari-b-030": {
+"done": true,
+"ai": true
+},
+"innovari-b-045": {
+"done": true,
+"ai": true
+},
+"innovari-b-050": {
+"done": true,
+"ai": true
+},
+"innovari-b-063": {
 "done": true,
 "ai": true
 }
