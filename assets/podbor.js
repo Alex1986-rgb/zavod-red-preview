@@ -100,6 +100,16 @@
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
   var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'Tos Znojmo',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'Tramec',n:'Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
+  // Реальные серии брендов без помодельной базы — сопоставление ПО ТИПУ (веб-каталоги
+  // производителей, 2026). Типоразмер уточняет инженер. Ключ типа = наш DB.t.
+  var SERIESMAP={
+    'Siemens':{'соосно-цилиндрический':'E/Z/D','коническо-цилиндрический':'B/K','цилиндро-конический':'B/K','плоско-цилиндрический':'FZ/FD','плоский цилиндрический':'FZ/FD','цилиндрический':'E/Z/D','червячный':'S'},
+    'Flender':{'соосно-цилиндрический':'H (E/Z/D)','коническо-цилиндрический':'B/K','цилиндро-конический':'B/K','плоско-цилиндрический':'FZ/FD','плоский цилиндрический':'FZ/FD','цилиндрический':'H','червячный':'C/S'},
+    'KEB':{'соосно-цилиндрический':'G','коническо-цилиндрический':'K','цилиндро-конический':'K','плоско-цилиндрический':'F','плоский цилиндрический':'F','цилиндрический':'G','червячный':'S'},
+    'Boneng':{'соосно-цилиндрический':'C','коническо-цилиндрический':'K','цилиндро-конический':'K','плоско-цилиндрический':'F','плоский цилиндрический':'F','цилиндрический':'C','червячный':'S'},
+    'Guomao':{'соосно-цилиндрический':'GR','коническо-цилиндрический':'GK','цилиндро-конический':'GK','плоско-цилиндрический':'GF','плоский цилиндрический':'GF','цилиндрический':'GR','червячный':'GS'}
+  };
+  function brandSeries(bk,g){ var m=SERIESMAP[bk]; if(!m)return null; var tn=(DB&&DB.t)?DB.t[g.t]:''; return m[tn]||null; }
   // ключ кнопки → фактические ключи бренда в g.a (данные разбиты по под-сериям). 'Varvel серия 7МЧ'
   // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных отсеиваются на лету — см. brandHasData().
   var BKEYS={'NORD':['NORD','Nord цилиндро-червячные'],'STM':['STM','STM AMP, AMF','STM серия RMI','STM серия UMI','STM серия WMI'],'TZ':['TZ','Tos Znojmo'],'SITI':['SITI','Siti BH','Siti серия MI','Siti серия MU','Siti PD','Siti Varmec RFV'],'Varmec':['VARMEC RCV','Siti Varmec RFV'],'Varvel':['Varvel MRD','Varvel MRN','Varvel RO, RV','Varvel серия SRS','Varvel серия SRT'],'Rossi':['Rossi артикулы R I, MR','Rossi серия AS(MRV)'],'InnoRed':['Innored'],'Tramec':['Tramec T','Tramec серия КМ','Tramec серия X','Tramec серия PA, PC']};
@@ -555,8 +565,16 @@
       }else{
         // EVL — внутренний код, наружу и в CRM уходит только маркировка ZR
         var _zrx=zrOf(g.e)||g.e;
-        tz='<td class="pf-tz"><b>'+_zrx+'</b><span class="pf-tr-an">аналог '+b.n+' — по запросу</span></td>';
-        ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+_zrx+'" href="#zayavka">Запрос</a></td>';
+        // бренды без помодельной базы, но с известной серией по типу (Siemens, Flender,
+        // KEB, Boneng, Guomao) — показываем реальную серию + пометку про типоразмер.
+        var _ser=brandSeries(b.k,g);
+        if(_ser){
+          tz='<td class="pf-tz"><b>'+b.n+' '+_ser+'</b><span class="pf-tr-an">наш аналог '+_zrx+' · типоразмер уточнит инженер</span></td>';
+          ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' '+_ser+' → '+_zrx+'" href="#zayavka">Запрос</a></td>';
+        }else{
+          tz='<td class="pf-tz"><b>'+_zrx+'</b><span class="pf-tr-an">аналог '+b.n+' — по запросу</span></td>';
+          ord='<td class="pf-order"><a class="pf-ord pf-ord--req" data-zayavka data-req="'+b.n+' → '+_zrx+'" href="#zayavka">Запрос</a></td>';
+        }
       }
     }else{
       // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
