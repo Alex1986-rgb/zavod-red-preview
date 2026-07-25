@@ -1,34 +1,36 @@
 name: Проверка FTP-пароля
-# Проверяет пару логин/пароль. Ничего не заливает. Обрезает у пароля и логина
-# перенос строки и хвостовые пробелы — частый артефакт вставки из буфера.
+# Пробует пароль из секрета против всех кандидатов-логинов. Ничего не заливает.
 on:
   workflow_dispatch: {}
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - run: sudo apt-get update && sudo apt-get install -y lftp
-      - name: Вход обычным FTP с очисткой секрета
+      - name: Перебор логинов с одним паролем
         env:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          # убираем CR/LF и хвостовые пробелы, прилипшие при копировании
           FTP_HOST=$(printf '%s' "$FTP_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
-          FTP_USER=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
           FTP_PASS=$(printf '%s' "$FTP_PASS" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
-          echo "логин: длина ${#FTP_USER}   пароль: длина ${#FTP_PASS} (после очистки)"
-          set +e
-          out=$(timeout 60 lftp -c "set ftp:ssl-allow no; set net:timeout 15; set net:max-retries 1; \
-            open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; cls -1 /public_html/ | head -6;" 2>&1)
-          code=$?
-          echo "$out" | grep -v "^$" | head -8
-          if echo "$out" | grep -q "530"; then
-            echo "==> 530: логин ИЛИ пароль неверны (не перенос строки — его уже убрали)"; exit 1
-          elif [ $code -eq 0 ]; then
-            echo "==> ДОСТУП ЕСТЬ — вход выполнен, каталог прочитан"
-          else
-            echo "==> Не удалось, но не по паролю (код $code)"; exit 1
-          fi
+          base=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          echo "база логина: длина ${#base}   пароль: длина ${#FTP_PASS}"
+          any_ok=0
+          for u in "$base" "${base}_1" "${base}_2"; do
+            out=$(timeout 40 lftp -c "set ftp:ssl-allow no; set net:timeout 12; set net:max-retries 1; \
+              open -u \"$u\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; pwd; cls -1 / | head -3;" 2>&1)
+            if echo "$out" | grep -q "530"; then
+              echo "  $u : 530 — не подходит"
+            elif echo "$out" | grep -qi "login\|fatal\|error"; then
+              echo "  $u : ошибка не по паролю — $(echo "$out" | head -1)"
+            else
+              echo "  $u : ✅ ВХОД ЕСТЬ"
+              echo "$out" | grep -v "^$" | head -4 | sed 's/^/       /'
+              any_ok=1
+            fi
+          done
+          echo "-----"
+          [ $any_ok -eq 1 ] && echo "==> НАЙДЕН рабочий логин (см. ✅ выше)" || echo "==> НИ ОДИН логин не подошёл к этому паролю — значит неверен ПАРОЛЬ"
