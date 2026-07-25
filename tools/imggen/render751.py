@@ -80,22 +80,36 @@ def series_key(slug):
 
 
 def catalog_index(cards, types):
-    """(полный префикс, ключ серии) → данные карточки."""
-    exact, series = {}, {}
+    """(полный префикс, ключ серии, (серия, размер)) → данные карточки.
+
+    Индекс size сопоставляет типоразмер слага с карточкой ТОЙ ЖЕ серии, в
+    поле m которой этот номер перечислен явно (A-55 покрывает «A 55, A 60»).
+    Без него series-fallback на одно-буквенных сериях возвращал первую
+    карточку ряда (bonfiglioli-a-60 → «A 20»)."""
+    exact, series, size = {}, {}, {}
     for c in cards:
         u = c.get("u") or ""
         if not u:
             continue
-        exact.setdefault(re.sub(r"-i[0-9].*$", "", u), c)
+        exact.setdefault(cardmod.strip_variant(u), c)
         series.setdefault(series_key(u), c)
-    return {"exact": exact, "series": series}
+        sp = cardmod.series_prefix(u)
+        for n in re.findall(r"\d+", c.get("m", "")):
+            size.setdefault((sp, int(n)), c)
+    return {"exact": exact, "series": series, "size": size}
 
 
 def match(model, idx):
-    """Данные модели: точный префикс → серия → префикс-начало → доп. источник."""
-    base = re.sub(r"-i[0-9].*$", "", model)
+    """Данные модели: точный префикс → карточка серии с этим типоразмером →
+    серия → префикс-начало → доп. источник."""
+    base = cardmod.strip_variant(model)
     if base in idx["exact"]:
         return idx["exact"][base]
+    size = cardmod.slug_size(model)
+    if size is not None:
+        sc = idx["size"].get((cardmod.series_prefix(model), size))
+        if sc is not None:                  # карточка серии, покрывающая размер
+            return sc
     sk = series_key(model)
     if sk in idx["series"]:
         return idx["series"][sk]
@@ -106,6 +120,18 @@ def match(model, idx):
     if best:
         return best[1]
     return extra_data.lookup(base)          # 78 моделей вне import-catalog
+
+
+def display_model(model, data, brand_map):
+    """Типоразмер для впечатывания в карточку. Если карточка каталога не
+    перечисляет номер слага (осталась карточка-семейство), берём обозначение
+    из самого слага, чтобы не впечатать чужой номер соседней модели."""
+    m = cardmod._clean(data.get("m", ""))
+    size = cardmod.slug_size(model)
+    nums = {int(x) for x in re.findall(r"\d+", m)}
+    if size is not None and size not in nums:
+        return cardmod.designation(model, brand_map)
+    return m
 
 
 def gear_of(d, types):
@@ -127,9 +153,14 @@ def px(quad, size):
     return [(x * w, y * h) for x, y in quad]
 
 
-def build_one(model, data, types, ratios, frame_cache):
+def build_one(model, data, types, ratios, brand_map):
     card = cardmod.normalize(data, types, ratios)
     card["slug"] = model                      # ключ файла — сама модель
+    card["model"] = display_model(model, data, brand_map)
+    mkey = cardmod.strip_variant(model)       # i — из файлов самого слага
+    if ratios and mkey in ratios:
+        card["ratio"] = cardmod._clean(cardmod._clamp_ratio(ratios[mkey],
+                                                            card["gear"]))
     card = enrich(card)
 
     frame_name = GEAR_FRAME.get(card["gear"], "hero-coax")
@@ -175,6 +206,7 @@ def main():
     cards, types = cardmod.load_cards()
     ratios = cardmod.ratio_index()
     idx = catalog_index(cards, types)
+    brand_map = cardmod.brand_prefix_map(cards)
     models = analog_models()
 
     matched = [(m, match(m, idx)) for m in models]
@@ -210,15 +242,16 @@ def main():
     for i, (m, d) in enumerate(todo, 1):
         dst = os.path.join(OUT, m + ".webp")
         gear = gear_of(d, types)
+        label = display_model(m, d, brand_map)
         if not force and os.path.isfile(dst):
             manifest[m] = {"file": m + ".webp", "gear": gear,
                            "brand": d.get("b", ""),
-                           "alt": f"{d.get('b','')} {d.get('m','')} — {gear} "
+                           "alt": f"{d.get('b','')} {label} — {gear} "
                                   f"редуктор, аналог ZR"}
             skip += 1
             continue
         try:
-            out, gear = build_one(m, d, types, ratios, {})
+            out, gear = build_one(m, d, types, ratios, brand_map)
             if out is None:
                 err += 1
                 if err <= 10:
@@ -226,7 +259,7 @@ def main():
                 continue
             manifest[m] = {"file": os.path.basename(out), "gear": gear,
                            "brand": d.get("b", ""),
-                           "alt": f"{d.get('b','')} {d.get('m','')} — {gear} "
+                           "alt": f"{d.get('b','')} {label} — {gear} "
                                   f"редуктор, аналог ZR"}
             done += 1
             if done % 50 == 0:

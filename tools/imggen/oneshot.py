@@ -165,10 +165,15 @@ def save_state(s):
 
 
 def all_cards():
-    """(model, нормализованные данные) для всех 751 модели."""
+    """(model, нормализованные данные) для всех 751 модели.
+
+    Данные считаем ровно так же, как render751.build_one: типоразмер и i
+    поправлены (карточка серии с нужным размером, i из файлов самого слага),
+    чтобы промт нейросети и собранная карточка не расходились."""
     cards, types = cardmod.load_cards()
     ratios = cardmod.ratio_index()
     idx = R.catalog_index(cards, types)
+    brand_map = cardmod.brand_prefix_map(cards)
     out = []
     for m in R.analog_models():
         d = R.match(m, idx)
@@ -176,6 +181,11 @@ def all_cards():
             continue
         c = cardmod.normalize(d, types, ratios)
         c["slug"] = m
+        c["model"] = R.display_model(m, d, brand_map)
+        mkey = cardmod.strip_variant(m)
+        if mkey in ratios:
+            c["ratio"] = cardmod._clean(cardmod._clamp_ratio(ratios[mkey],
+                                                             c["gear"]))
         out.append((m, c))
     return out
 

@@ -1,1 +1,980 @@
-{"bauer-bf-06": {"done": true}, "bonfiglioli-90": {"done": true}, "innored-irwd-030": {"done": true}, "innovari-113c": {"done": true}, "lenze-gfl-04": {"done": true}, "motovario-53": {"done": true}, "nord-02050": {"done": true}, "rossi-ecft-070-146": {"done": true}, "sew-f-107": {"done": true}, "siti-100": {"done": true}, "stm-112": {"done": true}, "tos-znojmo-rt-mrt-100a": {"done": true}, "tramec-100": {"done": true}, "transtecno-cm-030": {"done": true}, "varmec-rcv-202": {"done": true}, "yilmaz-e-030": {"done": true}, "varvel-13": {"done": true}, "varvel-23": {"done": true}, "varvel-33": {"done": true}, "bauer-bf-10": {"done": true}, "bonfiglioli-a-20": {"done": true}, "innored-irwd-040": {"done": true}, "innovari-114c": {"done": true}, "lenze-gfl-05": {"done": true}, "vemper-mrv-030": {"done": true}, "watt-a-46as": {"done": true}, "bauer-bf-30": {"done": true}, "bauer-bf-50": {"done": true}, "bauer-bf-40": {"done": true}, "bauer-bf-60": {"done": true}, "bauer-bf-70": {"done": true}, "bauer-bf-20": {"done": true}, "bauer-bf-80": {"done": true}, "bauer-bf-90": {"done": true}, "bauer-bg-10x": {"done": true}, "bauer-bg-50": {"done": true}, "bauer-bg-60": {"done": true}, "bauer-bg-70": {"done": true}, "bauer-bg-15": {"done": true}, "bauer-bg-20": {"done": true}, "bauer-bk-20": {"done": true}, "bauer-bk-30": {"done": true}, "bauer-bk-40": {"done": true}, "bauer-bk-50": {"done": true}, "bauer-bk-60": {"done": true}, "bauer-bs-02": {"done": true}, "bauer-bs-03": {"done": true}, "bauer-bs-04": {"done": true}}
+{
+"bauer-bf-06": {
+"done": true
+},
+"bonfiglioli-90": {
+"done": true
+},
+"innored-irwd-030": {
+"done": true
+},
+"innovari-113c": {
+"done": true
+},
+"lenze-gfl-04": {
+"done": true
+},
+"motovario-53": {
+"done": true
+},
+"nord-02050": {
+"done": true
+},
+"rossi-ecft-070-146": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"sew-f-107": {
+"done": true
+},
+"siti-100": {
+"done": true
+},
+"stm-112": {
+"done": true
+},
+"tos-znojmo-rt-mrt-100a": {
+"done": true
+},
+"tramec-100": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"transtecno-cm-030": {
+"done": true
+},
+"varmec-rcv-202": {
+"done": true
+},
+"yilmaz-e-030": {
+"done": true
+},
+"varvel-13": {
+"done": true
+},
+"varvel-23": {
+"done": true
+},
+"varvel-33": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bf-10": {
+"done": true
+},
+"bonfiglioli-a-20": {
+"done": true
+},
+"innored-irwd-040": {
+"done": true
+},
+"innovari-114c": {
+"done": true
+},
+"lenze-gfl-05": {
+"done": true
+},
+"vemper-mrv-030": {
+"done": true
+},
+"watt-a-46as": {
+"done": true
+},
+"bauer-bf-30": {
+"done": true
+},
+"bauer-bf-50": {
+"done": true
+},
+"bauer-bf-40": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bf-60": {
+"done": true
+},
+"bauer-bf-70": {
+"done": true
+},
+"bauer-bf-20": {
+"done": true
+},
+"bauer-bf-80": {
+"done": true
+},
+"bauer-bf-90": {
+"done": true
+},
+"bauer-bg-10x": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bg-50": {
+"done": true
+},
+"bauer-bg-60": {
+"done": true
+},
+"bauer-bg-70": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bg-15": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bg-20": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bk-20": {
+"done": true
+},
+"bauer-bk-30": {
+"done": true
+},
+"bauer-bk-40": {
+"done": true
+},
+"bauer-bk-50": {
+"done": true
+},
+"bauer-bk-60": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bs-02": {
+"done": true
+},
+"bauer-bs-03": {
+"done": true
+},
+"bauer-bs-04": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bauer-bk-70": {
+"done": true
+},
+"bauer-bs-06": {
+"done": true
+},
+"bauer-bs-10": {
+"done": true
+},
+"bauer-bs-20": {
+"done": true
+},
+"bauer-bs-30": {
+"done": true
+},
+"bonfiglioli-a-30": {
+"done": true
+},
+"bonfiglioli-a-35": {
+"done": true
+},
+"bonfiglioli-a-41": {
+"done": true
+},
+"bonfiglioli-a-50": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-a-55": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bonfiglioli-a-70": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-a-80": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-100": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-22": {
+"done": false,
+"regen": "series/ratio data fix"
+},
+"bonfiglioli-c-36": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-51": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-61": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-80": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-10": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-25": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-51": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-60": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-90": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-vf-130": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-vf-150": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-vf-30": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-vf-44": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-vf-49": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-w-110": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-w-63": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-w-75": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-w-86": {
+"done": true,
+"ai": true
+},
+"innored-irwd-050": {
+"done": true,
+"ai": true
+},
+"innored-irwd-063": {
+"done": true,
+"ai": true
+},
+"innored-irwd-075": {
+"done": true,
+"ai": true
+},
+"innored-irwd-090": {
+"done": true,
+"ai": true
+},
+"innored-irwd-110": {
+"done": true,
+"ai": true
+},
+"innored-irwd-130": {
+"done": true,
+"ai": true
+},
+"innovari-134c": {
+"done": true,
+"ai": true
+},
+"innored-irwd-150": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-c-70": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-41": {
+"done": true,
+"ai": true
+},
+"bonfiglioli-f-70": {
+"done": true,
+"ai": true
+},
+"innovari-402a": {
+"done": true,
+"ai": true
+},
+"innovari-602a": {
+"done": true,
+"ai": true
+},
+"innovari-801c": {
+"done": true,
+"ai": true
+},
+"innovari-851c": {
+"done": true,
+"ai": true
+},
+"innovari-901c": {
+"done": true,
+"ai": true
+},
+"innovari-b-030": {
+"done": true,
+"ai": true
+},
+"innovari-b-045": {
+"done": true,
+"ai": true
+},
+"innovari-b-050": {
+"done": true,
+"ai": true
+},
+"innovari-b-063": {
+"done": true,
+"ai": true
+},
+"innovari-b-063a": {
+"done": true,
+"ai": true
+},
+"innovari-b-085": {
+"done": true,
+"ai": true
+},
+"innovari-b-110": {
+"done": true,
+"ai": true
+},
+"innovari-fa-41": {
+"done": true,
+"ai": true
+},
+"innovari-fa-52": {
+"done": true,
+"ai": true
+},
+"innovari-fc-81": {
+"done": true,
+"ai": true
+},
+"innovari-fc-72": {
+"done": true,
+"ai": true
+},
+"innovari-x52a": {
+"done": true,
+"ai": true
+},
+"innovari-x62a": {
+"done": true,
+"ai": true
+},
+"lenze-gfl-06": {
+"done": true,
+"ai": true
+},
+"lenze-gfl-07": {
+"done": true,
+"ai": true
+},
+"lenze-gfl-09": {
+"done": true,
+"ai": true
+},
+"lenze-gfl-11": {
+"done": true,
+"ai": true
+},
+"lenze-gfl-14": {
+"done": true,
+"ai": true
+},
+"lenze-gkr-04": {
+"done": true,
+"ai": true
+},
+"lenze-gkr-05": {
+"done": true,
+"ai": true
+},
+"lenze-gkr-06": {
+"done": true,
+"ai": true
+},
+"lenze-gks-06": {
+"done": true,
+"ai": true
+},
+"lenze-gks-07": {
+"done": true,
+"ai": true
+},
+"lenze-gks-09": {
+"done": true,
+"ai": true
+},
+"lenze-gks-11": {
+"done": true,
+"ai": true
+},
+"lenze-gks-14": {
+"done": true,
+"ai": true
+},
+"lenze-gst-06": {
+"done": true,
+"ai": true
+},
+"lenze-gst09": {
+"done": true,
+"ai": true
+},
+"motovario-cb-063": {
+"done": true,
+"ai": true
+},
+"motovario-cb-083": {
+"done": true,
+"ai": true
+},
+"motovario-cb-103": {
+"done": true,
+"ai": true
+},
+"motovario-cb-123": {
+"done": true,
+"ai": true
+},
+"motovario-cb-143": {
+"done": true,
+"ai": true
+},
+"motovario-cb-153": {
+"done": true,
+"ai": true
+},
+"motovario-cb-163": {
+"done": true,
+"ai": true
+},
+"motovario-cs-100": {
+"done": true,
+"ai": true
+},
+"motovario-cs-125": {
+"done": true,
+"ai": true
+},
+"motovario-cs-50": {
+"done": true,
+"ai": true
+},
+"motovario-cs-60": {
+"done": true,
+"ai": true
+},
+"motovario-ba-52": {
+"done": true,
+"ai": true
+},
+"motovario-cs-80": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-040": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-050": {
+"done": true,
+"ai": true
+},
+"motovario-drv-030-063": {
+"done": true,
+"ai": true
+},
+"motovario-drv-040-075": {
+"done": true,
+"ai": true
+},
+"motovario-drv-040-090": {
+"done": true,
+"ai": true
+},
+"motovario-drv-063-130": {
+"done": true,
+"ai": true
+},
+"motovario-drv-063-150": {
+"done": true,
+"ai": true
+},
+"motovario-drv050-110": {
+"done": true,
+"ai": true
+},
+"motovario-ha-100": {
+"done": true,
+"ai": true
+},
+"motovario-ha-125": {
+"done": true,
+"ai": true
+},
+"motovario-ha-140": {
+"done": true,
+"ai": true
+},
+"motovario-ha-32": {
+"done": true,
+"ai": true
+},
+"motovario-ha-62": {
+"done": true,
+"ai": true
+},
+"motovario-ha-80": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-030": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-040": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-050": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-063": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-075": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-090": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-110": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-130": {
+"done": true,
+"ai": true
+},
+"motovario-nmrv-150": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-063-040": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-063-050": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-063-063": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-050": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-063": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-075": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-071-090": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-075": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-090": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-110": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-080-130": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-090-110": {
+"done": true,
+"ai": true
+},
+"motovario-pcrv-090-130": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-31": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-40": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-50": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-63": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-75": {
+"done": true,
+"ai": true
+},
+"nord-12080": {
+"done": true,
+"ai": true
+},
+"nord-32100": {
+"done": true,
+"ai": true
+},
+"nord-42125": {
+"done": true,
+"ai": true
+},
+"nord-9032-1": {
+"done": true,
+"ai": true
+},
+"nord-9042-1": {
+"done": true,
+"ai": true
+},
+"nord-9052-1": {
+"done": true,
+"ai": true
+},
+"nord-92372-1": {
+"done": true,
+"ai": true
+},
+"nord-92672-1": {
+"done": true,
+"ai": true
+},
+"nord-92772-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-102": {
+"done": true,
+"ai": true
+},
+"nord-sk-1282": {
+"done": true,
+"ai": true
+},
+"nord-sk-2282": {
+"done": true,
+"ai": true
+},
+"nord-sk-3282": {
+"done": true,
+"ai": true
+},
+"nord-sk-372-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-4282": {
+"done": true,
+"ai": true
+},
+"nord-sk-5282": {
+"done": true,
+"ai": true
+},
+"nord-sk-572-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-62": {
+"done": true,
+"ai": true
+},
+"nord-sk-6282": {
+"done": true,
+"ai": true
+},
+"nord-sk-672-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-72": {
+"done": true,
+"ai": true
+},
+"nord-sk-7282": {
+"done": true,
+"ai": true
+},
+"nord-sk-772-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-8282": {
+"done": true,
+"ai": true
+},
+"nord-sk-872-1": {
+"done": true,
+"ai": true
+},
+"nord-sk-92": {
+"done": true,
+"ai": true
+},
+"nord-sk-9282": {
+"done": true,
+"ai": true
+},
+"nord-sk-972-1": {
+"done": true,
+"ai": true
+},
+"rossi-mr-0": {
+"done": true,
+"ai": true
+},
+"rossi-mr-125": {
+"done": true,
+"ai": true
+},
+"rossi-mr-140": {
+"done": true,
+"ai": true
+},
+"rossi-mr-180": {
+"done": true,
+"ai": true
+},
+"rossi-mr-200": {
+"done": true,
+"ai": true
+},
+"rossi-mr-250": {
+"done": true,
+"ai": true
+},
+"rossi-mr-63": {
+"done": true,
+"ai": true
+},
+"rossi-mr-7": {
+"done": true,
+"ai": true
+},
+"rossi-mr-80": {
+"done": true,
+"ai": true
+},
+"rossi-mr-81": {
+"done": true,
+"ai": true
+},
+"rossi-mr5": {
+"done": true,
+"ai": true
+},
+"rossi-mrv-225": {
+"done": true,
+"ai": true
+},
+"rossi-mrv-742": {
+"done": true,
+"ai": true
+},
+"rossi-r-i-100": {
+"done": true,
+"ai": true
+},
+"rossi-rv-100": {
+"done": true,
+"ai": true
+},
+"rossi-rv-32": {
+"done": true,
+"ai": true
+},
+"rossi-rv-50": {
+"done": true,
+"ai": true
+},
+"rossi-rv-80": {
+"done": true,
+"ai": true
+},
+"sew-f-127": {
+"done": true,
+"ai": true
+},
+"sew-f-157": {
+"done": true,
+"ai": true
+},
+"sew-f-37": {
+"done": true,
+"ai": true
+},
+"sew-f-47": {
+"done": true,
+"ai": true
+},
+"sew-f-57": {
+"done": true,
+"ai": true
+},
+"sew-f-67": {
+"done": true,
+"ai": true
+},
+"sew-f-77": {
+"done": true,
+"ai": true
+},
+"sew-f-87": {
+"done": true,
+"ai": true
+},
+"sew-f-97": {
+"done": true,
+"ai": true
+},
+"sew-k-107": {
+"done": true,
+"ai": true
+},
+"sew-k-127": {
+"done": true,
+"ai": true
+},
+"sew-k-157": {
+"done": true,
+"ai": true
+},
+"sew-k-167": {
+"done": true,
+"ai": true
+},
+"sew-k-37": {
+"done": true,
+"ai": true
+},
+"sew-k-47": {
+"done": true,
+"ai": true
+},
+"sew-k-57": {
+"done": true,
+"ai": true
+},
+"sew-k-67": {
+"done": true,
+"ai": true
+},
+"sew-k-77": {
+"done": true,
+"ai": true
+},
+"sew-k-87": {
+"done": true,
+"ai": true
+},
+"sew-k-97": {
+"done": true,
+"ai": true
+},
+"sew-r-107": {
+"done": true,
+"ai": true
+},
+"sew-r-137": {
+"done": true,
+"ai": true
+},
+"sew-r-147": {
+"done": true,
+"ai": true
+},
+"sew-r-167": {
+"done": true,
+"ai": true
+},
+"sew-r-37": {
+"done": true,
+"ai": true
+},
+"sew-r-57": {
+"done": true,
+"ai": true
+},
+"sew-r-67": {
+"done": true,
+"ai": true
+},
+"sew-r-77": {
+"done": true,
+"ai": true
+},
+"sew-r-87": {
+"done": true,
+"ai": true
+},
+"sew-r-97": {
+"done": true,
+"ai": true
+},
+"sew-wa-20": {
+"done": true,
+"ai": true
+},
+"sew-wa-37": {
+"done": true,
+"ai": true
+}
+}
