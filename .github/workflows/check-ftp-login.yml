@@ -9,6 +9,7 @@ jobs:
     steps:
       - run: sudo apt-get update && sudo apt-get install -y lftp
       - name: Перебор логинов с одним паролем
+        shell: bash {0}   # без -e: lftp при отказе логина возвращает ненулевой код
         env:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
@@ -20,17 +21,16 @@ jobs:
           echo "база логина: длина ${#base}   пароль: длина ${#FTP_PASS}"
           any_ok=0
           for u in "$base" "${base}_1" "${base}_2"; do
-            out=$(timeout 40 lftp -c "set ftp:ssl-allow no; set net:timeout 12; set net:max-retries 1; \
-              open -u \"$u\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; pwd; cls -1 / | head -3;" 2>&1)
+            out=$(timeout 40 lftp -c "set ftp:ssl-allow no; set net:timeout 12; set net:max-retries 1; open -u \"$u\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; pwd; cls -1 / | head -3;" 2>&1)
             if echo "$out" | grep -q "530"; then
               echo "  $u : 530 — не подходит"
-            elif echo "$out" | grep -qi "login\|fatal\|error"; then
-              echo "  $u : ошибка не по паролю — $(echo "$out" | head -1)"
+            elif echo "$out" | grep -qiE "login|fatal|error|refus"; then
+              echo "  $u : иная ошибка — $(echo "$out" | grep -iE 'login|fatal|error|refus' | head -1)"
             else
-              echo "  $u : ✅ ВХОД ЕСТЬ"
+              echo "  $u : ВХОД ЕСТЬ"
               echo "$out" | grep -v "^$" | head -4 | sed 's/^/       /'
               any_ok=1
             fi
           done
           echo "-----"
-          [ $any_ok -eq 1 ] && echo "==> НАЙДЕН рабочий логин (см. ✅ выше)" || echo "==> НИ ОДИН логин не подошёл к этому паролю — значит неверен ПАРОЛЬ"
+          if [ $any_ok -eq 1 ]; then echo "==> НАЙДЕН рабочий логин (см. ВХОД ЕСТЬ выше)"; else echo "==> НИ ОДИН логин не подошёл — значит неверен сам ПАРОЛЬ"; fi
