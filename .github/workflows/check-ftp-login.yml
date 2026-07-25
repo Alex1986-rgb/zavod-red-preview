@@ -1,36 +1,32 @@
 name: Проверка FTP-пароля
-# Пробует пароль из секрета против всех кандидатов-логинов. Ничего не заливает.
 on:
   workflow_dispatch: {}
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 5
     steps:
       - run: sudo apt-get update && sudo apt-get install -y lftp
-      - name: Перебор логинов с одним паролем
-        shell: bash {0}   # без -e: lftp при отказе логина возвращает ненулевой код
+      - name: Проверить доступ к папке сайта
+        shell: bash {0}
         env:
           FTP_HOST: ${{ secrets.FTP_SERVER }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
           FTP_HOST=$(printf '%s' "$FTP_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          FTP_USER=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
           FTP_PASS=$(printf '%s' "$FTP_PASS" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
-          base=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
-          echo "база логина: длина ${#base}   пароль: длина ${#FTP_PASS}"
-          any_ok=0
-          for u in "$base" "${base}_1" "${base}_2"; do
-            out=$(timeout 40 lftp -c "set ftp:ssl-allow no; set net:timeout 12; set net:max-retries 1; open -u \"$u\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; pwd; cls -1 / | head -3;" 2>&1)
-            if echo "$out" | grep -q "530"; then
-              echo "  $u : 530 — не подходит"
-            elif echo "$out" | grep -qiE "login|fatal|error|refus"; then
-              echo "  $u : иная ошибка — $(echo "$out" | grep -iE 'login|fatal|error|refus' | head -1)"
-            else
-              echo "  $u : ВХОД ЕСТЬ"
-              echo "$out" | grep -v "^$" | head -4 | sed 's/^/       /'
-              any_ok=1
-            fi
-          done
-          echo "-----"
-          if [ $any_ok -eq 1 ]; then echo "==> НАЙДЕН рабочий логин (см. ВХОД ЕСТЬ выше)"; else echo "==> НИ ОДИН логин не подошёл — значит неверен сам ПАРОЛЬ"; fi
+          echo "логин: $FTP_USER"
+          echo "=== домашняя папка ==="
+          lftp -c "set ftp:ssl-allow no; set net:timeout 15; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; pwd; cls -1 / | head -20;" 2>&1 | grep -v "^$" | head -22
+          echo "=== пробуем /public_html/ (сюда льёт деплой) ==="
+          out=$(lftp -c "set ftp:ssl-allow no; set net:timeout 15; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; cls -1 /public_html/ | head -12;" 2>&1)
+          echo "$out" | grep -v "^$" | head -14
+          if echo "$out" | grep -qiE "index|\.html|assets|catalog"; then
+            echo "==> /public_html/ ДОСТУПЕН — деплой сработает как есть"
+          elif echo "$out" | grep -qiE "no such|not found|access|550"; then
+            echo "==> /public_html/ НЕ виден этому пользователю — нужен другой путь"
+          else
+            echo "==> неоднозначно, см. вывод выше"
+          fi
