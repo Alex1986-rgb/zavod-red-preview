@@ -832,5 +832,53 @@
 "rossi-r-i-100": {
 "done": true,
 "ai": true
+},
+"rossi-rv-100": {
+"done": true,
+"ai": true
+},
+"rossi-rv-32": {
+"done": true,
+"ai": true
+},
+"rossi-rv-50": {
+"done": true,
+"ai": true
+},
+"rossi-rv-80": {
+"done": true,
+"ai": true
+},
+"sew-f-127": {
+"done": true,
+"ai": true
+},
+"sew-f-157": {
+"done": true,
+"ai": true
+},
+"sew-f-37": {
+"done": true,
+"ai": true
+},
+"sew-f-47": {
+"done": true,
+"ai": true
+},
+"sew-f-57": {
+"done": true,
+"ai": true
+},
+"sew-f-67": {
+"done": true,
+"ai": true
+},
+"sew-f-77": {
+"done": true,
+"ai": true
+},
+"sew-f-87": {
+"done": true,
+"ai": true
 }
 }
