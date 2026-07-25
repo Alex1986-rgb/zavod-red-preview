@@ -640,5 +640,53 @@
 "motovario-pcrv-090-110": {
 "done": true,
 "ai": true
+},
+"motovario-pcrv-090-130": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-31": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-40": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-50": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-63": {
+"done": true,
+"ai": true
+},
+"nord-1-smi-75": {
+"done": true,
+"ai": true
+},
+"nord-12080": {
+"done": true,
+"ai": true
+},
+"nord-32100": {
+"done": true,
+"ai": true
+},
+"nord-42125": {
+"done": true,
+"ai": true
+},
+"nord-9032-1": {
+"done": true,
+"ai": true
+},
+"nord-9042-1": {
+"done": true,
+"ai": true
+},
+"nord-9052-1": {
+"done": true,
+"ai": true
 }
 }
