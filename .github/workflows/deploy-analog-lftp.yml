@@ -34,6 +34,9 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
+          # срезаем CR/LF и хвостовые пробелы, прилипшие при вставке секрета
+          FTP_USER=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          FTP_PASS=$(printf '%s' "$FTP_PASS" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
           # два прохода mirror: второй добивает файлы, пропущенные при обрыве соединений Timeweb
           for pass in 1 2; do
             echo "=== mirror pass $pass ==="
