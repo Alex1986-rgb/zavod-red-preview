@@ -98,7 +98,7 @@
   var _selCache={};
   function selEl(mm,i){ var k=mm+i; return _selCache[k]||(_selCache[k]=root.querySelector('[data-'+mm+'="'+i+'"]')); }
   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
-  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'Tos Znojmo',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'Tramec',n:'Tramec',s:''}];
+  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'Tos Znojmo',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Unidrive',n:'Unidrive',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'Tramec',n:'Tramec',s:''}];
   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
   // ключ кнопки → фактические ключи бренда в g.a (данные разбиты по под-сериям). 'Varvel серия 7МЧ'
   // (советские Ч-М) НАМЕРЕННО исключён из Varvel. Бренды без данных отсеиваются на лету — см. brandHasData().
@@ -561,9 +561,12 @@
     }else{
       // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
       // EVL-вид: EVL крупно, ZR — серым кубиком. Импортные аналоги (≈) убраны (правка №2).
-      var zr=zrOf(g.e);
-      var mark='<b class="pf-zr">'+(zr||g.e)+'</b>';
-      tz='<td class="pf-tz">'+mark+(g.p?'<span class="pf-tr-gost">'+g.p+'</span>':'')+'</td>';
+      var zr=zrOf(g.e), isEvl=(selBrand==='__evl__');
+      // EVL-вид: EVL крупно, ZR серым кубиком. ZR-вид (по умолчанию): ZR крупно, ПР кубиком.
+      var big=isEvl?(g.e||zr):(zr||g.e);
+      var sub=isEvl?(zr||g.p||''):(g.p||'');
+      var mark='<b class="pf-zr">'+big+'</b>';
+      tz='<td class="pf-tz">'+mark+(sub?'<span class="pf-tr-gost">'+sub+'</span>':'')+'</td>';
       ord='<td class="pf-order"><a class="pf-ord" href="/reduktor/'+evlSlug(g.e)+'">Заказать</a></td>';
     }
     return '<tr>'+tz+tds+ord+'</tr>';
