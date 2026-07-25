@@ -193,14 +193,14 @@
       '<a class="zr-more-btn" href="'+url+'">Подробнее →</a></div></div></article>';
   }
   function apply(){
-    var q=(fQ.value||'').trim().toLowerCase(),t=fT.value,b=fB.value,c=fC.value,p=fP.value,r=fR.value;
+    var q=(fQ.value||'').trim().toLowerCase().replace(/\s+/g,''),t=fT.value,b=fB.value,c=fC.value,p=fP.value,r=fR.value;
     CUR=DATA.filter(function(x){
       if(t!==''&&String(x.t)!==t)return false;
       if(b&&x.b!==b)return false;
       if(c&&x.c!==c)return false;
       if(p&&!overlaps(x.pw,p))return false;
       if(r&&!overlaps(x.i,r))return false;
-      if(q&&(x.b+' '+x.m+' '+x.z).toLowerCase().indexOf(q)<0)return false;
+      if(q&&(x.b+' '+x.m+' '+x.z).toLowerCase().replace(/\s+/g,'').indexOf(q)<0)return false;
       return true;
     });
     SHOWN=0; G.innerHTML='';
