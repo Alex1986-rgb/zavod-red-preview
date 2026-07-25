@@ -40,7 +40,7 @@ PANEL_W = int(W * 0.40)
 TBL_W = 470
 TBL_TOP = 232
 ROW_H = 52
-COL_K = int(TBL_W * 0.55)
+COL_K = int(TBL_W * 0.50)
 
 # Типовые характеристики по типу передачи. Это конструктивные свойства класса,
 # а не выдуманные цифры типоразмера: чугунный червячный редуктор всегда
@@ -157,7 +157,12 @@ def rows_for(card):
 
 def fit(draw, text, fnt, maxw):
     """Ужимает строку под ширину ячейки — типоразмеры вида
-    'BG 10X, BG 15, BG 20' длиннее колонки."""
+    'BG 10X, BG 15, BG 20' длиннее колонки.
+
+    Переносы в исходных данных схлопываем: textlength не умеет мерить
+    многострочный текст и падает, а в ячейке всё равно одна строка.
+    """
+    text = " ".join(str(text).split())
     if draw.textlength(text, font=fnt) <= maxw:
         return text
     while text and draw.textlength(text + "…", font=fnt) > maxw:

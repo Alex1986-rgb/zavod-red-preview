@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fav-32x32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/fav-192x192.png" />
 <link rel="apple-touch-icon" href="assets/favicons/fav-180x180.png" />
-<link rel="stylesheet" href="assets/podbor.css?v=4357d1f5" />
+<link rel="stylesheet" href="assets/podbor.css?v=stickyord26" />
 <link rel="manifest" href="site.webmanifest" />
 
 <!-- Open Graph -->
@@ -1211,13 +1211,17 @@ BRANDS.forEach(b=>br.insertAdjacentHTML('beforeend',`<a class="brand" href="/bra
 })();
 
 
+/* Блоки сертификатов и галереи с главной убраны, а код их заполнения остался:
+   getElementById возвращал null, и следующая строка падала с TypeError — вместе
+   с ней переставало выполняться ВСЁ, что идёт ниже: мобильное меню, выпадающие
+   пункты, карусели, зум фото. На телефоне бургер просто не открывался. */
 const certs=['sert1.webp','sert2.webp','sert3.webp'];
 const ceg=document.getElementById('certGrid');
-certs.forEach(c=>ceg.insertAdjacentHTML('beforeend',`<div class="cert"><img class="zoomable" src="assets/certs/${c}" alt="Сертификат соответствия" loading="lazy" title="Нажмите, чтобы увеличить"></div>`));
+if(ceg)certs.forEach(c=>ceg.insertAdjacentHTML('beforeend',`<div class="cert"><img class="zoomable" src="assets/certs/${c}" alt="Сертификат соответствия" loading="lazy" title="Нажмите, чтобы увеличить"></div>`));
 
 const gal=document.getElementById('gal');
-for(let i=1;i<=9;i++){const n=String(i).padStart(2,'0');gal.insertAdjacentHTML('beforeend',`<a class="gal-slide"><img src="assets/production/p${n}.webp" alt="Производство промышленных редукторов и мотор-редукторов" loading="lazy"></a>`);}
-['prod-d1','prod-d2','prod-d3','prod-d4','prod-d5'].forEach(f=>gal.insertAdjacentHTML('beforeend',`<a class="gal-slide"><img src="assets/production/${f}.webp" alt="Продукция завода — мотор-редукторы" loading="lazy"></a>`));
+if(gal)for(let i=1;i<=9;i++){const n=String(i).padStart(2,'0');gal.insertAdjacentHTML('beforeend',`<a class="gal-slide"><img src="assets/production/p${n}.webp" alt="Производство промышленных редукторов и мотор-редукторов" loading="lazy"></a>`);}
+if(gal)['prod-d1','prod-d2','prod-d3','prod-d4','prod-d5'].forEach(f=>gal.insertAdjacentHTML('beforeend',`<a class="gal-slide"><img src="assets/production/${f}.webp" alt="Продукция завода — мотор-редукторы" loading="lazy"></a>`));
 
 /* ---- Карусели (стрелки прокрутки) ---- */
 document.querySelectorAll('.carousel').forEach(c=>{
@@ -1315,6 +1319,6 @@ document.addEventListener('click',function(e){
 })();
 </script>
 <script defer src="assets/podbor.js?v=26071fec659c"></script>
-<script defer src="assets/modal.js?v=2607lightform1"></script>
+<script defer src="assets/modal.js?v=2607mobfix12"></script>
 </body>
 </html>
