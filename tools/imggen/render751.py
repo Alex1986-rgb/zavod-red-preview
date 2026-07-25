@@ -35,6 +35,7 @@ sys.path.insert(0, HERE)
 import card as cardmod           # noqa: E402
 import stamp as stampmod        # noqa: E402
 import frames as framesmod      # noqa: E402
+import extra_data               # noqa: E402
 
 OUT = os.path.join(BASE, "assets", "cards")
 FRAMES = os.path.join(HERE, "frames")
@@ -91,7 +92,7 @@ def catalog_index(cards, types):
 
 
 def match(model, idx):
-    """Данные модели: точный префикс → серия → самый длинный префикс-начало."""
+    """Данные модели: точный префикс → серия → префикс-начало → доп. источник."""
     base = re.sub(r"-i[0-9].*$", "", model)
     if base in idx["exact"]:
         return idx["exact"][base]
@@ -102,7 +103,15 @@ def match(model, idx):
     for key, c in idx["exact"].items():
         if base.startswith(key) and (best is None or len(key) > len(best[0])):
             best = (key, c)
-    return best[1] if best else None
+    if best:
+        return best[1]
+    return extra_data.lookup(base)          # 78 моделей вне import-catalog
+
+
+def gear_of(d, types):
+    """Тип передачи из карточки: индекс каталога или строка доп. источника."""
+    t = d.get("t")
+    return types[t] if isinstance(t, int) else str(t)
 
 
 def enrich(card):
@@ -174,7 +183,7 @@ def main():
 
     if "--plan" in args:
         from collections import Counter
-        gears = Counter(types[d["t"]] for _, d in have)
+        gears = Counter(gear_of(d, types) for _, d in have)
         frames_have = {f[:-5] for f in os.listdir(FRAMES) if f.endswith(".webp")}
         print(f"моделей /analog/:     {len(models)}")
         print(f"есть данные каталога: {len(have)}")
@@ -192,9 +201,22 @@ def main():
     limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     todo = have[:limit] if limit else have
 
-    done = err = 0
+    force = "--force" in args
+    done = err = skip = 0
     manifest = {}
+    if os.path.isfile(os.path.join(HERE, "manifest-751.json")):
+        manifest = json.load(open(os.path.join(HERE, "manifest-751.json"),
+                                  encoding="utf-8"))
     for i, (m, d) in enumerate(todo, 1):
+        dst = os.path.join(OUT, m + ".webp")
+        gear = gear_of(d, types)
+        if not force and os.path.isfile(dst):
+            manifest[m] = {"file": m + ".webp", "gear": gear,
+                           "brand": d.get("b", ""),
+                           "alt": f"{d.get('b','')} {d.get('m','')} — {gear} "
+                                  f"редуктор, аналог ZR"}
+            skip += 1
+            continue
         try:
             out, gear = build_one(m, d, types, ratios, {})
             if out is None:
@@ -207,15 +229,18 @@ def main():
                            "alt": f"{d.get('b','')} {d.get('m','')} — {gear} "
                                   f"редуктор, аналог ZR"}
             done += 1
-            if i % 50 == 0:
-                print(f"  {i}/{len(todo)}…", flush=True)
+            if done % 50 == 0:
+                json.dump(manifest, open(os.path.join(HERE, "manifest-751.json"),
+                                         "w"), ensure_ascii=False)
+                print(f"  {i}/{len(todo)} (готово {done}, пропущено {skip})…",
+                      flush=True)
         except Exception as e:
             err += 1
             if err <= 10:
                 print(f"  ОШИБКА {m}: {str(e)[:100]}")
     json.dump(manifest, open(os.path.join(HERE, "manifest-751.json"), "w"),
               ensure_ascii=False)
-    print(f"\nсобрано: {done}, ошибок/пропусков: {err}")
+    print(f"\nсобрано: {done}, пропущено (уже было): {skip}, ошибок: {err}")
 
 
 if __name__ == "__main__":
