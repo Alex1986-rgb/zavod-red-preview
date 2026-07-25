@@ -1,0 +1,36 @@
+name: Force-push тест
+# Принудительно (put, без сравнения размеров) заливает 3 файла и печатает их размер
+# на сервере после заливки. Отвечает: пишет ли cu549563_2 в реально отдаваемую папку.
+on:
+  workflow_dispatch: {}
+jobs:
+  fp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.x" }
+      - run: python3 -m pip install --quiet rcssmin rjsmin
+      - run: python3 deploy/build-dist.py
+      - run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Принудительная заливка 3 файлов
+        shell: bash {0}
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          FTP_HOST=$(printf '%s' "$FTP_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          FTP_USER=$(printf '%s' "$FTP_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          FTP_PASS=$(printf '%s' "$FTP_PASS" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          echo "локальные размеры (dist):"
+          wc -c dist/index.html dist/assets/modal.js dist/assets/podbor.css
+          echo "заливаю put..."
+          lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 3; \
+            open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; \
+            put -O /public_html dist/index.html; \
+            put -O /public_html/assets dist/assets/modal.js; \
+            put -O /public_html/assets dist/assets/podbor.css; \
+            echo '--- на сервере после заливки: ---'; \
+            cls -l /public_html/index.html /public_html/assets/modal.js /public_html/assets/podbor.css;" 2>&1 | grep -v "^$" | tail -12
