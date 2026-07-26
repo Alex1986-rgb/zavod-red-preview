@@ -66,6 +66,12 @@ def resolve(idx, brand, models, self_slug):
     fb = None
     for b in brands:
         for tok in toks:
+            # Прямая проверка файла по выведенному слагу «бренд-модель»: у части
+            # позиций в JSON пустой u, но карточка analog/<слаг>.html реально есть
+            # (напр. tramec-pa-100). Без этого ссылка зря падала в /reduktor/?imp=.
+            guess = re.sub(r'[^a-z0-9]+', '-', ('%s %s' % (b, tok)).lower()).strip('-')
+            if guess and os.path.exists(os.path.join(ROOT, 'analog', guess + '.html')):
+                return '/analog/' + guess, 'analog'
             for c in idx.get((b, norm(tok)), []):
                 u = c.get('u')
                 # Битую ссылку ставить нельзя: /analog/ генерируется отдельно
