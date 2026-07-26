@@ -399,6 +399,9 @@
     }
     var BRAND_RU={sew:['сью','сев','сэв'],nord:['норд'],bonfiglioli:['бонфильоли','бонфиглиоли','бонфилиоли'],motovario:['мотоварио'],bauer:['бауэр','бауер'],lenze:['ленце','лензе'],varvel:['варвель','варвел'],siti:['сити'],stm:['стм'],rossi:['росси'],watt:['ватт'],yilmaz:['йилмаз','йылмаз'],transtecno:['транстекно'],innovari:['инновари'],vemper:['вемпер']};
     var TYPE_EN={0:['worm'],1:['coaxial','inline'],2:['bevel'],3:['flat'],4:['helical','cylindrical']};
+    /* Слово-тип из запроса → индекс типа. Тип трактуем как жёсткий фильтр (как бренд),
+       чтобы «коническо 15 квт» не смешивался с червячными, а «планетарный» (типа нет) не тащил чужое. */
+    var TYPEW={червяч:0,worm:0,соосн:1,coaxial:1,inline:1,коническ:2,bevel:2,плоск:3,flat:3,цилиндр:4,helical:4};
     var STOP={редуктор:1,редуктора:1,редукторы:1,мотор:1,моторредуктор:1,привод:1,купить:1,аналог:1,цена:1};
     /* Единицы измерения — не считаем их поисковыми токенами (значение берём отдельно). */
     var UNIT={квт:1,kw:1,kwt:1,вт:1,нм:1,nm:1,об:1,обмин:1,rpm:1,i:1,и:1,передат:1,передаточное:1,мощность:1,момент:1};
@@ -421,9 +424,9 @@
     }
     /* Насколько значение подходит записи: попало в диапазон — максимум, рядом — меньше. */
     function valFit(qn,gr){ function near(r,v){ if(!r)return 0; if(v>=r[0]&&v<=r[1])return 1; var lo=r[0]||1,hi=r[1]||1,d=v<r[0]?(r[0]-v)/lo:(v-hi)/hi; return d<0.6?(0.6-d):0; }
-      if(qn.u==='pw')return gr.__pw?(near(gr.__pw,qn.v)>=1?40:Math.round(near(gr.__pw,qn.v)*30)):0;
-      if(qn.u==='i')return gr.__i?(near(gr.__i,qn.v)>=1?36:Math.round(near(gr.__i,qn.v)*26)):0;
-      var bp=near(gr.__pw,qn.v),bi=near(gr.__i,qn.v); return Math.round(Math.max(bp,bi)*28);
+      if(qn.u==='pw')return gr.__pw?(near(gr.__pw,qn.v)>=1?75:Math.round(near(gr.__pw,qn.v)*45)):0;
+      if(qn.u==='i')return gr.__i?(near(gr.__i,qn.v)>=1?68:Math.round(near(gr.__i,qn.v)*42)):0;
+      var bp=near(gr.__pw,qn.v),bi=near(gr.__i,qn.v); return Math.round(Math.max(bp,bi)*48);
     }
     /* Ключи бренда для сопоставления: первое слово и склейка целиком
        («SEW-Eurodrive» → sew и seweurodrive), чтобы короткий запрос «SEW» тоже ловил бренд. */
@@ -452,6 +455,7 @@
           add(b); (BRAND_RU[nn(b.split(' ')[0])]||[]).forEach(function(x){t[x]=1;});
           var m=gr.m[i]; if(m){ add(m); t[nn(m)]=1; } });
         t[nn(gr.e)]=1; if(gr.p)t[nn(gr.p)]=1; if(gr.z)t[nn(gr.z)]=1;
+        gr.__pw=rng(gr.pw); gr.__i=rng(gr.i);
         gr.__t=t; gr.__b=Object.keys(t).join(' '); gr.__imp=0; arr.push(gr);
       });
       DF={}; arr.forEach(function(gr){for(var x in gr.__t)DF[x]=(DF[x]||0)+1;}); return arr;
@@ -459,19 +463,21 @@
     function brandFor(x){ if(BRAND_RU[x])return x; for(var k in BRAND_RU)if(BRAND_RU[k].indexOf(x)>=0)return k; return x; }
     /* Распознан ли в запросе бренд импорта — прямо («sew») или по кириллице («сью»). */
     function qBrand(qt){ for(var i=0;i<qt.length;i++){ if(IMPB[brandFor(qt[i])])return brandFor(qt[i]); } return ''; }
-    function score(qt,qf,gr){ var s=0,m=0,cm=IDX.length*0.9;
+    function score(qt,qf,gr){ var s=0,m=0,mt=0,cm=IDX.length*0.9;
       /* Бренд в запросе задан — держим выдачу строго внутри этого бренда. */
       if(BQ){ if(!gr.__imp||!gr.__t[BQ])return 0; }
-      if(qf&&gr.__t[qf]){s+=90;m++;}
+      if(qf&&gr.__t[qf]){s+=90;m++;mt++;}
       for(var i=0;i<qt.length;i++){var q=qt[i],b=0,h=false;
         if(gr.__t[q]){ if((DF[q]||0)>=cm)b=4; else {b=(/\d/.test(q)?55:26);h=true;} }
         else if(q.length>=3&&gr.__b.indexOf(q)>=0){b=12;h=true;}
         else if(/^\d+$/.test(q)&&q.length>=2&&gr.__nums){ for(var n=0;n<gr.__nums.length;n++){ if(gr.__nums[n]!==q&&gr.__nums[n].indexOf(q)===0){b=30;h=true;break;} } }
         if(!h&&q.length>=4){for(var t in gr.__t){if(Math.abs(t.length-q.length)<=1&&lev1(t,q)){b=9;h=true;break;}}}
-        if(h)m++; s+=b; }
+        if(h){m++;mt++;} s+=b; }
+      /* Есть текстовые токены (тип/модель/бренд), но ни один не совпал — запись не наша. */
+      if(qt.length&&mt===0)return 0;
       /* Значение (кВт / передаточное i / типоразмер) — сортируем по попаданию в диапазон. */
-      if(gr.__imp&&VALS.length){ for(var k=0;k<VALS.length;k++){ var vb=valFit(VALS[k],gr); if(vb>0){s+=vb;m++;} } }
-      if(!m)return 0; if(!BQ&&qt.length>=2&&m<Math.ceil(qt.length/2))return 0; return s+m*4;
+      if(VALS.length){ for(var k=0;k<VALS.length;k++){ var vb=valFit(VALS[k],gr); if(vb>0){s+=vb;m++;} } }
+      if(!m)return 0; if(!BQ&&qt.length>=2&&mt<Math.ceil(qt.length/2))return 0; return s+m*4;
     }
     function rank(query){ var qv=qvals(query);
       /* Токены из «очищенного» запроса (без единиц и значений); «R107» слитно → «r»+«107». */
@@ -479,13 +485,19 @@
       var qt=[]; qt0.forEach(function(q){ qt.push(q); var mm=q.match(/^([a-zа-я]+)(\d+)$/)||q.match(/^(\d+)([a-zа-я]+)$/); if(mm){ if(mm[1])qt.push(mm[1]); if(mm[2])qt.push(mm[2]); } });
       VALS=qv.vals; BQ=qBrand(qt);
       if(!qt.length&&!VALS.length)return[];
+      /* Тип передачи в запросе → жёсткий фильтр по типу (bevel/worm/…). */
+      var qType=null; for(var ti=0;ti<qt.length;ti++){ for(var w in TYPEW){ if(qt[ti].length>=4&&(qt[ti].indexOf(w)===0||w.indexOf(qt[ti])===0)){ qType=TYPEW[w]; break; } } if(qType!=null)break; }
       var qf=nn(qv.rest),qb=qt.map(brandFor);
       /* Пришёл по бренду импорта — обезличенные ZR-группы в выдачу не пускаем вообще:
          пользователь должен попасть на брендовую страницу, а не на нашу карточку. */
       var pool=BQ?IDX.filter(function(r){return r.__imp;}):IDX;
+      if(qType!=null)pool=pool.filter(function(r){return r.t===qType;});
       /* Бренда в запросе нет — значит спрашивают наше (ZR 603, ПР 4110, «червячный»),
          и наверху должна быть наша группа, а не случайный импорт с тем же аналогом. */
-      var sc=pool.map(function(gr){var s=score(qt,qf,gr); if(!BQ&&!gr.__imp)s=Math.round(s*1.5); return {gr:gr,s:s};}).filter(function(x){return x.s>0;});
+      /* Групповой буст ослабляем, если задано значение — иначе наши ZR-группы задавили бы
+         импортные модели, реально покрывающие запрошенные кВт/i. */
+      var gb=VALS.length?1.1:1.5;
+      var sc=pool.map(function(gr){var s=score(qt,qf,gr); if(!BQ&&!gr.__imp)s=Math.round(s*gb); return {gr:gr,s:s};}).filter(function(x){return x.s>0;});
       sc.sort(function(a,b){return b.s-a.s;}); return sc.slice(0,7).map(function(x){x.qb=qb;x.qt=qt;x.bq=BQ;return x;});
     }
     function analog(gr,qb){ for(var i=0;i<gr.b.length;i++){ if(qb.indexOf(nn(gr.b[i].split(' ')[0]))>=0) return gr.b[i].split(' ')[0]+' '+(gr.m[i]||''); } return gr.b.length?(gr.b[0].split(' ')[0]+' '+(gr.m[0]||'')):''; }
