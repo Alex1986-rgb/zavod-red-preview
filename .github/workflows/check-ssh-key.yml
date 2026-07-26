@@ -1,0 +1,27 @@
+name: Проверка входа по SSH-ключу
+# Тестирует вход деплой-ключом под БАЗОВЫМ аккаунтом (cu549563, без _1/_2),
+# т.к. ключ добавлен в ~/.ssh/authorized_keys этого аккаунта через SSH-консоль.
+# Ничего не заливает — только логинится и читает.
+on:
+  workflow_dispatch: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Вход по ключу
+        shell: bash {0}
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          echo "хост: $HOST   базовый логин: $BASE"
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          timeout 40 ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=15 \
+            -o PreferredAuthentications=publickey -i ~/.ssh/id_ed25519 "$BASE@$HOST" \
+            'echo "==> SSH ВХОД OK"; echo "pwd: $(pwd)"; echo "rsync: $(command -v rsync || echo НЕТ)"; ls -d ~/public_html 2>/dev/null && echo "public_html: ЕСТЬ" || echo "public_html: не в домашней"' 2>&1 \
+            | grep -viE '^(Warning: Permanently|Pseudo-terminal)' | tail -12
+          echo "--- код входа: ${PIPESTATUS[0]} (0 = ключ работает) ---"
