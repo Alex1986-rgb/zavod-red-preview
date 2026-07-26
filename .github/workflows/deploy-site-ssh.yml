@@ -5,6 +5,11 @@ name: Deploy site (rsync over SSH)
 # analog/ исключён (отдельный воркфлоу). БЕЗ --delete: серверные файлы CRM (api/admin)
 # и то, чего нет в dist, сохраняются — как в прежнем mirror.
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.github/**'
+      - 'analog/**'
   workflow_dispatch:
     inputs:
       dry:

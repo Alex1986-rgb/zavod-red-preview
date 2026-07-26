@@ -2,12 +2,8 @@ name: Deploy site (lftp parallel)
 # Надёжная параллельная заливка ядра сайта (blog, glossary, страницы, sitemap)
 # через lftp — FTP-Deploy-Action на этом аккаунте Timeweb зависает на объёме.
 on:
-  push:
-    branches: [main]
-    # Правки самой автоматизации содержимое сайта не меняют — не гоняем часовой
-    # деплой впустую. Нужно залить принудительно — Run workflow вручную.
-    paths-ignore:
-      - '.github/**'
+  # Автозаливка переведена на deploy-site-ssh.yml (rsync по ключу, шифрованно).
+  # Этот FTP-воркфлоу оставлен ЗАПАСНЫМ — только ручной запуск.
   workflow_dispatch: {}
 concurrency:
   group: ftp-deploy
