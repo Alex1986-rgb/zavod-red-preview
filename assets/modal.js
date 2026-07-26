@@ -387,7 +387,14 @@
   try{ (function(){
     var form=document.querySelector('form.msearch'); if(!form) return;
     var input=form.querySelector('input[name=q]'); if(!input || form.__zrEnh) return; form.__zrEnh=1;
-    var go=document.createElement('button'); go.type='submit'; go.className='ms-go'; go.setAttribute('aria-label','Найти'); go.textContent='Найти'; form.appendChild(go);
+    var go=document.createElement('button'); go.type='button'; go.className='ms-go'; go.setAttribute('aria-label','Найти'); go.textContent='Найти'; form.appendChild(go);
+    /* Навигация ВРУЧНУЮ, без нативного submit формы. Иначе каждый поиск порождает
+       событие submit, которое автоцель Яндекс.Метрики «отправка формы» засчитывает
+       как отправленную заявку — конверсии раздувались ложными «отправками данных».
+       Кнопка type=button (не submit), Enter перехватываем ниже — submit не рождается. */
+    function goSearch(){ var v=(input.value||'').trim(); if(v){ location.href='/podbor?q='+encodeURIComponent(v); } else { input.focus(); } }
+    go.addEventListener('click',function(e){ e.preventDefault(); goSearch(); });
+    form.addEventListener('submit',function(e){ e.preventDefault(); goSearch(); }); /* страховка: если submit всё же случится — гасим */
     var dd=document.createElement('div'); dd.className='ms-dd'; dd.hidden=true; form.appendChild(dd);
     // «по шильду» — кликабельно: открывает заявку с загрузкой фото шильдика
     var chip=form.querySelector('.ms-chip');
@@ -531,7 +538,7 @@
     var t; function deb(){ clearTimeout(t); var q=input.value.trim(); if(q.length<2){dd.hidden=true;return;} t=setTimeout(function(){ if(IDX)render(q); else load(function(){render(q);}); },140); }
     input.addEventListener('focus',function(){ load(); if(input.value.trim().length>=2)deb(); });
     input.addEventListener('input',deb);
-    input.addEventListener('keydown',function(e){ if(e.key==='Escape'){dd.hidden=true;} });
+    input.addEventListener('keydown',function(e){ if(e.key==='Escape'){dd.hidden=true;} else if(e.key==='Enter'){ e.preventDefault(); goSearch(); } });
     document.addEventListener('click',function(e){ if(!form.contains(e.target))dd.hidden=true; });
   })(); }catch(e){}
 
