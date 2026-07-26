@@ -5,3 +5,8 @@ index-accelerator.log
 # backend secrets (never commit)
 api/config.local.php
 .imggen-state.json
+
+# Фото-карточки: webp нужны сайту, PNG/исходники — нет (гигабайты)
+assets/cards-photo/*.png
+assets/cards-photo/_raw/
+assets/cards-photo/_gallery.html
