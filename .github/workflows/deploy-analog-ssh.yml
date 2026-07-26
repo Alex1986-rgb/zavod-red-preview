@@ -1,0 +1,55 @@
+name: Deploy analog cards (rsync over SSH)
+
+# Шифрованная заливка карточек /analog (73.9К файлов) по SSH-ключу — без FTP-пароля.
+# Аналог deploy-site-ssh.yml, но собирает dist С analog (INCLUDE_ANALOG=1) и льёт
+# ТОЛЬКО dist/analog/. rsync сверяет по содержимому. БЕЗ --delete. Запуск вручную.
+on:
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "Сухой прогон (ничего не заливать)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python3 -m pip install --quiet rcssmin rjsmin
+      - name: Build dist (Метрика + robots, С analog)
+        env:
+          INCLUDE_ANALOG: "1"
+        run: python3 deploy/build-dist.py
+      - name: Ключ и known_hosts
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          echo "HOST=$HOST" >> $GITHUB_ENV
+      - name: rsync dist/analog → public_html/analog
+        shell: bash {0}
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          DEST="/home/c/$BASE/public_html/analog/"
+          DRY="${{ inputs.dry }}"
+          FLAG=""; [ "$DRY" = "true" ] && FLAG="--dry-run"
+          echo "цель: $BASE@$HOST:$DEST   сухой=$DRY   файлов: $(find dist/analog -type f | wc -l)"
+          set +e
+          rsync -rlzt --omit-dir-times --no-perms $FLAG --stats \
+            -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
+            dist/analog/ "$BASE@$HOST:$DEST" 2>&1 | tail -30
+          echo "--- rsync код: ${PIPESTATUS[0]} (0 = ок) ---"
