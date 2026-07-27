@@ -43,6 +43,10 @@
   RewriteCond %{DOCUMENT_ROOT}/analog/tramec-$1.html -f
   RewriteRule ^analog/sew-tramec-(.*?)/?$ https://%{HTTP_HOST}/analog/tramec-$1 [R=301,L,NE]
 
+  # Бренд Watt Drive: страница называется /brands/watt-drive, но 18 карточек аналогов
+  # ссылались на /brands/watt (без -drive) → 404. Склейка коротким слагом на верную страницу.
+  RewriteRule ^brands/watt/?$ https://%{HTTP_HOST}/brands/watt-drive [R=301,L,NE]
+
   # Исправление устаревшей маркировки ZR в URL: червячные рамы 130/150 были 6113/6115 → верно 6013/6015. Защита индексации (одним хопом на https).
   RewriteRule ^motor-reduktor-zr/(.*)6113(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16013$2 [R=301,L,NE]
   RewriteRule ^motor-reduktor-zr/(.*)6115(.*)$ https://%{HTTP_HOST}/motor-reduktor-zr/$16015$2 [R=301,L,NE]

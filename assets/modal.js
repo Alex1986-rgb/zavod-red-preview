@@ -1,4 +1,8 @@
 /* Всплывающая форма-заявка (popup) — единая по всему сайту. Самодостаточный модуль. */
+/* Глобальная страховка: форма поиска в шапке НИКОГДА не делает нативный submit —
+   иначе автоцель Яндекс.Метрики «отправка формы» засчитывает поиск как заявку. Не
+   зависит от энхансера (тот гейтится .nav-right); ловит любую form.msearch на всех стр. */
+document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&&f.classList.contains('msearch')){e.preventDefault();}},true);
 (function(){
   // глубина страницы → пути к api и privacy
   var sub = /\/(catalog|cases|uslugi|brands|blog|analog|reduktor|ispolnenie|tiporazmer|glossary|otrasli)\//.test(location.pathname);
