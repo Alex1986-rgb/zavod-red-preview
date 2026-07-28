@@ -629,72 +629,10 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     document.addEventListener('click',function(e){ if(!form.contains(e.target))dd.hidden=true; });
   })(); }catch(e){}
 
-  /* ---------- Учёт контактных обращений ----------
-     Форма — не единственный способ обратиться: звонят по tel:, уходят в
-     Telegram/MAX/WhatsApp, пишут на почту. Раньше такие обращения видела
-     только Метрика, а в CRM их не было. Фиксируем их как заявки, чтобы
-     менеджер видел ВСЕ обращения, а не только отправленные формы. */
-  try { (function(){
-    var API = '/api/contact_click.php';
-    var SENT = {};                       // канал → уже отправляли в этой сессии
-    var KIND = [
-      [/^tel:/i,                          'phone'],
-      [/^https?:\/\/(t\.me|telegram\.(me|dog))\//i, 'telegram'],
-      [/^https?:\/\/max\.ru\//i,          'max'],
-      [/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i, 'whatsapp'],
-      [/^mailto:/i,                       'email']
-    ];
-
-    function kindOf(href){
-      if (!href) return '';
-      for (var i = 0; i < KIND.length; i++) if (KIND[i][0].test(href)) return KIND[i][1];
-      return '';
-    }
-
-    function utm(){
-      var out = {}, p;
-      try { p = new URLSearchParams(location.search); } catch (e) { return out; }
-      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
-        var v = p.get(k); if (v) out[k] = v;
-      });
-      // Метки могли прийти на первой странице визита — форма сайта хранит их тут же.
-      try {
-        var saved = JSON.parse(sessionStorage.getItem('zr_utm') || 'null');
-        if (saved) for (var k in saved) if (!out[k] && saved[k]) out[k] = saved[k];
-      } catch (e) {}
-      return out;
-    }
-
-    function track(kind, contact){
-      // Один канал — одно обращение за вкладку: без спама при повторных кликах.
-      if (SENT[kind]) return;
-      SENT[kind] = 1;
-      var body = utm();
-      body.kind = kind;
-      body.contact = contact || '';
-      body.page_url = location.href;
-      body.page_title = (document.title || '').slice(0, 200);
-      body.referrer = document.referrer || '';
-
-      var fd = new FormData();
-      for (var k in body) fd.append(k, body[k]);
-
-      // keepalive — чтобы запрос дожил при уходе на tel:/мессенджер.
-      try {
-        if (navigator.sendBeacon) navigator.sendBeacon(API, fd);
-        else fetch(API, { method: 'POST', body: fd, keepalive: true });
-      } catch (e) {
-        try { fetch(API, { method: 'POST', body: fd }); } catch (e2) {}
-      }
-    }
-
-    document.addEventListener('click', function(e){
-      var a = e.target && e.target.closest && e.target.closest('a[href]');
-      if (!a) return;
-      var k = kindOf(a.getAttribute('href') || '');
-      if (k) track(k, (a.getAttribute('href') || '').slice(0, 200));
-    }, true);
-  })(); } catch(e){}
+  /* Учёт кликов по контактам ОТКЛЮЧЁН (по решению владельца): клик по
+     tel:/mailto:/мессенджеру — не заявка (контакты неизвестны, только шум в
+     воронке). Заявки создаёт только форма и реальные входящие сообщения.
+     Серверный /api/contact_click.php тоже переведён в no-op — на всякий случай. */
 
   /* Клик по e-mail: у посетителя без настроенного почтового клиента ссылка mailto:
      не делает НИЧЕГО видимого — человек решает, что сайт сломан, и уходит.
