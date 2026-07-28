@@ -57,7 +57,14 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
    + '<h3>Получите расчёт стоимости</h3>'
    + '<p id="zrIntro">Заполните форму — инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>'
    + '<div class="zr-res"></div>'
-   + '<form id="zrModalForm">'
+   /* novalidate — ОБЯЗАТЕЛЬНО. Без него браузер проверяет поля САМ и, если что-то не
+      сходится, вообще не порождает событие submit: наш обработчик не запускается,
+      запрос не уходит, а пользователь видит лишь бледную системную подсказку, которую
+      на телефоне легко не заметить. Внешне — «нажал кнопку, ничего не произошло».
+      Особенно било по телефону с маской (см. ниже) и по галочке согласия.
+      Все проверки делаем в JS — они показывают понятный текст прямо в форме.
+      У статичных форм .lead-form novalidate стоял с самого начала, у модалки — нет. */
+   + '<form id="zrModalForm" novalidate>'
    /* Ловушка для ботов. readonly + aria-hidden — чтобы автозаполнение браузера
       (особенно Яндекс.Браузера, он метит поле по имени «…email») не подставляло сюда
       почту пользователя: поле спрятано за экран, но для автозаполнения оно видимое.
@@ -76,8 +83,12 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
    + '<option>Другое / затрудняюсь ответить</option>'
    + '</select>'
    + '<input class="zr-in" type="text" id="zrName" placeholder="Ваше имя" required>'
-   + '<input class="zr-in" type="tel" id="zrPhone" placeholder="+7 (___) ___-__-__" required pattern="\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}" title="Введите телефон полностью: +7 (XXX) XXX-XX-XX">'
-   + '<input class="zr-in" type="email" id="zrEmail" placeholder="Почта (необязательно)">'
+   /* Жёсткий pattern="\+7 \(\d{3}\)…" УБРАН: он требовал точь-в-точь формат маски.
+      Автозаполнение (Яндекс.Браузер, Android) подставляет «+79991234567» или
+      «8 999 123-45-67» — под шаблон не подходит, и браузер молча блокировал отправку.
+      Номер проверяет JS по количеству цифр и говорит об этом человеческим текстом. */
+   + '<input class="zr-in" type="tel" id="zrPhone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>'
+   + '<input class="zr-in" type="email" id="zrEmail" placeholder="Почта" required>'
    + '<div class="zr-file" id="zrFileBox"><label for="zrFile"><span class="zr-fico">📎</span><span id="zrFileLbl">Фото шильда, чертёж или спецификация · JPG, PDF, до 10 МБ</span></label><input type="file" id="zrFile" name="file-174" accept="image/*,.jfif,.heic,.heif,.avif,.tif,.tiff,.pdf,.doc,.docx,.xls,.xlsx,.csv,.dwg,.dxf,.stp,.step,.zip,.rar"></div>'
    + '<textarea class="zr-in" id="zrMsg" rows="2" placeholder="Или опишите задачу: мощность, обороты, что заменяем"></textarea>'
    + '<label class="zr-consent"><input type="checkbox" id="zrConsent" required> Отправляя заявку, я даю согласие на обработку персональных данных в соответствии с <a href="'+PRIVACY+'" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>'
@@ -150,6 +161,11 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
        автозаполнении браузер вставляет свой формат («+79991234567», «8 999 …»),
        маска на него не срабатывает, и проверка на length>=18 отвергала верный номер. */
     if(ph.value.replace(/\D/g,'').length<11){show('Введите телефон полностью: +7 (XXX) XXX-XX-XX.','err');return;}
+    /* Почта обязательна: она уходит в Reply-To письма, по ней менеджер отвечает
+       клиенту, и по ней же CRM/Битрикс видит внешнего собеседника и заводит лид. */
+    var _em=document.getElementById('zrEmail').value.trim();
+    if(_em===''){show('Укажите почту — на неё пришлём коммерческое предложение.','err');return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(_em)){show('Проверьте почту: похоже, в адресе опечатка.','err');return;}
     if(!document.getElementById('zrConsent').checked){show('Отметьте согласие на обработку персональных данных.','err');return;}
     if(fileInp.files&&fileInp.files[0]&&fileInp.files[0].size>MAXB){show('Файл больше 10 МБ. Сожмите его или отправьте заявку без файла — мы запросим его в ответ.','err');return;}
     var fd=new FormData();
@@ -384,6 +400,12 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     var phone=phoneEl?phoneEl.value.trim():'';
     var email=emailEl?emailEl.value.trim():'';
     if(!name){ show('Укажите имя.','err'); return; }
+    /* Почта обязательна и здесь: уходит в Reply-To, по ней отвечают клиенту и по ней
+       CRM/Битрикс видит внешнего собеседника. Проверяем, только если поле есть в форме. */
+    if(emailEl){
+      if(email===''){ show('Укажите почту — на неё пришлём коммерческое предложение.','err'); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ show('Проверьте почту: похоже, в адресе опечатка.','err'); return; }
+    }
     if(phoneEl&&(phone.replace(/\D/g,'').length<10)&&!email){ show('Укажите корректный телефон или email.','err'); return; }
     if(consent&&!consent.checked){ show('Подтвердите согласие на обработку данных.','err'); return; }
     var fd=new FormData();
