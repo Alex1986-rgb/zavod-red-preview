@@ -58,7 +58,11 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
    + '<p id="zrIntro">Заполните форму — инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>'
    + '<div class="zr-res"></div>'
    + '<form id="zrModalForm">'
-   + '<div class="zr-hp"><input type="text" name="work_email" tabindex="-1" autocomplete="off"></div>'
+   /* Ловушка для ботов. readonly + aria-hidden — чтобы автозаполнение браузера
+      (особенно Яндекс.Браузера, он метит поле по имени «…email») не подставляло сюда
+      почту пользователя: поле спрятано за экран, но для автозаполнения оно видимое.
+      Ботам readonly не мешает — они пишут значение напрямую, и это ловит сервер. */
+   + '<div class="zr-hp"><input type="text" name="work_email" tabindex="-1" autocomplete="off" readonly aria-hidden="true"></div>'
    + '<select class="zr-sel" id="zrType">'
    + '<option value="" selected>Какой редуктор нужен?</option>'
    + '<option>Червячный</option>'
@@ -132,10 +136,20 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(form.__zrSending)return;                 // отправка уже идёт — второй submit игнорируем
-    if(form.querySelector('input[name="work_email"]').value!=='')return;
+    /* Honeypot НЕ проверяем на клиенте. Поле work_email спрятано за экран
+       (left:-9999px), то есть для автозаполнения браузера оно обычное видимое поле,
+       а имя содержит «email» — Яндекс.Браузер подставлял в него сохранённую почту.
+       Прежний `if(value!=='')return;` на этом молча обрывал отправку: ни запроса, ни
+       сообщения. В Chrome автозаполнение осторожнее, поэтому там форма работала —
+       ровно жалоба «с Яндекса не отправляется, с Гугла отправляется».
+       Смысла в этой проверке и не было: ниже в запрос всегда кладётся ПУСТОЙ
+       work_email. Ловушка от ботов живёт на сервере (feedback.php) и не пострадала. */
     var type=document.getElementById('zrType').value;
     if(document.getElementById('zrName').value.trim()===''){show('Укажите, как к вам обращаться.','err');return;}
-    if(ph.value.length<18){show('Введите телефон полностью: +7 (XXX) XXX-XX-XX.','err');return;}
+    /* Телефон проверяем по количеству цифр, а не по длине строки с маской: при
+       автозаполнении браузер вставляет свой формат («+79991234567», «8 999 …»),
+       маска на него не срабатывает, и проверка на length>=18 отвергала верный номер. */
+    if(ph.value.replace(/\D/g,'').length<11){show('Введите телефон полностью: +7 (XXX) XXX-XX-XX.','err');return;}
     if(!document.getElementById('zrConsent').checked){show('Отметьте согласие на обработку персональных данных.','err');return;}
     if(fileInp.files&&fileInp.files[0]&&fileInp.files[0].size>MAXB){show('Файл больше 10 МБ. Сожмите его или отправьте заявку без файла — мы запросим его в ответ.','err');return;}
     var fd=new FormData();
@@ -173,8 +187,13 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
        «Отправляем…» бесконечно. Легитимную медленную загрузку не режем — таймер
        сбрасывается на каждом событии прогресса (аплоад и ответ). */
     var _stall;
-    function _bump(){ clearTimeout(_stall); _stall=setTimeout(function(){ try{xhr.abort();}catch(_e){} }, 30000); }
+    /* 90 с, а не 30: сервер отвечает сразу только под PHP-FPM (fastcgi_finish_request).
+       Под mod_php ответ ждёт Telegram и SMTP — это десятки секунд, и короткий порог
+       рвал УЖЕ СОХРАНЁННУЮ заявку, показывая ложное «пропала связь». Таймер сбрасываем
+       и на получении заголовков ответа: с этого момента сервер жив, ждать можно. */
+    function _bump(){ clearTimeout(_stall); _stall=setTimeout(function(){ try{xhr.abort();}catch(_e){} }, 90000); }
     xhr.onprogress=_bump;
+    xhr.onreadystatechange=function(){ if(xhr.readyState===2)_bump(); };
     xhr.onabort=function(){ clearTimeout(_stall); unlock(); if(window.ym)ym(109758131,'reachGoal','zayavka_error'); show('Похоже, пропала связь — заявка не ушла. Позвоните: +7 (495) 151-41-02, или попробуйте ещё раз.','err'); };
     xhr.upload.onprogress=function(ev){
       _bump();
@@ -201,7 +220,12 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     };
     xhr.onerror=function(){clearTimeout(_stall);unlock();if(window.ym)ym(109758131,'reachGoal','zayavka_error');show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');};
     _bump();
-    xhr.send(fd);
+    /* send() может бросить синхронно (например, блокировка расширением). Без catch
+       кнопка навсегда оставалась бы «Отправляем…»: unlock() не вызван, флаг __zrSending
+       не снят, и повторные нажатия молча игнорировались. */
+    try{ xhr.send(fd); }
+    catch(_e){ clearTimeout(_stall); unlock(); if(window.ym)ym(109758131,'reachGoal','zayavka_error');
+      show('Не удалось отправить заявку. Позвоните: +7 (495) 151-41-02.','err'); }
   });
 })();
 
@@ -254,6 +278,20 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
   var w=document.getElementById('zrWidget');
   w.querySelector('.zrw__toggle').addEventListener('click',function(){w.classList.toggle('open');});
   document.addEventListener('click',function(e){if(!w.contains(e.target))w.classList.remove('open');});
+
+  /* Переход в мессенджер — это НЕ заявка. Даём таким кликам собственные цели
+     (messenger_max / messenger_mail), чтобы в отчётах они не смешивались с целью
+     zayavka, которая шлётся только по факту принятой заявки.
+     ВАЖНО: если в Метрике включены АВТОЦЕЛИ («клик по мессенджеру», «клик по email»,
+     «отправка формы»), они срабатывают сами, мимо этого кода, и в Директе могут
+     учитываться как конверсии. Отключается только в интерфейсе Метрики:
+     Настройка счётчика → Цели → автоцели; в Директе — оставить конверсией одну
+     цель zayavka. Кодом это не выключается. */
+  w.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.zrw__item');
+    if(!a||!window.ym)return;
+    try{ ym(109758131,'reachGoal',a.classList.contains('mx')?'messenger_max':'messenger_mail'); }catch(_e){}
+  });
 })();
 
 /* ===== Липкая мобильная CTA-панель (Позвонить / Заявка) ===== */
@@ -326,11 +364,14 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     var form=e.target;
     if(!form.classList||!form.classList.contains('lead-form'))return;
     e.preventDefault();
-    // honeypot
-    var hp=form.querySelector('input[name="work_email"]');
-    if(hp&&hp.value){ return; }
+    // Honeypot на клиенте не проверяем — см. пояснение у модальной формы выше:
+    // Яндекс.Браузер автозаполняет спрятанное поле work_email, и форма молча умирала.
+    // В запрос уходит пустое значение, серверная ловушка от ботов работает как прежде.
     var res=form.querySelector('.form-result');
-    function show(msg,cls){ if(res){res.textContent=msg;res.className='form-result '+(cls||'');} else { alert(msg); } }
+    /* Класс show ОБЯЗАТЕЛЕН: .form-result скрыт (display:none), показывает его только
+       .form-result.show (inner.css). Без него заявка уходила молча — ни «Заявка принята»,
+       ни ошибок валидации/сети пользователь не видел, и отправка выглядела как зависание. */
+    function show(msg,cls){ if(res){res.textContent=msg;res.className='form-result show'+(cls?' '+cls:'');} else { alert(msg); } }
     // поля по типу
     // Поля ищем не только по type: на части страниц телефон/почта размечены как text,
     // из-за чего контакты раньше вообще не уходили (заявки приходили без телефона и почты).
@@ -361,7 +402,13 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     var btn=form.querySelector('button[type="submit"],button');
     if(btn){btn.disabled=true;var _t=btn.textContent;btn.textContent='Отправляем…';}
     show('Отправляем заявку…','busy');
-    fetch(ACTION,{method:'POST',body:fd}).then(function(r){return r.json().catch(function(){return {};});}).then(function(d){
+    /* Таймаут: у fetch его нет по умолчанию, и при мёртвой связи кнопка «Отправляем…»
+       висела бесконечно — заявку не отправить и непонятно почему. 45 с с запасом на
+       медленный мобильный интернет, дальше — понятная ошибка с телефоном. */
+    var _ac=('AbortController' in window)?new AbortController():null;
+    var _to=setTimeout(function(){ if(_ac){try{_ac.abort();}catch(_e){}} },45000);
+    fetch(ACTION,_ac?{method:'POST',body:fd,signal:_ac.signal}:{method:'POST',body:fd}).then(function(r){return r.json().catch(function(){return {};});}).then(function(d){
+      clearTimeout(_to);
       if(btn){btn.disabled=false;btn.textContent=_t;}
       if(d.status==='success'||d.ok){
         if(window.ym)ym(109758131,'reachGoal','zayavka');
@@ -371,10 +418,13 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
         if(window.ym)ym(109758131,'reachGoal','zayavka_error');
         show((d.message||'Не удалось отправить.')+' Позвоните: +7 (495) 151-41-02.','err');
       }
-    }).catch(function(){
+    }).catch(function(err){
+      clearTimeout(_to);
       if(btn){btn.disabled=false;btn.textContent=_t;}
       if(window.ym)ym(109758131,'reachGoal','zayavka_error');
-      show('Ошибка сети. Позвоните: +7 (495) 151-41-02.','err');
+      var aborted=err&&err.name==='AbortError';
+      show(aborted?'Похоже, пропала связь — заявка не ушла. Позвоните: +7 (495) 151-41-02, или попробуйте ещё раз.'
+                 :'Ошибка сети. Позвоните: +7 (495) 151-41-02.','err');
     });
   });
 })();
