@@ -168,13 +168,23 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
 
     var xhr=new XMLHttpRequest();
     xhr.open('POST',ACTION);
+    /* Защита от «зависания навсегда»: если 30 с нет НИКАКОГО прогресса (мёртвая
+       связь/стойкий обрыв) — прерываем и показываем понятную ошибку, а не крутим
+       «Отправляем…» бесконечно. Легитимную медленную загрузку не режем — таймер
+       сбрасывается на каждом событии прогресса (аплоад и ответ). */
+    var _stall;
+    function _bump(){ clearTimeout(_stall); _stall=setTimeout(function(){ try{xhr.abort();}catch(_e){} }, 30000); }
+    xhr.onprogress=_bump;
+    xhr.onabort=function(){ clearTimeout(_stall); unlock(); if(window.ym)ym(109758131,'reachGoal','zayavka_error'); show('Похоже, пропала связь — заявка не ушла. Позвоните: +7 (495) 151-41-02, или попробуйте ещё раз.','err'); };
     xhr.upload.onprogress=function(ev){
+      _bump();
       if(!ev.lengthComputable)return;
       var pct=Math.round(ev.loaded/ev.total*100);
       var bar=document.getElementById('zrBar');if(bar)bar.style.width=pct+'%';
       if(pct>=100)show('Файл загружен, обрабатываем заявку…<div class="zr-prog"><i style="width:100%"></i></div>','busy');
     };
     xhr.onload=function(){
+      clearTimeout(_stall);
       unlock();
       var d;try{d=JSON.parse(xhr.responseText);}catch(e){d={};}
       if(xhr.status>=200&&xhr.status<300&&d.status==='success'){
@@ -189,7 +199,8 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
         show((d.message||'Не удалось отправить заявку.')+' Позвоните: +7 (495) 151-41-02.','err');
       }
     };
-    xhr.onerror=function(){unlock();if(window.ym)ym(109758131,'reachGoal','zayavka_error');show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');};
+    xhr.onerror=function(){clearTimeout(_stall);unlock();if(window.ym)ym(109758131,'reachGoal','zayavka_error');show('Сбой отправки. Позвоните нам: +7 (495) 151-41-02.','err');};
+    _bump();
     xhr.send(fd);
   });
 })();
