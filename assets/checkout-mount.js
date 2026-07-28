@@ -91,7 +91,15 @@
       '</div>' +
       '<div class="zr-co-panel"><h2>Доставка</h2><p class="sub">Транспортными компаниями по всей России · отгрузка от 3 дней.</p>' +
       '<div class="zr-field full"><label>Город и адрес доставки</label><input name="addr" placeholder="Город, улица, дом"></div></div>' +
-      '<div class="zr-co-panel"><h2>Комментарий к заказу</h2><div class="zr-field full"><textarea name="comment" rows="3" placeholder="Требования к исполнению, сроки, реквизиты для счёта"></textarea></div></div>';
+      '<div class="zr-co-panel"><h2>Комментарий к заказу</h2><div class="zr-field full"><textarea name="comment" rows="3" placeholder="Требования к исполнению, сроки, реквизиты для счёта"></textarea></div>' +
+      /* Согласие на обработку ПДн: форма собирает ФИО/ИНН/телефон/почту/адрес, то есть
+         персональные данные (152-ФЗ). Раньше чекбокса и ссылки на политику здесь не было. */
+      '<label class="zr-co-consent" style="display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.45;cursor:pointer">' +
+      '<input type="checkbox" id="zr-co-consent" style="margin-top:3px;flex:0 0 auto">' +
+      '<span>Оформляя заказ, я даю согласие на обработку персональных данных в соответствии с ' +
+      '<a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>' +
+      '<div id="zr-co-consent-err" style="display:none;margin-top:8px;font-size:13px;color:#e11b1b">Отметьте согласие на обработку персональных данных.</div>' +
+      '</div>';
   }
 
   function render() {
@@ -132,6 +140,14 @@
       if (bad) ok = false;
     });
     if (!ok) { if (first) first.focus(); return; }
+    // Без согласия заказ не оформляем (152-ФЗ): подсказку показываем прямо под чекбоксом.
+    var cons = d.getElementById("zr-co-consent"), consErr = d.getElementById("zr-co-consent-err");
+    if (cons && !cons.checked) {
+      if (consErr) consErr.style.display = "block";
+      cons.focus();
+      return;
+    }
+    if (consErr) consErr.style.display = "none";
     var no = orderNo();
     // сохраняем заказ в историю + профиль (для личного кабинета)
     function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ""; }
@@ -156,6 +172,34 @@
       }
     } catch (e) {}
     // надёжная доставка заказа менеджеру через feedback.php (email + Telegram + CRM) — не зависит от Web3Forms
+    // Ответ ОБЯЗАТЕЛЬНО дожидаемся: раньше запрос уходил «в никуда» (fire-and-forget),
+    // корзина сразу чистилась и показывалось «Заказ принят» даже когда заказ не долетел —
+    // клиент уходил довольным, а менеджер заказа не видел. Теперь успех показываем только
+    // по подтверждению сервера, иначе — честная ошибка и корзина остаётся нетронутой.
+    var btnEl = d.getElementById("zr-co-submit");
+    var btnTxt = btnEl ? btnEl.textContent : "";
+    if (btnEl) { btnEl.disabled = true; btnEl.textContent = "Отправляем…"; }
+
+    function done() {
+      clearCart();
+      host.innerHTML = '<div class="zr-co-ok"><div class="ic">✓</div><h2>Заказ принят</h2>' +
+        '<p>Спасибо! Мы получили заявку. Инженер свяжется с вами в течение 15 минут в рабочее время, подтвердит наличие, рассчитает доставку и выставит счёт.</p>' +
+        '<div class="ord">Номер заказа: ' + no + '</div>' +
+        '<div class="btns"><a class="pri" href="/">На главную</a><a class="gh" href="/catalog/">Продолжить покупки</a></div></div>';
+      try { window.scrollTo({ top: host.getBoundingClientRect().top + window.scrollY - 90, behavior: "smooth" }); } catch (e) {}
+    }
+    function failed() {
+      if (btnEl) { btnEl.disabled = false; btnEl.textContent = btnTxt; }
+      var w = form.querySelector(".zr-co-err") || (function () {
+        var n2 = d.createElement("div"); n2.className = "zr-co-err";
+        n2.style.cssText = "margin:12px 0;padding:12px 14px;border-radius:10px;background:#fdecec;border:1px solid #f3b7b7;color:#8a1414;font-size:14px;line-height:1.45";
+        form.appendChild(n2); return n2;
+      })();
+      w.textContent = "Заказ не удалось отправить — связь прервалась. Корзина сохранена, попробуйте ещё раз " +
+                      "или позвоните: +7 (495) 151-41-02 (номер заказа " + no + ").";
+      try { w.scrollIntoView({ block: "center", behavior: "smooth" }); } catch (e) {}
+    }
+
     try {
       var fd = new FormData();
       fd.append("work_email", "");
@@ -167,15 +211,19 @@
         ". ИНН: " + (val("inn") || "—") + ". Состав: " + its.map(function (i) { return i.name + " ×" + (i.qty || 1); }).join("; ") +
         ". Адрес: " + (val("addr") || "—") + ". Комментарий: " + (val("comment") || "—");
       fd.append("product_title", "Заказ " + no + " — " + body);
-      fetch("/api/feedback.php", { method: "POST", body: fd });
-      if (window.ym) ym(109758131, "reachGoal", "order");
-    } catch (e) {}
-    clearCart();
-    host.innerHTML = '<div class="zr-co-ok"><div class="ic">✓</div><h2>Заказ принят</h2>' +
-      '<p>Спасибо! Мы получили заявку. Инженер свяжется с вами в течение 15 минут в рабочее время, подтвердит наличие, рассчитает доставку и выставит счёт.</p>' +
-      '<div class="ord">Номер заказа: ' + no + '</div>' +
-      '<div class="btns"><a class="pri" href="/">На главную</a><a class="gh" href="/catalog/">Продолжить покупки</a></div></div>';
-    try { window.scrollTo({ top: host.getBoundingClientRect().top + window.scrollY - 90, behavior: "smooth" }); } catch (e) {}
+      var ac = ("AbortController" in window) ? new AbortController() : null;
+      var to = setTimeout(function () { if (ac) { try { ac.abort(); } catch (e) {} } }, 45000);
+      fetch("/api/feedback.php", ac ? { method: "POST", body: fd, signal: ac.signal } : { method: "POST", body: fd })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (dd) {
+          clearTimeout(to);
+          if (dd && (dd.status === "success" || dd.ok)) {
+            if (window.ym) ym(109758131, "reachGoal", "order");
+            done();
+          } else { failed(); }
+        })
+        .catch(function () { clearTimeout(to); failed(); });
+    } catch (e) { failed(); }
   }
 
   d.addEventListener("click", function (e) {

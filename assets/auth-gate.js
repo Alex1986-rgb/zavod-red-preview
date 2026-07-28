@@ -64,6 +64,16 @@
         '<div class="fld reg-only" style="display:none"><label>Телефон</label><input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>' +
         '<div class="fld"><label>Пароль</label><input name="password" type="password" autocomplete="current-password" placeholder="••••••"><div class="ac-hint reg-only" style="display:none">Минимум 6 символов.</div></div>' +
         '<div class="login-only" style="text-align:right;margin:-6px 0 4px"><a href="#" id="ac-forgot" style="font-size:12.5px;color:var(--muted,#5c6b76);text-decoration:none">Забыли пароль?</a></div>' +
+        /* Согласие на обработку ПДн — только для регистрации (класс reg-only): там
+           собираются имя, компания, телефон и e-mail, то есть персональные данные
+           (152-ФЗ). При входе согласие не требуется, поэтому блок скрыт. */
+        /* Обёртка-div: setMode сбрасывает display в "", а у <label> это inline —
+           флекс-раскладка чекбокса поехала бы. У div дефолт block, внутри — flex. */
+        '<div class="fld reg-only" style="display:none">' +
+        '<label style="display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.45;cursor:pointer;margin:0">' +
+        '<input type="checkbox" id="ac-consent" style="margin-top:2px;flex:0 0 auto">' +
+        '<span>Я даю согласие на обработку персональных данных в соответствии с ' +
+        '<a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label></div>' +
         '<button class="ac-btn" type="submit" id="ac-submit">Войти</button>' +
         '<div class="ac-msg" id="ac-msg"></div>' +
       '</form>' +
@@ -101,6 +111,12 @@
     form.addEventListener("submit", async function (e) {
       e.preventDefault(); e.stopPropagation();
       var v = function (n) { var x = form.querySelector('input[name=' + n + ']'); return x ? x.value.trim() : ""; };
+      // Регистрация без согласия на обработку ПДн недопустима (152-ФЗ).
+      var cons = form.querySelector('#ac-consent');
+      if (mode === "reg" && cons && !cons.checked) {
+        showMsg("Отметьте согласие на обработку персональных данных.", "err");
+        return;
+      }
       submit.disabled = true; showMsg("Отправляем…", "ok");
       var res;
       if (mode === "reg") res = await window.zrAuth.register({ name: v("name"), company: v("company"), email: v("email"), phone: v("phone"), password: v("password") });
