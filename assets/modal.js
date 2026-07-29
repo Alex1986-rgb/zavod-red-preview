@@ -295,9 +295,12 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
   w.querySelector('.zrw__toggle').addEventListener('click',function(){w.classList.toggle('open');});
   document.addEventListener('click',function(e){if(!w.contains(e.target))w.classList.remove('open');});
 
-  /* Переход в мессенджер — это НЕ заявка. Даём таким кликам собственные цели
-     (messenger_max / messenger_mail), чтобы в отчётах они не смешивались с целью
-     zayavka, которая шлётся только по факту принятой заявки.
+  /* Переход в MAX — это НЕ заявка, поэтому даём ему собственную цель messenger_max,
+     чтобы в отчётах он не смешивался с целью zayavka (она шлётся только по факту
+     принятой заявки).
+     Пункт «Почта» (.ml) НЕ шлёт цель: mailto перехватывается (см. ниже) и вместо
+     почтового клиента открывается форма заявки — засчитается zayavka по факту
+     отправки, а отдельная messenger_mail только вводила бы в заблуждение.
      ВАЖНО: если в Метрике включены АВТОЦЕЛИ («клик по мессенджеру», «клик по email»,
      «отправка формы»), они срабатывают сами, мимо этого кода, и в Директе могут
      учитываться как конверсии. Отключается только в интерфейсе Метрики:
@@ -306,7 +309,7 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
   w.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('.zrw__item');
     if(!a||!window.ym)return;
-    try{ ym(109758131,'reachGoal',a.classList.contains('mx')?'messenger_max':'messenger_mail'); }catch(_e){}
+    if(a.classList.contains('mx')){ try{ ym(109758131,'reachGoal','messenger_max'); }catch(_e){} }
   });
 })();
 
