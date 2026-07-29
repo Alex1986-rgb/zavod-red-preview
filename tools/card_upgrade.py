@@ -253,7 +253,117 @@ def upgrade_motor_reduktor_zr(t):
     t, _ = red_seo_tbl(t, model)
     return t, True
 
-FAMILY = {"reduktor": upgrade_reduktor, "motor-reduktor-zr": upgrade_motor_reduktor_zr}
+# ---------- thin families (ispolnenie / tiporazmer): full pro build ----------
+_DOSTAVKA = ('<section class="section" id="dostavka" style="padding-top:10px"><div class="wrap">'
+ '<h2 class="sec-h" style="font-size:22px;margin-bottom:14px">Доставка и оплата</h2><div class="why-grid">'
+ '<div><b>Отгрузка от 3 дней</b><span>серийные типоразмеры — со склада, остальное под заказ</span></div>'
+ '<div><b>Доставка по России</b><span>транспортными компаниями до терминала или адреса; самовывоз со склада</span></div>'
+ '<div><b>Оплата по счёту</b><span>безналичный расчёт по договору, УПД; для серийных — индивидуальные условия</span></div>'
+ '<div><b>Гарантия 24 месяца</b><span>паспорт изделия и декларация соответствия в комплекте</span></div></div></div></section>')
+_TEHDOC = ('<section class="section" id="tehdoc" style="padding-top:10px"><div class="wrap">'
+ '<h2 class="sec-h" style="font-size:22px;margin-bottom:14px">Техническая документация</h2><div class="p2-docs">'
+ '<span>Документы и справка:</span><a href="/markirovka-zr">Расшифровка маркировки ZR</a>'
+ '<a href="/glossary/montazhnoe-polozhenie">Монтажные положения</a><a href="#spec">Характеристики</a>'
+ '<a data-zayavka href="#zayavka">Паспорт и КП по запросу</a></div></div></section>')
+_CHERTEZH = ('<section class="section" id="chertezh" style="padding-top:10px"><div class="wrap">'
+ '<h2 class="sec-h" style="font-size:22px;margin-bottom:14px">Чертёж</h2>'
+ '<p style="color:var(--muted);max-width:70ch;margin-bottom:14px">Габаритный и присоединительный чертёж '
+ 'исполнения — по запросу вместе с коммерческим предложением. Ниже — пример габаритного чертежа.</p>'
+ '<img src="../assets/drawings/zr-demo-drawing.png" alt="Габаритный чертёж — пример" loading="lazy" '
+ 'style="max-width:640px;width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px;display:block">'
+ '<p style="margin-top:14px"><a class="btn" data-zayavka href="#zayavka">Запросить чертёж исполнения</a></p></div></section>')
+
+def thin_p2_hero(eyebrow, h1_html, model, typ, power, i, moment, rpm, img, alt):
+    params = " · ".join(x for x in [power, moment, ("i=" + i if i else ""), rpm] if x)
+    return (
+    '<section class="section" style="padding-top:20px"><div class="wrap"><div class="p2">'
+    '<div class="p2-gal"><div class="p2-main"><img id="p2img" src="' + img + '" alt="' + html.escape(alt) + '"></div>'
+    '<div class="p2-thumbs"><button type="button" class="act" data-src="' + img + '" aria-label="Фото">'
+    '<img src="' + img + '" alt="Фото редуктора" width="78" height="64"></button>'
+    '<button type="button" data-src="../assets/drawings/zr-demo-drawing.png" aria-label="Чертёж">'
+    '<img src="../assets/drawings/zr-demo-drawing.png" alt="Габаритный чертёж" width="78" height="64" loading="lazy" decoding="async"></button></div>'
+    '<div class="p2-note-dw">Фото типового исполнения · габаритный чертёж — пример, точный чертёж вышлем с КП</div></div>'
+    '<div class="p2-info"><span class="eyebrow">' + html.escape(eyebrow) + '</span>'
+    '<h1 class="p2-h1">' + h1_html + '</h1>'
+    '<div class="p2-price-row"><span class="p2-price">Цена по запросу</span><span class="p2-stock">В наличии / под заказ</span></div>'
+    '<div class="p2-offer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>'
+    '<div>Редуктор <b>' + html.escape(model) + '</b>' + ((' — ' + params) if params else '') + '. Собственное производство: '
+    'отгрузка от 3 дней, гарантия 24 месяца. Заменяет импортные приводы без переделки узла — те же присоединительные и габаритные размеры.</div></div>'
+    '<div class="p2-rows">'
+    '<div><span class="k">Производитель</span><span class="v">Завод Редукторов (ООО «НИИ АТТ»)</span></div>'
+    '<div><span class="k">Модель</span><span class="v">' + html.escape(model) + '</span></div>'
+    '<div><span class="k">Тип передачи</span><span class="v">' + html.escape(typ) + '</span></div>'
+    + (('<div><span class="k">Параметры</span><span class="v">' + html.escape(params) + '</span></div>') if params else '') +
+    '</div>'
+    '<div class="p2-cta"><a class="btn lg" data-zayavka href="#zayavka">Получить цену и КП</a><a class="btn ghost lg" href="/podbor">Подобрать по параметрам →</a></div>'
+    '<div class="p2-trust"><div><b>Собственное производство</b><span>механообработка, сборка, испытания</span></div>'
+    '<div><b>Гарантия 24 месяца</b><span>или переделаем за наш счёт</span></div>'
+    '<div><b>Отгрузка от 3 дней</b><span>серийное — со склада</span></div>'
+    '<div><b>Инженер за 15 минут</b><span>подбор по шильду, фото, параметрам</span></div></div>'
+    '<div class="p2-docs"><span>Техническая документация:</span><a href="/markirovka-zr">Расшифровка маркировки ZR</a>'
+    '<a href="/glossary/montazhnoe-polozhenie">Монтажные положения</a><a href="#spec">Характеристики</a></div>'
+    '</div></div></div></section>'
+    '<script>document.querySelectorAll(".p2-thumbs button").forEach(function(b){b.addEventListener("click",function(){document.getElementById("p2img").src=b.dataset.src;document.querySelectorAll(".p2-thumbs button").forEach(function(x){x.classList.remove("act")});b.classList.add("act");});});</script>')
+
+def thin_nav():
+    return ('<div class="wrap"><nav class="apro-nav"><a href="#opis">Описание</a><a href="#spec">Характеристики</a>'
+    '<a href="#dostavka">Доставка и оплата</a><a href="#tehdoc">Техническая документация</a><a href="#chertezh">Чертёж</a>'
+    '<a href="#faq">Вопросы</a><span class="sp"></span><a class="red" data-zayavka href="#zayavka">Получить расчёт</a></nav></div>')
+
+def thin_opis(model, desc_inner):
+    p2 = ('Это конкретное исполнение <b>' + html.escape(model) + '</b> из линейки серии ZR: подбирается под нагрузку по '
+    'мощности, крутящему моменту и передаточному числу. Заменяет импортные приводы (SEW, NORD, Motovario, Bonfiglioli) '
+    'с совпадающими присоединительными и габаритными размерами — установка без переделки рамы. Другие исполнения и '
+    'полный ряд — на родительской карточке модели; подбор — в <a href="/podbor">калькуляторе</a>, замена импорта — '
+    '<a href="/importozameshchenie">импортозамещение</a>.')
+    return ('<section class="section" id="opis" style="padding-top:22px"><div class="wrap">'
+    '<h2 class="sec-h" style="margin-bottom:14px">' + html.escape(model) + ' — описание исполнения</h2>'
+    '<div class="seo-text" style="border-top:none;padding-top:0">'
+    '<p class="opis-lead">' + desc_inner + '</p><p class="opis-lead">' + p2 + '</p></div></div></section>')
+
+def upgrade_thin(t):
+    if MRZ_MARK in t:
+        return t, False
+    m = re.search(r'<section class="section" style="padding-top:22px"><div class="wrap">\s*'
+                  r'<div style="display:grid;grid-template-columns:minmax\(0,3\d0px\) 1fr.*?</section>', t, re.S)
+    if not m:
+        return t, False
+    hero = m.group(0)
+    d = spec_dict(t)
+    h1m = re.search(r'<h1[^>]*>(.*?)</h1>', hero, re.S)
+    h1  = h1m.group(1).strip() if h1m else ''
+    model = (re.search(r'(ZR\s?[0-9][0-9/\-\.]*)', h1) or ['','ZR'])[1].strip()
+    eyeb = (re.search(r'class="eyebrow">(.*?)<', hero) or ['','Исполнение ZR'])[1].strip()
+    typ  = d.get('Тип передачи', 'редуктор')
+    power= d.get('Мощность двигателя', '')
+    i    = d.get('Передаточное число', '')
+    moment = d.get('Крутящий момент на выходе', d.get('Крутящий момент', ''))
+    rpm  = d.get('Обороты на выходе', '')
+    im = re.search(r'<img src="([^"]+)"[^>]*alt="([^"]*)"', hero)
+    img = im.group(1) if im else '../assets/catalog/cat_worm.webp'
+    alt = im.group(2) if im else model
+    dm = re.search(r'<p style="color:var\(--muted\);max-width:62ch">(.*?)</p>', hero, re.S)
+    desc = dm.group(1).strip() if dm else ('Исполнение редуктора <b>' + html.escape(model) + '</b> производства Завода Редукторов.')
+    new_top = thin_p2_hero(eyeb, h1, model, typ, power, i, moment, rpm, img, alt) + thin_nav() + thin_opis(model, desc)
+    t = t[:m.start()] + new_top + t[m.end():]
+    # spec section → id="spec"; после неё вставить dostavka/tehdoc/chertezh
+    t = re.sub(r'<section class="section" style="padding-top:\d+px">(<div class="wrap"><h2[^>]*>Характеристики)',
+               r'<section class="section" id="spec" style="padding-top:28px">\1', t, count=1)
+    sm = re.search(r'<section class="section" id="spec".*?</section>', t, re.S)
+    if sm:
+        t = t[:sm.end()] + _DOSTAVKA + _TEHDOC + _CHERTEZH + t[sm.end():]
+    # FAQ → id=faq + faq2
+    t = re.sub(r'(<section class="section" style="padding-top:0">)(<div class="wrap"><div class="eyebrow">Вопросы)',
+               r'<section class="section" id="faq" style="padding-top:0">\2', t, count=1)
+    t = t.replace('class="faq-grid"', 'class="faq2"', 1)
+    # seo → id=seo + seo-tbl
+    t, _ = red_seo_tbl(t, model)
+    # inject pro CSS
+    t = t.replace('</head>', '<style>' + MRZ_MARK + procss() + '</style></head>', 1)
+    return t, True
+
+FAMILY = {"reduktor": upgrade_reduktor, "motor-reduktor-zr": upgrade_motor_reduktor_zr,
+          "ispolnenie": upgrade_thin, "tiporazmer": upgrade_thin}
 
 def main():
     a = sys.argv[1:]
