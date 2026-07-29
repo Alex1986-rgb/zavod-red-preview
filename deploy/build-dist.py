@@ -18,7 +18,10 @@ METRIKA = ('<!-- Yandex.Metrika counter -->\n'
 # analog/ (72К файлов) по умолчанию исключён из dist — его льёт отдельный lftp-воркфлоу
 # (deploy-analog-lftp.yml), который включает analog через INCLUDE_ANALOG=1.
 _ignore = ['.git', '.github', 'deploy', 'dist', '*.py', '*.md',
-           '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations']
+           '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations',
+           # исходники, не отдаваемые в прод: 1.3 ГБ сырых PNG и 1.8 ГБ фото-БД —
+           # 0 ссылок из html/js/css, только рабочий материал генераторов карточек
+           '_raw', 'media-db']
 if not os.environ.get('INCLUDE_ANALOG'):
     _ignore.append('analog')
 IGNORE = shutil.ignore_patterns(*_ignore)
