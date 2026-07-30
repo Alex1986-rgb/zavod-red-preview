@@ -77,6 +77,31 @@ def enrich(t):
         sec2 = sec[:sec.rfind('</div></div></section>')] + add + '</div></div></section>'
     return t[:m.start()] + sec2 + t[m.end():], True
 
+def enrich_zr(t):
+    """ZR-native карточки (motor-reduktor-zr): абзац «Применение» + «Исполнения», без «оригинала»."""
+    if MARK in t: return t, False
+    m = re.search(r'<section[^>]*id="opis".*?</section>', t, re.S)
+    if not m or 'opis-lead' not in m.group(0): return t, False
+    model = field(t, 'Маркировка / Модель') or field(t, 'Модель') or 'ZR'
+    model = re.sub(r'\s*\(.*?\)', '', model).strip()
+    typ   = field(t, 'Тип передачи') or ''
+    params = field(t, 'Параметры') or ''
+    p_app = ('<p class="opis-lead">Редукторы и мотор-редукторы <b>' + html.escape(model) + '</b> ('
+             + html.escape(typ.lower() or 'редуктор') + ') применяют ' + apps_for(typ) + '. <b>'
+             + html.escape(model) + '</b> заменяет импортные приводы (SEW, NORD, Motovario, Bonfiglioli) с '
+             'совпадающими присоединительными и габаритными размерами — установка на штатное место без '
+             'переделки узла; исполнение под нагрузку подбирает инженер.</p>')
+    pclause = ('Параметры: ' + html.escape(params) + '. ') if params else ''
+    p_spec = ('<p class="opis-lead"><b>' + html.escape(model) + '</b> поставляется в разных монтажных '
+             'исполнениях — на лапах, с выходным фланцем или комбинированно; выходной вал сплошной со шпонкой '
+             'или полый (насадной). ' + pclause + 'Поставляется как редуктор под отдельный двигатель или как '
+             'мотор-редуктор с электродвигателем 220/380 В; при заказе указывают монтажное положение, сторону '
+             'вала и климатическое исполнение. Гарантия 24 месяца, отгрузка серийных типоразмеров от 3 дней.</p>')
+    add = MARK + p_app + p_spec
+    sec = m.group(0)
+    sec2 = sec[:sec.rfind('</div></div></section>')] + add + '</div></div></section>'
+    return t[:m.start()] + sec2 + t[m.end():], True
+
 def main():
     a = sys.argv[1:]
     if '--dry' in a:
@@ -85,14 +110,16 @@ def main():
         secs = re.search(r'<section[^>]*id="opis".*?</section>', t2, re.S).group(0)
         print('changed:', ch, '| opis-lead абзацев:', secs.count('opis-lead'))
         return
-    if '--all' in a:      files = glob.glob('analog/*.html')
+    fn = enrich
+    if '--zr' in a:       files = glob.glob('motor-reduktor-zr/*.html'); fn = enrich_zr
+    elif '--all' in a:    files = glob.glob('analog/*.html')
     elif '--brand' in a:  files = glob.glob('analog/'+a[a.index('--brand')+1]+'-*.html')
     else:                 files = [x for x in a if x.endswith('.html')]
     n = 0
     for f in files:
         if os.path.basename(f) == 'index.html': continue
         t = open(f, encoding='utf-8', errors='replace').read()
-        t2, ch = enrich(t)
+        t2, ch = fn(t)
         if ch: open(f, 'w', encoding='utf-8').write(t2); n += 1
     print(f'enriched {n}/{len(files)}')
 
