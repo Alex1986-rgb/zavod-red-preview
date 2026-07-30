@@ -50,7 +50,7 @@ jobs:
           FLAG=""; [ "$DRY" = "true" ] && FLAG="--dry-run"
           echo "цель: $BASE@$HOST:$DEST   сухой=$DRY"
           set +e
-          rsync -rlzt --omit-dir-times --no-perms $FLAG --stats \
+          rsync -rlztc --omit-dir-times --no-perms $FLAG --stats \
             --exclude 'analog/' \
             -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
             dist/ "$BASE@$HOST:$DEST" 2>&1 | tail -40
