@@ -50,8 +50,8 @@ def enrich(t):
     typ   = field(t, 'Тип передачи') or ''
     power = field(t, 'Мощность (модель)') or field(t, 'Мощность') or ''
     i     = field(t, 'Передаточное число') or ''
-    mom   = (re.search(r'(\d[\d  .,\-–]*)\s*Н·м', re.search(r'<title>(.*?)</title>', t).group(1))
-             if re.search(r'<title>', t) else None)
+    tm    = re.search(r'<title>(.*?)</title>', t, re.S)
+    mom   = re.search(r'(\d[\d  .,\-–]*)\s*Н·м', tm.group(1)) if tm else None
     moment = mom.group(1).strip() if mom else ''
     typ_l = typ.lower() if typ else 'мотор-редуктор'
 
