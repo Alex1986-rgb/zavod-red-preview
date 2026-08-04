@@ -21,7 +21,10 @@ _ignore = ['.git', '.github', 'deploy', 'dist', '*.py', '*.md',
            '.DS_Store', 'div', 'api', 'admin', 'crm-data', 'migrations',
            # исходники, не отдаваемые в прод: 1.3 ГБ сырых PNG и 1.8 ГБ фото-БД —
            # 0 ссылок из html/js/css, только рабочий материал генераторов карточек
-           '_raw', 'media-db']
+           '_raw', 'media-db',
+           # дев-мусор и бэкапы — НЕ отдавать в прод (однажды .claude/worktrees на 416МБ
+           # и *_backup с дублями статей утекли на боевой; чистили вручную 04.08.26)
+           '.claude', '*_backup', '_lbtest.html', 'test.html']
 if not os.environ.get('INCLUDE_ANALOG'):
     _ignore.append('analog')
 IGNORE = shutil.ignore_patterns(*_ignore)
@@ -32,7 +35,7 @@ shutil.copytree(SRC, DST, ignore=IGNORE)
 
 # robots.txt — открыт для индексации
 with open(os.path.join(DST, 'robots.txt'), 'w', encoding='utf-8') as f:
-    f.write("User-agent: *\nAllow: /\nDisallow: /cart\nDisallow: /checkout\nDisallow: /cabinet\nDisallow: /api/\nDisallow: /*?\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-tiporazmer.xml\nSitemap: https://zavod-red.ru/sitemap-ispolnenie.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\nSitemap: https://zavod-red.ru/sitemap-analog-2.xml\nSitemap: https://zavod-red.ru/sitemap-zr.xml\nSitemap: https://zavod-red.ru/sitemap-hub.xml\n")
+    f.write("User-agent: *\nAllow: /\nDisallow: /cart\nDisallow: /checkout\nDisallow: /cabinet\nDisallow: /api/\nDisallow: /*?\n\nSitemap: https://zavod-red.ru/sitemap-index.xml\nSitemap: https://zavod-red.ru/sitemap.xml\nSitemap: https://zavod-red.ru/sitemap-images.xml\nSitemap: https://zavod-red.ru/sitemap-analog.xml\nSitemap: https://zavod-red.ru/sitemap-analog-2.xml\nSitemap: https://zavod-red.ru/sitemap-zr.xml\nSitemap: https://zavod-red.ru/sitemap-hub.xml\n")
 
 # Метрика в <head> каждой HTML (если ещё не вставлена)
 n = 0

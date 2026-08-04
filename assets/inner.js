@@ -119,10 +119,11 @@ function wireLeadForm(formId, opts){
   var S = '.zrlb{position:fixed;inset:0;z-index:9999;background:rgba(10,14,18,.92);' +
     'display:none;align-items:center;justify-content:center;touch-action:none}' +
     '.zrlb.on{display:flex}' +
-    '.zrlb img{max-width:96vw;max-height:88vh;transform-origin:center center;' +
+    '.zrlb img{position:relative;z-index:1;max-width:96vw;max-height:88vh;' +
+    'transform-origin:center center;' +
     'transition:transform .12s ease-out;cursor:grab;background:#fff;user-select:none}' +
     '.zrlb img.drag{cursor:grabbing;transition:none}' +
-    '.zrlb-bar{position:absolute;top:0;left:0;right:0;display:flex;gap:8px;' +
+    '.zrlb-bar{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;gap:8px;' +
     'align-items:center;padding:10px 14px;color:#fff;font:600 13px/1.3 system-ui,sans-serif;' +
     'background:linear-gradient(rgba(0,0,0,.55),transparent)}' +
     '.zrlb-bar .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
@@ -130,7 +131,7 @@ function wireLeadForm(formId, opts){
     'border-radius:8px;padding:7px 11px;font:600 13px/1 system-ui,sans-serif;cursor:pointer;' +
     'text-decoration:none}' +
     '.zrlb-bar button:hover,.zrlb-bar a:hover{background:rgba(255,255,255,.26)}' +
-    '.zrlb-hint{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:#9fb0bf;' +
+    '.zrlb-hint{position:absolute;bottom:12px;left:0;right:0;z-index:2;text-align:center;color:#9fb0bf;' +
     'font:500 12px system-ui,sans-serif}';
   var st = document.createElement('style'); st.textContent = S;
   document.head.appendChild(st);
@@ -216,5 +217,14 @@ function wireLeadForm(formId, opts){
   document.addEventListener('DOMContentLoaded', function () {
     var m = document.getElementById('p2img');
     if (m) { m.style.cursor = 'zoom-in'; m.title = 'Нажмите, чтобы увеличить'; }
+    // любые крупные картинки чертежей/иллюстраций делаем увеличиваемыми,
+    // даже если у них не проставлен data-zoom в разметке
+    var sel = '#chertezh img, .blog-hero-img, .p2-main img, figure img';
+    document.querySelectorAll(sel).forEach(function (im) {
+      if (im.hasAttribute('data-zoom')) return;
+      if (im.naturalWidth && im.naturalWidth < 240) return;
+      im.setAttribute('data-zoom', '');
+      im.style.cursor = 'zoom-in';
+    });
   });
 })();
