@@ -22,11 +22,18 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
         with:
-          sparse-checkout: |
-            tools
-            assets
-          sparse-checkout-cone-mode: false
+          python-version: "3.x"
+
+      - name: Собрать dist (нужна для сверки ассетов с боевым)
+        run: |
+          # check_prod.py сравнивает то, что отдаёт боевой, с собранной dist.
+          # Без свежей сборки сравнение идёт с версией из git, а ей больше месяца,
+          # и проверка падает на здоровом сайте.
+          python3 -m pip install --quiet rcssmin rjsmin
+          python3 deploy/build-dist.py
 
       - name: Адреса, которые зовёт фронтенд
         shell: bash {0}
@@ -46,9 +53,30 @@ jobs:
             printf '  %-34s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
           done
           echo
-          echo "=== служебное: наружу попадать НЕ должно (ждём 403 или 404) ==="
-          for p in /api/config.local.php /api/config.php /api/db.php /api/SETUP.md; do
-            printf '  %-34s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
+          echo "=== служебное: что реально отдаётся наружу ==="
+          # Код 200 у PHP-файла сам по себе ничего не значит: если PHP исполняется,
+          # файл конфигурации просто ничего не печатает — тело пустое, и это норма.
+          # Опасно противоположное: сервер отдаёт ИСХОДНЫЙ КОД, а в config.local.php
+          # лежат пароль базы и токен CRM. Поэтому смотрим на тело, а не на код.
+          # Само тело НЕ печатаем — только вывод, чтобы секрет не утёк в лог сборки.
+          for p in /api/config.local.php /api/config.php /api/db.php /api/config.local.sample.php; do
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")
+            body=$(curl -s -m 20 "$S$p")
+            n=${#body}
+            if printf '%s' "$body" | grep -qiE '<\?php|\$_SERVER|password|DB_|define\('; then
+              verdict="ОПАСНО: отдаётся исходный код"
+            elif [ "$n" -eq 0 ]; then
+              verdict="норма: тело пустое, PHP исполняется"
+            else
+              verdict="тело не пустое ($n знаков) — посмотреть вручную"
+            fi
+            printf '  %-34s HTTP %-5s %s\n' "$p" "$code" "$verdict"
+          done
+          echo
+          echo "=== внутренняя документация (в открытом доступе быть не должна) ==="
+          for p in /api/SETUP.md /README.md /BRANDBOOK.md /AI-STACK.md /CLAUDE.md /deploy/build-dist.py; do
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")
+            printf '  %-34s HTTP %s\n' "$p" "$code"
           done
 
       - name: Карты сайта и robots
