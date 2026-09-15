@@ -34,6 +34,9 @@ IMG = re.compile(r'<img\b([^>]*)>', re.I)
 ATTR = re.compile(r'(\w[\w-]*)\s*=\s*"([^"]*)"')
 LINK = re.compile(r'<a\b[^>]*\bhref="([^"]+)"', re.I)
 LD = re.compile(r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>', re.S | re.I)
+SCRIPT = re.compile(r'<script\b.*?</script>', re.S | re.I)
+# Фрагменты разметки, а не страницы: у них нет и не должно быть title, canonical и прочего.
+FRAGMENTS = ('assets/_', 'tools/_')
 TAGS = re.compile(r'<[^>]+>')
 
 # Длины, при которых Яндекс и Google обрезают строку в выдаче.
@@ -60,6 +63,37 @@ def rel_to_path(href, page):
     else:
         base = os.path.normpath(os.path.join(os.path.dirname(page), href))
     return base
+
+
+def htaccess_redirects():
+    """Адреса, которые .htaccess уводит редиректом. Для посетителя они рабочие,
+    хотя файла с таким именем на диске нет — считать их битыми неверно."""
+    out = []
+    path = os.path.join(ROOT, '.htaccess')
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding='utf-8', errors='ignore') as f:
+        for line in f:
+            m = re.match(r'\s*RewriteRule\s+([^\s]+)\s', line)
+            if not m or 'R=30' not in line:
+                continue
+            pat = m.group(1)
+            # Правила вида «^» или «(.+)$» — это перевод на https и подобное: они
+            # подходят под ЛЮБОЙ адрес. Если их учесть, битой не окажется ни одна
+            # ссылка. Берём только правила, где есть настоящий кусок пути.
+            if not re.search(r'[a-z0-9_-]{2,}', pat, re.I):
+                continue
+            out.append(re.compile('^/?' + pat.lstrip('^')))
+    return out
+
+
+REDIRECTS = htaccess_redirects()
+
+
+def redirected(href):
+    probe = href[len(SITE):] if href.startswith(SITE) else href
+    probe = probe.split('#')[0].split('?')[0].lstrip('/')
+    return any(r.match(probe) for r in REDIRECTS)
 
 
 def exists_page(base):
@@ -99,6 +133,8 @@ def main():
 
     for page in pages:
         rel = os.path.relpath(page, ROOT)
+        if rel.replace(os.sep, '/').startswith(FRAGMENTS):
+            continue                      # кусок разметки для вставки, а не страница
         section = rel.split(os.sep)[0] if os.sep in rel else 'корень'
         per_section[section] += 1
         try:
@@ -152,8 +188,13 @@ def main():
         if not re.search(r'name="viewport"', html, re.I):
             note('нет viewport (мобильные)', page)
 
+        # Дальше смотрим разметку БЕЗ скриптов: внутри <script> лежат заготовки вида
+        # href="/catalog/'+url+'" и src="assets/${p.f}.webp" — это не ссылки, а куски
+        # кода, который подставит значения в браузере. Считать их битыми — ошибка.
+        markup = SCRIPT.sub(' ', html)
+
         # ── картинки ───────────────────────────────────────────────────────
-        for tag in IMG.findall(html):
+        for tag in IMG.findall(markup):
             a = dict(ATTR.findall(tag))
             src = a.get('src', '')
             if not src:
@@ -169,7 +210,9 @@ def main():
                     img_targets[p].append(page)
 
         # ── ссылки ─────────────────────────────────────────────────────────
-        for href in LINK.findall(html):
+        for href in LINK.findall(markup):
+            if redirected(href):
+                continue                  # .htaccess уводит на живую страницу
             p = rel_to_path(href, page)
             if p:
                 link_targets[p].append(page)
