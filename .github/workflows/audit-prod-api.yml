@@ -1,0 +1,74 @@
+name: Аудит бэкенда боевого сайта
+
+# ТОЛЬКО ЧТЕНИЕ. Обычные запросы к сайту, как у посетителя: секреты не нужны,
+# изменить ничего не может. Ни одной заявки не создаётся — POST не отправляется.
+#
+# Зачем: папка api/ намеренно исключена из автодеплоя (см. api/SETUP.md) и заливается
+# руками. Значит расхождение между тем, что зовёт фронтенд, и тем, что лежит на сервере,
+# ничем не ловится — ни сборкой, ни заливкой. Проверяем по факту.
+#
+# Как читать ответы:
+#   405 — файл есть, но не принимает GET. Это НОРМА для приёмников POST.
+#   200 — файл есть и ответил.
+#   404 — файла НЕТ. Для приёмника заявок это значит, что заявки теряются.
+#   403 — доступ закрыт сервером (для служебных данных это правильно).
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools
+            assets
+          sparse-checkout-cone-mode: false
+
+      - name: Адреса, которые зовёт фронтенд
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== приёмник заявок (главный: через него идут все лиды) ==="
+          for p in /api/feedback.php; do
+            printf '  %-34s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
+          done
+          echo
+          echo "=== кабинет: два разных пути в коде фронтенда ==="
+          echo "    assets/auth.js зовёт /api/…, assets/cabinet-mount.js зовёт /api/cabinet/…"
+          for p in /api/register.php /api/login.php /api/logout.php /api/me.php \
+                   /api/store.php /api/change-password.php \
+                   /api/cabinet/store.php /api/cabinet/change-password.php \
+                   /api/cabinet/login.php; do
+            printf '  %-34s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
+          done
+          echo
+          echo "=== служебное: наружу попадать НЕ должно (ждём 403 или 404) ==="
+          for p in /api/config.local.php /api/config.php /api/db.php /api/SETUP.md; do
+            printf '  %-34s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
+          done
+
+      - name: Карты сайта и robots
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== robots.txt ==="
+          curl -s -m 20 "$S/robots.txt"
+          echo
+          echo "=== карты сайта: код ответа, вес, есть ли дата изменения ==="
+          for f in sitemap-index.xml sitemap.xml sitemap-zr.xml sitemap-hub.xml \
+                   sitemap-tiporazmer.xml sitemap-ispolnenie.xml \
+                   sitemap-analog.xml sitemap-analog-2.xml; do
+            body=$(curl -s -m 60 "$S/$f")
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/$f")
+            locs=$(printf '%s' "$body" | grep -o '<loc>' | wc -l)
+            mods=$(printf '%s' "$body" | grep -o '<lastmod>' | wc -l)
+            printf '  %-26s HTTP %-4s адресов %-7s с датой %-7s\n' "$f" "$code" "$locs" "$mods"
+          done
+
+      - name: Сквозная проверка боевого (tools/check_prod.py)
+        shell: bash {0}
+        run: python3 tools/check_prod.py
