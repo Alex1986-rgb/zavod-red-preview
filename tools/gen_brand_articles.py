@@ -49,6 +49,7 @@ BRANDS = {
     "guomao":       ("Guomao", "Китай"),
     "innored":      ("INNORED", "Южная Корея"),
     "unidrive":     ("Unidrive", "Австралия"),
+    "tos-znojmo":   ("Tos Znojmo", "Чехия"),
 }
 
 TYPE_MAP = [
