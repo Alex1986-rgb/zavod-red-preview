@@ -1,0 +1,70 @@
+name: Аудит лишних файлов на проде
+
+# ТОЛЬКО ДИАГНОСТИКА. Ничего не заливает и ничего не удаляет: rsync запускается
+# с --dry-run, то есть физически не может изменить сервер.
+#
+# Зачем: деплой (deploy-site-ssh.yml и deploy-site-lftp.yml) работает БЕЗ --delete,
+# поэтому всё, что когда-либо попадало на прод, остаётся там навсегда — даже если
+# страницу переименовали или удалили из репозитория. Хуже того, .htaccess отдаёт
+# каталог приоритетом над файлом: правило в строках 17-19 редиректит /path на /path/,
+# если на сервере есть каталог path. То есть оставшийся от прежней версии сайта
+# каталог /catalog/chervyachnye/ будет показываться вместо нового
+# catalog/chervyachnye.html, и никакой деплой это не исправит.
+#
+# Этот воркфлоу собирает dist и печатает список того, что есть на сервере, но
+# отсутствует в сборке. По этому списку принимается решение, что удалять руками.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - run: python3 -m pip install --quiet rcssmin rjsmin
+      - run: python3 deploy/build-dist.py
+      - name: Ключ и known_hosts
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          echo "HOST=$HOST" >> $GITHUB_ENV
+      - name: Что на проде лишнее (сухой прогон, без удаления)
+        shell: bash {0}
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          DEST="/home/c/$BASE/public_html/"
+          echo "цель: $BASE@$HOST:$DEST"
+          echo "режим: СУХОЙ ПРОГОН — сервер не изменяется"
+          # --delete только вместе с --dry-run: rsync лишь перечисляет кандидатов.
+          # Серверные каталоги, которых нет и не должно быть в dist, исключены,
+          # иначе они попадут в список как «лишние»: бэкенд CRM, загрузки, логи.
+          rsync -rlnc --delete --dry-run --out-format='%o %n' \
+            --exclude 'analog/' \
+            --exclude 'api/' \
+            --exclude 'admin/' \
+            --exclude 'uploads/' \
+            --exclude 'storage/' \
+            --exclude 'logs/' \
+            --exclude '.well-known/' \
+            -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
+            dist/ "$BASE@$HOST:$DEST" 2>&1 | grep '^del\.' | sed 's/^del\. //' > stale.txt
+          echo "=== лишних объектов на проде: $(wc -l < stale.txt) ==="
+          echo "--- каталоги (они опаснее всего: перекрывают одноимённые .html) ---"
+          grep '/$' stale.txt | head -100
+          echo "--- файлы (первые 200) ---"
+          grep -v '/$' stale.txt | head -200
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stale-on-prod
+          path: stale.txt
