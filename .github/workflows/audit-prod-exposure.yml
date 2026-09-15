@@ -71,6 +71,12 @@ jobs:
           has /blog/kupit-tos-znojmo 'Tos Znojmo' 'новые статьи по Tos Znojmo'
           has /blog/chervyachnyj-kpd 'КПД червячного редуктора' 'исправленные падежи в заголовках'
           echo
+          echo "=== приёмник заявок жив? (только GET, заявки не создаём) ==="
+          for f in /api/feedback.php /api/store.php /api/contact_click.php /spasibo; do
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$f")
+            printf '  %-26s HTTP %s\n' "$f" "$code"
+          done
+          echo
           echo "=== видео отдаётся? ==="
           for f in /assets/hero.mp4 /assets/video/zavod-2026.mp4; do
             out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
