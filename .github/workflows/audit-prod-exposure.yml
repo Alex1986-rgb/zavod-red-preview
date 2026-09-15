@@ -1,0 +1,76 @@
+name: Аудит доступности лишнего на проде
+
+# ТОЛЬКО ЧТЕНИЕ. Ничего не заливает и не удаляет: обычные GET-запросы к сайту,
+# как у любого посетителя. Секреты не используются — все адреса публичные.
+#
+# Зачем: аудит файлов показал на сервере 22 946 посторонних объектов — копии сайта
+# (_seo_backup_*, _lineup_backup_*, blog_backup, glossary_backup), служебные каталоги
+# (.claude, .github, deploy, crm-data) и чей-то локальный путь Users/anton/...
+# Само наличие файла на диске ещё не значит, что он отдаётся наружу: часть может быть
+# закрыта .htaccess. Этот воркфлоу показывает, что именно реально открывается, —
+# по этому списку и решается, что чистить в первую очередь.
+#
+# Вторая задача: подтвердить по боевому сайту, что выкаченные правки на месте.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Что открывается наружу
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          probe() {
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' -L "$S$1")
+            case "$code" in
+              200) mark="ОТКРЫТО";;
+              403|401) mark="закрыто";;
+              404) mark="нет";;
+              *) mark="код $code";;
+            esac
+            printf '  %-6s %-4s %s\n' "$code" "$mark" "$1"
+          }
+          echo "=== КОНТРОЛЬ (должно быть 200) ==="
+          for p in / /catalog/ /podbor; do probe "$p"; done
+          echo
+          echo "=== ДАННЫЕ CRM (должно быть закрыто) ==="
+          for p in /crm-data/ /crm-data/lead_attempts.jsonl /crm-data/kb.md \
+                   /crm-data/analogs.csv /crm-data/site_series.json; do probe "$p"; done
+          echo
+          echo "=== СЛУЖЕБНОЕ (должно быть закрыто) ==="
+          for p in /.claude/ /.github/workflows/deploy-site.yml /deploy/build-dist.py \
+                   /tools/card_audit.py; do probe "$p"; done
+          echo
+          echo "=== КОПИИ САЙТА (дубли для поиска) ==="
+          for p in /_seo_backup_20260812b/index.html /_seo_backup_20260812c/index.html \
+                   /_lineup_backup_20260812/catalog/evl.html /blog_backup/ /glossary_backup/ \
+                   /sravnenie/tehnoreduktor-ural.html \
+                   "/Users/anton/Developer/projects/zavod-red.ru/prototype/"; do probe "$p"; done
+          echo
+          echo "=== ПРОЧЕЕ ==="
+          for p in /original_images/logo-zavod.png /assets/media-db/ /yandex-market.yml; do probe "$p"; done
+
+      - name: Долетели ли правки на боевой
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          has() {  # $1 url, $2 строка, $3 описание
+            if curl -s -m 25 -L "$S$1" | grep -qF "$2"; then echo "  ЕСТЬ   $3"; else echo "  НЕТ    $3"; fi
+          }
+          echo "=== проверка по содержимому боевых файлов ==="
+          has /assets/inner.css 'sf-brand img{content:url(zr_logo_dark.webp)}' 'тёмный логотип в подвале'
+          has /              'kick'                       'запуск видео по действию пользователя'
+          has /              'prefers-reduced-motion'     'условия показа видео'
+          has /analog/bauer-bf-06-i10-42-0-12kvt 'minmax(0,1fr)' 'фикс горизонтальной прокрутки карточек'
+          has /analog/bauer-bf-06-i10-42-0-12kvt 'br-bauer-'     'фото бренда вместо стока'
+          has /blog/planetarnyj-reduktor-cena 'планетарного редуктора' 'новые статьи по планетарным'
+          echo
+          echo "=== видео отдаётся? ==="
+          for f in /assets/hero.mp4 /assets/video/zavod-2026.mp4; do
+            out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
+            printf '  %-34s %s\n' "$f" "$out"
+          done
