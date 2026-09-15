@@ -122,9 +122,16 @@ def main():
     titles = collections.Counter()
     descs = collections.Counter()
     h1s = collections.Counter()
+    # Одинаковый заголовок сам по себе не беда: у генерируемых карточек он norma,
+    # если страницы сведены через canonical — в выдачу идёт одна. Поэтому считаем
+    # отдельно те повторы, где НЕСКОЛЬКО страниц ссылаются сами на себя: вот они
+    # и спорят друг с другом за один запрос.
+    self_canon = set()
     link_targets = collections.defaultdict(list)   # путь → страницы, которые на него ссылаются
     img_targets = collections.defaultdict(list)
     per_section = collections.Counter()
+
+    title_pages = collections.defaultdict(list)
 
     def note(key, page, extra=''):
         issues[key] += 1
@@ -151,13 +158,19 @@ def main():
         else:
             t = text_of(m.group(1))
             titles[t] += 1
+            title_pages[t].append(rel)
             if len(t) > TITLE_MAX:
                 note(f'<title> длиннее {TITLE_MAX} знаков', page, f'{len(t)}')
+
+        # Страницы, закрытые от индексации (404, «спасибо», брендбук), не обязаны
+        # иметь canonical и описание: в поиск они не идут и в карте сайта их нет.
+        noindex = bool(re.search(r'name="robots"[^>]*noindex', html, re.I))
 
         # ── описание ───────────────────────────────────────────────────────
         m = DESC.search(html)
         if not m or not m.group(1).strip():
-            note('нет meta description', page)
+            if not noindex:
+                note('нет meta description', page)
         else:
             d = m.group(1).strip()
             descs[d] += 1
@@ -178,7 +191,13 @@ def main():
         # ── canonical ──────────────────────────────────────────────────────
         m = CANON.search(html)
         if not m:
-            note('нет canonical', page)
+            if not noindex:
+                note('нет canonical', page)
+        else:
+            slug = rel.replace(os.sep, '/')
+            slug = slug[:-11] if slug.endswith('/index.html') else slug[:-5]
+            if m.group(1).rstrip('/') == f'{SITE}/{slug}'.rstrip('/'):
+                self_canon.add(rel)
 
         # ── обязательное в <head> ──────────────────────────────────────────
         if not re.search(r'<html[^>]+lang=', html, re.I):
@@ -203,7 +222,9 @@ def main():
             if 'alt' not in a:
                 note('<img> без alt', page, src[:60])
             elif not a['alt'].strip():
-                note('<img> с пустым alt', page, src[:60])
+                # Пустой alt — ПРАВИЛЬНАЯ разметка для декоративной картинки: так
+                # экранный диктор её пропускает. Отмечаем справочно, это не дефект.
+                note('<img> с пустым alt (норма для декоративных)', page, src[:60])
             if not src.startswith(('http', 'data:')):
                 p = rel_to_path(src, page)
                 if p:
@@ -248,7 +269,18 @@ def main():
         issues[name] = pages_hit
         return len(dup)
 
-    n_t = repeats(titles, 'одинаковый <title> у разных страниц')
+    # повторы заголовков среди несведённых страниц — то, что реально требует правки
+    unresolved = collections.Counter()
+    for t, pages_ in title_pages.items():
+        own = [p for p in pages_ if p in self_canon]
+        if len(own) > 1:
+            unresolved[t] = len(own)
+    n_u = len(unresolved)
+    issues['одинаковый <title> и НЕ сведены через canonical'] = sum(unresolved.values())
+    for t, n in unresolved.most_common(args.examples):
+        examples['одинаковый <title> и НЕ сведены через canonical'].append(f'{n} страниц: {t[:80]}')
+
+    n_t = repeats(titles, 'одинаковый <title> у разных страниц (в т.ч. сведённые — не беда)')
     n_d = repeats(descs, 'одинаковое description у разных страниц')
     n_h = repeats(h1s, 'одинаковый <h1> у разных страниц')
 
@@ -257,6 +289,7 @@ def main():
     print('По разделам: ' + ', '.join(f'{k} {v}' for k, v in per_section.most_common(10)))
     print(f'Уникальных: title {len(titles)}, description {len(descs)}, h1 {len(h1s)}')
     print(f'Повторяющихся значений: title {n_t}, description {n_d}, h1 {n_h}')
+    print(f'Из них НЕ сведены через canonical: title {n_u}')
     print(f'Внутренних целей ссылок {len(link_targets)}, из них битых {len(broken_links)}')
     print(f'Целей картинок {len(img_targets)}, из них отсутствует {len(broken_imgs)}')
     print()
