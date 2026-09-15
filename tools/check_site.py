@@ -52,16 +52,31 @@ cards = pages('reduktor/*.html')
 no_marker = [os.path.basename(p) for p in cards if 'ZR_IMPCTX' not in read(p)]
 check(f'Все {len(cards)} карточек ZR принимают ?imp=', not no_marker, f'без маркера: {no_marker[:5]}')
 
-# ── 3. Внутренний код EVL не виден пользователю ───────────────────────────────
+# ── 3. Код EVL не протекает туда, где товар должен читаться как ZR ────────────
+# EVL — прежняя заводская маркировка. Она осталась публичной и объясняется на своих
+# страницах (раздел /catalog/evl, таблица соответствия маркировок, расшифровка ZR) плюс
+# пункт меню «Редукторы EVL» в общей шапке. Всё это — намеренно. Проверка ловит EVL
+# ВЕЗДЕ ОСТАЛЬНОМ: в карточках, каталоге и на страницах брендов товар должен быть ZR.
 tagre = re.compile(r'<(script|style)[^>]*>.*?</\1>', re.S)
+MENU_EVL = 'Редукторы EVL'
+EVL_OK = {                              # страницы, которые объясняют маркировку EVL
+    os.path.join('catalog', 'evl.html'),
+    'sootvetstvie-markirovok.html',
+    'markirovka-zr.html',
+    'index.html',                       # плитка «серия EVL — теперь под маркой ZR»
+}
 leaks = []
 for p in pages('*.html', 'catalog/*.html', 'brands/*.html', 'reduktor/*.html'):
+    if os.path.relpath(p, BASE) in EVL_OK:
+        continue
     t = tagre.sub(' ', read(p))
     t = re.sub(r'<!--.*?-->', ' ', t, flags=re.S)
     t = re.sub(r'<[^>]+>', ' ', t)
+    t = t.replace(MENU_EVL, ' ')
     if 'EVL' in t:
         leaks.append(os.path.relpath(p, BASE))
-check('EVL нигде не виден в тексте страниц', not leaks, f'утечки: {leaks[:5]}')
+check('EVL не протёк за пределы страниц, где маркировка объясняется',
+      not leaks, f'утечки: {leaks[:5]}')
 
 # ── 4. Выдуманного бренда «SEW Tramec» нет ────────────────────────────────────
 ph = []
@@ -99,7 +114,7 @@ for p in sample:
     if not m:
         continue
     labels = re.findall(r'>([^<>]+)</a>', m.group(1))
-    if labels != ['Запросить оригинал', 'Подобрать аналог']:
+    if labels != ['Запросить оригинал', 'Подобрать замену']:
         wrong.append(os.path.basename(p))
 check(f'Кнопки карточек аналогов (выборка {len(sample)}): оригинал красным, аналог белым',
       not wrong, f'иначе: {wrong[:5]}')

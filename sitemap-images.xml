@@ -40,7 +40,6 @@
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/varvel.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/watt-drive.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/brands-float/yilmaz.png</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/brands/${b.f}.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/case1.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/case2.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/case3.webp</image:loc></image:image>
@@ -53,8 +52,6 @@
     <image:image><image:loc>https://zavod-red.ru/assets/icons/icon_pr.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/icons/vs_import.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/icons/vs_ours.webp</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/production/${f}.webp</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/production/p${n}.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/production/p01.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/production/p02.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/production/p04.webp</image:loc></image:image>
@@ -63,14 +60,11 @@
     <image:image><image:loc>https://zavod-red.ru/assets/production/p09.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/reduktor_float.png</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/roles/schet.webp</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/team/${p.f}.webp</image:loc></image:image>
-    <image:image><image:loc>https://zavod-red.ru/assets/video/team/${vid.f}.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/video/zavod-2026.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/zr_logo.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://zavod-red.ru/importozameshchenie</loc>
-    <image:image><image:loc>https://zavod-red.ru/assets/brands/&#x27;+b[0]+&#x27;.webp</image:loc></image:image>
     <image:image><image:loc>https://zavod-red.ru/assets/zr_logo.webp</image:loc></image:image>
   </url>
   <url>
