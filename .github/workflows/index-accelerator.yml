@@ -7,7 +7,12 @@ name: index-accelerator
 on:
   schedule:
     - cron: '15 5,11,17,23 * * *'   # UTC; 4 раза в сутки
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "Отправить ВЕСЬ сайт заново (иначе — только изменившееся)"
+        type: boolean
+        default: false
 
 concurrency:
   group: index-accelerator
@@ -31,7 +36,17 @@ jobs:
       - name: Запустить ускоритель
         env:
           YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
-        run: python3 index_accelerator.py
+        run: |
+          # По расписанию уходит только изменившееся — это и есть обычный режим.
+          # Галочка «отправить весь сайт» шлёт в IndexNow все адреса из карт,
+          # не глядя на сохранённые отпечатки. Пригождается после массовых правок
+          # (canonical, заголовки) и после потери кэша состояния.
+          if [ "${{ inputs.all }}" = "true" ]; then
+            echo "режим: отправляю ВЕСЬ сайт заново"
+            python3 index_accelerator.py --all
+          else
+            python3 index_accelerator.py
+          fi
 
       - name: Итог
         if: always()
