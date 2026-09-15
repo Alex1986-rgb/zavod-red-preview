@@ -624,7 +624,7 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
       if(!top.length){ dd.innerHTML='<div class="ms-empty">По «'+esc(q)+'» точных карточек нет. Нажмите «Найти» — откроем полный подбор.</div>'; dd.hidden=false; return; }
       dd.innerHTML=top.map(row).join('')+'<a class="ms-all" href="/podbor?q='+encodeURIComponent(q)+'">Показать все результаты в подборе →</a>'; dd.hidden=false;
     }
-    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json?v=3').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
+    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json?v=5354118f').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
     var t; function deb(){ clearTimeout(t); var q=input.value.trim(); if(q.length<2){dd.hidden=true;return;} t=setTimeout(function(){ if(IDX)render(q); else load(function(){render(q);}); },140); }
     input.addEventListener('focus',function(){ load(); if(input.value.trim().length>=2)deb(); });
     input.addEventListener('input',deb);

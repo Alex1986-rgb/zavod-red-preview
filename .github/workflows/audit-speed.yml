@@ -25,14 +25,38 @@ jobs:
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
-          echo "страница                     TTFB    всего   размер      сжатие         кэш"
+          # По 5 замеров на страницу: одиночный замер на общем хостинге ничего не значит —
+          # сосед по серверу может занять диск, и разовые 9 секунд превратятся в вывод,
+          # которого на самом деле нет. Смотрим медиану и худший случай.
+          echo "страница                        замеры TTFB, с                    медиана  худший  размер  сжатие  кэш"
           for p in / /catalog/ /podbor /reduktor/evl-198x /analog/bauer-bf-06-i10-42-0-12kvt /blog/; do
-            read ttfb total size ctype enc < <(curl -s -o /dev/null -m 30 -L \
-              -H 'Accept-Encoding: br, gzip' \
-              -w '%{time_starttransfer} %{time_total} %{size_download} %{content_type} %{size_header}\n' "$S$p")
+            t=()
+            for i in 1 2 3 4 5; do
+              t+=( "$(curl -s -o /dev/null -m 30 -L -H 'Accept-Encoding: br, gzip' \
+                     -w '%{time_starttransfer}' "$S$p")" )
+            done
+            read size < <(curl -s -o /dev/null -m 30 -L -H 'Accept-Encoding: br, gzip' \
+              -w '%{size_download}\n' "$S$p")
+            med=$(printf '%s\n' "${t[@]}" | sort -g | sed -n '3p')
+            worst=$(printf '%s\n' "${t[@]}" | sort -g | tail -1)
             cc=$(curl -sI -m 20 -L "$S$p" | grep -i '^cache-control' | head -1 | tr -d '\r' | cut -d' ' -f2-)
             ce=$(curl -sI -m 20 -L -H 'Accept-Encoding: br, gzip' "$S$p" | grep -i '^content-encoding' | head -1 | tr -d '\r' | cut -d' ' -f2-)
-            printf '%-28s %-7s %-7s %-11s %-14s %s\n' "$p" "${ttfb}s" "${total}s" "$size" "${ce:-нет}" "${cc:-нет}"
+            printf '%-33s %-32s %-8s %-7s %-7s %-7s %s\n' \
+              "$p" "$(printf '%s ' "${t[@]}")" "$med" "$worst" "$size" "${ce:-нет}" "${cc:-нет}"
+          done
+          echo
+          echo "=== холодный адрес: страница, которую заведомо никто не открывал ==="
+          # Проверяем, не в прогретом ли кэше всё дело: берём случайную карточку из хвоста.
+          for p in /ispolnenie/evl-063-747-i120-0_12kvt /tiporazmer/evl-198x-i2_15; do
+            v=$(curl -s -o /dev/null -m 30 -L -w '%{time_starttransfer}' "$S$p")
+            v2=$(curl -s -o /dev/null -m 30 -L -w '%{time_starttransfer}' "$S$p")
+            printf '  %-46s первый %-8s повтор %s\n' "$p" "$v" "$v2"
+          done
+          echo
+          echo "=== canonical после правки (должен указывать сам на себя) ==="
+          for p in /ispolnenie/evl-063-747-i120-0_12kvt /tiporazmer/evl-198x-i2_15; do
+            printf '  %s\n    %s\n' "$p" \
+              "$(curl -s -m 20 -L "$S$p" | grep -o '<link rel="canonical" href="[^"]*"' | head -1)"
           done
           echo
           echo "=== ключевые ассеты ==="
