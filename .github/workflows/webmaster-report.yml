@@ -1,0 +1,38 @@
+name: Отчёт Яндекс.Вебмастера
+
+# ТОЛЬКО ЧТЕНИЕ. Ни одного изменяющего запроса к API не делается: ни переобхода,
+# ни отправки адресов. Отчёт нужен, чтобы отличить «страницы выпали из индекса»
+# от «страницы в индексе, но опустились» — это разные болезни с разным лечением,
+# и по коду сайта их не различить.
+#
+# Токен берётся из секрета YANDEX_WEBMASTER_TOKEN, того же, что у ускорителя
+# индексации. В лог печатаются только цифры отчёта, сам токен не выводится.
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "За сколько дней брать историю"
+        default: "120"
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: tools
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Отчёт
+        env:
+          YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
+        run: |
+          python3 tools/webmaster_report.py --days "${{ inputs.days }}" \
+            --url https://zavod-red.ru/analog/varvel-mrn-32-i18-29-3kvt \
+            --url https://zavod-red.ru/analog/bauer-bk-20-i28-83-0-75kvt
