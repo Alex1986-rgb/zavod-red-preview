@@ -813,19 +813,21 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 <!-- ===== HERO (b2) ===== -->
 <section class="hero">
   <img class="hero-poster" src="assets/hero_poster.webp" alt="" aria-hidden="true" />
-  <!-- Фоновое видео (880 КБ) — украшение, не контент: на узких экранах, при экономии
-       трафика и на медленном соединении не грузим вовсе, остаётся постер (55 КБ).
-       Источник подставляется скриптом ниже, поэтому здесь только data-src. -->
+  <!-- Фоновое видео (880 КБ) — украшение, не контент. Грузим и на телефонах тоже:
+       файл небольшой, звука нет. Не грузим только при явной экономии трафика,
+       на 2G и при системной настройке «уменьшить движение» — там остаётся
+       постер (55 КБ). Источник подставляется скриптом ниже, отсюда data-src. -->
   <video id="heroVid" autoplay muted loop playsinline preload="none" poster="assets/hero_poster.webp" data-src="assets/hero.mp4"></video>
   <script>
   (function(){
     var v = document.getElementById('heroVid');
     if (!v) return;
     var c = navigator.connection || {};
+    // Экономия трафика и 2G — выбор пользователя, уважаем: остаётся постер.
     var slow = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
-    var narrow = window.matchMedia('(max-width:900px)').matches;
+    // «Уменьшить движение» — настройка доступности, её тоже уважаем.
     var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (slow || narrow || noMotion) { v.removeAttribute('autoplay'); return; }
+    if (slow || noMotion) { v.removeAttribute('autoplay'); return; }
     var s = document.createElement('source');
     s.src = v.getAttribute('data-src'); s.type = 'video/mp4';
     v.appendChild(s); v.load();
@@ -834,6 +836,13 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     var go = function(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); };
     go();
     v.addEventListener('canplay', go, { once: true });
+    // Браузер вправе отклонить автозапуск (политика автовоспроизведения, частый
+    // случай на мобильных). Тогда стартуем при первом действии пользователя,
+    // иначе посетитель так и остался бы с одним постером.
+    var kick = function(){ if (v.paused) go(); };
+    ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function(ev){
+      window.addEventListener(ev, kick, { once: true, passive: true });
+    });
     // во вкладке, открытой в фоне, браузер ставит видео на паузу — доиграем при возврате
     document.addEventListener('visibilitychange', function(){
       if (document.visibilityState === 'visible' && v.paused) go();
