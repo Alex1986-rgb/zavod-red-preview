@@ -10,6 +10,11 @@
 Ключ считается от содержимого файла, поэтому расходиться больше нечему: файл поменялся — ключ
 сменился на всех страницах сразу, файл не менялся — ключ остался прежним.
 
+Та же беда была внутри самих скриптов: assets/inner.js подгружает fav.js, modal.js — поисковый
+индекс, podbor.js — базу подбора, и ключ ?v= у этих трёх ссылок был вписан руками. Данные
+(.json) .htaccess отдаёт с кэшем на ГОД, поэтому вернувшийся посетитель мог годами видеть
+старую базу подбора. Теперь такие ссылки внутри assets/*.js обновляются тем же хэшем.
+
 Запуск:  python3 tools/bump_asset_versions.py [--dry]
 """
 import glob
@@ -22,6 +27,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRY = '--dry' in sys.argv
 
 REF = re.compile(r'(?P<attr>href|src)="(?P<path>[^"]+?\.(?:css|js|json))\?v=(?P<ver>[A-Za-z0-9_.-]+)"')
+# Ссылка на ассет в одинарных кавычках внутри JS: '/assets/fav.js?v=…', 'assets/podbor-data.json?v=…'
+JS_REF = re.compile(r"'(?P<path>[^']*?/?assets/[^']+?\.(?:css|js|json))\?v=(?P<ver>[A-Za-z0-9_.-]+)'")
 _hash_cache = {}
 
 
@@ -67,6 +74,32 @@ def main():
 
     print(f'страниц просмотрено: {len(pages)}')
     print(f'{"будет обновлено" if DRY else "обновлено"}: {changed}')
+
+    # Ссылки на ассеты, зашитые внутри самих скриптов
+    scripts = sorted(glob.glob(os.path.join(ROOT, 'assets', '*.js')))
+    js_changed = 0
+    for script in scripts:
+        with open(script, encoding='utf-8', errors='ignore') as f:
+            text = f.read()
+
+        def js_sub(m):
+            ref = m.group('path')
+            # внутри JS путь пишется от корня сайта, а не от папки скрипта
+            digest = asset_hash(os.path.join(ROOT, 'index.html'), '/' + ref.lstrip('/'))
+            if digest is None:
+                unknown.add(ref)
+                return m.group(0)
+            return f"'{ref}?v={digest}'"
+
+        new_text = JS_REF.sub(js_sub, text)
+        if new_text != text:
+            js_changed += 1
+            if not DRY:
+                with open(script, 'w', encoding='utf-8') as f:
+                    f.write(new_text)
+
+    print(f'скриптов просмотрено: {len(scripts)}, '
+          f'{"будет обновлено" if DRY else "обновлено"}: {js_changed}')
     if unknown:
         print(f'ассеты не найдены на диске (ключ не тронут): {sorted(unknown)[:10]}')
 
