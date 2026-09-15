@@ -1,0 +1,81 @@
+name: Замер скорости боевого сайта
+
+# ТОЛЬКО ЧТЕНИЕ. Обычные запросы к сайту, как у посетителя: секреты не нужны,
+# изменить ничего не может.
+#
+# Зачем: локально скорость мерить бессмысленно — python -m http.server однопоточный
+# и не выполняет .htaccess, то есть ни сжатия, ни кэширования, ни реальной сети.
+# Раннер GitHub ходит на боевой сайт как настоящий посетитель, поэтому цифры честные.
+#
+# Два замера:
+#   1. Отдача сервера (curl): время до первого байта, сжатие, заголовки кэша, вес.
+#   2. Lighthouse в мобильном профиле: оценка скорости и ключевые метрики
+#      (LCP — отрисовка главного элемента, CLS — сдвиги вёрстки, TBT — блокировка
+#      главного потока). Именно эти три метрики учитывает поиск.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  speed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Отдача сервера
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "страница                     TTFB    всего   размер      сжатие         кэш"
+          for p in / /catalog/ /podbor /reduktor/evl-198x /analog/bauer-bf-06-i10-42-0-12kvt /blog/; do
+            read ttfb total size ctype enc < <(curl -s -o /dev/null -m 30 -L \
+              -H 'Accept-Encoding: br, gzip' \
+              -w '%{time_starttransfer} %{time_total} %{size_download} %{content_type} %{size_header}\n' "$S$p")
+            cc=$(curl -sI -m 20 -L "$S$p" | grep -i '^cache-control' | head -1 | tr -d '\r' | cut -d' ' -f2-)
+            ce=$(curl -sI -m 20 -L -H 'Accept-Encoding: br, gzip' "$S$p" | grep -i '^content-encoding' | head -1 | tr -d '\r' | cut -d' ' -f2-)
+            printf '%-28s %-7s %-7s %-11s %-14s %s\n' "$p" "${ttfb}s" "${total}s" "$size" "${ce:-нет}" "${cc:-нет}"
+          done
+          echo
+          echo "=== ключевые ассеты ==="
+          for f in /assets/inner.css /assets/inner.js /assets/modal.js /assets/hdr.css; do
+            read total size < <(curl -s -o /dev/null -m 20 -H 'Accept-Encoding: br, gzip' \
+              -w '%{time_total} %{size_download}\n' "$S$f")
+            ce=$(curl -sI -m 20 -H 'Accept-Encoding: br, gzip' "$S$f" | grep -i '^content-encoding' | head -1 | tr -d '\r' | cut -d' ' -f2-)
+            cc=$(curl -sI -m 20 "$S$f" | grep -i '^cache-control' | head -1 | tr -d '\r' | cut -d' ' -f2-)
+            printf '  %-24s %-8s %-9s %-12s %s\n' "$f" "${total}s" "$size" "${ce:-нет}" "${cc:-нет}"
+          done
+
+      - name: Lighthouse (мобильный профиль)
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          for p in / /catalog/chervyachnye /reduktor/evl-198x /analog/bauer-bf-06-i10-42-0-12kvt; do
+            echo "=============================================="
+            echo "страница: $p"
+            npx -y lighthouse@12 "$S$p" \
+              --quiet --output=json --output-path=./lh.json \
+              --only-categories=performance \
+              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage" 2>/dev/null
+            if [ ! -f lh.json ]; then echo "  замер не удался"; continue; fi
+            node -e '
+              const r = require("./lh.json");
+              const a = r.audits, pct = v => Math.round((v ?? 0) * 100);
+              const ms = k => a[k] ? a[k].displayValue : "—";
+              console.log("  оценка скорости:        " + pct(r.categories.performance.score) + " из 100");
+              console.log("  LCP (главный элемент):  " + ms("largest-contentful-paint"));
+              console.log("  FCP (первая отрисовка): " + ms("first-contentful-paint"));
+              console.log("  TBT (блокировка):       " + ms("total-blocking-time"));
+              console.log("  CLS (сдвиги вёрстки):   " + ms("cumulative-layout-shift"));
+              console.log("  Speed Index:            " + ms("speed-index"));
+              const w = a["total-byte-weight"];
+              if (w) console.log("  вес страницы:           " + w.displayValue);
+              const top = (a["network-requests"]?.details?.items ?? [])
+                .filter(i => i.transferSize > 80000)
+                .sort((x, y) => y.transferSize - x.transferSize).slice(0, 5);
+              if (top.length) {
+                console.log("  самое тяжёлое:");
+                for (const i of top)
+                  console.log("    " + Math.round(i.transferSize / 1024) + " КБ  " + i.url.replace(/^https?:\/\/[^/]+/, ""));
+              }
+            '
+            rm -f lh.json
+          done
