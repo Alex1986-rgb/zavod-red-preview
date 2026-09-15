@@ -88,6 +88,16 @@ def duplicate_slugs():
     return dup
 
 
+def canonical_of(relpath):
+    """canonical страницы. Нужен, чтобы не звать в индекс то, что сведено на другую."""
+    try:
+        with open(os.path.join(ROOT, relpath), encoding='utf-8', errors='ignore') as f:
+            m = re.search(r'<link rel="canonical" href="([^"]+)"', f.read(200000))
+    except OSError:
+        return None
+    return m.group(1) if m else None
+
+
 def url_to_relpath(url):
     """Адрес страницы → путь к файлу в репозитории."""
     slug = url[len(SITE):].strip('/')
@@ -135,7 +145,7 @@ def main():
             kept.append(block)
 
         # недостающие страницы разделов
-        added = 0
+        added = skipped_canon = 0
         for section in sections:
             for page in sorted(glob.glob(os.path.join(ROOT, section, '*.html'))):
                 slug = f'{section}/{os.path.basename(page)[:-5]}'
@@ -143,6 +153,13 @@ def main():
                     continue
                 url = f'{SITE}/{slug}'
                 if url in present:
+                    continue
+                # Страницу, сведённую через canonical на другую, в карту не зовём:
+                # это то же противоречие, что и cross-canonical — sitemap просит
+                # индексировать, а сама страница говорит «индексируй другую».
+                own = canonical_of(f'{slug}.html')
+                if own and own.rstrip('/') != url.rstrip('/'):
+                    skipped_canon += 1
                     continue
                 day = dates.get(f'{slug}.html', today)
                 kept.append(f'  <url><loc>{url}</loc><lastmod>{day}</lastmod>'
@@ -159,6 +176,7 @@ def main():
                 open(path, 'w', encoding='utf-8').write(new)
         print(f'  {name:26} адресов {len(kept):6}  дата проставлена {dated:6}  '
               f'без даты {undated:4}  добавлено {added:3}  убрано дублей {dropped:3}'
+              f'  не позваны (canonical на другую) {skipped_canon:3}'
               f'{"" if changed else "  (без изменений)"}')
 
     # Дата карты в оглавлении — самая свежая дата внутри неё самой. Так значение
