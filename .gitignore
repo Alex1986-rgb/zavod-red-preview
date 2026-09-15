@@ -10,3 +10,7 @@ api/config.local.php
 assets/cards-photo/*.png
 assets/cards-photo/_raw/
 assets/cards-photo/_gallery.html
+
+# Скомпилированный кэш Python (создаётся генераторами)
+__pycache__/
+*.pyc
