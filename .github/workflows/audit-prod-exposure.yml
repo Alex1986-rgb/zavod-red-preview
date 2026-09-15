@@ -67,7 +67,9 @@ jobs:
           has /              'prefers-reduced-motion'     'условия показа видео'
           has /analog/bauer-bf-06-i10-42-0-12kvt 'minmax(0,1fr)' 'фикс горизонтальной прокрутки карточек'
           has /analog/bauer-bf-06-i10-42-0-12kvt 'br-bauer-'     'фото бренда вместо стока'
-          has /blog/planetarnyj-reduktor-cena 'планетарного редуктора' 'новые статьи по планетарным'
+          has /blog/planetarnyj-reduktor-cena 'Цена на планетарный редуктор' 'новая статья по планетарным'
+          has /blog/kupit-tos-znojmo 'Tos Znojmo' 'новые статьи по Tos Znojmo'
+          has /blog/chervyachnyj-kpd 'КПД червячного редуктора' 'исправленные падежи в заголовках'
           echo
           echo "=== видео отдаётся? ==="
           for f in /assets/hero.mp4 /assets/video/zavod-2026.mp4; do
