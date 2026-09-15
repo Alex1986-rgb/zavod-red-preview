@@ -1,0 +1,116 @@
+name: Удалить копии сайта с прода
+
+# Удаляет с боевого сервера СТРОГО четыре пути, перечисленных ниже, и ничего больше.
+# Это копии сайта от прежних версий и страница, которой нет в репозитории: аудит
+# показал, что они отдают 200, то есть индексируются и конкурируют с настоящими
+# страницами за те же запросы.
+#
+# Защиты:
+#   1. Белый список задан в коде. Ничего, кроме него, удалено быть не может.
+#   2. Требуется ввести слово УДАЛИТЬ — случайный запуск ничего не сделает.
+#   3. Перед удалением каждый путь архивируется в домашний каталог, ВНЕ public_html
+#      (архив недоступен из интернета). Удаление обратимо.
+#   4. Сначала печатается, что именно будет удалено и сколько там файлов.
+#   5. После удаления проверяется, что живой сайт по-прежнему отвечает 200.
+#
+# Перенаправления на живые страницы уже стоят в .htaccess и остаются после удаления,
+# поэтому внешние ссылки на эти адреса не упрутся в 404.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Введите УДАЛИТЬ, чтобы подтвердить"
+        required: true
+        default: ""
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Проверка подтверждения
+        run: |
+          if [ "${{ inputs.confirm }}" != "УДАЛИТЬ" ]; then
+            echo "Подтверждение не введено — ничего не делаю."
+            exit 1
+          fi
+          echo "Подтверждение получено."
+
+      - name: Ключ и known_hosts
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n' | sed 's/[[:space:]]*$//')
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          echo "HOST=$HOST" >> $GITHUB_ENV
+
+      - name: Показать, заархивировать и удалить
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
+            "$BASE@$HOST" 'bash -s' <<'REMOTE'
+          set -u
+          ROOT="$HOME/public_html"
+          ARCHIVE="$HOME/prod-cleanup-$(date +%Y%m%d-%H%M%S).tar.gz"
+
+          # Белый список. Только эти пути и только они.
+          TARGETS="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie"
+
+          echo "корень сайта: $ROOT"
+          echo
+          echo "=== ЧТО БУДЕТ УДАЛЕНО ==="
+          EXISTING=""
+          for t in $TARGETS; do
+            # защита: только простое имя каталога, без слэшей и точек
+            case "$t" in *[/.]* | "") echo "  ПРОПУСК (недопустимое имя): $t"; continue ;; esac
+            if [ -d "$ROOT/$t" ]; then
+              n=$(find "$ROOT/$t" -type f | wc -l)
+              sz=$(du -sh "$ROOT/$t" 2>/dev/null | cut -f1)
+              printf '  %-28s файлов: %-6s размер: %s\n' "$t/" "$n" "$sz"
+              EXISTING="$EXISTING $t"
+            else
+              printf '  %-28s нет на сервере\n' "$t/"
+            fi
+          done
+
+          if [ -z "$EXISTING" ]; then
+            echo
+            echo "Удалять нечего — все пути уже отсутствуют."
+            exit 0
+          fi
+
+          echo
+          echo "=== АРХИВ ПЕРЕД УДАЛЕНИЕМ ==="
+          cd "$ROOT" && tar czf "$ARCHIVE" $EXISTING && ls -lh "$ARCHIVE"
+          echo "архив лежит вне public_html, из интернета недоступен"
+
+          echo
+          echo "=== УДАЛЕНИЕ ==="
+          for t in $EXISTING; do
+            rm -rf "${ROOT:?}/$t"
+            if [ -d "$ROOT/$t" ]; then echo "  НЕ УДАЛЁН: $t"; else echo "  удалён: $t"; fi
+          done
+
+          echo
+          echo "=== КОНТРОЛЬ: живой сайт на месте ==="
+          for f in index.html catalog/index.html podbor.html; do
+            if [ -f "$ROOT/$f" ]; then echo "  на месте: $f"; else echo "  ПРОПАЛ: $f"; fi
+          done
+          REMOTE
+
+      - name: Проверка сайта по HTTP
+        run: |
+          S=https://zavod-red.ru
+          echo "=== рабочие страницы ==="
+          for p in / /catalog/ /podbor /importozameshchenie; do
+            printf '  %-24s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -L -w '%{http_code}' "$S$p")"
+          done
+          echo "=== удалённые адреса (ожидаем 301 по правилам .htaccess) ==="
+          for p in /_seo_backup_20260812b/index.html /_lineup_backup_20260812/catalog/evl.html /sravnenie/tehnoreduktor-ural.html; do
+            printf '  %-46s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
+          done
