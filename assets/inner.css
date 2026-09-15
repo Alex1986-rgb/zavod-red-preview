@@ -420,6 +420,10 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .site-footer .sf-top{display:grid;padding:36px 0 26px;grid-template-columns:1.7fr 1fr 1.1fr 1fr;gap:34px;align-items:start}
 .sf-contacts-inline{display:flex;flex-direction:column}
 .sf-brand img{height:40px;margin-bottom:12px;filter:none}
+/* Светлая тема — фон подвала светлый (--bg2:#f4f6f8), а zr_logo.webp светлый:
+   на светлом он не читается. Подменяем на тёмный вариант тем же приёмом, что
+   и в шапке (hdr.css), — одним правилом для всех страниц сразу. */
+[data-theme="light"] .sf-brand img{content:url(zr_logo_dark.webp)}
 .sf-brand p{color:var(--muted);font-size:13px;line-height:1.6;max-width:320px;margin-bottom:14px}
 .sf-contacts-inline{gap:8px;margin-top:4px}
 .sf-contacts-inline a{display:inline-flex;align-items:center;gap:9px;color:var(--text);font-weight:700;font-size:15.5px;width:max-content}
