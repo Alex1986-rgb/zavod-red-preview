@@ -474,3 +474,22 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .pc-rel a span{color:var(--muted);font-size:12px}
 .il-h{margin:18px 0 10px;font-size:15px;font-weight:600;color:var(--muted)}
 .il-more{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
+
+/* Таблицы в текстовых блоках (.seo-tbl) и таблица серий на страницах глоссария
+   (.ser-tbl). Правил для них здесь не было вовсе: стили .seo-tbl жили только
+   инлайном внутри карточек /analog/, а страницы /glossary/seriya-* никаких своих
+   стилей не подключают — таблица рисовалась браузером по умолчанию, без рамок и
+   без отступов в ячейках, и соседние колонки слипались вплотную
+   («Плоский (параллельные валы), 2 ступени» вплотную к «FZ29–FZ189»).
+   Значения те же, что в карточках, чтобы таблицы по сайту выглядели одинаково. */
+.seo-tbl{width:100%;border-collapse:collapse;margin:6px 0 20px;font-size:13.5px}
+.seo-tbl th,.seo-tbl td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.seo-tbl th{background:var(--bg2);font-weight:600}
+.seo-tbl caption{caption-side:top;text-align:left;font-weight:600;color:var(--muted);font-size:12.5px;padding:0 0 7px}
+/* Обозначение серии и ряд типоразмеров переносить по буквам нельзя: «FZ29–FZ189»
+   должен читаться одной строкой. Описание и диапазон переносятся свободно. */
+.ser-tbl th:first-child,.ser-tbl td:first-child{white-space:nowrap;width:1%}
+.ser-tbl th:nth-child(3),.ser-tbl td:nth-child(3){white-space:nowrap}
+@media(max-width:760px){.seo-tbl{display:block;overflow-x:auto;white-space:nowrap}
+/* подпись над таблицей переносим: иначе она уезжает за край вместе со скроллом */
+.seo-tbl caption{white-space:normal}}
