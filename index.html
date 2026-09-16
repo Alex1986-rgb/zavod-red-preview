@@ -1051,6 +1051,19 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 
 
 
+<section class="section" id="video" style="padding-top:48px;background:var(--bg2)">
+<div class="wrap">
+<div class="eyebrow">Видео</div>
+<h2>Завод изнутри</h2>
+<p class="lead">Короткий ролик о производстве — цех, оборудование и выпуск редукторов.</p>
+<div class="vid-frame">
+<div class="vfac" data-src="assets/video/zavod-2026.mp4" style="aspect-ratio:16/9">
+<img src="assets/video/zavod-2026.webp" alt="Завод изнутри — видео производства" loading="lazy" width="1280" height="720">
+<button class="vfac-btn" type="button" aria-label="Смотреть видео"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+</div>
+</div>
+</div>
+</section>
 <section class="section" id="faq" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="eyebrow">Вопросы и ответы</div>
@@ -1339,5 +1352,21 @@ document.addEventListener('click',function(e){
 </script>
 <script defer src="assets/podbor.js?v=c84d7602"></script>
 <script defer src="assets/modal.js?v=350d9cee"></script>
+<script>
+/* Видео «Завод изнутри»: ленивый фасад. Ролик весит 11,7 МБ, поэтому сначала показываем
+   кадр-заставку, а сам файл подгружаем только по клику — иначе главная потяжелела бы в
+   десять раз ради блока, который смотрит меньшинство. */
+document.querySelectorAll('.vfac').forEach(function(f){
+  f.addEventListener('click', function(){
+    if (f.dataset.done) return;
+    f.dataset.done = '1';
+    var v = document.createElement('video');
+    v.src = f.dataset.src; v.controls = true; v.autoplay = true; v.playsInline = true;
+    v.className = 'vfac-video'; v.setAttribute('preload','auto');
+    f.replaceChildren(v);
+    var pr = v.play(); if (pr && pr.catch) pr.catch(function(){});
+  });
+});
+</script>
 </body>
 </html>
