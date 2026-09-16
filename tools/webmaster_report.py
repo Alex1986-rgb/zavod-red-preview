@@ -60,6 +60,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--url', action='append', default=[], help='проверить конкретный адрес')
     ap.add_argument('--days', type=int, default=90, help='глубина истории в днях')
+    ap.add_argument('--query', action='append', default=[], help='искать этот запрос в отчёте')
     args = ap.parse_args()
 
     t = token()
@@ -137,11 +138,39 @@ def main():
         for day in sorted(set(shows) | set(clicks)):
             print(f'  {day}  показов {str(shows.get(day, "—")):>8}  кликов {clicks.get(day, "—")}')
 
+    # ── 4б. Интересующие запросы отдельно ─────────────────────────────────────
+    if args.query:
+        section('ОТДЕЛЬНЫЕ ЗАПРОСЫ: есть ли они вообще в отчёте')
+        d = get(f'{base}/search-queries/popular/'
+                f'?order_by=TOTAL_SHOWS&query_indicator=TOTAL_SHOWS'
+                f'&query_indicator=TOTAL_CLICKS&query_indicator=AVG_SHOW_POSITION'
+                f'&date_from={since}&date_to={upto}&limit=500', hdr)
+        if '_error' in d:
+            print('  не получено:', d['_error'])
+        else:
+            qs = d.get('queries', [])
+            print(f'  всего запросов в отчёте: {len(qs)}')
+            for want in args.query:
+                hits = [q for q in qs if want.lower() in q.get('query_text', '').lower()]
+                if not hits:
+                    print(f'  «{want}» — в отчёте НЕ встречается')
+                for q in hits[:5]:
+                    ind = q.get('indicators', {})
+                    print(f'  «{q.get("query_text")}»  показов {ind.get("TOTAL_SHOWS")}  '
+                          f'кликов {ind.get("TOTAL_CLICKS")}  позиция {ind.get("AVG_SHOW_POSITION")}')
+
     # ── 5. Исключённые страницы и причины ─────────────────────────────────────
     section('ИСКЛЮЧЁННЫЕ ИЗ ПОИСКА СТРАНИЦЫ: причины')
-    d = get(f'{base}/search-urls/excluded/samples/?limit=100', hdr)
+    d = {'_error': 'не пробовали'}
+    for path in ('/search-urls/excluded/samples/?limit=100',
+                 '/search-urls/events/samples/?limit=100',
+                 '/urls/excluded/samples/?limit=100'):
+        d = get(base + path, hdr)
+        if '_error' not in d:
+            print(f'  (данные из {path.split("?")[0]})')
+            break
     if '_error' in d:
-        print('  не получено:', d['_error'])
+        print('  не получено ни по одному известному адресу:', d['_error'])
     else:
         import collections
         reasons = collections.Counter()
@@ -163,8 +192,16 @@ def main():
     if '_error' in d:
         print('  не получено:', d['_error'])
     else:
-        for p in d.get('problems', []):
-            print(f'  [{p.get("severity")}] {p.get("problem_type")}  состояние: {p.get("state")}')
+        probs = d.get('problems', [])
+        if isinstance(probs, dict):                    # {тип: описание}
+            probs = [f'{k}: {v}' for k, v in probs.items()]
+        for p in probs:
+            if isinstance(p, dict):
+                print(f'  [{p.get("severity")}] {p.get("problem_type")}  состояние: {p.get("state")}')
+            else:
+                print(f'  {p}')
+        if not probs:
+            print('  проблем не отмечено')
 
     # ── 7. Конкретные адреса ──────────────────────────────────────────────────
     if args.url:
