@@ -235,6 +235,15 @@
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 
+  # Логотип — исключение из годового кэша картинок. Он единственный файл, который
+  # меняется без смены имени и стоит на каждой странице: ссылки на него вшиты в
+  # 95 131 страницу и в CSS, и приписать ему ?v= значит переписать весь сайт ради
+  # одной картинки в 11 КБ. Дешевле ревалидировать её раз в сутки: при неизменном
+  # файле сервер отдаёт 304 и не шлёт тело.
+  <FilesMatch "^(zr_logo|zr_logo_dark|omz_logo)\.webp$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+
   # --- Защитные заголовки (РКН-аудит S01, 2026-06-16) ---
   # Принудительный HTTPS на год (сайт уже на валидном TLS)
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
