@@ -82,3 +82,132 @@ jobs:
             out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
             printf '  %-34s %s\n' "$f" "$out"
           done
+
+      - name: Логотип — почему размыт
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          mkdir -p /tmp/logo
+          echo "=== что отдаёт сервер ==="
+          for f in assets/zr_logo.webp assets/zr_logo_dark.webp zr_logo.webp \
+                   original_images/logo-zavod.png original_images/logo.png \
+                   assets/favicons/fav-512x512.png; do
+            n=$(echo "$f" | tr '/' '_')
+            code=$(curl -s -o "/tmp/logo/$n" -m 30 -w '%{http_code}' "$S/$f")
+            sz=$(stat -c%s "/tmp/logo/$n" 2>/dev/null || echo 0)
+            printf '  HTTP %-4s %-8s %s\n' "$code" "$sz" "$f"
+            [ "$code" = "200" ] || rm -f "/tmp/logo/$n"
+          done
+          echo
+          echo "=== размер в пикселях и способ сжатия ==="
+          python3 - <<'PY'
+          import glob, os
+          def webp(d):
+              i, w, h, chunks = 12, None, None, []
+              while i < len(d) - 8:
+                  tag = d[i:i+4].decode('latin1'); sz = int.from_bytes(d[i+4:i+8], 'little')
+                  chunks.append(tag.strip())
+                  if tag == 'VP8X':
+                      w = int.from_bytes(d[i+12:i+15], 'little') + 1
+                      h = int.from_bytes(d[i+15:i+18], 'little') + 1
+                  elif tag == 'VP8 ' and w is None:
+                      w = int.from_bytes(d[i+14:i+16], 'little') & 0x3FFF
+                      h = int.from_bytes(d[i+16:i+18], 'little') & 0x3FFF
+                  elif tag == 'VP8L' and w is None:
+                      v = int.from_bytes(d[i+9:i+13], 'little')
+                      w = (v & 0x3FFF) + 1; h = ((v >> 14) & 0x3FFF) + 1
+                  i += 8 + sz + (sz & 1)
+              kind = 'БЕЗ потерь' if 'VP8L' in chunks else ('С ПОТЕРЯМИ' if 'VP8' in chunks else '?')
+              return f'{w}x{h} px, webp {kind}'
+          def png(d):
+              w = int.from_bytes(d[16:20], 'big'); h = int.from_bytes(d[20:24], 'big')
+              return f'{w}x{h} px, png (без потерь)'
+          for p in sorted(glob.glob('/tmp/logo/*')):
+              d = open(p, 'rb').read()
+              if not d: continue
+              try:
+                  t = webp(d) if d[:4] == b'RIFF' else (png(d) if d[:4] == b'\x89PNG' else f'неизвестный формат {d[:4]!r}')
+              except Exception as e:
+                  t = f'не разобрался: {e}'
+              print(f'  {os.path.basename(p):34} {os.path.getsize(p):>8} б  {t}')
+          PY
+          echo
+          echo "=== если на сервере лежит исходник крупнее — выводим его base64, чтобы забрать ==="
+          for p in /tmp/logo/original_images_logo-zavod.png /tmp/logo/original_images_logo.png; do
+            [ -f "$p" ] || continue
+            sz=$(stat -c%s "$p")
+            if [ "$sz" -gt 0 ] && [ "$sz" -lt 400000 ]; then
+              echo "BASE64_BEGIN $(basename $p) $sz"
+              base64 -w 200 "$p"
+              echo "BASE64_END"
+            else
+              echo "  $(basename $p): $sz б — слишком велик для лога, заберём иначе"
+            fi
+          done
+
+      - name: Стили на проде против репозитория
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          for f in assets/inner.css assets/hdr.css; do
+            curl -s -o /tmp/prod.css -m 30 "$S/$f"
+            a=$(sha256sum /tmp/prod.css | cut -c1-12)
+            printf '  %-20s прод %s (%s б)\n' "$f" "$a" "$(stat -c%s /tmp/prod.css)"
+            echo "    правила с логотипом на проде:"
+            grep -o '[^{}]*\(logo\|sf-brand\)[^{}]*{[^}]*}' /tmp/prod.css | head -10 | sed 's/^/      /'
+          done
+
+      - name: Какого размера логотип рисуется на проде
+        shell: bash {0}
+        run: |
+          pip install --quiet playwright >/dev/null 2>&1
+          python3 -m playwright install --with-deps chromium >/dev/null 2>&1
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          S = 'https://zavod-red.ru'
+          for path in ('/', '/analog/bauer-bk-20-i28-83-0-75kvt', '/brands/siemens'):
+              with sync_playwright() as p:
+                  b = p.chromium.launch()
+                  pg = b.new_page(viewport={'width': 1440, 'height': 900}, device_scale_factor=2)
+                  try:
+                      pg.goto(S + path, wait_until='load', timeout=45000)
+                  except Exception as e:
+                      print(f'  {path}: не открылась — {str(e)[:90]}'); b.close(); continue
+                  info = pg.eval_on_selector_all('img', '''els => els
+                      .filter(e => /logo/i.test(e.currentSrc || e.src))
+                      .map(e => {const r = e.getBoundingClientRect();
+                        return {src: (e.currentSrc||e.src).split("/").pop(),
+                                w: Math.round(r.width), h: Math.round(r.height),
+                                nw: e.naturalWidth, nh: e.naturalHeight,
+                                where: e.closest("footer") ? "подвал" : "шапка"};})''')
+                  print(f'  {path}')
+                  for i in info:
+                      need = i['w'] * 2
+                      mark = 'РАСТЯГИВАЕТСЯ' if i['nw'] < need else 'запаса хватает'
+                      print(f'      {i["where"]:7} {i["src"]:22} на экране {i["w"]}x{i["h"]}  '
+                            f'файл {i["nw"]}x{i["nh"]}  при DPR2 нужно {need}px — {mark}')
+                  b.close()
+          PY
+
+      - name: Где лежит страница с таблицей серий SIMOGEAR
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== кандидаты по адресу ==="
+          for p in /brands/siemens /brands/siemens/c /brands/siemens-c /brands/siemens/ \
+                   /analog/siemens-simogear-c /analog/siemens-c /catalog/siemens \
+                   /blog/siemens-simogear-serii /siemens-simogear-c /brands/flender; do
+            code=$(curl -s -o /tmp/p.html -m 25 -w '%{http_code}' -L "$S$p")
+            hit=$(grep -c "Диапазон по каталогу" /tmp/p.html 2>/dev/null || echo 0)
+            ser=$(grep -c "в ряду SIMOGEAR" /tmp/p.html 2>/dev/null || echo 0)
+            printf '  %-34s HTTP %-4s таблица: %-4s «в ряду SIMOGEAR»: %s\n' \
+              "$p" "$code" "$([ "$hit" -gt 0 ] && echo ЕСТЬ || echo нет)" \
+              "$([ "$ser" -gt 0 ] && echo ЕСТЬ || echo нет)"
+          done
+          echo
+          echo "=== что знают карты сайта про siemens/simogear/flender ==="
+          for m in sitemap.xml sitemap-hub.xml sitemap-index.xml; do
+            echo "  -- $m"
+            curl -s -m 40 "$S/$m" | grep -io '<loc>[^<]*\(siemens\|simogear\|flender\)[^<]*</loc>' \
+              | sed 's/^/    /' | head -15
+          done
