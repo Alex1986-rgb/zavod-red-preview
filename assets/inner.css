@@ -461,3 +461,16 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 .p2-trust b{display:block;font:700 14px/1.25 'Space Grotesk',sans-serif;color:var(--text)}
 .p2-trust span{font-size:12px;color:var(--muted);line-height:1.4}
 @media(min-width:720px){.p2-trust{grid-template-columns:1fr 1fr}}
+
+/* Перелинковка карточек /analog/: соседние исполнения модели (tools/analog_interlink.py).
+   Разметка повторяет блок .pc-rel карточек ZR, где стиль лежит инлайном. Здесь он общий:
+   инлайн размножил бы полкилобайта по 73 899 файлам и на столько же раздул сайт.
+   minmax(140px,1fr) — колонка не распирает экран на узком телефоне, min-width:0 страхует
+   длинные значения от вылезания за сетку. */
+.pc-rel{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.pc-rel a{display:flex;flex-direction:column;gap:3px;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card);text-decoration:none;transition:.2s}
+.pc-rel a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pc-rel a b{color:var(--text);font-size:15px}
+.pc-rel a span{color:var(--muted);font-size:12px}
+.il-h{margin:18px 0 10px;font-size:15px;font-weight:600;color:var(--muted)}
+.il-more{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
