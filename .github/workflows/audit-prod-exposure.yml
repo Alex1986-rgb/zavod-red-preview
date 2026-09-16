@@ -224,36 +224,59 @@ jobs:
             printf '  %-34s %s\n' "$f" "$out"
           done
 
-      - name: Забрать с прода страницы, которых нет в репозитории
+      - name: Страницы /glossary/seriya-* по Siemens и Flender — чем свёрстана таблица
         timeout-minutes: 8
         continue-on-error: true
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
-          # На сервере обнаружились страницы семейства /glossary/seriya-*, которых нет
-          # в гите ни в одной ветке (например seriya-siemens-c). Деплой идёт без --delete,
-          # поэтому они живут на проде сами по себе: починить их можно, только вернув
-          # исходник в репозиторий. Здесь они выкачиваются и печатаются в лог сжатыми
-          # в base64 — забрать оттуда проще, чем через артефакты (хранилище артефактов
-          # закрыто политикой egress на стороне агента).
-          mkdir -p /tmp/grab
+          # Эти страницы отдаются боевым сайтом, но в гите их нет ни в одной ветке и не
+          # было ни в одном коммите: деплой идёт rsync без --delete, поэтому файл,
+          # попавший на сервер мимо репозитория, живёт там сам по себе.
+          #
+          # Саму страницу сюда не тянем — нужен только каркас: какими классами свёрстана
+          # таблица и какие стили страница подключает. Если классы общие и лежат в
+          # assets/inner.css, колонки чинятся правкой стилей, и орфанная страница
+          # подхватит её при ближайшей выкатке, даже оставаясь вне репозитория.
+          echo "=== какие страницы семейства есть на проде ==="
           for b in siemens flender; do
-            for s in e z d fz fd b k c s bz sz simogear motox cavex; do
-              p="/glossary/seriya-$b-$s"
-              code=$(curl -s -o "/tmp/grab/seriya-$b-$s.html" -m 25 -w '%{http_code}' "$S$p")
-              if [ "$code" = "200" ]; then
-                echo "  НАЙДЕНО $p  $(stat -c%s "/tmp/grab/seriya-$b-$s.html") б"
-              else
-                rm -f "/tmp/grab/seriya-$b-$s.html"
-              fi
+            for x in e z d fz fd b k c s bz sz simogear motox cavex; do
+              code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/glossary/seriya-$b-$x")
+              [ "$code" = "200" ] && echo "  есть  /glossary/seriya-$b-$x"
             done
           done
           echo
-          n=$(ls /tmp/grab 2>/dev/null | wc -l)
-          echo "всего найдено страниц: $n"
-          [ "$n" -gt 0 ] || exit 0
-          for f in /tmp/grab/*.html; do
-            echo "FILE_BEGIN $(basename "$f") $(stat -c%s "$f")"
-            gzip -9 -c "$f" | base64 -w 200
-            echo "FILE_END $(basename "$f")"
-          done
+          echo "=== каркас /glossary/seriya-siemens-c ==="
+          curl -s -m 30 "$S/glossary/seriya-siemens-c" -o /tmp/pg.html
+          echo "  размер: $(stat -c%s /tmp/pg.html) б"
+          python3 - <<'PY'
+          import re, html
+          t = open('/tmp/pg.html', encoding='utf-8', errors='ignore').read()
+          def show(label, pat, n=4):
+              hits = re.findall(pat, t, re.S)
+              print(f'  {label}:')
+              for h in hits[:n]:
+                  print('   ', (h if isinstance(h, str) else ' | '.join(h))[:300])
+              if not hits:
+                  print('    —')
+          show('title', r'<title>([^<]*)</title>', 1)
+          show('canonical', r'<link rel="canonical" href="([^"]+)"', 1)
+          show('стили', r'<link[^>]+rel="stylesheet"[^>]*href="([^"]+)"', 6)
+          show('инлайн-стилей на странице', r'<style>(.{0,60})', 3)
+          print()
+          for m in re.finditer(r'<table[^>]*>.*?</table>', t, re.S):
+              tbl = m.group(0)
+              print('  --- таблица ---')
+              print('   тег:', re.match(r'<table[^>]*>', tbl).group(0)[:200])
+              wrap = t[max(0, m.start() - 300):m.start()]
+              print('   обёртка перед таблицей:', wrap[-200:].replace('\n', ' '))
+              rows = re.findall(r'<tr[^>]*>(.*?)</tr>', tbl, re.S)
+              print('   строк:', len(rows))
+              for r in rows[:3]:
+                  cells = re.findall(r'<(t[dh])([^>]*)>(.*?)</\1>', r, re.S)
+                  for tag, attrs, val in cells:
+                      txt = html.unescape(re.sub('<[^>]+>', '', val)).strip()
+                      print(f'     <{tag}{attrs[:60]}> {txt[:40]}')
+                  print('     ---')
+              print()
+          PY
