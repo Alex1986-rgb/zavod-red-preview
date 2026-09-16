@@ -223,3 +223,37 @@ jobs:
             out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
             printf '  %-34s %s\n' "$f" "$out"
           done
+
+      - name: Забрать с прода страницы, которых нет в репозитории
+        timeout-minutes: 8
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          # На сервере обнаружились страницы семейства /glossary/seriya-*, которых нет
+          # в гите ни в одной ветке (например seriya-siemens-c). Деплой идёт без --delete,
+          # поэтому они живут на проде сами по себе: починить их можно, только вернув
+          # исходник в репозиторий. Здесь они выкачиваются и печатаются в лог сжатыми
+          # в base64 — забрать оттуда проще, чем через артефакты (хранилище артефактов
+          # закрыто политикой egress на стороне агента).
+          mkdir -p /tmp/grab
+          for b in siemens flender; do
+            for s in e z d fz fd b k c s bz sz simogear motox cavex; do
+              p="/glossary/seriya-$b-$s"
+              code=$(curl -s -o "/tmp/grab/seriya-$b-$s.html" -m 25 -w '%{http_code}' "$S$p")
+              if [ "$code" = "200" ]; then
+                echo "  НАЙДЕНО $p  $(stat -c%s "/tmp/grab/seriya-$b-$s.html") б"
+              else
+                rm -f "/tmp/grab/seriya-$b-$s.html"
+              fi
+            done
+          done
+          echo
+          n=$(ls /tmp/grab 2>/dev/null | wc -l)
+          echo "всего найдено страниц: $n"
+          [ "$n" -gt 0 ] || exit 0
+          for f in /tmp/grab/*.html; do
+            echo "FILE_BEGIN $(basename "$f") $(stat -c%s "$f")"
+            gzip -9 -c "$f" | base64 -w 200
+            echo "FILE_END $(basename "$f")"
+          done
