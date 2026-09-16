@@ -35,4 +35,6 @@ jobs:
         run: |
           python3 tools/webmaster_report.py --days "${{ inputs.days }}" \
             --url https://zavod-red.ru/analog/varvel-mrn-32-i18-29-3kvt \
-            --url https://zavod-red.ru/analog/bauer-bk-20-i28-83-0-75kvt
+            --url https://zavod-red.ru/analog/bauer-bk-20-i28-83-0-75kvt \
+            --query "varvel" --query "bauer" --query "mrn" --query "bk 20" \
+            --query "аналог" --query "редуктор" 
