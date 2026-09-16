@@ -18,9 +18,11 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - name: Что открывается наружу
+        timeout-minutes: 5
+        continue-on-error: true
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
@@ -54,36 +56,9 @@ jobs:
           echo "=== ПРОЧЕЕ ==="
           for p in /original_images/logo-zavod.png /assets/media-db/ /yandex-market.yml; do probe "$p"; done
 
-      - name: Долетели ли правки на боевой
-        shell: bash {0}
-        run: |
-          S=https://zavod-red.ru
-          has() {  # $1 url, $2 строка, $3 описание
-            if curl -s -m 25 -L "$S$1" | grep -qF "$2"; then echo "  ЕСТЬ   $3"; else echo "  НЕТ    $3"; fi
-          }
-          echo "=== проверка по содержимому боевых файлов ==="
-          has /assets/inner.css 'sf-brand img{content:url(zr_logo_dark.webp)}' 'тёмный логотип в подвале'
-          has /              'kick'                       'запуск видео по действию пользователя'
-          has /              'prefers-reduced-motion'     'условия показа видео'
-          has /analog/bauer-bf-06-i10-42-0-12kvt 'minmax(0,1fr)' 'фикс горизонтальной прокрутки карточек'
-          has /analog/bauer-bf-06-i10-42-0-12kvt 'br-bauer-'     'фото бренда вместо стока'
-          has /blog/planetarnyj-reduktor-cena 'Цена на планетарный редуктор' 'новая статья по планетарным'
-          has /blog/kupit-tos-znojmo 'Tos Znojmo' 'новые статьи по Tos Znojmo'
-          has /blog/chervyachnyj-kpd 'КПД червячного редуктора' 'исправленные падежи в заголовках'
-          echo
-          echo "=== приёмник заявок жив? (только GET, заявки не создаём) ==="
-          for f in /api/feedback.php /api/store.php /api/contact_click.php /spasibo; do
-            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$f")
-            printf '  %-26s HTTP %s\n' "$f" "$code"
-          done
-          echo
-          echo "=== видео отдаётся? ==="
-          for f in /assets/hero.mp4 /assets/video/zavod-2026.mp4; do
-            out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
-            printf '  %-34s %s\n' "$f" "$out"
-          done
-
       - name: Логотип — почему размыт
+        timeout-minutes: 5
+        continue-on-error: true
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
@@ -146,6 +121,8 @@ jobs:
           done
 
       - name: Стили на проде против репозитория
+        timeout-minutes: 5
+        continue-on-error: true
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
@@ -158,6 +135,8 @@ jobs:
           done
 
       - name: Какого размера логотип рисуется на проде
+        timeout-minutes: 5
+        continue-on-error: true
         shell: bash {0}
         run: |
           pip install --quiet playwright >/dev/null 2>&1
@@ -190,6 +169,8 @@ jobs:
           PY
 
       - name: Где лежит страница с таблицей серий SIMOGEAR
+        timeout-minutes: 5
+        continue-on-error: true
         shell: bash {0}
         run: |
           S=https://zavod-red.ru
@@ -210,4 +191,35 @@ jobs:
             echo "  -- $m"
             curl -s -m 40 "$S/$m" | grep -io '<loc>[^<]*\(siemens\|simogear\|flender\)[^<]*</loc>' \
               | sed 's/^/    /' | head -15
+          done
+
+      - name: Долетели ли правки на боевой
+        timeout-minutes: 5
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          has() {  # $1 url, $2 строка, $3 описание
+            if curl -s -m 25 -L "$S$1" | grep -qF "$2"; then echo "  ЕСТЬ   $3"; else echo "  НЕТ    $3"; fi
+          }
+          echo "=== проверка по содержимому боевых файлов ==="
+          has /assets/inner.css 'sf-brand img{content:url(zr_logo_dark.webp)}' 'тёмный логотип в подвале'
+          has /              'kick'                       'запуск видео по действию пользователя'
+          has /              'prefers-reduced-motion'     'условия показа видео'
+          has /analog/bauer-bf-06-i10-42-0-12kvt 'minmax(0,1fr)' 'фикс горизонтальной прокрутки карточек'
+          has /analog/bauer-bf-06-i10-42-0-12kvt 'br-bauer-'     'фото бренда вместо стока'
+          has /blog/planetarnyj-reduktor-cena 'Цена на планетарный редуктор' 'новая статья по планетарным'
+          has /blog/kupit-tos-znojmo 'Tos Znojmo' 'новые статьи по Tos Znojmo'
+          has /blog/chervyachnyj-kpd 'КПД червячного редуктора' 'исправленные падежи в заголовках'
+          echo
+          echo "=== приёмник заявок жив? (только GET, заявки не создаём) ==="
+          for f in /api/feedback.php /api/store.php /api/contact_click.php /spasibo; do
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$f")
+            printf '  %-26s HTTP %s\n' "$f" "$code"
+          done
+          echo
+          echo "=== видео отдаётся? ==="
+          for f in /assets/hero.mp4 /assets/video/zavod-2026.mp4; do
+            out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
+            printf '  %-34s %s\n' "$f" "$out"
           done
