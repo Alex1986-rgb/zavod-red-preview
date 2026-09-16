@@ -265,18 +265,11 @@ jobs:
           show('инлайн-стилей на странице', r'<style>(.{0,60})', 3)
           print()
           for m in re.finditer(r'<table[^>]*>.*?</table>', t, re.S):
-              tbl = m.group(0)
-              print('  --- таблица ---')
-              print('   тег:', re.match(r'<table[^>]*>', tbl).group(0)[:200])
-              wrap = t[max(0, m.start() - 300):m.start()]
-              print('   обёртка перед таблицей:', wrap[-200:].replace('\n', ' '))
-              rows = re.findall(r'<tr[^>]*>(.*?)</tr>', tbl, re.S)
-              print('   строк:', len(rows))
-              for r in rows[:3]:
-                  cells = re.findall(r'<(t[dh])([^>]*)>(.*?)</\1>', r, re.S)
-                  for tag, attrs, val in cells:
-                      txt = html.unescape(re.sub('<[^>]+>', '', val)).strip()
-                      print(f'     <{tag}{attrs[:60]}> {txt[:40]}')
-                  print('     ---')
+              # таблица целиком: нужны все классы строк, включая подсвеченную «текущую»
+              print('  --- таблица, разметка как есть ---')
+              print(m.group(0).replace('</tr>', '</tr>\n      '))
               print()
+          # блоки вокруг таблицы, чтобы понять, есть ли обёртка со скроллом
+          for m in re.finditer(r'.{160}<table', t, re.S):
+              print('  перед таблицей:', m.group(0)[:160].replace('\n', ' '))
           PY
