@@ -224,52 +224,36 @@ jobs:
             printf '  %-34s %s\n' "$f" "$out"
           done
 
-      - name: Страницы /glossary/seriya-* по Siemens и Flender — чем свёрстана таблица
-        timeout-minutes: 8
+      - name: Что реально на главной боевого сайта
+        timeout-minutes: 5
         continue-on-error: true
         shell: bash {0}
         run: |
-          S=https://zavod-red.ru
-          # Эти страницы отдаются боевым сайтом, но в гите их нет ни в одной ветке и не
-          # было ни в одном коммите: деплой идёт rsync без --delete, поэтому файл,
-          # попавший на сервер мимо репозитория, живёт там сам по себе.
-          #
-          # Саму страницу сюда не тянем — нужен только каркас: какими классами свёрстана
-          # таблица и какие стили страница подключает. Если классы общие и лежат в
-          # assets/inner.css, колонки чинятся правкой стилей, и орфанная страница
-          # подхватит её при ближайшей выкатке, даже оставаясь вне репозитория.
-          echo "=== какие страницы семейства есть на проде ==="
-          for b in siemens flender; do
-            for x in e z d fz fd b k c s bz sz simogear motox cavex; do
-              code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/glossary/seriya-$b-$x")
-              [ "$code" = "200" ] && echo "  есть  /glossary/seriya-$b-$x"
-            done
+          # Заказчик говорит, что вчера блоки на главной были. Значит проверять надо не
+          # репозиторий, а то, что отдаёт сервер: совпадает ли живая главная с main и
+          # какие секции на ней есть.
+          curl -s -m 30 https://zavod-red.ru/ -o /tmp/live.html
+          echo "  размер живой главной: $(stat -c%s /tmp/live.html) б"
+          echo "  размер главной в этой ветке: $(stat -c%s index.html) б"
+          echo
+          echo "=== секции живой главной, по порядку ==="
+          grep -o '<section[^>]*id="[a-z0-9-]*"' /tmp/live.html \
+            | sed 's/.*id="/    /; s/"$//' | tr '\n' ' '
+          echo
+          echo
+          echo "=== секции главной в этой ветке ==="
+          grep -o '<section[^>]*id="[a-z0-9-]*"' index.html \
+            | sed 's/.*id="/    /; s/"$//' | tr '\n' ' '
+          echo
+          echo
+          echo "=== опорные блоки: живая / ветка ==="
+          for k in 'class="brand-ticker"' 'id="oem"' 'id="compare"' 'id="uslugi"' \
+                   'id="about"' 'id="certs"' 'id="reviews"' 'id="team"' \
+                   'id="selector"' 'id="geo"' 'id="video"' 'id="teamGrid"' 'const TEAM='; do
+            a=$(grep -c -F "$k" /tmp/live.html || true)
+            b=$(grep -c -F "$k" index.html || true)
+            printf '  %-24s живая %-3s ветка %s\n' "$k" "$a" "$b"
           done
           echo
-          echo "=== каркас /glossary/seriya-siemens-c ==="
-          curl -s -m 30 "$S/glossary/seriya-siemens-c" -o /tmp/pg.html
-          echo "  размер: $(stat -c%s /tmp/pg.html) б"
-          python3 - <<'PY'
-          import re, html
-          t = open('/tmp/pg.html', encoding='utf-8', errors='ignore').read()
-          def show(label, pat, n=4):
-              hits = re.findall(pat, t, re.S)
-              print(f'  {label}:')
-              for h in hits[:n]:
-                  print('   ', (h if isinstance(h, str) else ' | '.join(h))[:300])
-              if not hits:
-                  print('    —')
-          show('title', r'<title>([^<]*)</title>', 1)
-          show('canonical', r'<link rel="canonical" href="([^"]+)"', 1)
-          show('стили', r'<link[^>]+rel="stylesheet"[^>]*href="([^"]+)"', 6)
-          show('инлайн-стилей на странице', r'<style>(.{0,60})', 3)
-          print()
-          for m in re.finditer(r'<table[^>]*>.*?</table>', t, re.S):
-              # таблица целиком: нужны все классы строк, включая подсвеченную «текущую»
-              print('  --- таблица, разметка как есть ---')
-              print(m.group(0).replace('</tr>', '</tr>\n      '))
-              print()
-          # блоки вокруг таблицы, чтобы понять, есть ли обёртка со скроллом
-          for m in re.finditer(r'.{160}<table', t, re.S):
-              print('  перед таблицей:', m.group(0)[:160].replace('\n', ' '))
-          PY
+          echo "=== когда сервер отдал файл и какой у него ETag ==="
+          curl -sI -m 20 https://zavod-red.ru/ | grep -i 'last-modified\|etag\|content-length' | sed 's/^/  /'
