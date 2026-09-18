@@ -1,5 +1,9 @@
 name: Удалить копии сайта с прода
 
+# Два режима, оба по одному и тому же полю подтверждения:
+#   УДАЛИТЬ — удалить с сервера четыре пути из белого списка;
+#   ВЕРНУТЬ — распаковать обратно последний архив, созданный при удалении.
+#
 # Удаляет с боевого сервера СТРОГО четыре пути, перечисленных ниже, и ничего больше.
 # Это копии сайта от прежних версий и страница, которой нет в репозитории: аудит
 # показал, что они отдают 200, то есть индексируются и конкурируют с настоящими
@@ -7,7 +11,9 @@ name: Удалить копии сайта с прода
 #
 # Защиты:
 #   1. Белый список задан в коде. Ничего, кроме него, удалено быть не может.
-#   2. Требуется ввести слово УДАЛИТЬ — случайный запуск ничего не сделает.
+#      При возврате он же проверяется у содержимого архива: посторонний путь внутри
+#      архива останавливает распаковку.
+#   2. Требуется ввести слово УДАЛИТЬ или ВЕРНУТЬ — случайный запуск ничего не сделает.
 #   3. Перед удалением каждый путь архивируется в домашний каталог, ВНЕ public_html
 #      (архив недоступен из интернета). Удаление обратимо.
 #   4. Сначала печатается, что именно будет удалено и сколько там файлов.
@@ -20,7 +26,7 @@ on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: "Введите УДАЛИТЬ, чтобы подтвердить"
+        description: "УДАЛИТЬ — удалить копии; ВЕРНУТЬ — распаковать их обратно"
         required: true
         default: ""
 
@@ -31,11 +37,13 @@ jobs:
     steps:
       - name: Проверка подтверждения
         run: |
-          if [ "${{ inputs.confirm }}" != "УДАЛИТЬ" ]; then
-            echo "Подтверждение не введено — ничего не делаю."
-            exit 1
-          fi
-          echo "Подтверждение получено."
+          case "${{ inputs.confirm }}" in
+            УДАЛИТЬ) echo "MODE=delete"  >> $GITHUB_ENV; echo "Режим: удаление копий." ;;
+            ВЕРНУТЬ) echo "MODE=restore" >> $GITHUB_ENV; echo "Режим: возврат из архива." ;;
+            *) echo "Подтверждение не введено — ничего не делаю."
+               echo "Допустимо: УДАЛИТЬ или ВЕРНУТЬ."
+               exit 1 ;;
+          esac
 
       - name: Ключ и known_hosts
         env:
@@ -48,6 +56,7 @@ jobs:
           echo "HOST=$HOST" >> $GITHUB_ENV
 
       - name: Показать, заархивировать и удалить
+        if: env.MODE == 'delete'
         env:
           SSH_USER: ${{ secrets.FTP_USERNAME }}
         run: |
@@ -94,6 +103,59 @@ jobs:
           for t in $EXISTING; do
             rm -rf "${ROOT:?}/$t"
             if [ -d "$ROOT/$t" ]; then echo "  НЕ УДАЛЁН: $t"; else echo "  удалён: $t"; fi
+          done
+
+          echo
+          echo "=== КОНТРОЛЬ: живой сайт на месте ==="
+          for f in index.html catalog/index.html podbor.html; do
+            if [ -f "$ROOT/$f" ]; then echo "  на месте: $f"; else echo "  ПРОПАЛ: $f"; fi
+          done
+          REMOTE
+
+      - name: Вернуть удалённое из архива
+        if: env.MODE == 'restore'
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
+            "$BASE@$HOST" 'bash -s' <<'REMOTE'
+          set -u
+          ROOT="$HOME/public_html"
+          ARCHIVE=$(ls -t "$HOME"/prod-cleanup-*.tar.gz 2>/dev/null | head -1)
+          if [ -z "$ARCHIVE" ]; then
+            echo "Архивов prod-cleanup-*.tar.gz нет — возвращать нечего."
+            exit 1
+          fi
+          echo "архив: $ARCHIVE ($(du -h "$ARCHIVE" | cut -f1))"
+
+          echo
+          echo "=== ЧТО В АРХИВЕ ==="
+          TOP=$(tar tzf "$ARCHIVE" | cut -d/ -f1 | sort -u)
+          for t in $TOP; do
+            printf '  %-28s записей: %s\n' "$t/" "$(tar tzf "$ARCHIVE" | grep -c "^$t/")"
+          done
+
+          # Тот же белый список, что и при удалении. Посторонний путь в архиве
+          # останавливает распаковку: в корень сайта не должно попасть ничего сверх того,
+          # что этот же воркфлоу оттуда и убрал.
+          ALLOWED="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie"
+          for t in $TOP; do
+            case " $ALLOWED " in
+              *" $t "*) ;;
+              *) echo "ОТКАЗ: в архиве посторонний путь «$t» — не распаковываю."; exit 1 ;;
+            esac
+          done
+
+          echo
+          echo "=== РАСПАКОВКА В КОРЕНЬ САЙТА ==="
+          cd "$ROOT" && tar xzf "$ARCHIVE"
+          for t in $TOP; do
+            if [ -d "$ROOT/$t" ]; then
+              printf '  вернулся: %-28s файлов: %s\n' "$t" "$(find "$ROOT/$t" -type f | wc -l)"
+            else
+              echo "  НЕ ВЕРНУЛСЯ: $t"
+            fi
           done
 
           echo
