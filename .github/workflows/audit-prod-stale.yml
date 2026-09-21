@@ -60,10 +60,27 @@ jobs:
             -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
             dist/ "$BASE@$HOST:$DEST" 2>&1 | grep '^del\.' | sed 's/^del\. //' > stale.txt
           echo "=== лишних объектов на проде: $(wc -l < stale.txt) ==="
-          echo "--- каталоги (они опаснее всего: перекрывают одноимённые .html) ---"
-          grep '/$' stale.txt | head -100
-          echo "--- файлы (первые 200) ---"
-          grep -v '/$' stale.txt | head -200
+          echo
+          # Сводка важнее списка: в логе видны только последние строки, и сплошной
+          # перечень из тысяч имён вытесняет из него итоги.
+          echo "--- по разделам: сколько лишнего ---"
+          sed 's|/.*||' stale.txt | sort | uniq -c | sort -rn | head -25
+          echo
+          echo "--- лишние страницы ВНЕ известных бэкап-каталогов ---"
+          grep -v '^_seo_backup\|^_lineup_backup\|^blog_backup\|^glossary_backup\|^sravnenie' stale.txt \
+            > stale-real.txt || true
+          echo "их: $(wc -l < stale-real.txt)"
+          sed 's|/.*||' stale-real.txt | sort | uniq -c | sort -rn | head -20
+          echo
+          echo "--- примеры по генерируемым разделам ---"
+          for d in tiporazmer ispolnenie motor-reduktor-zr glossary reduktor; do
+            n=$(grep -c "^$d/" stale-real.txt || true)
+            echo "  $d: $n"
+            grep "^$d/" stale-real.txt | head -4 | sed 's/^/      /'
+          done
+          echo
+          echo "--- каталоги (перекрывают одноимённые .html) ---"
+          grep '/$' stale.txt | grep -v '^_seo_backup\|^_lineup_backup' | head -30
       - uses: actions/upload-artifact@v4
         with:
           name: stale-on-prod
