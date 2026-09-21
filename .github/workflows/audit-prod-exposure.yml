@@ -224,36 +224,44 @@ jobs:
             printf '  %-34s %s\n' "$f" "$out"
           done
 
-      - name: Что реально на главной боевого сайта
-        timeout-minutes: 5
+      - name: Сверка с замечаниями SEO-аудита от 21.09
+        timeout-minutes: 8
         continue-on-error: true
         shell: bash {0}
         run: |
-          # Заказчик говорит, что вчера блоки на главной были. Значит проверять надо не
-          # репозиторий, а то, что отдаёт сервер: совпадает ли живая главная с main и
-          # какие секции на ней есть.
-          curl -s -m 30 https://zavod-red.ru/ -o /tmp/live.html
-          echo "  размер живой главной: $(stat -c%s /tmp/live.html) б"
-          echo "  размер главной в этой ветке: $(stat -c%s index.html) б"
-          echo
-          echo "=== секции живой главной, по порядку ==="
-          grep -o '<section[^>]*id="[a-z0-9-]*"' /tmp/live.html \
-            | sed 's/.*id="/    /; s/"$//' | tr '\n' ' '
-          echo
-          echo
-          echo "=== секции главной в этой ветке ==="
-          grep -o '<section[^>]*id="[a-z0-9-]*"' index.html \
-            | sed 's/.*id="/    /; s/"$//' | tr '\n' ' '
-          echo
-          echo
-          echo "=== опорные блоки: живая / ветка ==="
-          for k in 'class="brand-ticker"' 'id="oem"' 'id="compare"' 'id="uslugi"' \
-                   'id="about"' 'id="certs"' 'id="reviews"' 'id="team"' \
-                   'id="selector"' 'id="geo"' 'id="video"' 'id="teamGrid"' 'const TEAM='; do
-            a=$(grep -c -F "$k" /tmp/live.html || true)
-            b=$(grep -c -F "$k" index.html || true)
-            printf '  %-24s живая %-3s ветка %s\n' "$k" "$a" "$b"
+          S=https://zavod-red.ru
+          # В отчёте аудита есть заголовки по 117 знаков, каких нет ни в одной ревизии
+          # репозитория (там максимум 78 до правки и 70 после). Значит либо сервер отдаёт
+          # страницы, которых в гите нет, либо аудит шёл по адресам с дефисами вместо
+          # подчёркиваний и его переадресовало. Проверяем оба предположения разом:
+          # куда ведёт адрес, какой у конечной страницы заголовок и сколько в нём знаков.
+          echo "=== адреса из отчёта: куда ведут и что за заголовок ==="
+          for p in /tiporazmer/evl-1812-i27-68 \
+                   /ispolnenie/evl-1914-197-i14075-0-12kvt \
+                   /ispolnenie/evl-1615-199-i1169-1-5kvt \
+                   /tiporazmer/evl-185-i44_43 \
+                   /analog/sew-k-37-s-37-s-47-i10_49-1_5kvt \
+                   /analog/nord-773-1-i138-0-25kvt \
+                   /motor-reduktor-zr/zr-959-939-i273-0-25kvt; do
+            code=$(curl -s -o /dev/null -m 25 -w '%{http_code}' "$S$p")
+            fin=$(curl -s -o /tmp/pg.html -m 25 -L -w '%{url_effective}' "$S$p")
+            t=$(grep -o '<title>[^<]*</title>' /tmp/pg.html | head -1 | sed 's/<[^>]*>//g')
+            printf '  %s\n    код %s → %s\n    title (%s зн.): %s\n' \
+              "$p" "$code" "${fin#$S}" "${#t}" "${t:0:100}"
           done
           echo
-          echo "=== когда сервер отдал файл и какой у него ETag ==="
-          curl -sI -m 20 https://zavod-red.ru/ | grep -i 'last-modified\|etag\|content-length' | sed 's/^/  /'
+          echo "=== скорость: аудит пишет про 5–7 секунд, меряем сами ==="
+          for p in /analog/watt-drive-k-80-d /ispolnenie/evl-188-i31-39-7-5kvt /analog/nord-773-1-i138-0-25kvt; do
+            v=()
+            for i in 1 2 3; do
+              v+=( "$(curl -s -o /dev/null -m 30 -L -w '%{time_starttransfer}' "$S$p")" )
+            done
+            printf '  %-46s ответ сервера: %s\n' "$p" "$(printf '%s ' "${v[@]}")"
+          done
+          echo
+          echo "=== точечные замечания ==="
+          printf '  /spasibo robots: %s\n' \
+            "$(curl -s -m 20 -L "$S/spasibo" | grep -o '<meta name="robots"[^>]*>' | head -1)"
+          printf '  /brandbook description: %s\n' \
+            "$(curl -s -m 20 -L "$S/brandbook" | grep -c '<meta name="description"')"
+          printf '  /404 код: %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/404")"
