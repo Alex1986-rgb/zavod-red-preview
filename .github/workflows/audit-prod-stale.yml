@@ -59,28 +59,24 @@ jobs:
             --exclude '.well-known/' \
             -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
             dist/ "$BASE@$HOST:$DEST" 2>&1 | grep '^del\.' | sed 's/^del\. //' > stale.txt
-          echo "=== лишних объектов на проде: $(wc -l < stale.txt) ==="
-          echo
-          # Сводка важнее списка: в логе видны только последние строки, и сплошной
-          # перечень из тысяч имён вытесняет из него итоги.
-          echo "--- по разделам: сколько лишнего ---"
-          sed 's|/.*||' stale.txt | sort | uniq -c | sort -rn | head -25
-          echo
-          echo "--- лишние страницы ВНЕ известных бэкап-каталогов ---"
           grep -v '^_seo_backup\|^_lineup_backup\|^blog_backup\|^glossary_backup\|^sravnenie' stale.txt \
             > stale-real.txt || true
-          echo "их: $(wc -l < stale-real.txt)"
-          sed 's|/.*||' stale-real.txt | sort | uniq -c | sort -rn | head -20
+          # Итоги печатаем ПОСЛЕДНИМИ: в логе видно только хвост, и любой длинный
+          # перечень выше вытесняет из него цифры.
           echo
-          echo "--- примеры по генерируемым разделам ---"
-          for d in tiporazmer ispolnenie motor-reduktor-zr glossary reduktor; do
+          echo "================ ИТОГИ ================"
+          echo "лишних объектов на проде всего: $(wc -l < stale.txt)"
+          echo "из них вне бэкап-каталогов:     $(wc -l < stale-real.txt)"
+          echo
+          echo "--- вне бэкапов, по разделам ---"
+          sed 's|/.*||' stale-real.txt | sort | uniq -c | sort -rn | head -18
+          echo
+          echo "--- генерируемые разделы: сколько лишних страниц и примеры ---"
+          for d in tiporazmer ispolnenie motor-reduktor-zr glossary reduktor blog catalog brands; do
             n=$(grep -c "^$d/" stale-real.txt || true)
-            echo "  $d: $n"
-            grep "^$d/" stale-real.txt | head -4 | sed 's/^/      /'
+            printf '  %-20s %s\n' "$d" "$n"
+            grep "^$d/" stale-real.txt | head -3 | sed 's/^/        /'
           done
-          echo
-          echo "--- каталоги (перекрывают одноимённые .html) ---"
-          grep '/$' stale.txt | grep -v '^_seo_backup\|^_lineup_backup' | head -30
       - uses: actions/upload-artifact@v4
         with:
           name: stale-on-prod
