@@ -77,6 +77,16 @@ jobs:
             printf '  %-20s %s\n' "$d" "$n"
             grep "^$d/" stale-real.txt | head -3 | sed 's/^/        /'
           done
+          echo
+          # Ключевой вопрос: откуда берётся переадресация наших адресов с подчёркиваниями
+          # на старые с дефисами. В корневом .htaccess репозитория такого правила нет,
+          # значит либо на сервере свой корневой файл, либо вложенные в разделах.
+          echo "--- .htaccess вне корня (переопределяют правила раздела) ---"
+          grep -i 'htaccess' stale.txt | head -20 || echo "  нет"
+          echo
+          echo "--- резервные копии файлов на проде (.bak/.orig/.old) ---"
+          printf '  всего: %s\n' "$(grep -cE '\.(bak|orig|old)' stale.txt || true)"
+          grep -E '\.(bak|orig|old)' stale.txt | head -8 | sed 's/^/    /'
       - uses: actions/upload-artifact@v4
         with:
           name: stale-on-prod
