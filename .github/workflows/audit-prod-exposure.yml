@@ -380,3 +380,23 @@ jobs:
             case "$u" in http*) full="$u";; /*) full="$S$u";; *) full="$S/$u";; esac
             printf '  %-46s HTTP %s\n' "$u" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$full")"
           done < /tmp/srcs.txt
+
+      - name: Страница бренда на боевом — серии и модели
+        timeout-minutes: 6
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          for b in sew nord keb rossi bauer; do
+            H=$(curl -s -m 25 -L "$S/brands/$b")
+            printf '  %-8s байт %-7s | «Серии» %s | карточек моделей %s | bmGrid %s | таблица замен %s\n' \
+              "$b" "$(printf '%s' "$H" | wc -c)" \
+              "$(printf '%s' "$H" | grep -o 'Серии\|Серия' | wc -l)" \
+              "$(printf '%s' "$H" | grep -o 'class="pcard"' | wc -l)" \
+              "$(printf '%s' "$H" | grep -c 'id="bmGrid"')" \
+              "$(printf '%s' "$H" | grep -o 'class="xref"' | wc -l)"
+          done
+          echo
+          echo "=== база каталога моделей, которую тянет скрипт ==="
+          printf '  /assets/import-catalog.json  HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/assets/import-catalog.json")"
+          printf '  с ключом ?v=3140             HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/assets/import-catalog.json?v=3140")"
