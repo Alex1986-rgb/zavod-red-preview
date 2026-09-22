@@ -261,3 +261,52 @@ jobs:
             printf '  %-26s %s\n' "$f" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$f")"
           done
 
+      - name: Проверка правок под целевые запросы
+        timeout-minutes: 8
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== ЗАГОЛОВКИ СТРАНИЦ БРЕНДОВ (ждём «Редукторы … (кириллица)») ==="
+          for b in sew bonfiglioli nord motovario innovari lenze bauer siti varvel rossi keb siemens stm; do
+            t=$(curl -s -m 25 -L "$S/brands/$b" | grep -o '<title>[^<]*' | head -1 | cut -c8-)
+            printf '  %-12s %s\n' "$b" "${t:-НЕ ОТВЕТИЛА}"
+          done
+
+          echo
+          echo "=== ЗАГОЛОВКИ ТИПОВЫХ ==="
+          for u in ploskie variatory konichesko-cilindricheskie planetarnye cilindricheskie chervyachnye; do
+            t=$(curl -s -m 25 -L "$S/catalog/$u" | grep -o '<title>[^<]*' | head -1 | cut -c8-)
+            printf '  %-28s %s\n' "$u" "${t:-НЕ ОТВЕТИЛА}"
+          done
+
+          echo
+          echo "=== АДРЕС, КОТОРЫЙ ОТДАВАЛ 404 ==="
+          printf '  /brands/sew-eurodrive  HTTP %s\n' "$(curl -s -o /dev/null -m 25 -w '%{http_code}' "$S/brands/sew-eurodrive")"
+          printf '  canonical: %s\n' "$(curl -s -m 25 -L "$S/brands/sew-eurodrive" | grep -o 'rel="canonical" href="[^"]*"' | head -1)"
+
+          echo
+          echo "=== ГОРОДА И КИРИЛЛИЦА НА БОЕВОМ ==="
+          for b in sew nord keb; do
+            h=$(curl -s -m 25 -L "$S/brands/$b")
+            printf '  %-6s Ростов-на-Дону: %-3s  кириллица рядом с «Редукторы»: %s\n' "$b" \
+              "$(echo "$h" | grep -c 'Ростов-на-Дону')" \
+              "$(echo "$h" | grep -o 'Редукторы [А-ЯЁ][а-яёА-ЯЁ ]*' | head -1)"
+          done
+
+          echo
+          echo "=== АНКОРЫ СКВОЗНОГО ФУТЕРА ==="
+          curl -s -m 25 -L "$S/catalog/chervyachnye" \
+            | grep -o '<a href="/catalog/[a-z-]*">[^<]*</a>' | tail -8 | sed 's/^/  /'
+
+          echo
+          echo "=== ТАБЛИЦА ЗАМЕН У KEB И SIEMENS ==="
+          for b in keb siemens; do
+            n=$(curl -s -m 25 -L "$S/brands/$b" | grep -c 'Замены .* → наш редуктор ZR')
+            printf '  %-8s заголовок таблицы замен найден: %s\n' "$b" "$n"
+          done
+
+          echo
+          echo "=== ХАБ В КАРТЕ САЙТА ==="
+          printf '  /motor-reduktor-zr/ в sitemap.xml: %s\n' "$(curl -s -m 25 "$S/sitemap.xml" | grep -c 'motor-reduktor-zr/</loc>')"
+          printf '  /motor-reduktor-zr/ HTTP %s\n' "$(curl -s -o /dev/null -m 25 -w '%{http_code}' -L "$S/motor-reduktor-zr/")"
