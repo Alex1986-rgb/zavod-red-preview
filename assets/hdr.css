@@ -53,7 +53,30 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
 .hdr2 .submenu a{padding:10px 13px;border-radius:7px;font-size:13.5px;color:var(--h-dim);text-decoration:none;white-space:nowrap}
 .hdr2 .submenu a:hover{background:var(--h-bg2);color:var(--h-text)}
 .hdr2 .menu-phone{margin-left:auto;color:var(--h-text);font-weight:600;font-size:13.5px;padding:12px 14px;text-decoration:none;white-space:nowrap}
-@media(max-width:1080px){.hdr2 .topbar{display:none}.hdr2 .ms-chip{display:none}.hdr2 .zbtn{display:none}}
+/* Полоса над шапкой на узких экранах.
+
+   Было: @media(max-width:1080px){.hdr2 .topbar{display:none}} — полоса пропадала
+   целиком уже при 1080 px, то есть на телефоне, на планшете и на неразвёрнутом окне
+   ноутбука. Владелец сайта сообщал, что «полоса сверху пропала»: в разметке она есть
+   на каждой странице, но CSS её прятал.
+
+   Стало: полоса остаётся, но сжимается. Ниже 1080 px убираем почту и оставляем
+   телефон — он нужнее и короче. Ниже 560 px прячем и телефон: он и так продублирован
+   кнопкой в шапке, а надпись о собственном производстве переносится в две строки,
+   вместо того чтобы вылезать за край. */
+@media(max-width:1080px){
+  .hdr2 .topbar{font-size:11.5px}
+  .hdr2 .tb-in{padding:6px 16px;gap:10px}
+  .hdr2 .tb-contacts a[href^="mailto"]{display:none}
+  .hdr2 .tb-contacts span{display:none}
+  .hdr2 .ms-chip{display:none}
+  .hdr2 .zbtn{display:none}
+}
+@media(max-width:560px){
+  .hdr2 .tb-contacts{display:none}
+  .hdr2 .tb-note{white-space:normal;line-height:1.35}
+  .hdr2 .tb-in{justify-content:center;text-align:center}
+}
 @media(max-width:860px){
   .hdr2 .cat-btn{display:none}
   .hdr2 .burger{display:flex}
