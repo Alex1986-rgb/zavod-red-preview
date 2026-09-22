@@ -223,33 +223,3 @@ jobs:
             out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
             printf '  %-34s %s\n' "$f" "$out"
           done
-
-      - name: Боевой .htaccess против репозитория
-        timeout-minutes: 6
-        continue-on-error: true
-        shell: bash {0}
-        env:
-          SSH_USER: ${{ secrets.FTP_USERNAME }}
-        run: |
-          # Только чтение. На сервере есть правила, которых нет в репозитории: наши
-          # адреса с подчёркиваниями переадресуются на адреса с дефисами, а копия
-          # рядом названа .htaccess.bak-underscore. Нужно увидеть, что именно там
-          # добавлено, чтобы при следующей выкатке не стереть заодно полезное.
-          #
-          # Файл печатается не целиком, а построчной разницей с нашим, и строки со
-          # словами вроде password/secret/token маскируются: лог остаётся в GitHub.
-          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
-          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
-            "$BASE@$HOST" 'cat ~/public_html/.htaccess' > /tmp/prod.htaccess 2>/dev/null
-          echo "боевой .htaccess: $(wc -l < /tmp/prod.htaccess) строк, $(wc -c < /tmp/prod.htaccess) байт"
-          echo "наш .htaccess:    $(wc -l < .htaccess) строк, $(wc -c < .htaccess) байт"
-          echo
-          mask() { sed -E 's/^(.*(pass|secret|token|key|auth).*)$/[строка скрыта: может содержать доступы]/I'; }
-          echo "=== ЕСТЬ НА ПРОДЕ, НЕТ У НАС ==="
-          comm -13 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | mask | head -60
-          echo
-          echo "=== ЕСТЬ У НАС, НЕТ НА ПРОДЕ ==="
-          comm -23 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | mask | head -40
-          echo
-          echo "=== правила про подчёркивания на проде ==="
-          grep -n '_' /tmp/prod.htaccess | grep -i 'rewrite\|redirect' | mask | head -20 || echo "  не нашлось"

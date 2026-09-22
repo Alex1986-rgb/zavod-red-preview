@@ -87,6 +87,37 @@ jobs:
           echo "--- резервные копии файлов на проде (.bak/.orig/.old) ---"
           printf '  всего: %s\n' "$(grep -cE '\.(bak|orig|old)' stale.txt || true)"
           grep -E '\.(bak|orig|old)' stale.txt | head -8 | sed 's/^/    /'
+      - name: Боевой .htaccess против репозитория
+        timeout-minutes: 5
+        continue-on-error: true
+        shell: bash {0}
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          # Только чтение. На сервере действуют правила, которых нет в репозитории:
+          # наши адреса с подчёркиваниями переадресуются на адреса с дефисами, а рядом
+          # лежит копия .htaccess.bak-underscore. Надо увидеть, что там добавлено, иначе
+          # ближайшая выкатка перезапишет файл и полезное уедет вместе с вредным.
+          #
+          # Печатается не файл целиком, а построчная разница с нашим; строки со словами
+          # password/secret/token/key/auth маскируются — лог остаётся в GitHub.
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
+            "$BASE@$HOST" 'cat ~/public_html/.htaccess' > /tmp/prod.htaccess 2>/dev/null
+          echo "боевой .htaccess: $(wc -l < /tmp/prod.htaccess) строк, $(wc -c < /tmp/prod.htaccess) байт"
+          echo "наш .htaccess:    $(wc -l < .htaccess) строк, $(wc -c < .htaccess) байт"
+          mask() { sed -E 's/^(.*(pass|secret|token|key|auth).*)$/[строка скрыта: может содержать доступы]/I'; }
+          echo
+          echo "=== правила про подчёркивания на проде ==="
+          grep -nE '_' /tmp/prod.htaccess | grep -iE 'rewrite|redirect' | mask | head -20 \
+            || echo "  таких правил нет"
+          echo
+          echo "=== ЕСТЬ У НАС, НЕТ НА ПРОДЕ (наши правки не доехали) ==="
+          comm -23 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | grep -v '^\s*$' | mask | head -30
+          echo
+          echo "=== ЕСТЬ НА ПРОДЕ, НЕТ У НАС (чужие правки, сотрутся при выкатке) ==="
+          comm -13 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | grep -v '^\s*$' | mask | head -50
+
       - uses: actions/upload-artifact@v4
         with:
           name: stale-on-prod
