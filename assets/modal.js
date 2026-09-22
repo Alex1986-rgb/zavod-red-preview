@@ -735,3 +735,32 @@ function zrNowMs(){return+new Date();}
   })(); } catch(e){}
 
 })();
+
+/* ===== Бегущая лента брендов в шапке — на всех страницах =====
+   Разметка ленты есть только в index.html. Заказчик ждёт её в шапке на всём сайте,
+   а вписать блок в 95 133 файла нельзя, поэтому лента собирается здесь и встаёт
+   сразу под шапкой. На главной НЕ создаётся: там своя лента под первым экраном,
+   две подряд были бы лишними. Стили — в assets/hdr.css, классы .zr-tick-*.
+   Ряд дублируется: анимация сдвигает дорожку ровно на половину, и шов не виден. */
+(function(){
+  var MARKI = [{"h": "/brands/sew", "t": "SEW-Eurodrive — оригинал и аналог", "a": "SEW-Eurodrive", "s": "/assets/brands-float/sew.png"}, {"h": "/brands/nord", "t": "NORD — оригинал и аналог", "a": "NORD", "s": "/assets/brands-float/nord.png"}, {"h": "/brands/bonfiglioli", "t": "Bonfiglioli — оригинал и аналог", "a": "Bonfiglioli", "s": "/assets/brands-float/bonfiglioli.png"}, {"h": "/brands/motovario", "t": "Motovario — оригинал и аналог", "a": "Motovario", "s": "/assets/brands-float/motovario.png"}, {"h": "/brands/flender", "t": "Flender — оригинал и аналог", "a": "Flender", "s": "/assets/brands-float/flender.png"}, {"h": "/brands/siemens", "t": "Siemens — оригинал и аналог", "a": "Siemens", "s": "/assets/brands-float/siemens.png"}, {"h": "/brands/lenze", "t": "Lenze — оригинал и аналог", "a": "Lenze", "s": "/assets/brands-float/lenze.png"}, {"h": "/brands/bauer", "t": "Bauer — оригинал и аналог", "a": "Bauer", "s": "/assets/brands-float/bauer.png"}, {"h": "/brands/varvel", "t": "Varvel — оригинал и аналог", "a": "Varvel", "s": "/assets/brands-float/varvel.png"}, {"h": "/brands/sew-tramec", "t": "Tramec — оригинал и аналог", "a": "Tramec", "s": "/assets/brands-float/sew-tramec.png"}, {"h": "/brands/siti", "t": "SITI — оригинал и аналог", "a": "SITI", "s": "/assets/brands-float/siti.png"}, {"h": "/brands/stm", "t": "STM — оригинал и аналог", "a": "STM", "s": "/assets/brands-float/stm.png"}, {"h": "/brands/transtecno", "t": "Transtecno — оригинал и аналог", "a": "Transtecno", "s": "/assets/brands-float/transtecno.png"}, {"h": "/brands/innovari", "t": "Innovari — оригинал и аналог", "a": "Innovari", "s": "/assets/brands-float/innovari.png"}, {"h": "/brands/varmec", "t": "Varmec — оригинал и аналог", "a": "Varmec", "s": "/assets/brands-float/varmec.png"}, {"h": "/brands/yilmaz", "t": "Yilmaz — оригинал и аналог", "a": "Yilmaz", "s": "/assets/brands-float/yilmaz.png"}, {"h": "/brands/keb", "t": "KEB — оригинал и аналог", "a": "KEB", "s": "/assets/brands-float/keb.png"}, {"h": "/brands/watt-drive", "t": "Watt Drive — оригинал и аналог", "a": "Watt Drive", "s": "/assets/brands-float/watt-drive.png"}, {"h": "/brands/boneng", "t": "Boneng — оригинал и аналог", "a": "Boneng", "s": "/assets/brands-float/boneng.png"}, {"h": "/brands/innored", "t": "Innored — оригинал и аналог", "a": "Innored", "s": "/assets/brands-float/innored.png"}, {"h": "/brands/guomao", "t": "Guomao — оригинал и аналог", "a": "Guomao", "s": "/assets/brands-float/guomao.png"}, {"h": "/brands/unidrive", "t": "UNI Drive — оригинал и аналог", "a": "UNI Drive", "s": "/assets/brands-float/unidrive.png"}];
+  function postroit(){
+    if(document.querySelector('.brand-ticker'))return;      // главная — там своя
+    if(document.querySelector('.zr-tick'))return;           // уже собрана
+    var hdr=document.querySelector('header');
+    if(!hdr||!MARKI.length)return;
+    function ryad(){
+      return MARKI.map(function(m){
+        return '<a href="'+m.h+'" title="'+m.t+'" aria-label="'+m.a+'">'
+             + '<img src="'+m.s+'" alt="'+m.a+'" loading="lazy" decoding="async"></a>';
+      }).join('');
+    }
+    var el=document.createElement('div');
+    el.className='zr-tick';
+    el.setAttribute('aria-label','Бренды, которые мы поставляем и заменяем');
+    el.innerHTML='<div class="zr-tick-mask"><div class="zr-tick-row">'+ryad()+ryad()+'</div></div>';
+    hdr.insertAdjacentElement('afterend',el);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',postroit);
+  else postroit();
+})();

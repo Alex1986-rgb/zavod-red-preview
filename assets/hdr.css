@@ -109,3 +109,19 @@ html[data-theme="dark"] .site-footer{background:#0f1c26}
    заливалась, а деплой отчитывался успехом. Маркер меняет длину и переживает минификацию.
    Менять цифру при каждой правке hdr.css, если размер снова сойдётся с продом. */
 .zr-cb-hdr3{--zrcb:3}
+
+/* ===== Бегущая лента брендов в шапке (все страницы) =====
+   Лента была только на главной, в разметке index.html. Заказчик ждёт её в шапке на
+   всём сайте, а вписать её в 95 133 файла нельзя — поэтому она собирается скриптом
+   (assets/modal.js) и стилизуется здесь. Классы свои, .zr-tick-*, чтобы не спорить
+   с инлайновыми правилами главной: там лента остаётся своя, эта на главной не
+   создаётся вовсе. */
+.zr-tick{background:var(--bg2,#0e1a24);border-bottom:1px solid var(--line,#22333f);padding:11px 0;overflow:hidden}
+.zr-tick-mask{position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.zr-tick-row{display:flex;align-items:center;gap:54px;width:max-content;animation:zr-tick-run 64s linear infinite}
+.zr-tick:hover .zr-tick-row{animation-play-state:paused}
+.zr-tick-row a{flex:0 0 auto;display:inline-flex;align-items:center;background:#fff;border-radius:9px;padding:7px 14px;box-shadow:0 3px 10px rgba(0,0,0,.13)}
+.zr-tick-row img{height:24px;width:auto;max-width:118px;object-fit:contain;display:block}
+@keyframes zr-tick-run{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 27px))}}
+@media(max-width:860px){.zr-tick{padding:8px 0}.zr-tick-row{gap:38px;animation-duration:48s}.zr-tick-row img{height:20px;max-width:100px}.zr-tick-row a{padding:6px 11px}}
+@media(prefers-reduced-motion:reduce){.zr-tick-row{animation:none}.zr-tick-mask{overflow-x:auto}}
