@@ -310,3 +310,28 @@ jobs:
           echo "=== ХАБ В КАРТЕ САЙТА ==="
           printf '  /motor-reduktor-zr/ в sitemap.xml: %s\n' "$(curl -s -m 25 "$S/sitemap.xml" | grep -c 'motor-reduktor-zr/</loc>')"
           printf '  /motor-reduktor-zr/ HTTP %s\n' "$(curl -s -o /dev/null -m 25 -w '%{http_code}' -L "$S/motor-reduktor-zr/")"
+
+      - name: Бегущая лента и полоса над шапкой на главной
+        timeout-minutes: 5
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          H=$(curl -s -m 30 -L "$S/")
+          printf 'размер главной: %s байт\n' "$(printf '%s' "$H" | wc -c)"
+          echo
+          echo "=== ЧТО ДОЛЖНО БЫТЬ НА ГЛАВНОЙ ==="
+          for k in brand-ticker bt-track bt-scroll topbar tb-note hdr2 "Собственное производство"; do
+            printf '  %-26s вхождений: %s\n' "$k" "$(printf '%s' "$H" | grep -c -- "$k")"
+          done
+          echo
+          echo "=== ЛОГОТИПОВ В ЛЕНТЕ ==="
+          printf '  img внутри brand-ticker: %s\n' \
+            "$(printf '%s' "$H" | tr '>' '>\n' | sed -n '/brand-ticker/,/<\/section/p' | grep -c '<img')"
+          echo
+          echo "=== СЕКЦИИ ГЛАВНОЙ ==="
+          printf '  всего <section: %s\n' "$(printf '%s' "$H" | grep -c '<section')"
+          printf '  id секций: %s\n' "$(printf '%s' "$H" | grep -o 'id="[a-z-]*"' | sort -u | tr '\n' ' ')"
+          echo
+          echo "=== КЭШ ГЛАВНОЙ (почему может показываться старое) ==="
+          curl -s -I -m 20 "$S/" | grep -i 'cache-control\|etag\|last-modified\|age' | sed 's/^/  /'
