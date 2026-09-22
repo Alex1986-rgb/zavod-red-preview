@@ -430,3 +430,54 @@ jobs:
           V2=$(curl -s -m 25 -L "$S/catalog/" | grep -o 'modal\.js?v=[0-9a-f]*' | head -1 | sed 's/.*v=//')
           printf '  /assets/modal.js?v=%s → упоминаний zr-tick %s\n' "$V2" \
             "$(curl -s -m 25 "$S/assets/modal.js?v=$V2" | grep -c 'zr-tick')"
+
+      - name: Лента в настоящем браузере
+        timeout-minutes: 12
+        continue-on-error: true
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i -D playwright@latest >/dev/null 2>&1
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > /tmp/check.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const S = 'https://zavod-red.ru';
+          const PAGES = ['/catalog/', '/brands/sew', '/about', '/'];
+          const b = await chromium.launch();
+          for (const p of PAGES) {
+            const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
+            const pg = await ctx.newPage();
+            const errs = [], fails = [];
+            pg.on('pageerror', e => errs.push(String(e).slice(0, 200)));
+            pg.on('response', r => { if (r.status() >= 400) fails.push(r.status() + ' ' + r.url().split('/').slice(-1)[0]); });
+            try { await pg.goto(S + p, { waitUntil: 'networkidle', timeout: 45000 }); }
+            catch (e) { console.log('  ' + p + '  НЕ ЗАГРУЗИЛАСЬ: ' + e.message.slice(0,80)); await ctx.close(); continue; }
+            await pg.waitForTimeout(1200);
+            const r = await pg.evaluate(() => {
+              const t = document.querySelector('.zr-tick');
+              const box = t ? t.getBoundingClientRect() : null;
+              const st = t ? getComputedStyle(t) : null;
+              const imgs = t ? [...t.querySelectorAll('img')] : [];
+              let pravil = 0;
+              for (const sh of document.styleSheets) { try { for (const r of sh.cssRules) if (r.cssText && r.cssText.includes('zr-tick')) pravil++; } catch (e) {} }
+              return {
+                'есть .zr-tick': !!t,
+                'есть старая лента': !!document.querySelector('.brand-ticker'),
+                'есть header': !!document.querySelector('header'),
+                'размер': box ? Math.round(box.width) + 'x' + Math.round(box.height) : '—',
+                'display': st ? st.display : '—',
+                'картинок': imgs.length,
+                'загрузилось картинок': imgs.filter(i => i.complete && i.naturalWidth > 0).length,
+                'адрес modal.js': ([...document.scripts].map(s => s.src).filter(s => s.includes('modal.js'))[0] || '—').split('/').slice(-1)[0],
+                'адрес hdr.css': ([...document.styleSheets].map(s => s.href).filter(Boolean).filter(h => h.includes('hdr.css'))[0] || '—').split('/').slice(-1)[0],
+                'правил .zr-tick видит браузер': pravil,
+              };
+            });
+            console.log('\n=== ' + p + ' ===');
+            for (const k of Object.keys(r)) console.log('   ' + k.padEnd(30) + ' ' + r[k]);
+            console.log('   ' + 'ошибок JS'.padEnd(30) + ' ' + (errs.length ? errs.join(' | ') : 'нет'));
+            console.log('   ' + 'ответов 4xx/5xx'.padEnd(30) + ' ' + (fails.length ? fails.slice(0,4).join(' | ') : 'нет'));
+            await ctx.close();
+          }
+          await b.close();
+          JS
+          node /tmp/check.mjs
