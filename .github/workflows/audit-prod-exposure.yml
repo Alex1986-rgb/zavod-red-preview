@@ -400,3 +400,33 @@ jobs:
           echo "=== база каталога моделей, которую тянет скрипт ==="
           printf '  /assets/import-catalog.json  HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/assets/import-catalog.json")"
           printf '  с ключом ?v=3140             HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/assets/import-catalog.json?v=3140")"
+
+      - name: Лента в шапке — доехала ли на боевой
+        timeout-minutes: 5
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== КЛЮЧИ АССЕТОВ НА СТРАНИЦАХ ==="
+          for p in /catalog/ /brands/sew /about /podbor; do
+            H=$(curl -s -m 25 -L "$S$p")
+            printf '  %-14s hdr.css %s | modal.js %s\n' "$p" \
+              "$(printf '%s' "$H" | grep -o 'hdr\.css?v=[0-9a-f]*' | head -1)" \
+              "$(printf '%s' "$H" | grep -o 'modal\.js?v=[0-9a-f]*' | head -1)"
+          done
+          echo
+          echo "=== СОДЕРЖИМОЕ АССЕТОВ НА БОЕВОМ ==="
+          printf '  hdr.css: правил .zr-tick %s | размер %s\n' \
+            "$(curl -s -m 25 "$S/assets/hdr.css" | grep -c 'zr-tick')" \
+            "$(curl -s -m 25 "$S/assets/hdr.css" | wc -c)"
+          printf '  modal.js: упоминаний zr-tick %s | размер %s\n' \
+            "$(curl -s -m 25 "$S/assets/modal.js" | grep -c 'zr-tick')" \
+            "$(curl -s -m 25 "$S/assets/modal.js" | wc -c)"
+          echo
+          echo "=== ПО НОВОМУ КЛЮЧУ (как запросит браузер) ==="
+          V=$(curl -s -m 25 -L "$S/catalog/" | grep -o 'hdr\.css?v=[0-9a-f]*' | head -1 | sed 's/.*v=//')
+          printf '  /assets/hdr.css?v=%s → правил .zr-tick %s\n' "$V" \
+            "$(curl -s -m 25 "$S/assets/hdr.css?v=$V" | grep -c 'zr-tick')"
+          V2=$(curl -s -m 25 -L "$S/catalog/" | grep -o 'modal\.js?v=[0-9a-f]*' | head -1 | sed 's/.*v=//')
+          printf '  /assets/modal.js?v=%s → упоминаний zr-tick %s\n' "$V2" \
+            "$(curl -s -m 25 "$S/assets/modal.js?v=$V2" | grep -c 'zr-tick')"
