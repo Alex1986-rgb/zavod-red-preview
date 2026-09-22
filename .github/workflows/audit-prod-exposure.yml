@@ -224,36 +224,32 @@ jobs:
             printf '  %-34s %s\n' "$f" "$out"
           done
 
-      - name: Проверить две новые находки аудита от 22.09
+      - name: Боевой .htaccess против репозитория
         timeout-minutes: 6
         continue-on-error: true
         shell: bash {0}
+        env:
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
         run: |
-          S=https://zavod-red.ru
-          # Второй прогон аудита дал два новых критичных замечания, и почти все
-          # остальные новые претензии висят на тех же двух адресах. Проверяем, стойкие
-          # ли это дефекты или разовые сбои во время обхода.
-          echo "=== /analog/siti-bh-160-i90-96-11kvt — аудит получил 502 ==="
-          for i in 1 2 3 4 5; do
-            out=$(curl -s -o /tmp/p.html -m 25 -w '%{http_code} %{size_download}б %{time_starttransfer}с' \
-                  "$S/analog/siti-bh-160-i90-96-11kvt")
-            printf '  замер %s: %s\n' "$i" "$out"
-          done
-          printf '  слов на странице: %s\n' "$(sed 's/<[^>]*>/ /g' /tmp/p.html | wc -w)"
-          printf '  есть viewport: %s | canonical: %s | description: %s\n' \
-            "$(grep -c 'name="viewport"' /tmp/p.html)" \
-            "$(grep -c 'rel="canonical"' /tmp/p.html)" \
-            "$(grep -c 'name="description"' /tmp/p.html)"
+          # Только чтение. На сервере есть правила, которых нет в репозитории: наши
+          # адреса с подчёркиваниями переадресуются на адреса с дефисами, а копия
+          # рядом названа .htaccess.bak-underscore. Нужно увидеть, что именно там
+          # добавлено, чтобы при следующей выкатке не стереть заодно полезное.
+          #
+          # Файл печатается не целиком, а построчной разницей с нашим, и строки со
+          # словами вроде password/secret/token маскируются: лог остаётся в GitHub.
+          BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
+            "$BASE@$HOST" 'cat ~/public_html/.htaccess' > /tmp/prod.htaccess 2>/dev/null
+          echo "боевой .htaccess: $(wc -l < /tmp/prod.htaccess) строк, $(wc -c < /tmp/prod.htaccess) байт"
+          echo "наш .htaccess:    $(wc -l < .htaccess) строк, $(wc -c < .htaccess) байт"
           echo
-          echo "=== /brands/sew-eurodrive — аудит считает битой ссылкой ==="
-          code=$(curl -s -o /tmp/b.html -m 25 -w '%{http_code}' "$S/brands/sew-eurodrive")
-          fin=$(curl -s -o /dev/null -m 25 -L -w '%{url_effective}' "$S/brands/sew-eurodrive")
-          printf '  код %s, после переадресации: %s\n' "$code" "${fin#$S}"
-          printf '  правильный адрес /brands/sew: %s\n' \
-            "$(curl -s -o /dev/null -m 25 -w '%{http_code}' "$S/brands/sew")"
+          mask() { sed -E 's/^(.*(pass|secret|token|key|auth).*)$/[строка скрыта: может содержать доступы]/I'; }
+          echo "=== ЕСТЬ НА ПРОДЕ, НЕТ У НАС ==="
+          comm -13 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | mask | head -60
           echo
-          echo "=== кто ссылается на несуществующий адрес ==="
-          for p in / /brands/ /catalog/ /importozameshchenie; do
-            n=$(curl -s -m 25 -L "$S$p" | grep -c 'brands/sew-eurodrive' || true)
-            printf '  %-22s ссылок: %s\n' "$p" "$n"
-          done
+          echo "=== ЕСТЬ У НАС, НЕТ НА ПРОДЕ ==="
+          comm -23 <(sort -u .htaccess) <(sort -u /tmp/prod.htaccess) | mask | head -40
+          echo
+          echo "=== правила про подчёркивания на проде ==="
+          grep -n '_' /tmp/prod.htaccess | grep -i 'rewrite\|redirect' | mask | head -20 || echo "  не нашлось"
