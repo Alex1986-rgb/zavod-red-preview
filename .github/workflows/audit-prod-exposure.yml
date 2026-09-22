@@ -348,3 +348,35 @@ jobs:
           curl -s -m 20 "$S/sw.js" | grep -n "CACHE =\|isDynamic\|cache-first\|Статика" | head -6 | sed 's/^/    /'
           echo "  --- заголовок Service-Worker-Allowed и кэш самого sw.js ---"
           curl -s -I -m 20 "$S/sw.js" | grep -i 'cache-control\|service-worker' | sed 's/^/    /'
+
+      - name: Логотипы бегущей ленты — грузятся ли они
+        timeout-minutes: 5
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== IMG-ТЕГИ ВНУТРИ ЛЕНТЫ НА БОЕВОЙ ГЛАВНОЙ ==="
+          curl -s -m 30 -L "$S/" > /tmp/main.html
+          python3 - <<'PYEOF'
+          import re
+          s=open('/tmp/main.html',encoding='utf-8',errors='ignore').read()
+          m=re.search(r'<section[^>]*class="brand-ticker"',s)
+          if not m:
+              print('  СЕКЦИИ brand-ticker НА БОЕВОЙ НЕТ'); raise SystemExit
+          st=m.start(); d=0; en=len(s)
+          for t in re.finditer(r'</?section\b',s[st:]):
+              d += 1 if t.group(0)=='<section' else -1
+              if d==0: en=st+t.end()+1; break
+          seg=s[st:en]
+          srcs=re.findall(r'<img[^>]*src="([^"]+)"',seg)
+          print('  длина секции:',len(seg))
+          print('  img в ленте:',len(srcs),'| уникальных:',len(set(srcs)))
+          open('/tmp/srcs.txt','w').write('\n'.join(sorted(set(srcs))))
+          PYEOF
+          echo
+          echo "=== ОТДАЮТСЯ ЛИ КАРТИНКИ ==="
+          while read -r u; do
+            [ -z "$u" ] && continue
+            case "$u" in http*) full="$u";; /*) full="$S$u";; *) full="$S/$u";; esac
+            printf '  %-46s HTTP %s\n' "$u" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$full")"
+          done < /tmp/srcs.txt
