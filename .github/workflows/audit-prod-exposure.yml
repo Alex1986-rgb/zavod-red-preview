@@ -335,3 +335,16 @@ jobs:
           echo
           echo "=== КЭШ ГЛАВНОЙ (почему может показываться старое) ==="
           curl -s -I -m 20 "$S/" | grep -i 'cache-control\|etag\|last-modified\|age' | sed 's/^/  /'
+
+      - name: Service worker в корне сайта
+        timeout-minutes: 3
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          printf '  /sw.js               HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/sw.js")"
+          printf '  /manifest.webmanifest HTTP %s\n' "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/manifest.webmanifest")"
+          echo "  --- область действия и стратегия ---"
+          curl -s -m 20 "$S/sw.js" | grep -n "CACHE =\|isDynamic\|cache-first\|Статика" | head -6 | sed 's/^/    /'
+          echo "  --- заголовок Service-Worker-Allowed и кэш самого sw.js ---"
+          curl -s -I -m 20 "$S/sw.js" | grep -i 'cache-control\|service-worker' | sed 's/^/    /'
