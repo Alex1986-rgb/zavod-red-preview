@@ -3,6 +3,29 @@
    иначе автоцель Яндекс.Метрики «отправка формы» засчитывает поиск как заявку. Не
    зависит от энхансера (тот гейтится .nav-right); ловит любую form.msearch на всех стр. */
 document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&&f.classList.contains('msearch')){e.preventDefault();}},true);
+
+/* Метки рекламы запоминаются ПРИ ЗАГРУЗКЕ каждой страницы, а не в момент отправки заявки.
+   Раньше запись в localStorage стояла внутри обработчика submit — то есть значения писались
+   ровно тогда же, когда и читались, и хранилище всегда оставалось пустым. Посетитель заходил
+   по /?utm_source=yandex&yclid=…, уходил на карточку, оставлял заявку — и в CRM она падала
+   с пустыми метками и источником «site». Реклама выглядела не приносящей заявок.
+   Модуль подключён на всех страницах сайта, поэтому перехват срабатывает на первом же экране.
+   Значение живёт 30 суток: старые метки не должны приписывать себе заявку через полгода. */
+var ZR_UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid'];
+var ZR_UTM_TTL=30*24*3600*1000;
+function zrUtmRead(){
+  try{
+    var st=JSON.parse(localStorage.getItem('zr_utm')||'{}');
+    if(st&&st._ts&&(zrNowMs()-st._ts)>ZR_UTM_TTL)return{};
+    return st||{};
+  }catch(e){return{};}
+}
+function zrNowMs(){return+new Date();}
+(function(){try{
+  var p=new URLSearchParams(location.search),st=zrUtmRead(),has=false;
+  ZR_UTM_KEYS.forEach(function(k){var v=p.get(k);if(v){st[k]=v;has=true;}});
+  if(has){st._ts=zrNowMs();try{localStorage.setItem('zr_utm',JSON.stringify(st));}catch(e){}}
+}catch(e){}})();
 (function(){
   // глубина страницы → пути к api и privacy
   var sub = /\/(catalog|cases|uslugi|brands|blog|analog|reduktor|ispolnenie|tiporazmer|glossary|otrasli)\//.test(location.pathname);
@@ -177,15 +200,19 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     var msg=document.getElementById('zrMsg').value.trim();
     if(msg!=='')fd.append('textarea-725',msg);
     if(fileInp.files&&fileInp.files[0])fd.append('file-174',fileInp.files[0]);
-    fd.append('product_title','Заявка (раскрывающаяся форма) · '+(type||'тип не указан')+' · '+document.title);
-    // UTM / источник / referrer для CRM и ретаргетинга (first-touch в localStorage)
+    /* Тип и заголовок — отдельными полями. Раньше они слипались в product_title через «·»,
+       а приёмник резал строку по этому же символу — и спотыкался о «Н·м» в заголовке карточки:
+       у ~87 000 страниц в CRM вместо типа редуктора оседал обрывок вида «8,7 Н», а вместо
+       заголовка — «м — аналог ZR 636…». Выбранный в списке тип терялся совсем.
+       Приёмник предпочитает явные поля разбору, поэтому «·» больше ни на что не влияет. */
+    fd.append('reducer_type',type||'тип не указан');
+    fd.append('page_title',document.title);
+    fd.append('product_title','Заявка (раскрывающаяся форма)');
+    // UTM / источник / referrer для CRM и ретаргетинга. Запись — при загрузке страницы (см. верх файла),
+    // здесь только читаем: метка из адреса текущей страницы, иначе запомненная при входе на сайт.
     try{
-      var _p=new URLSearchParams(location.search);
-      var _ks=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid'];
-      var _st={};try{_st=JSON.parse(localStorage.getItem('zr_utm')||'{}');}catch(e){}
-      var _has=false;_ks.forEach(function(k){var v=_p.get(k);if(v){_st[k]=v;_has=true;}});
-      if(_has){try{localStorage.setItem('zr_utm',JSON.stringify(_st));}catch(e){}}
-      _ks.forEach(function(k){fd.append(k,_p.get(k)||_st[k]||'');});
+      var _p=new URLSearchParams(location.search),_st=zrUtmRead();
+      ZR_UTM_KEYS.forEach(function(k){fd.append(k,_p.get(k)||_st[k]||'');});
       fd.append('referrer',document.referrer||'');
       fd.append('page_url',location.href);
     }catch(e){}
@@ -417,11 +444,13 @@ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&
     if(phone)fd.append('tel-535',phone);
     if(email)fd.append('email-727',email);
     if(msgEl&&msgEl.value.trim())fd.append('textarea-725',msgEl.value.trim());
-    fd.append('product_title','Заявка (форма на странице) · '+document.title);
+    /* Тот же разбор по «·» назначал типом редуктора саму подпись «Заявка (форма на странице)»
+       — на всех четырёх страничных формах. Шлём заголовок явным полем, тип не шлём вовсе. */
+    fd.append('page_title',document.title);
+    fd.append('product_title','Заявка (форма на странице)');
     try{
-      var p=new URLSearchParams(location.search),ks=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid'],st={};
-      try{st=JSON.parse(localStorage.getItem('zr_utm')||'{}');}catch(_){}
-      ks.forEach(function(k){fd.append(k,p.get(k)||st[k]||'');});
+      var p=new URLSearchParams(location.search),st=zrUtmRead();
+      ZR_UTM_KEYS.forEach(function(k){fd.append(k,p.get(k)||st[k]||'');});
       fd.append('referrer',document.referrer||'');fd.append('page_url',location.href);
     }catch(_){}
     var btn=form.querySelector('button[type="submit"],button');

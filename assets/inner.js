@@ -81,7 +81,8 @@ function wireLeadForm(formId, opts){
     fd.append('work_email','');
     if(name)fd.append('text-562',name.value);
     if(ph)fd.append('tel-535',ph.value);
-    fd.append('product_title',opts.title||('Заявка с сайта · '+document.title));
+    fd.append('page_title',document.title);
+    fd.append('product_title',opts.title||'Заявка с сайта');
     show('Отправляем заявку…','');
     try{
       var r=await fetch(action,{method:'POST',body:fd});

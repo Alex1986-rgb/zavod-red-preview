@@ -208,9 +208,16 @@
       fd.append("email", val("email"));
       fd.append("company", val("org"));
       var body = "Заказ " + no + " с сайта. " + (entity === "ind" ? "Физлицо" : "Юрлицо") +
+        ". Организация: " + (val("org") || "—") +
         ". ИНН: " + (val("inn") || "—") + ". Состав: " + its.map(function (i) { return i.name + " ×" + (i.qty || 1); }).join("; ") +
         ". Адрес: " + (val("addr") || "—") + ". Комментарий: " + (val("comment") || "—");
-      fd.append("product_title", "Заказ " + no + " — " + body);
+      /* Состав заказа идёт полем message: раньше он ехал внутри product_title, а приёмник
+         кладёт эту строку в заголовок страницы (колонка на 255 символов) — длинный заказ
+         обрезался или ронял запись, а поле «Сообщение» в карточке лида оставалось пустым.
+         Поле company приёмник не знает вовсе, поэтому название организации добавлено в текст. */
+      fd.append("message", body);
+      fd.append("page_title", "Заказ " + no);
+      fd.append("product_title", "Заказ " + no);
       var ac = ("AbortController" in window) ? new AbortController() : null;
       var to = setTimeout(function () { if (ac) { try { ac.abort(); } catch (e) {} } }, 45000);
       fetch("/api/feedback.php", ac ? { method: "POST", body: fd, signal: ac.signal } : { method: "POST", body: fd })
