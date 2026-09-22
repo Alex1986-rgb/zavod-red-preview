@@ -223,3 +223,41 @@ jobs:
             out=$(curl -s -o /dev/null -m 25 -w 'HTTP %{http_code}, тип %{content_type}, байт %{size_download}' -r 0-1023 "$S$f")
             printf '  %-34s %s\n' "$f" "$out"
           done
+
+      - name: Заявка, админка и Директ — живы ли
+        timeout-minutes: 6
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== 1. Приёмник заявок ==="
+          printf '  GET  /api/feedback.php  → %s (ожидаем 405: принимает только POST)\n' \
+            "$(curl -s -o /dev/null -m 25 -w '%{http_code}' "$S/api/feedback.php")"
+          # Проба ловушкой для ботов: непустое поле work_email обрабатывается ДО валидации
+          # и до записи в базу — endpoint отвечает success и НЕ создаёт заявку. Так весь
+          # путь запроса проверяется вживую, не засоряя CRM тестовыми лидами.
+          out=$(curl -s -m 30 -X POST "$S/api/feedback.php" \
+                 -d 'work_email=probe@example.invalid' -w '\n[код %{http_code}, %{time_total}с]')
+          printf '  POST с ловушкой (заявка НЕ создаётся):\n    %s\n' "$(echo "$out" | tr '\n' ' ')"
+          echo
+          echo "=== 2. Админка ==="
+          for p in /admin/login.php /admin/ /admin/direct.php /admin/leads.php; do
+            code=$(curl -s -o /dev/null -m 25 -w '%{http_code}' "$S$p")
+            fin=$(curl -s -o /dev/null -m 25 -L -w '%{url_effective}' "$S$p")
+            printf '  %-22s %s → %s\n' "$p" "$code" "${fin#$S}"
+          done
+          echo
+          echo "=== 3. Яндекс.Директ в админке ==="
+          # Без сессии endpoint обязан ответить отказом авторизации в JSON.
+          # 500 означал бы поломку кода, пустой ответ — что PHP не отработал.
+          for a in overview balance keywords; do
+            body=$(curl -s -m 30 "$S/api/direct.php?action=$a&days=30")
+            code=$(curl -s -o /dev/null -m 30 -w '%{http_code}' "$S/api/direct.php?action=$a&days=30")
+            printf '  action=%-9s код %s  ответ: %s\n' "$a" "$code" "$(echo "$body" | head -c 160)"
+          done
+          echo
+          echo "=== 4. Прочие приёмники ==="
+          for f in /api/store.php /api/contact_click.php /api/helpers.php; do
+            printf '  %-26s %s\n' "$f" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$f")"
+          done
+
