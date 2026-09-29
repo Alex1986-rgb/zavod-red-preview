@@ -482,3 +482,44 @@ jobs:
           await b.close();
           JS
           node check.mjs
+
+      - name: Карты сайта — что отдаёт боевой
+        timeout-minutes: 10
+        continue-on-error: true
+        shell: bash {0}
+        run: |
+          S=https://zavod-red.ru
+          echo "=== ИНДЕКС КАРТ ==="
+          curl -s -m 30 "$S/sitemap-index.xml" -o /tmp/idx.xml
+          printf '  sitemap-index.xml: HTTP %s, %s байт\n' \
+            "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S/sitemap-index.xml")" "$(wc -c < /tmp/idx.xml)"
+          python3 - <<'PYEOF'
+          import re
+          s=open('/tmp/idx.xml',encoding='utf-8',errors='ignore').read()
+          locs=re.findall(r'<loc>\s*([^<\s]+)\s*</loc>',s)
+          print('  карт перечислено:',len(locs))
+          for l in locs: print('   ',l.split('/')[-1])
+          open('/tmp/locs.txt','w').write('\n'.join(locs))
+          PYEOF
+          echo
+          echo "=== КАЖДАЯ КАРТА: КОД, РАЗМЕР, URL, РАЗБОР XML ==="
+          # к перечисленным добавляем те, на которые жалуется Вебмастер
+          { cat /tmp/locs.txt; printf '\n%s\n%s\n%s\n%s\n' \
+              "$S/sitemap-analog-3.xml" "$S/sitemap-images-analog-3.xml" \
+              "$S/sitemap-images-analog-4.xml" "$S/sitemap-images-analog-5.xml"; } | sort -u | while read -r u; do
+            [ -z "$u" ] && continue
+            code=$(curl -s -o /tmp/sm.xml -m 90 -w '%{http_code}' "$u")
+            bytes=$(wc -c < /tmp/sm.xml)
+            mb=$(python3 -c "print(f'{$bytes/1048576:.1f}')")
+            if [ "$code" = "200" ]; then
+              n=$(grep -o '<url>' /tmp/sm.xml | wc -l)
+              xml=$(python3 -c "
+          import xml.etree.ElementTree as E
+          try:
+              E.parse('/tmp/sm.xml'); print('ок')
+          except Exception as e:
+              print('СЛОМАН: '+str(e)[:70])
+          ")
+            else n='—'; xml='—'; fi
+            printf '  %-34s HTTP %s | %6s МБ | URL %-6s | XML %s\n' "$(basename "$u")" "$code" "$mb" "$n" "$xml"
+          done
