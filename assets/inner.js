@@ -137,7 +137,10 @@ function wireLeadForm(formId, opts){
   var st = document.createElement('style'); st.textContent = S;
   document.head.appendChild(st);
 
-  var box, img, title, dl, z = 1, ox = 0, oy = 0, dragging = false, sx = 0, sy = 0;
+  // Кнопки «Скачать» в просмотрщике чертежей нет намеренно: чертежи — наша
+  // конструкторская документация, и прямой ссылки на файл давать не нужно.
+  // Просмотр с зумом остаётся, скачивание — нет. Не возвращать.
+  var box, img, title, z = 1, ox = 0, oy = 0, dragging = false, sx = 0, sy = 0;
 
   function apply() {
     img.style.transform = 'translate(' + ox + 'px,' + oy + 'px) scale(' + z + ')';
@@ -152,20 +155,18 @@ function wireLeadForm(formId, opts){
     box.className = 'zrlb';
     box.innerHTML = '<div class="zrlb-bar"><span class="t"></span>' +
       '<button data-a="out">&minus;</button><button data-a="in">+</button>' +
-      '<button data-a="fit">1:1</button><a data-a="dl" download>Скачать</a>' +
+      '<button data-a="fit">1:1</button>' +
       '<button data-a="close">&times;</button></div>' +
       '<img alt=""><div class="zrlb-hint">Колесо — масштаб · перетаскивание — сдвиг · Esc — закрыть</div>';
     document.body.appendChild(box);
     img = box.querySelector('img');
     title = box.querySelector('.t');
-    dl = box.querySelector('[data-a="dl"]');
 
     box.addEventListener('click', function (e) {
       var a = e.target.getAttribute && e.target.getAttribute('data-a');
       if (a === 'in') { setZoom(z * 1.5); return; }
       if (a === 'out') { setZoom(z / 1.5); return; }
       if (a === 'fit') { setZoom(1); return; }
-      if (a === 'dl') return;
       if (e.target === box || a === 'close') close();
     });
     box.addEventListener('wheel', function (e) {
@@ -195,7 +196,6 @@ function wireLeadForm(formId, opts){
     if (!box) build();
     img.src = src; img.alt = cap || '';
     title.textContent = cap || '';
-    dl.href = src;
     z = 1; ox = 0; oy = 0; apply();
     box.classList.add('on');
     document.documentElement.style.overflow = 'hidden';
