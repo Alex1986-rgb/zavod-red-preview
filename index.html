@@ -775,6 +775,104 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 [data-theme="light"] .nav-mail{color:var(--ink,#13212c)}
 [data-theme="light"] .field select,[data-theme="light"] .field input,[data-theme="light"] .field textarea{background:#fff;color:#16242e;border-color:#cdd9e2}
 [data-theme="light"] .sel-result,[data-theme="light"] .sel-result b{color:#16242e}
+
+/* ==========================================================================
+   ДОРАБОТКА ГЛАВНОЙ — единая дизайн-система
+   Было: фоны секций задавались инлайн-стилями в разметке, и пять блоков
+   подряд получали один фон — страница читалась одной плитой. Радиусы, тени
+   и подъём на hover у однотипных карточек расходились (10/12/14/16/18px,
+   -2px/-3px, тени россыпью). Ниже — один источник правды: шкалы, строгий
+   ритм секций и доводка блоков по этим шкалам.
+   Правила заведены только на блоки, которые есть в разметке: в стилях выше
+   осталось прошлое поколение вёрстки (.sit-card, .pf-*, .cta-form, .nav-phones
+   и др.) — это отдельная задача на чистку, здесь её не трогаем.
+   ========================================================================== */
+
+/* --- Шкалы: радиусы, тени, вертикальный ритм --- */
+:root{
+  --r-sm:10px;                /* мелкие кнопки, плашки */
+  --r-lg:18px;                /* крупные панели: сравнение, финальный баннер */
+  --sh-1:0 6px 18px rgba(0,0,0,.28);
+  --sh-2:0 14px 32px rgba(0,0,0,.40);   /* подъём карточки на hover */
+  --sh-3:0 28px 64px rgba(0,0,0,.52);   /* модальные слои */
+  --sp-grid:28px;             /* отступ сетки от заголовка блока */
+  --sp-tight:8px;             /* то же, когда выше уже стоит .lead */
+  --lift:-3px;                /* единый подъём интерактивной карточки */
+}
+
+/* --- Ритм страницы --------------------------------------------------------
+   Строгое чередование: ни один блок не стоит рядом с блоком того же фона,
+   поэтому границы читаются без разделительных линий. Светлый блок
+   сертификатов — единственная яркая пауза; лента логотипов и подбор —
+   тёмные полосы с границами.
+   Порядок: лента▪ситуация·каталог▪цены·калькулятор▪OEM·шаги▪замена·
+   сравнение▪услуги·производство▪видео·сертификаты(светлый)·отзывы▪команда·
+   подбор▪гео·FAQ▪SEO▪контакты
+   ------------------------------------------------------------------------ */
+#situation,#ceny-teaser,#oem,#zamena,#uslugi,#video,#team,#geo,#contacts{background:var(--bg)}
+#catalog,#calc,#steps,#compare,#about,#reviews,#faq,#seo-blok{background:var(--bg2)}
+#video{padding-top:48px}
+#seo-blok{padding-top:0}     /* продолжает блок FAQ, поэтому без верхнего отступа */
+#certs{background:#e6ebf0}   /* светлая пауза: на полтона глубже --light, чтобы белые карточки сертификатов читались как карточки */
+
+/* --- Карточки: один радиус, одна тень, один подъём -----------------------
+   Стандартная карточка — --r, крупная панель — --r-lg. Подъём и тень
+   одинаковые у всех. Подъём только там, где карточка ведёт по ссылке:
+   статичные .step и .geo-stat намеренно без него, чтобы не изображать
+   кликабельность.
+   ------------------------------------------------------------------------ */
+.step,.rev,.geo-stat,.faq-item,.ceny-card{border-radius:var(--r)}
+.vs-card,.final-cta .fcta{border-radius:var(--r-lg)}
+.cat-item,.serv,.ceny-card{transition:transform .18s,border-color .18s,box-shadow .18s}
+.cat-item:hover,.serv:hover,.ceny-card:hover,.prod-card:hover,.cert:hover{transform:translateY(var(--lift))}
+.cat-item:hover,.serv:hover,.ceny-card:hover,.cert:hover{box-shadow:var(--sh-2)}
+
+/* --- Ритм заголовков блока ------------------------------------------------
+   Сетка начинается на одном расстоянии от заголовка во всех блоках: 28px
+   после пары «надзаголовок + h2» и 8px там, где между ними уже стоит
+   абзац .lead со своим отступом 40px.
+   ------------------------------------------------------------------------ */
+.prod-grid,.vs,.steps{margin-top:var(--sp-grid)}
+.ceny-grid,.cmp-wrap,#reviews .rev-grid,.team-carousel{margin-top:var(--sp-tight)}
+
+/* --- Клавиатурная доступность --------------------------------------------
+   Было: видимого состояния фокуса не было ни у кнопок, ни у ссылок, ни у
+   аккордеона FAQ — при обходе с клавиатуры позиция терялась.
+   ------------------------------------------------------------------------ */
+:focus-visible{outline:2px solid var(--red2);outline-offset:3px;border-radius:4px}
+.btn:focus-visible,.faq-q:focus-visible,.geo-city:focus-visible,
+.theme-toggle:focus-visible,.carousel-nav:focus-visible,.tc-arrow:focus-visible{outline-offset:2px}
+
+/* --- Уважение к настройке «меньше движения» ------------------------------
+   Бесконечная лента логотипов и подъёмы карточек выключаются, если человек
+   попросил систему убрать анимации.
+   ------------------------------------------------------------------------ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .bt-track{animation:none;transform:none}
+  .cat-item:hover,.serv:hover,.ceny-card:hover,.prod-card:hover,
+  .cert:hover,.brand:hover,.gal-slide:hover img{transform:none}
+}
+
+/* --- FAQ: запас по высоте ------------------------------------------------
+   Было max-height:360px — самый длинный ответ на узком экране подходил
+   к границе вплотную. Запас увеличен, поведение то же.
+   ------------------------------------------------------------------------ */
+.faq-item.open .faq-a{max-height:900px}
+
+/* --- Светлая тема: плашки городов ---------------------------------------
+   Остались тёмными — в отличие от таких же плашек .chip, которые уже
+   переопределены выше.
+   ------------------------------------------------------------------------ */
+[data-theme="light"] .geo-city{background:#eef2f7;border-color:rgba(14,26,36,.14);color:#33424d}
+[data-theme="light"] .geo-city:hover,[data-theme="light"] .geo-city.active{background:var(--red);border-color:var(--red);color:#fff}
+
+/* --- Контраст мелкого вторичного текста ---------------------------------
+   --muted2 на фоне карточки даёт 4.16:1 — ниже порога AA для 11–12px.
+   Подписи внутри карточек сравнения переведены на --muted (6.6:1).
+   ------------------------------------------------------------------------ */
+.vs-price em,.vs-note{color:var(--muted)}
 </style>
 <!-- (Метрика отключена) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Из чего изготовлены зубчатые колёса и корпус?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1."}},{"@type":"Question","name":"Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?","acceptedAnswer":{"@type":"Answer","text":"Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу."}},{"@type":"Question","name":"Поможете подобрать редуктор под мою задачу?","acceptedAnswer":{"@type":"Answer","text":"Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки."}},{"@type":"Question","name":"Дадите 3D-модель и чертёж до заказа?","acceptedAnswer":{"@type":"Answer","text":"Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости."}},{"@type":"Question","name":"Можно ли подключить мотор-редуктор к преобразователю частоты?","acceptedAnswer":{"@type":"Answer","text":"Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу."}},{"@type":"Question","name":"Изготовите снятую с производства или редкую модель?","acceptedAnswer":{"@type":"Answer","text":"Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования."}},{"@type":"Question","name":"Какие сроки изготовления и доставки?","acceptedAnswer":{"@type":"Answer","text":"По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России."}},{"@type":"Question","name":"Какая гарантия и какие документы предоставляете?","acceptedAnswer":{"@type":"Answer","text":"Гарантия — 24 месяца; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012."}}]}</script>
@@ -918,7 +1016,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   <div class="bt-cap">Поставляем оригинал и делаем аналоги</div>
   <div class="bt-mask"><div class="bt-track"><a href="/brands/sew" title="SEW-Eurodrive — оригинал и аналог" aria-label="SEW-Eurodrive"><img src="assets/brands-float/sew.png" alt="SEW-Eurodrive" loading="eager" decoding="async" /></a><a href="/brands/nord" title="NORD — оригинал и аналог" aria-label="NORD"><img src="assets/brands-float/nord.png" alt="NORD" loading="eager" decoding="async" /></a><a href="/brands/bonfiglioli" title="Bonfiglioli — оригинал и аналог" aria-label="Bonfiglioli"><img src="assets/brands-float/bonfiglioli.png" alt="Bonfiglioli" loading="eager" decoding="async" /></a><a href="/brands/motovario" title="Motovario — оригинал и аналог" aria-label="Motovario"><img src="assets/brands-float/motovario.png" alt="Motovario" loading="eager" decoding="async" /></a><a href="/brands/flender" title="Flender — оригинал и аналог" aria-label="Flender"><img src="assets/brands-float/flender.png" alt="Flender" loading="eager" decoding="async" /></a><a href="/brands/siemens" title="Siemens — оригинал и аналог" aria-label="Siemens"><img src="assets/brands-float/siemens.png" alt="Siemens" loading="eager" decoding="async" /></a><a href="/brands/lenze" title="Lenze — оригинал и аналог" aria-label="Lenze"><img src="assets/brands-float/lenze.png" alt="Lenze" loading="eager" decoding="async" /></a><a href="/brands/bauer" title="Bauer — оригинал и аналог" aria-label="Bauer"><img src="assets/brands-float/bauer.png" alt="Bauer" loading="eager" decoding="async" /></a><a href="/brands/varvel" title="Varvel — оригинал и аналог" aria-label="Varvel"><img src="assets/brands-float/varvel.png" alt="Varvel" loading="eager" decoding="async" /></a><a href="/brands/sew-tramec" title="Tramec — оригинал и аналог" aria-label="Tramec"><img src="assets/brands-float/sew-tramec.png" alt="Tramec" loading="eager" decoding="async" /></a><a href="/brands/siti" title="SITI — оригинал и аналог" aria-label="SITI"><img src="assets/brands-float/siti.png" alt="SITI" loading="eager" decoding="async" /></a><a href="/brands/stm" title="STM — оригинал и аналог" aria-label="STM"><img src="assets/brands-float/stm.png" alt="STM" loading="eager" decoding="async" /></a><a href="/brands/transtecno" title="Transtecno — оригинал и аналог" aria-label="Transtecno"><img src="assets/brands-float/transtecno.png" alt="Transtecno" loading="eager" decoding="async" /></a><a href="/brands/innovari" title="Innovari — оригинал и аналог" aria-label="Innovari"><img src="assets/brands-float/innovari.png" alt="Innovari" loading="eager" decoding="async" /></a><a href="/brands/varmec" title="Varmec — оригинал и аналог" aria-label="Varmec"><img src="assets/brands-float/varmec.png" alt="Varmec" loading="eager" decoding="async" /></a><a href="/brands/yilmaz" title="Yilmaz — оригинал и аналог" aria-label="Yilmaz"><img src="assets/brands-float/yilmaz.png" alt="Yilmaz" loading="eager" decoding="async" /></a><a href="/brands/keb" title="KEB — оригинал и аналог" aria-label="KEB"><img src="assets/brands-float/keb.png" alt="KEB" loading="eager" decoding="async" /></a><a href="/brands/watt-drive" title="Watt Drive — оригинал и аналог" aria-label="Watt Drive"><img src="assets/brands-float/watt-drive.png" alt="Watt Drive" loading="eager" decoding="async" /></a><a href="/brands/boneng" title="Boneng — оригинал и аналог" aria-label="Boneng"><img src="assets/brands-float/boneng.png" alt="Boneng" loading="eager" decoding="async" /></a><a href="/brands/innored" title="Innored — оригинал и аналог" aria-label="Innored"><img src="assets/brands-float/innored.png" alt="Innored" loading="eager" decoding="async" /></a><a href="/brands/guomao" title="Guomao — оригинал и аналог" aria-label="Guomao"><img src="assets/brands-float/guomao.png" alt="Guomao" loading="eager" decoding="async" /></a><a href="/brands/unidrive" title="UNI Drive — оригинал и аналог" aria-label="UNI Drive"><img src="assets/brands-float/unidrive.png" alt="UNI Drive" loading="eager" decoding="async" /></a><span class="bt-dup" aria-hidden="true"><a href="/brands/sew" title="SEW-Eurodrive — оригинал и аналог" aria-label="SEW-Eurodrive"><img src="assets/brands-float/sew.png" alt="SEW-Eurodrive" loading="eager" decoding="async" /></a><a href="/brands/nord" title="NORD — оригинал и аналог" aria-label="NORD"><img src="assets/brands-float/nord.png" alt="NORD" loading="eager" decoding="async" /></a><a href="/brands/bonfiglioli" title="Bonfiglioli — оригинал и аналог" aria-label="Bonfiglioli"><img src="assets/brands-float/bonfiglioli.png" alt="Bonfiglioli" loading="eager" decoding="async" /></a><a href="/brands/motovario" title="Motovario — оригинал и аналог" aria-label="Motovario"><img src="assets/brands-float/motovario.png" alt="Motovario" loading="eager" decoding="async" /></a><a href="/brands/flender" title="Flender — оригинал и аналог" aria-label="Flender"><img src="assets/brands-float/flender.png" alt="Flender" loading="eager" decoding="async" /></a><a href="/brands/siemens" title="Siemens — оригинал и аналог" aria-label="Siemens"><img src="assets/brands-float/siemens.png" alt="Siemens" loading="eager" decoding="async" /></a><a href="/brands/lenze" title="Lenze — оригинал и аналог" aria-label="Lenze"><img src="assets/brands-float/lenze.png" alt="Lenze" loading="eager" decoding="async" /></a><a href="/brands/bauer" title="Bauer — оригинал и аналог" aria-label="Bauer"><img src="assets/brands-float/bauer.png" alt="Bauer" loading="eager" decoding="async" /></a><a href="/brands/varvel" title="Varvel — оригинал и аналог" aria-label="Varvel"><img src="assets/brands-float/varvel.png" alt="Varvel" loading="eager" decoding="async" /></a><a href="/brands/sew-tramec" title="Tramec — оригинал и аналог" aria-label="Tramec"><img src="assets/brands-float/sew-tramec.png" alt="Tramec" loading="eager" decoding="async" /></a><a href="/brands/siti" title="SITI — оригинал и аналог" aria-label="SITI"><img src="assets/brands-float/siti.png" alt="SITI" loading="eager" decoding="async" /></a><a href="/brands/stm" title="STM — оригинал и аналог" aria-label="STM"><img src="assets/brands-float/stm.png" alt="STM" loading="eager" decoding="async" /></a><a href="/brands/transtecno" title="Transtecno — оригинал и аналог" aria-label="Transtecno"><img src="assets/brands-float/transtecno.png" alt="Transtecno" loading="eager" decoding="async" /></a><a href="/brands/innovari" title="Innovari — оригинал и аналог" aria-label="Innovari"><img src="assets/brands-float/innovari.png" alt="Innovari" loading="eager" decoding="async" /></a><a href="/brands/varmec" title="Varmec — оригинал и аналог" aria-label="Varmec"><img src="assets/brands-float/varmec.png" alt="Varmec" loading="eager" decoding="async" /></a><a href="/brands/yilmaz" title="Yilmaz — оригинал и аналог" aria-label="Yilmaz"><img src="assets/brands-float/yilmaz.png" alt="Yilmaz" loading="eager" decoding="async" /></a><a href="/brands/keb" title="KEB — оригинал и аналог" aria-label="KEB"><img src="assets/brands-float/keb.png" alt="KEB" loading="eager" decoding="async" /></a><a href="/brands/watt-drive" title="Watt Drive — оригинал и аналог" aria-label="Watt Drive"><img src="assets/brands-float/watt-drive.png" alt="Watt Drive" loading="eager" decoding="async" /></a><a href="/brands/boneng" title="Boneng — оригинал и аналог" aria-label="Boneng"><img src="assets/brands-float/boneng.png" alt="Boneng" loading="eager" decoding="async" /></a><a href="/brands/innored" title="Innored — оригинал и аналог" aria-label="Innored"><img src="assets/brands-float/innored.png" alt="Innored" loading="eager" decoding="async" /></a><a href="/brands/guomao" title="Guomao — оригинал и аналог" aria-label="Guomao"><img src="assets/brands-float/guomao.png" alt="Guomao" loading="eager" decoding="async" /></a><a href="/brands/unidrive" title="UNI Drive — оригинал и аналог" aria-label="UNI Drive"><img src="assets/brands-float/unidrive.png" alt="UNI Drive" loading="eager" decoding="async" /></a></span></div></div>
 </section>
-<section class="section situation" id="situation" style="background:var(--bg2)">
+<section class="section situation" id="situation">
   <div class="wrap">
     <div class="eyebrow">Знакомая ситуация?</div>
     <h2>Редуктор встал — а производство ждать не может</h2>
@@ -964,7 +1062,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   </div>
 </section>
 
-<section class="section" id="catalog" style="background:var(--bg2)">
+<section class="section" id="catalog">
   <div class="wrap">
     <div class="eyebrow">Производство и подбор</div>
     <h2>Что мы производим</h2>
@@ -1023,7 +1121,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   </div>
 </section>
 
-<section class="section" id="oem" style="background:var(--bg2)">
+<section class="section" id="oem">
   <div class="wrap">
     <div class="oem-band">
       <div class="oem-band-text">
@@ -1061,7 +1159,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 
 
 
-<section class="section">
+<section class="section" id="zamena">
   <div class="wrap">
     <div class="eyebrow">Импортозамещение</div>
     <h2>Заменим российский и импортный привод без переделки оборудования</h2>
@@ -1076,7 +1174,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 
 
 
-<section class="section" id="compare" style="background:var(--bg2)"><div class="wrap">
+<section class="section" id="compare"><div class="wrap">
   <div class="eyebrow">Что выбрать</div>
   <h2>Оригинал импорта или наш аналог</h2>
   <p class="lead">Поставляем и то, и другое — подскажем, что выгоднее под вашу задачу, срок и бюджет.</p>
@@ -1093,7 +1191,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
   </table></div>
   <div class="cmp-cta"><a class="btn lg" data-zayavka href="#zayavka">Подобрать замену по шильду</a><a class="btn lg ghost" href="/importozameshchenie">Подробнее об импортозамещении</a></div>
 </div></section>
-<section class="section" id="uslugi" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section class="section" id="uslugi">
   <div class="wrap">
     <div class="eyebrow">Услуги</div>
     <h2>Что мы делаем</h2>
@@ -1120,7 +1218,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     </div>
   </div>
 </section>
-<section class="section" id="video" style="padding-top:48px;background:var(--bg2)">
+<section class="section" id="video">
 <div class="wrap">
 <div class="eyebrow">Видео</div>
 <h2>Завод изнутри</h2>
@@ -1133,7 +1231,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 </div>
 </div>
 </section>
-<section class="section light" id="certs" style="background:#e6ebf0">
+<section class="section light" id="certs">
   <div class="wrap">
     <div class="eyebrow">Качество</div>
     <h2>Сертификаты</h2>
@@ -1141,7 +1239,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     <div class="cert-grid" id="certGrid"></div>
   </div>
 </section>
-<section class="section" id="reviews" style="background:var(--bg2)">
+<section class="section" id="reviews">
   <div class="wrap">
     <div class="eyebrow">Отзывы клиентов</div>
     <h2>Что говорят о работе с нами</h2>
@@ -1230,7 +1328,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
     </div>
   </div>
 </section>
-<section class="section" id="faq" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section class="section" id="faq">
   <div class="wrap">
     <div class="eyebrow">Вопросы и ответы</div>
     <h2>Частые вопросы</h2>
@@ -1249,7 +1347,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 </section>
 
 
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section" id="seo-blok"><div class="wrap">
   <div class="seo-text"><p class="seo-lead">Завод Редукторов (ООО «НИИ АТТ», Челябинск) — производитель промышленных редукторов и понижающих мотор-редукторов с ценой от производителя. Выпускаем червячные, цилиндрические, соосно-цилиндрические, цилиндро-конические и плоско-цилиндрические приводы серий ZR, ПР и МР, а также вариаторы и планетарные редукторы под заказ. Подбираем редуктор по мощности, моменту, оборотам и шильдику и изготавливаем габаритные аналоги импортных приводов SEW, NORD, Bonfiglioli, Motovario.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Промышленный редуктор понижает обороты двигателя и повышает крутящий момент на выходном валу — без него не обходятся конвейеры, смесители, дозаторы, подъёмники и упаковочные линии. Завод Редукторов рассчитывает типоразмер под мощность, передаточное число и режим работы, а собственное производство полного цикла в Челябинске позволяет держать цену от производителя и срок изготовления короче, чем у дилеров импорта.</p><p>Купить мотор-редуктор у нас можно как для разовой задачи, так и для серийного выпуска оборудования: фиксируем цену по договору, держим складской резерв ходовых типоразмеров и изготавливаем специсполнения по чертежу заказчика. Каждое изделие сопровождается паспортом и декларацией соответствия ГОСТ, а гарантия 24 месяца вдвое выше среднерыночной.</p><h3>Типы редукторов: КПД и применение</h3><table class="spec"><tbody>
       <tr><th>Тип редуктора</th><td>КПД и применение</td></tr>
       <tr><th>Червячный</th><td>КПД 70–90%, самоторможение, валы под 90° — конвейеры, ворота, запорная арматура</td></tr>
