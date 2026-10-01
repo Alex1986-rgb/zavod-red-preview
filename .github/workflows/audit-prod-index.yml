@@ -1,0 +1,76 @@
+name: Разбор главной страницы боевого сайта
+
+# Только чтение: скачивает главную с боевого и печатает разбор в журнал.
+# Ничего никуда не публикует и не заливает. Запускается вручную.
+on:
+  workflow_dispatch:
+
+jobs:
+  razbor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Скачать главную
+        run: |
+          S=https://zavod-red.ru
+          echo "::group::Отдача"
+          curl -s -o prod.html -D headers.txt -m 60 -L "$S/"
+          echo "код:        $(awk '/^HTTP/{c=$2}END{print c}' headers.txt)"
+          echo "размер:     $(wc -c < prod.html) байт"
+          grep -i '^last-modified:\|^etag:\|^server:\|^content-encoding:' headers.txt || true
+          echo "::endgroup::"
+
+      - name: Структура страницы
+        run: |
+          echo "::group::Секции по порядку"
+          grep -o '<section[^>]*>' prod.html | sed 's/ *style="[^"]*"//' | nl | head -60
+          echo "::endgroup::"
+          echo "::group::Заголовки"
+          grep -o '<h1[^>]*>[^<]*\|<h2[^>]*>[^<]*\|<h3[^>]*>[^<]*' prod.html \
+            | sed 's/<[^>]*>//' | sed 's/^ *//' | nl | head -60
+          echo "::endgroup::"
+          echo "::group::Подключённые стили и скрипты"
+          grep -o 'href="[^"]*\.css[^"]*"' prod.html | sort -u
+          grep -o 'src="[^"]*\.js[^"]*"' prod.html | sort -u
+          echo "::endgroup::"
+
+      - name: Блок заявки целиком
+        run: |
+          echo "::group::Разметка блока с формой"
+          python3 - <<'PY'
+          import io,re
+          s=io.open('prod.html',encoding='utf-8',errors='replace').read()
+          i=s.find('Рассчитать редуктор под вашу задачу')
+          if i<0: i=s.find('Оставить заявку')
+          if i<0:
+              print('блок не найден'); raise SystemExit
+          n=s.rfind('<section',0,i)
+          k=s.find('</section>',i)
+          kus=s[n if n>0 else max(0,i-2000): (k+10) if k>0 else i+4000]
+          kus=re.sub(r'\n\s*\n','\n',kus)
+          print(kus[:12000])
+          PY
+          echo "::endgroup::"
+
+      - name: Сверка с репозиторием
+        run: |
+          echo "::group::Чем боевая отличается от index.html в гите"
+          echo "боевая:     $(wc -c < prod.html) байт, секций: $(grep -c '<section' prod.html)"
+          echo "репозиторий: $(wc -c < index.html) байт, секций: $(grep -c '<section' index.html)"
+          echo
+          echo "--- заголовки, которых НЕТ в репозитории ---"
+          grep -o '<h2[^>]*>[^<]*' prod.html | sed 's/<[^>]*>//;s/^ *//' | sort -u > p.txt
+          grep -o '<h2[^>]*>[^<]*' index.html | sed 's/<[^>]*>//;s/^ *//' | sort -u > r.txt
+          comm -23 p.txt r.txt
+          echo
+          echo "--- заголовки, которых НЕТ на боевом ---"
+          comm -13 p.txt r.txt
+          echo "::endgroup::"
+
+      - name: Сохранить страницу как артефакт
+        uses: actions/upload-artifact@v4
+        with:
+          name: glavnaya-boevaya
+          path: prod.html
+          retention-days: 5
