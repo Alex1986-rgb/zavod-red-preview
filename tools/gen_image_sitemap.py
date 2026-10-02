@@ -4,7 +4,11 @@
 
 Google Images ранжирует по image:title / image:caption. Здесь на каждую страницу
 /analog/ добавляем её фото модели с ключевым описанием (бренд, модель, тип, i, кВт,
-аналог ZR). Разбиваем по 45000 URL/файл, регистрируем в sitemap-index.xml.
+аналог ZR). Разбиваем на части и регистрируем в sitemap-index.xml.
+
+Размер части: у Яндекса предел на файл карты — 10 МБ (у Google 50 МБ). Запись с
+title и caption весит около 630 байт, поэтому при прежних 45000 URL файл выходил
+на 27 МБ и Вебмастер отбраковывал его целиком. 12000 даёт примерно 7,5 МБ.
 
     python3 tools/gen_image_sitemap.py
 """
@@ -17,7 +21,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "imggen"))
 import oneshot as O                       # noqa: E402
 
 BASE = "https://zavod-red.ru"
-PER = 45000
+PER = 12000      # ~7,5 МБ на файл: предел Яндекса 10 МБ, запись весит ~630 байт
 CARDS = {s: c for s, c in O.all_cards()}
 PHOTOS = sorted((os.path.basename(p)[:-5] for p in glob.glob("assets/cards-photo/*.webp")),
                 key=len, reverse=True)
@@ -75,18 +79,28 @@ def main():
                 + "\n".join(rows[i:i + PER]) + "\n</urlset>\n")
         open(fn, "w", encoding="utf-8").write(body)
         files.append(fn)
-    # регистрация в sitemap-index.xml
+    # Устаревшие части от прошлых запусков: если карточек стало меньше или
+    # изменился размер части, лишние файлы оставались и на диске, и в индексе —
+    # робот продолжал их запрашивать. Убираем всё, чего нет в текущем наборе.
+    lishnie = [f for f in sorted(glob.glob("sitemap-images-analog-*.xml")) if f not in files]
+    for f in lishnie:
+        os.remove(f)
+
+    # Регистрация в sitemap-index.xml: строки этого набора пересобираем целиком,
+    # а не дописываем — иначе записи об удалённых частях остаются навсегда.
     idx_path = "sitemap-index.xml"
     idx = open(idx_path, encoding="utf-8").read()
-    add = ""
-    for fn in files:
-        if fn not in idx:
-            add += f"  <sitemap><loc>{BASE}/{fn}</loc></sitemap>\n"
-    if add:
-        idx = idx.replace("</sitemapindex>", add + "</sitemapindex>")
-        open(idx_path, "w", encoding="utf-8").write(idx)
+    idx = re.sub(r"[ \t]*<sitemap><loc>[^<]*sitemap-images-analog-\d+\.xml</loc>.*?</sitemap>\n?",
+                 "", idx)
+    add = "".join(f"  <sitemap><loc>{BASE}/{fn}</loc></sitemap>\n" for fn in files)
+    idx = idx.replace("</sitemapindex>", add + "</sitemapindex>")
+    open(idx_path, "w", encoding="utf-8").write(idx)
+
+    krupno = [(f, os.path.getsize(f)) for f in files if os.path.getsize(f) > 10 * 1024 * 1024]
     print(f"страниц с фото: {len(rows)} | без фото: {skipped}")
-    print(f"файлы: {files}  | добавлено в index: {bool(add)}")
+    print(f"файлов: {len(files)} | удалено устаревших: {len(lishnie)}")
+    for f, r in krupno:
+        print(f"  ВНИМАНИЕ: {f} — {r/1048576:.1f} МБ, больше предела Яндекса 10 МБ")
 
 
 if __name__ == "__main__":

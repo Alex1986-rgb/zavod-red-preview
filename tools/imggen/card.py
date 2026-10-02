@@ -23,7 +23,11 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-BASE = os.environ.get("ZAVOD_BASE", "/Users/alexandr/projects/zavod-red-preview")
+# Корень репозитория вычисляется от расположения этого файла (tools/imggen/card.py),
+# иначе скрипт работает только на машине, где лежал прежний жёсткий путь, —
+# ни в CI, ни в облачной сессии карты сайта пересобрать было нельзя.
+BASE = os.environ.get("ZAVOD_BASE") or os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 W, H = 1536, 1024
 
 FONTS = "/System/Library/Fonts/Supplemental"
