@@ -41,3 +41,8 @@
 @media (prefers-reduced-motion:reduce){
   .zr-type *{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
+
+/* Крошки на оси страницы. Корень исправлен в inner.css, здесь — дубль, чтобы
+   исправление дошло сразу: у inner.css в ссылках старая версия и он может
+   держаться в кэше браузера. */
+.zr-type .crumbs{padding-left:24px;padding-right:24px}

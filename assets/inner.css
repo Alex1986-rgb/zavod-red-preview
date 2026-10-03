@@ -181,7 +181,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
 
 /* BREADCRUMBS */
-.crumbs{padding:16px 0 0;font-size:13px;color:var(--muted2)}
+/* Только верхний отступ: прежняя запись padding:16px 0 0 стояла после .wrap и
+   обнуляла его боковые 24px — крошки съезжали с оси страницы, а на телефоне
+   упирались в край экрана. */
+.crumbs{padding-top:16px;font-size:13px;color:var(--muted2)}
 .crumbs a:hover{color:#fff}
 .crumbs span{margin:0 6px}
 
