@@ -18,7 +18,7 @@
    стилями и после остальных `<link rel="stylesheet">`, добавить одну строку:
 
    ```html
-   <link rel="stylesheet" href="assets/zr-fix.css?v=1" />
+   <link rel="stylesheet" href="assets/zr-fix.css?v=2" />
    ```
 
 Порядок важен: правила рассчитаны на то, что идут последними.
