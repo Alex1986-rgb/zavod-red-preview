@@ -46,6 +46,25 @@
 /* --- Каталог на мобильном: снимки 800x600 (4:3), контейнер был 16:10 ------ */
 @media(max-width:900px){.cat-img{aspect-ratio:4/3}}
 
+/* --- Иерархия заголовков: h1 всегда выше h2 (критика: типографика) --------- */
+h2{font-size:clamp(26px,3vw,40px)}
+.hero h1{font-size:clamp(32px,4.4vw,56px)}
+@media(min-width:981px) and (max-height:900px){.hero h1{font-size:clamp(36px,3.2vw,46px)}}
+@media(min-width:981px) and (max-height:760px){.hero h1{font-size:clamp(32px,2.8vw,40px)}}
+@media(max-width:560px){.hero h1{font-size:clamp(30px,7.6vw,34px)}}
+@media(max-width:520px){.hero-badges{grid-template-columns:repeat(3,1fr);gap:10px}.hero-badges .b b{font-size:19px}}
+
+/* --- Кнопки: один бокс у залитой и контурной, радиус по шкале --------------- */
+.btn{padding:13.5px 24.5px;border:1.5px solid transparent;border-radius:10px}
+.btn.ghost{border-color:rgba(255,255,255,.25)}
+[data-theme="light"] .btn.ghost{border-color:rgba(0,0,0,.22)}
+.btn.lg{padding:15.5px 30.5px}
+.btn-sm{padding:8.5px 16.5px;border-radius:10px}
+
+/* --- Стрелки галереи и 3D-панель --------------------------------------------- */
+.carousel-nav{background:var(--card);color:var(--text);box-shadow:var(--sh-2)}
+.role-photo--3d model-viewer{background:transparent;--poster-color:transparent}
+.rev-ava[style]{background:var(--card2)!important}
 
 /* ==========================================================================
    ЧАСТЬ 2. Доводка дизайна
@@ -108,7 +127,7 @@
    после пары «надзаголовок + h2» и 8px там, где между ними уже стоит
    абзац .lead со своим отступом 40px.
    ------------------------------------------------------------------------ */
-.prod-grid,.vs,.steps{margin-top:var(--sp-grid)}
+.prod-grid,.vs,.steps,.faq-grid,.geo-grid,.geo-stats{margin-top:var(--sp-grid)}
 .ceny-grid,.cmp-wrap,#reviews .rev-grid,.team-carousel{margin-top:var(--sp-tight)}
 
 /* --- Клавиатурная доступность --------------------------------------------
@@ -307,6 +326,7 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
 .lead-form{text-align:left}
 .lead-form h3,.lead-form>p{text-align:center}
 .lead-form>p{max-width:460px;margin-left:auto;margin-right:auto}
+
 /* --- Преимущества под калькулятором --------------------------------------
    Сетка в три колонки стояла инлайном, а у инлайн-стиля нет адаптивной
    версии: на телефоне шириной 360px каждая колонка получала около 100px,
@@ -319,6 +339,59 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
 #calc .feat .ic{flex:0 0 42px;height:42px;border-radius:var(--r-sm);background:rgba(225,27,27,.12);display:flex;align-items:center;justify-content:center}
 #calc .feat h4{font-size:16px;margin-bottom:3px}
 #calc .feat p{color:var(--muted);font-size:13.5px;line-height:1.5}
-/* !important — на боевом у блока ещё стоит инлайн-стиль, его иначе не перебить */
-@media(max-width:900px){#calc .feats{grid-template-columns:1fr 1fr!important}}
-@media(max-width:560px){#calc .feats{grid-template-columns:1fr!important}}
+@media(max-width:900px){#calc .feats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){#calc .feats{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   ПО ИТОГАМ КРИТИКИ: шесть линз (ритм, типографика, компоненты, мобильный,
+   цвет/тема, конверсия), 46 подтверждённых находок. Ниже — та часть, что
+   решается стилями; остальное — в разметке выше и в hdr.css.
+   ========================================================================== */
+:root{
+  --fs-h1:clamp(32px,4.4vw,56px);   /* заголовок страницы всегда на ступень выше h2 */
+  --fs-h2:clamp(26px,3vw,40px);     /* как на внутренних страницах (inner.css) */
+  --fs-lg:18px; --fs-md:16px; --fs-base:15px; --fs-sm:14px; --fs-xs:12.5px;
+}
+
+/* --- Светлая тема: остатки тёмной ------------------------------------------
+   Белые цифры на белой карточке в «Географии», карта и её тень из тёмной темы,
+   розовая колонка в таблице сравнения, реквизиты ниже порога контраста.
+   ------------------------------------------------------------------------ */
+[data-theme="light"] .geo-stat b{color:var(--text)}
+[data-theme="light"] .geo-svg .reg{fill:#d6dee6;stroke:#fff}
+[data-theme="light"] .geo-svg svg{filter:drop-shadow(0 10px 24px rgba(20,40,60,.14))}
+[data-theme="light"] .cmp td.cmp-acc{background:var(--card2)}
+.sf-req,.sf-bottom,.sf-bottom a{color:var(--muted)}
+[data-theme="light"] .btn-out{border-color:rgba(0,0,0,.22);color:var(--text)}
+[data-theme="light"] .btn-out:hover{border-color:var(--text);background:rgba(0,0,0,.04);color:var(--text)}
+
+/* --- Мобильный: что раздувало страницу до 30 000px -------------------------
+   Плитки брендов шириной 168px не помещались по две в 342px и ложились
+   столбиком — блок вырастал до 3 069px. Таблица сравнения прятала колонку
+   «Наш аналог» за горизонтальной прокруткой. Подвал — 24 ссылки столбиком.
+   ------------------------------------------------------------------------ */
+@media(max-width:560px){
+  .brands{gap:10px}
+  .brand{width:calc(50% - 6px);max-width:168px;height:88px;padding:10px 12px 0}
+  .brand img{max-height:36px}
+  .cmp{min-width:0;font-size:13px}
+  .cmp th,.cmp td{padding:10px 8px}
+  .cmp td:first-child{white-space:normal;font-size:12.5px}
+  .cmp thead th{font-size:10.5px;letter-spacing:.02em}
+  .sf-top{grid-template-columns:1fr 1fr;gap:24px 16px}
+  .sf-brand{grid-column:1/-1}
+  .sf-col a{padding:8px 0;font-size:14px}
+}
+
+/* --- Компоненты: один вид для одной роли -----------------------------------
+   Две карусели с разными стрелками, заголовки карточек трёх кеглей (18/19/20),
+   карточки OEM-блока и иконки вне шкалы, аватары отзывов в шести цветах.
+   ------------------------------------------------------------------------ */
+.carousel-nav,.tc-arrow{width:46px;height:46px;background:var(--card);border:1px solid var(--line);color:var(--text);box-shadow:var(--sh-1)}
+.carousel-nav:hover,.tc-arrow:hover{background:var(--red);border-color:var(--red);color:#fff}
+.cat-body h3,.serv-body h3,.seo-body h3,.vs-head{font-size:var(--fs-lg)}
+.oem-band-list .ob{border-radius:var(--r)}
+.oem-band-list .ob span{flex:0 0 42px;height:42px;border-radius:var(--r-sm);background:rgba(225,27,27,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+.rev-ava{background:var(--card2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.hero-trust{display:none}   /* дублировал бейджи и подзаголовок; факт «15 минут» перенесён в бейдж */
+.seo-text .seo-lead{max-width:780px;line-height:1.65}

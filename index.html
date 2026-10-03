@@ -87,14 +87,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .section{padding:88px 0}
 h1,h2,h3{line-height:1.12;letter-spacing:-.01em;font-weight:800}
-h2{font-size:clamp(28px,3.4vw,44px);margin-bottom:14px}
+h2{font-size:var(--fs-h2,clamp(26px,3vw,40px));margin-bottom:14px}
 .lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:780px;margin-bottom:40px}
 .eyebrow{color:var(--red2);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:15px 26px;border-radius:10px;border:0;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;font-size:15px;padding:13.5px 24.5px;border-radius:var(--r-sm,10px);border:1.5px solid transparent;cursor:pointer;transition:.18s;white-space:nowrap}
 .btn:hover{background:#c81414;transform:translateY(-1px)}
-.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.25);color:#fff}
 .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
-.btn.lg{padding:17px 32px;font-size:16px}
+.btn.lg{padding:15.5px 30.5px;font-size:16px}
 html{overflow-x:clip}
 @media(max-width:560px){.btn{white-space:normal;max-width:100%;box-sizing:border-box;justify-content:center;text-align:center}}
 @media(hover:none){.btn:hover,.ceny-card:hover,.prod-card:hover,.prod-card:hover .prod-ic,.cat-item:hover,.brand:hover,.brand:hover .brand-go svg,.cert:hover,.gal a:hover img,.case:hover,.serv:hover,.serv:hover .serv-img img,.vid-card:hover .vid-play,.vid-big:hover .vid-play,.bt-track a:hover img{transform:none!important}}
@@ -135,13 +135,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 .hero video,.hero .hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(8,15,21,.95) 0%,rgba(8,15,21,.8) 42%,rgba(8,15,21,.45) 100%)}
 .hero .wrap{position:relative;z-index:2;padding-top:44px;padding-bottom:44px}
-.hero h1{font-size:clamp(32px,4.4vw,56px);max-width:900px;text-transform:uppercase;line-height:1.08}
+.hero h1{font-size:var(--fs-h1,clamp(32px,4.4vw,56px));max-width:900px;text-transform:uppercase;line-height:1.08}
 .hero h1 .accent{color:var(--red2)}
 .hero p{color:#c4d2dc;font-size:clamp(16px,1.5vw,20px);max-width:620px;margin:18px 0 0}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
 .hero-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
 .hero-badges .b b{display:block;font-size:clamp(21px,2vw,28px);font-weight:800;color:#fff;line-height:1.05}
-@media(max-width:520px){.hero-badges{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.hero-badges{grid-template-columns:repeat(3,1fr);gap:10px}.hero-badges .b b{font-size:19px}}
 .hero-badges .b span{color:var(--muted);font-size:13px}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;width:100%}
 .hero-pain{background:rgba(9,16,22,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--red);border-radius:16px;padding:24px 26px}
@@ -158,7 +158,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 /* невысокие ноутбуки (MacBook и пр.) — hero ровно в один экран без переполнения */
 @media(min-width:981px) and (max-height:900px){
   .hero .wrap{padding-top:26px;padding-bottom:26px}
-  .hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.06}
+  .hero h1{font-size:clamp(36px,3.2vw,46px);line-height:1.06}
   .hero p,.hero-sub{margin-top:12px;font-size:16px}
   .hero-cta{margin-top:20px}
   .hero-trust{margin-top:10px;font-size:12.5px}
@@ -168,7 +168,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 }
 @media(min-width:981px) and (max-height:760px){
   .hero .wrap{padding-top:16px;padding-bottom:16px}
-  .hero h1{font-size:clamp(25px,2.8vw,34px)}
+  .hero h1{font-size:clamp(32px,2.8vw,40px)}
   .hero-cta .btn.lg{padding:11px 20px;font-size:15px}
   .hero-badges{margin-top:14px}
   .hero-3d{max-width:320px}
@@ -249,7 +249,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,21,29,.86);backdrop-f
 [data-theme="light"] .faq-q{color:var(--text)}
 [data-theme="light"] .seo-text .seo-lead{color:#3a4751}
 [data-theme="light"] .seo-text .seo-body h3{color:var(--text)}
-[data-theme="light"] .cta-band{background:linear-gradient(120deg,#eef2f7,#e3e9ef)}
+[data-theme="light"] .final-cta .fcta{background:var(--card2);box-shadow:var(--sh-2)}
 [data-theme="light"] footer{background:#eaeef3;color:var(--muted)}
 [data-theme="light"] .foot h4{color:var(--text)}
 [data-theme="light"] .foot a:hover{color:var(--text)}
@@ -289,7 +289,7 @@ select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
 .hero-3d img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 24px 42px rgba(0,0,0,.55))}
 .hero-3d model-viewer{width:100%;height:100%;background:transparent}
 @media(max-width:980px){.hero-3d{max-width:460px;aspect-ratio:4/3;margin:0 auto}}
-@media(max-width:560px){.hero h1{font-size:clamp(25px,7vw,34px)}.hero-sub{font-size:16px}.hero .wrap{padding-top:24px;padding-bottom:24px}.hero-cta{margin-top:22px}.hero-badges{margin-top:22px}.hero-3d{max-width:230px;aspect-ratio:1/1;margin:4px auto 0}.hero-grid{gap:18px}}
+@media(max-width:560px){.hero h1{font-size:clamp(30px,7.6vw,34px)}.hero-sub{font-size:16px}.hero .wrap{padding-top:24px;padding-bottom:24px}.hero-cta{margin-top:22px}.hero-badges{margin-top:22px}.hero-3d{max-width:230px;aspect-ratio:1/1;margin:4px auto 0}.hero-grid{gap:18px}}
 /* SITUATION (b3) */
 .sit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
 .sit-card{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:14px;padding:20px}
@@ -391,7 +391,7 @@ select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
 .zr-lb img{max-width:96vw;max-height:92vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);background:#fff}
 .zr-lb__x{position:absolute;top:16px;right:24px;color:#fff;font-size:40px;line-height:1;cursor:pointer;background:none;border:0}
 .role-photo--3d{background:#fff;min-height:300px}
-.role-photo--3d model-viewer{width:100%;height:100%;min-height:300px;background:#fff;--poster-color:#fff}
+.role-photo--3d model-viewer{width:100%;height:100%;min-height:300px;background:transparent;--poster-color:transparent}
 
 
 /* CATALOG */
@@ -411,7 +411,7 @@ select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
 .cat-body h3{font-size:19px;margin-bottom:8px}
 .cat-body p{color:var(--muted);font-size:14px;margin-bottom:16px}
 .cat-actions{display:flex;gap:10px;margin-top:auto}
-.btn-sm{padding:10px 18px;font-size:13px;border-radius:8px}
+.btn-sm{padding:8.5px 16.5px;font-size:13px;border-radius:var(--r-sm)}
 .btn-out{background:transparent;border:1.5px solid var(--line);color:#cdd9e1}
 .btn-out:hover{border-color:var(--red);background:var(--red);color:#fff}
 /* light-тема: базовые цвета акцентов рассчитаны на тёмную тему и невидимы на светлом фоне — переопределяем на читаемые */
@@ -424,7 +424,7 @@ select.pf-in{appearance:none;-webkit-appearance:none;cursor:pointer}
 [data-theme="light"] .vs-badge{background:var(--red);border-color:transparent;color:#fff}
 [data-theme="light"] .btn-out{color:#33424d}
 [data-theme="light"] .rev .rev-stars{color:#e8900c}
-[data-theme="light"] .rev-ava{color:#fff}
+[data-theme="light"] .rev-ava{color:var(--text)}
 [data-theme="light"] .role-good li{color:var(--text)}
 [data-theme="light"] .role-pain li{color:#5a6a75}
 
@@ -589,7 +589,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
 .carousel .gal-slide{width:340px;max-width:80vw;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line)}
 .carousel .gal-slide img{width:100%;height:100%;object-fit:cover}
 .carousel .tcard{width:248px;max-width:72vw}
-.carousel-nav{position:absolute;top:38%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(11,21,29,.92);border:1px solid var(--line);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:.15s;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+.carousel-nav{position:absolute;top:38%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--text);box-shadow:var(--sh-2);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:.15s;box-shadow:0 8px 22px rgba(0,0,0,.4)}
 .carousel-nav:hover{background:var(--red);border-color:var(--red)}
 .carousel-nav svg{width:20px;height:20px}
 .carousel-prev{left:-12px}
@@ -832,7 +832,7 @@ footer{background:#08121a;border-top:1px solid var(--line);padding:54px 0 30px;c
    после пары «надзаголовок + h2» и 8px там, где между ними уже стоит
    абзац .lead со своим отступом 40px.
    ------------------------------------------------------------------------ */
-.prod-grid,.vs,.steps{margin-top:var(--sp-grid)}
+.prod-grid,.vs,.steps,.faq-grid,.geo-grid,.geo-stats{margin-top:var(--sp-grid)}
 .ceny-grid,.cmp-wrap,#reviews .rev-grid,.team-carousel{margin-top:var(--sp-tight)}
 
 /* --- Клавиатурная доступность --------------------------------------------
@@ -1046,6 +1046,60 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
 #calc .feat p{color:var(--muted);font-size:13.5px;line-height:1.5}
 @media(max-width:900px){#calc .feats{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){#calc .feats{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   ПО ИТОГАМ КРИТИКИ: шесть линз (ритм, типографика, компоненты, мобильный,
+   цвет/тема, конверсия), 46 подтверждённых находок. Ниже — та часть, что
+   решается стилями; остальное — в разметке выше и в hdr.css.
+   ========================================================================== */
+:root{
+  --fs-h1:clamp(32px,4.4vw,56px);   /* заголовок страницы всегда на ступень выше h2 */
+  --fs-h2:clamp(26px,3vw,40px);     /* как на внутренних страницах (inner.css) */
+  --fs-lg:18px; --fs-md:16px; --fs-base:15px; --fs-sm:14px; --fs-xs:12.5px;
+}
+
+/* --- Светлая тема: остатки тёмной ------------------------------------------
+   Белые цифры на белой карточке в «Географии», карта и её тень из тёмной темы,
+   розовая колонка в таблице сравнения, реквизиты ниже порога контраста.
+   ------------------------------------------------------------------------ */
+[data-theme="light"] .geo-stat b{color:var(--text)}
+[data-theme="light"] .geo-svg .reg{fill:#d6dee6;stroke:#fff}
+[data-theme="light"] .geo-svg svg{filter:drop-shadow(0 10px 24px rgba(20,40,60,.14))}
+[data-theme="light"] .cmp td.cmp-acc{background:var(--card2)}
+.sf-req,.sf-bottom,.sf-bottom a{color:var(--muted)}
+[data-theme="light"] .btn-out{border-color:rgba(0,0,0,.22);color:var(--text)}
+[data-theme="light"] .btn-out:hover{border-color:var(--text);background:rgba(0,0,0,.04);color:var(--text)}
+
+/* --- Мобильный: что раздувало страницу до 30 000px -------------------------
+   Плитки брендов шириной 168px не помещались по две в 342px и ложились
+   столбиком — блок вырастал до 3 069px. Таблица сравнения прятала колонку
+   «Наш аналог» за горизонтальной прокруткой. Подвал — 24 ссылки столбиком.
+   ------------------------------------------------------------------------ */
+@media(max-width:560px){
+  .brands{gap:10px}
+  .brand{width:calc(50% - 6px);max-width:168px;height:88px;padding:10px 12px 0}
+  .brand img{max-height:36px}
+  .cmp{min-width:0;font-size:13px}
+  .cmp th,.cmp td{padding:10px 8px}
+  .cmp td:first-child{white-space:normal;font-size:12.5px}
+  .cmp thead th{font-size:10.5px;letter-spacing:.02em}
+  .sf-top{grid-template-columns:1fr 1fr;gap:24px 16px}
+  .sf-brand{grid-column:1/-1}
+  .sf-col a{padding:8px 0;font-size:14px}
+}
+
+/* --- Компоненты: один вид для одной роли -----------------------------------
+   Две карусели с разными стрелками, заголовки карточек трёх кеглей (18/19/20),
+   карточки OEM-блока и иконки вне шкалы, аватары отзывов в шести цветах.
+   ------------------------------------------------------------------------ */
+.carousel-nav,.tc-arrow{width:46px;height:46px;background:var(--card);border:1px solid var(--line);color:var(--text);box-shadow:var(--sh-1)}
+.carousel-nav:hover,.tc-arrow:hover{background:var(--red);border-color:var(--red);color:#fff}
+.cat-body h3,.serv-body h3,.seo-body h3,.vs-head{font-size:var(--fs-lg)}
+.oem-band-list .ob{border-radius:var(--r)}
+.oem-band-list .ob span{flex:0 0 42px;height:42px;border-radius:var(--r-sm);background:rgba(225,27,27,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+.rev-ava{background:var(--card2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.hero-trust{display:none}   /* дублировал бейджи и подзаголовок; факт «15 минут» перенесён в бейдж */
+.seo-text .seo-lead{max-width:780px;line-height:1.65}
 </style>
 <!-- (Метрика отключена) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Из чего изготовлены зубчатые колёса и корпус?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1."}},{"@type":"Question","name":"Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?","acceptedAnswer":{"@type":"Answer","text":"Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу."}},{"@type":"Question","name":"Поможете подобрать редуктор под мою задачу?","acceptedAnswer":{"@type":"Answer","text":"Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки."}},{"@type":"Question","name":"Дадите 3D-модель и чертёж до заказа?","acceptedAnswer":{"@type":"Answer","text":"Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости."}},{"@type":"Question","name":"Можно ли подключить мотор-редуктор к преобразователю частоты?","acceptedAnswer":{"@type":"Answer","text":"Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу."}},{"@type":"Question","name":"Изготовите снятую с производства или редкую модель?","acceptedAnswer":{"@type":"Answer","text":"Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования."}},{"@type":"Question","name":"Какие сроки изготовления и доставки?","acceptedAnswer":{"@type":"Answer","text":"По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России."}},{"@type":"Question","name":"Какая гарантия и какие документы предоставляете?","acceptedAnswer":{"@type":"Answer","text":"Гарантия — 24 месяца; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012."}}]}</script>
@@ -1054,7 +1108,7 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
 
 <!-- ===== HEADER (b1) ===== -->
 <header class="hdr2">
-<link rel="stylesheet" href="assets/hdr.css?v=f5d615f0" />
+<link rel="stylesheet" href="assets/hdr.css?v=k2a1c9" />
 <div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
 <div class="hmain"><div class="hm-in">
 <a class="logo" href="/"><img src="assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
@@ -1132,7 +1186,7 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
       <div class="hero-badges">
         <div class="b"><b>от 3 дней</b><span>редукторы в наличии</span></div>
         <div class="b"><b>24 месяца</b><span>гарантия или переделаем за наш счёт</span></div>
-        <div class="b"><b>100%</b><span>замена импортных аналогов</span></div>
+        <div class="b"><b>15 минут</b><span>ответ инженера по заявке</span></div>
       </div>
     </div>
     <div class="hero-3d" id="hero3d" aria-label="Промышленный мотор-редуктор"><picture><source srcset="assets/reduktor_float.webp?v=2" type="image/webp" /><img src="assets/reduktor_float.png?v=2" alt="Промышленный мотор-редуктор" width="560" height="475" loading="eager" /></picture></div>
@@ -1274,8 +1328,8 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
       <a class="ceny-card" href="/catalog/ploskie"><span>Плоский цилиндрический</span><b>по запросу</b></a>
     </div>
     <div class="ceny-cta">
-      <a class="btn lg" href="/ceny">Все цены ZR · ПР · МР</a>
-      <a class="btn lg ghost" data-zayavka href="#zayavka">Получить прайс и расчёт</a>
+      <a class="btn lg" data-zayavka href="#zayavka">Получить прайс и расчёт</a>
+      <a class="btn lg ghost" href="/ceny">Все цены ZR · ПР · МР</a>
     </div>
   </div>
 </section>
@@ -1302,8 +1356,8 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
         <h2>Делаете конвейеры, смесители, линии? Поставим редукторы под вашу серию</h2>
         <p class="lead">Для производителей оборудования — серийные поставки от завода: резерв на складе под план выпуска, фиксированная цена по договору, приоритет и специсполнения под ваш конструктив. Один редуктор — во всей вашей линейке.</p>
         <div class="ceny-cta">
-          <a class="btn lg" href="/proizvoditelyam-oborudovaniya">Условия для производителя</a>
-          <a class="btn lg ghost" data-zayavka href="#zayavka">Обсудить серийную поставку</a>
+          <a class="btn lg" data-zayavka href="#zayavka">Обсудить серийную поставку</a>
+          <a class="btn lg ghost" href="/proizvoditelyam-oborudovaniya">Условия для производителя</a>
         </div>
       </div>
       <div class="oem-band-list">
@@ -1339,9 +1393,9 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
     <p class="lead">Поставим оригинал SEW, NORD, Bonfiglioli, Motovario под заказ или изготовим точный российский аналог со склада.</p>
 
     <div class="brands-title">Заменим на производстве любой импортный бренд</div>
-    <p style="text-align:center;margin:0 0 22px;color:var(--red);font-weight:600;font-size:15px">Нажмите на нужный бренд — откроется страница аналога с параметрами замены и сроками.</p>
+    <p style="text-align:center;margin:0 0 22px;color:var(--muted);font-size:15px">Нажмите на нужный бренд — откроется страница аналога с параметрами замены и сроками.</p>
     <div class="brands" id="brands"></div>
-    <div style="text-align:center;margin-top:34px"><a class="btn lg" href="/importozameshchenie">Подробнее об импортозамещении →</a></div>
+    <div style="text-align:center;margin-top:34px"><a class="btn lg ghost" href="/importozameshchenie">Подробнее об импортозамещении →</a></div>
   </div>
 </section>
 
@@ -1418,12 +1472,12 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
     <h2>Что говорят о работе с нами</h2>
     <p class="lead">Производители оборудования, снабжение и инженеры предприятий — о поставке, аналогах и подборе.</p>
     <div class="rev-grid">
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Берём редукторы серийно под наши конвейеры. Резерв на складе и фиксированная цена закрывают главную боль — производство не встаёт, а себестоимость предсказуема.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#e11b1b">НП</span><span class="rev-meta"><b>Начальник производства</b><span>изготовитель конвейеров, Москва</span></span></figcaption></figure>
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Заказчик требовал именно оригинал SEW — привезли в срок. Там, где можно, ставим аналог — выходит ощутимо дешевле при том же посадочном.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#2f7fc2">ИК</span><span class="rev-meta"><b>Инженер-конструктор</b><span>машиностроение, Санкт-Петербург</span></span></figcaption></figure>
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Встал редуктор на линии, оригинал — полгода ожидания. Аналог изготовили за несколько дней, встал на штатное место без переделки рамы.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#27a567">ГМ</span><span class="rev-meta"><b>Главный механик</b><span>пищевое производство, Краснодар</span></span></figcaption></figure>
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Подобрали привод по фактической нагрузке, а не «по шильдику». Год отработал без нареканий — больше не считаем сами, отдаём задачу инженеру.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#c8761b">ГЭ</span><span class="rev-meta"><b>Главный энергетик</b><span>водоканал, Екатеринбург</span></span></figcaption></figure>
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Меняли импортные NORD на отечественные аналоги по всему парку. Присоединительные совпали, рамы не трогали, по цене вышло заметно выгоднее.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#7a52c8">РС</span><span class="rev-meta"><b>Руководитель снабжения</b><span>производство стройматериалов, Новосибирск</span></span></figcaption></figure>
-      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Чёткие сроки, паспорта и сертификаты на каждую партию, гарантия реально работает. С таким поставщиком приводной части спокойно.</blockquote><figcaption class="rev-author"><span class="rev-ava" style="background:#0d8e8e">ДП</span><span class="rev-meta"><b>Директор по закупкам</b><span>упаковочное оборудование, Казань</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Берём редукторы серийно под наши конвейеры. Резерв на складе и фиксированная цена закрывают главную боль — производство не встаёт, а себестоимость предсказуема.</blockquote><figcaption class="rev-author"><span class="rev-ava">НП</span><span class="rev-meta"><b>Начальник производства</b><span>изготовитель конвейеров, Москва</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Заказчик требовал именно оригинал SEW — привезли в срок. Там, где можно, ставим аналог — выходит ощутимо дешевле при том же посадочном.</blockquote><figcaption class="rev-author"><span class="rev-ava">ИК</span><span class="rev-meta"><b>Инженер-конструктор</b><span>машиностроение, Санкт-Петербург</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Встал редуктор на линии, оригинал — полгода ожидания. Аналог изготовили за несколько дней, встал на штатное место без переделки рамы.</blockquote><figcaption class="rev-author"><span class="rev-ava">ГМ</span><span class="rev-meta"><b>Главный механик</b><span>пищевое производство, Краснодар</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Подобрали привод по фактической нагрузке, а не «по шильдику». Год отработал без нареканий — больше не считаем сами, отдаём задачу инженеру.</blockquote><figcaption class="rev-author"><span class="rev-ava">ГЭ</span><span class="rev-meta"><b>Главный энергетик</b><span>водоканал, Екатеринбург</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Меняли импортные NORD на отечественные аналоги по всему парку. Присоединительные совпали, рамы не трогали, по цене вышло заметно выгоднее.</blockquote><figcaption class="rev-author"><span class="rev-ava">РС</span><span class="rev-meta"><b>Руководитель снабжения</b><span>производство стройматериалов, Новосибирск</span></span></figcaption></figure>
+      <figure class="rev"><div class="rev-stars">★★★★★</div><blockquote>Чёткие сроки, паспорта и сертификаты на каждую партию, гарантия реально работает. С таким поставщиком приводной части спокойно.</blockquote><figcaption class="rev-author"><span class="rev-ava">ДП</span><span class="rev-meta"><b>Директор по закупкам</b><span>упаковочное оборудование, Казань</span></span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -1487,7 +1541,7 @@ section:has(.lead-form) .lead{margin-left:auto;margin-right:auto}
     <div class="geo-grid">
       <div class="geo-map"><div class="geo-svg" id="geoSvg"></div></div>
       <div>
-        <p class="lead" style="margin-bottom:18px">Поставляем редукторы транспортными компаниями в любой регион — со склада в Челябинске и под заказ. Среди городов отгрузок:</p>
+        <p class="lead">Поставляем редукторы транспортными компаниями в любой регион — со склада в Челябинске и под заказ. Среди городов отгрузок:</p>
         <div class="geo-cities">
           <span class="geo-city" data-region="50">Москва</span><span class="geo-city" data-region="47">Санкт-Петербург</span><span class="geo-city" data-region="66">Екатеринбург</span><span class="geo-city" data-region="54">Новосибирск</span><span class="geo-city" data-region="52">Нижний Новгород</span><span class="geo-city" data-region="16">Казань</span><span class="geo-city" data-region="63">Самара</span><span class="geo-city" data-region="74">Челябинск</span><span class="geo-city" data-region="02">Уфа</span><span class="geo-city" data-region="59">Пермь</span><span class="geo-city" data-region="24">Красноярск</span><span class="geo-city" data-region="36">Воронеж</span><span class="geo-city" data-region="61">Ростов-на-Дону</span><span class="geo-city" data-region="23">Краснодар</span><span class="geo-city" data-region="55">Омск</span><span class="geo-city" data-region="72">Тюмень</span><span class="geo-city" data-region="38">Иркутск</span><span class="geo-city" data-region="27">Хабаровск</span><span class="geo-city" data-region="25">Владивосток</span>
         </div>
@@ -1642,7 +1696,7 @@ CATALOG.forEach(c=>{
   cg.insertAdjacentHTML('beforeend',
    `<div class="cat-item"><div class="cat-img"><img src="assets/catalog/${c.img}" alt="${c.t}" loading="lazy"></div>
     <div class="cat-body"><h3>${c.t}</h3><p>${c.d}</p>${models}
-    <div class="cat-actions"><a class="btn btn-sm" href="${c.u}">Подробнее</a><a class="btn btn-sm btn-out" data-zayavka href="#zayavka">Заказать</a></div></div></div>`);
+    <div class="cat-actions"><a class="btn btn-sm ghost" href="${c.u}">Подробнее</a><a class="btn btn-sm" data-zayavka href="#zayavka">Заказать</a></div></div></div>`);
 });
 
 /* hero: статичный гиф мотор-редуктора (assets/reduktor_float.gif) — JS-загрузчик 3D отключён */
