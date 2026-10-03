@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Страницы типов редукторов (/catalog/*, кроме каталога и «Импортных»)
+   Подключается только на этих 22 страницах, все правила дополнительно
+   ограничены классом body.zr-type — общий inner.css не трогаем.
+
+   Было: у каждой секции инлайн-отступ (107 раз padding-top:0 и ещё семь
+   произвольных значений), у каждого заголовка — свой инлайн-размер
+   (22/24/26px в семи сочетаниях), фон один на всю страницу. Страница
+   читалась сплошной лентой без границ между блоками.
+   Теперь ритм, фон и шкала заголовков задаются здесь, в одном месте.
+   ========================================================================== */
+
+/* --- Ритм: единые отступы и строгое чередование фонов --------------------- */
+.zr-type .section,
+.zr-type .catcard-wrap{padding:56px 0;border-top:0}
+.zr-type .phero + .section{padding-top:28px}
+.zr-type .sec-alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* --- Шкала заголовков ----------------------------------------------------
+   Заголовок блока один для всех секций, подзаголовок внутри блока —
+   на ступень ниже. Раньше размер стоял в разметке у каждого заголовка.
+   ------------------------------------------------------------------------ */
+.zr-type .section h2,
+.zr-type .catcard-wrap>.wrap>h2,
+.zr-type .sec-h{font-size:clamp(22px,2.4vw,30px);line-height:1.2;letter-spacing:-.01em;margin-bottom:14px}
+.zr-type .section h2.h2-sub{font-size:clamp(18px,1.8vw,22px);margin-top:26px;margin-bottom:10px}
+.zr-type .section h2 + p,
+.zr-type .catcard-wrap .catcard-intro{color:var(--muted);max-width:760px}
+
+/* --- Финальная форма: отделить от каталога над ней ------------------------ */
+.zr-type .lead-form{border-radius:18px;box-shadow:0 14px 32px rgba(0,0,0,.30)}
+[data-theme="light"] .zr-type .lead-form{box-shadow:0 12px 30px rgba(20,40,60,.12)}
+
+/* --- Клавиатурный фокус --------------------------------------------------- */
+.zr-type :focus-visible{outline:2px solid var(--red2);outline-offset:3px;border-radius:4px}
+
+@media (max-width:760px){
+  .zr-type .section,.zr-type .catcard-wrap{padding:40px 0}
+  .zr-type .phero + .section{padding-top:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .zr-type *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
