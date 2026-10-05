@@ -91,7 +91,7 @@
    +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (маркировка ZR и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
-  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
+  var DB=null, RENDER=0, STEP=(window.matchMedia&&matchMedia('(max-width:680px)').matches)?10:40, /* на телефоне строки становятся карточками по ~450px: 40 сразу давали 18 000px, дальше — «Показать ещё» */ CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
   // кеш ссылок на селекты от/до: элементы создаются один раз, меняются только их <option>,
   // поэтому querySelector по каждой строке (был O(8763×14) на apply — ~2.6с) больше не нужен.

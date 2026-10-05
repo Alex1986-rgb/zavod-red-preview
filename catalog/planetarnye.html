@@ -30,21 +30,21 @@
 .pcard-media img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s ease}
 .pcard:hover .pcard-media img{transform:scale(1.045)}
 .pcard-media.noimg::after{content:"ЗР";font:700 30px/1 'Space Grotesk',sans-serif;color:#c3ccd2}
-.pcard-badge{position:absolute;top:12px;left:12px;background:var(--red,#cf1616);color:#fff;font:700 10px/1.15 inherit;letter-spacing:.03em;text-transform:uppercase;padding:5px 9px;border-radius:7px;max-width:calc(100% - 62px);box-shadow:0 2px 9px rgba(207,22,22,.3)}
-.pcard-stock{position:absolute;left:12px;bottom:12px;top:auto;right:auto;background:rgba(26,150,80,.16);color:#12915f;font:600 11px/1 inherit;padding:5px 9px;border-radius:7px;backdrop-filter:blur(3px)}
+.pcard-badge{position:absolute;top:12px;left:12px;background:rgba(207,22,22,.10);color:var(--red,#cf1616);border:1px solid rgba(207,22,22,.25);font:700 10px/1.15 inherit;letter-spacing:.03em;text-transform:uppercase;padding:5px 9px;border-radius:7px;max-width:calc(100% - 62px)}
+.pcard-stock{position:absolute;left:12px;bottom:12px;top:auto;right:auto;background:var(--card,#fff);color:#0f7a4f;border:1px solid rgba(26,150,80,.35);font:600 11px/1 inherit;padding:5px 9px;border-radius:7px}
 .pcard-body{display:flex;flex-direction:column;gap:10px;padding:16px 16px 18px;flex:1}
 .pcard-type{font-size:11px;color:var(--muted,#7c8b95);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
 .pcard-title{font:700 15.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);text-decoration:none;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pcard-title:hover{color:var(--red,#cf1616)}
 .pcard-chips{display:flex;flex-wrap:wrap;gap:6px}
-.pcard-chips span{font:500 11px/1 'IBM Plex Mono',ui-monospace,monospace;color:var(--muted,#5c6b76);background:var(--bg,#f2f5f2);border:1px solid var(--line,#e6eae6);border-radius:7px;padding:5px 8px;white-space:nowrap}
+.pcard-chips span{font:500 12px/1 'IBM Plex Mono',ui-monospace,monospace;color:var(--text,#101f2a);background:var(--bg,#f2f5f2);border:1px solid var(--line,#e6eae6);border-radius:7px;padding:5px 8px;white-space:nowrap}
 .pcard-foot{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:auto;padding-top:14px}
 .pcard-price{flex:1 0 100%;font-size:12.5px;color:var(--muted,#5c6b76);display:flex;align-items:baseline;gap:6px}
 .pcard-price b{color:var(--text,#101f2a);font-weight:700;font-size:14px}
 .pcard-cart{flex:1 1 130px;margin:0;border:0;background:var(--red,#cf1616);color:#fff;font:600 13.5px/1 'Space Grotesk',sans-serif;padding:12px 14px;border-radius:11px;cursor:pointer;transition:filter .15s,transform .1s}
 .pcard-cart:hover{filter:brightness(.93)}.pcard-cart:active{transform:scale(.98)}.pcard-cart.added{background:#12915f}
 .pcard-foot .zr-more-btn{flex:1 1 120px;margin:0!important;justify-content:center;padding:11px 14px;border-radius:11px;font:600 13px/1 'Space Grotesk',sans-serif;color:var(--text,#101f2a);border-color:var(--line,#e6eae6);background:var(--card,#fff)}
-@media(max-width:560px){.pcard-grid{grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}.pcard-body{padding:13px 13px 15px;gap:9px}.pcard-title{font-size:14px}.pcard-media{padding:14px}.pcard-cart,.pcard-foot .zr-more-btn{flex:1 1 100%;padding:11px}}
+@media(max-width:560px){.pcard-grid{grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}.pcard-body{padding:13px 13px 15px;gap:9px}.pcard-title{font-size:14px;-webkit-line-clamp:3}.pcard-media{padding:12px 12px 40px}.pcard-cart,.pcard-foot .zr-more-btn{flex:1 1 100%;padding:12px 11px;min-height:42px}}
 @media(max-width:360px){.pcard-grid{grid-template-columns:1fr}}
 </style>
 <!-- ZR_GEO -->
@@ -52,8 +52,8 @@
 <body class="zr-type">
 
 <header class="hdr2">
-<link rel="stylesheet" href="../assets/hdr.css?v=f5d615f0" />
-<link rel="stylesheet" href="../assets/type-page.css?v=1" />
+<link rel="stylesheet" href="../assets/hdr.css?v=k5a2" />
+<link rel="stylesheet" href="../assets/type-page.css?v=2" />
 <div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
 <div class="hmain"><div class="hm-in">
 <a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
@@ -266,7 +266,7 @@
 </footer>
 
 <script src="../assets/inner.js?v=8b8def98"></script>
-<script defer src="../assets/modal.js?v=360f1e88"></script><script defer src="../assets/fav.js?v=447a6293"></script>
+<script defer src="../assets/modal.js?v=k5a2"></script><script defer src="../assets/fav.js?v=447a6293"></script>
 <script>
 (function(){document.querySelectorAll('.pcard-cart').forEach(function(btn){
  btn.addEventListener('click',function(){try{var c=JSON.parse(localStorage.getItem('zr_cart')||'{"items":[]}');if(!c.items)c.items=[];

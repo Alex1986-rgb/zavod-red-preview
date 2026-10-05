@@ -26,23 +26,23 @@
 
 /* шапка с заголовками — числовые колонки по центру (значения пишутся под названием, правка №6) */
 .pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:center;
-  vertical-align:bottom;padding:15px 14px 10px;font-size:11.5px;text-transform:uppercase;
+  vertical-align:bottom;padding:15px 14px 10px;font-size:12.5px;text-transform:none;
   letter-spacing:.03em;line-height:1.32;border-bottom:1px solid var(--line)}
 .pf-th-tz{min-width:172px;text-align:left}
 
 /* строка фильтров */
 .pf-frow td{background:var(--bg2);padding:0 14px 15px;vertical-align:top;border-bottom:1px solid var(--line)}
 .pf-in{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);
-  padding:8px 11px;border-radius:8px;font:13.5px/1.2 inherit;box-sizing:border-box}
+  padding:8px 11px;border-radius:10px;font:13.5px/1.2 inherit;box-sizing:border-box}
 .pf-in::placeholder{color:var(--muted2)}
-.pf-in:focus,.pf-sel:focus{outline:none;border-color:var(--blue)}
+.pf-in:focus,.pf-sel:focus{outline:none;border-color:var(--red)}
 .pf-rg{display:flex;align-items:center;gap:7px;margin-top:7px}
 .pf-rg:first-of-type{margin-top:0}
 .pf-rg span{color:var(--muted2);font-size:11.5px;flex:0 0 16px}
 .pf-sel{flex:1 1 auto;width:100%;min-width:74px;background:var(--card2);border:1px solid var(--line);color:var(--text);
-  padding:7px 26px 7px 9px;border-radius:8px;font:13px/1.2 inherit;box-sizing:border-box;
+  padding:7px 26px 7px 9px;border-radius:10px;font:13px/1.2 inherit;box-sizing:border-box;
   appearance:none;-webkit-appearance:none;cursor:pointer;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237fa8c4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23526069' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
   background-repeat:no-repeat;background-position:right 8px center}
 
 /* строка кнопок */
@@ -55,8 +55,8 @@
 .pf-btn--red:hover{background:#c81414}
 .pf-th-ord{text-align:center;white-space:nowrap}
 .pf-order{text-align:center;white-space:nowrap}
-.pf-ord{display:inline-block;font:700 12.5px/1 inherit;padding:9px 16px;border-radius:8px;border:0;background:var(--red);color:#fff;text-decoration:none;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(225,29,29,.25)}
-.pf-ord:hover{background:#c81414;color:#fff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(225,29,29,.35)}
+.pf-ord{display:inline-block;font:700 12.5px/1 inherit;padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text);text-decoration:none;cursor:pointer;transition:.15s;box-shadow:none} /* переход на карточку — контурная; красная только заявка (.pf-ord--req) */
+.pf-ord:hover{border-color:var(--red);color:var(--red);transform:translateY(-1px);box-shadow:none}
 .pf-count{color:var(--muted);font-size:13px;margin-left:4px}
 .pf-count b{color:var(--text)}
 
@@ -72,8 +72,8 @@
 .pf-tz b.pf-zr{font-size:15px;line-height:1.1;margin-bottom:2px}
 .pf-evl{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;
   background:var(--card2);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap;vertical-align:middle}
-.pf-tr-gost{display:inline;color:var(--muted);font-size:11.5px;margin-left:7px}
-.pf-tr-an{display:block;color:var(--muted2);font-size:11px;margin-top:1px}
+.pf-tr-gost{display:inline;color:var(--muted);font-size:12px;margin-left:7px}
+.pf-tr-an{display:block;color:var(--muted2);font-size:12px;margin-top:1px}
 .pf-empty{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
 .pf-loading-cell{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
 
@@ -144,8 +144,8 @@
 .pf-pill--brand{font:600 13px/1 inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.15s}
 .pf-pill--brand:hover{color:var(--text);border-color:#33485a}
 .pf-pill--brand.is-active{background:var(--red);color:#fff;border-color:var(--red)}
-.pf-ord--req{background:transparent !important;border:1.5px solid var(--red) !important;color:var(--red) !important}
-.pf-ord--req:hover{background:var(--red) !important;color:#fff !important}
+.pf-ord--req{background:var(--red);border:1px solid var(--red);color:#fff}
+.pf-ord--req:hover{background:#c81414;border-color:#c81414;color:#fff}
 
 /* Переключатель марок — выделенный блок, а не строчка пилюль в общем потоке.
    Заказчик: «показать в марках добавь все модели и както выдели». Раньше он был свёрнут
@@ -160,5 +160,18 @@
 .pf-brands--panel .pf-pill--brand.is-active{box-shadow:0 0 0 3px rgba(207,22,22,.16)}
 /* Марки без построенного подбора — приглушены, но кликабельны: скрывать их нельзя,
    иначе читается как «не работаем с брендом». */
-.pf-brands--panel .pf-pill--brand.is-nodata{opacity:.55;border-style:dashed}
+.pf-brands--panel .pf-pill--brand.is-nodata{opacity:1;border-style:dashed;color:var(--muted2)}
 .pf-brands--panel .pf-pill--brand.is-nodata:hover{opacity:1}
+
+/* --- По итогам критики (телефон ≤680px) -----------------------------------
+   Пилюли марок и типов были 33px высотой — цель нажатия ниже 40px.
+   Строка-карточка: 7 параметров столбиком по 45px растягивали карточку до
+   ~450px; параметры встают в две колонки, типоразмер и кнопка — на всю ширину. */
+@media(max-width:680px){
+  .pf-pill,.pf-pill--brand{min-height:40px;padding:10px 16px}
+  .pf-brands--panel .pf-brands-set{gap:8px}
+  .pf-table tbody tr{display:grid;grid-template-columns:1fr 1fr}
+  .pf-table tbody td{flex-direction:column;align-items:flex-start;text-align:left;gap:2px;padding:8px 14px}
+  .pf-table tbody td[data-label]::before{flex:none}
+  .pf-tz,.pf-order,.pf-empty,.pf-loading-cell{grid-column:1/-1}
+}

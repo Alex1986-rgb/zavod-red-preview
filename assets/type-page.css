@@ -46,3 +46,9 @@
    исправление дошло сразу: у inner.css в ссылках старая версия и он может
    держаться в кэше браузера. */
 .zr-type .crumbs{padding-left:24px;padding-right:24px}
+
+/* --- По итогам критики ------------------------------------------------------ */
+.zr-type .seo-text{border-top:0;padding-top:0}                 /* две линии с пустой полосой на стыке формы и SEO-текста */
+.zr-type .spec td{font-family:var(--font);font-size:14.5px;font-variant-numeric:tabular-nums}  /* целые предложения моноширинным */
+.zr-type .pf-tz b{color:var(--text)}                            /* красная маркировка ×30 рядом с красной кнопкой в каждой строке */
+@media(max-width:760px){.zr-type .section p > .btn + a{display:block;margin-top:14px}}  /* ссылка обтекала кнопку */

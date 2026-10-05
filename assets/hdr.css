@@ -37,7 +37,7 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
 [data-theme="light"] .hdr2 .theme-toggle .ic-sun{display:inline}
 .hdr2 .zbtn{display:inline-flex;align-items:center;background:var(--h-red);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 16px var(--h-glow)}
 .hdr2 .zbtn:hover{filter:brightness(.94)}
-.hdr2 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;flex-shrink:0}
+.hdr2 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:12px 8px;flex-shrink:0}
 .hdr2 .burger span{width:24px;height:2px;background:var(--h-text);border-radius:2px;transition:.25s}
 .hdr2 .hnav{background:var(--h-bg);border-bottom:1px solid var(--h-line)}
 .hdr2 .hn-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;padding:0 24px;overflow-x:auto;scrollbar-width:none}
@@ -53,9 +53,10 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
 .hdr2 .submenu a{padding:10px 13px;border-radius:7px;font-size:13.5px;color:var(--h-dim);text-decoration:none;white-space:nowrap}
 .hdr2 .submenu a:hover{background:var(--h-bg2);color:var(--h-text)}
 .hdr2 .menu-phone{margin-left:auto;color:var(--h-text);font-weight:600;font-size:13.5px;padding:12px 14px;text-decoration:none;white-space:nowrap}
-@media(max-width:1080px){.hdr2 .topbar{display:none}.hdr2 .ms-chip{display:none}.hdr2 .zbtn{display:none}}
-@media(max-width:860px){
-  .hdr2 .cat-btn{display:none}
+@media(max-width:1080px){.hdr2 .topbar{display:none}.hdr2 .ms-chip{display:none}}
+/* Кнопка заявки в шапке прячется только там, где её заменяет закреплённая нижняя панель (≤720px): на планшете первая настоящая заявка была на 11 000px */
+@media(max-width:720px){.hdr2 .zbtn{display:none}}
+@media(max-width:1200px){
   .hdr2 .burger{display:flex}
   .hdr2 .hnav{display:none}
   .hdr2.open .hnav{display:block;position:absolute;left:0;right:0;background:var(--h-bg);border-bottom:1px solid var(--h-line);box-shadow:0 18px 40px rgba(0,0,0,.3)}
@@ -64,8 +65,8 @@ header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-fi
   .hdr2.open .menu>a,.hdr2.open .menu .drop-toggle{padding:12px 8px;border-bottom:1px solid var(--h-line)}
   .hdr2.open .menu-phone{margin-left:0}
   .hdr2.open .submenu{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;padding:0 0 0 14px}
-  .hdr2 .msearch input::placeholder{font-size:12.5px}
 }
+@media(max-width:860px){.hdr2 .cat-btn{display:none}.hdr2 .msearch input::placeholder{font-size:12.5px}}
 @media(max-width:560px){.hdr2 .logo img{height:34px}.hdr2 .hm-in{flex-wrap:wrap;row-gap:9px}.hdr2 .msearch{order:5;flex:1 1 100%;padding:9px 12px}}
 /* Кнопка «Найти» + живые подсказки быстрого поиска */
 .hdr2 .msearch{position:relative}
