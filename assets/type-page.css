@@ -52,3 +52,5 @@
 .zr-type .spec td{font-family:var(--font);font-size:14.5px;font-variant-numeric:tabular-nums}  /* целые предложения моноширинным */
 .zr-type .pf-tz b{color:var(--text)}                            /* красная маркировка ×30 рядом с красной кнопкой в каждой строке */
 @media(max-width:760px){.zr-type .section p > .btn + a{display:block;margin-top:14px}}  /* ссылка обтекала кнопку */
+.zr-type .catcard-wrap .pcard-grid.is-collapsed > .pcard:nth-child(n+7){display:none}
+.zr-type .catcard-more{display:flex;margin:22px auto 0;justify-content:center}

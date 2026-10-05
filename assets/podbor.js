@@ -58,9 +58,9 @@
 
   var filterHtml='<tr class="pf-frow"><td data-label="Поиск по модели / аналогу"><input class="pf-in" id="pfQ" type="text" placeholder="Модель / аналог" autocomplete="off" list="pfModels" inputmode="search"><datalist id="pfModels"></datalist></td>'
     +COLS.map(function(c){
-        return '<td data-label="'+c.m+'"><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
+        return '<td data-label="'+c.m+'"'+(c.i>=3?' class="pf-adv"':'')+'><div class="pf-rg"><span>от</span><select class="pf-sel" data-min="'+c.i+'"><option value="">Все</option></select></div>'
              +'<div class="pf-rg"><span>до</span><select class="pf-sel" data-max="'+c.i+'"><option value="">Все</option></select></div></td>';
-      }).join('')+'<td class="pf-frow-pad"></td></tr>';
+      }).join('')+'<td class="pf-frow-more"><button type="button" class="pf-advbtn" id="pfAdv">Все параметры</button></td><td class="pf-frow-pad"></td></tr>';
 
   var btnHtml='<tr class="pf-brow"><td colspan="'+NCOL+'"><div class="pf-toolbar">'
     +'<button type="button" class="pf-btn pf-btn--ghost" id="pfReset">Сбросить фильтр</button>'
@@ -806,6 +806,8 @@
     var m=document.getElementById('zrMsg'); if(m){ m.value=msg; }
   });
   if($('pfMore'))$('pfMore').addEventListener('click',more);
+  /* Телефон: 7 пар селектов не влезают в экран — первые три видны, остальные по кнопке. Марки не прячем (решение заказчика от 20.07). */
+  if($('pfAdv'))$('pfAdv').addEventListener('click',function(){var r=this.closest('tr');r.classList.toggle('is-open');this.textContent=r.classList.contains('is-open')?'Скрыть параметры':'Все параметры';});
 
   // кнопка «Запрос» (строка без аналога выбранного бренда) → подставить в заявку
   root.addEventListener('click',function(e){

@@ -175,3 +175,11 @@
   .pf-table tbody td[data-label]::before{flex:none}
   .pf-tz,.pf-order,.pf-empty,.pf-loading-cell{grid-column:1/-1}
 }
+.pf-frow-more{display:none}
+@media(max-width:680px){
+  .pf-frow td.pf-adv{display:none}
+  .pf-frow.is-open td.pf-adv{display:block}
+  .pf-frow td.pf-frow-more{display:block;padding:10px 14px}
+  .pf-advbtn{width:100%;min-height:40px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:600 13.5px/1 inherit;cursor:pointer}
+  .pf-advbtn:hover{border-color:var(--red);color:var(--red)}
+}
