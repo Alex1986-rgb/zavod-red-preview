@@ -1,0 +1,2839 @@
+{
+ "desktop": {
+  "url": "/ceny.html",
+  "title": "Цены на редукторы и мотор-редукторы — прайс от завода | ЗР",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 5398,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 304,
+    "h": 338,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section cfg-sec",
+    "top": 642,
+    "h": 1740,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 32,
+     "lh": "36.8px",
+     "mb": 22,
+     "text": "Тип редуктора"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -758
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2382,
+    "h": 403,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Из чего складывается цена"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2785,
+    "h": 505,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Цена напрямую от завода"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -62
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3290,
+    "h": 614,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Завод-производитель или дилер"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 26
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3905,
+    "h": 428,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Частые вопросы о ценах"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4333,
+    "h": 366,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 32,
+     "lh": "36.8px",
+     "mb": 22,
+     "text": "Пришлём актуальный прайс и расчёт"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -86
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4698,
+    "h": 263,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 4961,
+    "h": 436,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4671",
+   "A. right=1574",
+   "I. right=1574",
+   "A. right=1873",
+   "B. right=1698",
+   "I. right=1873",
+   "A. right=2489",
+   "B. right=1957",
+   "I. right=2489",
+   "A. right=2696",
+   "B. right=2542",
+   "I. right=2696"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Червячный\nЧМ · самотор",
+    "cls": "cfg-type is-on",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Цилиндрический\nЦ · выс",
+    "cls": "cfg-type",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Соосный\nZR · вход-выхо",
+    "cls": "cfg-type",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Кониче-цилиндр.\nКЦ · в",
+    "cls": "cfg-type",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "На лапах",
+    "cls": "is-on",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(207, 22, 22)"
+   },
+   {
+    "t": "Фланцевое",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Насадной вал",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "С тормозом",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "−",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "+",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить точную цену",
+    "cls": "cfg-cta",
+    "h": 47,
+    "fs": 15,
+    "pad": "14px",
+    "r": "12px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Добавить в корзину",
+    "cls": "cfg-cart",
+    "h": 42,
+    "fs": 14,
+    "pad": "12px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить цену",
+    "cls": "btn lg",
+    "h": 52,
+    "fs": 16,
+    "pad": "0px 28px",
+    "r": "14px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   26,
+   30,
+   32,
+   46
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "18px",
+   "14px",
+   "5px",
+   "11px",
+   "16px",
+   "20px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 46,
+    "lh": "48.76px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Цены на редукторы и мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Тип редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Мощность и передаточное число"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Опции и маркировка — необязательно, дополнят обозн"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Количество"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Из чего складывается цена"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Тип передачи"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Мощность двигателя"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Передаточное число"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Объём заказа"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Цена напрямую от завода"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Комплектация"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод-производитель или дилер"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о ценах"
+   },
+   {
+    "t": "H2",
+    "fs": 32,
+    "lh": "36.8px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Пришлём актуальный прайс и расчёт"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_cylindrical.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_coaxial.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 56,
+    "h": 46,
+    "nw": 800,
+    "nh": 600,
+    "alt": false,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 46,
+   "lh": "48.76px",
+   "text": "Цены на редукторы и мотор-редукторы"
+  }
+ },
+ "tablet": {
+  "url": "/ceny.html",
+  "title": "Цены на редукторы и мотор-редукторы — прайс от завода | ЗР",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 5649,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 220,
+    "h": 320,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section cfg-sec",
+    "top": 541,
+    "h": 1809,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 29,
+     "lh": "32.9728px",
+     "mb": 22,
+     "text": "Тип редуктора"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -653
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2350,
+    "h": 587,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Из чего складывается цена"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2937,
+    "h": 570,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Цена напрямую от завода"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -62
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3507,
+    "h": 614,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Завод-производитель или дилер"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 26
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4122,
+    "h": 445,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Частые вопросы о ценах"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4566,
+    "h": 362,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 29,
+     "lh": "32.9728px",
+     "mb": 22,
+     "text": "Пришлём актуальный прайс и расчёт"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -82
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4928,
+    "h": 263,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 5191,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4672",
+   "A. right=1127",
+   "I. right=1127",
+   "A. right=1216",
+   "B. right=1195",
+   "A. right=1576",
+   "B. right=1282",
+   "I. right=1576",
+   "A. right=1875",
+   "B. right=1700",
+   "I. right=1875",
+   "A. right=2490"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Червячный\nЧМ · самотор",
+    "cls": "cfg-type is-on",
+    "h": 143,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Цилиндрический\nЦ · выс",
+    "cls": "cfg-type",
+    "h": 143,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Соосный\nZR · вход-выхо",
+    "cls": "cfg-type",
+    "h": 143,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Кониче-цилиндр.\nКЦ · в",
+    "cls": "cfg-type",
+    "h": 143,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "На лапах",
+    "cls": "is-on",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(207, 22, 22)"
+   },
+   {
+    "t": "Фланцевое",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Насадной вал",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "С тормозом",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "−",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "+",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить точную цену",
+    "cls": "cfg-cta",
+    "h": 47,
+    "fs": 15,
+    "pad": "14px",
+    "r": "12px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Добавить в корзину",
+    "cls": "cfg-cart",
+    "h": 42,
+    "fs": 14,
+    "pad": "12px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить цену",
+    "cls": "btn lg",
+    "h": 52,
+    "fs": 16,
+    "pad": "0px 28px",
+    "r": "14px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   26,
+   29,
+   30,
+   45
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "18px",
+   "14px",
+   "5px",
+   "11px",
+   "16px",
+   "20px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 45,
+    "lh": "47.7594px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Цены на редукторы и мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Тип редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Мощность и передаточное число"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Опции и маркировка — необязательно, дополнят обозн"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Количество"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Из чего складывается цена"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Тип передачи"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Мощность двигателя"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Передаточное число"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Объём заказа"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Цена напрямую от завода"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Комплектация"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод-производитель или дилер"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о ценах"
+   },
+   {
+    "t": "H2",
+    "fs": 29,
+    "lh": "32.9728px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Пришлём актуальный прайс и расчёт"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_cylindrical.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_coaxial.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 56,
+    "h": 46,
+    "nw": 800,
+    "nh": 600,
+    "alt": false,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 45,
+   "lh": "47.7594px",
+   "text": "Цены на редукторы и мотор-редукторы"
+  }
+ },
+ "mobile": {
+  "url": "/ceny.html",
+  "title": "Цены на редукторы и мотор-редукторы — прайс от завода | ЗР",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 10602,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 250,
+    "h": 398,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section cfg-sec",
+    "top": 648,
+    "h": 3117,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.6px",
+     "mb": 22,
+     "text": "Тип редуктора"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -738
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3764,
+    "h": 1148,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Из чего складывается цена"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4913,
+    "h": 1040,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Цена напрямую от завода"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -62
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 5953,
+    "h": 1404,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Завод-производитель или дилер"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 26
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7357,
+    "h": 835,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.9px",
+     "mb": 22,
+     "text": "Частые вопросы о ценах"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 8192,
+    "h": 498,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.6px",
+     "mb": 22,
+     "text": "Пришлём актуальный прайс и расчёт"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -132
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 8690,
+    "h": 479,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 9170,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4574",
+   "A. right=473",
+   "I. right=473",
+   "A. right=582",
+   "B. right=547",
+   "I. right=582",
+   "A. right=746",
+   "B. right=655",
+   "I. right=746",
+   "A. right=938",
+   "B. right=805",
+   "I. right=938"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Червячный\nЧМ · самотор",
+    "cls": "cfg-type is-on",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Цилиндрический\nЦ · выс",
+    "cls": "cfg-type",
+    "h": 128,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Соосный\nZR · вход-выхо",
+    "cls": "cfg-type",
+    "h": 142,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Кониче-цилиндр.\nКЦ · в",
+    "cls": "cfg-type",
+    "h": 142,
+    "fs": 16,
+    "pad": "14px 10px",
+    "r": "14px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "На лапах",
+    "cls": "is-on",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "color(srgb 0.988706 0.945176 0.945176)",
+    "color": "rgb(207, 22, 22)"
+   },
+   {
+    "t": "Фланцевое",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Насадной вал",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "С тормозом",
+    "cls": "",
+    "h": 39,
+    "fs": 14,
+    "pad": "11px 16px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "−",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "+",
+    "cls": "",
+    "h": 42,
+    "fs": 20,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить точную цену",
+    "cls": "cfg-cta",
+    "h": 47,
+    "fs": 15,
+    "pad": "14px",
+    "r": "12px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Добавить в корзину",
+    "cls": "cfg-cart",
+    "h": 42,
+    "fs": 14,
+    "pad": "12px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить цену",
+    "cls": "btn lg",
+    "h": 52,
+    "fs": 16,
+    "pad": "0px 28px",
+    "r": "14px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   24,
+   26,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "18px",
+   "14px",
+   "5px",
+   "11px",
+   "16px",
+   "20px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Цены на редукторы и мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Тип редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Мощность и передаточное число"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Опции и маркировка — необязательно, дополнят обозн"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Количество"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Из чего складывается цена"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Тип передачи"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Мощность двигателя"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Передаточное число"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Исполнение и опции"
+   },
+   {
+    "t": "H3",
+    "fs": 16,
+    "lh": "20.15px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Объём заказа"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Цена напрямую от завода"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Комплектация"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод-производитель или дилер"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.9px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о ценах"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.6px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Пришлём актуальный прайс и расчёт"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_cylindrical.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_coaxial.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 74,
+    "h": 56,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_worm.webp",
+    "w": 56,
+    "h": 46,
+    "nw": 800,
+    "nh": 600,
+    "alt": false,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.36px",
+   "text": "Цены на редукторы и мотор-редукторы"
+  }
+ }
+}

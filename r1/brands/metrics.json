@@ -1,0 +1,2205 @@
+{
+ "desktop": {
+  "url": "/brands/index.html",
+  "title": "Импортные бренды редукторов — оригинал и аналоги | ЗР",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 4857,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 301,
+    "h": 501,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 802,
+    "h": 2591,
+    "padT": 34,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Выберите производителя"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3393,
+    "h": 360,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 40,
+     "lh": "45.6px",
+     "mb": 10,
+     "text": "Не нашли свой бренд или модель?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -95
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3754,
+    "h": 455,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы о замене импорта"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4209,
+    "h": 228,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 4437,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4670",
+   "A. right=1573",
+   "I. right=1573",
+   "A. right=1872",
+   "B. right=1697",
+   "I. right=1872",
+   "A. right=2488",
+   "B. right=1956",
+   "I. right=2488",
+   "A. right=2695",
+   "B. right=2541",
+   "I. right=2695"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Подобрать замену",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   26,
+   30,
+   40,
+   44
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 44,
+    "lh": "50.16px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Оригинал и аналоги импортных редукторов"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Выберите производителя"
+   },
+   {
+    "t": "H2",
+    "fs": 40,
+    "lh": "45.6px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Не нашли свой бренд или модель?"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы о замене импорта"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/sew.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/sew-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 687,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/nord.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/nord-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bonfiglioli.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/motovario.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/motovario-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 708,
+    "nh": 429,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/flender.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/flender-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 690,
+    "nh": 414,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/siemens.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/siemens-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 696,
+    "nh": 420,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/lenze.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/lenze-unit.webp",
+    "w": 228,
+    "h": 110,
+    "nw": 708,
+    "nh": 390,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bauer.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 44,
+   "lh": "50.16px",
+   "text": "Оригинал и аналоги импортных редукторов"
+  }
+ },
+ "tablet": {
+  "url": "/brands/index.html",
+  "title": "Импортные бренды редукторов — оригинал и аналоги | ЗР",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 4706,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 217,
+    "h": 369,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 586,
+    "h": 2609,
+    "padT": 34,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Выберите производителя"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3195,
+    "h": 350,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 31,
+     "lh": "35.0208px",
+     "mb": 10,
+     "text": "Не нашли свой бренд или модель?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -84
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3545,
+    "h": 476,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы о замене импорта"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4021,
+    "h": 228,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 4249,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4674",
+   "A. right=1129",
+   "I. right=1129",
+   "A. right=1218",
+   "B. right=1197",
+   "A. right=1578",
+   "B. right=1284",
+   "I. right=1578",
+   "A. right=1877",
+   "B. right=1702",
+   "I. right=1877",
+   "A. right=2492"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Подобрать замену",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   26,
+   30,
+   31,
+   41
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 41,
+    "lh": "46.6944px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Оригинал и аналоги импортных редукторов"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Выберите производителя"
+   },
+   {
+    "t": "H2",
+    "fs": 31,
+    "lh": "35.0208px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Не нашли свой бренд или модель?"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы о замене импорта"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/sew.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/sew-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 687,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/nord.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/nord-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bonfiglioli.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/motovario.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/motovario-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 708,
+    "nh": 429,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/flender.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/flender-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 690,
+    "nh": 414,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/siemens.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/siemens-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 696,
+    "nh": 420,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/lenze.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/lenze-unit.webp",
+    "w": 174,
+    "h": 110,
+    "nw": 708,
+    "nh": 390,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bauer.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 41,
+   "lh": "46.6944px",
+   "text": "Оригинал и аналоги импортных редукторов"
+  }
+ },
+ "mobile": {
+  "url": "/brands/index.html",
+  "title": "Импортные бренды редукторов — оригинал и аналоги | ЗР",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 8902,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 247,
+    "h": 646,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 893,
+    "h": 4880,
+    "padT": 34,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Выберите производителя"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 5773,
+    "h": 460,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 10,
+     "text": "Не нашли свой бренд или модель?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -138
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6234,
+    "h": 930,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы о замене импорта"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7164,
+    "h": 392,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 7556,
+    "h": 1276,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4565",
+   "A. right=464",
+   "I. right=464",
+   "A. right=573",
+   "B. right=538",
+   "I. right=573",
+   "A. right=737",
+   "B. right=646",
+   "I. right=737",
+   "A. right=929",
+   "B. right=796",
+   "I. right=929"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Подобрать замену",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   26,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.92px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Оригинал и аналоги импортных редукторов"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Выберите производителя"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Не нашли свой бренд или модель?"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы о замене импорта"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/sew.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/sew-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 687,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/nord.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/nord-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bonfiglioli.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/motovario.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/motovario-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 708,
+    "nh": 429,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/flender.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/flender-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 690,
+    "nh": 414,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/siemens.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/siemens-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 696,
+    "nh": 420,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/lenze.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/lenze-unit.webp",
+    "w": 105,
+    "h": 110,
+    "nw": 708,
+    "nh": 390,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands/bauer.webp",
+    "w": 68,
+    "h": 34,
+    "nw": 220,
+    "nh": 110,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.92px",
+   "text": "Оригинал и аналоги импортных редукторов"
+  }
+ }
+}

@@ -1,0 +1,3680 @@
+{
+ "desktop": {
+  "url": "/brands/bonfiglioli.html",
+  "title": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли) — купить | ЗР",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 12188,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 301,
+    "h": 678,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 979,
+    "h": 3198,
+    "padT": 34,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 6,
+     "text": "Калькулятор: замена Bonfiglioli → наш ре"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "bmodels",
+    "cls": "section",
+    "top": 4177,
+    "h": 1820,
+    "padT": 14,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 40,
+     "lh": "45.6px",
+     "mb": 14,
+     "text": "Модели Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 5997,
+    "h": 774,
+    "padT": 44,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Поставляем оригинальные Bonfiglioli под "
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 18,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "bphoto",
+    "cls": "section",
+    "top": 6771,
+    "h": 588,
+    "padT": 44,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7359,
+    "h": 538,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Что и на что меняем"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -64
+   },
+   {
+    "tag": "section",
+    "id": "xtable",
+    "cls": "section",
+    "top": 7897,
+    "h": 2118,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Замены Bonfiglioli → наш редуктор ZR"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 18,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10015,
+    "h": 298,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section zr-blog-links",
+    "top": 10313,
+    "h": 312,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Ещё о редукторах Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10624,
+    "h": 550,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы по Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11174,
+    "h": 255,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11430,
+    "h": 339,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 6,
+     "text": "Модели BONFIGLIOLI — подбор замены"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 11768,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4705",
+   "A. right=1608",
+   "I. right=1608",
+   "A. right=1907",
+   "B. right=1732",
+   "I. right=1907",
+   "A. right=2523",
+   "B. right=1991",
+   "I. right=2523",
+   "A. right=2731",
+   "B. right=2577",
+   "I. right=2731"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Модели оригинала\nКальк",
+    "cls": "bhero-btns",
+    "h": 107,
+    "fs": 16,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить цену",
+    "cls": "btn lg",
+    "h": 62,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все бренды",
+    "cls": "btn ghost lg",
+    "h": 62,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(239, 239, 239)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Показать ещё",
+    "cls": "pf-more",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 26px",
+    "r": "9px",
+    "bg": "rgb(246, 248, 250)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Инженер подберёт под з",
+    "cls": "pf-cta",
+    "h": 39,
+    "fs": 13,
+    "pad": "12px 22px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все виды",
+    "cls": "act",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячные",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Соосно-цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Коническо-цилиндрическ",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Плоские цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Цилиндрические",
+    "cls": "",
+    "h": 0,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   24,
+   26,
+   30,
+   40,
+   44
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "999px",
+   "14px",
+   "16px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 44,
+    "lh": "50.16px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглио"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Калькулятор: замена Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H2",
+    "fs": 40,
+    "lh": "45.6px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Модели Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Поставляем оригинальные Bonfiglioli под заказ"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Что и на что меняем"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Преимущества"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Замены Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H3",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём аналог Bonfiglioli под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Ещё о редукторах Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы по Bonfiglioli"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Модели BONFIGLIOLI — подбор замены"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 415,
+    "h": 251,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 247,
+    "h": 185,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 247,
+    "h": 164,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 247,
+    "h": 164,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 247,
+    "h": 164,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 247,
+    "h": 164,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli.webp",
+    "w": 409,
+    "h": 360,
+    "nw": 729,
+    "nh": 642,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-g1.webp",
+    "w": 137,
+    "h": 74,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 44,
+   "lh": "50.16px",
+   "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли)"
+  }
+ },
+ "tablet": {
+  "url": "/brands/bonfiglioli.html",
+  "title": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли) — купить | ЗР",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 12753,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 217,
+    "h": 683,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 901,
+    "h": 3215,
+    "padT": 34,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 6,
+     "text": "Калькулятор: замена Bonfiglioli → наш ре"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "bmodels",
+    "cls": "section",
+    "top": 4116,
+    "h": 2330,
+    "padT": 14,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 31,
+     "lh": "35.0208px",
+     "mb": 14,
+     "text": "Модели Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6446,
+    "h": 731,
+    "padT": 44,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Поставляем оригинальные Bonfiglioli под "
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "bphoto",
+    "cls": "section",
+    "top": 7176,
+    "h": 588,
+    "padT": 44,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7764,
+    "h": 606,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Что и на что меняем"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -64
+   },
+   {
+    "tag": "section",
+    "id": "xtable",
+    "cls": "section",
+    "top": 8371,
+    "h": 2080,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Замены Bonfiglioli → наш редуктор ZR"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10450,
+    "h": 298,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section zr-blog-links",
+    "top": 10748,
+    "h": 342,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Ещё о редукторах Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11090,
+    "h": 571,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы по Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11661,
+    "h": 255,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11916,
+    "h": 380,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 6,
+     "text": "Модели BONFIGLIOLI — подбор замены"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 12296,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4710",
+   "A. right=1164",
+   "B. right=1045",
+   "I. right=1164",
+   "A. right=1254",
+   "B. right=1233",
+   "A. right=1613",
+   "B. right=1319",
+   "I. right=1613",
+   "A. right=1912",
+   "B. right=1737",
+   "I. right=1912"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Модели оригинала\nКальк",
+    "cls": "bhero-btns",
+    "h": 107,
+    "fs": 16,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить цену",
+    "cls": "btn lg",
+    "h": 62,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все бренды",
+    "cls": "btn ghost lg",
+    "h": 62,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 35,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(239, 239, 239)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Показать ещё",
+    "cls": "pf-more",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 26px",
+    "r": "9px",
+    "bg": "rgb(246, 248, 250)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Инженер подберёт под з",
+    "cls": "pf-cta",
+    "h": 39,
+    "fs": 13,
+    "pad": "12px 22px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все виды",
+    "cls": "act",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячные",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Соосно-цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Коническо-цилиндрическ",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Плоские цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Цилиндрические",
+    "cls": "",
+    "h": 0,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 37,
+    "fs": 13,
+    "pad": "11px 14px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   24,
+   26,
+   30,
+   31,
+   41
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "999px",
+   "14px",
+   "16px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 41,
+    "lh": "46.6944px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглио"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Калькулятор: замена Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H2",
+    "fs": 31,
+    "lh": "35.0208px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Модели Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Поставляем оригинальные Bonfiglioli под заказ"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Что и на что меняем"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Преимущества"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Замены Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H3",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём аналог Bonfiglioli под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Ещё о редукторах Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы по Bonfiglioli"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Модели BONFIGLIOLI — подбор замены"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 328,
+    "h": 199,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 275,
+    "h": 206,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 275,
+    "h": 184,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 275,
+    "h": 184,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 275,
+    "h": 184,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/br-bonfiglioli-t1.webp",
+    "w": 275,
+    "h": 184,
+    "nw": 1200,
+    "nh": 800,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli.webp",
+    "w": 409,
+    "h": 360,
+    "nw": 729,
+    "nh": 642,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-g1.webp",
+    "w": 110,
+    "h": 74,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 41,
+   "lh": "46.6944px",
+   "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли)"
+  }
+ },
+ "mobile": {
+  "url": "/brands/bonfiglioli.html",
+  "title": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли) — купить | ЗР",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 20289,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 268,
+    "h": 1139,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 1406,
+    "h": 5340,
+    "padT": 34,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 6,
+     "text": "Калькулятор: замена Bonfiglioli → наш ре"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "bmodels",
+    "cls": "section",
+    "top": 6746,
+    "h": 3316,
+    "padT": 14,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Модели Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10062,
+    "h": 1108,
+    "padT": 44,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Поставляем оригинальные Bonfiglioli под "
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 18,
+     "w": 342
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "bphoto",
+    "cls": "section",
+    "top": 11170,
+    "h": 777,
+    "padT": 44,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11947,
+    "h": 1164,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Что и на что меняем"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -64
+   },
+   {
+    "tag": "section",
+    "id": "xtable",
+    "cls": "section",
+    "top": 13110,
+    "h": 2181,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Замены Bonfiglioli → наш редуктор ZR"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 18,
+     "w": 342
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 15292,
+    "h": 377,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section zr-blog-links",
+    "top": 15669,
+    "h": 681,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Ещё о редукторах Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 16350,
+    "h": 1091,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы по Bonfiglioli"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 17441,
+    "h": 446,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 17887,
+    "h": 970,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 6,
+     "text": "Модели BONFIGLIOLI — подбор замены"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 6
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 18857,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4624",
+   "A. right=523",
+   "B. right=439",
+   "I. right=523",
+   "A. right=632",
+   "B. right=597",
+   "I. right=632",
+   "A. right=796",
+   "B. right=705",
+   "I. right=796",
+   "A. right=987",
+   "B. right=854"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Модели оригинала\nКальк",
+    "cls": "bhero-btns",
+    "h": 152,
+    "fs": 16,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить цену",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все бренды",
+    "cls": "btn ghost lg",
+    "h": 62,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 40,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 20px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Показать ещё",
+    "cls": "pf-more",
+    "h": 39,
+    "fs": 13,
+    "pad": "11px 26px",
+    "r": "9px",
+    "bg": "rgb(246, 248, 250)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Инженер подберёт под з",
+    "cls": "pf-cta",
+    "h": 39,
+    "fs": 13,
+    "pad": "12px 22px",
+    "r": "9px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Все виды",
+    "cls": "act",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячные",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Соосно-цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Коническо-цилиндрическ",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Плоские цилиндрические",
+    "cls": "",
+    "h": 36,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Цилиндрические",
+    "cls": "",
+    "h": 0,
+    "fs": 14,
+    "pad": "10px 14px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "Подробнее →",
+    "cls": "zr-more-btn",
+    "h": 42,
+    "fs": 13,
+    "pad": "12px 11px",
+    "r": "11px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 36,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   24,
+   26,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "999px",
+   "12px 12px 0px 0px",
+   "0px 0px 12px 12px",
+   "16px",
+   "11px",
+   "14px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.92px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглио"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Калькулятор: замена Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Модели Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Поставляем оригинальные Bonfiglioli под заказ"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Что и на что меняем"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Преимущества"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Замены Bonfiglioli → наш редуктор ZR"
+   },
+   {
+    "t": "H3",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём аналог Bonfiglioli под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Ещё о редукторах Bonfiglioli"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы по Bonfiglioli"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Модели BONFIGLIOLI — подбор замены"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-photo/bonfiglioli-unit.webp",
+    "w": 308,
+    "h": 186,
+    "nw": 714,
+    "nh": 432,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/catalog/cat_bevel.webp",
+    "w": 139,
+    "h": 104,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli.webp",
+    "w": 312,
+    "h": 275,
+    "nw": 729,
+    "nh": 642,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/brands-photo/bonfiglioli-g1.webp",
+    "w": 80,
+    "h": 74,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "contain"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.92px",
+   "text": "Редукторы и мотор-редукторы Bonfiglioli (Бонфиглиоли)"
+  }
+ }
+}
