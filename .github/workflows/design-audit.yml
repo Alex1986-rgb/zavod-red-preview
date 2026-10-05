@@ -1,0 +1,87 @@
+# Дизайн-аудит страниц на раннере GitHub: рендер превью-ветки, скриншоты по секциям
+# (desktop/mobile), полная страница, замеры DOM. Боевой сайт НЕ трогает, ничего не деплоит.
+# Результат коммитится в служебную ветку claude/audit-shots (папка = label), откуда его
+# забирают через git — логи и артефакты раннера из облачной сессии недоступны.
+name: design-audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "Страницы через запятую (относительные пути, напр. catalog/index.html,podbor.html)"
+        type: string
+        default: "index.html"
+      label:
+        description: "Имя папки результата в ветке claude/audit-shots"
+        type: string
+        default: "run"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: design-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Генерируемые разделы (сотни тысяч файлов) для аудита не нужны.
+          sparse-checkout: |
+            /*
+            !/analog/
+            !/dist/
+            !/ispolnenie/
+            !/tiporazmer/
+            !/motor-reduktor-zr/
+            !/.index-state.json
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Поставить Playwright + Chromium
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null
+          npm i playwright@1.47.2 --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Поднять статику и снять страницы
+        env:
+          PAGES: ${{ inputs.pages }}
+          LABEL: ${{ inputs.label }}
+        run: |
+          python3 -m http.server 4188 --bind 127.0.0.1 >/tmp/http.log 2>&1 &
+          sleep 1
+          cp tools/design-audit/audit.mjs /tmp/pw/audit.mjs
+          mkdir -p /tmp/out
+          IFS=',' read -ra arr <<< "$PAGES"
+          for pg in "${arr[@]}"; do
+            pg="$(echo "$pg" | xargs)"; [ -z "$pg" ] && continue
+            slug="$(echo "$pg" | sed 's#/index\.html$##; s#\.html$##; s#[^A-Za-z0-9_-]#_#g')"; [ -z "$slug" ] && slug=root
+            echo "=== $pg -> $slug"
+            (cd /tmp/pw && node audit.mjs "/tmp/out/$LABEL/$slug" "http://127.0.0.1:4188" "$pg") || echo "ОШИБКА на $pg"
+          done
+          du -sh /tmp/out/"$LABEL"; find /tmp/out -type f | wc -l
+          cat /tmp/out/"$LABEL"/*/summary.txt || true
+
+      - name: Сложить результат в ветку claude/audit-shots
+        env:
+          LABEL: ${{ inputs.label }}
+          TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          mkdir -p /tmp/shots && cd /tmp/shots
+          git init -q -b claude/audit-shots
+          git config user.name "design-audit bot"; git config user.email "actions@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin claude/audit-shots 2>/dev/null; then git reset -q --hard FETCH_HEAD; fi
+          rm -rf "$LABEL"; cp -r "/tmp/out/$LABEL" "$LABEL"
+          git add -A; git commit -q -m "design-audit: $LABEL (${{ inputs.pages }})" || { echo "нечего коммитить"; exit 0; }
+          for i in 1 2 3 4; do git push -q origin HEAD:claude/audit-shots && exit 0; sleep $((2**i)); git fetch -q origin claude/audit-shots && git rebase -q FETCH_HEAD || true; done
+          exit 1
