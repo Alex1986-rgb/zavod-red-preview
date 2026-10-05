@@ -1,0 +1,3009 @@
+{
+ "desktop": {
+  "url": "/podbor.html",
+  "title": "Калькулятор подбора редуктора по параметрам | ЗР",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 5838,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 304,
+    "h": 338,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 642,
+    "h": 2019,
+    "padT": 40,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 8,
+     "text": "Калькулятор подбора редуктора по парамет"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 2662,
+    "h": 666,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Параметры для точного подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -66
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3328,
+    "h": 569,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 8,
+     "text": "Типы редукторов: ориентиры для подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 3897,
+    "h": 443,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Частые вопросы по подбору"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4339,
+    "h": 344,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Выбрать редуктор по типу"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4683,
+    "h": 398,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Нужен точный подбор под нагрузку?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -83
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 5081,
+    "h": 321,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 5402,
+    "h": 436,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4687",
+   "A. right=1590",
+   "I. right=1590",
+   "A. right=1890",
+   "B. right=1715",
+   "I. right=1890",
+   "A. right=2505",
+   "B. right=1973",
+   "I. right=2505",
+   "A. right=2713",
+   "B. right=2559",
+   "I. right=2713"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Наши ZR",
+    "cls": "pf-pill pf-pill--brand is-acti",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgb(244, 246, 248)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "EVL",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SEW",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "NORD",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bonfiglioli",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Motovario",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bauer",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Yilmaz",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Lenze",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "STM",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Transtecno",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Watt Drive",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Vemper",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "INNOVARI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tos Znojmo",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SITI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varmec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varvel",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Rossi",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "InnoRed",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tramec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Flender",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Siemens",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "KEB",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Boneng",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Guomao",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(14, 26, 36)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(239, 239, 239)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   30,
+   46
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 46,
+    "lh": "48.76px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Подбор редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Калькулятор подбора редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Параметры для точного подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Типы редукторов: ориентиры для подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы по подбору"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Выбрать редуктор по типу"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Нужен точный подбор под нагрузку?"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 46,
+   "lh": "48.76px",
+   "text": "Подбор редуктора по параметрам"
+  }
+ },
+ "tablet": {
+  "url": "/podbor.html",
+  "title": "Калькулятор подбора редуктора по параметрам | ЗР",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 5878,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 220,
+    "h": 320,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 541,
+    "h": 2051,
+    "padT": 40,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 8,
+     "text": "Калькулятор подбора редуктора по парамет"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 2592,
+    "h": 698,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Параметры для точного подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -60
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3289,
+    "h": 619,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 8,
+     "text": "Типы редукторов: ориентиры для подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 3908,
+    "h": 436,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Частые вопросы по подбору"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4345,
+    "h": 363,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Выбрать редуктор по типу"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4708,
+    "h": 391,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Нужен точный подбор под нагрузку?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -77
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 5099,
+    "h": 321,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 5420,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4688",
+   "A. right=1143",
+   "I. right=1143",
+   "A. right=1232",
+   "B. right=1211",
+   "A. right=1591",
+   "B. right=1297",
+   "I. right=1591",
+   "A. right=1891",
+   "B. right=1716",
+   "I. right=1891",
+   "A. right=2506"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Наши ZR",
+    "cls": "pf-pill pf-pill--brand is-acti",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgb(244, 246, 248)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "EVL",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SEW",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "NORD",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bonfiglioli",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Motovario",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bauer",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Yilmaz",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Lenze",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "STM",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Transtecno",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Watt Drive",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Vemper",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "INNOVARI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tos Znojmo",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SITI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varmec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varvel",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Rossi",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "InnoRed",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tramec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Flender",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Siemens",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "KEB",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Boneng",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Guomao",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 31,
+    "fs": 13,
+    "pad": "8px 14px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(14, 26, 36)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 33,
+    "fs": 13,
+    "pad": "9px 15px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "0px",
+    "bg": "rgb(239, 239, 239)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   25,
+   30,
+   45
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 45,
+    "lh": "47.7594px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Подбор редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Калькулятор подбора редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Параметры для точного подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Типы редукторов: ориентиры для подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы по подбору"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Выбрать редуктор по типу"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Нужен точный подбор под нагрузку?"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 45,
+   "lh": "47.7594px",
+   "text": "Подбор редуктора по параметрам"
+  }
+ },
+ "mobile": {
+  "url": "/podbor.html",
+  "title": "Калькулятор подбора редуктора по параметрам | ЗР",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 11038,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 250,
+    "h": 398,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "kalkulyator",
+    "cls": "section",
+    "top": 648,
+    "h": 4336,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 8,
+     "text": "Калькулятор подбора редуктора по парамет"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "pfCards",
+    "cls": "pf-cards",
+    "top": 0,
+    "h": 0,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 4984,
+    "h": 1351,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Параметры для точного подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": -663
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6335,
+    "h": 808,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 8,
+     "text": "Типы редукторов: ориентиры для подбора"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 8
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 7143,
+    "h": 742,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Частые вопросы по подбору"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7885,
+    "h": 700,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Выбрать редуктор по типу"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 8585,
+    "h": 499,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Нужен точный подбор под нагрузку?"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -100
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 9084,
+    "h": 521,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 9605,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4581",
+   "A. right=480",
+   "B. right=396",
+   "I. right=480",
+   "A. right=589",
+   "B. right=554",
+   "I. right=589",
+   "A. right=752",
+   "B. right=661",
+   "I. right=752",
+   "A. right=944",
+   "B. right=811"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Наши ZR",
+    "cls": "pf-pill pf-pill--brand is-acti",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(244, 246, 248)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "EVL",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SEW",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "NORD",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bonfiglioli",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Motovario",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Bauer",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Yilmaz",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Lenze",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "STM",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Transtecno",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Watt Drive",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Vemper",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "INNOVARI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tos Znojmo",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "SITI",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varmec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Varvel",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Rossi",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "InnoRed",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Tramec",
+    "cls": "pf-pill pf-pill--brand",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Flender",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Siemens",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "KEB",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Boneng",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Guomao",
+    "cls": "pf-pill pf-pill--brand is-noda",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Все типы",
+    "cls": "pf-pill is-active",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(14, 26, 36)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Червячный",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Соосно-цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндро-конический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Плоский цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Цилиндрический",
+    "cls": "pf-pill",
+    "h": 40,
+    "fs": 13,
+    "pad": "10px 16px",
+    "r": "999px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Все параметры",
+    "cls": "pf-advbtn",
+    "h": 40,
+    "fs": 14,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Сбросить фильтр",
+    "cls": "pf-btn pf-btn--ghost",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(82, 96, 105)"
+   },
+   {
+    "t": "Получить выгрузку на п",
+    "cls": "pf-btn pf-btn--red",
+    "h": 43,
+    "fs": 14,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "12px 12px 0px 0px",
+   "0px 0px 12px 12px",
+   "20px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Подбор редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Калькулятор подбора редуктора по параметрам"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Параметры для точного подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 8,
+    "text": "Типы редукторов: ориентиры для подбора"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы по подбору"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Выбрать редуктор по типу"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Нужен точный подбор под нагрузку?"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.36px",
+   "text": "Подбор редуктора по параметрам"
+  }
+ }
+}

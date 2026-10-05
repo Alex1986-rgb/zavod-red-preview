@@ -1,0 +1,3270 @@
+{
+ "desktop": {
+  "url": "/about.html",
+  "title": "О заводе «НИИ АТТ» — производство редукторов и мотор-редукторов | Завод Редукторов",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 8052,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero abt-hero",
+    "top": 304,
+    "h": 615,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section abt-facts",
+    "top": 927,
+    "h": 166,
+    "padT": 38,
+    "padB": 38,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 1100,
+    "h": 651,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 1751,
+    "h": 495,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Почему выбирают наше производство"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2246,
+    "h": 869,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Наш цех и склад"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 18,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "abt-types",
+    "cls": "section sec-alt",
+    "top": 3115,
+    "h": 715,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Что мы производим"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "team",
+    "cls": "section",
+    "top": 3831,
+    "h": 728,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Люди нашего производства"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 18,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "video",
+    "cls": "section sec-alt",
+    "top": 4558,
+    "h": 772,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Завод изнутри"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 18,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 5330,
+    "h": 824,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Подберём редуктор под вашу задачу"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -83
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 6154,
+    "h": 443,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Частые вопросы о заводе"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "docs",
+    "cls": "section abt-docs",
+    "top": 6596,
+    "h": 782,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "34.5px",
+     "mb": 22,
+     "text": "Сертификаты и реквизиты"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 603
+    },
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7379,
+    "h": 237,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 7615,
+    "h": 436,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4680",
+   "A. right=1583",
+   "I. right=1583",
+   "A. right=1883",
+   "B. right=1708",
+   "I. right=1883",
+   "A. right=2498",
+   "B. right=1966",
+   "I. right=2498",
+   "A. right=2706",
+   "B. right=2552",
+   "I. right=2706"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Приехать на производст",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "‹",
+    "cls": "tc-arrow tc-prev",
+    "h": 46,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "›",
+    "cls": "tc-arrow tc-next",
+    "h": 46,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "+7 (495) 151-41-02",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   24,
+   30,
+   46
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "18px",
+   "20px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 46,
+    "lh": "48.76px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Собственное производство редукторов в Челябинске"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Полный цикл на своём производстве"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Закалка зубьев 56–62 HRC"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Зубошлифовка и зубошевингование"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Гарантия 24 месяца"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Импортозамещение «под ключ»"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Отгрузка от 3 дней"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Почему выбирают наше производство"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Наш цех и склад"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Что мы производим"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Люди нашего производства"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод изнутри"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о заводе"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "34.5px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Сертификаты и реквизиты"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/production/p01.webp",
+    "w": 529,
+    "h": 397,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "assets/production/p03.webp",
+    "w": 371,
+    "h": 278,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p02.webp",
+    "w": 371,
+    "h": 278,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p05.webp",
+    "w": 371,
+    "h": 279,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p07.webp",
+    "w": 371,
+    "h": 278,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p04.webp",
+    "w": 371,
+    "h": 278,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p08.webp",
+    "w": 371,
+    "h": 279,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t1.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/aleksandr-nik.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t2.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/vasiliy.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t3.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/konstantin.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t5.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/andrey-svarka.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 46,
+   "lh": "48.76px",
+   "text": "Собственное производство редукторов в Челябинске"
+  }
+ },
+ "tablet": {
+  "url": "/about.html",
+  "title": "О заводе «НИИ АТТ» — производство редукторов и мотор-редукторов | Завод Редукторов",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 8055,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero abt-hero",
+    "top": 220,
+    "h": 647,
+    "padT": 56,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section abt-facts",
+    "top": 875,
+    "h": 163,
+    "padT": 38,
+    "padB": 38,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 1046,
+    "h": 720,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 1766,
+    "h": 489,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Почему выбирают наше производство"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 2255,
+    "h": 741,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Наш цех и склад"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "abt-types",
+    "cls": "section sec-alt",
+    "top": 2996,
+    "h": 821,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Что мы производим"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "team",
+    "cls": "section",
+    "top": 3817,
+    "h": 683,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Люди нашего производства"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "video",
+    "cls": "section sec-alt",
+    "top": 4500,
+    "h": 761,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Завод изнутри"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 760
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 5261,
+    "h": 817,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Подберём редуктор под вашу задачу"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -77
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 6078,
+    "h": 487,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Частые вопросы о заводе"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "docs",
+    "cls": "section abt-docs",
+    "top": 6566,
+    "h": 796,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "28.2624px",
+     "mb": 22,
+     "text": "Сертификаты и реквизиты"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 603
+    },
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7361,
+    "h": 237,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 7598,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4681",
+   "A. right=1136",
+   "I. right=1136",
+   "A. right=1225",
+   "B. right=1204",
+   "A. right=1584",
+   "B. right=1290",
+   "I. right=1584",
+   "A. right=1884",
+   "B. right=1709",
+   "I. right=1884",
+   "A. right=2499"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Приехать на производст",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "‹",
+    "cls": "tc-arrow tc-prev",
+    "h": 46,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "›",
+    "cls": "tc-arrow tc-next",
+    "h": 46,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "+7 (495) 151-41-02",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   24,
+   25,
+   30,
+   45
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "18px",
+   "20px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 45,
+    "lh": "47.7594px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Собственное производство редукторов в Челябинске"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Полный цикл на своём производстве"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Закалка зубьев 56–62 HRC"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Зубошлифовка и зубошевингование"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Гарантия 24 месяца"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Импортозамещение «под ключ»"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Отгрузка от 3 дней"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Почему выбирают наше производство"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Наш цех и склад"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Что мы производим"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Люди нашего производства"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод изнутри"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о заводе"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "28.2624px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Сертификаты и реквизиты"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/production/p01.webp",
+    "w": 446,
+    "h": 335,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "assets/production/p03.webp",
+    "w": 313,
+    "h": 234,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p02.webp",
+    "w": 313,
+    "h": 235,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p05.webp",
+    "w": 313,
+    "h": 234,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p07.webp",
+    "w": 313,
+    "h": 234,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p04.webp",
+    "w": 313,
+    "h": 235,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p08.webp",
+    "w": 313,
+    "h": 234,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t1.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/aleksandr-nik.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t2.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/vasiliy.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t3.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/konstantin.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t5.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 640,
+    "nh": 640,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/andrey-svarka.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 720,
+    "nh": 405,
+    "alt": true,
+    "fit": "cover"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 45,
+   "lh": "47.7594px",
+   "text": "Собственное производство редукторов в Челябинске"
+  }
+ },
+ "mobile": {
+  "url": "/about.html",
+  "title": "О заводе «НИИ АТТ» — производство редукторов и мотор-редукторов | Завод Редукторов",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 11534,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero abt-hero",
+    "top": 250,
+    "h": 953,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section abt-facts",
+    "top": 1211,
+    "h": 292,
+    "padT": 30,
+    "padB": 30,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 1511,
+    "h": 1488,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 2999,
+    "h": 822,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Почему выбирают наше производство"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 3821,
+    "h": 666,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Наш цех и склад"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 342
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "abt-types",
+    "cls": "section sec-alt",
+    "top": 4487,
+    "h": 1151,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Что мы производим"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "team",
+    "cls": "section",
+    "top": 5637,
+    "h": 720,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Люди нашего производства"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 342
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "video",
+    "cls": "section sec-alt",
+    "top": 6358,
+    "h": 436,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Завод изнутри"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 15,
+     "mb": 34,
+     "w": 342
+    },
+    "gapH2ToContent": 34
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6793,
+    "h": 994,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Подберём редуктор под вашу задачу"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -100
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 7787,
+    "h": 810,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgb(244, 246, 248)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Частые вопросы о заводе"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "docs",
+    "cls": "section abt-docs",
+    "top": 8597,
+    "h": 1104,
+    "padT": 40,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.3px",
+     "mb": 22,
+     "text": "Сертификаты и реквизиты"
+    },
+    "eyebrow": true,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 342
+    },
+    "gapH2ToContent": 22
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 9701,
+    "h": 400,
+    "padT": 0,
+    "padB": 40,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 10101,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4578",
+   "A. right=477",
+   "B. right=393",
+   "I. right=477",
+   "A. right=586",
+   "B. right=551",
+   "I. right=586",
+   "A. right=750",
+   "B. right=659",
+   "I. right=750",
+   "A. right=941",
+   "B. right=808"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Приехать на производст",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "‹",
+    "cls": "tc-arrow tc-prev",
+    "h": 0,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "›",
+    "cls": "tc-arrow tc-next",
+    "h": 0,
+    "fs": 24,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "vfac-btn",
+    "h": 72,
+    "fs": 13,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(225, 27, 27, 0.9)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "+7 (495) 151-41-02",
+    "cls": "btn ghost lg",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(15, 28, 38)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   24,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "999px",
+   "14px",
+   "18px",
+   "20px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Собственное производство редукторов в Челябинске"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Полный цикл на своём производстве"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Закалка зубьев 56–62 HRC"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Зубошлифовка и зубошевингование"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Гарантия 24 месяца"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Импортозамещение «под ключ»"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "normal",
+    "mt": 0,
+    "mb": 8,
+    "text": "Отгрузка от 3 дней"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Почему выбирают наше производство"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Наш цех и склад"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Что мы производим"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Люди нашего производства"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Завод изнутри"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Частые вопросы о заводе"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.3px",
+    "mt": 0,
+    "mb": 22,
+    "text": "Сертификаты и реквизиты"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "assets/production/p01.webp",
+    "w": 342,
+    "h": 257,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "assets/production/p03.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p02.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p05.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p07.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p04.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/production/p08.webp",
+    "w": 161,
+    "h": 121,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t1.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/aleksandr-nik.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t2.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/vasiliy.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t3.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/konstantin.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/team/t5.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "assets/video/team/andrey-svarka.webp",
+    "w": 228,
+    "h": 228,
+    "nw": 0,
+    "nh": 0,
+    "alt": true,
+    "fit": "cover"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "zr-modern",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.36px",
+   "text": "Собственное производство редукторов в Челябинске"
+  }
+ }
+}
