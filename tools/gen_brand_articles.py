@@ -167,7 +167,7 @@ class Skeleton:
                f"  <h1>{h1}</h1>\n"
                f'  <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~{minutes} минут</p>\n'
                f"</div></section>\n\n"
-               f'<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">\n')
+               f'<section class="section"><div class="wrap"><div class="art">\n')
         return hb + art + "\n" + self.mid + faq_html(faq) + self.tail
 
     def _chrome(self):
