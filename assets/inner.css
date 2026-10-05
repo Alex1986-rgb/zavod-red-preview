@@ -501,3 +501,52 @@ a.brand:hover{border-color:var(--red);transform:translateY(-2px)}
 @media(max-width:760px){.seo-tbl{display:block;overflow-x:auto;white-space:nowrap}
 /* подпись над таблицей переносим: иначе она уезжает за край вместе со скроллом */
 .seo-tbl caption{white-space:normal}}
+
+/* ==========================================================================
+   КАРТОЧКИ ТОВАРА (/reduktor/, /analog/, /ispolnenie/, /tiporazmer/,
+   /motor-reduktor-zr/) — по итогам дизайн-критики.
+   Карточки несут стили инлайном, и 73 900 аналогов перегенерировать здесь
+   нельзя. Поэтому правила ниже написаны селекторами БОЛЕЕ специфичными, чем
+   инлайновые (.p2 .x вместо .x), чтобы перебить их из общего файла и
+   примениться ко всем карточкам сразу. Все селекторы привязаны к классам,
+   которых нет на других типах страниц.
+   ========================================================================== */
+/* h1 карточки на телефоне опускался до 24px — ровно как h2 секций; иерархия исчезала */
+h1.p2-h1{font-size:clamp(27px,2.8vw,33px)}
+/* описание на всю ширину .wrap — 150 знаков в строке; как у .seo-lead */
+.seo-text .opis-lead,.rich .opis-lead{max-width:920px}
+.opis-grid p{font-size:15px;line-height:1.7;margin:0 0 12px}
+#opis .rich h3{font-size:18px;margin:26px 0 8px}
+.sec-h+.lead{font-size:15.5px;line-height:1.6;margin-bottom:18px;max-width:760px}
+/* красный ушёл с действий на текст: заголовки 8 справочных плиток, 4 контурных чипа-перехода, зелёный чип наличия вне палитры */
+.wrap .why-grid b{color:var(--text)}
+.p2 .p2-feats a{border:1px solid var(--line);color:var(--text);background:var(--card);border-radius:10px}
+.p2 .p2-feats a:hover{border-color:var(--red);color:var(--red);background:var(--card)}
+.p2 .p2-stock{background:var(--bg2);color:var(--text);border:1px solid var(--line);font-weight:600}
+/* закреплённая «Получить расчёт» в якорной панели — заявка, значит красная заливка, не контур */
+.wrap nav.apro-nav a.red{background:var(--red);color:#fff;border-color:var(--red);font-weight:700}
+.wrap nav.apro-nav a.red:hover{background:#c81414;border-color:#c81414}
+nav.apro-nav a{white-space:nowrap;flex:0 0 auto}
+/* якорные переходы сажали секцию под шапку и липкую панель */
+html{scroll-padding-top:120px}
+/* контурная кнопка светилась красной тенью, как заявка */
+[data-theme="light"] .btn.ghost{box-shadow:none}
+/* таблица «Примеры исполнений»: 5 шапок × width:42% разъезжались */
+.spec-ex th{width:auto;white-space:nowrap}
+.spec-ex td{text-align:right;font-variant-numeric:tabular-nums}
+/* 14 радиусов вместо шкалы: плитки и панели — 14, чипы — 10 */
+.wrap .why-grid>div,.wrap .p2-trust>div,.wrap .faq2 details,.wrap .ispn a,.p2 .p2-offer{border-radius:14px}
+.p2 .p2-docs a,.wrap nav.apro-nav a{border-radius:10px}
+@media(max-width:860px){
+  /* чипы «Техническая документация» в галерее дублируют секцию #tehdoc и отодвигали h1 на ~1000px вниз */
+  .p2-gal .p2-docs{display:none}
+}
+@media(max-width:560px){
+  .p2-gal .p2-thumbs button{flex:0 0 calc((100% - 30px)/4);height:66px}
+  .opis-grid .p2-lspec>div{flex-direction:column}
+  .opis-grid .p2-lspec .k{flex:none;padding:8px 13px 0;font-size:12px}
+  nav.apro-nav{scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  nav.apro-nav::-webkit-scrollbar{display:none}
+}
+@media(max-width:480px){.wrap .why-grid{grid-template-columns:1fr;gap:10px}}
+@media(max-width:420px){.p2 .p2-feats{grid-template-columns:1fr}}

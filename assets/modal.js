@@ -412,7 +412,7 @@ function zrNowMs(){return+new Date();}
   bar.innerHTML='<a class="zrmb-lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
   document.body.appendChild(bar);
   /* Пока на экране кнопка заявки из hero — панель с той же кнопкой не нужна: три красных действия в одном экране и 70px закрытого контента. */
-  try{ var hc=document.querySelector('.hero-cta, .phero .btn.lg, .phero .btn');
+  try{ var hc=document.querySelector('.hero-cta, .phero .btn.lg, .phero .btn, .p2-cta1 .btn, .p2-cta .btn')  /* + первая CTA карточки товара */;
     if(hc && 'IntersectionObserver' in window){ new IntersectionObserver(function(es){ bar.classList.toggle('is-off', es[0].isIntersecting); },{threshold:0.4}).observe(hc); } }catch(e){}
 })();
 

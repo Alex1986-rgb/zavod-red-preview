@@ -38,8 +38,8 @@ CSS='''<style id="p2-css">
 .p2-rows .k svg{width:15px;height:15px;color:var(--red);flex:none}
 .p2-rows .v{color:var(--text);font-weight:600}
 .p2-feats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:15px 0 0}
-.p2-feats a{display:flex;align-items:center;gap:8px;border:1.5px solid var(--red);color:var(--red);border-radius:11px;padding:10px 13px;font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s}
-.p2-feats a:hover{background:var(--red);color:#fff}
+.p2-feats a{display:flex;align-items:center;gap:8px;border:1px solid var(--line);color:var(--text);background:var(--card);border-radius:10px;padding:10px 13px;font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s}
+.p2-feats a:hover{border-color:var(--red);color:var(--red)}
 .p2-desc{color:var(--muted);font-size:14.5px;line-height:1.55;margin:16px 0 0;max-width:66ch}
 .p2-desc b{color:var(--text)}
 .p2-spec{margin:16px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
