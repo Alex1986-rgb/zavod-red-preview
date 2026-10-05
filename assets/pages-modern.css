@@ -128,3 +128,7 @@
   .zr-modern .xref{min-width:560px;overflow:clip}
   .zr-modern .xref th:first-child,.zr-modern .xref td:first-child{position:sticky;left:0;z-index:2;background:var(--card,#fff)}
 }
+
+/* CTA-плашка: радиус из шкалы, компактно на телефоне */
+.zr-modern .cta-band{border-radius:18px}
+@media(max-width:620px){.zr-modern .cta-band{padding:30px 20px;border-radius:14px}.zr-modern .cta-band h2{font-size:22px}.zr-modern .cta-band .btn.lg{width:100%;justify-content:center}}

@@ -148,6 +148,7 @@
   }
   // карточки-ссылки (ind-card / post-card / ser-card): целиком <a href> → добавляем только ♥
   function enhanceLinkCard(card, titleSel) {
+    if (card.closest && card.closest("[data-no-fav]")) return;
     if (card.getAttribute("data-zr-enh")) return; card.setAttribute("data-zr-enh", "1");
     var name = txt(card, titleSel) || txt(card, "b") || (card.getAttribute("aria-label") || "").trim();
     if (!name) return;
@@ -161,7 +162,7 @@
     [].forEach.call(d.querySelectorAll(".zrcard"), enhanceZrcard);
     [].forEach.call(d.querySelectorAll(".pcard"), enhancePcardA);
     [].forEach.call(d.querySelectorAll("a.ind-card"), function (c) { enhanceLinkCard(c, "b"); });
-    [].forEach.call(d.querySelectorAll("a.post-card"), function (c) { enhanceLinkCard(c, "h2"); });
+    [].forEach.call(d.querySelectorAll("a.post-card"), function (c) { enhanceLinkCard(c, "h3,h2"); });
     [].forEach.call(d.querySelectorAll("a.ser-card"), function (c) { enhanceLinkCard(c, "b"); });
   }
   if (d.readyState === "loading") d.addEventListener("DOMContentLoaded", scan); else scan();

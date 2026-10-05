@@ -12,6 +12,7 @@
 <meta property="og:title" content="Подбор аналога редуктора Rossi: пошагово" /><meta property="og:description" content="Пошаговый подбор российского аналога редуктора Rossi: снятие параметров, расчёт момента и передаточного числа, сверка монтажа и выбор типоразмера ZR." />
 <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-blueprint.webp" />
 <link rel="stylesheet" href="../assets/inner.css?v=k6c3" />
+<link rel="stylesheet" href="../assets/inner-pages.css?v=1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Подбор аналога редуктора Rossi: пошагово", "description": "Пошаговый подбор российского аналога редуктора Rossi: снятие параметров, расчёт момента и передаточного числа, сверка монтажа и выбор типоразмера ZR.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/reduktor-rossi-podbor.html", "image": "https://zavod-red.ru/assets/blog-photo/th-blueprint.webp"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Подбор аналога редуктора Rossi: пошагово", "item": "https://zavod-red.ru/blog/reduktor-rossi-podbor.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "С чего начать подбор аналога Rossi?", "acceptedAnswer": {"@type": "Answer", "text": "Со снятия данных: тип редуктора, передаточное число, мощность и обороты двигателя, диаметр вала и исполнение. Если шильдик нечитаем, замерьте геометрию и параметры двигателя."}}, {"@type": "Question", "name": "Как посчитать нужный момент?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T=9550·P·КПД/n2. Возьмите мощность двигателя в кВт, обороты выходного вала и КПД передачи (около 0,98 на ступень для цилиндрической, 0,6–0,9 для червячной)."}}, {"@type": "Question", "name": "Как определить передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Разделите обороты двигателя на обороты выхода: i=n1/n2 при n1≈1450 об/мин. Затем выберите ближайшее i из ряда ZR."}}, {"@type": "Question", "name": "Что делать, если монтаж не совпадает?", "acceptedAnswer": {"@type": "Answer", "text": "Небольшие расхождения решаются переходной плитой или выбором соседнего типоразмера. Инженер определяет вариант по чертежу посадочного узла."}}, {"@type": "Question", "name": "Можно ли подобрать аналог онлайн?", "acceptedAnswer": {"@type": "Answer", "text": "Да, через калькулятор подбора: он предлагает типоразмер по введённым мощности, оборотам и моменту, сокращая ручной расчёт и перебор вариантов."}}, {"@type": "Question", "name": "Насколько точно нужно попасть в передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Небольшое отклонение допустимо: разницу в оборотах часто компенсируют выбором двигателя. Важнее выдержать момент и монтаж."}}, {"@type": "Question", "name": "ZR — это тот же импорт под другой маркой?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. ZR производит ООО «НИИ АТТ» в Челябинске. Это российское проектирование и сборка, что обеспечивает короткие сроки и доступность запчастей."}}]}</script>
@@ -47,7 +48,7 @@
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор аналога редуктора Rossi: пошагово</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Аналоги импорта · Rossi</div>
-  <h1>Подбор аналога редуктора Rossi: пошаговая инструкция</h1><img class="blog-hero-img" src="../assets/blog-photo/th-blueprint.webp" alt="Подбор аналога редуктора Rossi: пошаговая инструкция — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
+  <h1>Подбор аналога редуктора Rossi: пошаговая инструкция</h1><img class="blog-hero-img" src="../assets/blog-photo/th-blueprint.webp" alt="Подбор аналога редуктора Rossi: пошаговая инструкция — Завод Редукторов" loading="eager">
   <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
   <p>Заменить редуктор Rossi без переделки привода реально, если действовать по порядку. Эта инструкция проведёт от снятия параметров со старого редуктора до выбора типоразмера ZR — с формулами и списком того, что обязательно сверить перед заказом.</p>
 </div></section>
@@ -59,32 +60,32 @@
     <b>Подберём аналог Rossi под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель ZR и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
   </div>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section sec-alt"><div class="wrap">
   <div class="eyebrow">Вопросы и ответы</div>
   <h2>Частые вопросы: Rossi и аналоги ZR</h2>
   <div class="faq-grid"><div class="cat-faq"><details><summary>С чего начать подбор аналога Rossi?</summary><div>Со снятия данных: тип редуктора, передаточное число, мощность и обороты двигателя, диаметр вала и исполнение. Если шильдик нечитаем, замерьте геометрию и параметры двигателя.</div></details><details><summary>Как посчитать нужный момент?</summary><div>По формуле T=9550·P·КПД/n2. Возьмите мощность двигателя в кВт, обороты выходного вала и КПД передачи (около 0,98 на ступень для цилиндрической, 0,6–0,9 для червячной).</div></details><details><summary>Как определить передаточное число?</summary><div>Разделите обороты двигателя на обороты выхода: i=n1/n2 при n1≈1450 об/мин. Затем выберите ближайшее i из ряда ZR.</div></details><details><summary>Что делать, если монтаж не совпадает?</summary><div>Небольшие расхождения решаются переходной плитой или выбором соседнего типоразмера. Инженер определяет вариант по чертежу посадочного узла.</div></details></div><div class="cat-faq"><details><summary>Можно ли подобрать аналог онлайн?</summary><div>Да, через калькулятор подбора: он предлагает типоразмер по введённым мощности, оборотам и моменту, сокращая ручной расчёт и перебор вариантов.</div></details><details><summary>Насколько точно нужно попасть в передаточное число?</summary><div>Небольшое отклонение допустимо: разницу в оборотах часто компенсируют выбором двигателя. Важнее выдержать момент и монтаж.</div></details><details><summary>ZR — это тот же импорт под другой маркой?</summary><div>Нет. ZR производит ООО «НИИ АТТ» в Челябинске. Это российское проектирование и сборка, что обеспечивает короткие сроки и доступность запчастей.</div></details></div></div>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+<section class="section"><div class="wrap"><div class="seo-text">
   <p class="seo-lead">Пошаговый подбор аналога Rossi: параметры, формулы, монтаж и выбор типоразмера ZR.</p>
   <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
   <div class="seo-body"><p>Алгоритм прост: снять данные со старого редуктора, посчитать момент по T=9550·P·КПД/n2, определить передаточное число i=n1/n2 при n1≈1450 об/мин, сверить монтаж и выбрать типоразмер ZR с запасом по сервис-фактору.</p><p>ZR — марка ООО «НИИ АТТ» (Челябинск). Российское производство даёт короткие сроки и доступность запчастей, а совпадение присоединительных размеров позволяет ставить аналог на штатное место без переделки привода.</p><h3>Чек-лист подбора</h3><table class="spec"><tbody><tr><th>Шаг</th><td>Действие</td></tr><tr><th>1</th><td>Снять параметры Rossi</td></tr><tr><th>2</th><td>Посчитать момент</td></tr><tr><th>3</th><td>Определить i</td></tr><tr><th>4</th><td>Сверить монтаж</td></tr><tr><th>5</th><td>Выбрать типоразмер ZR</td></tr></tbody></table>
   <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
   </div></details>
 </div></div></section>
-<section class="section"><div class="wrap" style="text-align:center">
+<section class="section sec-alt"><div class="wrap" style="text-align:center">
   <h2>Подберём аналог Rossi под вашу задачу</h2>
   <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
   <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="eyebrow">Читайте также</div>
   <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора аналога редуктора</a><a href="../analog/">Аналоги импортных редукторов ZR</a><a href="../importozameshchenie">Импортозамещение приводов Rossi</a></div>
 </div></section>
-<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
-<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
-<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<section class="section ref-band"><div class="wrap"><div class="rb-card">
+<div class="rb-eyebrow">Партнёрская программа завода</div>
+<h2>Инженерам и проектировщикам — 5% с заказа</h2>
 <p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
-<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<a class="btn lg ghost" data-zayavka data-topic="Партнёрская программа" href="#zayavka">Стать партнёром — 5% →</a>
 <div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
 </div></div></section>
     <footer class="site-footer">

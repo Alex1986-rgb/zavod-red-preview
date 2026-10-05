@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://zavod-red.ru"
@@ -946,10 +947,18 @@ def run_generator(article_iter, argv):
     if fresh:
         idx_p = os.path.join(BASE, "blog", "index.html")
         idx = open(idx_p, encoding="utf-8").read()
-        anchor = idx.find('<a class="post-card"')
+        # Карточки — в КОНЕЦ сетки #postGrid (раньше вставлялись перед первой и
+        # каждая новая партия ложилась сверху, отодвигая базовые статьи вниз).
+        # Рубрика нормализуется (tools/blog_rubrics.py), карточка скрыта до
+        # «Показать ещё» — индекс показывает первые 30 и фильтрует по data-cat.
+        from blog_rubrics import rubric
+        g0 = idx.find('<div class="post-grid" id="postGrid"')
+        anchor = idx.find('<p id="blogMoreWrap"', g0) if g0 >= 0 else idx.find('<a class="post-card"')
+        if anchor < 0:
+            anchor = idx.find('<a class="post-card"')
         cards = "".join(
-            f'<a class="post-card" href="/blog/{s}"><span class="pcat">{eb}</span>'
-            f'<h2>{h}</h2><p>{d}</p><span class="pgo">Читать →</span></a>\n'
+            f'<a class="post-card" href="/blog/{s}" data-cat="{rubric(eb)[0]}" hidden><span class="pcat">{rubric(eb)[1]}</span>'
+            f'<h3>{h}</h3><p>{d}</p><span class="pgo">Читать →</span></a>\n'
             for s, eb, h, d in fresh)
         open(idx_p, "w", encoding="utf-8").write(idx[:anchor] + cards + idx[anchor:])
         urls = "".join(

@@ -12,6 +12,7 @@
 <meta property="og:title" content="Редуктор Transtecno: руководство по замене" /><meta property="og:description" content="Пошаговое руководство по замене редуктора Transtecno на аналог ZR: диагностика, снятие размеров, расчёт момента, монтаж и запуск привода." />
 <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-06.webp" />
 <link rel="stylesheet" href="../assets/inner.css?v=k6c3" />
+<link rel="stylesheet" href="../assets/inner-pages.css?v=1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Редуктор Transtecno: руководство по замене", "description": "Пошаговое руководство по замене редуктора Transtecno на аналог ZR: диагностика, снятие размеров, расчёт момента, монтаж и запуск привода.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/reduktor-transtecno-rukovodstvo.html", "image": "https://zavod-red.ru/assets/blog-photo/red-worm-06.webp"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Редуктор Transtecno: руководство по замене", "item": "https://zavod-red.ru/blog/reduktor-transtecno-rukovodstvo.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "С чего начать замену редуктора Transtecno?", "acceptedAnswer": {"@type": "Answer", "text": "С диагностики характера отказа и считывания характеристик с шильдика: типоразмера, передаточного числа, мощности и IEC двигателя. Это база для подбора аналога ZR."}}, {"@type": "Question", "name": "Как узнать передаточное число, если шильдик нечитаем?", "acceptedAnswer": {"@type": "Answer", "text": "Оценить как i=n1/n2, где n1≈1450 об/мин для стандартного двигателя, а n2 — фактическая скорость выходного вала. Также можно провернуть входной вал и сосчитать обороты выходного."}}, {"@type": "Question", "name": "Какой запас закладывать при подборе нового редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Зависит от режима: для ударных нагрузок и частых пусков сервис-фактор выше. Расчётный момент по T=9550·P·КПД/n2 умножают на коэффициент режима работы."}}, {"@type": "Question", "name": "Нужно ли сливать масло перед демонтажем?", "acceptedAnswer": {"@type": "Answer", "text": "Да, масло сливают до снятия редуктора, чтобы избежать протечек при демонтаже и подготовить узел к обратной сборке или утилизации."}}, {"@type": "Question", "name": "Как проверить редуктор после установки?", "acceptedAnswer": {"@type": "Answer", "text": "Сделать пробный пуск на холостом ходу: проверить направление вращения, уровень масла, отсутствие посторонних шумов и нагрев корпуса. Нагружать только после успешной проверки."}}, {"@type": "Question", "name": "Встанет ли ZR на место Transtecno без доработки?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если аналог подобран по присоединительным размерам — диаметру вала, фланцу, высоте оси и посадке IEC. Инженер проверяет совпадение до отгрузки."}}, {"@type": "Question", "name": "ZR — это оригинальный производитель?", "acceptedAnswer": {"@type": "Answer", "text": "Да, ZR выпускает ООО «НИИ АТТ» (Челябинск), Завод Редукторов. Это российское производство, а не перемаркированный импорт."}}]}</script>
@@ -47,7 +48,7 @@
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор Transtecno: руководство по замене</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Аналоги импорта · Transtecno</div>
-  <h1>Руководство по замене редуктора Transtecno на аналог ZR</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-06.webp" alt="Руководство по замене редуктора Transtecno на аналог ZR — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
+  <h1>Руководство по замене редуктора Transtecno на аналог ZR</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-06.webp" alt="Руководство по замене редуктора Transtecno на аналог ZR — Завод Редукторов" loading="eager">
   <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
   <p>Замена импортного редуктора кажется простой задачей только до момента, когда выясняется, что оригинал недоступен, а произвольный аналог не встаёт на место. Это руководство описывает всю последовательность действий — от диагностики отказавшего узла до пробного запуска нового редуктора ZR — так, чтобы замена прошла без остановки производства дольше необходимого.</p>
 </div></section>
@@ -59,32 +60,32 @@
     <b>Подберём аналог Transtecno под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель ZR и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
   </div>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section sec-alt"><div class="wrap">
   <div class="eyebrow">Вопросы и ответы</div>
   <h2>Частые вопросы: Transtecno и аналоги ZR</h2>
   <div class="faq-grid"><div class="cat-faq"><details><summary>С чего начать замену редуктора Transtecno?</summary><div>С диагностики характера отказа и считывания характеристик с шильдика: типоразмера, передаточного числа, мощности и IEC двигателя. Это база для подбора аналога ZR.</div></details><details><summary>Как узнать передаточное число, если шильдик нечитаем?</summary><div>Оценить как i=n1/n2, где n1≈1450 об/мин для стандартного двигателя, а n2 — фактическая скорость выходного вала. Также можно провернуть входной вал и сосчитать обороты выходного.</div></details><details><summary>Какой запас закладывать при подборе нового редуктора?</summary><div>Зависит от режима: для ударных нагрузок и частых пусков сервис-фактор выше. Расчётный момент по T=9550·P·КПД/n2 умножают на коэффициент режима работы.</div></details><details><summary>Нужно ли сливать масло перед демонтажем?</summary><div>Да, масло сливают до снятия редуктора, чтобы избежать протечек при демонтаже и подготовить узел к обратной сборке или утилизации.</div></details></div><div class="cat-faq"><details><summary>Как проверить редуктор после установки?</summary><div>Сделать пробный пуск на холостом ходу: проверить направление вращения, уровень масла, отсутствие посторонних шумов и нагрев корпуса. Нагружать только после успешной проверки.</div></details><details><summary>Встанет ли ZR на место Transtecno без доработки?</summary><div>Да, если аналог подобран по присоединительным размерам — диаметру вала, фланцу, высоте оси и посадке IEC. Инженер проверяет совпадение до отгрузки.</div></details><details><summary>ZR — это оригинальный производитель?</summary><div>Да, ZR выпускает ООО «НИИ АТТ» (Челябинск), Завод Редукторов. Это российское производство, а не перемаркированный импорт.</div></details></div></div>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+<section class="section"><div class="wrap"><div class="seo-text">
   <p class="seo-lead">Замена редуктора Transtecno выполняется по понятной последовательности: диагностика, размеры, расчёт, монтаж. Ниже — сжатые ориентиры для инженера.</p>
   <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
   <div class="seo-body"><p>Ключ к беспроблемной замене — не искать формально «ту же» модель, а воспроизвести три вещи: присоединительные размеры, передаточное число и нагрузочную способность. Присоединительные размеры обеспечивают монтаж без переделки, передаточное число i=n1/n2 сохраняет скорость машины, а момент T=9550·P·КПД/n2 гарантирует нужный запас.</p><p>Аналог ZR производства ООО «НИИ АТТ» подбирается под эти три параметра. Финальное решение согласуется с инженером по фактическим замерам и данным шильдика, что исключает недобор нагрузки и несовпадение посадки.</p><h3>Три параметра корректной замены</h3><table class="spec"><tbody><tr><th>Параметр</th><td>Чем обеспечивается</td></tr><tr><th>Монтаж без переделки</th><td>Совпадение присоединительных размеров</td></tr><tr><th>Скорость машины</th><td>i=n1/n2, n1≈1450 об/мин</td></tr><tr><th>Запас по нагрузке</th><td>T=9550·P·КПД/n2 × сервис-фактор</td></tr></tbody></table>
   <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
   </div></details>
 </div></div></section>
-<section class="section"><div class="wrap" style="text-align:center">
+<section class="section sec-alt"><div class="wrap" style="text-align:center">
   <h2>Подберём аналог Transtecno под вашу задачу</h2>
   <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
   <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="eyebrow">Читайте также</div>
   <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора ZR</a><a href="../importozameshchenie">Импортозамещение редукторов</a><a href="../catalog/">Каталог редукторов ZR</a></div>
 </div></section>
-<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
-<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
-<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<section class="section ref-band"><div class="wrap"><div class="rb-card">
+<div class="rb-eyebrow">Партнёрская программа завода</div>
+<h2>Инженерам и проектировщикам — 5% с заказа</h2>
 <p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
-<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<a class="btn lg ghost" data-zayavka data-topic="Партнёрская программа" href="#zayavka">Стать партнёром — 5% →</a>
 <div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
 </div></div></section>
     <footer class="site-footer">

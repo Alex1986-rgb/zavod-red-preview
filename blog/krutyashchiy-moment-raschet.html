@@ -12,6 +12,7 @@
 <meta property="og:title" content="Крутящий момент редуктора: формула и подбор" /><meta property="og:description" content="Расчёт крутящего момента на выходном валу редуктора по формуле T=9550·P·КПД/n2. Разбор примеров и подбор редуктора ZR по требуемому моменту." />
 <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-nameplate.webp" />
 <link rel="stylesheet" href="../assets/inner.css?v=k6c3" />
+<link rel="stylesheet" href="../assets/inner-pages.css?v=1" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Крутящий момент редуктора: формула и подбор", "description": "Расчёт крутящего момента на выходном валу редуктора по формуле T=9550·P·КПД/n2. Разбор примеров и подбор редуктора ZR по требуемому моменту.", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/krutyashchiy-moment-raschet.html", "image": "https://zavod-red.ru/assets/blog-photo/th-nameplate.webp"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Крутящий момент редуктора: формула и подбор", "item": "https://zavod-red.ru/blog/krutyashchiy-moment-raschet.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "По какой формуле считают крутящий момент редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "По формуле T=9550·P·КПД/n2, где P — мощность в кВт, КПД — доля, n2 — обороты выходного вала в об/мин. Момент получается в Н·м."}}, {"@type": "Question", "name": "Почему в формуле стоит коэффициент 9550?", "acceptedAnswer": {"@type": "Answer", "text": "Он связывает мощность в киловаттах и обороты в минуту с моментом в ньютон-метрах при переходе от мощности к моменту вращения."}}, {"@type": "Question", "name": "Что важнее при подборе — мощность или момент?", "acceptedAnswer": {"@type": "Answer", "text": "Момент. Именно располагаемый крутящий момент на выходе определяет, тронет ли привод нагрузку с места и выдержит ли рабочий режим."}}, {"@type": "Question", "name": "Зачем нужен сервис-фактор?", "acceptedAnswer": {"@type": "Answer", "text": "Он задаёт запас номинального момента редуктора над расчётным с учётом характера нагрузки и числа пусков. Для ударных нагрузок берут 1,5 и выше."}}, {"@type": "Question", "name": "Как обороты выхода влияют на момент?", "acceptedAnswer": {"@type": "Answer", "text": "Обратно пропорционально: чем ниже n2, тем больший момент можно снять с той же мощности. Снижение оборотов в два раза примерно удваивает момент."}}, {"@type": "Question", "name": "Что такое тепловая мощность редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Это способность рассеивать тепло от потерь при длительной работе. При её нехватке редуктор перегревается даже в пределах допустимого момента."}}, {"@type": "Question", "name": "Можно ли подобрать редуктор по моменту автоматически?", "acceptedAnswer": {"@type": "Answer", "text": "Да, через калькулятор подбора: он рассчитает требуемый момент по мощности и оборотам и предложит типоразмер ZR с нужным запасом."}}]}</script>
@@ -47,7 +48,7 @@
 <div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Крутящий момент редуктора: формула и подбор</div>
 <section class="phero"><div class="wrap">
   <div class="eyebrow">Аналоги импорта · SEW, Nord, Siemens</div>
-  <h1>Крутящий момент редуктора: формула и подбор</h1><img class="blog-hero-img" src="../assets/blog-photo/th-nameplate.webp" alt="Крутящий момент редуктора: формула и подбор — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
+  <h1>Крутящий момент редуктора: формула и подбор</h1><img class="blog-hero-img" src="../assets/blog-photo/th-nameplate.webp" alt="Крутящий момент редуктора: формула и подбор — Завод Редукторов" loading="eager">
   <p class="art-meta">Инженеры Завода Редукторов · производство и подбор аналогов</p>
   <p>Крутящий момент на выходном валу — главный параметр, по которому проверяют пригодность редуктора для конкретной нагрузки. Если располагаемый момент меньше требуемого, привод не тронет нагрузку с места или будет работать с перегрузкой. Поэтому расчёт момента идёт сразу после определения передаточного числа.</p>
 </div></section>
@@ -59,32 +60,32 @@
     <b>Подберём аналог SEW, Nord, Siemens под вашу задачу.</b> Введите параметры в <a href="../podbor.html#kalkulyator">калькуляторе подбора</a> — покажем нашу модель ZR и рассчитаем цену. Общее по замене импорта — <a href="../importozameshchenie">импортозамещение</a>.
   </div>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section sec-alt"><div class="wrap">
   <div class="eyebrow">Вопросы и ответы</div>
   <h2>Частые вопросы: SEW, Nord, Siemens и аналоги ZR</h2>
   <div class="faq-grid"><div class="cat-faq"><details><summary>По какой формуле считают крутящий момент редуктора?</summary><div>По формуле T=9550·P·КПД/n2, где P — мощность в кВт, КПД — доля, n2 — обороты выходного вала в об/мин. Момент получается в Н·м.</div></details><details><summary>Почему в формуле стоит коэффициент 9550?</summary><div>Он связывает мощность в киловаттах и обороты в минуту с моментом в ньютон-метрах при переходе от мощности к моменту вращения.</div></details><details><summary>Что важнее при подборе — мощность или момент?</summary><div>Момент. Именно располагаемый крутящий момент на выходе определяет, тронет ли привод нагрузку с места и выдержит ли рабочий режим.</div></details><details><summary>Зачем нужен сервис-фактор?</summary><div>Он задаёт запас номинального момента редуктора над расчётным с учётом характера нагрузки и числа пусков. Для ударных нагрузок берут 1,5 и выше.</div></details></div><div class="cat-faq"><details><summary>Как обороты выхода влияют на момент?</summary><div>Обратно пропорционально: чем ниже n2, тем больший момент можно снять с той же мощности. Снижение оборотов в два раза примерно удваивает момент.</div></details><details><summary>Что такое тепловая мощность редуктора?</summary><div>Это способность рассеивать тепло от потерь при длительной работе. При её нехватке редуктор перегревается даже в пределах допустимого момента.</div></details><details><summary>Можно ли подобрать редуктор по моменту автоматически?</summary><div>Да, через калькулятор подбора: он рассчитает требуемый момент по мощности и оборотам и предложит типоразмер ZR с нужным запасом.</div></details></div></div>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text">
+<section class="section"><div class="wrap"><div class="seo-text">
   <p class="seo-lead">Крутящий момент — решающий критерий пригодности редуктора. Ниже формула T=9550·P·КПД/n2, примеры расчёта и правила запаса по нагрузке.</p>
   <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary>
   <div class="seo-body"><p>Расчёт выходного момента по формуле T=9550·P·КПД/n2 позволяет за один шаг связать мощность двигателя, обороты выходного вала и КПД передачи. Чем ниже обороты n2, тем больший момент снимается с той же мощности, поэтому тихоходные приводы дают высокий крутящий момент. Полученное значение обязательно умножают на сервис-фактор, чтобы заложить запас под реальный характер нагрузки.</p><p>При окончательном выборе типоразмера проверяют не только номинальный момент, но и тепловую мощность и допустимые нагрузки на валы — механической прочности недостаточно для длительной работы без перегрева. Редукторы и мотор-редукторы ZR производит ООО «НИИ АТТ» (Челябинск). Быстрее и надёжнее вести подбор через калькулятор, который сам учитывает момент, обороты, КПД и запас.</p><h3>Влияние КПД на выходной момент (P=2,2 кВт, n2=45 об/мин)</h3><table class="spec"><tbody><tr><td>КПД передачи</td><td>Момент T, Н·м</td><td>Тип передачи</td></tr><tr><td>0,95</td><td>≈443</td><td>цилиндрическая</td></tr><tr><td>0,90</td><td>≈420</td><td>планетарная</td></tr><tr><td>0,70</td><td>≈327</td><td>червячная средняя</td></tr><tr><td>0,55</td><td>≈257</td><td>червячная с большим i</td></tr></tbody></table>
   <p>Подбор аналога по параметрам — <a href="../podbor.html#kalkulyator">калькулятор</a>, каталог аналогов — <a href="../analog/">все аналоги импорта</a>, замена импорта — <a href="../importozameshchenie">импортозамещение</a>.</p>
   </div></details>
 </div></div></section>
-<section class="section"><div class="wrap" style="text-align:center">
+<section class="section sec-alt"><div class="wrap" style="text-align:center">
   <h2>Подберём аналог SEW, Nord, Siemens под вашу задачу</h2>
   <p style="color:var(--muted);max-width:620px;margin:8px auto 18px">Рассчитаем замену по присоединительным размерам, пришлём КП и сроки. Производство ООО «НИИ АТТ», гарантия 24 месяца.</p>
   <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="eyebrow">Читайте также</div>
   <div class="rel-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px"><a href="../podbor.html#kalkulyator">Калькулятор подбора редуктора по моменту и мощности</a><a href="../analog/">Аналоги импортных редукторов в линейке ZR</a><a href="../catalog/">Каталог редукторов и мотор-редукторов ZR</a></div>
 </div></section>
-<section class="section ref-band" style="padding:8px 0 30px"><div class="wrap"><div style="background:linear-gradient(135deg,#12263f 0%,#1c3a5e 100%);border-radius:16px;padding:34px 26px;text-align:center;color:#fff;position:relative;overflow:hidden">
-<div style="font:700 12px/1 inherit;letter-spacing:.14em;text-transform:uppercase;color:#ff8a80;margin-bottom:10px">Партнёрская программа завода</div>
-<h2 style="margin:0 0 12px;color:#fff;font-size:26px;line-height:1.2">Инженерам и проектировщикам — 5% с заказа</h2>
+<section class="section ref-band"><div class="wrap"><div class="rb-card">
+<div class="rb-eyebrow">Партнёрская программа завода</div>
+<h2>Инженерам и проектировщикам — 5% с заказа</h2>
 <p style="max-width:660px;margin:0 auto 20px;font-size:16px;line-height:1.6;color:#d7e3f0">Рекомендуете наши редукторы коллегам, заказчику или своему отделу снабжения? За каждый состоявшийся заказ по вашей рекомендации выплачиваем <b style="color:#fff">5% от суммы</b> — реферальное вознаграждение переводом на карту. Прозрачный договор, работа со снабженцами и проектными отделами напрямую, отгрузка от производителя (ООО «НИИ АТТ», Челябинск).</p>
-<a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+<a class="btn lg ghost" data-zayavka data-topic="Партнёрская программа" href="#zayavka">Стать партнёром — 5% →</a>
 <div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
 </div></div></section>
     <footer class="site-footer">
