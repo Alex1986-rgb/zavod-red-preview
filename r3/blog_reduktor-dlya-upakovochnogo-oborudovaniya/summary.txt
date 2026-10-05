@@ -1,0 +1,3 @@
+desktop: pageH=8628 docW=1440/1440 sections=8 overflow=12 small=15 fonts=11,12,13,14,15,16,17,18,20,23,26,30,40,44
+tablet: pageH=8586 docW=1024/1024 sections=8 overflow=12 small=15 fonts=11,12,13,14,15,16,17,18,20,23,26,30,31,41
+mobile: pageH=13956 docW=390/390 sections=8 overflow=12 small=15 fonts=11,12,13,14,15,16,17,18,20,23,26,28,30

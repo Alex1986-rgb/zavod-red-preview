@@ -1,0 +1,2301 @@
+{
+ "desktop": {
+  "url": "/blog/reduktor-dlya-upakovochnogo-oborudovaniya.html",
+  "title": "Редукторы для отрасли: Упаковочное оборудование",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 8628,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 301,
+    "h": 615,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 916,
+    "h": 5776,
+    "padT": 40,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Типовые задачи упаковочной отрасли"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -312
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6692,
+    "h": 476,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7168,
+    "h": 360,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 40,
+     "lh": "45.6px",
+     "mb": 10,
+     "text": "Подберём редуктор под вашу упаковочную л"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -95
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7529,
+    "h": 255,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Читайте также"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 7783,
+    "h": 425,
+    "padT": 8,
+    "padB": 30,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "31.2px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -101
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 8208,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4685",
+   "A. right=1588",
+   "I. right=1588",
+   "A. right=1888",
+   "B. right=1713",
+   "I. right=1888",
+   "A. right=2503",
+   "B. right=1971",
+   "I. right=2503",
+   "A. right=2711",
+   "B. right=2557",
+   "I. right=2711"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   26,
+   30,
+   40,
+   44
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 44,
+    "lh": "50.16px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы для отрасли: Упаковочное оборудование"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Типовые задачи упаковочной отрасли"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Какие редукторы применяют в упаковочном оборудован"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Соосно-цилиндрические и цилиндрические мотор-редук"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Плоские (с полым валом) и коническо-цилиндрические"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Планетарные редукторы для тактовых и сервоузлов"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Червячные мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Требования к приводу: нагрузки, режим, среда"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Как подобрать редуктор для упаковочного оборудован"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Замена импортного привода на упаковочной линии"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Тип редуктора под узел упаковочной машины"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Вывод"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Что мы реально можем для упаковочных линий"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H2",
+    "fs": 40,
+    "lh": "45.6px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Подберём редуктор под вашу упаковочную линию"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Читайте также"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "31.2px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-worm-07.webp",
+    "w": 1192,
+    "h": 340,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/catalog/cat_coaxial.webp",
+    "w": 820,
+    "h": 616,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/production/p09.webp",
+    "w": 820,
+    "h": 616,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 44,
+   "lh": "50.16px",
+   "text": "Редукторы для отрасли: Упаковочное оборудование"
+  }
+ },
+ "tablet": {
+  "url": "/blog/reduktor-dlya-upakovochnogo-oborudovaniya.html",
+  "title": "Редукторы для отрасли: Упаковочное оборудование",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 8586,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 217,
+    "h": 604,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 821,
+    "h": 5776,
+    "padT": 40,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Типовые задачи упаковочной отрасли"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -312
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6597,
+    "h": 476,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7073,
+    "h": 350,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 31,
+     "lh": "35.0208px",
+     "mb": 10,
+     "text": "Подберём редуктор под вашу упаковочную л"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -84
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7423,
+    "h": 280,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Читайте также"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 7703,
+    "h": 425,
+    "padT": 8,
+    "padB": 30,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "31.2px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -101
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 8129,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4684",
+   "A. right=1139",
+   "I. right=1139",
+   "A. right=1228",
+   "B. right=1207",
+   "A. right=1587",
+   "B. right=1293",
+   "I. right=1587",
+   "A. right=1887",
+   "B. right=1712",
+   "I. right=1887",
+   "A. right=2502"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   26,
+   30,
+   31,
+   41
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 41,
+    "lh": "46.6944px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы для отрасли: Упаковочное оборудование"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Типовые задачи упаковочной отрасли"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Какие редукторы применяют в упаковочном оборудован"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Соосно-цилиндрические и цилиндрические мотор-редук"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Плоские (с полым валом) и коническо-цилиндрические"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Планетарные редукторы для тактовых и сервоузлов"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Червячные мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Требования к приводу: нагрузки, режим, среда"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Как подобрать редуктор для упаковочного оборудован"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Замена импортного привода на упаковочной линии"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Тип редуктора под узел упаковочной машины"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Вывод"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Что мы реально можем для упаковочных линий"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H2",
+    "fs": 31,
+    "lh": "35.0208px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Подберём редуктор под вашу упаковочную линию"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Читайте также"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "31.2px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-worm-07.webp",
+    "w": 976,
+    "h": 340,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/catalog/cat_coaxial.webp",
+    "w": 820,
+    "h": 616,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/production/p09.webp",
+    "w": 820,
+    "h": 616,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 41,
+   "lh": "46.6944px",
+   "text": "Редукторы для отрасли: Упаковочное оборудование"
+  }
+ },
+ "mobile": {
+  "url": "/blog/reduktor-dlya-upakovochnogo-oborudovaniya.html",
+  "title": "Редукторы для отрасли: Упаковочное оборудование",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 13956,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 268,
+    "h": 470,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 738,
+    "h": 9417,
+    "padT": 40,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Типовые задачи упаковочной отрасли"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -740
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10155,
+    "h": 690,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10845,
+    "h": 464,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 10,
+     "text": "Подберём редуктор под вашу упаковочную л"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -167
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 11310,
+    "h": 526,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "29.64px",
+     "mb": 14,
+     "text": "Читайте также"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 11836,
+    "h": 687,
+    "padT": 8,
+    "padB": 30,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 26,
+     "lh": "31.2px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -189
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 12523,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4585",
+   "A. right=483",
+   "B. right=399",
+   "I. right=483",
+   "A. right=592",
+   "B. right=557",
+   "I. right=592",
+   "A. right=756",
+   "B. right=665",
+   "I. right=756",
+   "A. right=948",
+   "B. right=815"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Оставить заявку",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   20,
+   23,
+   26,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "20px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.92px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Редукторы для отрасли: Упаковочное оборудование"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Типовые задачи упаковочной отрасли"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Какие редукторы применяют в упаковочном оборудован"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Соосно-цилиндрические и цилиндрические мотор-редук"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Плоские (с полым валом) и коническо-цилиндрические"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Планетарные редукторы для тактовых и сервоузлов"
+   },
+   {
+    "t": "H3",
+    "fs": 20,
+    "lh": "22.8px",
+    "mt": 26,
+    "mb": 10,
+    "text": "Червячные мотор-редукторы"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Требования к приводу: нагрузки, режим, среда"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Как подобрать редуктор для упаковочного оборудован"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Замена импортного привода на упаковочной линии"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Тип редуктора под узел упаковочной машины"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Вывод"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 38,
+    "mb": 14,
+    "text": "Что мы реально можем для упаковочных линий"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 10,
+    "text": "Подберём редуктор под вашу упаковочную линию"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "29.64px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Читайте также"
+   },
+   {
+    "t": "H2",
+    "fs": 26,
+    "lh": "31.2px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-worm-07.webp",
+    "w": 342,
+    "h": 181,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/catalog/cat_coaxial.webp",
+    "w": 342,
+    "h": 257,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/production/p09.webp",
+    "w": 342,
+    "h": 257,
+    "nw": 900,
+    "nh": 675,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.92px",
+   "text": "Редукторы для отрасли: Упаковочное оборудование"
+  }
+ }
+}

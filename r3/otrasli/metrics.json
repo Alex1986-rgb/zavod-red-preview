@@ -1,0 +1,2398 @@
+{
+ "desktop": {
+  "url": "/otrasli/index.html",
+  "title": "Отрасли применения редукторов | Завод Редукторов",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 2242,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 301,
+    "h": 236,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 537,
+    "h": 1286,
+    "padT": 24,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 1822,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4663",
+   "A. right=1566",
+   "I. right=1566",
+   "A. right=1865",
+   "B. right=1690",
+   "I. right=1865",
+   "A. right=2481",
+   "B. right=1949",
+   "I. right=2481",
+   "A. right=2689",
+   "B. right=2535",
+   "I. right=2689"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   30,
+   44
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 44,
+    "lh": "50.16px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Отрасли применения редукторов"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 44,
+   "lh": "50.16px",
+   "text": "Отрасли применения редукторов"
+  }
+ },
+ "tablet": {
+  "url": "/otrasli/index.html",
+  "title": "Отрасли применения редукторов | Завод Редукторов",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 2484,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 217,
+    "h": 224,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 441,
+    "h": 1586,
+    "padT": 24,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 2027,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4663",
+   "A. right=1117",
+   "I. right=1117",
+   "A. right=1206",
+   "B. right=1185",
+   "A. right=1566",
+   "B. right=1272",
+   "I. right=1566",
+   "A. right=1865",
+   "B. right=1690",
+   "I. right=1865",
+   "A. right=2481"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   30,
+   41
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 41,
+    "lh": "46.6944px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Отрасли применения редукторов"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 41,
+   "lh": "46.6944px",
+   "text": "Отрасли применения редукторов"
+  }
+ },
+ "mobile": {
+  "url": "/otrasli/index.html",
+  "title": "Отрасли применения редукторов | Завод Редукторов",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 6145,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 247,
+    "h": 288,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 535,
+    "h": 4178,
+    "padT": 24,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 4712,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4553",
+   "A. right=452",
+   "I. right=452",
+   "A. right=561",
+   "B. right=526",
+   "I. right=561",
+   "A. right=724",
+   "B. right=633",
+   "I. right=724",
+   "A. right=916",
+   "B. right=783",
+   "I. right=916"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   },
+   {
+    "t": "❤",
+    "cls": "zr-fav-btn",
+    "h": 40,
+    "fs": 18,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgba(255, 255, 255, 0.94)",
+    "color": "rgb(194, 204, 211)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   23,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.92px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Отрасли применения редукторов"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.92px",
+   "text": "Отрасли применения редукторов"
+  }
+ }
+}
