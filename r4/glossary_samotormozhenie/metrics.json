@@ -1,0 +1,2133 @@
+{
+ "desktop": {
+  "url": "/glossary/samotormozhenie.html",
+  "title": "Самоторможение редуктора: что это и подбор",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 5890,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 301,
+    "h": 315,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 616,
+    "h": 3403,
+    "padT": 40,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "36px",
+     "mb": 12,
+     "text": "Точное определение самоторможения"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -664
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 4018,
+    "h": 306,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4325,
+    "h": 564,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 30,
+     "lh": "36px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 4889,
+    "h": 158,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 5046,
+    "h": 423,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 28,
+     "lh": "33.6px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -90
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 5470,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4675",
+   "A. right=1579",
+   "I. right=1579",
+   "A. right=1878",
+   "B. right=1703",
+   "I. right=1878",
+   "A. right=2493",
+   "B. right=1961",
+   "I. right=2493",
+   "A. right=2701",
+   "B. right=2547",
+   "I. right=2701"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn sm",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Подбор по параметрам",
+    "cls": "btn sm ghost",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Калькулятор подбора →",
+    "cls": "btn ghost",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg ghost",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   28,
+   30,
+   44
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "14px",
+   "0px 10px 10px 0px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 44,
+    "lh": "50.16px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Самоторможение: что это в редукторах и приводах"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Точное определение самоторможения"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Связь с КПД: почему самоторможение «стоит» эффекти"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Статическое и динамическое самоторможение"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Как самоторможение влияет на подбор редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Типовые значения и ориентиры"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Когда самоторможение нельзя считать гарантией"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Вывод"
+   },
+   {
+    "t": "H3",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 30,
+    "lh": "36px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 28,
+    "lh": "33.6px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-motor-04.webp",
+    "w": 860,
+    "h": 420,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 44,
+   "lh": "50.16px",
+   "text": "Самоторможение: что это в редукторах и приводах"
+  }
+ },
+ "tablet": {
+  "url": "/glossary/samotormozhenie.html",
+  "title": "Самоторможение редуктора: что это и подбор",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 5737,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 217,
+    "h": 295,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 512,
+    "h": 3305,
+    "padT": 40,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "29.4912px",
+     "mb": 12,
+     "text": "Точное определение самоторможения"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -641
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 3817,
+    "h": 306,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 4123,
+    "h": 580,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "29.4912px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 4703,
+    "h": 158,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 4861,
+    "h": 419,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 25,
+     "lh": "29.4912px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -85
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 5280,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4674",
+   "A. right=1129",
+   "I. right=1129",
+   "A. right=1218",
+   "B. right=1197",
+   "A. right=1578",
+   "B. right=1284",
+   "I. right=1578",
+   "A. right=1877",
+   "B. right=1702",
+   "I. right=1877",
+   "A. right=2492"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn sm",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Подбор по параметрам",
+    "cls": "btn sm ghost",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Калькулятор подбора →",
+    "cls": "btn ghost",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg ghost",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   25,
+   30,
+   41
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "14px",
+   "0px 10px 10px 0px",
+   "18px",
+   "11px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 41,
+    "lh": "46.6944px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Самоторможение: что это в редукторах и приводах"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Точное определение самоторможения"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Связь с КПД: почему самоторможение «стоит» эффекти"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Статическое и динамическое самоторможение"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Как самоторможение влияет на подбор редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Типовые значения и ориентиры"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Когда самоторможение нельзя считать гарантией"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Вывод"
+   },
+   {
+    "t": "H3",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 25,
+    "lh": "29.4912px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-motor-04.webp",
+    "w": 860,
+    "h": 420,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 41,
+   "lh": "46.6944px",
+   "text": "Самоторможение: что это в редукторах и приводах"
+  }
+ },
+ "mobile": {
+  "url": "/glossary/samotormozhenie.html",
+  "title": "Самоторможение редуктора: что это и подбор",
+  "docW": 390,
+  "vw": 390,
+  "pageH": 9997,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "phero",
+    "top": 247,
+    "h": 344,
+    "padT": 40,
+    "padB": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 591,
+    "h": 5545,
+    "padT": 40,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "26.4px",
+     "mb": 12,
+     "text": "Точное определение самоторможения"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -595
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 6136,
+    "h": 441,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6577,
+    "h": 1202,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "26.4px",
+     "mb": 14,
+     "text": "Частые вопросы"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 14
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section sec-alt",
+    "top": 7779,
+    "h": 158,
+    "padT": 56,
+    "padB": 56,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section ref-band",
+    "top": 7937,
+    "h": 627,
+    "padT": 0,
+    "padB": 56,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "26.4px",
+     "mb": 12,
+     "text": "Инженерам и проектировщикам — 5% с заказ"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -127
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 8564,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4570",
+   "A. right=469",
+   "I. right=469",
+   "A. right=578",
+   "B. right=543",
+   "I. right=578",
+   "A. right=742",
+   "B. right=651",
+   "I. right=742",
+   "A. right=934",
+   "B. right=801",
+   "I. right=934"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn sm",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Подбор по параметрам",
+    "cls": "btn sm ghost",
+    "h": 44,
+    "fs": 14,
+    "pad": "10px 16px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Калькулятор подбора →",
+    "cls": "btn ghost",
+    "h": 53,
+    "fs": 15,
+    "pad": "13.5px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Стать партнёром — 5% →",
+    "cls": "btn lg ghost",
+    "h": 51,
+    "fs": 16,
+    "pad": "0px 24.5px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   22,
+   23,
+   28,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "14px",
+   "0px 10px 10px 0px",
+   "18px",
+   "11px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 28,
+    "lh": "31.92px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Самоторможение: что это в редукторах и приводах"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Точное определение самоторможения"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Связь с КПД: почему самоторможение «стоит» эффекти"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Статическое и динамическое самоторможение"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Как самоторможение влияет на подбор редуктора"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Типовые значения и ориентиры"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Когда самоторможение нельзя считать гарантией"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 34,
+    "mb": 12,
+    "text": "Вывод"
+   },
+   {
+    "t": "H3",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Подберём редуктор под вашу задачу"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 0,
+    "mb": 14,
+    "text": "Частые вопросы"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 20,
+    "mb": 8,
+    "text": ""
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "26.4px",
+    "mt": 0,
+    "mb": 12,
+    "text": "Инженерам и проектировщикам — 5% с заказа"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/blog-photo/red-motor-04.webp",
+    "w": 342,
+    "h": 192,
+    "nw": 1200,
+    "nh": 630,
+    "alt": true,
+    "fit": "cover"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 28,
+   "lh": "31.92px",
+   "text": "Самоторможение: что это в редукторах и приводах"
+  }
+ }
+}
