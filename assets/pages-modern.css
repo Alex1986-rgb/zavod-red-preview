@@ -15,7 +15,7 @@
 /* ---------- SECTIONS / HEADINGS ---------- */
 .zr-modern .section{padding:56px 0}
 .zr-modern .eyebrow{display:inline-block;font:700 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--m-red);margin-bottom:12px}
-.zr-modern .section h2{font:700 clamp(24px,2.8vw,32px)/1.15 var(--head);color:var(--m-ink);letter-spacing:-.01em;margin:0 0 22px}
+.zr-modern .section h2{font:700 clamp(22px,2.4vw,30px)/1.15 var(--head);color:var(--m-ink);letter-spacing:-.01em;margin:0 0 22px}
 
 /* ---------- CARDS ---------- */
 .zr-modern .card{background:#fff;border:1px solid var(--m-line);border-radius:18px;padding:26px;box-shadow:0 2px 10px rgba(16,31,42,.04);transition:transform .18s,box-shadow .18s,border-color .18s}
@@ -26,12 +26,12 @@
 .zr-modern .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 
 /* ---------- О ЗАВОДЕ: цифры-факты ---------- */
-.zr-modern .abt-facts{background:linear-gradient(135deg,#0f1c26,#182a38);border-radius:22px;padding:38px 32px;margin:8px 0}
+.zr-modern .abt-facts{background:linear-gradient(135deg,#0f1c26,#182a38);border-radius:18px;padding:38px 32px;margin:8px 0}
 .zr-modern .abt-facts .afg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .zr-modern .abt-facts .af{text-align:center;position:relative;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
 .zr-modern .abt-facts .af .ic,.zr-modern .abt-facts .af>img{display:none}
 .zr-modern .abt-facts .af:not(:last-child)::after{content:"";position:absolute;right:-12px;top:10%;height:80%;width:1px;background:rgba(255,255,255,.12)}
-.zr-modern .abt-facts .afn{font:800 clamp(30px,4vw,44px)/1 var(--head);background:linear-gradient(90deg,#ff6a3d,#e11b1b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
+.zr-modern .abt-facts .afn{font:800 clamp(30px,4vw,44px)/1 var(--head);color:#fff;letter-spacing:-.02em}
 .zr-modern .abt-facts .afl{color:rgba(255,255,255,.72);font-size:13.5px;margin-top:8px;line-height:1.4}
 
 /* ---------- КОНТАКТЫ: инфо-сетка ---------- */
@@ -50,21 +50,22 @@
 .zr-modern .lead-form h3{color:var(--m-ink)!important;font:700 24px var(--head);margin-bottom:10px!important}
 .zr-modern .lead-form p{color:var(--m-mut)!important}
 .zr-modern .lead-form .btn.lg{justify-content:center}
+.zr-modern .lead-form .field,.zr-modern .lead-form .consent,.zr-modern .lead-form .form-result{text-align:left}
 
 
 /* ---------- КАРТА ---------- */
-.zr-modern .map{border-radius:20px;overflow:hidden;border:1px solid var(--m-line);box-shadow:0 2px 10px rgba(16,31,42,.05)}
+.zr-modern .map{border-radius:18px;overflow:hidden;border:1px solid var(--m-line);box-shadow:0 2px 10px rgba(16,31,42,.05)}
 .zr-modern .map iframe{display:block;width:100%;min-height:380px;border:0}
 
 /* ---------- КНОПКИ ---------- */
-.zr-modern .btn.lg{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:14px;font:700 15.5px var(--font);background:var(--m-red);color:#fff;text-decoration:none;border:0;transition:.16s;box-shadow:0 8px 20px rgba(225,27,27,.18)}
+.zr-modern .btn.lg{display:inline-flex;align-items:center;justify-content:center;min-height:51px;padding:0 24.5px;border-radius:10px;font:700 15.5px var(--font);background:var(--m-red);color:#fff;text-decoration:none;border:0;transition:.16s;box-shadow:0 8px 20px rgba(225,27,27,.18)}
 .zr-modern .btn.lg:hover{background:#cf1616;transform:translateY(-2px)}
 .zr-modern .btn.lg.ghost{background:#fff;color:var(--m-ink);border:1px solid var(--m-line);box-shadow:none}
 .zr-modern .btn.lg.ghost:hover{border-color:var(--m-red);color:var(--m-red)}
 
 /* ---------- FAQ ---------- */
 .zr-modern .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.zr-modern .cat-faq details{background:#fff;border:1px solid var(--m-line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.zr-modern .cat-faq details{background:#fff;border:1px solid var(--m-line);border-radius:14px;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .zr-modern .cat-faq details[open]{border-color:rgba(225,27,27,.3);box-shadow:0 6px 18px rgba(16,31,42,.06)}
 .zr-modern .cat-faq summary{list-style:none;cursor:pointer;padding:16px 46px 16px 18px;font:600 15px var(--font);color:var(--m-ink);position:relative}
 .zr-modern .cat-faq summary::-webkit-details-marker{display:none}

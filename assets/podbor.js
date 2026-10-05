@@ -91,7 +91,7 @@
    +'<p class="pf-note">'+(compact?'Задайте параметры — покажем число подходящих типоразмеров и откроем их в таблице подбора. ':'')+'Таблица справочная, по параметрам нашего производства (маркировка ZR и ГОСТ, импортные аналоги). Точные размеры, момент с сервис-фактором, наличие, цену и срок подтверждает инженер по заявке.</p>'
    +'<div class="pf-ask"><span>Не нашли нужный типоразмер или нужен расчёт под нагрузку?</span><button class="pf-cta" type="button" data-zayavka>Инженер подберёт под задачу</button></div>';
 
-  var DB=null, RENDER=0, STEP=(window.matchMedia&&matchMedia('(max-width:680px)').matches)?10:40, /* на телефоне строки становятся карточками по ~450px: 40 сразу давали 18 000px, дальше — «Показать ещё» */ CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
+  var DB=null, RENDER=0, STEP=(function(){var m=window.matchMedia&&matchMedia('(max-width:680px)').matches;var a=root.getAttribute(m?'data-step-m':'data-step')||root.getAttribute('data-step');return (+a)||(m?8:20);})(), /* на телефоне строки становятся карточками по ~450px: 40 сразу давали 18 000px, дальше — «Показать ещё» */ CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
   var qEl=$('pfQ');
   // кеш ссылок на селекты от/до: элементы создаются один раз, меняются только их <option>,
   // поэтому querySelector по каждой строке (был O(8763×14) на apply — ~2.6с) больше не нужен.
@@ -364,7 +364,7 @@
     box.className='pf-brands pf-brands--panel';
     box.innerHTML='<span class="pf-brands-lbl">Показать в марках</span>'
       +'<span class="pf-brands-set">'
-      +BRANDS.map(function(b){
+      +BRANDS.slice().sort(function(a,b){var na=(!isOurs(a.k)&&!brandHasData(a.k))?1:0,nb=(!isOurs(b.k)&&!brandHasData(b.k))?1:0;return na-nb;}).map(function(b){
         var noData=!isOurs(b.k)&&!brandHasData(b.k);
         return '<button type="button" class="pf-pill pf-pill--brand'
           +(selBrand===b.k?' is-active':'')+(noData?' is-nodata':'')
@@ -372,7 +372,7 @@
           +(noData?' title="Подбор по параметрам для этой марки не построен — покажем всю базу ZR, аналог подтвердит инженер"':'')
           +'>'+b.n+'</button>';
       }).join('')+'</span>'
-      +'<span class="pf-brands-hint">Выберите марку — в таблице появится её модель и наш аналог ZR</span>';
+      +'<span class="pf-brands-hint">Выберите марку — в таблице появится её модель и наш аналог ZR. Пунктиром — марки, по которым подбор делает инженер по запросу</span>';
     Array.prototype.forEach.call(box.querySelectorAll('.pf-pill--brand'),function(btn){
       btn.addEventListener('click',function(){
         selBrand=btn.getAttribute('data-bk')||'';

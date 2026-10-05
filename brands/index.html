@@ -17,6 +17,7 @@
 <meta property="og:description" content="Оригинал и габаритный аналог под заказ: SEW, NORD, Bonfiglioli, Motovario, Flender и ещё 20 брендов." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
 <link rel="stylesheet" href="../assets/inner.css?v=k6c3" />
+<link rel="stylesheet" href="../assets/pages-modern.css?v=k7a1" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Импортные бренды редукторов","url":"https://zavod-red.ru/brands/","description":"Поставка оригинальных импортных редукторов и габаритных аналогов под заказ — SEW, NORD, Bonfiglioli, Motovario и другие бренды."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Бренды","item":"https://zavod-red.ru/brands/"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Вы поставляете оригинальные импортные редукторы или только аналоги?", "acceptedAnswer": {"@type": "Answer", "text": "И то, и другое. Оригинальные приводы перечисленных брендов поставляем под заказ, а параллельно изготавливаем габаритный и присоединительный аналог собственного производства — он дешевле. Что выгоднее по сроку и цене в вашем случае — подскажет инженер. Цена по обоим вариантам — по запросу."}}, {"@type": "Question", "name": "Как подобрать замену импортного редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Пришлите данные с шильда, фото узла или модель оригинала. Инженер определит мощность, момент, передаточное число и присоединительные размеры и подберёт совместимый аналог. Можно воспользоваться таблицей подбора или прислать заявку."}}, {"@type": "Question", "name": "Встанет ли аналог на место импортного без переделки?", "acceptedAnswer": {"@type": "Answer", "text": "Да, это основная задача при замене. Воспроизводим монтажные и присоединительные размеры, фланец и вал, чтобы узел встал на штатное место без переделки рамы. При нестандартной схеме изготавливаем переходный фланец или спецвал по чертежу."}}, {"@type": "Question", "name": "Какие типы редукторов вы заменяете?", "acceptedAnswer": {"@type": "Answer", "text": "Червячные, цилиндрические (соосные), коническо-цилиндрические и плоско-цилиндрические редукторы и мотор-редукторы, а также вариаторы и планетарные — под заказ. По каждому бренду параметры замены и серии смотрите на его странице."}}, {"@type": "Question", "name": "Чем отличаются сроки на оригинал и на аналог?", "acceptedAnswer": {"@type": "Answer", "text": "Оригинал идёт под заказ через поставку — срок зависит от наличия и логистики. Аналог собственного производства изготавливаем сами, что позволяет точнее планировать и часто сокращать срок. Конкретику подтверждаем по запросу после уточнения модели."}}, {"@type": "Question", "name": "Совместим ли аналог с частотным преобразователем?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Аналог рассчитывается под вашу схему привода, в том числе под работу с частотным преобразователем и регулированием скорости. Инженер учитывает диапазон оборотов, нагрузку и режим работы."}}, {"@type": "Question", "name": "Какая гарантия на аналог?", "acceptedAnswer": {"@type": "Answer", "text": "На аналог собственного производства действует заводская гарантия 24 месяца при штатных условиях эксплуатации, срок и условия фиксируем в договоре. По оригинальным приводам действуют условия производителя."}}, {"@type": "Question", "name": "Возможны ли серийные поставки для производителей оборудования?", "acceptedAnswer": {"@type": "Answer", "text": "Да, работаем с производителями оборудования по серийным и повторяющимся поставкам под единую спецификацию, чтобы каждая партия была взаимозаменяемой. Подробнее — в разделе «Производителям оборудования»."}}]}</script>
@@ -25,7 +26,7 @@
 @media(max-width:900px){.brand-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.brand-grid{grid-template-columns:1fr 1fr}}
 .brand-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;transition:.16s}
-.brand-card:hover{border-color:var(--red);transform:translateY(-3px)}
+.brand-card:hover{border-color:rgba(14,26,36,.35);transform:translateY(-3px);box-shadow:0 10px 24px rgba(14,26,36,.08)}.brand-card:hover .bc-go{color:var(--red2)}
 .bc-logo{height:48px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:#fff;border-radius:10px;padding:0 14px}
 .bc-logo img{max-height:34px;max-width:128px;width:auto;object-fit:contain;filter:none;opacity:1}
 /* для брендов без файла логотипа в assets/brands/ — текстовая заглушка, чтобы карточка не «проваливалась» по высоте */
@@ -34,12 +35,23 @@
 .brand-card b{color:var(--text);font-size:16px}
 .bc-photo{margin:-4px 0 12px;background:#fff;border-radius:10px;padding:6px 10px}
 .bc-photo img{width:100%;height:110px;object-fit:contain;display:block}
-.bc-sub{color:var(--muted);font-size:12.5px;margin-top:4px;line-height:1.45}
-.bc-go{margin-top:12px;color:var(--red2);font-weight:700;font-size:13px}
+.bc-sub{color:var(--muted);font-size:13px;margin-top:4px;line-height:1.45}
+.bc-go{margin-top:auto;padding-top:12px;color:var(--text);font-weight:600;font-size:13.5px}
+/* [14] бренды без файла логотипа: подпись-заглушка мелкая, чтобы имя не дублировалось крупно */
+.bc-logo.txt{font:700 11px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* [13] текстовые ячейки таблицы серий — не моноширинным */
+.seo-body .spec td{font-family:var(--font);font-size:14.5px}.seo-body .spec td:first-child{font-weight:600;width:28%}
+.cta-band .btn,.phero .btn{padding:13.5px 24.5px}
+.zr-modern .faq-grid .cat-faq details{margin-bottom:0}
+/* [3] 25 карточек = 5×5 на широком экране — без одиночной карточки в последнем ряду */
+@media(min-width:1100px){.brand-grid{grid-template-columns:repeat(5,1fr);gap:14px}.brand-card{padding:18px 16px}.bc-photo img{height:100px}}
+/* [2] мобильный: компактные карточки */
+@media(max-width:640px){.brand-grid{gap:10px}.brand-card{padding:12px 12px 14px}.bc-logo{height:36px;margin-bottom:8px}.bc-logo img{max-height:26px}.bc-photo{margin:0 0 8px;padding:4px 6px}.bc-photo img{height:84px}.brand-card b{font-size:15px}.bc-sub{font-size:13px;line-height:1.35}.bc-go{padding-top:8px}}
+@media(max-width:560px){.cta-band{padding:30px 20px;border-radius:18px}}
 </style>
-<style>.qlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.qlinks a{display:inline-block;padding:8px 14px;border:1px solid var(--line,#e2e6e0);border-radius:999px;background:var(--card,#fff);color:var(--text,#101f2a);font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s}.qlinks a:hover{border-color:var(--red2,#cf1616);color:var(--red2,#cf1616)}.qnote{color:var(--muted,#5c6b66);font-size:13.5px;margin:12px 0 0;max-width:86ch}</style>
+<style>.qlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.qlinks a{display:inline-block;padding:10px 14px;line-height:1.5;border:1px solid var(--line,#e2e6e0);border-radius:999px;background:var(--card,#fff);color:var(--text,#101f2a);font-size:13.5px;font-weight:600;text-decoration:none;transition:.15s}.qlinks a:hover{border-color:var(--red2,#cf1616);color:var(--red2,#cf1616)}@media(max-width:560px){.qlinks{gap:8px}.qlinks a{padding:10px 12px;font-size:13px}}</style>
 </head>
-<body>
+<body class="zr-modern">
 
 <header class="hdr2">
 <link rel="stylesheet" href="../assets/hdr.css?v=k5a2" />
@@ -75,190 +87,190 @@
   <h1>Оригинал и аналоги импортных редукторов</h1>
   <p>Поставляем оригинальные импортные приводы под заказ и изготавливаем габаритные аналоги собственного производства — узел встаёт на штатное место без переделки оборудования. Выберите бренд, чтобы посмотреть заменяемые серии, аналоги и условия поставки.</p>
 
-<div class="qlinks"><a href="/catalog/importnye-motor-reduktory">Каталог импортных моделей</a>
+<div class="phero-cta" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><a class="btn" data-zayavka href="#zayavka">Подобрать замену по шильду</a><a class="btn ghost" href="tel:+74951514102">+7 (495) 151-41-02</a></div>
+<div class="qlinks"><a href="/podbor">Подбор по параметрам</a>
+<a href="/importozameshchenie">Импортозамещение</a>
 <a href="/catalog/">Каталог редукторов ZR</a>
-<a href="/podbor">Подбор по параметрам</a>
-<a href="/importozameshchenie">Импортозамещение</a></div>
-<p class="qnote">На странице каждого бренда — фото и серии, модели с аналогами ZR, калькулятор подбора и таблица замен. Оригиналы поставляем под заказ, аналоги производим сами.</p>
+<a href="/catalog/importnye-motor-reduktory">Каталог импортных моделей</a></div>
 </div></section>
 
-<section class="section" style="padding-top:34px"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="eyebrow">25 брендов</div>
-  <h2 style="font-size:26px">Выберите производителя</h2>
+  <h2>Выберите производителя</h2>
   <div class="brand-grid">
     <a class="brand-card" href="/brands/sew">
       <span class="bc-logo"><img src="../assets/brands/sew.webp" alt="SEW-Eurodrive — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/sew-unit.webp" alt="Мотор-редуктор SEW-Eurodrive — фото" loading="lazy" /></span>
       <b>SEW-Eurodrive</b>
-      <span class="bc-sub">Редукторы СЕВ Евродрайв — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · серии R, F, K, S</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/nord">
       <span class="bc-logo"><img src="../assets/brands/nord.webp" alt="NORD — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/nord-unit.webp" alt="Мотор-редуктор NORD — фото" loading="lazy" /></span>
       <b>NORD</b>
-      <span class="bc-sub">Редукторы НОРД — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · серия SK</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/bonfiglioli">
       <span class="bc-logo"><img src="../assets/brands/bonfiglioli.webp" alt="Bonfiglioli — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/bonfiglioli-unit.webp" alt="Мотор-редуктор Bonfiglioli — фото" loading="lazy" /></span>
       <b>Bonfiglioli</b>
-      <span class="bc-sub">Редукторы Бонфиглиоли — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · VF/W, C, F, A, 300</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/motovario">
       <span class="bc-logo"><img src="../assets/brands/motovario.webp" alt="Motovario — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/motovario-unit.webp" alt="Мотор-редуктор Motovario — фото" loading="lazy" /></span>
       <b>Motovario</b>
-      <span class="bc-sub">Редукторы Мотоварио — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · NMRV, H, S, B</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/flender">
       <span class="bc-logo"><img src="../assets/brands/flender.webp" alt="Flender — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/flender-unit.webp" alt="Мотор-редуктор Flender — фото" loading="lazy" /></span>
       <b>Flender</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Германия · MOTOX, SIG/SIP</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/siemens">
       <span class="bc-logo"><img src="../assets/brands/siemens.webp" alt="Siemens — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/siemens-unit.webp" alt="Мотор-редуктор Siemens — фото" loading="lazy" /></span>
       <b>Siemens</b>
-      <span class="bc-sub">Редукторы Сименс — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/lenze">
       <span class="bc-logo"><img src="../assets/brands/lenze.webp" alt="Lenze — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/lenze-unit.webp" alt="Мотор-редуктор Lenze — фото" loading="lazy" /></span>
       <b>Lenze</b>
-      <span class="bc-sub">Редукторы Лензе — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/bauer">
       <span class="bc-logo"><img src="../assets/brands/bauer.webp" alt="Bauer — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/bauer-unit.webp" alt="Мотор-редуктор Bauer — фото" loading="lazy" /></span>
       <b>Bauer</b>
-      <span class="bc-sub">Редукторы Бауер — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · BG, BF, BK, BS</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/varvel">
       <span class="bc-logo"><img src="../assets/brands/varvel.webp" alt="Varvel — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/varvel-unit.webp" alt="Мотор-редуктор Varvel — фото" loading="lazy" /></span>
       <b>Varvel</b>
-      <span class="bc-sub">Редукторы Варвел — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/tramec">
       <span class="bc-logo"><img src="../assets/brands/tramec.webp" alt="Tramec — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/tramec-unit.webp" alt="Мотор-редуктор Tramec — фото" loading="lazy" /></span>
       <b>Tramec</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/siti">
       <span class="bc-logo"><img src="../assets/brands/siti.webp" alt="SITI — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/siti-unit.webp" alt="Мотор-редуктор SITI — фото" loading="lazy" /></span>
       <b>SITI</b>
-      <span class="bc-sub">Редукторы Сити — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/stm">
       <span class="bc-logo"><img src="../assets/brands/stm.webp" alt="STM — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/stm-unit.webp" alt="Мотор-редуктор STM — фото" loading="lazy" /></span>
       <b>STM</b>
-      <span class="bc-sub">Редукторы СТМ — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/transtecno">
       <span class="bc-logo"><img src="../assets/brands/transtecno.webp" alt="Transtecno — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/transtecno-unit.webp" alt="Мотор-редуктор Transtecno — фото" loading="lazy" /></span>
       <b>Transtecno</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/innovari">
       <span class="bc-logo"><img src="../assets/brands/innovari.webp" alt="Innovari — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/innovari-unit.webp" alt="Мотор-редуктор Innovari — фото" loading="lazy" /></span>
       <b>Innovari</b>
-      <span class="bc-sub">Редукторы Инновари — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/varmec">
       <span class="bc-logo"><img src="../assets/brands/varmec.webp" alt="Varmec — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/varmec-unit.webp" alt="Мотор-редуктор Varmec — фото" loading="lazy" /></span>
       <b>Varmec</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/yilmaz">
       <span class="bc-logo"><img src="../assets/brands/yilmaz.webp" alt="Yilmaz — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/yilmaz-unit.webp" alt="Мотор-редуктор Yilmaz — фото" loading="lazy" /></span>
       <b>Yilmaz</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Турция · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/keb">
       <span class="bc-logo"><img src="../assets/brands/keb.webp" alt="KEB — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/keb-unit.webp" alt="Мотор-редуктор KEB — фото" loading="lazy" /></span>
       <b>KEB</b>
-      <span class="bc-sub">Редукторы КЕБ — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Германия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/watt-drive">
       <span class="bc-logo"><img src="../assets/brands/watt-drive.webp" alt="Watt Drive — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/watt-drive-unit.webp" alt="Мотор-редуктор Watt Drive — фото" loading="lazy" /></span>
       <b>Watt Drive</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Австрия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/boneng">
       <span class="bc-logo"><img src="../assets/brands/boneng.webp" alt="Boneng — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/boneng-unit.webp" alt="Мотор-редуктор Boneng — фото" loading="lazy" /></span>
       <b>Boneng</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Китай · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/innored">
       <span class="bc-logo"><img src="../assets/brands/innored.webp" alt="Innored — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/innored-unit.webp" alt="Мотор-редуктор Innored — фото" loading="lazy" /></span>
       <b>Innored</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Китай · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/guomao">
       <span class="bc-logo"><img src="../assets/brands/guomao.webp" alt="Guomao — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/guomao-unit.webp" alt="Мотор-редуктор Guomao — фото" loading="lazy" /></span>
       <b>Guomao</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Китай · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/unidrive">
       <span class="bc-logo"><img src="../assets/brands/unidrive.webp" alt="UNI Drive — редуктор: поставка оригинала и аналог" loading="lazy" /></span>
       <span class="bc-photo"><img src="../assets/brands-photo/unidrive-unit.webp" alt="Мотор-редуктор UNI Drive — фото" loading="lazy" /></span>
       <b>UNI Drive</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Оригинал под заказ и аналог ZR</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/rossi">
       <span class="bc-logo txt">Rossi</span>
       <span class="bc-photo"><img src="../assets/brands-photo/rossi-unit.webp" alt="Мотор-редуктор Rossi — фото" loading="lazy" /></span>
       <b>Rossi</b>
-      <span class="bc-sub">Редукторы Росси — оригинал под заказ и аналог</span>
+      <span class="bc-sub">Италия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/vemper">
       <span class="bc-logo txt">Vemper</span>
       <span class="bc-photo"><img src="../assets/brands-photo/vemper-unit.webp" alt="Мотор-редуктор Vemper — фото" loading="lazy" /></span>
       <b>Vemper</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Оригинал под заказ и аналог ZR</span>
       <span class="bc-go">Подробнее →</span>
     </a>
     <a class="brand-card" href="/brands/tos-znojmo">
       <span class="bc-logo txt">Tos Znojmo</span>
       <span class="bc-photo"><img src="../assets/brands-photo/tz-unit.webp" alt="Червячный мотор-редуктор Tos Znojmo — фото" loading="lazy" /></span>
       <b>Tos Znojmo</b>
-      <span class="bc-sub">Оригинал под заказ + габаритный аналог</span>
+      <span class="bc-sub">Чехия · оригинал и аналог</span>
       <span class="bc-go">Подробнее →</span>
     </a>
   </div>
@@ -269,14 +281,14 @@
     <div class="cta-band">
       <h2>Не нашли свой бренд или модель?</h2>
       <p>Пришлите шильд, фото или модель импортного редуктора — подберём оригинал или габаритный аналог, рассчитаем цену и срок.</p>
-      <a class="btn lg" data-zayavka href="#zayavka">Подобрать замену</a>
+      <a class="btn" data-zayavka href="#zayavka">Подобрать замену</a>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section sec-alt"><div class="wrap">
   <div class="eyebrow">Вопросы и ответы</div>
-  <h2 style="font-size:26px">Частые вопросы о замене импорта</h2>
+  <h2>Частые вопросы о замене импорта</h2>
   <div class="faq-grid"><div class="cat-faq">
     <details><summary>Вы поставляете оригинальные импортные редукторы или только аналоги?</summary><p>И то, и другое. Оригинальные приводы перечисленных брендов поставляем под заказ, а параллельно изготавливаем габаритный и присоединительный аналог собственного производства — он дешевле. Что выгоднее по сроку и цене в вашем случае — подскажет инженер. Цена по обоим вариантам — по запросу.</p></details>
     <details><summary>Как подобрать замену импортного редуктора?</summary><p>Пришлите данные с шильда, фото узла или модель оригинала. Инженер определит мощность, момент, передаточное число и присоединительные размеры и подберёт совместимый аналог. Можно воспользоваться таблицей подбора или прислать заявку.</p></details>
@@ -290,7 +302,7 @@
   </div></div>
 </div></section>
 
-<section class="section" style="padding-top:0"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="seo-text"><p class="seo-lead">Завод Редукторов поставляет оригинальные импортные редукторы и мотор-редукторы ведущих брендов — SEW-Eurodrive, NORD, Bonfiglioli, Motovario, Flender — под заказ, а также изготавливает габаритные и присоединительные аналоги собственного производства. Аналог встаёт на штатное место без переделки рамы и привода и обходится дешевле оригинала.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>По каждому бренду из списка мы работаем по трём сценариям: поставляем оригинал под заказ с гарантией производителя, изготавливаем габаритный аналог собственного производства серии ZR без переделки оборудования и подбираем замену по модели или данным шильда. Достаточно прислать модель или фото шильда — инженер определит мощность, момент, передаточное число и присоединительные размеры.</p><p>Аналог ZR воспроизводит присоединительные и габаритные размеры импортного редуктора, поэтому узел встаёт на штатное место без переделки рамы и привода; переходные фланцы и спецвалы делаем по чертежам. Цены на импортные позиции и аналоги — по запросу, срок изготовления аналога — от 3 дней.</p><h3>Популярные бренды и типы редукторов</h3><table class="spec"><tbody>
       <tr><th>Бренд</th><th>Типы и серии</th></tr>
       <tr><td>SEW-Eurodrive</td><td>соосные R, плоские F, конические K, червячные S</td></tr>

@@ -48,7 +48,7 @@
     if (d.getElementById("zr-fav-css")) return;
     var s = d.createElement("style"); s.id = "zr-fav-css";
     s.textContent = [
-      ".zr-fav-btn{position:absolute;top:10px;right:10px;z-index:4;width:36px;height:36px;border-radius:50%;border:1px solid rgba(12,20,28,.12);background:rgba(255,255,255,.94);color:#c2ccd3;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;padding:0;box-shadow:0 2px 8px rgba(16,31,42,.08)}",
+      ".zr-fav-btn{position:absolute;top:10px;right:10px;z-index:4;width:40px;height:40px;border-radius:50%;border:1px solid rgba(12,20,28,.12);background:rgba(255,255,255,.94);color:#c2ccd3;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;padding:0;box-shadow:0 2px 8px rgba(16,31,42,.08)}",
       ".zr-fav-btn:hover{color:#e11b1b;border-color:#e11b1b;transform:scale(1.08)}",
       ".zr-fav-btn.on{color:#e11b1b;border-color:rgba(225,27,27,.4);background:rgba(225,27,27,.08)}",
       ".zr-cardacts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}",

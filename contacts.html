@@ -16,7 +16,7 @@
 <meta property="og:description" content="Телефоны, почта и реквизиты Завода Редукторов. Оставьте заявку на подбор." />
 <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
 <link rel="stylesheet" href="assets/inner.css?v=k6c3" />
-<link rel="stylesheet" href="assets/pages-modern.css?v=k5a2" />
+<link rel="stylesheet" href="assets/pages-modern.css?v=k7a1" />
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"Organization","areaServed":"RU",
@@ -50,35 +50,39 @@
 .ct-hero .ch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
 .ct-hero h1{margin:6px 0 14px}
 .ct-hero p{color:var(--muted,#5c6b76);font-size:15.5px;line-height:1.6;max-width:58ch}
-.ch-promise{display:flex;gap:11px;align-items:flex-start;margin-top:20px;padding:15px 17px;border:1px solid color-mix(in srgb,var(--red,#cf1616) 28%,var(--line,#e2e6e0));border-radius:14px;background:linear-gradient(120deg,rgba(207,22,22,.06),rgba(207,22,22,.015));font-size:13.5px;color:var(--muted,#5c6b76);line-height:1.5}
-.ch-promise b{display:block;font:700 14.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);margin-bottom:2px}
+.ch-promise{display:flex;gap:11px;align-items:flex-start;margin-top:20px;padding:15px 17px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff);font-size:13.5px;color:var(--muted,#5c6b76);line-height:1.5}
+.ch-promise b{display:block;font:700 14.5px/1.3 var(--font);color:var(--text,#101f2a);margin-bottom:2px}
 .chp-dot{width:9px;height:9px;border-radius:50%;background:#17a55c;flex:none;margin-top:5px;box-shadow:0 0 0 4px rgba(23,165,92,.16)}
 .ch-media{position:relative}
 .ch-media img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line,#e2e6e0);box-shadow:0 18px 44px rgba(14,26,36,.12)}
 .ch-cap{position:absolute;left:14px;bottom:14px;background:rgba(12,22,30,.82);color:#fff;font-size:12px;padding:7px 12px;border-radius:9px;backdrop-filter:blur(3px)}
-@media(max-width:900px){.ct-hero .ch-grid{grid-template-columns:1fr;gap:22px}.ch-media{order:-1}}
+@media(max-width:900px){.ct-hero .ch-grid{grid-template-columns:1fr;gap:22px}.ch-media{order:0}}
 
 /* Способы связи — карточки-действия вместо плоского списка полей: видно, что делать */
 .ct-ways{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .ct-way{display:flex;flex-direction:column;gap:2px;padding:15px 16px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff);text-decoration:none;transition:.16s}
 .ct-way:hover{border-color:var(--red,#cf1616);transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,26,36,.09)}
-.ct-ico{font-size:17px;color:var(--red,#cf1616);line-height:1}
+.ct-ico{color:var(--red,#cf1616);line-height:0}.ct-ico svg{display:block;width:18px;height:18px}
 .ct-k{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600;margin-top:6px}
 .ct-v{font:700 16px/1.25 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
 .ct-way:hover .ct-v{color:var(--red,#cf1616)}
 .ct-s{font-size:12px;color:var(--muted,#7c8b95)}
-.ct-hours{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;padding:14px 16px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--bg,#f6f8f6)}
+.ct-hours{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;padding:14px 16px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--bg2,#f4f6f8)}
 .ct-hours .k{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600}
-.ct-hours .v{font:600 14.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a)}
+.ct-hours .v{font:600 14.5px/1.3 var(--font);color:var(--text,#101f2a)}
 .ct-hours em{font-style:normal;color:var(--muted,#7c8b95);font-weight:500}
 
 /* Реквизиты подняты из сноски в полноценный блок: их проверяемость и есть доверие */
 .ct-req{margin-top:12px;padding:16px 18px;border:1px solid var(--line,#e2e6e0);border-radius:14px;background:var(--card,#fff)}
-.ct-req-h{font:700 13.5px/1.3 'Space Grotesk',sans-serif;color:var(--text,#101f2a);margin-bottom:12px}
+.ct-req-h{font:700 13.5px/1.3 var(--font);color:var(--text,#101f2a);margin-bottom:12px}
 .ct-req-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .ct-req-g .k{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7c8b95);font-weight:600}
-.ct-req-g .v{font:600 13.5px/1.4 'IBM Plex Mono',ui-monospace,monospace;color:var(--text,#101f2a)}
-@media(max-width:560px){.ct-ways,.ct-hours,.ct-req-g{grid-template-columns:1fr}}
+.ct-req-g .v{font:600 14px/1.4 var(--font);color:var(--text,#101f2a)}.ct-req-g .v.num{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;letter-spacing:.02em}
+.ct-v-cyr{font-family:var(--font)}
+.ch-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.ct-info{display:flex;flex-direction:column;align-self:stretch}.ct-req{flex:1}.ct-req-g{align-content:start}
+.zr-modern .map{background:var(--bg2,#f4f6f8)}.map-bar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:12px 18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);background:var(--card,#fff)}.map-bar b{color:var(--text)}.map-bar a{color:var(--red);font-weight:700;margin-left:auto}
+@media(max-width:560px){.ct-ways,.ct-hours{grid-template-columns:1fr}.ch-cta{display:grid;grid-template-columns:1fr}.ch-cta .btn{width:100%}.ct-way{display:grid;grid-template-columns:22px 1fr;column-gap:10px;row-gap:1px;align-items:center;padding:12px 14px}.ct-way .ct-ico{grid-row:1/4;align-self:center}.ct-way .ct-k{margin-top:0}.ct-req-g{grid-template-columns:1fr 1fr}.ct-req-g>div:last-child{grid-column:1/-1}.zr-modern .map iframe{min-height:260px}}
 </style></head>
 <body class="zr-modern">
 
@@ -121,6 +125,7 @@
 <span class="chp-dot"></span>
 <div><b>Инженер отвечает за 15 минут</b>в рабочее время. Заявки с сайта принимаем круглосуточно — ответим утром следующего рабочего дня.</div>
 </div>
+<div class="ch-cta"><a class="btn lg" href="#zayavka" data-zayavka>Получить расчёт</a><a class="btn lg ghost" href="tel:+74951514102">+7 (495) 151-41-02</a></div>
 </div>
 <div class="ch-media">
 <img src="assets/production/p07.webp" alt="Склад и отгрузка Завода Редукторов в Челябинске" width="720" height="500" loading="eager">
@@ -130,30 +135,30 @@
 
 <section class="section">
   <div class="wrap contact-grid">
-    <div class="cinfo ct-info">
+    <div class="ct-info">
 <div class="ct-ways">
 <a class="ct-way" href="tel:+74951514102">
-<span class="ct-ico">☎</span>
+<span class="ct-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
 <span class="ct-k">Позвонить</span>
 <span class="ct-v">+7 (495) 151-41-02</span>
 <span class="ct-s">Москва · многоканальный</span>
 </a>
 <a class="ct-way" href="tel:+79049534102">
-<span class="ct-ico">✆</span>
+<span class="ct-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
 <span class="ct-k">Мобильный</span>
 <span class="ct-v">+7 (904) 953-41-02</span>
 <span class="ct-s">звонок и сообщения</span>
 </a>
 <a class="ct-way" href="mailto:zr@zavod-red.ru">
-<span class="ct-ico">✉</span>
+<span class="ct-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
 <span class="ct-k">Написать</span>
 <span class="ct-v">zr@zavod-red.ru</span>
 <span class="ct-s">пришлите шильд или чертёж</span>
 </a>
 <a class="ct-way" href="#map">
-<span class="ct-ico">⚑</span>
+<span class="ct-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
 <span class="ct-k">Приехать</span>
-<span class="ct-v">пр-т Ленина, 2</span>
+<span class="ct-v ct-v-cyr">пр-т Ленина, 2</span>
 <span class="ct-s">Челябинск, офис 221</span>
 </a>
 </div>
@@ -165,20 +170,20 @@
 <div class="ct-req-h">Реквизиты — проверьте нас до заявки</div>
 <div class="ct-req-g">
 <div><span class="k">Юрлицо</span><span class="v">ООО «НИИ АТТ»</span></div>
-<div><span class="k">ИНН</span><span class="v">7452136680</span></div>
-<div><span class="k">ОГРН</span><span class="v">1167456120391</span></div>
+<div><span class="k">ИНН</span><span class="v num">7452136680</span></div>
+<div><span class="k">ОГРН</span><span class="v num">1167456120391</span></div>
 <div><span class="k">Адрес</span><span class="v">454007, Челябинск, пр-т Ленина, 2, оф. 221</span></div>
 </div>
 </div>
 </div><form class="lead-form" novalidate>
       <h3 style="margin-bottom:6px;font-size:24px">Оставить заявку</h3>
-      <p style="font-size:14px;margin-bottom:18px;opacity:.92">Инженер свяжется в течение 15 минут, рассчитает подбор и пришлёт коммерческое предложение.</p>
+      <p style="font-size:14px;margin-bottom:18px;opacity:.92">Инженер свяжется в течение 15 минут, подберёт редуктор и пришлёт расчёт с ценой от производителя.</p>
       <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
       <div class="field"><label>Ваше имя</label><input type="text" name="text-562" placeholder="Как к вам обращаться" required /></div>
       <div class="field"><label>Телефон</label><input type="tel" name="tel-535" placeholder="+7 (___) ___-__-__" required /></div><div class="field"><label>Почта</label><input type="email" name="email-727" placeholder="name@company.ru" required /></div>
       <div class="field"><label>Сообщение (необязательно)</label><textarea name="textarea-725" rows="3" placeholder="Что подобрать: бренд, модель, мощность, задача"></textarea></div>
       <label class="consent"><input type="checkbox" required /> Отправляя заявку, я даю согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
-      <button class="btn lg" type="submit" style="width:100%;justify-content:center">Получить КП</button>
+      <button class="btn lg" type="submit" style="width:100%;justify-content:center">Получить расчёт</button>
       <div class="form-result"></div>
     </form>
   </div>
@@ -186,11 +191,12 @@
   <div class="wrap" id="map" style="margin-top:34px">
     <div class="map">
       <iframe src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%202&z=16" loading="lazy" title="Завод Редукторов на карте — Челябинск, пр-т Ленина, 2" allowfullscreen></iframe>
+      <div class="map-bar"><b>пр-т Ленина, 2, офис 221</b> · Челябинск, Пн–Пт 8:00–17:00 <a href="https://yandex.ru/maps/?text=Челябинск, проспект Ленина, 2" target="_blank" rel="noopener">Построить маршрут →</a></div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2 style="font-size:26px">Частые вопросы</h2><div class="faq-grid"><div class="cat-faq">
+<section class="section sec-alt"><div class="wrap"><div class="eyebrow">Вопросы и ответы</div><h2>Частые вопросы</h2><div class="faq-grid"><div class="cat-faq">
 <details><summary>Как заказать редуктор?</summary><div>Свяжитесь с заводом по телефону +7 (495) 151-41-02 или +7 (904) 953-41-02, по почте zr@zavod-red.ru либо оставьте <a href="/podbor">заявку на подбор</a> на сайте. Инженер уточнит задачу, рассчитает подбор и пришлёт коммерческое предложение с ценой от производителя.</div></details>
 <details><summary>Работаете ли вы по всей России?</summary><div>Да. Производство находится в Челябинске (пр-т Ленина, 2), а отгружаем продукцию в любой регион России транспортными компаниями. Способ и сроки доставки согласуем при оформлении заказа.</div></details>
 <details><summary>Можно ли купить оригинал импортного редуктора или аналог?</summary><div>Да. Мы изготавливаем аналоги импортных приводов в рамках <a href="/importozameshchenie">импортозамещения</a> и подбираем замену по техническим и присоединительным параметрам. Опишите задачу или выберите позицию в <a href="/catalog/">каталоге</a> — определим модель.</div></details>
@@ -202,7 +208,7 @@
 <details><summary>Есть ли самовывоз со склада в Челябинске?</summary><div>Да. Готовую продукцию можно забрать самовывозом со склада в Челябинске (пр-т Ленина, 2). Перед приездом согласуйте с менеджером дату и время отгрузки. Для других регионов отправляем продукцию транспортными компаниями.</div></details></div></div>
 </div></section>
 
-<section class="section" style="padding-top:0"><div class="wrap"><div class="seo-text"><p class="seo-lead">Чтобы купить редуктор или заказать мотор-редуктор напрямую у производителя, свяжитесь с заводом любым удобным способом. Завод Редукторов в Челябинске изготавливает продукцию под задачу и называет цену от производителя без посредников.</p><details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Связаться с заводом и оформить заказ можно по телефону, электронной почте или через заявку на сайте — инженер ответит, рассчитает подбор и пришлёт коммерческое предложение. Производство и склад находятся в Челябинске, отгрузку ведём по всей России транспортными компаниями.</p><p>Чтобы ускорить расчёт, опишите задачу или пришлите фото шильдика (таблички) со старого редуктора — мы определим модель и подберём аналог. После согласования характеристик озвучим цену от производителя и срок изготовления.</p><h3>Контакты завода</h3><table class="spec"><tbody>
+<section class="section"><div class="wrap"><div class="seo-text"><p class="seo-lead">Чтобы купить редуктор или заказать мотор-редуктор напрямую у производителя, свяжитесь с заводом любым удобным способом. Завод Редукторов в Челябинске изготавливает продукцию под задачу и называет цену от производителя без посредников.</p><details class="seo-more"><summary>Подробнее: как оформить заказ, доставка и реквизиты</summary><div class="seo-body"><p>Связаться с заводом и оформить заказ можно по телефону, электронной почте или через заявку на сайте — инженер ответит, рассчитает подбор и пришлёт коммерческое предложение. Производство и склад находятся в Челябинске, отгрузку ведём по всей России транспортными компаниями.</p><p>Чтобы ускорить расчёт, опишите задачу или пришлите фото шильдика (таблички) со старого редуктора — мы определим модель и подберём аналог. После согласования характеристик озвучим цену от производителя и срок изготовления.</p><h3>Контакты завода</h3><table class="spec"><tbody>
   <tr><th>Телефон</th><td>+7 (495) 151-41-02</td></tr>
   <tr><th>Доп. телефон</th><td>+7 (904) 953-41-02 (MAX)</td></tr>
   <tr><th>Почта</th><td>zr@zavod-red.ru</td></tr>
@@ -214,13 +220,7 @@
   <tr><th>Деятельность</th><td>производство редукторов и мотор-редукторов</td></tr>
   <tr><th>Режим работы</th><td>пн–пт, обработка заявок в течение дня</td></tr>
   <tr><th>Поставки</th><td>по всей России и в страны ЕАЭС</td></tr>
-</tbody></table><p>Связаться с заводом и оформить заказ можно по телефону +7 (495) 151-41-02 или +7 (904) 953-41-02, по почте zr@zavod-red.ru, а также через заявку с сайта — инженер свяжется с вами и рассчитает подбор. Мы находимся в Челябинске, пр-т Ленина, 2, и работаем по всей России: отгружаем продукцию транспортными компаниями в любой регион.</p><h3>Как оформить заказ</h3><p>Опишите задачу или пришлите шильд (табличку) со старого редуктора — мы определим модель и подберём аналог. Для быстрого расчёта воспользуйтесь <a href="/podbor">подбором редуктора</a> по параметрам или выберите позицию в <a href="/catalog/">каталоге</a>. После согласования характеристик мы озвучим цену от производителя и сроки изготовления.</p><table class="spec">
-<tr><th>Телефон</th><td>+7 (495) 151-41-02</td></tr>
-<tr><th>Доп.</th><td>+7 (904) 953-41-02 (MAX)</td></tr>
-<tr><th>Почта</th><td>zr@zavod-red.ru</td></tr>
-<tr><th>Адрес</th><td>Челябинск, пр-т Ленина, 2</td></tr>
-<tr><th>Реквизиты</th><td>ООО «НИИ АТТ», ИНН 7452136680</td></tr>
-</table></div></details></div></div></section>
+</tbody></table><h3>Как оформить заказ</h3><p>Опишите задачу или пришлите шильд (табличку) со старого редуктора — мы определим модель и подберём аналог. Для быстрого расчёта воспользуйтесь <a href="/podbor">подбором редуктора</a> по параметрам или выберите позицию в <a href="/catalog/">каталоге</a>. После согласования характеристик мы озвучим цену от производителя и сроки изготовления.</p></div></details></div></div></section>
 
 <footer class="site-footer">
   <div class="wrap sf-top">
