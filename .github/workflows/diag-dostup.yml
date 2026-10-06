@@ -1,69 +1,75 @@
-name: Проверка доступов к серверу (только чтение)
+name: "Сервер — диагностика заявок и слепок боевого (только чтение сервера)"
 
-# Временно, из ветки claude/greeting-check-in-gdeerr: какие секреты заданы в этом репозитории
-# и пускает ли сервер по SSH и FTP. Только чтение, ничего не пишет. Запуск: коммит tools/diag/request.txt.
+# Временно, из ветки claude/greeting-check-in-gdeerr, запуск разрешён владельцем.
+# По SSH ТОЛЬКО читает сервер: версии PHP, счётчики в БД, логи, и снимает слепок файлов
+# боевого сайта (без секретов, данных CRM и генерируемых разделов) в ветку claude/prod-snapshot.
+# Запуск: коммит tools/diag/request.txt.
 on:
   push:
     branches: [claude/greeting-check-in-gdeerr]
     paths: ['tools/diag/request.txt']
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 25
     steps:
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp >/dev/null
-      - name: Какие секреты заданы
-        env:
-          A: ${{ secrets.FTP_SERVER }}
-          B: ${{ secrets.FTP_USERNAME }}
-          C: ${{ secrets.FTP_PASSWORD }}
-          D: ${{ secrets.SSH_PRIVATE_KEY }}
-          E: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
-        run: |
-          for v in A:FTP_SERVER B:FTP_USERNAME C:FTP_PASSWORD D:SSH_PRIVATE_KEY E:YANDEX_WEBMASTER_TOKEN; do n=${v%%:*}; k=${v#*:}; [ -n "${!n}" ] && echo "$k: задан (${#n} симв.: $(printf '%s' "${!n}" | wc -c))" || echo "$k: ПУСТ"; done
-      - name: SSH
-        shell: bash {0}
+      - name: Ключ
         env:
           SSH_HOST: ${{ secrets.FTP_SERVER }}
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USER: ${{ secrets.FTP_USERNAME }}
         run: |
-          [ -z "$SSH_KEY" ] && { echo "ключа нет — пропуск"; exit 0; }
           HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n'); BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/_[12]$//')
           mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519; ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=20 "$BASE@$HOST" 'bash -s' <<'REMOTE'
-          echo "=== домашний каталог ==="; ls -la ~ | head -30
-          F=$(find ~ -maxdepth 6 -path '*/api/feedback.php' 2>/dev/null | head -3); echo "=== приёмники найдены: ==="; echo "$F"
-          D=$(dirname "$(dirname "$(echo "$F" | head -1)")"); echo "=== корень сайта: $D ==="; ls -la "$D" | head -25
-          echo "=== api ==="; (cd "$D/api" && md5sum feedback.php helpers.php db.php; ls -la | head -6)
-          echo "=== config ==="; for f in "$D/api/config.php" "$D/api/config.local.php"; do [ -f "$f" ] && echo "есть: $f" || echo "нет: $f"; done
-          echo "=== php ==="; which php; php -v 2>/dev/null | head -1
-          echo "=== crm-data ==="; ls -la "$D/crm-data" 2>/dev/null | head -15
-          A="$D/crm-data/lead_attempts.jsonl"
-          if [ -f "$A" ]; then
-            echo "=== журнал попыток: $(wc -l < "$A") строк ==="
-            echo "--- по исходам ---"; grep -o '"outcome":"[a-z_]*"' "$A" | sort | uniq -c
-            echo "--- по дням (последние 40) ---"; grep -o '"created_at":"[0-9-]*' "$A" | cut -d'"' -f4 | sort | uniq -c | tail -40
-            echo "--- причины (топ) ---"; grep -o '"reason":"[^"]*"' "$A" | sort | uniq -c | sort -rn | head -15 | cut -c1-220
-            echo "--- последние 30 (контакты скрыты) ---"
-            tail -n 30 "$A" | sed -E 's/"name":"[^"]*"/"name":"*"/; s/"phone":"[^"]*"/"phone":"*"/; s/"email":"[^"]*"/"email":"*"/; s/"ua":"[^"]*"/"ua":"-"/; s/"ip":"[^"]*"/"ip":"-"/; s/"message":"([^"]{0,50})[^"]*"/"message":"\1…"/' | cut -c1-440
-          else echo "журнала попыток нет: $A"; fi
-          echo "=== логи ошибок PHP ==="; for f in "$D/error_log" "$D/api/error_log" "$D/php_errors.log" ~/"$(basename "$D")"/logs/*error* $(ls -d ~/logs 2>/dev/null)/*error* ; do [ -f "$f" ] && { echo "--- $f ---"; tail -n 25 "$f" | cut -c1-300; }; done; true
-          echo "=== cron ==="; crontab -l 2>/dev/null | head -10
+          echo "HOST=$HOST" >> $GITHUB_ENV; echo "BASE=$BASE" >> $GITHUB_ENV
+      - name: Диагностика (только чтение)
+        shell: bash {0}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no "$BASE@$HOST" 'bash -s' <<'REMOTE'
+          D=$HOME/zavod-red.ru/public_html
+          echo "=== версии PHP на сервере ==="; ls /usr/local/bin 2>/dev/null | grep -i '^php' | tr '\n' ' '; echo; ls -d /usr/local/php* /opt/php* 2>/dev/null | head; grep -i 'php' "$D/.htaccess" 2>/dev/null | head -5; ls -la ~/zavod-red.ru/ | head -8
+          P=""; for c in php8.3 php8.2 php8.1 php8.0 php7.4 /usr/local/bin/php8.3 /usr/local/bin/php8.2 /usr/local/bin/php8.1 /usr/local/bin/php8.0 /usr/local/bin/php7.4 /usr/local/php83/bin/php /usr/local/php82/bin/php /usr/local/php81/bin/php /usr/local/php80/bin/php /usr/local/php74/bin/php; do command -v "$c" >/dev/null 2>&1 && { P="$c"; break; }; done
+          [ -z "$P" ] && P=$(ls /usr/local/bin/php8* /usr/local/bin/php7* /usr/local/php*/bin/php 2>/dev/null | sort -V | tail -1)
+          echo "=== выбран php: $P ==="; [ -n "$P" ] && "$P" -v | head -1
+          echo "=== приёмник на сервере ==="; wc -l "$D/api/feedback.php"; sed -n 1,12p "$D/api/feedback.php" | cut -c1-140; echo "признаки (log_attempt/respond_early/smtp): $(grep -c 'log_attempt\|respond_early\|smtp' "$D/api/feedback.php")"
+          echo "=== даты файлов api/admin ==="; ls -la --time-style=long-iso "$D/api" | awk '{print $6, $7, $8}' | sort | tail -12; ls -la --time-style=long-iso "$D/admin" | awk '{print $6,$7,$8}' | sort | tail -6
+          echo "=== crm-data/logs ==="; ls -la "$D/crm-data/logs" | head -12; for f in "$D"/crm-data/logs/*; do [ -f "$f" ] && { echo "--- $(basename "$f") (последние 15) ---"; tail -n 15 "$f" | sed -E 's/[0-9]{10,}/<тел>/g; s/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+/<почта>/g' | cut -c1-260; }; done
+          echo "=== логи ошибок ==="; ls -la ~/zavod-red.ru/logs 2>/dev/null | head; for f in ~/zavod-red.ru/logs/*error* ~/zavod-red.ru/logs/*php* "$D/error_log" "$D/api/error_log"; do [ -f "$f" ] && { echo "--- $f ---"; tail -n 20 "$f" | cut -c1-300; }; done; true
           echo "=== БД ==="
-          cd "$D" && php -d display_errors=1 -r '
+          [ -n "$P" ] && cd "$D" && "$P" -d display_errors=1 -r '
             require "api/db.php"; $p=function_exists("db")?db():null;
             if(!$p){echo "db(): null\n"; exit;}
             $qs=["всего заявок"=>"SELECT COUNT(*) c FROM crm_leads","последняя заявка"=>"SELECT MAX(created_at) t FROM crm_leads",
-                 "заявок по дням"=>"SELECT DATE(created_at) d, COUNT(*) c FROM crm_leads GROUP BY d ORDER BY d DESC LIMIT 25",
+                 "заявок по дням (новые, 30 дн.)"=>"SELECT DATE(created_at) d, COUNT(*) c FROM crm_leads WHERE created_at >= NOW() - INTERVAL 30 DAY GROUP BY d ORDER BY d DESC",
+                 "обновлений по дням (повторные, 14 дн.)"=>"SELECT DATE(updated_at) d, COUNT(*) c FROM crm_leads WHERE updated_at >= NOW() - INTERVAL 14 DAY GROUP BY d ORDER BY d DESC",
                  "по статусам"=>"SELECT status, COUNT(*) c FROM crm_leads GROUP BY status",
                  "по источнику за 30 дней"=>"SELECT source, COUNT(*) c FROM crm_leads WHERE created_at >= NOW() - INTERVAL 30 DAY GROUP BY source",
                  "попыток по исходам"=>"SELECT outcome, COUNT(*) c FROM crm_lead_attempts GROUP BY outcome",
-                 "попыток по дням"=>"SELECT DATE(created_at) d, outcome, COUNT(*) c FROM crm_lead_attempts GROUP BY d, outcome ORDER BY d DESC LIMIT 30",
-                 "уведомления"=>"SELECT type, COUNT(*) c, MAX(created_at) t FROM crm_audit WHERE type LIKE \"notify_%\" GROUP BY type",
-                 "последние 10 заявок (без контактов)"=>"SELECT id, created_at, status, source, LEFT(page_url,60) page FROM crm_leads ORDER BY id DESC LIMIT 10"];
+                 "уведомления (аудит)"=>"SELECT type, COUNT(*) c, MAX(created_at) t FROM crm_audit WHERE type LIKE \"notify_%\" GROUP BY type",
+                 "уведомления: результат за 14 дней"=>"SELECT type, LEFT(payload,70) p, COUNT(*) c FROM crm_audit WHERE type LIKE \"notify_%\" AND created_at >= NOW() - INTERVAL 14 DAY GROUP BY type, p ORDER BY c DESC LIMIT 14",
+                 "последние 12 заявок (без контактов)"=>"SELECT id, created_at, updated_at, status, source, LEFT(page_url,50) page FROM crm_leads ORDER BY id DESC LIMIT 12"];
             foreach($qs as $k=>$q){ echo "## $k\n"; try{ echo json_encode($p->query($q)->fetchAll(), JSON_UNESCAPED_UNICODE),"\n"; }catch(Throwable $e){ echo "ошибка: ",$e->getMessage(),"\n"; } }
-          ' 2>&1 | cut -c1-2000
+          ' 2>&1 | cut -c1-2500
           REMOTE
           echo "код: $?"
+      - name: Слепок боевого сайта → ветка claude/prod-snapshot
+        shell: bash {0}
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p snap && rsync -rlt --no-perms --omit-dir-times -e "ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no" \
+            --exclude 'analog/' --exclude 'ispolnenie/' --exclude 'tiporazmer/' --exclude 'motor-reduktor-zr/' --exclude 'reduktor/' \
+            --exclude 'crm-data/' --exclude 'uploads/' --exclude 'cgi-bin/' --exclude 'assets/video/' --exclude 'assets/3d/' \
+            --exclude 'api/config.php' --exclude 'api/config.local.php' --exclude '*.log' --exclude '.htpasswd' --exclude '*.tgz' --exclude '*.zip' \
+            --exclude 'sitemap-*.xml' --exclude '.index-state.json' --exclude 'yandex-market.yml' --exclude 'dist/' \
+            "$BASE@$HOST:zavod-red.ru/public_html/" snap/ 2>&1 | tail -3
+          echo "файлов: $(find snap -type f | wc -l), размер: $(du -sh snap | cut -f1)"
+          rm -f snap/api/config*.php snap/.htpasswd
+          if grep -rlIE 'DB_PASS|smtp_pass|bot_token' snap/api snap/admin 2>/dev/null | grep -v sample | head -3; then echo "ВНИМАНИЕ: в снимке есть файлы с секретами — исключены:"; grep -rlIE 'DB_PASS|smtp_pass|bot_token' snap/api snap/admin 2>/dev/null | grep -v sample | xargs -r rm -f; fi
+          cd snap && git init -q -b claude/prod-snapshot && git config user.name "prod-snapshot bot" && git config user.email "actions@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git add -A && git commit -q -m "Слепок боевого сайта zavod-red.ru от $(date -u +%F' '%H:%M) UTC (без analog/генерируемых/секретов)" && git push -q -f origin HEAD:claude/prod-snapshot && echo "слепок отправлен в ветку claude/prod-snapshot"
