@@ -1,0 +1,117 @@
+--- main/blog/reduktor-dlya-vraschayushcheysya-pechi.html
++++ prod/blog/reduktor-dlya-vraschayushcheysya-pechi.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Редуктор для вращающейся печи: подбор и расчёт</title>
++<title>Редуктор для вращающейся печи: подбор и расчёт | ZR</title>
+ <meta name="description" content="Редуктор для вращающейся печи и сушильного барабана: высокий момент на низких оборотах, режим S1, тепловые условия, расчёт по диаметру барабана и теплоотвод." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/reduktor-dlya-vraschayushcheysya-pechi" />
+-<meta property="og:title" content="Редуктор для вращающейся печи и сушильного барабана: подбор и" />
++<meta property="og:title" content="Редуктор для вращающейся печи и сушильного барабана: подбор и | ZR" />
+ <meta property="og:description" content="Высокий момент на низких оборотах, непрерывный режим S1, тепловые условия и расчёт по диаметру барабана — как подобрать привод для печи и сушильного барабана." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-10.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Редуктор для вращающейся печи и сушильного барабана: подбор и расчёт","description":"Высокий момент на низких оборотах, непрерывный режим S1, тепловые условия и расчёт по диаметру барабана — как подобрать привод для печи и сушильного барабана.","image":"https://zavod-red.ru/assets/blog-photo/red-worm-10.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/reduktor-dlya-vraschayushcheysya-pechi"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Редуктор для вращающейся печи и сушильного барабана: подбор и расчёт","description":"Высокий момент на низких оборотах, непрерывный режим S1, тепловые условия и расчёт по диаметру барабана — как подобрать привод для печи и сушильного барабана.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/reduktor-dlya-vraschayushcheysya-pechi","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Редуктор для вращающейся печи","item":"https://zavod-red.ru/blog/reduktor-dlya-vraschayushcheysya-pechi"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как обеспечить высокий крутящий момент на тихоходном валу печи?","acceptedAnswer":{"@type":"Answer","text":"Вращающаяся печь работает на единицах оборотов в минуту, поэтому момент на выходном валу достигает десятков и сотен кН·м. Подбор ведут именно по выходному моменту с запасом на пусковую инерцию загруженного барабана, а не по мощности двигателя. Обычно применяют многоступенчатые цилиндрические или коническо-цилиндрические редукторы с большим передаточным числом."}},{"@type":"Question","name":"Какой режим работы закладывать при выборе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Печь и сушильный барабан вращаются непрерывно, поэтому редуктор подбирают под режим S1 — продолжительный без остановок. Сервис-фактор берут повышенным (от 1,5–2), учитывая ударные нагрузки от налипания и сходов материала. Это исключает перегрев и преждевременный износ при круглосуточной эксплуатации."}},{"@type":"Question","name":"Как учесть тепло от печи и нужно ли охлаждение?","acceptedAnswer":{"@type":"Answer","text":"Редуктор стоит рядом с раскалённым корпусом печи, поэтому температура масла и картера должна оставаться в допустимых пределах. При высокой тепловой нагрузке предусматривают теплозащитные экраны, термостойкое масло и при необходимости принудительное охлаждение — змеевик или маслонасос с радиатором. Без этого вязкость масла падает и подшипники работают на сухом трении."}},{"@type":"Question","name":"Какой тип редуктора выбрать для привода печи?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего применяют цилиндрические горизонтальные редукторы для бокового подвенцового привода и коническо-цилиндрические — когда нужна развязка осей двигателя и барабана. Тип определяют схемой передачи на венцовую шестерню, требуемым передаточным числом и компоновкой площадки. Окончательный выбор привязывают к присоединительным и габаритным размерам существующего узла."}},{"@type":"Question","name":"Нужен ли резервный привод и как повысить надёжность?","acceptedAnswer":{"@type":"Answer","text":"Остановка вращения горячей печи ведёт к деформации барабана, поэтому для ответственных линий ставят вспомогательный (аварийный) привод или дублирующий двигатель. Надёжность повышают усиленными подшипниками, контролем температуры и вибрации, а также плановым обслуживанием. Резервный мотор-редуктор позволяет медленно проворачивать барабан при отключении основного привода."}},{"@type":"Question","name":"Можно ли подобрать аналог импортного редуктора печи?","acceptedAnswer":{"@type":"Answer","text":"Да, по шильдику, чертежу или фактическим размерам подбирается аналог взамен импортного редуктора с сохранением передаточного числа, момента и присоединительных размеров. Это позволяет заменить узел без переделки рамы и муфт. Пришлите фото таблички или диаметр барабана — инженер рассчитает замену и пришлёт КП."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как обеспечить высокий крутящий момент на тихоходном валу печи?","acceptedAnswer":{"@type":"Answer","text":"Вращающаяся печь работает на единицах оборотов в минуту, поэтому момент на выходном валу достигает десятков и сотен кН·м. Подбор ведут именно по выходному моменту с запасом на пусковую инерцию загруженного барабана, а не по мощности двигателя. Обычно применяют многоступенчатые цилиндрические или коническо-цилиндрические редукторы с большим передаточным числом."}},{"@type":"Question","name":"Какой режим работы закладывать при выборе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Печь и сушильный барабан вращаются непрерывно, поэтому редуктор подбирают под режим S1 — продолжительный без остановок. Сервис-фактор берут повышенным (от 1,5–2), учитывая ударные нагрузки от налипания и сходов материала. Это исключает перегрев и преждевременный износ при круглосуточной эксплуатации."}},{"@type":"Question","name":"Как учесть тепло от печи и нужно ли охлаждение?","acceptedAnswer":{"@type":"Answer","text":"Редуктор стоит рядом с раскалённым корпусом печи, поэтому температура масла и картера должна оставаться в допустимых пределах. При высокой тепловой нагрузке предусматривают теплозащитные экраны, термостойкое масло и при необходимости принудительное охлаждение — змеевик или маслонасос с радиатором. Без этого вязкость масла падает и подшипники работают на сухом трении."}},{"@type":"Question","name":"Какой тип редуктора выбрать для привода печи?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего применяют цилиндрические горизонтальные редукторы для бокового подвенцового привода и коническо-цилиндрические — когда нужна развязка осей двигателя и барабана. Тип определяют схемой передачи на венцовую шестерню, требуемым передаточным числом и компоновкой площадки. Окончательный выбор привязывают к присоединительным и габаритным размерам существующего узла."}},{"@type":"Question","name":"Нужен ли резервный привод и как повысить надёжность?","acceptedAnswer":{"@type":"Answer","text":"Остановка вращения горячей печи ведёт к деформации барабана, поэтому для ответственных линий ставят вспомогательный (аварийный) привод или дублирующий двигатель. Надёжность повышают усиленными подшипниками, контролем температуры и вибрации, а также плановым обслуживанием. Резервный мотор-редуктор позволяет медленно проворачивать барабан при отключении основного привода."}},{"@type":"Question","name":"Можно ли подобрать аналог импортного редуктора печи?","acceptedAnswer":{"@type":"Answer","text":"Да, по шильдику, чертежу или фактическим размерам подбирается аналог взамен импортного редуктора с сохранением передаточного числа, момента и присоединительных размеров. Это позволяет заменить узел без переделки рамы и муфт. Пришлите фото таблички или диаметр барабана — инженер рассчитает замену и пришлёт КП."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Тип привода подбирают по схеме передачи на венцовую шестерню: цилиндрический горизонтальный — для бокового подвенцового привода, коническо-цилиндрический — когда нужна развязка осей двигателя и барабана. Подбор ведут по моменту на тихоходном валу, диаметру и массе барабана, рабочим оборотам и тепловым условиям, а не по аналогии с обычным приводом. Завод Редукторов поможет рассчитать подбор по диаметру барабана и подобрать аналог импортного редуктора печи под существующие присоединительные размеры. Редуктор для вращающейся печи — тихоходный высокомоментный привод, работающий в непрерывном режиме S1 рядом с раскалённым корпусом барабана. Его отличают большой выходной момент при единицах оборотов в минуту, повышенный сервис-фактор под ударные нагрузки от налипания материала и термостойкое масло с принудительным охлаждением. Тип привода подбирают по схеме передачи на венцовую шестерню: цилиндрический горизонтальный — для бокового подвенцового привода, коническо-конический — при развязке осей двигателя и барабана. Подбор ведут по моменту на тихоходном валу, диаметру и массе барабана. Импортные редукторы печей поставляем под заказ (цена по запросу) или подбираем габаритный аналог под штатные присоединительные размеры. Параметры привода печи Режим работы непрерывный S1, круглосуточно Рабочие обороты 0,5–5 об/мин на барабане Сервис-фактор SF 1,5–2,0 (ударные нагрузки) Тип передачи цилиндрический, коническо-цилиндрический Смазка термостойкая, с охлаждением масла Запас на пуск учёт инерции загруженного барабана Подбор по типу барабана Агрегат Редуктор Схема привода Печь обжига коническо-цилиндрический подвенцовый, боковой Сушильный барабан цилиндрический горизонтальный боковой привод Холодильник клинкера цилиндрический тихоходный, высокий момент Смеситель-барабан коническо-цилиндрический с развязкой осей Подбор редуктора — рассчитаем привод по моменту, оборотам и тепловым условиям вашей печи или сушильного барабана. Импортозамещение редукторов — подберём отечественный аналог взамен импортного привода печи по шильдику и присоединительным размерам."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редуктор для вращающейся печи</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Редуктор для вращающейся печи</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Решения</div>
+-  <h1>Редуктор для вращающейся печи и сушильного барабана</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-10.webp" alt="Редуктор для вращающейся печи и сушильного барабана — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Редуктор для вращающейся печи и сушильного барабана</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Редуктор для вращающейся печи и сушильного барабана — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -84,3 +87,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_bevel.webp" alt="Цилиндро-конический редуктор для привода вращающейся печи и сушильного барабана" loading="lazy"><figcaption>Цилиндро-конический редуктор — высокая нагрузочная способность для привода печи</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_bevel.webp" alt="Цилиндро-конический редуктор для привода вращающейся печи и сушильного барабана" loading="lazy" width="800" height="600"><figcaption>Цилиндро-конический редуктор — высокая нагрузочная способность для привода печи</figcaption></figure>
+ 
+@@ -108,3 +111,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p09.webp" alt="Производство тяжёлого редуктора для вращающейся печи" loading="lazy"><figcaption>Сборка тяжёлого редуктора под высокий момент на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p09.webp" alt="Производство тяжёлого редуктора для вращающейся печи" loading="lazy" width="900" height="675"><figcaption>Сборка тяжёлого редуктора под высокий момент на собственном производстве</figcaption></figure>
+ 
+@@ -165,3 +168,6 @@
+       <tr><th>Смеситель-барабан</th><td>коническо-цилиндрический</td><td>с развязкой осей</td></tr>
+-    </tbody></table><p><a href="/podbor">Подбор редуктора</a> — рассчитаем привод по моменту, оборотам и тепловым условиям вашей печи или сушильного барабана. <a href="/importozameshchenie">Импортозамещение редукторов</a> — подберём отечественный аналог взамен импортного привода печи по шильдику и присоединительным размерам.</p></div></details></div>
++    </tbody></table><p><a href="/podbor">Подбор редуктора</a> — рассчитаем привод по моменту, оборотам и тепловым условиям вашей печи или сушильного барабана. <a href="/importozameshchenie">Импортозамещение редукторов</a> — подберём отечественный аналог взамен импортного привода печи по шильдику и присоединительным размерам.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ </div></section>
+@@ -193,8 +199,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -207,3 +214,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -216,3 +223,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -222,3 +229,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -226,3 +233,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -239,4 +246,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

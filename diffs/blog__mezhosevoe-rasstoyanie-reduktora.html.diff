@@ -1,0 +1,116 @@
+--- main/blog/mezhosevoe-rasstoyanie-reduktora.html
++++ prod/blog/mezhosevoe-rasstoyanie-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Межосевое расстояние редуктора: что это и зачем нужно</title>
++<title>Межосевое расстояние редуктора: что это и зачем нужно | ZR</title>
+ <meta name="description" content="Межосевое расстояние редуктора: что это, как обозначается в маркировке Ц2У и Ч, как связано с типоразмером, моментом и габаритами и как применять при подборе." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/mezhosevoe-rasstoyanie-reduktora" />
+-<meta property="og:title" content="Межосевое расстояние редуктора: что это и зачем нужно" />
++<meta property="og:title" content="Межосевое расстояние редуктора: что это и зачем нужно | ZR" />
+ <meta property="og:description" content="Что такое межосевое расстояние редуктора, как оно зашифровано в маркировке и зачем нужно при подборе и замене импорта." />
+ <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Межосевое расстояние редуктора: что это и зачем нужно","description":"Что такое межосевое расстояние редуктора, как оно зашифровано в маркировке и зачем нужно при подборе и замене импорта.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/mezhosevoe-rasstoyanie-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Межосевое расстояние редуктора: что это и зачем нужно","description":"Что такое межосевое расстояние редуктора, как оно зашифровано в маркировке и зачем нужно при подборе и замене импорта.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/mezhosevoe-rasstoyanie-reduktora","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Межосевое расстояние редуктора","item":"https://zavod-red.ru/blog/mezhosevoe-rasstoyanie-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое межосевое расстояние редуктора?","acceptedAnswer":{"@type":"Answer","text":"Это расстояние между осями ведущего и ведомого валов одной ступени зубчатой передачи, измеряется в миллиметрах и обозначается aw. Геометрически оно равно половине суммы делительных диаметров шестерни и колеса. По сути это базовый размер, задающий типоразмер передачи."}},{"@type":"Question","name":"Чем межосевое отличается от межцентрового расстояния?","acceptedAnswer":{"@type":"Answer","text":"В контексте зубчатой передачи это синонимы — речь об осях валов в зацеплении. Не путайте этот размер с межцентровым расстоянием крепёжных отверстий лап или с высотой оси выходного вала над опорной плоскостью. Последние задают отдельно при монтаже."}},{"@type":"Question","name":"Какое межосевое расстояние имеют в виду в многоступенчатом редукторе?","acceptedAnswer":{"@type":"Answer","text":"В каталогах и маркировке под межосевым расстоянием редуктора понимают значение тихоходной (выходной) ступени. Именно она несёт максимальный момент и определяет габарит корпуса. Быстроходные ступени имеют меньшие колёса и на типоразмер влияют слабее."}},{"@type":"Question","name":"Как межосевое расстояние зашифровано в маркировке?","acceptedAnswer":{"@type":"Answer","text":"У отечественных серий это число прямо в названии модели в миллиметрах. У цилиндрических Ц2У-200 цифры означают межосевое расстояние тихоходной ступени, у червячных Ч-100 — межосевое расстояние червячной пары. По одному числу инженер сразу видит типоразмер и примерный габарит."}},{"@type":"Question","name":"Как межосевое расстояние связано с моментом и габаритами?","acceptedAnswer":{"@type":"Answer","text":"Зависимость прямая: больше межосевое расстояние — крупнее колёса — выше допустимый момент на выходном валу — больше масса и габариты. Поэтому подбор «с запасом» по моменту означает переход на больший типоразмер, а не заказ «того же редуктора помощнее»."}},{"@type":"Question","name":"Гарантирует ли одинаковое межосевое расстояние взаимозаменяемость?","acceptedAnswer":{"@type":"Answer","text":"Нет. У двух редукторов разных серий совпадение межосевого расстояния не гарантирует одинаковый момент и взаимозаменяемость. Решающими остаются присоединительные размеры — диаметр и длина вала, размеры лап и фланцев. При замене импорта их сверяют отдельно."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое межосевое расстояние редуктора?","acceptedAnswer":{"@type":"Answer","text":"Это расстояние между осями ведущего и ведомого валов одной ступени зубчатой передачи, измеряется в миллиметрах и обозначается a w . Геометрически оно равно половине суммы делительных диаметров шестерни и колеса. По сути это базовый размер, задающий типоразмер передачи."}},{"@type":"Question","name":"Чем межосевое отличается от межцентрового расстояния?","acceptedAnswer":{"@type":"Answer","text":"В контексте зубчатой передачи это синонимы — речь об осях валов в зацеплении. Не путайте этот размер с межцентровым расстоянием крепёжных отверстий лап или с высотой оси выходного вала над опорной плоскостью. Последние задают отдельно при монтаже."}},{"@type":"Question","name":"Какое межосевое расстояние имеют в виду в многоступенчатом редукторе?","acceptedAnswer":{"@type":"Answer","text":"В каталогах и маркировке под межосевым расстоянием редуктора понимают значение тихоходной (выходной) ступени. Именно она несёт максимальный момент и определяет габарит корпуса. Быстроходные ступени имеют меньшие колёса и на типоразмер влияют слабее."}},{"@type":"Question","name":"Как межосевое расстояние зашифровано в маркировке?","acceptedAnswer":{"@type":"Answer","text":"У отечественных серий это число прямо в названии модели в миллиметрах. У цилиндрических Ц2У-200 цифры означают межосевое расстояние тихоходной ступени, у червячных Ч-100 — межосевое расстояние червячной пары. По одному числу инженер сразу видит типоразмер и примерный габарит."}},{"@type":"Question","name":"Как межосевое расстояние связано с моментом и габаритами?","acceptedAnswer":{"@type":"Answer","text":"Зависимость прямая: больше межосевое расстояние — крупнее колёса — выше допустимый момент на выходном валу — больше масса и габариты. Поэтому подбор «с запасом» по моменту означает переход на больший типоразмер, а не заказ «того же редуктора помощнее»."}},{"@type":"Question","name":"Гарантирует ли одинаковое межосевое расстояние взаимозаменяемость?","acceptedAnswer":{"@type":"Answer","text":"Нет. У двух редукторов разных серий совпадение межосевого расстояния не гарантирует одинаковый момент и взаимозаменяемость. Решающими остаются присоединительные размеры — диаметр и длина вала, размеры лап и фланцев. При замене импорта их сверяют отдельно."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Межосевое расстояние aw — это расстояние между осями входного (быстроходного) и выходного (тихоходного) валов цилиндрической ступени или между осью червяка и колеса у червячного редуктора. У отечественных и импортных серий оно стандартизовано по рядам (например, 40, 50, 63, 80, 100, 125, 160, 200 мм), и именно по этому числу в обозначении удобно начинать подбор типоразмера. Межосевое расстояние косвенно характеризует передаваемый момент: чем оно больше, тем крупнее зубчатые колёса и выше нагрузочная способность редуктора. Поэтому при замене импортного привода aw сверяют в первую очередь — оно должно совпадать с присоединительными размерами посадочного места, иначе редуктор не встанет без переделки рамы. Ряд межосевых расстояний и типоразмер Межосевое aw, мм Ориентировочный момент M2 40–50 до 150 Н·м 63–80 150–600 Н·м 100–125 600–2000 Н·м 160–200 2000–8000 Н·м 250 и более свыше 8000 Н·м Где межосевое в обозначении Серия Как зашито aw МЧ-80 80 — межосевое 80 мм Ч-100 100 — межосевое 100 мм NMRV 063 063 — межосевое 63 мм Ц2У-160 160 — межосевое 160 мм 2Ч-63 63 — межосевое тихоходной ступени Рассчитать модель под вашу нагрузку поможет подбор редуктора . Разобраться, как межосевое расстояние и другие параметры зашифрованы в обозначении, можно в статье расшифровка маркировки редукторов ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Межосевое расстояние редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Межосевое расстояние редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Справочник</div>
+-  <h1>Межосевое расстояние редуктора: что это и зачем нужно</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Межосевое расстояние редуктора: что это и зачем нужно — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Межосевое расстояние редуктора: что это и зачем нужно</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Межосевое расстояние редуктора: что это и зачем нужно — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -82,3 +85,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — межосевое расстояние ступени" loading="lazy"><figcaption>Цилиндрический редуктор: межосевое расстояние задаёт размер ступени и корпуса</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — межосевое расстояние ступени" loading="lazy" width="800" height="600"><figcaption>Цилиндрический редуктор: межосевое расстояние задаёт размер ступени и корпуса</figcaption></figure>
+ 
+@@ -103,3 +106,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p05.webp" alt="Производство редукторов — контроль межосевого расстояния" loading="lazy"><figcaption>Контроль межосевого расстояния и присоединительных размеров на производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p05.webp" alt="Производство редукторов — контроль межосевого расстояния" loading="lazy" width="900" height="675"><figcaption>Контроль межосевого расстояния и присоединительных размеров на производстве</figcaption></figure>
+ 
+@@ -162,3 +165,6 @@
+       <tr><th>2Ч-63</th><td>63 — межосевое тихоходной ступени</td></tr>
+-    </tbody></table><p>Рассчитать модель под вашу нагрузку поможет <a href="/podbor">подбор редуктора</a>. Разобраться, как межосевое расстояние и другие параметры зашифрованы в обозначении, можно в статье <a href="/blog/rasshifrovka-markirovki-reduktorov">расшифровка маркировки редукторов</a>.</p></div></details></div>
++    </tbody></table><p>Рассчитать модель под вашу нагрузку поможет <a href="/podbor">подбор редуктора</a>. Разобраться, как межосевое расстояние и другие параметры зашифрованы в обозначении, можно в статье <a href="/blog/rasshifrovka-markirovki-reduktorov">расшифровка маркировки редукторов</a>.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ 
+@@ -191,8 +197,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -205,3 +212,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -214,3 +221,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -220,3 +227,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -224,3 +231,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -237,4 +244,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

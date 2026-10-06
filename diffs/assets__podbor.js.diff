@@ -1,0 +1,424 @@
+--- main/assets/podbor.js
++++ prod/assets/podbor.js
+@@ -10,5 +10,5 @@
+ 
+-  var sub=/\/(catalog|cases|uslugi|brands|blog)\//.test(location.pathname);
++  var sub=/\/(catalog|cases|uslugi|brands|blog|motor-reduktor-zr)\//.test(location.pathname);
+   var pfx=sub?'../':'';
+-  var DATA_URL=pfx+'assets/podbor-data.json?v=ef55c80c';
++  var DATA_URL=pfx+'assets/podbor-data.json?v=10';
+ 
+@@ -93,3 +93,11 @@
+ 
+-  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:''), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
++  // Стартовая марка калькулятора (решение владельца 11.08.2026): по умолчанию SEW —
++  // посетители знают импортные маркировки лучше наших ZR. Приоритет:
++  //   data-lockbrand="1" → ровно то, что в data-brand (страницы линеек ПР/МР/EVL и
++  //     брендов; пустой data-brand при локе = «Наши ZR», так живёт motor-reduktor-zr);
++  //   data-brand без лока → эта марка стартовая, переключатель марок доступен;
++  //   ничего не задано → SEW (podbor, главная, типовые страницы каталога).
++  // Переключатель марок никуда не девается — «Наши ZR» в один клик.
++  var DEF_BRAND='SEW EURODRIVE';
++  var DB=null, RENDER=0, STEP=40, CUR=[], selType=-1, selBrand=(lockBrand?presetBrand:(presetBrand||DEF_BRAND)), RANGE_VALS={}, $=function(id){return document.getElementById(id);};
+   var qEl=$('pfQ');
+@@ -100,3 +108,3 @@
+   // переключатель брендов: ключ в g.a → отображение → slug бренд-страниц /analog/<s>-<frame>
+-  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:''},{k:'Bonfiglioli',n:'Bonfiglioli',s:''},{k:'Motovario',n:'Motovario',s:''},{k:'Bauer',n:'Bauer',s:''},{k:'Yilmaz',n:'Yilmaz',s:''},{k:'Lenze',n:'Lenze',s:''},{k:'STM',n:'STM',s:''},{k:'Transtecno',n:'Transtecno',s:''},{k:'Watt Drive',n:'Watt Drive',s:''},{k:'Vemper',n:'Vemper',s:''},{k:'INNOVARI',n:'INNOVARI',s:''},{k:'TZ',n:'Tos Znojmo',s:''},{k:'SITI',n:'SITI',s:''},{k:'Flender',n:'Flender',s:''},{k:'Siemens',n:'Siemens',s:''},{k:'KEB',n:'KEB',s:''},{k:'Boneng',n:'Boneng',s:''},{k:'Guomao',n:'Guomao',s:''},{k:'Varmec',n:'Varmec',s:''},{k:'Varvel',n:'Varvel',s:''},{k:'Rossi',n:'Rossi',s:''},{k:'InnoRed',n:'InnoRed',s:''},{k:'Tramec',n:'Tramec',s:''}];
++  var BRANDS=[{k:'',n:'Наши ZR',s:''},{k:'__evl__',n:'EVL',s:''},{k:'__mr__',n:'МР',s:''},{k:'SEW EURODRIVE',n:'SEW',s:'sew'},{k:'NORD',n:'NORD',s:'nord'},{k:'Bonfiglioli',n:'Bonfiglioli',s:'bonfiglioli'},{k:'Motovario',n:'Motovario',s:'motovario'},{k:'Bauer',n:'Bauer',s:'bauer'},{k:'Yilmaz',n:'Yilmaz',s:'yilmaz'},{k:'Lenze',n:'Lenze',s:'lenze'},{k:'STM',n:'STM',s:'stm'},{k:'Transtecno',n:'Transtecno',s:'transtecno'},{k:'Watt Drive',n:'Watt Drive',s:'watt-drive'},{k:'Vemper',n:'Vemper',s:'vemper'},{k:'INNOVARI',n:'INNOVARI',s:'innovari'},{k:'TZ',n:'Tos Znojmo',s:'tos-znojmo'},{k:'SITI',n:'SITI',s:'siti'},{k:'Flender',n:'Flender',s:'flender'},{k:'Siemens',n:'Siemens',s:'siemens'},{k:'KEB',n:'KEB',s:'keb'},{k:'Boneng',n:'Boneng',s:'boneng'},{k:'Guomao',n:'Guomao',s:'guomao'},{k:'Varmec',n:'Varmec',s:'varmec'},{k:'Varvel',n:'Varvel',s:'varvel'},{k:'Rossi',n:'Rossi',s:'rossi'},{k:'InnoRed',n:'InnoRed',s:'innored'},{k:'Tramec',n:'Tramec',s:'tramec'},{k:'Unidrive',n:'Unidrive',s:'unidrive'}];
+   var BMAP={}; BRANDS.forEach(function(b){BMAP[b.k]=b;});
+@@ -143,8 +151,41 @@
+   // «наши» виды: ZR (k='') и EVL (k='__evl__') — показываем все наши модели
+-  function isOurs(k){ return !k || k==='__evl__'; }
++  /* Карточки марок, для которых подбор по параметрам не построен: заводского соответствия
++     «модель импорта → типоразмер ZR» нет, поэтому в таблицу подставлять нечего. Раньше такая
++     марка просто гасла и клиент упирался в тупик. Теперь под фильтром показываем её
++     типоразмеры со ссылками на карточки — там данные каталога производителя и подбор по шильду. */
++  var BCARDS=null;
++  /* Карточки у марки есть — значит она рабочая, гасить её нельзя: серая плашка читается
++     как «не работаем с брендом», хотя по ней собран каталог типоразмеров. */
++  function hasCards(b){ return !!(BCARDS && b && BCARDS[b.n] && BCARDS[b.n].length); }
++  function renderBrandCards(){
++    var box=document.getElementById('pfBrandCards'); if(!box) return;
++    var b=BMAP[selBrand], list=(BCARDS&&b)?BCARDS[b.n]:null;
++    if(!list||!list.length){ box.hidden=true; box.innerHTML=''; return; }
++    box.hidden=false;
++    box.innerHTML='<div class="pf-bc-lbl">Карточки типоразмеров '+b.n+
++      '<i>Подбор по параметрам для этой марки не построен — аналог ZR подбираем по шильду или чертежу.</i></div>'+
++      '<div class="pf-bc-set">'+list.map(function(x){
++        return '<a class="pf-bc" href="'+x.u+'">'+x.m+'</a>'; }).join('')+'</div>';
++  }
++  (function(){ try{ fetch('/assets/brand-cards.json?v=1').then(function(r){return r.json();})
++    .then(function(d){ BCARDS=d;
++      try{ buildBrands(); }catch(e){}      /* пересобрать плашки: часть перестала быть серой */
++      try{ renderBrandCards(); }catch(e){} }).catch(function(){}); }catch(e){} })();
++
++  function isOurs(k){ return !k || k==='__evl__' || k==='__pr__' || k==='__mr__'; }
++  // МР-маркировка = номер ПР с префиксом МР (по таблице соответствий ТЗ: ПР430↔МР430 и т.д.)
++  function mrOf(p){ return p ? String(p).replace(/^\s*ПР/,'МР') : ''; }
+   // отображаемое имя выбранного импортного бренда ('' — если выбраны наши ZR)
+-  function brandLabel(){ if(isOurs(selBrand)) return ''; var b=BMAP[selBrand]; return (b&&b.n)||selBrand; }
++  function brandLabel(){ if(selBrand==='__all__'||isOurs(selBrand)) return ''; var b=BMAP[selBrand]; return (b&&b.n)||selBrand; }
+   // группа проходит текущий бренд? (наши виды → все; иначе только с аналогом этого бренда)
+   function groupHasBrand(g){
++    // «Вся база»: показываем все группы без брендового отбора. Без этого режима на /podbor
++    // видно только позиции с аналогом стартовой марки — 64 группы из 104 были недоступны.
++    if(selBrand==='__all__') return true;
+     var b=BMAP[selBrand];
++    // Режимы-линейки ПР/МР: показываем ТОЛЬКО позиции со своей маркировкой (номер ПR есть).
++    // Сдвоенные редукторы (EVL 063/747 и т.п.) номера ПР/МР не имеют — на страницах ПР/МР их
++    // быть не должно (иначе после сортировки всплывал дубль «ZR xxx · ZR xxx»). На EVL и ZR —
++    // показываем все (EVL и ZR есть у каждой группы).
++    if(selBrand==='__pr__' || selBrand==='__mr__') return !!(g.p && String(g.p).trim());
+     if(isOurs(selBrand)) return true;
+@@ -175,5 +216,32 @@
+     var base=rowsOfBase();
++    // Каскад (правка ТЗ): списки «от/до» каждой колонки показывают только те значения,
++    // что реально встречаются в строках, прошедших числовые фильтры ОСТАЛЬНЫХ колонок.
++    // Пример: выбрали «мощность 4 кВт» → в «оборотах», «моменте» и т.д. остаются только
++    // значения, существующие при 4 кВт, — не нужно листать пустые. Свою колонку из расчёта
++    // исключаем, чтобы её собственный список не схлопывался и выбор можно было менять.
++    // Снимок текущих фильтров берём ДО цикла — сбросы .value внутри цикла на каскад не влияют.
++    var FLT={};
++    COLS.forEach(function(c){
++      var mn=selEl('min',c.i), mx=selEl('max',c.i);
++      // Авто-«от» не участвуют в каскаде — только ручные фильтры суживают опции
++      var loManual=mn&&mn.value!==''&&mn.getAttribute('data-auto')!=='1';
++      FLT[c.i]={lo:loManual?parseFloat(mn.value):null, hi:(mx&&mx.value!=='')?parseFloat(mx.value):null};
++    });
++    function passExcept(it,exceptI){
++      for(var ci=0;ci<COLS.length;ci++){
++        var col=COLS[ci]; var i=col.i; if(i===exceptI)continue;
++        var f=FLT[i], v=it[i];
++        // Округляем так же, как passRange, иначе строки у границы опции отсекаются каскадом
++        // хотя реально проходят фильтр (например: raw 0.547 < f.lo 0.55 = true → исключена,
++        // но rounded 0.55 = 0.55 → должна быть включена).
++        var _p=Math.pow(10,col.d==null?2:col.d);
++        var rv=(v==null)?null:Math.round(v*_p)/_p;
++        if(f.lo!=null){ if(rv==null||rv<f.lo)return false; }
++        if(f.hi!=null){ if(rv==null||rv>f.hi)return false; }
++      }
++      return true;
++    }
+     COLS.forEach(function(c){
+       var vals={}, _p=Math.pow(10,c.d==null?2:c.d);
+-      base.forEach(function(it){ if(it[c.i]!=null)vals[Math.round(it[c.i]*_p)/_p]=1; });
++      base.forEach(function(it){ if(it[c.i]!=null && passExcept(it,c.i))vals[Math.round(it[c.i]*_p)/_p]=1; });
+       var sorted=Object.keys(vals).map(parseFloat).sort(function(a,b){return a-b;});
+@@ -188,3 +256,19 @@
+         sel.innerHTML='<option value="">Все</option>'+sorted.map(function(v){return '<option value="'+v+'">'+fmt(v,c.d)+'</option>';}).join('');
+-        if(keep&&vals[keep])sel.value=keep; else sel.value='';
++        // Каскадное сохранение выбора:
++        //   • exact match  → сохраняем значение как есть
++        //   • вышло ЗА диапазон (from слишком велик или to слишком мал) → ставим ближайшую границу,
++        //     чтобы не получить пустую выборку
++        //   • внутри диапазона, но нет точного значения → сбрасываем в «Все»
++        var newVal='';
++        if(keep!==''){
++          var kv=parseFloat(keep);
++          if(vals[keep]){
++            newVal=keep; // exact match — сохраняем
++          } else if(sorted.length && !isNaN(kv)){
++            if(mm==='min' && kv>sorted[sorted.length-1]){ newVal=String(sorted[sorted.length-1]); }   // from > max → зажимаем к max
++            else if(mm==='max' && kv<sorted[0])          { newVal=String(sorted[0]); }                // to < min  → зажимаем к min
++            // иначе (внутри диапазона, нет точного значения) → оставляем newVal='' (Все)
++          }
++        }
++        sel.value=newVal;
+       });
+@@ -202,3 +286,3 @@
+       var all=RANGE_VALS[c.i]||[];
+-      var lo=mn.value!==''?parseFloat(mn.value):null, hi=mx.value!==''?parseFloat(mx.value):null;
++      var lo=(mn.value!==''&&mn.getAttribute('data-auto')!=='1')?parseFloat(mn.value):null, hi=mx.value!==''?parseFloat(mx.value):null;
+       function opts(vals,cur){return '<option value="">Все</option>'+vals.map(function(v){return '<option value="'+v+'"'+(String(v)===String(cur)?' selected':'')+'>'+fmt(v,c.d)+'</option>';}).join('');}
+@@ -208,2 +292,46 @@
+   }
++
++  // Автозаполнение «от» (правка ТЗ): как только задан хоть один числовой фильтр или поиск,
++  // в КАЖДОЙ колонке поле «от» само встаёт на минимальное доступное значение (обороты «от»=140
++  // и т.д. — «во всех пунктах от»). Минимумы берём по строкам, прошедшим ТОЛЬКО РУЧНЫЕ фильтры —
++  // тогда все «от»=минимумы валидны одновременно и «Найдено» не уменьшается. Авто-значения помечаем
++  // data-auto="1", чтобы не путать с ручными и пересчитывать/снимать при изменениях.
++  function autoFillFroms(){
++    var manual=[], anyManual=false;
++    COLS.forEach(function(c){
++      var mn=selEl('min',c.i), mx=selEl('max',c.i);
++      var loManual = mn && mn.value!=='' && mn.getAttribute('data-auto')!=='1';
++      var hiSet    = mx && mx.value!=='';
++      if(loManual||hiSet) anyManual=true;
++      manual.push({i:c.i, lo:loManual?parseFloat(mn.value):null, hi:hiSet?parseFloat(mx.value):null});
++    });
++    if(qEl && qEl.value.trim()!=='') anyManual=true;
++    if(!anyManual){   // ручных фильтров нет → снимаем авто-минимумы, всё «Все»
++      COLS.forEach(function(c){ var mn=selEl('min',c.i); if(mn&&mn.getAttribute('data-auto')==='1'){ mn.value=''; mn.removeAttribute('data-auto'); } });
++      return;
++    }
++    var base=rowsOfBase().filter(function(it){
++      for(var k=0;k<manual.length;k++){ var f=manual[k], v=it[f.i];
++        if(f.lo!=null){ if(v==null||v<f.lo)return false; }
++        if(f.hi!=null){ if(v==null||v>f.hi)return false; }
++      }
++      return true;
++    });
++    // Берём первую строку по сортировке n_вых ↑ — «от» совпадает с первой видимой строкой таблицы
++    var _ref=null;
++    if(base.length){
++      var _sb=base.slice().sort(function(a,b){var av=a[2],bv=b[2];if(av==null)return 1;if(bv==null)return -1;return av-bv;});
++      _ref=_sb[0];
++    }
++    COLS.forEach(function(c){
++      var mn=selEl('min',c.i); if(!mn)return;
++      if(mn.value!=='' && mn.getAttribute('data-auto')!=='1') return;   // задано вручную — не трогаем
++      var _p=Math.pow(10,c.d==null?2:c.d), m=_ref?_ref[c.i]:null;
++      if(m==null){ base.forEach(function(it){ var v=it[c.i]; if(v!=null && (m==null||v<m)) m=v; }); }
++      if(m!=null){ mn.value=String(Math.round(m*_p)/_p); mn.setAttribute('data-auto','1'); }
++      else { mn.value=''; mn.removeAttribute('data-auto'); }
++    });
++  }
++  // единый цикл пересчёта: авто-«от» → каскад опций → зависимость от/до → выдача
++  function refilter(){ autoFillFroms(); fillRanges(); syncRanges(); apply(); }
+ 
+@@ -233,5 +361,10 @@
+         if(imp)names[imp]=1;               // конкретный бренд → его аналоги
++      }else if(selBrand==='__pr__'){
++        if(g.p)names[g.p]=1;               // страница ПР → подсказки только ПР
++      }else if(selBrand==='__mr__'){
++        if(g.p)names[mrOf(g.p)]=1;          // страница МР → только МР
++      }else if(selBrand==='__evl__'){
++        if(g.e)names[g.e]=1;                // страница EVL → только EVL
+       }else{
+-        if(g.e){ var ze=zrOf(g.e); names[ze||g.e]=1; }   // наши виды → маркировка ZR
+-        if(g.p)names[g.p]=1;               // + ГОСТ (ПР/МР)
++        if(g.e){ var ze=zrOf(g.e); names[ze||g.e]=1; }   // ZR по умолчанию → ТОЛЬКО ZR (ПР убран из общего калькулятора — остаётся только на странице ПР)
+       }
+@@ -298,5 +431,7 @@
+       var _bo=BMAP[selBrand];
++      var _ours=isOurs(selBrand);
+       var _bl=$('pfBrandLock');
+-      if(_bl) _bl.innerHTML='<span class="pf-brands-lbl">Показываем аналоги:</span><span class="pf-pill pf-pill--brand is-active" aria-current="true">'+((_bo&&_bo.n)||selBrand)+'</span>';
+-      var _th=root.querySelector('.pf-th-tz'); if(_th) _th.textContent=((_bo&&_bo.n)||selBrand)+' (наш аналог ZR)';
++      // наши линейки (ZR/EVL/ПР/МР) — «Показываем линейку», импортный бренд — «Показываем аналоги»
++      if(_bl) _bl.innerHTML='<span class="pf-brands-lbl">'+(_ours?'Показываем линейку:':'Показываем аналоги:')+'</span><span class="pf-pill pf-pill--brand is-active" aria-current="true">'+((_bo&&_bo.n)||selBrand)+'</span>';
++      var _th=root.querySelector('.pf-th-tz'); if(_th) _th.textContent=_ours?(((_bo&&_bo.n)||'Типоразмер')+' — маркировка'):(((_bo&&_bo.n)||selBrand)+' (наш аналог ZR)');
+     }
+@@ -312,2 +447,3 @@
+     fillModels();
++    autoFillFroms();   // если числовой фильтр пришёл из URL — сразу проставим «от» по остальным колонкам
+     syncRanges();
+@@ -320,10 +456,6 @@
+   }
+-  // База подбора — 380КБ JSON, её разбор занимает главный поток. Грузим её при
+-  // приближении к калькулятору, а не при загрузке страницы. Если калькулятор и так
+-  // виден сразу (страница /podbor), наблюдатель сработает тут же — поведение прежнее.
+-  // Запас 700px означает «почти доскроллили», так что к моменту показа база уже на месте.
+-  // Раньше ленивый путь включался только при data-compact=1, то есть на одной главной:
+-  // 8 страниц каталога тянули и разбирали базу сразу, хотя калькулятор лежит у них
+-  // в середине страницы и виден не сразу.
+-  if('IntersectionObserver' in window){
++  // На /podbor калькулятор — основной контент, грузим базу сразу.
++  // На главной это компактный мини-виджет (data-compact=1) — грузим базу (390КБ)
++  // лениво, при приближении к виджету, чтобы не тормозить загрузку главной.
++  if(compact && ('IntersectionObserver' in window)){
+     var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ loadDB(); io.disconnect(); } }); }, {rootMargin:'700px'});
+@@ -336,2 +468,24 @@
+ 
++  /* Страницы разделов сайта под пилюлями калькулятора (заказчик 08.08.2026: «чтоб при клике
++     [можно было перейти] на страницу типа или фирмы»). Сам клик по пилюле остаётся фильтром —
++     иначе подбор перестанет работать; переход даёт стрелка ↗ в углу пилюли. */
++  var TYPE_URL={
++    'червячный':'/catalog/chervyachnye',
++    'соосно-цилиндрический':'/catalog/soosnye',
++    'коническо-цилиндрический':'/catalog/konichesko-cilindricheskie',
++    'плоско-цилиндрический':'/catalog/ploskie',
++    'цилиндрический':'/catalog/cilindricheskie'
++  };
++  function brandUrl(b){
++    if(!b) return '';
++    if(b.s) return '/brands/'+b.s;              // импортная марка — своя страница
++    if(b.k==='__evl__') return '/catalog/evl';  // у наших линеек страницы в каталоге
++    if(b.k==='__mr__') return '/catalog/mr';
++    if(b.k==='') return '/motor-reduktor-zr/';
++    return '';
++  }
++  function goHtml(url,title){
++    return url?('<a class="pf-pill-go" href="'+url+'" title="'+title+'" aria-label="'+title+'" tabindex="-1">&#8599;</a>'):'';
++  }
++
+   function buildPills(){
+@@ -341,3 +495,5 @@
+     html+=enabledIdx.map(function(i){
+-      return '<button type="button" class="pf-pill'+(selType===i?' is-active':'')+'" data-ti="'+i+'">'+(TYPE_LABEL[DB.t[i]]||DB.t[i])+'</button>';
++      var u=TYPE_URL[DB.t[i]]||'', lbl=(TYPE_LABEL[DB.t[i]]||DB.t[i]);
++      return '<span class="pf-pill-w"><button type="button" class="pf-pill'+(selType===i?' is-active':'')+(u?' has-go':'')+'" data-ti="'+i+'">'+lbl+'</button>'
++        +goHtml(u,'Открыть раздел каталога: '+lbl)+'</span>';
+     }).join('');
+@@ -349,3 +505,3 @@
+         b.classList.add('is-active');
+-        fillModels(); fillRanges(); syncRanges(); apply();
++        fillModels(); refilter();
+       });
+@@ -365,16 +521,44 @@
+     box.className='pf-brands pf-brands--panel';
+-    box.innerHTML='<span class="pf-brands-lbl">Показать в марках</span>'
++    var VIEWS=[{k:'__all__',n:'Вся база'},{k:'',n:'Наши ZR'},{k:DEF_BRAND,n:'SEW'}];
++    var viewHtml='<span class="pf-brands-lbl">Показывать</span><span class="pf-brands-set">'
++      +VIEWS.map(function(v){
++        return '<span class="pf-pill-w"><button type="button" class="pf-pill pf-pill--brand'
++          +(selBrand===v.k?' is-active':'')+'" data-bk="'+v.k+'">'
++          +'<span>'+v.n+'</span></button></span>';
++      }).join('')+'</span>';
++    box.innerHTML=viewHtml+'<span class="pf-brands-lbl">Каталоги марок</span>'
+       +'<span class="pf-brands-set">'
+       +BRANDS.map(function(b){
+-        var noData=!isOurs(b.k)&&!brandHasData(b.k);
+-        return '<button type="button" class="pf-pill pf-pill--brand'
++        // 17.08.2026, просьба заказчика: вся плашка ведёт на страницу марки, а не только
++        // стрелка. Раньше клик по марке фильтровал таблицу тут же, и попасть на страницу
++        // можно было лишь по маленькой стрелке в углу — её не замечали.
++        // Подбор по марке при этом НЕ теряется: на странице каждой марки стоит свой
++        // калькулятор, уже зафиксированный на ней (data-lockbrand), — то есть человек
++        // получает ту же отфильтрованную таблицу, только на профильной странице.
++        var noData=!isOurs(b.k)&&!brandHasData(b.k)&&!hasCards(b), u=brandUrl(b);
++        var ic=b.s?'<img class="pf-pill-ic" src="/assets/brands/'+b.s+'.webp" alt="" loading="lazy" onerror="this.remove()">':'';
++        var ttl=noData
++          ? 'Подбор по параметрам для этой марки не построен — открыть страницу марки: каталог и подбор по шильду'
++          : 'Открыть страницу марки '+b.n+': каталог, чертежи и подбор аналога';
++        if(u){
++          return '<span class="pf-pill-w"><a class="pf-pill pf-pill--brand is-link'
++            +(noData?' is-nodata':'')+'" href="'+u+'" title="'+ttl+'">'
++            +ic+'<span>'+b.n+'</span></a></span>';   // стрелку ↗ рисует CSS-правило .is-link::after
++        }
++        // страницы у марки нет — оставляем прежнее поведение: фильтр таблицы на месте
++        return '<span class="pf-pill-w"><button type="button" class="pf-pill pf-pill--brand'
+           +(selBrand===b.k?' is-active':'')+(noData?' is-nodata':'')
+-          +'" data-bk="'+b.k.replace(/"/g,'&quot;')+'"'
+-          +(noData?' title="Подбор по параметрам для этой марки не построен — покажем всю базу ZR, аналог подтвердит инженер"':'')
+-          +'>'+b.n+'</button>';
++          +'" data-bk="'+b.k.replace(/"/g,'&quot;')+'">'
++          +ic+'<span>'+b.n+'</span></button></span>';
+       }).join('')+'</span>'
+-      +'<span class="pf-brands-hint">Выберите марку — в таблице появится её модель и наш аналог ZR</span>';
+-    Array.prototype.forEach.call(box.querySelectorAll('.pf-pill--brand'),function(btn){
++      +'<span class="pf-brands-hint">Клик по марке открывает её страницу: каталог, чертежи и подбор аналога по параметрам</span>';
++    if(!document.getElementById('pfBrandCards')){
++      var _bc=document.createElement('div'); _bc.id='pfBrandCards'; _bc.className='pf-bcards'; _bc.hidden=true;
++      box.parentNode.insertBefore(_bc, box.nextSibling);
++    }
++    // только кнопки-фильтры: марки-ссылки (.is-link, без data-bk) ведут на свою страницу
++    Array.prototype.forEach.call(box.querySelectorAll('button.pf-pill--brand[data-bk]'),function(btn){
+       btn.addEventListener('click',function(){
+         selBrand=btn.getAttribute('data-bk')||'';
++        try{ renderBrandCards(); }catch(e){}
+         Array.prototype.forEach.call(box.querySelectorAll('.pf-pill'),function(x){x.classList.remove('is-active');});
+@@ -384,3 +568,6 @@
+         if(bb&&!isOurs(bb.k))loadAnalogIdx(bb);   // ссылки «Заказать» ведут на карточки этого бренда
+-        fillModels(); fillRanges(); syncRanges(); apply();
++        // Смена фирмы = чистый лист (правка ТЗ): у каждой фирмы свои значения, поэтому числовые
++        // фильтры и авто-«от» от прошлой фирмы обнуляем, чтобы не показывать чужие минимумы.
++        Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';s.removeAttribute('data-auto');});
++        fillModels(); refilter();
+       });
+@@ -391,7 +578,10 @@
+     for(var ci=0;ci<COLS.length;ci++){
+-      var i=COLS[ci].i;
++      var c=COLS[ci], i=c.i;
+       var mn=selEl('min',i), mx=selEl('max',i);
+-      var v=it[i];
+-      if(mn&&mn.value!==''){ if(v==null||v<parseFloat(mn.value))return false; }
+-      if(mx&&mx.value!==''){ if(v==null||v>parseFloat(mx.value))return false; }
++      // сравниваем ОКРУГЛЁННОЕ значение (как в опциях): иначе строка с 0.55 при опции/пороге 0.6
++      // молча отсекалась — из-за этого автозаполнение «от» уменьшало выдачу на пару строк.
++      var v=it[i], _p=Math.pow(10,c.d==null?2:c.d), rv=(v==null)?null:Math.round(v*_p)/_p;
++      // Авто-«от» не фильтруют — показывают параметры первой строки, а не реальный порог
++      if(mn&&mn.value!==''&&mn.getAttribute('data-auto')!=='1'){ if(rv==null||rv<parseFloat(mn.value))return false; }
++      if(mx&&mx.value!==''){ if(rv==null||rv>parseFloat(mx.value))return false; }
+     }
+@@ -403,2 +593,3 @@
+     var parts=[g.e,g.p];
++    if(g.p) parts.push(mrOf(g.p));   // МР-маркировка (номер ПР с префиксом МР) — чтобы поиск по МР находил
+     // ЗР-маркировка из номера(ов) EVL (заявлена в подсказке поиска: «ZR 603»)
+@@ -437,4 +628,18 @@
+     }
++    // Сортировка по оборотам на выходе ↑ при активном числовом фильтре (правка ТЗ): чтобы
++    // ПЕРВАЯ строка таблицы совпадала со значением «от» (минимум), а не с первым по номеру ZR.
++    // Без фильтра — оставляем исходный порядок (по маркировке), иначе лендинг открывался бы
++    // с самых тихоходных позиций.
++    var _hasNum=false;
++    for(var _ci=0;_ci<COLS.length;_ci++){ var _mn=selEl('min',COLS[_ci].i),_mx=selEl('max',COLS[_ci].i); var _mnManual=_mn&&_mn.value!==''&&_mn.getAttribute('data-auto')!=='1'; if(_mnManual||(_mx&&_mx.value!=='')){_hasNum=true;break;} }
++    if(_hasNum) res.sort(function(a,b){ var av=a[2],bv=b[2]; if(av==null)return 1; if(bv==null)return -1; return av-bv; });
+     CUR=res; RENDER=0;
+-    $('pfCount').innerHTML='Найдено: <b>'+res.length+'</b>';
++    // Счётчик показывает выдачу И размер базы: на /podbor рядом стоит блок «8 723 исполнения»,
++    // а стартовый фильтр марки (SEW) оставляет 5 394 строки — без знаменателя числа на одной
++    // странице выглядели противоречием. Это только отображение: набор res уже посчитан выше.
++    var _tot=0;
++    for(var _ti2=0;_ti2<DB.i.length;_ti2++){ if(enabledIdx.indexOf(DB.g[DB.i[_ti2][0]].t)>=0)_tot++; }
++    function _gr(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00A0'); }
++    $('pfCount').innerHTML='Найдено: <b>'+_gr(res.length)+'</b>'
++      +(res.length<_tot?' <span class="pf-count-tot" style="opacity:.6;font-weight:400">из '+_gr(_tot)+' исполнений базы</span>':'');
+     if(compact){
+@@ -457,3 +662,5 @@
+       var mn=selEl('min',c.i), mx=selEl('max',c.i);
+-      if(mn&&mn.value!=='')q.push('min'+c.i+'='+encodeURIComponent(mn.value));
++      // авто-«от» помечены data-auto="1" и не фильтруют — в ссылку их не кладём,
++      // иначе на целевой странице они станут жёсткими и срежут часть позиций
++      if(mn&&mn.value!==''&&mn.getAttribute('data-auto')!=='1')q.push('min'+c.i+'='+encodeURIComponent(mn.value));
+       if(mx&&mx.value!=='')q.push('max'+c.i+'='+encodeURIComponent(mx.value));
+@@ -509,3 +716,3 @@
+     AIDX_LOADING[n]=1;
+-    fetch(pfx+'assets/analog-idx/'+n+'.json')
++    fetch(pfx+'assets/analog-idx/'+n+'.json?v=2')   // v=2: в sew.json дробные заменены на дефис
+       .then(function(r){ return r.ok?r.json():null; })
+@@ -583,8 +790,12 @@
+     }else{
+-      // наши виды. ZR (по умолчанию): ZR крупно красным, EVL — серым кубиком.
+-      // EVL-вид: EVL крупно, ZR — серым кубиком. Импортные аналоги (≈) убраны (правка №2).
+-      var zr=zrOf(g.e), isEvl=(selBrand==='__evl__');
+-      // EVL-вид: EVL крупно, ZR серым кубиком. ZR-вид (по умолчанию): ZR крупно, ПР кубиком.
+-      var big=isEvl?(g.e||zr):(zr||g.e);
+-      var sub=isEvl?(zr||g.p||''):(g.p||'');
++      // наши виды — 4 режима маркировки (ТЗ, калькулятор per-card):
++      //   ZR (по умолчанию): ZR крупно, ПР кубиком
++      //   __evl__: EVL крупно, ZR кубиком
++      //   __pr__ : ПР крупно, ZR кубиком
++      //   __mr__ : МР крупно (номер ПР с префиксом МР), ZR кубиком
++      var zr=zrOf(g.e), pr=g.p||'', big, sub;
++      if(selBrand==='__evl__'){ big=g.e||zr; sub=zr||pr||''; }
++      else if(selBrand==='__pr__'){ big=pr||zr||g.e; sub=zr||''; }
++      else if(selBrand==='__mr__'){ big=mrOf(pr)||zr||g.e; sub=zr||''; }
++      else { big=zr||g.e; sub=''; }   // ZR по умолчанию: только ZR, ПР-кубик убран (ПР — лишь на странице ПР)
+       var mark='<b class="pf-zr">'+big+'</b>';
+@@ -625,3 +836,3 @@
+   // ввод модели/аналога → пересобрать диапазоны колонок под выбранную модель (каскад, правка №3)
+-  function deb(){clearTimeout(t);t=setTimeout(function(){fillRanges();syncRanges();apply();},160);}
++  function deb(){clearTimeout(t);t=setTimeout(function(){refilter();},160);}
+   qEl.addEventListener('input',deb);
+@@ -770,3 +981,3 @@
+       var b=e.target.closest&&e.target.closest('.pfc'); if(!b)return;
+-      var evl=b.getAttribute('data-evl'); if(qEl){qEl.value=evl; try{fillRanges();syncRanges();}catch(_){} apply();}
++      var evl=b.getAttribute('data-evl'); if(qEl){qEl.value=evl; try{refilter();}catch(_){apply();}}
+       var tbl=$('pfTable'); if(tbl)tbl.scrollIntoView({behavior:'smooth',block:'start'});
+@@ -788,4 +999,6 @@
+   Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.addEventListener('change',function(){
+-    var col=s.getAttribute('data-min')||s.getAttribute('data-max');
+-    syncRanges(col?parseInt(col):undefined); apply();
++    // пользователь изменил селект вручную → это больше не авто-«от»
++    this.removeAttribute('data-auto');
++    // Пересобираем каскад + автозаполняем «от» в остальных колонках.
++    refilter();
+   });});
+@@ -793,4 +1006,4 @@
+     qEl.value='';
+-    Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';});
+-    fillRanges(); syncRanges(); apply();
++    Array.prototype.forEach.call(root.querySelectorAll('.pf-sel[data-min],.pf-sel[data-max]'),function(s){s.value='';s.removeAttribute('data-auto');});
++    refilter();
+   });
+@@ -799,3 +1012,3 @@
+     var parts=[];
+-    COLS.forEach(function(c){var mn=root.querySelector('[data-min="'+c.i+'"]'),mx=root.querySelector('[data-max="'+c.i+'"]');var f=mn&&mn.value,t2=mx&&mx.value;if(f||t2)parts.push(c.h.split(',')[0]+': '+(f?'от '+f:'')+(t2?' до '+t2:''));});
++    COLS.forEach(function(c){var mn=root.querySelector('[data-min="'+c.i+'"]'),mx=root.querySelector('[data-max="'+c.i+'"]');var f=mn&&mn.value&&mn.getAttribute('data-auto')!=='1'?mn.value:'',t2=mx&&mx.value;if(f||t2)parts.push(c.h.split(',')[0]+': '+(f?'от '+f:'')+(t2?' до '+t2:''));});
+     if(qEl&&qEl.value.trim())parts.push('модель/аналог: '+qEl.value.trim());
+@@ -837,2 +1050,2 @@
+    если размер снова сойдётся с продом (проверяется tools/check_prod.py). */
+-var ZR_PODBOR_BUILD=2;
++var ZR_PODBOR_BUILD=3;

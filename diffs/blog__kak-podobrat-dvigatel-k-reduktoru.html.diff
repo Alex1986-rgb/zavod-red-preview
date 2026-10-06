@@ -1,0 +1,124 @@
+--- main/blog/kak-podobrat-dvigatel-k-reduktoru.html
++++ prod/blog/kak-podobrat-dvigatel-k-reduktoru.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Как подобрать электродвигатель к редуктору: параметры</title>
++<title>Как подобрать электродвигатель к редуктору: параметры | ZR</title>
+ <meta name="description" content="Подбор двигателя к редуктору: какие параметры собрать (мощность, обороты, момент, монтаж IM, IP, КПД), как согласовать фланец IEC и вал. Руководство инженеров." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru" />
+-<meta property="og:title" content="Как подобрать электродвигатель к редуктору" />
++<meta property="og:title" content="Как подобрать электродвигатель к редуктору | ZR" />
+ <meta property="og:description" content="Какие параметры двигателя собрать и как согласовать его с редуктором по фланцу IEC, диаметру вала и сервис-фактору." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-nameplate.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как подобрать электродвигатель к редуктору","description":"Какие параметры двигателя собрать и как согласовать его с редуктором по фланцу IEC, диаметру вала и сервис-фактору.","image":"https://zavod-red.ru/assets/blog-photo/th-nameplate.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как подобрать электродвигатель к редуктору","description":"Какие параметры двигателя собрать и как согласовать его с редуктором по фланцу IEC, диаметру вала и сервис-фактору.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор двигателя к редуктору","item":"https://zavod-red.ru/blog/kak-podobrat-dvigatel-k-reduktoru"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какие параметры двигателя нужны для подбора к редуктору?","acceptedAnswer":{"@type":"Answer","text":"Мощность (кВт), синхронная частота вращения (число полюсов — 1500 или 3000 об/мин), типоразмер фланца по IEC, диаметр и длину выходного вала, монтажное исполнение (IM B5, B14, B3) и класс защиты IP. Этого набора достаточно, чтобы согласовать мотор с конкретным редуктором."}},{"@type":"Question","name":"Как согласовать фланец двигателя с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Фланец двигателя по стандарту IEC должен совпадать с присоединительным фланцем редуктора: совпадают диаметр центрирующего бурта, диаметр окружности крепёжных отверстий и их число. Например, мотору 90-го габарита соответствует фланец IEC 90 (B5/B14). При несовпадении применяют переходную плиту или мотор-фланцевый редуктор."}},{"@type":"Question","name":"Что такое сервис-фактор и зачем он нужен?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (SF) — коэффициент запаса, учитывающий характер нагрузки, число пусков в час и продолжительность работы. Для равномерной нагрузки достаточно SF 1.0–1.25, для ударной и частых пусков берут 1.5–2.0. Редуктор подбирают так, чтобы его номинальный момент с запасом перекрывал требуемый рабочий момент."}},{"@type":"Question","name":"Подойдёт ли двигатель 3000 об/мин вместо 1500?","acceptedAnswer":{"@type":"Answer","text":"Подойдёт, но изменится выходная скорость и момент: при той же мощности мотор на 3000 об/мин даёт вдвое меньший момент на валу, и итоговое передаточное число редуктора нужно пересчитать под нужную выходную частоту. Для тихоходных приводов чаще выбирают 1500 об/мин."}},{"@type":"Question","name":"Можно ли поставить более мощный двигатель, чем требуется?","acceptedAnswer":{"@type":"Answer","text":"Небольшой запас по мощности допустим и даже полезен, но важно не превысить допустимый крутящий момент на тихоходном валу редуктора и его радиальные нагрузки. Завышенный мотор не увеличивает ресурс редуктора — ограничителем остаётся именно момент на выходном валу."}},{"@type":"Question","name":"Как заказать подбор двигателя к редуктору на заводе?","acceptedAnswer":{"@type":"Answer","text":"Пришлите модель редуктора, фото шильда или техническое задание (мощность, обороты, режим работы). Наши инженеры рассчитают подбор мотора по фланцу, валу и сервис-фактору и пришлют коммерческое предложение с характеристиками в течение 15 минут."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какие параметры двигателя нужны для подбора к редуктору?","acceptedAnswer":{"@type":"Answer","text":"Мощность (кВт), синхронная частота вращения (число полюсов — 1500 или 3000 об/мин), типоразмер фланца по IEC, диаметр и длину выходного вала, монтажное исполнение (IM B5, B14, B3) и класс защиты IP. Этого набора достаточно, чтобы согласовать мотор с конкретным редуктором."}},{"@type":"Question","name":"Как согласовать фланец двигателя с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Фланец двигателя по стандарту IEC должен совпадать с присоединительным фланцем редуктора: совпадают диаметр центрирующего бурта, диаметр окружности крепёжных отверстий и их число. Например, мотору 90-го габарита соответствует фланец IEC 90 (B5/B14). При несовпадении применяют переходную плиту или мотор-фланцевый редуктор."}},{"@type":"Question","name":"Что такое сервис-фактор и зачем он нужен?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (SF) — коэффициент запаса, учитывающий характер нагрузки, число пусков в час и продолжительность работы. Для равномерной нагрузки достаточно SF 1.0–1.25, для ударной и частых пусков берут 1.5–2.0. Редуктор подбирают так, чтобы его номинальный момент с запасом перекрывал требуемый рабочий момент."}},{"@type":"Question","name":"Подойдёт ли двигатель 3000 об/мин вместо 1500?","acceptedAnswer":{"@type":"Answer","text":"Подойдёт, но изменится выходная скорость и момент: при той же мощности мотор на 3000 об/мин даёт вдвое меньший момент на валу, и итоговое передаточное число редуктора нужно пересчитать под нужную выходную частоту. Для тихоходных приводов чаще выбирают 1500 об/мин."}},{"@type":"Question","name":"Можно ли поставить более мощный двигатель, чем требуется?","acceptedAnswer":{"@type":"Answer","text":"Небольшой запас по мощности допустим и даже полезен, но важно не превысить допустимый крутящий момент на тихоходном валу редуктора и его радиальные нагрузки. Завышенный мотор не увеличивает ресурс редуктора — ограничителем остаётся именно момент на выходном валу."}},{"@type":"Question","name":"Как заказать подбор двигателя к редуктору на заводе?","acceptedAnswer":{"@type":"Answer","text":"Пришлите модель редуктора, фото шильда или техническое задание (мощность, обороты, режим работы). Наши инженеры рассчитают подбор мотора по фланцу, валу и сервис-фактору и пришлют коммерческое предложение с характеристиками в течение 15 минут."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Двигатель к редуктору подбирают по четырём ключам: требуемой мощности на валу с запасом по сервис-фактору, синхронным оборотам (числу полюсов), присоединительному фланцу и габариту IEC, а также монтажному исполнению. Сначала по нужным выходным оборотам и передаточному числу редуктора находят обороты двигателя n1, затем по моменту и КПД — мощность P, и только потом выбирают типоразмер мотора. Важно согласовать фланец двигателя (B5 или B14) и диаметр вала с входным узлом редуктора, иначе потребуется переходник. Для мотор-редуктора эти размеры стандартизованы по IEC, поэтому при замене достаточно сохранить типоразмер и число полюсов; инженер Завода Редукторов проверит совместимость и пересчитает привод под вашу нагрузку. Обороты двигателя по числу полюсов (50 Гц) Полюса Синхронные / номинальные об/мин 2 полюса 3000 / ~2900 4 полюса 1500 / ~1430 6 полюсов 1000 / ~960 8 полюсов 750 / ~715 Фланцы и габариты IEC Типоразмер IEC Мощность (4 полюса) / вал 71 0,37–0,55 кВт / Ø14 мм 80 0,75–1,1 кВт / Ø19 мм 90 1,5–2,2 кВт / Ø24 мм 100/112 3–4 кВт / Ø28 мм 132 5,5–9,2 кВт / Ø38 мм Подбор привода и двигателя к редуктору Мотор-редуктор или редуктор отдельно"}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор двигателя к редуктору</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Подбор двигателя к редуктору</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Как подобрать электродвигатель к редуктору</h1><img class="blog-hero-img" src="../assets/blog-photo/th-nameplate.webp" alt="Как подобрать электродвигатель к редуктору — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Как подобрать электродвигатель к редуктору</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Как подобрать электродвигатель к редуктору — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -90,3 +93,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор с фланцем под электродвигатель IEC" loading="lazy"><figcaption>Цилиндрический редуктор с фланцем под мотор — высокий КПД и работа в режиме S1</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор с фланцем под электродвигатель IEC" loading="lazy" width="800" height="600"><figcaption>Цилиндрический редуктор с фланцем под мотор — высокий КПД и работа в режиме S1</figcaption></figure>
+ 
+@@ -104,3 +107,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p07.webp" alt="Сборка привода — согласование двигателя и редуктора на производстве" loading="lazy"><figcaption>Согласование мотора и редуктора при сборке на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p07.webp" alt="Сборка привода — согласование двигателя и редуктора на производстве" loading="lazy" width="900" height="675"><figcaption>Согласование мотора и редуктора при сборке на собственном производстве</figcaption></figure>
+ 
+@@ -131,4 +134,4 @@
+     <tr><td>IEC 90</td><td>1,1–2,2 кВт</td><td>B5 / B14 · универсальное</td></tr>
+-    <tr><td>IEC 100</td><td>2,2–3,0 кВт</td><td>B5 · общепром</td></tr>
+-    <tr><td>IEC 112</td><td>4,0 кВт</td><td>B5 · нагруженные приводы</td></tr>
++    <tr><td>IEC 100</td><td>2,2–3 кВт</td><td>B5 · общепром</td></tr>
++    <tr><td>IEC 112</td><td>4 кВт</td><td>B5 · нагруженные приводы</td></tr>
+     <tr><td>IEC 132</td><td>5,5–9,2 кВт</td><td>B5 / B3 · тяжёлый режим</td></tr>
+@@ -165,3 +168,6 @@
+         <li><a href="/blog/motoreduktor-ili-reduktor-otdelno">Мотор-редуктор или редуктор отдельно</a></li>
+-      </ul></div></details></div>
++      </ul></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ </div></div></section>
+@@ -193,8 +199,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -207,3 +214,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -216,3 +223,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -222,3 +229,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -226,3 +233,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -239,4 +246,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

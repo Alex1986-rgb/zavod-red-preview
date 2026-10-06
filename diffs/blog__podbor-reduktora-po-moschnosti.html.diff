@@ -1,0 +1,121 @@
+--- main/blog/podbor-reduktora-po-moschnosti.html
++++ prod/blog/podbor-reduktora-po-moschnosti.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Подбор редуктора по мощности двигателя — расчёт</title>
++<title>Подбор редуктора по мощности двигателя — расчёт | ZR</title>
+ <meta name="description" content="Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и формула пересчёта мощности в момент." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti" />
+-<meta property="og:title" content="Подбор редуктора по мощности двигателя — расчёт" />
++<meta property="og:title" content="Подбор редуктора по мощности двигателя — расчёт | ZR" />
+ <meta property="og:description" content="Стандартный ряд мощностей, тепловой запас, КПД по типам передач и пересчёт мощности в момент при подборе редуктора." />
+ <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по мощности двигателя: расчёт и калькулятор","description":"Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и пересчёт мощности в момент.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по мощности двигателя: расчёт и калькулятор","description":"Как подобрать редуктор по мощности двигателя: стандартный ряд кВт, тепловой и механический запас, КПД по типам передач и пересчёт мощности в момент.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по мощности","item":"https://zavod-red.ru/blog/podbor-reduktora-po-moschnosti"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как подобрать редуктор по мощности двигателя?","acceptedAnswer":{"@type":"Answer","text":"Возьмите мощность с шильдика двигателя в кВт и сравните её с допустимой механической мощностью редуктора на нужном передаточном числе и оборотах. Допустимая мощность редуктора должна быть не ниже мощности двигателя с учётом сервис-фактора. Затем мощность пересчитывают в момент на выходе по формуле T2 = 9550·P·η/n2, чтобы проверить запас по моменту."}},{"@type":"Question","name":"Можно ли поставить редуктор с большей мощностью, чем у двигателя?","acceptedAnswer":{"@type":"Answer","text":"Да, и это нормальная практика. Редуктор с запасом по допустимой мощности работает менее нагруженно, меньше греется и служит дольше. Главное — чтобы совпали обороты, передаточное число и присоединительные размеры. Ставить редуктор с допустимой мощностью ниже мощности двигателя нельзя: возможен перегрев и поломка зацепления."}},{"@type":"Question","name":"Зачем учитывать КПД при подборе по мощности?","acceptedAnswer":{"@type":"Answer","text":"Часть мощности теряется в зацеплении и подшипниках. У цилиндрических передач КПД 0,96–0,98, у червячных 0,7–0,9 в зависимости от передаточного числа. При расчёте момента на выходе мощность умножают на КПД, поэтому червячный редуктор при той же входной мощности даёт меньший полезный момент, чем цилиндрический."}},{"@type":"Question","name":"Что такое тепловая мощность редуктора?","acceptedAnswer":{"@type":"Answer","text":"Тепловая мощность — это мощность, которую редуктор способен длительно рассеивать без перегрева масла при заданной температуре среды и режиме S1. Для крупных червячных и для непрерывной работы тепловая мощность может оказаться ниже механической, и именно она ограничивает передаваемую мощность. Тогда подбирают больший типоразмер или принудительное охлаждение."}},{"@type":"Question","name":"Какой стандартный ряд мощностей у двигателей и редукторов?","acceptedAnswer":{"@type":"Answer","text":"Стандартный ряд мощностей электродвигателей: 0,18; 0,25; 0,37; 0,55; 0,75; 1,1; 1,5; 2,2; 3; 4; 5,5; 7,5; 11; 15; 18,5; 22; 30; 37; 45 кВт и далее. Редукторы и мотор-редукторы привязывают к этому ряду, поэтому подбор удобно вести по ближайшей ступени мощности и нужным оборотам на выходе."}},{"@type":"Question","name":"Как мощность пересчитать в крутящий момент на выходе?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходном валу считают по формуле T2 = 9550·P·η/n2, где P — мощность двигателя в кВт, η — КПД редуктора, n2 — обороты на выходе в об/мин, T2 — момент в Н·м. Например, при P=4 кВт, η=0,95 и n2=50 об/мин момент составит около 726 Н·м. Это значение проверяют против допустимого момента типоразмера."}},{"@type":"Question","name":"Что важнее при подборе — мощность или момент?","acceptedAnswer":{"@type":"Answer","text":"Главный силовой параметр на выходе — крутящий момент, поэтому окончательная проверка типоразмера идёт по моменту. Но подбор удобно начинать с мощности двигателя, потому что её всегда знают по шильдику. Мощность задаёт диапазон типоразмеров и тепловой режим, а момент с сервис-фактором уточняет конкретную модель."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как подобрать редуктор по мощности двигателя?","acceptedAnswer":{"@type":"Answer","text":"Возьмите мощность с шильдика двигателя в кВт и сравните её с допустимой механической мощностью редуктора на нужном передаточном числе и оборотах. Допустимая мощность редуктора должна быть не ниже мощности двигателя с учётом сервис-фактора. Затем мощность пересчитывают в момент на выходе по формуле T2 = 9550·P·η/n2, чтобы проверить запас по моменту."}},{"@type":"Question","name":"Можно ли поставить редуктор с большей мощностью, чем у двигателя?","acceptedAnswer":{"@type":"Answer","text":"Да, и это нормальная практика. Редуктор с запасом по допустимой мощности работает менее нагруженно, меньше греется и служит дольше. Главное — чтобы совпали обороты, передаточное число и присоединительные размеры. Ставить редуктор с допустимой мощностью ниже мощности двигателя нельзя: возможен перегрев и поломка зацепления."}},{"@type":"Question","name":"Зачем учитывать КПД при подборе по мощности?","acceptedAnswer":{"@type":"Answer","text":"Часть мощности теряется в зацеплении и подшипниках. У цилиндрических передач КПД 0,96–0,98, у червячных 0,7–0,9 в зависимости от передаточного числа. При расчёте момента на выходе мощность умножают на КПД, поэтому червячный редуктор при той же входной мощности даёт меньший полезный момент, чем цилиндрический."}},{"@type":"Question","name":"Что важнее при подборе — мощность или момент?","acceptedAnswer":{"@type":"Answer","text":"Главный силовой параметр на выходе — крутящий момент, поэтому окончательная проверка типоразмера идёт по моменту. Но подбор удобно начинать с мощности двигателя, потому что её всегда знают по шильдику. Мощность задаёт диапазон типоразмеров и тепловой режим, а момент с сервис-фактором уточняет конкретную модель."}},{"@type":"Question","name":"Что такое тепловая мощность редуктора?","acceptedAnswer":{"@type":"Answer","text":"Тепловая мощность — это мощность, которую редуктор способен длительно рассеивать без перегрева масла при заданной температуре среды и режиме S1. Для крупных червячных и для непрерывной работы тепловая мощность может оказаться ниже механической, и именно она ограничивает передаваемую мощность. Тогда подбирают больший типоразмер или принудительное охлаждение."}},{"@type":"Question","name":"Какой стандартный ряд мощностей у двигателей и редукторов?","acceptedAnswer":{"@type":"Answer","text":"Стандартный ряд мощностей электродвигателей: 0,18; 0,25; 0,37; 0,55; 0,75; 1,1; 1,5; 2,2; 3; 4; 5,5; 7,5; 11; 15; 18,5; 22; 30; 37; 45 кВт и далее. Редукторы и мотор-редукторы привязывают к этому ряду, поэтому подбор удобно вести по ближайшей ступени мощности и нужным оборотам на выходе."}},{"@type":"Question","name":"Как мощность пересчитать в крутящий момент на выходе?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходном валу считают по формуле T2 = 9550·P·η/n2, где P — мощность двигателя в кВт, η — КПД редуктора, n2 — обороты на выходе в об/мин, T2 — момент в Н·м. Например, при P=4 кВт, η=0,95 и n2=50 об/мин момент составит около 726 Н·м. Это значение проверяют против допустимого момента типоразмера."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Мощность задаёт верхнюю границу того, что привод способен передать, но полезный момент на выходе зависит ещё от КПД и оборотов. У цилиндрической передачи потери малы, у червячной они растут с передаточным числом, поэтому при одинаковой входной мощности червячный редуктор даёт меньший момент. При непрерывной работе обязательно сверяют тепловую мощность типоразмера — для крупных червячных она нередко ниже механической. Практический порядок действий такой: берут мощность двигателя, выбирают ближайшую ступень ряда, задают обороты на выходе и передаточное число, пересчитывают мощность в момент по формуле T2 = 9550·P·η/n2 и сравнивают с допустимым моментом серии с запасом по сервис-фактору. Окончательно проверяют присоединительные размеры — фланец, концы валов, монтажное исполнение. Мощность → момент: примеры пересчёта Параметр Значение P = 1,5 кВт, η = 0,95, n2 = 28 об/мин T2 ≈ 486 Н·м P = 4 кВт, η = 0,95, n2 = 50 об/мин T2 ≈ 726 Н·м P = 7,5 кВт, η = 0,80 (червяк), n2 = 35 об/мин T2 ≈ 1637 Н·м P = 11 кВт, η = 0,96, n2 = 70 об/мин T2 ≈ 1442 Н·м Что задаёт мощность при подборе Диапазон типоразмеров ступень ряда мощностей Тепловой режим проверка тепловой мощности при S1 Полезный момент через КПД и обороты на выходе Запас под нагрузку сервис-фактор 1,0–2,0+ Рассчитать всё это можно в калькуляторе подбора редуктора или через форму подбора редуктора по параметрам . Для цилиндрических приводов с высоким КПД смотрите раздел цилиндрических редукторов ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по мощности</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Подбор редуктора по мощности</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Подбор редуктора по мощности двигателя</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Подбор редуктора по мощности двигателя — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Подбор редуктора по мощности двигателя</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Подбор редуктора по мощности двигателя — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -93,3 +96,3 @@
+ 
+-  <h2>КПД: сколько мощности доходит до выхода</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/red-worm-07.webp" alt="Пример червячного редуктора — Подбор редуктора по мощности двигателя" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Типовое исполнение червячного привода</figcaption></figure><h2>КПД: сколько мощности доходит до выхода</h2>
+   <p>Часть мощности теряется в зацеплении и подшипниках, поэтому полезная мощность на выходном валу всегда меньше входной. Величина потерь зависит от типа передачи и сильно влияет на итоговый момент. У червячных передач КПД заметно падает с ростом передаточного числа, и это нужно учитывать ещё на этапе подбора по мощности.</p>
+@@ -105,3 +108,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический мотор-редуктор для подбора по мощности двигателя" loading="lazy"><figcaption>Цилиндрический мотор-редуктор — высокий КПД и минимальные потери мощности</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический мотор-редуктор для подбора по мощности двигателя" loading="lazy" width="800" height="600"><figcaption>Цилиндрический мотор-редуктор — высокий КПД и минимальные потери мощности</figcaption></figure>
+ 
+@@ -110,3 +113,3 @@
+ 
+-  <h2>Тепловая мощность и режим работы</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/th-calculation.webp" alt="Расчёт момента и сервис-фактора перед подбором — Подбор редуктора по мощности двигателя" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Расчёт момента и сервис-фактора перед подбором</figcaption></figure><h2>Тепловая мощность и режим работы</h2>
+   <p>Кроме механической мощности, у редуктора есть тепловая — та, что он способен длительно рассеивать без перегрева масла. При непрерывной работе S1, высокой температуре среды или у крупных червячных передач тепловая мощность может оказаться ниже механической и именно она ограничивает передачу. В таких случаях берут больший типоразмер, переходят на цилиндрическую передачу с высоким КПД или предусматривают принудительное охлаждение.</p>
+@@ -139,3 +142,6 @@
+     <tr><th>Запас под нагрузку</th><td>сервис-фактор 1,0–2,0+</td></tr>
+-  </tbody></table><p>Рассчитать всё это можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для цилиндрических приводов с высоким КПД смотрите раздел <a href="/catalog/cilindricheskie">цилиндрических редукторов</a>.</p></div></details></div></div></section>
++  </tbody></table><p>Рассчитать всё это можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для цилиндрических приводов с высоким КПД смотрите раздел <a href="/catalog/cilindricheskie">цилиндрических редукторов</a>.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -166,8 +172,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -180,3 +187,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -189,3 +196,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -195,3 +202,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -199,3 +206,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -212,4 +219,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

@@ -1,0 +1,122 @@
+--- main/blog/podbor-reduktora-po-momentu.html
++++ prod/blog/podbor-reduktora-po-momentu.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Подбор редуктора по крутящему моменту — формула</title>
++<title>Подбор редуктора по крутящему моменту — формула | ZR</title>
+ <meta name="description" content="Как подобрать редуктор по крутящему моменту на выходе: формула T=9550·P·η/n2, расчёт момента из мощности, сервис-фактор, запас по моменту и онлайн-калькулятор." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-momentu" />
+-<meta property="og:title" content="Подбор редуктора по крутящему моменту — формула" />
++<meta property="og:title" content="Подбор редуктора по крутящему моменту — формула | ZR" />
+ <meta property="og:description" content="Формула момента T=9550·P·η/n2, сервис-фактор и запас по моменту при подборе редуктора под нагрузку." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-nameplate.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по крутящему моменту: формула и калькулятор","description":"Как подобрать редуктор по крутящему моменту на выходе: формула T=9550·P·η/n2, расчёт момента из мощности, сервис-фактор и запас по моменту.","image":"https://zavod-red.ru/assets/blog-photo/th-nameplate.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-momentu"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по крутящему моменту: формула и калькулятор","description":"Как подобрать редуктор по крутящему моменту на выходе: формула T=9550·P·η/n2, расчёт момента из мощности, сервис-фактор и запас по моменту.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-momentu","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по моменту","item":"https://zavod-red.ru/blog/podbor-reduktora-po-momentu"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как рассчитать крутящий момент на выходе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходном валу считают по формуле T2 = 9550·P·η/n2, где P — мощность двигателя в кВт, η — КПД редуктора, n2 — обороты на выходе в об/мин, T2 — момент в Н·м. Например, при P=3 кВт, η=0,95 и n2=40 об/мин момент равен примерно 681 Н·м. Эта формула связывает мощность, обороты и момент в одном выражении."}},{"@type":"Question","name":"Что такое сервис-фактор при подборе по моменту?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (коэффициент эксплуатации, SF) — это запас номинального момента редуктора над рабочим. Он учитывает характер нагрузки, число пусков в час, продолжительность работы и тип приводимой машины. Для спокойной нагрузки SF около 1,0–1,25, для ударной с реверсами — 1,5–2,0 и выше. Допустимый момент типоразмера должен быть не ниже рабочего момента, умноженного на сервис-фактор."}},{"@type":"Question","name":"Как подобрать редуктор, если известен только момент?","acceptedAnswer":{"@type":"Answer","text":"Если известен требуемый момент на выходе и обороты, этого достаточно для подбора. По моменту с сервис-фактором выбирают типоразмер, по оборотам и передаточному числу — конкретную модель серии. Мощность двигателя при необходимости находят обратной формулой P = T2·n2/(9550·η). Главное — чтобы допустимый момент редуктора превышал рабочий с запасом."}},{"@type":"Question","name":"Чем отличается номинальный момент от максимального?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент — это момент, который редуктор передаёт длительно в заданном режиме без перегрузки. Максимальный (пиковый) момент — кратковременный, возникающий при пуске, торможении или заклинивании. Пиковый момент обычно в 2–3 раза выше номинального и не должен превышать допустимый пиковый момент типоразмера, иначе ломается зацепление или вал."}},{"@type":"Question","name":"Зачем нужен запас по моменту?","acceptedAnswer":{"@type":"Answer","text":"Запас по моменту защищает редуктор от перегрузок, которые не видны в номинальном расчёте: пусковые броски, удары, неравномерность нагрузки, износ. Без запаса редуктор работает на пределе и быстро изнашивается по зубчатому венцу. Запас задаётся сервис-фактором и тем больше, чем тяжелее режим и неравномернее нагрузка приводимой машины."}},{"@type":"Question","name":"Как момент зависит от передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Редуктор увеличивает момент во столько раз, во сколько снижает обороты, за вычетом потерь на КПД: T2 = T1·i·η. Чем больше передаточное число, тем выше момент на выходе при тех же оборотах двигателя. Поэтому для большого момента при малых оборотах берут редуктор с высоким передаточным числом или многоступенчатую передачу."}},{"@type":"Question","name":"Что важнее проверять — номинальный или пиковый момент?","acceptedAnswer":{"@type":"Answer","text":"Проверять нужно оба. Номинальный момент с сервис-фактором определяет длительную работоспособность и ресурс. Пиковый момент при пуске и торможении ограничивает прочность зацепления и вала. Если приводимая машина имеет частые пуски, реверсы или возможные заклинивания, пиковый момент часто оказывается решающим при выборе типоразмера."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как рассчитать крутящий момент на выходе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Момент на выходном валу считают по формуле T2 = 9550·P·η/n2, где P — мощность двигателя в кВт, η — КПД редуктора, n2 — обороты на выходе в об/мин, T2 — момент в Н·м. Например, при P=3 кВт, η=0,95 и n2=40 об/мин момент равен примерно 681 Н·м. Эта формула связывает мощность, обороты и момент в одном выражении."}},{"@type":"Question","name":"Что такое сервис-фактор при подборе по моменту?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (коэффициент эксплуатации, SF) — это запас номинального момента редуктора над рабочим. Он учитывает характер нагрузки, число пусков в час, продолжительность работы и тип приводимой машины. Для спокойной нагрузки SF около 1,0–1,25, для ударной с реверсами — 1,5–2,0 и выше. Допустимый момент типоразмера должен быть не ниже рабочего момента, умноженного на сервис-фактор."}},{"@type":"Question","name":"Как подобрать редуктор, если известен только момент?","acceptedAnswer":{"@type":"Answer","text":"Если известен требуемый момент на выходе и обороты, этого достаточно для подбора. По моменту с сервис-фактором выбирают типоразмер, по оборотам и передаточному числу — конкретную модель серии. Мощность двигателя при необходимости находят обратной формулой P = T2·n2/(9550·η). Главное — чтобы допустимый момент редуктора превышал рабочий с запасом."}},{"@type":"Question","name":"Как момент зависит от передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Редуктор увеличивает момент во столько раз, во сколько снижает обороты, за вычетом потерь на КПД: T2 = T1·i·η. Чем больше передаточное число, тем выше момент на выходе при тех же оборотах двигателя. Поэтому для большого момента при малых оборотах берут редуктор с высоким передаточным числом или многоступенчатую передачу."}},{"@type":"Question","name":"Чем отличается номинальный момент от максимального?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент — это момент, который редуктор передаёт длительно в заданном режиме без перегрузки. Максимальный (пиковый) момент — кратковременный, возникающий при пуске, торможении или заклинивании. Пиковый момент обычно в 2–3 раза выше номинального и не должен превышать допустимый пиковый момент типоразмера, иначе ломается зацепление или вал."}},{"@type":"Question","name":"Зачем нужен запас по моменту?","acceptedAnswer":{"@type":"Answer","text":"Запас по моменту защищает редуктор от перегрузок, которые не видны в номинальном расчёте: пусковые броски, удары, неравномерность нагрузки, износ. Без запаса редуктор работает на пределе и быстро изнашивается по зубчатому венцу. Запас задаётся сервис-фактором и тем больше, чем тяжелее режим и неравномернее нагрузка приводимой машины."}},{"@type":"Question","name":"Что важнее проверять — номинальный или пиковый момент?","acceptedAnswer":{"@type":"Answer","text":"Проверять нужно оба. Номинальный момент с сервис-фактором определяет длительную работоспособность и ресурс. Пиковый момент при пуске и торможении ограничивает прочность зацепления и вала. Если приводимая машина имеет частые пуски, реверсы или возможные заклинивания, пиковый момент часто оказывается решающим при выборе типоразмера."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Момент — это сила, с которой выходной вал способен вращать рабочий орган. В отличие от мощности, момент напрямую нагружает зубья, валы и подшипники, поэтому именно он определяет прочность и ресурс. При подборе всегда сравнивают два значения: допустимый момент серии и рабочий момент машины, умноженный на сервис-фактор. Дополнительно проверяют пиковый момент при пуске и торможении. Если редуктор работает с частыми пусками, реверсами или ударной нагрузкой, запас по моменту увеличивают. Для удержания груза учитывают и обратный момент, а для самоторможения часто выбирают червячную передачу. Окончательно проверяют присоединительные размеры выходного вала и монтажное исполнение, чтобы редуктор встал на штатное место. Примеры расчёта момента Исходные данные Момент T2 P = 2,2 кВт, η = 0,95, n2 = 30 об/мин ≈ 665 Н·м P = 3 кВт, η = 0,95, n2 = 40 об/мин ≈ 681 Н·м P = 5,5 кВт, η = 0,80 (червяк), n2 = 28 об/мин ≈ 1500 Н·м P = 15 кВт, η = 0,96, n2 = 90 об/мин ≈ 1528 Н·м Что проверяют при подборе по моменту Рабочий момент машины из расчёта или формулы Сервис-фактор под режим и характер нагрузки Допустимый момент серии ≥ рабочий × SF Пиковый момент пуск/торможение, прочность вала Рассчитать момент и подобрать типоразмер можно в калькуляторе подбора редуктора или через форму подбора редуктора по параметрам . Для большого момента смотрите цилиндрические редукторы , для самоторможения — червячные ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по моменту</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Подбор редуктора по моменту</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Подбор редуктора по крутящему моменту</h1><img class="blog-hero-img" src="../assets/blog-photo/th-nameplate.webp" alt="Подбор редуктора по крутящему моменту — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Подбор редуктора по крутящему моменту</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Подбор редуктора по крутящему моменту — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -85,3 +88,3 @@
+ 
+-  <h2>Сервис-фактор: запас над рабочим моментом</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/red-worm-03.webp" alt="Пример червячного редуктора — Подбор редуктора по крутящему моменту" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Типовое исполнение червячного привода</figcaption></figure><h2>Сервис-фактор: запас над рабочим моментом</h2>
+   <p>Допустимый момент типоразмера должен превышать рабочий момент с запасом — сервис-фактором (SF). Он учитывает характер нагрузки, число пусков в час, продолжительность работы и тип приводимой машины. Недооценка сервис-фактора — самая частая причина преждевременного износа зацепления.</p>
+@@ -96,3 +99,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — расчёт момента на выходном валу" loading="lazy"><figcaption>Проверка момента на выходном валу на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — расчёт момента на выходном валу" loading="lazy" width="900" height="675"><figcaption>Проверка момента на выходном валу на собственном производстве</figcaption></figure>
+ 
+@@ -108,3 +111,3 @@
+ 
+-  <h2>Пример подбора по моменту</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/th-blueprint.webp" alt="Габаритный и присоединительный чертёж — Подбор редуктора по крутящему моменту" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Габаритный и присоединительный чертёж</figcaption></figure><h2>Пример подбора по моменту</h2>
+   <p>Допустим, рабочий момент на барабане конвейера равен 950 Н·м, режим — повторно-кратковременный с пусками, сервис-фактор SF = 1,5. Тогда требуемый номинальный момент редуктора: 950 · 1,5 = 1425 Н·м. Из ряда типоразмеров выбирают модель с ближайшим бо́льшим допустимым моментом и нужным передаточным числом. Проверить расчёт удобно в <a href="/podbor#kalkulyator">калькуляторе подбора</a>.</p>
+@@ -132,3 +135,6 @@
+     <tr><th>Пиковый момент</th><td>пуск/торможение, прочность вала</td></tr>
+-  </tbody></table><p>Рассчитать момент и подобрать типоразмер можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для большого момента смотрите <a href="/catalog/cilindricheskie">цилиндрические редукторы</a>, для самоторможения — <a href="/catalog/chervyachnye">червячные</a>.</p></div></details></div></div></section>
++  </tbody></table><p>Рассчитать момент и подобрать типоразмер можно в <a href="/podbor#kalkulyator">калькуляторе подбора редуктора</a> или через форму <a href="/podbor">подбора редуктора по параметрам</a>. Для большого момента смотрите <a href="/catalog/cilindricheskie">цилиндрические редукторы</a>, для самоторможения — <a href="/catalog/chervyachnye">червячные</a>.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -159,8 +165,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -173,3 +180,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -182,3 +189,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -188,3 +195,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -192,3 +199,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -205,4 +212,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

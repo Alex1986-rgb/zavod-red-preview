@@ -1,0 +1,117 @@
+--- main/blog/analogi-nord-sk.html
++++ prod/blog/analogi-nord-sk.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Аналоги редукторов NORD SK: отечественная замена</title>
++<title>Аналоги редукторов NORD SK: отечественная замена | ZR</title>
+ <meta name="description" content="Аналог NORD: как подобрать замену редукторам серии NORD SK на отечественные. Соответствие серий SK, SK..F, SK..K и SK 1SI по типам и что проверить для аналога." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/analogi-nord-sk" />
+-<meta property="og:title" content="Аналоги редукторов NORD SK: замена на отечественный" />
++<meta property="og:title" content="Аналоги редукторов NORD SK: замена на отечественный | ZR" />
+ <meta property="og:description" content="Как подобрать замену редукторам серии NORD SK на отечественные: соответствие по типам и что проверить для габаритного аналога." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-lineup.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -33,5 +33,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Аналоги редукторов NORD SK: замена на отечественный","description":"Как подобрать замену редукторам серии NORD SK на отечественные: соответствие по типам и что проверить для габаритного аналога.","image":"https://zavod-red.ru/assets/blog-photo/th-lineup.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/analogi-nord-sk"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Аналоги редукторов NORD SK: замена на отечественный","description":"Как подобрать замену редукторам серии NORD SK на отечественные: соответствие по типам и что проверить для габаритного аналога.","image":"https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/analogi-nord-sk","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Аналоги NORD SK","item":"https://zavod-red.ru/blog/analogi-nord-sk"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как расшифровать маркировку NORD SK?","acceptedAnswer":{"@type":"Answer","text":"Индекс SK с цифробуквенным кодом задаёт тип передачи, типоразмер и исполнение редуктора. Соосные обозначаются как SK 9xxx, плоские несут букву F, конические — букву K, а червячные идут в ряду SK 1SI. По этой логике легко определить установленный привод и подобрать аналог по типу и габаритам."}},{"@type":"Question","name":"Какому нашему типу соответствует соосный NORD SK 9xxx?","acceptedAnswer":{"@type":"Answer","text":"Соосным редукторам NORD SK 9xxx соответствует наш соосно-цилиндрический тип. У него такой же осевой монтаж, когда вход и выход расположены на одной оси, и близкий ряд передаточных чисел. Это самая массовая группа замен, поэтому соответствие подбирается тип в тип без переделки рамы."}},{"@type":"Question","name":"Чем отличаются исполнения SK..F и SK..K?","acceptedAnswer":{"@type":"Answer","text":"Буква F обозначает плоское исполнение с полым насадным валом — привод надевается прямо на вал механизма и экономит длину. Буква K — это коническо-цилиндрический редуктор с валами под углом 90° и высокой нагрузочной способностью. Их меняют на наш плоский и коническо-цилиндрический типы соответственно."}},{"@type":"Question","name":"Стоит ли менять червячный SK 1SI на цилиндрическую схему?","acceptedAnswer":{"@type":"Answer","text":"Червячный SK 1SI компактен и обладает самоторможением, что важно для подъёмных и фиксируемых механизмов. Но за компактность приходится платить меньшим КПД. Если самоторможение в вашем узле не требуется, при замене иногда выгоднее перейти на цилиндрическую схему ради более высокого КПД."}},{"@type":"Question","name":"Что проверить, чтобы аналог встал без переделки оборудования?","acceptedAnswer":{"@type":"Answer","text":"Кроме совпадения по типу нужно сверить передаточное число, крутящий момент на выходе с запасом по сервис-фактору и присоединительные размеры — лапы или фланец, расположение отверстий. Также важны концы валов: диаметр, длина, тип и наличие шпонки, а ещё положение монтажа и сторона выходного вала."}},{"@type":"Question","name":"Можно ли заказать оригинальный редуктор NORD, а не аналог?","acceptedAnswer":{"@type":"Answer","text":"Да, если по техническим или регламентным причинам нужен именно оригинал, мы поставляем редукторы NORD под заказ. На практике предлагаем оба варианта: быстрый отечественный аналог тип в тип под текущий простой оборудования и параллельную поставку оригинала, когда время терпит. Решение принимаете вы, исходя из критичности узла и срока."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как расшифровать маркировку NORD SK?","acceptedAnswer":{"@type":"Answer","text":"Индекс SK с цифробуквенным кодом задаёт тип передачи, типоразмер и исполнение редуктора. Соосные обозначаются как SK 9xxx, плоские несут букву F, конические — букву K, а червячные идут в ряду SK 1SI. По этой логике легко определить установленный привод и подобрать аналог по типу и габаритам."}},{"@type":"Question","name":"Какому нашему типу соответствует соосный NORD SK 9xxx?","acceptedAnswer":{"@type":"Answer","text":"Соосным редукторам NORD SK 9xxx соответствует наш соосно-цилиндрический тип. У него такой же осевой монтаж, когда вход и выход расположены на одной оси, и близкий ряд передаточных чисел. Это самая массовая группа замен, поэтому соответствие подбирается тип в тип без переделки рамы."}},{"@type":"Question","name":"Чем отличаются исполнения SK..F и SK..K?","acceptedAnswer":{"@type":"Answer","text":"Буква F обозначает плоское исполнение с полым насадным валом — привод надевается прямо на вал механизма и экономит длину. Буква K — это коническо-цилиндрический редуктор с валами под углом 90° и высокой нагрузочной способностью. Их меняют на наш плоский и коническо-цилиндрический типы соответственно."}},{"@type":"Question","name":"Стоит ли менять червячный SK 1SI на цилиндрическую схему?","acceptedAnswer":{"@type":"Answer","text":"Червячный SK 1SI компактен и обладает самоторможением, что важно для подъёмных и фиксируемых механизмов. Но за компактность приходится платить меньшим КПД. Если самоторможение в вашем узле не требуется, при замене иногда выгоднее перейти на цилиндрическую схему ради более высокого КПД."}},{"@type":"Question","name":"Что проверить, чтобы аналог встал без переделки оборудования?","acceptedAnswer":{"@type":"Answer","text":"Кроме совпадения по типу нужно сверить передаточное число, крутящий момент на выходе с запасом по сервис-фактору и присоединительные размеры — лапы или фланец, расположение отверстий. Также важны концы валов: диаметр, длина, тип и наличие шпонки, а ещё положение монтажа и сторона выходного вала."}},{"@type":"Question","name":"Можно ли заказать оригинальный редуктор NORD, а не аналог?","acceptedAnswer":{"@type":"Answer","text":"Да, если по техническим или регламентным причинам нужен именно оригинал, мы поставляем редукторы NORD под заказ. На практике предлагаем оба варианта: быстрый отечественный аналог тип в тип под текущий простой оборудования и параллельную поставку оригинала, когда время терпит. Решение принимаете вы, исходя из критичности узла и срока."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Замена редуктора NORD начинается с расшифровки индекса SK: буквенно-цифровое обозначение задаёт тип передачи и типоразмер, а с шильдика снимают передаточное число, момент M2 и сервис-фактор. По этим данным подбирается отечественный аналог NORD с тем же монтажным положением, диаметрами концов валов и присоединительным фланцем под мотор IEC. NORD широко применяет блочно-модульную конструкцию и часто полый вал с термоусадочной втулкой — при подборе аналога это исполнение воспроизводят либо закладывают переходный фланец и спецвал. Габаритный аналог NORD SK по соосным, плоским, коническим и червячным сериям обходится дешевле оригинала; цену по конкретной модели присылаем по запросу. Серии NORD SK и наш аналог Индекс NORD SK Тип → наш аналог SK 0xx–9xxx Соосно-цилиндрический → ZR-Ц / ZR SK ..F Плоский цилиндрический → ZR-ПЦ SK ..K Коническо-цилиндрический → ZR-КЦ SK 1SI / 1SMI Червячный → ZR-Ч SK 2SI Двухступенчатый червячный → ZR-2Ч Параметры подбора аналога NORD Передаточное число i 1,35–14 400 (двухступ. червяк) Момент на выходе M2 до 100 000 Н·м (промышл. серии) Выходной вал сплошной / полый с термоусадкой Монтаж лапы, фланец B5/B14, на вал машины Степень защиты IP55 (мотор-редуктор) Цена и срок по запросу, от 3 дней Замена редуктора NORD начинается с расшифровки маркировки SK: по индексу определяют тип передачи и типоразмер, по шильдику — передаточное число, момент и сервис-фактор. Дальше подбирается отечественный аналог NORD с тем же монтажным положением и геометрией концов валов, при нестандартной посадке закладывается переходный фланец или спецвал. Подробнее о замене импортного привода и поставке оригинала — в разделе импортозамещение и поставка импортных редукторов ; рассчитать конкретный аналог NORD SK под вашу нагрузку можно через онлайн-подбор редуктора ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -40,8 +43,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -56,3 +59,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -60,3 +63,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -67,6 +70,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Аналоги NORD SK</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Аналоги NORD SK</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Аналоги</div>
+-  <h1>Аналоги редукторов NORD SK: замена на отечественный</h1><img class="blog-hero-img" src="../assets/blog-photo/th-lineup.webp" alt="Аналоги редукторов NORD SK: замена на отечественный — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Аналоги редукторов NORD SK: замена на отечественный</h1><img class="blog-hero-img" src="../assets/blog-photo/th-comparison-two.webp" alt="Аналоги редукторов NORD SK: замена на отечественный — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -93,3 +96,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Соосно-цилиндрический редуктор — аналог NORD SK соосной серии" loading="lazy"><figcaption>Соосно-цилиндрический редуктор — прямой аналог соосной серии NORD SK 9xxx</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Соосно-цилиндрический редуктор — аналог NORD SK соосной серии" loading="lazy" width="800" height="600"><figcaption>Соосно-цилиндрический редуктор — прямой аналог соосной серии NORD SK 9xxx</figcaption></figure>
+ 
+@@ -139,3 +142,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/prod-d1.webp" alt="Производство редукторов — замена NORD SK на отечественный аналог" loading="lazy"><figcaption>Замена NORD на отечественный аналог — на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/prod-d1.webp" alt="Производство редукторов — замена NORD SK на отечественный аналог" loading="lazy" width="900" height="675"><figcaption>Замена NORD на отечественный аналог — на собственном производстве</figcaption></figure>
+ 
+@@ -185,3 +188,6 @@
+       <tr><th>Цена и срок</th><td>по запросу, от 3 дней</td></tr>
+-    </tbody></table><p>Замена редуктора NORD начинается с расшифровки маркировки SK: по индексу определяют тип передачи и типоразмер, по шильдику — передаточное число, момент и сервис-фактор. Дальше подбирается отечественный аналог NORD с тем же монтажным положением и геометрией концов валов, при нестандартной посадке закладывается переходный фланец или спецвал. Подробнее о замене импортного привода и поставке оригинала — в разделе <a href="/importozameshchenie">импортозамещение и поставка импортных редукторов</a>; рассчитать конкретный аналог NORD SK под вашу нагрузку можно через <a href="/podbor">онлайн-подбор редуктора</a>.</p></div></details></div>
++    </tbody></table><p>Замена редуктора NORD начинается с расшифровки маркировки SK: по индексу определяют тип передачи и типоразмер, по шильдику — передаточное число, момент и сервис-фактор. Дальше подбирается отечественный аналог NORD с тем же монтажным положением и геометрией концов валов, при нестандартной посадке закладывается переходный фланец или спецвал. Подробнее о замене импортного привода и поставке оригинала — в разделе <a href="/importozameshchenie">импортозамещение и поставка импортных редукторов</a>; рассчитать конкретный аналог NORD SK под вашу нагрузку можно через <a href="/podbor">онлайн-подбор редуктора</a>.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ </div></section>
+@@ -213,8 +219,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -227,3 +234,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -236,3 +243,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -242,3 +249,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -246,3 +253,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -259,4 +266,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

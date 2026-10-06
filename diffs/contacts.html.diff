@@ -1,0 +1,159 @@
+--- main/contacts.html
++++ prod/contacts.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Контакты — Завод Редукторов «НИИ АТТ», отгрузка по всей России</title>
++<title>Контакты — Завод Редукторов «НИИ АТТ», отгрузка по всей России | ZR</title>
+ <meta name="description" content="Контакты Завода Редукторов (ООО «НИИ АТТ»), Челябинск: +7 (495) 151-41-02, +7 (904) 953-41-02, zr@zavod-red.ru. Оставьте заявку на подбор редуктора онлайн." />
+@@ -14,10 +14,10 @@
+ <meta property="og:url" content="https://zavod-red.ru/contacts" />
+-<meta property="og:title" content="Контакты — Завод Редукторов «НИИ АТТ»" />
++<meta property="og:title" content="Контакты — Завод Редукторов «НИИ АТТ» | ZR" />
+ <meta property="og:description" content="Телефоны, почта и реквизиты Завода Редукторов. Оставьте заявку на подбор." />
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
+-<link rel="stylesheet" href="assets/pages-modern.css?v=7f7edb3d" />
++<link rel="stylesheet" href="assets/inner.css?v=knop26" />
++<link rel="stylesheet" href="assets/pages-modern.css?v=knop26" />
+ <script type="application/ld+json">
+ {
+-  "@context":"https://schema.org","@type":"Organization","areaServed":"RU",
++  "@context":"https://schema.org","@type":["Organization","LocalBusiness"],"areaServed":"RU",
+   "name":"Завод Редукторов","legalName":"ООО «НИИ АТТ»","url":"https://zavod-red.ru/",
+@@ -25,2 +25,8 @@
+   "address":{"@type":"PostalAddress","streetAddress":"пр-т Ленина, д. 2, офис 221","addressLocality":"Челябинск","postalCode":"454007","addressCountry":"RU"},
++	"geo":{"@type":"GeoCoordinates","latitude":55.1598,"longitude":61.4025},
++	"openingHoursSpecification":[
++	  {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"},
++	  {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"00:00","closes":"00:00","description":"Заявки с сайта принимаются круглосуточно"}
++	],
++	"sameAs":["https://yandex.ru/maps/org/zavod_reduktorov/208172675272/"],
+   "contactPoint":[
+@@ -31,16 +37,5 @@
+ </script>
+-<!-- (Метрика отключена) -->
++
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Контакты","item":"https://zavod-red.ru/contacts"}]}</script>
+-<script type="application/ld+json">
+-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+-{"@type":"Question","name":"Как заказать редуктор на Заводе Редукторов?","acceptedAnswer":{"@type":"Answer","text":"Позвоните по телефону +7 (495) 151-41-02 или +7 (904) 953-41-02, напишите на почту zr@zavod-red.ru или оставьте заявку на сайте. Инженер уточнит задачу, рассчитает подбор и пришлёт коммерческое предложение."}},
+-{"@type":"Question","name":"Работаете ли вы по всей России?","acceptedAnswer":{"@type":"Answer","text":"Да. Производство находится в Челябинске (пр-т Ленина, 2), а отгружаем продукцию в любой регион России транспортными компаниями. Способ доставки согласуем при оформлении заказа."}},
+-{"@type":"Question","name":"Можно ли купить оригинал импортного редуктора или аналог?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы изготавливаем аналоги импортных приводов в рамках импортозамещения и подбираем замену по присоединительным и техническим параметрам. Опишите задачу или пришлите шильд старого редуктора — мы определим модель."}},
+-{"@type":"Question","name":"Даёте ли вы документы на редуктор?","acceptedAnswer":{"@type":"Answer","text":"Да. Предоставляем полный комплект документов: счёт-фактуру, УПД и паспорт изделия. Работаем официально от ООО «НИИ АТТ» (ИНН 7452136680)."}},
+-{"@type":"Question","name":"Как быстро вы отвечаете на заявку?","acceptedAnswer":{"@type":"Answer","text":"Обычно инженер связывается с вами в течение 15 минут в рабочее время. Он уточняет параметры задачи, делает подбор и присылает коммерческое предложение. Если заявка пришла в нерабочее время, мы ответим в начале следующего рабочего дня."}},
+-{"@type":"Question","name":"Можно ли написать в мессенджер?","acceptedAnswer":{"@type":"Answer","text":"Да. Напишите нам в MAX на номер +7 904 953-41-02 — это удобно для обмена фото шильда, чертежей и габаритов. Также можно отправить запрос на почту zr@zavod-red.ru. Инженер ответит и подберёт редуктор по присланным данным."}},
+-{"@type":"Question","name":"Работаете ли вы с юрлицами по договору?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы заключаем договоры с организациями и работаем по безналичному расчёту. Оформляем полный комплект документов: счёт, УПД и паспорт изделия. Поставщик — ООО «НИИ АТТ» (ИНН 7452136680)."}},
+-{"@type":"Question","name":"Есть ли самовывоз со склада в Челябинске?","acceptedAnswer":{"@type":"Answer","text":"Да. Готовую продукцию можно забрать самовывозом со склада в Челябинске (пр-т Ленина, 2). Перед приездом согласуйте с менеджером дату и время отгрузки. Для других регионов отправляем продукцию транспортными компаниями."}}
+-]}
+-</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как заказать редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Свяжитесь с заводом по телефону +7 (495) 151-41-02 или +7 (904) 953-41-02, по почте zr@zavod-red.ru либо оставьте заявку на подбор на сайте. Инженер уточнит задачу, рассчитает подбор и пришлёт коммерческое предложение с ценой от производителя."}}, {"@type": "Question", "name": "Работаете ли вы по всей России?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Производство находится в Челябинске (пр-т Ленина, 2), а отгружаем продукцию в любой регион России транспортными компаниями. Способ и сроки доставки согласуем при оформлении заказа."}}, {"@type": "Question", "name": "Можно ли купить оригинал импортного редуктора или аналог?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы изготавливаем аналоги импортных приводов в рамках импортозамещения и подбираем замену по техническим и присоединительным параметрам. Опишите задачу или выберите позицию в каталоге — определим модель."}}, {"@type": "Question", "name": "Даёте ли вы документы на редуктор?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Предоставляем полный комплект документов: счёт-фактуру, УПД и паспорт изделия. Работаем официально от ООО «НИИ АТТ» (ИНН 7452136680)."}}, {"@type": "Question", "name": "Как быстро вы отвечаете на заявку?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно инженер связывается с вами в течение 15 минут в рабочее время. Он уточняет параметры задачи, делает подбор и присылает коммерческое предложение. Если заявка пришла в нерабочее время, мы ответим в начале следующего рабочего дня."}}, {"@type": "Question", "name": "Как отправить фото шильда или чертежа?", "acceptedAnswer": {"@type": "Answer", "text": "Прикрепите фото или файл прямо в форме заявки на сайте — инженер получит его вместе с вашими контактами и подберёт редуктор. Это быстрее, чем писать в мессенджер: заявка сразу попадает в систему, и мы отвечаем в течение 15 минут. Если файл больше 10 МБ — отправьте заявку без вложения, мы запросим его в ответном письме."}}, {"@type": "Question", "name": "Работаете ли вы с юрлицами по договору?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы заключаем договоры с организациями и работаем по безналичному расчёту. Оформляем полный комплект документов: счёт, УПД и паспорт изделия. Поставщик — ООО «НИИ АТТ» (ИНН 7452136680)."}}, {"@type": "Question", "name": "Есть ли самовывоз со склада в Челябинске?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Готовую продукцию можно забрать самовывозом со склада в Челябинске (пр-т Ленина, 2). Перед приездом согласуйте с менеджером дату и время отгрузки. Для других регионов отправляем продукцию транспортными компаниями."}}, {"@type": "Question", "name": "Подробнее: характеристики, таблицы и полезные ссылки", "acceptedAnswer": {"@type": "Answer", "text": "Связаться с заводом и оформить заказ можно по телефону, электронной почте или через заявку на сайте — инженер ответит, рассчитает подбор и пришлёт коммерческое предложение. Производство и склад находятся в Челябинске, отгрузку ведём по всей России транспортными компаниями. Чтобы ускорить расчёт, опишите задачу или пришлите фото шильдика (таблички) со старого редуктора — мы определим модель и подберём аналог. После согласования характеристик озвучим цену от производителя и срок изготовления. Контакты завода Телефон +7 (495) 151-41-02 Доп. телефон +7 (904) 953-41-02 (звонки и сообщения) Почта zr@zavod-red.ru Адрес Челябинск, пр-т Ленина, 2 Самовывоз со склада в Челябинске по согласованию Реквизиты Организация ООО «НИИ АТТ» (Завод Редукторов) ИНН 7452136680 Деятельность производство редукторов и мотор-редукторов Режим работы пн–пт, обработка заявок в течение дня Поставки по всей России и в страны ЕАЭС Связаться с заводом и оформить заказ можно по телефону +7 (495) 151-41-02 или +7 (904) 953-41-02, по почте zr@zavod-red.ru, а также через заявку с сайта — инженер свяжется с вами и рассчитает подбор. Мы находимся в Челябинске, пр-т Ленина, 2, и работаем по всей России: отгружаем продукцию транспортными компаниями в любой регион. Как оформить заказ Опишите задачу или пришлите шильд (табличку) со старого редуктора — мы определим модель и подберём аналог. Для быстрого расчёта воспользуйтесь подбором редуктора по параметрам или выберите позицию в каталоге . После согласования характеристик мы озвучим цену от производителя и сроки изготовления. Телефон +7 (495) 151-41-02 Доп. +7 (904) 953-41-02 (звонки и сообщения) Почта zr@zavod-red.ru Адрес Челябинск, пр-т Ленина, 2 Реквизиты ООО «НИИ АТТ», ИНН 7452136680"}}]}</script>
+ <style id="ct-redesign-css">
+@@ -81,3 +76,20 @@
+ @media(max-width:560px){.ct-ways,.ct-hours,.ct-req-g{grid-template-columns:1fr}}
+-</style></head>
++
++/* Форма заявки компактнее: меньше воздуха, имя+телефон в один ряд — короче по высоте.
++   Скоуп .contact-grid .lead-form — модалку и формы на других страницах не задеваем. */
++.contact-grid .lead-form{padding:16px 20px!important}
++.contact-grid .lead-form h3{font-size:19px!important;margin-bottom:3px!important}
++.contact-grid .lead-form>p{font-size:12.5px!important;margin-bottom:10px!important;line-height:1.4}
++.contact-grid .lead-form .ff-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
++.contact-grid .lead-form .field{margin-bottom:8px}
++.contact-grid .lead-form .field label{font-size:11.5px;margin-bottom:3px}
++.contact-grid .lead-form .field input,.contact-grid .lead-form .field textarea{padding:9px 12px;font-size:14px;border-radius:9px}
++.contact-grid .lead-form .field textarea{min-height:46px}
++.contact-grid .lead-form .consent{font-size:11px;margin:1px 0 10px;line-height:1.35}
++.contact-grid .lead-form .btn.lg{padding:11px 16px;font-size:14.5px}
++@media(max-width:560px){.contact-grid .lead-form .ff-row{grid-template-columns:1fr}}
++</style><!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
++</head>
+ <body class="zr-modern">
+@@ -85,4 +97,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=knop26" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -90,3 +102,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -101,3 +113,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -105,3 +117,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -152,3 +164,3 @@
+ </a>
+-<a class="ct-way" href="#map">
++<a class="ct-way" href="https://yandex.ru/maps/org/zavod_reduktorov/208172675272/" target="_blank" rel="noopener">
+ <span class="ct-ico">⚑</span>
+@@ -156,3 +168,3 @@
+ <span class="ct-v">пр-т Ленина, 2</span>
+-<span class="ct-s">Челябинск, офис 221</span>
++<span class="ct-s">Открыть в Яндекс.Картах →</span>
+ </a>
+@@ -176,4 +188,4 @@
+       <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
+-      <div class="field"><label>Ваше имя</label><input type="text" name="text-562" placeholder="Как к вам обращаться" required /></div>
+-      <div class="field"><label>Телефон</label><input type="tel" name="tel-535" placeholder="+7 (___) ___-__-__" required /></div><div class="field"><label>Почта</label><input type="email" name="email-727" placeholder="name@company.ru" required /></div>
++      <div class="ff-row"><div class="field"><label>Ваше имя</label><input type="text" name="text-562" placeholder="Как к вам обращаться" required /></div>
++      <div class="field"><label>Телефон</label><input type="tel" name="tel-535" placeholder="+7 (___) ___-__-__" required /></div></div><div class="field"><label>Почта</label><input type="email" name="email-727" placeholder="name@company.ru" required /></div>
+       <div class="field"><label>Сообщение (необязательно)</label><textarea name="textarea-725" rows="3" placeholder="Что подобрать: бренд, модель, мощность, задача"></textarea></div>
+@@ -199,3 +211,3 @@
+ <details><summary>Как быстро вы отвечаете на заявку?</summary><div>Обычно инженер связывается с вами в течение 15 минут в рабочее время. Он уточняет параметры задачи, делает подбор и присылает коммерческое предложение. Если заявка пришла в нерабочее время, мы ответим в начале следующего рабочего дня.</div></details>
+-<details><summary>Можно ли написать в мессенджер?</summary><div>Да. Напишите нам в MAX на номер +7 904 953-41-02 — это удобно для обмена фото шильда, чертежей и габаритов. Также можно отправить запрос на почту zr@zavod-red.ru. Инженер ответит и подберёт редуктор по присланным данным.</div></details>
++<details><summary>Как отправить фото шильда или чертежа?</summary><div>Прикрепите фото или файл прямо в форме заявки на сайте — инженер получит его вместе с вашими контактами и подберёт редуктор. Это быстрее, чем писать в мессенджер: заявка сразу попадает в систему, и мы отвечаем в течение 15 минут. Если файл больше 10 МБ — отправьте заявку без вложения, мы запросим его в ответном письме.</div></details>
+ <details><summary>Работаете ли вы с юрлицами по договору?</summary><div>Да. Мы заключаем договоры с организациями и работаем по безналичному расчёту. Оформляем полный комплект документов: счёт, УПД и паспорт изделия. Поставщик — ООО «НИИ АТТ» (ИНН 7452136680).</div></details>
+@@ -206,3 +218,3 @@
+   <tr><th>Телефон</th><td>+7 (495) 151-41-02</td></tr>
+-  <tr><th>Доп. телефон</th><td>+7 (904) 953-41-02 (MAX)</td></tr>
++  <tr><th>Доп. телефон</th><td>+7 (904) 953-41-02 (звонки и сообщения)</td></tr>
+   <tr><th>Почта</th><td>zr@zavod-red.ru</td></tr>
+@@ -218,3 +230,3 @@
+ <tr><th>Телефон</th><td>+7 (495) 151-41-02</td></tr>
+-<tr><th>Доп.</th><td>+7 (904) 953-41-02 (MAX)</td></tr>
++<tr><th>Доп.</th><td>+7 (904) 953-41-02 (звонки и сообщения)</td></tr>
+ <tr><th>Почта</th><td>zr@zavod-red.ru</td></tr>
+@@ -225,2 +237,3 @@
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -236,3 +249,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -245,3 +258,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -251,3 +264,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -255,3 +268,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -268,6 +281,6 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
++<script src="assets/inner.js?v=shapka28"></script>
+ <!-- форму .lead-form обрабатывает делегированный обработчик modal.js (feedback.php + textarea + UTM) -->
+ 
+-<script defer src="assets/modal.js?v=350d9cee"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
+ </body>

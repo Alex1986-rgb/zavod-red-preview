@@ -1,0 +1,229 @@
+--- main/assets/inner.js
++++ prod/assets/inner.js
+@@ -95,3 +95,3 @@
+ /* Энхансер карточек (♥ в избранное + Подробнее) — подключается на всех страницах сайта */
+-(function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=447a6293';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
++(function(){try{if(window.__zrCardsEnh)return;var s=document.createElement('script');s.src='/assets/fav.js?v=2607c09d12d0';s.defer=true;(document.head||document.documentElement).appendChild(s);}catch(e){}})();
+ 
+@@ -138,3 +138,4 @@
+ 
+-  var box, img, title, dl, z = 1, ox = 0, oy = 0, dragging = false, sx = 0, sy = 0;
++  var box, img, title, dl, hint, z = 1, ox = 0, oy = 0, dragging = false, sx = 0, sy = 0;
++  var gallery = [], galIdx = 0;
+ 
+@@ -148,2 +149,21 @@
+   }
++  function updateNav() {
++    var show = gallery.length > 1;
++    var prev = box.querySelector('[data-a="prev"]');
++    var next = box.querySelector('[data-a="next"]');
++    if (prev) prev.style.visibility = show ? 'visible' : 'hidden';
++    if (next) next.style.visibility = show ? 'visible' : 'hidden';
++    if (hint) hint.textContent = show
++      ? 'Колесо — масштаб · ← → — листать чертежи · Esc — закрыть'
++      : 'Колесо — масштаб · перетаскивание — сдвиг · Esc — закрыть';
++  }
++  function goto(n) {
++    if (!gallery.length) return;
++    galIdx = (n + gallery.length) % gallery.length;
++    var item = gallery[galIdx];
++    img.src = item.src; img.alt = item.cap;
++    title.textContent = item.cap + (gallery.length > 1 ? ' (' + (galIdx + 1) + '/' + gallery.length + ')' : '');
++    dl.href = item.src;
++    z = 1; ox = 0; oy = 0; apply();
++  }
+   function build() {
+@@ -151,7 +171,10 @@
+     box.className = 'zrlb';
+-    box.innerHTML = '<div class="zrlb-bar"><span class="t"></span>' +
++    box.innerHTML = '<div class="zrlb-bar">' +
++      '<button data-a="prev" style="font-size:20px;padding:6px 10px">&#8249;</button>' +
++      '<span class="t"></span>' +
+       '<button data-a="out">&minus;</button><button data-a="in">+</button>' +
+       '<button data-a="fit">1:1</button><a data-a="dl" download>Скачать</a>' +
++      '<button data-a="next" style="font-size:20px;padding:6px 10px">&#8250;</button>' +
+       '<button data-a="close">&times;</button></div>' +
+-      '<img alt=""><div class="zrlb-hint">Колесо — масштаб · перетаскивание — сдвиг · Esc — закрыть</div>';
++      '<img alt=""><div class="zrlb-hint"></div>';
+     document.body.appendChild(box);
+@@ -160,2 +183,3 @@
+     dl = box.querySelector('[data-a="dl"]');
++    hint = box.querySelector('.zrlb-hint');
+ 
+@@ -163,2 +187,4 @@
+       var a = e.target.getAttribute && e.target.getAttribute('data-a');
++      if (a === 'prev') { goto(galIdx - 1); return; }
++      if (a === 'next') { goto(galIdx + 1); return; }
+       if (a === 'in') { setZoom(z * 1.5); return; }
+@@ -190,8 +216,12 @@
+       if (e.key === '-') setZoom(z / 1.5);
+-    });
+-  }
+-  function open(src, cap) {
++      if (e.key === 'ArrowLeft') goto(galIdx - 1);
++      if (e.key === 'ArrowRight') goto(galIdx + 1);
++    });
++  }
++  function open(src, cap, gal, idx) {
++    gallery = gal || [];
++    galIdx = (idx !== undefined && idx >= 0) ? idx : 0;
+     if (!box) build();
+     img.src = src; img.alt = cap || '';
+-    title.textContent = cap || '';
++    title.textContent = cap || '' + (gallery.length > 1 ? ' (' + (galIdx + 1) + '/' + gallery.length + ')' : '');
+     dl.href = src;
+@@ -200,2 +230,3 @@
+     document.documentElement.style.overflow = 'hidden';
++    updateNav();
+   }
+@@ -213,3 +244,25 @@
+     e.preventDefault();
+-    open(src, t.getAttribute('data-cap') || t.getAttribute('alt') || '');
++    var cap = t.getAttribute('data-cap') || t.getAttribute('alt') || '';
++
++    // Build gallery: walk up to find container with multiple [data-zoom] siblings
++    var gal = [], idx = 0;
++    if (t.id !== 'p2img') {
++      var container = t.parentElement;
++      while (container && container !== document.body) {
++        var items = container.querySelectorAll('[data-zoom]');
++        if (items.length > 1) {
++          gal = Array.from(items).map(function (el) {
++            return {
++              src: el.getAttribute('data-full') || el.getAttribute('src') || '',
++              cap: el.getAttribute('data-cap') || el.getAttribute('alt') || ''
++            };
++          });
++          idx = Array.from(items).indexOf(t);
++          if (idx < 0) idx = 0;
++          break;
++        }
++        container = container.parentElement;
++      }
++    }
++    open(src, cap, gal, idx);
+   });
+@@ -230 +283,123 @@
+ })();
++
++/* ─── Стрелки листания фото в карточке товара (12.08.2026) ───────────────────
++   Просьба заказчика: фото листаются стрелками, без нажатия на миниатюры.
++   Раньше кадр менялся только кликом по миниатюре — на телефоне они уезжают
++   за край экрана, и часть фото посетитель не видел вовсе.
++
++   Почему сборка на JS, а не в вёрстке: карточек ~74 тыс., у каждой инлайновый
++   <style> и свой список миниатюр. Скрипт берёт готовые кнопки .p2-thumbs как
++   источник кадров и достраивает над фото стрелки, счётчик и точки — разметку
++   карточек править не нужно.
++
++   Существующий обработчик миниатюр (инлайн в карточке) продолжает работать:
++   мы не заменяем его, а держим свой указатель в синхроне через тот же класс
++   .act, который он проставляет.
++
++   Клик по стрелке НЕ должен открывать зум: слушатель зума висит на document
++   и ловит #p2img, поэтому в обработчике стоит stopPropagation. */
++(function () {
++  function initGallery() {
++    var main = document.querySelector('.p2-main');
++    var img = document.getElementById('p2img');
++    var thumbs = Array.prototype.slice.call(document.querySelectorAll('.p2-thumbs button'));
++    if (!main || !img || thumbs.length < 2) return;   // один кадр — листать нечего
++    if (main.querySelector('.p2-nav')) return;        // уже собрано
++
++    var i = Math.max(0, thumbs.findIndex(function (b) { return b.classList.contains('act'); }));
++
++    var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" ' +
++                'stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
++
++    function btn(cls, label, flip) {
++      var b = document.createElement('button');
++      b.type = 'button';
++      b.className = 'p2-nav ' + cls;
++      b.setAttribute('aria-label', label);
++      b.innerHTML = ARROW;
++      if (flip) b.firstChild.style.transform = 'rotate(180deg)';
++      return b;
++    }
++
++    var prev = btn('p2-prev', 'Предыдущее фото', false);
++    var next = btn('p2-next', 'Следующее фото', true);
++
++    var count = document.createElement('span');
++    count.className = 'p2-count';
++
++    var dots = null;
++    if (thumbs.length <= 8) {           // больше восьми точек читаются как рябь
++      dots = document.createElement('span');
++      dots.className = 'p2-dots';
++      thumbs.forEach(function () { dots.appendChild(document.createElement('i')); });
++      main.classList.add('has-dots');
++    }
++
++    function show(n, focus) {
++      i = (n + thumbs.length) % thumbs.length;        // по кругу в обе стороны
++      var b = thumbs[i];
++      img.src = b.dataset.src;
++      var im = b.querySelector('img');
++      if (im && im.alt) img.alt = im.alt;             // подпись идёт за кадром
++      thumbs.forEach(function (x) { x.classList.remove('act'); });
++      b.classList.add('act');
++      // подтягиваем активную миниатюру в видимую часть полосы
++      if (b.scrollIntoView) b.scrollIntoView({ block: 'nearest', inline: 'nearest' });
++      count.textContent = (i + 1) + ' / ' + thumbs.length;
++      if (dots) Array.prototype.forEach.call(dots.children, function (d, k) {
++        d.classList.toggle('on', k === i);
++      });
++      if (focus) img.setAttribute('data-full', b.dataset.src);
++    }
++
++    function step(d) {
++      return function (e) {
++        e.preventDefault();
++        e.stopPropagation();      // иначе следом откроется зум по #p2img
++        show(i + d, true);
++      };
++    }
++    prev.addEventListener('click', step(-1));
++    next.addEventListener('click', step(1));
++
++    // клик по миниатюре — держим наш указатель в синхроне
++    thumbs.forEach(function (b, k) {
++      b.addEventListener('click', function () { show(k, true); });
++    });
++
++    // стрелки клавиатуры, когда фокус внутри галереи
++    main.setAttribute('tabindex', '-1');
++    document.addEventListener('keydown', function (e) {
++      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
++      var a = document.activeElement;
++      if (!a || !a.closest || !a.closest('.p2-gal')) return;
++      e.preventDefault();
++      show(i + (e.key === 'ArrowRight' ? 1 : -1), true);
++    });
++
++    // свайп пальцем по фото
++    var x0 = null, y0 = null;
++    main.addEventListener('touchstart', function (e) {
++      var t = e.touches[0]; x0 = t.clientX; y0 = t.clientY;
++    }, { passive: true });
++    main.addEventListener('touchend', function (e) {
++      if (x0 === null) return;
++      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
++      x0 = null;
++      // горизонтальный жест, и он длиннее вертикального — иначе это скролл страницы
++      if (Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy)) show(i + (dx < 0 ? 1 : -1), true);
++    }, { passive: true });
++
++    main.appendChild(prev);
++    main.appendChild(next);
++    main.appendChild(count);
++    if (dots) main.appendChild(dots);
++    show(i, false);
++  }
++
++  if (document.readyState === 'loading') {
++    document.addEventListener('DOMContentLoaded', initGallery);
++  } else {
++    initGallery();
++  }
++})();

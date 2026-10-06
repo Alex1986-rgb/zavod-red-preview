@@ -1,0 +1,127 @@
+--- main/blog/reduktory-dlya-zhkh-vodokanala.html
++++ prod/blog/reduktory-dlya-zhkh-vodokanala.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Редукторы для ЖКХ и водоканала</title>
++<title>Редукторы для ЖКХ и водоканала | ZR</title>
+ <meta name="description" content="Редукторы и мотор-редукторы для ЖКХ и водоканала: задачи отрасли, типы передач, требования по нагрузке и среде, подбор и замена импорта SEW, NORD, Bonfiglioli." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/reduktory-dlya-zhkh-vodokanala" />
+-<meta property="og:title" content="Редукторы для ЖКХ и водоканала" />
++<meta property="og:title" content="Редукторы для ЖКХ и водоканала | ZR" />
+ <meta property="og:description" content="Какие редукторы применяют в ЖКХ и на водоканале, как их подбирают и заменяют импортные приводы — разбор по типам передач и режимам работы." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-12.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Редукторы для отрасли: ЖКХ и водоканал","description":"Какие типы редукторов и мотор-редукторов применяют в ЖКХ и на водоканале, по каким требованиям их подбирают и как заменяют импортные приводы.","image":"https://zavod-red.ru/assets/blog-photo/red-worm-12.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/reduktory-dlya-zhkh-vodokanala"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Редукторы для отрасли: ЖКХ и водоканал","description":"Какие типы редукторов и мотор-редукторов применяют в ЖКХ и на водоканале, по каким требованиям их подбирают и как заменяют импортные приводы.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/reduktory-dlya-zhkh-vodokanala","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Редукторы для ЖКХ и водоканала","item":"https://zavod-red.ru/blog/reduktory-dlya-zhkh-vodokanala"}]}</script>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какие редукторы применяют в ЖКХ и на водоканале?", "acceptedAnswer": {"@type": "Answer", "text": "В ЖКХ и на водоканале применяют все основные типы передач в зависимости от механизма. Червячные и соосные мотор-редукторы ставят на затворы, задвижки и шиберы; цилиндрические и коническо-цилиндрические — на скребковые механизмы отстойников, илоскребы и решётки; планетарные — на компактные приводы с большим моментом; мотор-редукторы общего назначения — на мешалки аэротенков, шнеки обезвоживания осадка и конвейеры решёток. Тип выбирают по моменту, оборотам, режиму работы и расположению валов."}}, {"@type": "Question", "name": "Какие требования к редукторам в коммунальной сфере?", "acceptedAnswer": {"@type": "Answer", "text": "Главные требования — длительный режим работы S1, стойкость к влажной и агрессивной среде, надёжность при пусковых и ударных нагрузках и ремонтопригодность. Многие механизмы очистных сооружений работают круглосуточно, часто на улице или в насосных станциях с повышенной влажностью, поэтому важны защита IP55 и выше, климатическое исполнение, антикоррозийное покрытие и запас по сервис-фактору. Для затворов и задвижек дополнительно нужно самоторможение."}}, {"@type": "Question", "name": "Чем заменить импортный редуктор SEW, NORD или Bonfiglioli в ЖКХ?", "acceptedAnswer": {"@type": "Answer", "text": "Импортный мотор-редуктор SEW, NORD, Bonfiglioli или Motovario заменяют отечественным габаритным аналогом, который совпадает по присоединительным размерам, моменту, передаточному числу и фланцу двигателя. Аналог встаёт на штатное место без переделки рамы и муфт. Достаточно прислать фото шильдика и тип механизма — инженер подберёт замену и пришлёт коммерческое предложение; цена импортных аналогов сообщается по запросу."}}, {"@type": "Question", "name": "Как подобрать редуктор для очистных сооружений?", "acceptedAnswer": {"@type": "Answer", "text": "Для подбора нужны крутящий момент на выходном валу или мощность двигателя, выходные обороты или передаточное число, режим работы и условия среды, монтажное исполнение, тип и сторона выходного вала. По этим данным определяют тип передачи и типоразмер с запасом по сервис-фактору на пусковые и ударные нагрузки. Удобно начать с онлайн-калькулятора подбора и приложить фото шильдика старого привода."}}, {"@type": "Question", "name": "Как оформить заказ?", "acceptedAnswer": {"@type": "Answer", "text": "Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}}, {"@type": "Question", "name": "Какая доставка по России?", "acceptedAnswer": {"@type": "Answer", "text": "Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какие редукторы применяют в ЖКХ и на водоканале?","acceptedAnswer":{"@type":"Answer","text":"В ЖКХ и на водоканале применяют все основные типы передач в зависимости от механизма. Червячные и соосные мотор-редукторы ставят на затворы, задвижки и шиберы; цилиндрические и коническо-цилиндрические — на скребковые механизмы отстойников, илоскребы и решётки; планетарные — на компактные приводы с большим моментом; мотор-редукторы общего назначения — на мешалки аэротенков, шнеки обезвоживания осадка и конвейеры решёток. Тип выбирают по моменту, оборотам, режиму работы и расположению валов."}},{"@type":"Question","name":"Какие требования к редукторам в коммунальной сфере?","acceptedAnswer":{"@type":"Answer","text":"Главные требования — длительный режим работы S1, стойкость к влажной и агрессивной среде, надёжность при пусковых и ударных нагрузках и ремонтопригодность. Многие механизмы очистных сооружений работают круглосуточно, часто на улице или в насосных станциях с повышенной влажностью, поэтому важны защита IP55 и выше, климатическое исполнение, антикоррозийное покрытие и запас по сервис-фактору. Для затворов и задвижек дополнительно нужно самоторможение."}},{"@type":"Question","name":"Чем заменить импортный редуктор SEW, NORD или Bonfiglioli в ЖКХ?","acceptedAnswer":{"@type":"Answer","text":"Импортный мотор-редуктор SEW, NORD, Bonfiglioli или Motovario заменяют отечественным габаритным аналогом, который совпадает по присоединительным размерам, моменту, передаточному числу и фланцу двигателя. Аналог встаёт на штатное место без переделки рамы и муфт. Достаточно прислать фото шильдика и тип механизма — инженер подберёт замену и пришлёт коммерческое предложение; цена импортных аналогов сообщается по запросу."}},{"@type":"Question","name":"Как подобрать редуктор для очистных сооружений?","acceptedAnswer":{"@type":"Answer","text":"Для подбора нужны крутящий момент на выходном валу или мощность двигателя, выходные обороты или передаточное число, режим работы и условия среды, монтажное исполнение, тип и сторона выходного вала. По этим данным определяют тип передачи и типоразмер с запасом по сервис-фактору на пусковые и ударные нагрузки. Удобно начать с онлайн-калькулятора подбора и приложить фото шильдика старого привода."}},{"@type":"Question","name":"Как оформить заказ?","acceptedAnswer":{"@type":"Answer","text":"Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}},{"@type":"Question","name":"Какая доставка по России?","acceptedAnswer":{"@type":"Answer","text":"Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}},{"@type":"Question","name":"Подробнее: типы передач, требования и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Коммунальное хозяйство и водоканал предъявляют к приводу жёсткие требования: длительный круглосуточный режим S1, стойкость к влаге и агрессивным стокам, запас на пусковые и ударные нагрузки при заклинивании скребка или решётки, защита IP55 и выше, климатическое исполнение для наружной установки и ремонтопригодность. На запорной арматуре дополнительно нужно самоторможение, чтобы удерживать положение под напором без подачи питания. Червячные редукторы выбирают за самоторможение и угол 90° на затворах и задвижках; цилиндрические и коническо-цилиндрические — за высокий КПД и большой постоянный момент на скребках, илоскребах и решётках; планетарные — за компактность при большом моменте; соосные мотор-редукторы — за удобный монтаж на мешалках, дозаторах и шнеках. После выбора типа уточняют присоединительные размеры — фланец, концы валов, исполнение — чтобы редуктор встал на штатное место без переделки рамы и муфт. Тип передачи под механизм Механизм Привод Затворы, задвижки червячный (самоторможение) Скребки, илоскребы цилиндрический / коническо-цилиндрический Решётки цилиндрический / планетарный Шнеки, мешалки, дозаторы соосный мотор-редуктор Замена импорта габаритный аналог по размерам Подобрать редуктор для ЖКХ и водоканала можно через калькулятор подбора и форму подбора редуктора , а весь модельный ряд по типам передач — в каталоге . Замену импортных приводов SEW, NORD, Bonfiglioli и Motovario подбирают в разделе импортозамещение . Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Редукторы для ЖКХ и водоканала</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Редукторы для ЖКХ и водоканала</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Отрасль</div>
+-  <h1>Редукторы для отрасли: ЖКХ и водоканал</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-12.webp" alt="Редукторы для отрасли: ЖКХ и водоканал — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Редукторы для отрасли: ЖКХ и водоканал</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Редукторы для отрасли: ЖКХ и водоканал — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -89,3 +92,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Мотор-редуктор для механизмов ЖКХ и водоканала" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Мотор-редуктор для механизмов очистных сооружений — длительный режим и влагозащита</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Мотор-редуктор для механизмов ЖКХ и водоканала" loading="lazy" onerror="this.closest('figure').style.display='none'" width="800" height="600"><figcaption>Мотор-редуктор для механизмов очистных сооружений — длительный режим и влагозащита</figcaption></figure>
+ 
+@@ -106,3 +109,3 @@
+ 
+-  <h2>Требования: нагрузки, режим, среда</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/red-motor-06.webp" alt="Пример мотор-редуктора редуктора — Редукторы для отрасли: ЖКХ и водоканал" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Типовое исполнение мотор-редуктора привода</figcaption></figure><h2>Требования: нагрузки, режим, среда</h2>
+   <p>Механизмы ЖКХ и водоканала формируют жёсткий набор требований к приводу — именно по ним и ведут подбор:</p>
+@@ -129,3 +132,3 @@
+ 
+-  <h2>Замена импортных приводов</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/th-blueprint.webp" alt="Габаритный и присоединительный чертёж — Редукторы для отрасли: ЖКХ и водоканал" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Габаритный и присоединительный чертёж</figcaption></figure><h2>Замена импортных приводов</h2>
+   <p>На очистных сооружениях и водоканалах исторически стоит много импортных приводов — SEW-Eurodrive, NORD, Bonfiglioli, Motovario. При выходе из строя их меняют на отечественный <a href="/importozameshchenie">габаритный аналог</a>, который совпадает по присоединительным размерам, моменту, передаточному числу и фланцу двигателя. Такой аналог встаёт на штатное место без переделки рамы, муфт и фундамента, что критично при ограниченном окне ремонта на действующем объекте.</p>
+@@ -133,3 +136,3 @@
+ 
+-  <h2>Сводка: тип механизма и привод</h2>
++  <figure class="art-fig art-fig-dw"><img src="../assets/drawings/zr-898-sew-k97-l2.png" alt="Габаритный чертёж SEW K97, лист 2" loading="lazy" decoding="async" width="1400" height="1981"><figcaption>Габаритный и присоединительный чертёж SEW K97, лист 2 · аналог ZR 898 — <a href="/brands/sew">все чертежи SEW</a></figcaption></figure><h2>Сводка: тип механизма и привод</h2>
+   <div style="overflow-x:auto">
+@@ -161,3 +164,6 @@
+     <tr><th>Замена импорта</th><td>габаритный аналог по размерам</td></tr>
+-  </tbody></table><p>Подобрать редуктор для ЖКХ и водоканала можно через <a href="/podbor">калькулятор подбора</a> и форму <a href="/podbor">подбора редуктора</a>, а весь модельный ряд по типам передач — в <a href="/catalog/">каталоге</a>. Замену импортных приводов SEW, NORD, Bonfiglioli и Motovario подбирают в разделе <a href="/importozameshchenie">импортозамещение</a>. Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу.</p></div></details></div></div></section>
++  </tbody></table><p>Подобрать редуктор для ЖКХ и водоканала можно через <a href="/podbor">калькулятор подбора</a> и форму <a href="/podbor">подбора редуктора</a>, а весь модельный ряд по типам передач — в <a href="/catalog/">каталоге</a>. Замену импортных приводов SEW, NORD, Bonfiglioli и Motovario подбирают в разделе <a href="/importozameshchenie">импортозамещение</a>. Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -189,8 +195,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -203,3 +210,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -212,3 +219,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -218,3 +225,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -222,3 +229,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -235,4 +242,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

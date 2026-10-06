@@ -1,0 +1,83 @@
+--- main/dostavka-raschet.html
++++ prod/dostavka-raschet.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Расчёт доставки редуктора по России | Завод Редукторов</title>
++<title>Расчёт доставки редуктора по России | ZR</title>
+ <meta name="description" content="Расчёт стоимости и срока доставки редуктора по России: калькуляторы Деловых Линий, ПЭК и Байкал-Сервиса, габариты и вес, самовывоз со склада, любая ТК." />
+@@ -15,6 +15,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/dostavka-raschet" />
+-<meta property="og:title" content="Расчёт доставки редуктора — стоимость и сроки по России | Завод Редукторов" />
++<meta property="og:title" content="Расчёт доставки редуктора — стоимость и сроки по России | ZR" />
+ <meta property="og:description" content="Калькуляторы транспортных компаний, габариты и вес редукторов, самовывоз со склада — рассчитайте доставку онлайн." />
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="assets/inner.css?v=shapka28" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Доставка редукторов по России","description":"Отгрузка редукторов и мотор-редукторов транспортными компаниями по всей России, самовывоз со склада. Онлайн-расчёт стоимости и срока доставки.","provider":{"@type":"Organization","name":"Завод Редукторов","url":"https://zavod-red.ru/"},"areaServed":"RU"}</script>
+@@ -22,2 +22,5 @@
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Как рассчитать стоимость доставки редуктора?","acceptedAnswer":{"@type":"Answer","text":"Узнайте ориентировочный вес и габариты редуктора по таблице на этой странице, затем введите их в калькулятор любой транспортной компании ниже — укажите город получения. Калькулятор покажет стоимость и срок. Точный вес упаковки мы подтвердим в счёте."}},{"@type":"Question","name":"Какими транспортными компаниями вы отправляете?","acceptedAnswer":{"@type":"Answer","text":"Отгружаем любой удобной вам транспортной компанией: Деловые Линии, ПЭК, Байкал-Сервис, КИТ, Энергия и другими. Если у вас есть договор с перевозчиком — отправим через него. По умолчанию везём до терминала ТК в вашем городе или до адреса."}},{"@type":"Question","name":"Можно ли забрать редуктор самовывозом?","acceptedAnswer":{"@type":"Answer","text":"Да. Самовывоз со склада — бесплатно. Согласуйте дату и время отгрузки с менеджером, привезём заказ на отгрузочную площадку к вашему приезду или к подаче машины."}},{"@type":"Question","name":"Кто оплачивает доставку?","acceptedAnswer":{"@type":"Answer","text":"Доставку до ближайшего к нам терминала транспортной компании мы обычно берём на себя, межтерминальную перевозку и доставку до вашего адреса оплачивает получатель по тарифу ТК. Условия фиксируем в счёте, для постоянных и оптовых клиентов — индивидуально."}},{"@type":"Question","name":"Как упаковываете редукторы для перевозки?","acceptedAnswer":{"@type":"Answer","text":"Лёгкие мотор-редукторы пакуем в гофрокороб с фиксацией, тяжёлые цилиндрические и крупные партии — на паллете с обрешёткой или в деревянный ящик. Валы и присоединительные поверхности защищаем. Жёсткая упаковка обязательна для перевозки сборными грузами."}},{"@type":"Question","name":"Сколько идёт доставка по России?","acceptedAnswer":{"@type":"Answer","text":"Срок зависит от региона и перевозчика: до городов Урала — 1–3 дня, до Москвы и центра — 3–5 дней, до Сибири и Дальнего Востока — 5–10 дней. Точный срок показывает калькулятор транспортной компании по вашему городу."}},{"@type":"Question","name":"Отправляете ли в страны ЕАЭС?","acceptedAnswer":{"@type":"Answer","text":"Да, отправляем в Казахстан, Беларусь и другие страны ЕАЭС через транспортные компании, работающие на этих направлениях. Оформляем необходимые отгрузочные документы. Уточните направление у менеджера — подскажем перевозчика и срок."}},{"@type":"Question","name":"Что делать, если не знаю вес и габариты заказа?","acceptedAnswer":{"@type":"Answer","text":"Ориентируйтесь на таблицу веса и габаритов на этой странице или просто оставьте заявку — менеджер подберёт редуктор, посчитает вес упаковки и сам рассчитает доставку до вашего города вместе с ценой и сроком изготовления."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -26,4 +29,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -31,3 +34,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -42,3 +45,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -46,3 +49,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -65,5 +68,5 @@
+   <div class="feats" style="grid-template-columns:repeat(3,1fr);margin-top:18px">
+-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div><h4>Транспортной компанией</h4><p>Любая ТК на ваш выбор: Деловые Линии, ПЭК, Байкал-Сервис, КИТ, Энергия. До терминала в вашем городе или до адреса.</p></div></div>
+-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div><div><h4>Самовывоз со склада</h4><p>Бесплатно, по согласованию. Согласуем дату и время отгрузки, подготовим заказ к подаче машины.</p></div></div>
+-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><div><h4>По России и ЕАЭС</h4><p>Отгружаем во все регионы РФ, а также в Казахстан и Беларусь. Оформляем отгрузочные документы.</p></div></div>
++    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div><h3>Транспортной компанией</h3><p>Любая ТК на ваш выбор: Деловые Линии, ПЭК, Байкал-Сервис, КИТ, Энергия. До терминала в вашем городе или до адреса.</p></div></div>
++    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div><div><h3>Самовывоз со склада</h3><p>Бесплатно, по согласованию. Согласуем дату и время отгрузки, подготовим заказ к подаче машины.</p></div></div>
++    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div><div><h3>По России и ЕАЭС</h3><p>Отгружаем во все регионы РФ, а также в Казахстан и Беларусь. Оформляем отгрузочные документы.</p></div></div>
+   </div>
+@@ -188,2 +191,3 @@
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -199,3 +203,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -208,3 +212,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -214,6 +218,6 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+     </div>
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -242,4 +246,4 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="assets/modal.js?v=350d9cee"></script>
++<script src="assets/inner.js?v=shapka28"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
+ </body>

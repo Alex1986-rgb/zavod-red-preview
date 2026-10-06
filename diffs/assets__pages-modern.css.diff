@@ -1,0 +1,20 @@
+--- main/assets/pages-modern.css
++++ prod/assets/pages-modern.css
+@@ -4,3 +4,8 @@
+ .zr-modern{--m-ink:#0f1c26;--m-mut:#5a6a75;--m-line:rgba(12,20,28,.08);--m-red:#e11b1b;--m-bg:#f4f7f9}
+-.zr-modern .wrap{max-width:1200px}
++/* ШИРИНА СЛЕДУЕТ ЗА ОБЩЕЙ (26.09.2026). Здесь стояло жёсткое max-width:1200px,
++   и по специфичности оно перебивало общую переменную --maxw: 13 страниц (подбор,
++   каталог, контакты, о заводе, импортозамещение и др.) оставались 1200px даже на
++   мониторе 2560 — это 47% ширины экрана. Теперь берут общую формулу, 1200px
++   остаётся запасным значением, если переменная почему-то не определена. */
++.zr-modern .wrap{max-width:var(--maxw,1200px)}
+ 
+@@ -59,3 +64,6 @@
+ /* ---------- КНОПКИ ---------- */
+-.zr-modern .btn.lg{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:14px;font:700 15.5px 'Archivo',sans-serif;background:var(--m-red);color:#fff;text-decoration:none;border:0;transition:.16s;box-shadow:0 8px 20px rgba(225,27,27,.18)}
++/* Крупная кнопка (26.09.2026): была 15,5px при высоте 52px и по специфичности
++   перебивала общий размер 20px/64px — на 13 страницах с этим оформлением
++   главные кнопки оставались мелкими. Приведено к общему размеру. */
++.zr-modern .btn.lg{display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 34px;border-radius:14px;font:700 20px 'Archivo',sans-serif;background:var(--m-red);color:#fff;text-decoration:none;border:0;transition:.16s;box-shadow:0 8px 20px rgba(225,27,27,.18)}
+ .zr-modern .btn.lg:hover{background:#cf1616;transform:translateY(-2px)}

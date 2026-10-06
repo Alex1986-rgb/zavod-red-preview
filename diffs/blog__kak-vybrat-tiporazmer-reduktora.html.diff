@@ -1,0 +1,117 @@
+--- main/blog/kak-vybrat-tiporazmer-reduktora.html
++++ prod/blog/kak-vybrat-tiporazmer-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Как выбрать типоразмер редуктора: по моменту и валу</title>
++<title>Как выбрать типоразмер редуктора: по моменту и валу | ZR</title>
+ <meta name="description" content="Как выбрать типоразмер редуктора: от рабочего момента и сервис-фактора к номиналу серии, с проверкой консольной нагрузки, теплового режима и габаритов." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/kak-vybrat-tiporazmer-reduktora" />
+-<meta property="og:title" content="Как выбрать типоразмер редуктора: по моменту и валу" />
++<meta property="og:title" content="Как выбрать типоразмер редуктора: по моменту и валу | ZR" />
+ <meta property="og:description" content="От рабочего момента и сервис-фактора к номиналу серии: как не ошибиться с типоразмером редуктора." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-calculation.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-blueprint.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как выбрать типоразмер редуктора: по моменту и валу","description":"От рабочего момента и сервис-фактора к номиналу серии: проверка консольной нагрузки, теплового режима и присоединительных размеров при выборе типоразмера.","image":"https://zavod-red.ru/assets/blog-photo/th-calculation.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/kak-vybrat-tiporazmer-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Как выбрать типоразмер редуктора: по моменту и валу","description":"От рабочего момента и сервис-фактора к номиналу серии: проверка консольной нагрузки, теплового режима и присоединительных размеров при выборе типоразмера.","image":"https://zavod-red.ru/assets/blog-photo/th-blueprint.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/kak-vybrat-tiporazmer-reduktora","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Как выбрать типоразмер редуктора","item":"https://zavod-red.ru/blog/kak-vybrat-tiporazmer-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое типоразмер редуктора?","acceptedAnswer":{"@type":"Answer","text":"Типоразмер — это конкретный габарит редуктора внутри серии, обозначаемый числом или индексом (например, межосевым расстоянием или условным номером корпуса). Каждому типоразмеру соответствуют свой номинальный момент, ряд передаточных чисел, допустимая консольная нагрузка и присоединительные размеры. Выбор типоразмера — это выбор габарита под рабочую нагрузку."}},{"@type":"Question","name":"По какому параметру выбирают типоразмер редуктора?","acceptedAnswer":{"@type":"Answer","text":"Базовый параметр — крутящий момент на выходном валу с учётом сервис-фактора. Рабочий момент умножают на коэффициент эксплуатации и выбирают типоразмер, чей номинальный момент не ниже полученного. Затем проверяют консольную нагрузку, тепловой режим и присоединительные размеры — иногда они вынуждают взять следующий типоразмер."}},{"@type":"Question","name":"Как рассчитать рабочий момент для выбора типоразмера?","acceptedAnswer":{"@type":"Answer","text":"Если известна мощность и выходные обороты, момент считают по формуле T = 9550·P·η/n2, где η — КПД передачи. Если момент задан расчётом машины напрямую, его берут как есть. Полученное значение умножают на сервис-фактор, и по итоговому моменту выбирают типоразмер из ряда серии."}},{"@type":"Question","name":"Почему нельзя брать типоразмер впритык по моменту?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент в таблицах рассчитан на спокойный режим S1. Если привод работает с пусками, реверсами или ударной нагрузкой, момент «впритык» быстро вырабатывает зацепление. Поэтому рабочий момент умножают на сервис-фактор и берут типоразмер с запасом — он служит дольше и не перегревается."}},{"@type":"Question","name":"Влияет ли консольная нагрузка на выбор типоразмера?","acceptedAnswer":{"@type":"Answer","text":"Да, и нередко решающе. Если поперечная нагрузка на выходной вал от цепи, ремня или барабана выше допустимой для типоразмера, его увеличивают независимо от запаса по моменту — иначе подшипниковый узел изнашивается раньше зацепления. Поэтому консольную нагрузку проверяют отдельной строкой."}},{"@type":"Question","name":"Можно ли уменьшить типоразмер, выбрав другой тип редуктора?","acceptedAnswer":{"@type":"Answer","text":"Иногда да. При одинаковом моменте планетарный редуктор компактнее цилиндрического, а соосное исполнение экономит место по длине. Но смена типа меняет КПД, наличие самоторможения и стоимость, поэтому выбор габарита всегда увязывают с типом передачи и компоновкой привода."}},{"@type":"Question","name":"Как выбрать типоразмер аналога импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Сначала по моменту, передаточному числу и консольной нагрузке подбирают отечественный типоразмер с близкими характеристиками, затем сверяют присоединительные размеры — фланец, концы валов и расположение лап. Если габариты не совпадают, изготавливают переходный фланец или спецвал, чтобы аналог встал на штатное место."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое типоразмер редуктора?","acceptedAnswer":{"@type":"Answer","text":"Типоразмер — это конкретный габарит редуктора внутри серии, обозначаемый числом или индексом (например, межосевым расстоянием или условным номером корпуса). Каждому типоразмеру соответствуют свой номинальный момент, ряд передаточных чисел, допустимая консольная нагрузка и присоединительные размеры. Выбор типоразмера — это выбор габарита под рабочую нагрузку."}},{"@type":"Question","name":"По какому параметру выбирают типоразмер редуктора?","acceptedAnswer":{"@type":"Answer","text":"Базовый параметр — крутящий момент на выходном валу с учётом сервис-фактора. Рабочий момент умножают на коэффициент эксплуатации и выбирают типоразмер, чей номинальный момент не ниже полученного. Затем проверяют консольную нагрузку, тепловой режим и присоединительные размеры — иногда они вынуждают взять следующий типоразмер."}},{"@type":"Question","name":"Как рассчитать рабочий момент для выбора типоразмера?","acceptedAnswer":{"@type":"Answer","text":"Если известна мощность и выходные обороты, момент считают по формуле T = 9550·P·η/n2, где η — КПД передачи. Если момент задан расчётом машины напрямую, его берут как есть. Полученное значение умножают на сервис-фактор, и по итоговому моменту выбирают типоразмер из ряда серии."}},{"@type":"Question","name":"Почему нельзя брать типоразмер впритык по моменту?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент в таблицах рассчитан на спокойный режим S1. Если привод работает с пусками, реверсами или ударной нагрузкой, момент «впритык» быстро вырабатывает зацепление. Поэтому рабочий момент умножают на сервис-фактор и берут типоразмер с запасом — он служит дольше и не перегревается."}},{"@type":"Question","name":"Влияет ли консольная нагрузка на выбор типоразмера?","acceptedAnswer":{"@type":"Answer","text":"Да, и нередко решающе. Если поперечная нагрузка на выходной вал от цепи, ремня или барабана выше допустимой для типоразмера, его увеличивают независимо от запаса по моменту — иначе подшипниковый узел изнашивается раньше зацепления. Поэтому консольную нагрузку проверяют отдельной строкой."}},{"@type":"Question","name":"Можно ли уменьшить типоразмер, выбрав другой тип редуктора?","acceptedAnswer":{"@type":"Answer","text":"Иногда да. При одинаковом моменте планетарный редуктор компактнее цилиндрического, а соосное исполнение экономит место по длине. Но смена типа меняет КПД, наличие самоторможения и стоимость, поэтому выбор габарита всегда увязывают с типом передачи и компоновкой привода."}},{"@type":"Question","name":"Как выбрать типоразмер аналога импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Сначала по моменту, передаточному числу и консольной нагрузке подбирают отечественный типоразмер с близкими характеристиками, затем сверяют присоединительные размеры — фланец, концы валов и расположение лап. Если габариты не совпадают, изготавливают переходный фланец или спецвал, чтобы аналог встал на штатное место."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Типоразмер задаёт габарит редуктора внутри серии: чем больше номер корпуса, тем выше номинальный момент, тепловая мощность и допустимая консольная нагрузка. Подбор всегда ведут от рабочей нагрузки: рассчитывают момент на выходе, применяют коэффициент эксплуатации под режим работы и выбирают корпус, номинал которого перекрывает расчётный момент. Это исключает работу зацепления «впритык» и преждевременный износ. После выбора по моменту проверяют три ограничения, которые часто меняют решение. Консольная нагрузка отсекает корпуса со слабым подшипниковым узлом при цепной или ременной передаче. Тепловой режим ограничивает длительную работу при высокой мощности и малых оборотах. Присоединительные размеры решают, встанет ли редуктор на штатное место — для импортного аналога габаритную совместимость проверяют отдельно, а цену импортных позиций сообщают по запросу. Параметры выбора типоразмера Параметр Роль в выборе Рабочий момент T отправная точка расчёта Сервис-фактор множитель под режим работы Номинал серии ближайший больший момент корпуса Консольная нагрузка ограничение по валу Тепловая мощность предел длительной работы Что меняет финальный габарит Условие Решение по типоразмеру Частые пуски, реверсы выше сервис-фактор → больше корпус Большая радиальная сила увеличить типоразмер по валу Малые обороты, высокая P проверить тепловой режим Ограничение по габариту сменить тип на планетарный/соосный Замена импорта сверка габаритов, цена по запросу Подобрать типоразмер можно через калькулятор подбора редуктора или на странице цилиндрических редукторов . Пришлите момент, обороты и условия работы — мы выберем оптимальный габарит и пришлём предложение."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Как выбрать типоразмер редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Как выбрать типоразмер редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Как выбрать типоразмер редуктора: по моменту и валу</h1><img class="blog-hero-img" src="../assets/blog-photo/th-calculation.webp" alt="Как выбрать типоразмер редуктора: по моменту и валу — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Как выбрать типоразмер редуктора: по моменту и валу</h1><img class="blog-hero-img" src="../assets/blog-photo/th-blueprint.webp" alt="Как выбрать типоразмер редуктора: по моменту и валу — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -89,3 +92,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — выбор типоразмера под нагрузку" loading="lazy"><figcaption>Один типоразмер серии — фиксированный момент, ряд i и габариты</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — выбор типоразмера под нагрузку" loading="lazy" width="800" height="600"><figcaption>Один типоразмер серии — фиксированный момент, ряд i и габариты</figcaption></figure>
+ 
+@@ -97,3 +100,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — подбор типоразмера под режим работы" loading="lazy"><figcaption>Расчётный момент с запасом задаёт минимальный габарит корпуса</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — подбор типоразмера под режим работы" loading="lazy" width="900" height="675"><figcaption>Расчётный момент с запасом задаёт минимальный габарит корпуса</figcaption></figure>
+ 
+@@ -159,3 +162,6 @@
+     <tr><th>Замена импорта</th><td>сверка габаритов, цена по запросу</td></tr>
+-  </tbody></table><p>Подобрать типоразмер можно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или на странице <a href="/catalog/cilindricheskie#kalkulyator">цилиндрических редукторов</a>. Пришлите момент, обороты и условия работы — мы выберем оптимальный габарит и пришлём предложение.</p></div></details></div></div></section>
++  </tbody></table><p>Подобрать типоразмер можно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или на странице <a href="/catalog/cilindricheskie#kalkulyator">цилиндрических редукторов</a>. Пришлите момент, обороты и условия работы — мы выберем оптимальный габарит и пришлём предложение.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -187,8 +193,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -201,3 +208,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -210,3 +217,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -216,3 +223,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -220,3 +227,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -233,4 +240,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

@@ -1,0 +1,21 @@
+--- main/brandbook.html
++++ prod/brandbook.html
+@@ -7,5 +7,5 @@
+ <meta name="robots" content="noindex, nofollow" />
+-<title>Брендбук — Завод Редукторов</title>
++<title>Брендбук | ZR</title>
+ <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fav-32x32.png" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="assets/inner.css?v=shapka28" />
+ <style>
+@@ -49,2 +49,5 @@
+ </style>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -116,3 +119,3 @@
+ 
+-<script src="assets/modal.js?v=350d9cee"></script>
++<script src="assets/modal.js?v=0110zrchat"></script>
+ <script>

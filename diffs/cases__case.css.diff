@@ -1,0 +1,15 @@
+--- main/cases/case.css
++++ prod/cases/case.css
+@@ -144 +144,12 @@
+ .seo-text details[open] summary::after{transform:rotate(180deg)}
++
++
++/* Ссылки в тексте кейсов.
++   ЗАЧЕМ. Глобальное правило `a{color:inherit;text-decoration:none}` делало ссылки
++   в теле кейса неотличимыми от обычного текста: человек не видел, что на них
++   можно нажать. Своего правила у `.article` не было — страдали все страницы
++   раздела, не только новые. 25.09.2026. */
++.article a:not(.btn):not(.zbtn){color:var(--red,#cf1616);text-decoration:underline;text-underline-offset:2px}
++.article a:not(.btn):not(.zbtn):hover{text-decoration-thickness:2px}
++/* байт-маркер версии: зеркало пропускает файл, если длина не изменилась */
++/* zr-case-links-2509 */

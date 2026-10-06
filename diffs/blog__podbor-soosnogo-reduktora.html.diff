@@ -1,0 +1,122 @@
+--- main/blog/podbor-soosnogo-reduktora.html
++++ prod/blog/podbor-soosnogo-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Подбор соосно-цилиндрического редуктора</title>
++<title>Подбор соосно-цилиндрического редуктора | ZR</title>
+ <meta name="description" content="Как подобрать соосно-цилиндрический редуктор по моменту, оборотам и передаточному числу: вход и выход на одной оси, высокий КПД 0,96–0,98, калькулятор подбора." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/podbor-soosnogo-reduktora" />
+-<meta property="og:title" content="Подбор соосно-цилиндрического редуктора" />
++<meta property="og:title" content="Подбор соосно-цилиндрического редуктора | ZR" />
+ <meta property="og:description" content="Как подобрать соосно-цилиндрический редуктор по моменту и оборотам — вход и выход на одной оси, высокий КПД и компактный монтаж." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-coaxial-08.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-coaxial-04.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор соосно-цилиндрического редуктора","description":"Как подобрать соосно-цилиндрический редуктор по моменту, оборотам и передаточному числу с учётом высокого КПД и компактного монтажа.","image":"https://zavod-red.ru/assets/blog-photo/red-coaxial-08.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-soosnogo-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор соосно-цилиндрического редуктора","description":"Как подобрать соосно-цилиндрический редуктор по моменту, оборотам и передаточному числу с учётом высокого КПД и компактного монтажа.","image":"https://zavod-red.ru/assets/blog-photo/red-coaxial-04.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-soosnogo-reduktora","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор соосно-цилиндрического редуктора","item":"https://zavod-red.ru/blog/podbor-soosnogo-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что значит соосный редуктор?","acceptedAnswer":{"@type":"Answer","text":"Соосный, или соосно-цилиндрический, редуктор — это цилиндрический редуктор, у которого оси входного и выходного валов лежат на одной линии. Двигатель и рабочий орган оказываются на общей оси, что делает привод компактным по длине и удобным для встройки. Передача выполнена цилиндрическими зубчатыми колёсами, обычно в двух или трёх ступенях."}},{"@type":"Question","name":"Какой КПД у соосно-цилиндрического редуктора?","acceptedAnswer":{"@type":"Answer","text":"КПД соосно-цилиндрического редуктора высокий — около 0,96–0,98 на ступень, поскольку зацепление цилиндрических колёс работает на трении качения с малыми потерями. Это один из самых энергоэффективных типов, поэтому его выбирают для длительной работы под полной нагрузкой в режиме S1, где важна экономия энергии."}},{"@type":"Question","name":"Какие параметры нужны для подбора соосного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Нужны крутящий момент на выходном валу (Н·м) или мощность двигателя (кВт), выходные обороты или передаточное число, режим работы и монтажное исполнение. Для соосной компоновки дополнительно проверяют присоединительный фланец двигателя и сторону выходного вала, чтобы привод встал на штатное место по длине."}},{"@type":"Question","name":"Чем соосный редуктор отличается от обычного цилиндрического?","acceptedAnswer":{"@type":"Answer","text":"У обычного цилиндрического редуктора оси входного и выходного валов параллельны, но смещены. У соосного они совпадают и лежат на одной линии. Из-за этого соосный привод короче по высоте и удобнее для вертикального или встроенного монтажа, тогда как параллельный вариант проще по конструкции и часто дешевле."}},{"@type":"Question","name":"Какое передаточное число у соосного редуктора?","acceptedAnswer":{"@type":"Answer","text":"У двухступенчатого соосно-цилиндрического редуктора передаточное число обычно от 6 до 50, у трёхступенчатого — до 200 и выше. Передаточное число рассчитывают как отношение входных оборотов к выходным: i = nвх / nвых. Ближайшее значение из стандартного ряда серии уточняют при подборе типоразмера."}},{"@type":"Question","name":"Где применяют соосно-цилиндрические редукторы?","acceptedAnswer":{"@type":"Answer","text":"Соосные редукторы и мотор-редукторы ставят на конвейеры, мешалки, насосы, вентиляторы и упаковочные линии, где важны компактность по длине и высокий КПД при длительной работе. Соосная компоновка удобна, когда двигатель и рабочий орган должны стоять на одной оси без бокового выноса."}},{"@type":"Question","name":"Сколько стоит соосный редуктор и его импортный аналог?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от типоразмера, числа ступеней, передаточного числа и комплектации с двигателем. Стоимость отечественных соосно-цилиндрических серий рассчитывается под заказ, цена импортных аналогов сообщается по запросу. Пришлите момент, обороты и фланец двигателя — инженер подберёт типоразмер и пришлёт коммерческое предложение."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что значит соосный редуктор?","acceptedAnswer":{"@type":"Answer","text":"Соосный, или соосно-цилиндрический, редуктор — это цилиндрический редуктор, у которого оси входного и выходного валов лежат на одной линии. Двигатель и рабочий орган оказываются на общей оси, что делает привод компактным по длине и удобным для встройки. Передача выполнена цилиндрическими зубчатыми колёсами, обычно в двух или трёх ступенях."}},{"@type":"Question","name":"Какой КПД у соосно-цилиндрического редуктора?","acceptedAnswer":{"@type":"Answer","text":"КПД соосно-цилиндрического редуктора высокий — около 0,96–0,98 на ступень, поскольку зацепление цилиндрических колёс работает на трении качения с малыми потерями. Это один из самых энергоэффективных типов, поэтому его выбирают для длительной работы под полной нагрузкой в режиме S1, где важна экономия энергии."}},{"@type":"Question","name":"Какие параметры нужны для подбора соосного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Нужны крутящий момент на выходном валу (Н·м) или мощность двигателя (кВт), выходные обороты или передаточное число, режим работы и монтажное исполнение. Для соосной компоновки дополнительно проверяют присоединительный фланец двигателя и сторону выходного вала, чтобы привод встал на штатное место по длине."}},{"@type":"Question","name":"Чем соосный редуктор отличается от обычного цилиндрического?","acceptedAnswer":{"@type":"Answer","text":"У обычного цилиндрического редуктора оси входного и выходного валов параллельны, но смещены. У соосного они совпадают и лежат на одной линии. Из-за этого соосный привод короче по высоте и удобнее для вертикального или встроенного монтажа, тогда как параллельный вариант проще по конструкции и часто дешевле."}},{"@type":"Question","name":"Какое передаточное число у соосного редуктора?","acceptedAnswer":{"@type":"Answer","text":"У двухступенчатого соосно-цилиндрического редуктора передаточное число обычно от 6 до 50, у трёхступенчатого — до 200 и выше. Передаточное число рассчитывают как отношение входных оборотов к выходным: i = n вх / n вых . Ближайшее значение из стандартного ряда серии уточняют при подборе типоразмера."}},{"@type":"Question","name":"Где применяют соосно-цилиндрические редукторы?","acceptedAnswer":{"@type":"Answer","text":"Соосные редукторы и мотор-редукторы ставят на конвейеры, мешалки, насосы, вентиляторы и упаковочные линии, где важны компактность по длине и высокий КПД при длительной работе. Соосная компоновка удобна, когда двигатель и рабочий орган должны стоять на одной оси без бокового выноса."}},{"@type":"Question","name":"Сколько стоит соосный редуктор и его импортный аналог?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от типоразмера, числа ступеней, передаточного числа и комплектации с двигателем. Стоимость отечественных соосно-цилиндрических серий рассчитывается под заказ, цена импортных аналогов сообщается по запросу. Пришлите момент, обороты и фланец двигателя — инженер подберёт типоразмер и пришлёт коммерческое предложение."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Подбор соосного редуктора по параметрам ведут от рабочей машины: определяют момент на выходе или мощность двигателя, выходные обороты и характер нагрузки. По входным и выходным оборотам находят передаточное число, по моменту с сервис-фактором — типоразмер, а по компоновке — монтажное исполнение и фланец двигателя. Высокий КПД цилиндрического зацепления означает малые потери и слабый нагрев, поэтому соосный тип уверенно работает в режиме S1 под полной нагрузкой. Соосная компоновка выгодна там, где двигатель и рабочий орган должны стоять на одной оси без бокового выноса: вертикальные мешалки, насосы, компактные конвейеры. Если же привод требует угла 90 градусов, рассматривают коническо-цилиндрический или червячный тип. После выбора типа уточняют присоединительные размеры — фланец IEC, концы валов, длину по оси — чтобы редуктор встал на штатное место без переделки рамы и муфт. Характеристики соосного редуктора Параметр Значение КПД 0,96–0,98 на ступень Передаточное число 6–200+ Расположение валов соосное, на одной линии Число ступеней 2–3 Режим длительный S1 Что подобрать под задачу Задача Решение Двигатель и нагрузка на одной оси соосно-цилиндрический Высокий КПД, длительная работа соосный или цилиндрический Угол 90° коническо-цилиндрический / червячный Замена импортного привода габаритный аналог по фланцу и валам Подобрать соосный редуктор по параметрам можно через калькулятор подбора , профильный калькулятор соосных редукторов или форму подбора редуктора . Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор соосно-цилиндрического редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Подбор соосно-цилиндрического редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Подбор соосно-цилиндрического редуктора</h1><img class="blog-hero-img" src="../assets/blog-photo/red-coaxial-08.webp" alt="Подбор соосно-цилиндрического редуктора — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Подбор соосно-цилиндрического редуктора</h1><img class="blog-hero-img" src="../assets/blog-photo/red-coaxial-04.webp" alt="Подбор соосно-цилиндрического редуктора — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -90,3 +93,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Соосно-цилиндрический редуктор для подбора по параметрам" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Соосно-цилиндрический редуктор — вход и выход на одной оси, высокий КПД</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_coaxial.webp" alt="Соосно-цилиндрический редуктор для подбора по параметрам" loading="lazy" onerror="this.closest('figure').style.display='none'" width="800" height="600"><figcaption>Соосно-цилиндрический редуктор — вход и выход на одной оси, высокий КПД</figcaption></figure>
+ 
+@@ -95,3 +98,3 @@
+ 
+-  <h2>Шаг 3. Используйте высокий КПД в расчёте</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/red-coaxial-05.webp" alt="Пример соосного редуктора — Подбор соосно-цилиндрического редуктора" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Типовое исполнение соосного привода</figcaption></figure><h2>Шаг 3. Используйте высокий КПД в расчёте</h2>
+   <p>Цилиндрическое зацепление работает на трении качения, поэтому КПД соосного редуктора достигает <b>0,96–0,98</b> на ступень. Это заметно выше, чем у червячной передачи (0,7–0,9), и означает меньшие потери и нагрев. В расчёте момента на выходе используют формулу <b>T = 9550 · P · η / n<sub>вых</sub></b>; при высоком η выбранный двигатель полнее реализует мощность, а редуктор почти не греется в режиме S1.</p>
+@@ -101,3 +104,3 @@
+ 
+-  <h2>Шаг 5. Проверьте присоединительные размеры</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/th-engineer-select.webp" alt="Инженер подбирает привод по параметрам задачи — Подбор соосно-цилиндрического редуктора" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Инженер подбирает привод по параметрам задачи</figcaption></figure><h2>Шаг 5. Проверьте присоединительные размеры</h2>
+   <p>Соосный редуктор должен встать на место по фланцу двигателя, длине по оси, диаметру и длине выходного вала. При замене импортного мотор-редуктора это особенно важно — <a href="/importozameshchenie">габаритный аналог</a> ставится без переделки рамы и муфт. При необходимости изготавливают переходный фланец под нужный IEC-размер или спецвал.</p>
+@@ -149,3 +152,6 @@
+     <tr><th>Замена импортного привода</th><td>габаритный аналог по фланцу и валам</td></tr>
+-  </tbody></table><p>Подобрать соосный редуктор по параметрам можно через <a href="/podbor#kalkulyator">калькулятор подбора</a>, профильный <a href="/catalog/soosnye#kalkulyator">калькулятор соосных редукторов</a> или форму <a href="/podbor">подбора редуктора</a>. Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу.</p></div></details></div></div></section>
++  </tbody></table><p>Подобрать соосный редуктор по параметрам можно через <a href="/podbor#kalkulyator">калькулятор подбора</a>, профильный <a href="/catalog/soosnye#kalkulyator">калькулятор соосных редукторов</a> или форму <a href="/podbor">подбора редуктора</a>. Пришлите фото шильдика и условия работы — определим тип, передаточное число и присоединительные размеры. Цены на импортные аналоги — по запросу.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -177,8 +183,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -191,3 +198,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -200,3 +207,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -206,3 +213,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -210,3 +217,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -223,4 +230,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

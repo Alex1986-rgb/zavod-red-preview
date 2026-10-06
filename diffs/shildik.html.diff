@@ -1,0 +1,95 @@
+--- main/shildik.html
++++ prod/shildik.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Подбор редуктора по фото шильдика — Завод Редукторов</title>
++<title>Подбор редуктора по фото шильдика | ZR</title>
+ <meta name="description" content="Определите модель редуктора по фото шильдика (таблички): распознаём маркировку импортного привода (SEW, NORD, Bonfiglioli" />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/shildik" />
+-<meta property="og:title" content="Подбор редуктора по фото шильдика — Завод Редукторов" />
++<meta property="og:title" content="Подбор редуктора по фото шильдика | ZR" />
+ <meta property="og:description" content="Сфотографируйте шильдик — распознаем маркировку и подберём аналог редуктора." />
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="assets/inner.css?v=shapka28" />
+ <script type="application/ld+json">
+@@ -21,2 +21,5 @@
+ </script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -25,4 +28,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -30,3 +33,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -41,3 +44,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -45,3 +48,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -55,3 +58,3 @@
+ <section class="section" style="padding-top:14px">
+-  <div id="shildikRoot"><h1>Определим редуктор по шильдику</h1><p>Сфотографируйте табличку привода — распознаем маркировку в браузере и подберём редуктор ZR по присоединительным и техническим параметрам.</p></div>
++  <div id="shildikRoot"></div>
+ </section>
+@@ -64,3 +67,17 @@
+ 
++
++	<section class="section" style="padding-top:0"><div class="wrap"><div class="cat-faq">
++	<details><summary>Что такое подбор по шильдику?</summary><div>Вы фотографируете табличку (шильд) старого редуктора — мы определяем модель, типоразмер и характеристики. По ним инженер подбирает точный аналог ZR с теми же присоединительными размерами.</div></details>
++	<details><summary>Что делать если шильдик стёрся или отсутствует?</summary><div>Сфотографируйте редуктор с разных ракурсов, замерьте межосевое расстояние, диаметры валов и фланцев. Даже по корпусу и габаритам можно определить модель.</div></details>
++	<details><summary>Какие данные нужны с шильдика?</summary><div>Марка и модель (например SEW R107), передаточное число i, мощность кВт, обороты, момент, заводской номер. Достаточно читаемой маркировки — остальное найдём по каталогу.</div></details>
++	<details><summary>Сколько времени занимает подбор по шильдику?</summary><div>Инженер отвечает в течение 15 минут в рабочее время. Если модель редкая — до 1 часа. Сразу присылаем КП и чертежи аналога.</div></details>
++	<details><summary>Подберёте аналог по шильдику любого бренда?</summary><div>Да. SEW, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Varvel, SITI, STM, Rossi, Flender, Siemens, KEB, Tramec и другие. По каждой марке — свой справочник соответствия.</div></details>
++	<details><summary>Нужно ли отправлять сам редуктор?</summary><div>Нет. Достаточно фото шильдика. Редуктор остаётся у вас — мы подбираем аналог по данным с таблички.</div></details>
++	<details><summary>Аналог точно подойдёт по размерам?</summary><div>Да. Передаём габаритный и присоединительный чертёж до заказа — вы проверяете размеры. Если нужно — делаем переходной фланец.</div></details>
++	<details><summary>Сколько стоит подбор по шильдику?</summary><div>Бесплатно. Вы присылаете фото — мы подбираем аналог и присылаем КП. Платите только за редуктор, когда принимаете решение.</div></details>
++	</div></div></section>
++
++
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -76,3 +93,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -85,3 +102,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -90,6 +107,6 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+     </div>
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -105,5 +122,5 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="assets/modal.js?v=350d9cee"></script>
+-<script defer src="assets/shildik.js?v=b12a4749"></script>
++<script src="assets/inner.js?v=shapka28"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
++<script defer src="assets/shildik.js?v=shapka28"></script>
+ </body>

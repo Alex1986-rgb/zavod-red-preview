@@ -1,0 +1,154 @@
+--- main/importozameshchenie.html
++++ prod/importozameshchenie.html
+@@ -14,8 +14,8 @@
+ <meta property="og:url" content="https://zavod-red.ru/importozameshchenie" />
+-<meta property="og:title" content="Импортозамещение редукторов — аналоги SEW, NORD, Bonfiglioli" />
++<meta property="og:title" content="Импортозамещение редукторов — аналоги SEW, NORD, Bonfiglioli | ZR" />
+ <meta property="og:description" content="Габаритные аналоги импортных приводов без переделки рамы. Переходные фланцы и спецвалы по чертежам." />
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
+-<link rel="stylesheet" href="assets/pages-modern.css?v=7f7edb3d" />
+-<link rel="stylesheet" href="assets/podbor.css?v=23e5e083" />
++<link rel="stylesheet" href="assets/inner.css?v=knop26" />
++<link rel="stylesheet" href="assets/pages-modern.css?v=knop26" />
++<link rel="stylesheet" href="assets/podbor.css?v=shapka28" />
+ <script type="application/ld+json">
+@@ -23,5 +23,8 @@
+ </script>
+-<!-- (Метрика отключена) -->
++
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Импортозамещение","item":"https://zavod-red.ru/importozameshchenie"}]}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Вы поставляете оригинал импортного редуктора или только аналог?","acceptedAnswer":{"@type":"Answer","text":"И то, и другое. Оригинальные приводы SEW, NORD, Bonfiglioli, Motovario и других марок поставляем под заказ. Параллельно изготавливаем габаритный аналог собственного производства — он дешевле оригинала. Цена и сроки по обоим вариантам — по запросу."}},{"@type":"Question","name":"Встанет ли аналог без переделки оборудования?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы делаем габаритный и присоединительный аналог: воспроизводим монтажные и присоединительные размеры, фланец и вал. Узел встаёт на штатное место — без переделки рамы, муфт и фундамента. При нестандартной схеме изготавливаем переходный фланец или спецвал по чертежу."}},{"@type":"Question","name":"Как подобрать замену импортному редуктору?","acceptedAnswer":{"@type":"Answer","text":"Достаточно прислать данные с шильда, фото узла или модель оригинала. Инженер подберёт аналог по мощности, моменту, передаточному числу и присоединительным размерам и подтвердит совместимость до отгрузки. Можно запустить автоматический подбор на странице подбора. Цена — по запросу."}},{"@type":"Question","name":"Какие импортные бренды вы заменяете?","acceptedAnswer":{"@type":"Answer","text":"Заменяем редукторы и мотор-редукторы SEW-Eurodrive, NORD, Bonfiglioli, Motovario и других европейских и азиатских марок. Подбираем червячные, цилиндрические, конические и планетарные исполнения. Параметры замены, поставку оригинала и сроки по конкретному бренду смотрите на странице бренда."}},{"@type":"Question","name":"Чем отличаются сроки на оригинал и на аналог?","acceptedAnswer":{"@type":"Answer","text":"Оригинальные импортные приводы идут под заказ через поставку, поэтому срок зависит от наличия на складах и логистики и обычно дольше. Аналог собственного производства мы изготавливаем сами, что позволяет точнее планировать и сокращать срок поставки. Конкретные сроки по обоим вариантам подтверждаем по запросу после уточнения модели."}},{"@type":"Question","name":"Какая гарантия на аналог?","acceptedAnswer":{"@type":"Answer","text":"На аналог собственного производства распространяется заводская гарантия — её срок и условия фиксируем в договоре и подтверждаем при оформлении. Гарантия покрывает дефекты изготовления при штатных условиях эксплуатации. По оригинальным приводам действуют условия производителя."}},{"@type":"Question","name":"Совместим ли аналог с частотным преобразователем?","acceptedAnswer":{"@type":"Answer","text":"Да. Аналог рассчитывается под вашу схему привода, в том числе под работу с частотным преобразователем и регулированием скорости. Инженер учитывает диапазон оборотов, нагрузку и режим работы при подборе. Если требуется мотор-редуктор под конкретный частотник, уточните это при запросе."}},{"@type":"Question","name":"Возможны ли серийные поставки для производителей оборудования?","acceptedAnswer":{"@type":"Answer","text":"Да, работаем с производителями оборудования по серийным и повторяющимся поставкам аналогов под единую спецификацию. Закрепляем параметры, присоединительные размеры и партии, чтобы каждая поставка была взаимозаменяемой. Подробнее об условиях для OEM — в разделе «Производителям оборудования»."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -30,4 +33,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=knop26" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -35,3 +38,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -46,3 +49,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -50,3 +53,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -63,6 +66,6 @@
+     <h1>Аналоги импортных редукторов — замена без переделки оборудования</h1>
+-    <p>Изготавливаем точные габаритные и присоединительные аналоги европейских и азиатских приводов. Узел встаёт на штатное место — без переделки рамы и кинематики. Если стандартный типоразмер не подходит, делаем переходные фланцы и спецвалы по вашим чертежам.</p>
++    <p>Габаритные и присоединительные аналоги импортных приводов — узел встаёт на штатное место без переделки рамы.</p>
+     <div class="hero-cta" style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+-      <a class="btn lg" data-zayavka href="#zayavka">Подобрать аналог по шильду</a>
+-      <a class="btn lg ghost" href="/catalog/importnye-motor-reduktory">Каталог импортных редукторов</a>
++      <a class="btn lg" data-zayavka href="#zayavka">Подобрать аналог</a>
++      <a class="btn lg ghost" href="/catalog/importnye-motor-reduktory">Каталог аналогов</a>
+       <span style="color:var(--muted);font-size:13.5px">Ответим за 15 минут · оригинал или аналог</span>
+@@ -72,6 +75,4 @@
+ <section id="kalkulyator" class="section" style="padding-top:34px"><div class="wrap">
+-  <div class="eyebrow">Калькулятор подбора аналога</div>
+-  <h2 style="font-size:26px;margin-bottom:6px">Калькулятор: подберите наш аналог импортного редуктора</h2>
+-  <p style="color:var(--muted);max-width:900px;margin:0 0 16px;line-height:1.6">Выберите марку (SEW, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Flender и др.) и задайте параметры — таблица покажет наши типоразмеры ZR как замену. Точную замену по модели или шильдику подтвердит инженер.</p>
+-  <div id="pfRoot"></div>
++  
++  <div id="pfRoot" data-brand="SEW EURODRIVE"></div>
+ </div></section>
+@@ -86,3 +87,3 @@
+       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></div><h3>Документация в комплекте</h3><p>3D-модели (STEP/IGES), рабочие чертежи, паспорт изделия и декларация ГОСТ — вместе с агрегатом.</p></div>
+-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Гарантия 24 месяца</h3><p>Новый редуктор с гарантией вдвое выше среднерыночной — а не «восстановленный» с непредсказуемым ресурсом.</p></div>
++      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Гарантия 36 месяцев</h3><p>Новый редуктор с гарантией вдвое выше среднерыночной — а не «восстановленный» с непредсказуемым ресурсом.</p></div>
+       <div class="card"><div class="ic">🇷🇺</div><h3>Производство в России</h3><p>Собственный завод в Челябинске. Поставка по всей РФ без валютных рисков и многомесячного ожидания оригинала.</p></div>
+@@ -99,3 +100,3 @@
+     <div class="brands" id="brands"></div>
+-    <p style="text-align:center;margin-top:22px"><a href="/brands/" class="btn ghost">Все бренды списком →</a></p>
++    <p style="text-align:center;margin-top:22px"><a href="/brands/" class="btn ghost">Все бренды →</a></p>
+   </div>
+@@ -128,10 +129,10 @@
+         <tbody>
+-          <tr><td>SEW-Eurodrive R</td><td>Цилиндрический соосный</td><td>Соосный редуктор ZR-C</td><td>Передаточное число, диаметр и вылет выходного вала</td></tr>
+-          <tr><td>SEW-Eurodrive F</td><td>Плоский (параллельные валы)</td><td>Цилиндрический ZR-F</td><td>Размер и положение фланца, межосевое расстояние</td></tr>
+-          <tr><td>SEW-Eurodrive K</td><td>Конический</td><td>Коническо-цилиндрический ZR-K</td><td>Угол и направление осей, момент на выходе</td></tr>
+-          <tr><td>NORD SK</td><td>Цилиндрический / плоский</td><td>Соосный ZR-C / цилиндрический ZR-F</td><td>Тип лап или фланца, монтажное положение</td></tr>
+-          <tr><td>Bonfiglioli VF</td><td>Червячный</td><td>Червячный ZR-NMRV</td><td>Межосевое расстояние, тип вала (полый/сплошной)</td></tr>
+-          <tr><td>Bonfiglioli C</td><td>Цилиндрический</td><td>Цилиндрический ZR-F</td><td>Передаточное число, присоединительный фланец</td></tr>
+-          <tr><td>Motovario NMRV</td><td>Червячный</td><td>Червячный ZR-NMRV</td><td>Размер корпуса, посадочный диаметр фланца мотора</td></tr>
+-          <tr><td>Motovario NRV</td><td>Червячный с лапами</td><td>Червячный ZR-NMRV (исполнение с лапами)</td><td>Высота оси, схема крепления лап</td></tr>
++          <tr><td>SEW-Eurodrive R</td><td>Цилиндрический соосный</td><td>Соосный редуктор серий <a href="/catalog/soosnye">ZR 939–9169</a></td><td>Передаточное число, диаметр и вылет выходного вала</td></tr>
++          <tr><td>SEW-Eurodrive F</td><td>Плоский (параллельные валы)</td><td>Цилиндрический <a href="/catalog/cilindricheskie">ZR 959–989</a></td><td>Размер и положение фланца, межосевое расстояние</td></tr>
++          <tr><td>SEW-Eurodrive K</td><td>Конический</td><td>Коническо-цилиндрический <a href="/catalog/konichesko-cilindricheskie">ZR 838–8188</a></td><td>Угол и направление осей, момент на выходе</td></tr>
++          <tr><td>NORD SK</td><td>Цилиндрический / плоский</td><td>Соосный <a href="/catalog/soosnye">ZR 939–9169</a> / цилиндрический <a href="/catalog/cilindricheskie">ZR 959–989</a></td><td>Тип лап или фланца, монтажное положение</td></tr>
++          <tr><td>Bonfiglioli VF</td><td>Червячный</td><td>Червячный <a href="/catalog/chervyachnye">ZR 603–6015</a></td><td>Межосевое расстояние, тип вала (полый/сплошной)</td></tr>
++          <tr><td>Bonfiglioli C</td><td>Цилиндрический</td><td>Цилиндрический <a href="/catalog/cilindricheskie">ZR 959–989</a></td><td>Передаточное число, присоединительный фланец</td></tr>
++          <tr><td>Motovario NMRV</td><td>Червячный</td><td>Червячный <a href="/catalog/chervyachnye">ZR 603–6015</a></td><td>Размер корпуса, посадочный диаметр фланца мотора</td></tr>
++          <tr><td>Motovario NRV</td><td>Червячный с лапами</td><td>Червячный <a href="/catalog/chervyachnye">ZR 603–6015</a> (исполнение с лапами)</td><td>Высота оси, схема крепления лап</td></tr>
+         </tbody>
+@@ -144,3 +145,3 @@
+   <div class="wrap">
+-    <form class="lead-form" id="impForm" novalidate style="max-width:760px;margin:0 auto">
++    <form class="lead-form" data-light="1" id="impForm" novalidate style="max-width:760px;margin:0 auto">
+       <h3 style="margin-bottom:6px;font-size:24px">Подберём аналог импортного редуктора</h3>
+@@ -217,3 +218,3 @@
+     <tr><th>Документы</th><td>аналог — паспорт и декларация ГОСТ</td></tr>
+-    <tr><th>Гарантия</th><td>на аналог собственного производства — 24 месяца</td></tr>
++    <tr><th>Гарантия</th><td>на аналог собственного производства — 36 месяцев</td></tr>
+     <tr><th>Цена</th><td>по запросу, аналог ниже оригинала</td></tr>
+@@ -226,3 +227,16 @@
+ 
++<!--zr-imp-cards--><section class="section" id="impbrands"><div class="wrap"><div class="eyebrow">Импортные марки</div><h2>Что заменяем — по маркам</h2><p style="color:var(--muted);max-width:900px;margin:10px 0 0;line-height:1.6">Изготавливаем точные габаритные и присоединительные аналоги европейских и азиатских приводов. Узел встаёт на штатное место — без переделки рамы и кинематики. Если стандартный типоразмер не подходит, делаем переходные фланцы и спецвалы по вашим чертежам.</p><p style="color:var(--muted);max-width:900px;margin:10px 0 0;line-height:1.6">Выберите марку (SEW, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Flender и др.) и задайте параметры — таблица покажет наши типоразмеры ZR как замену. Точную замену по модели или шильдику подтвердит инженер.</p><p class="lead" style="max-width:86ch">По каждой марке собран каталог: обозначения, характеристики по каталогу производителя и подбор аналога ZR. Нажмите марку — откроется её раздел с карточками типоразмеров.</p><div class="imp-brands"><a class="imp-b" href="/brands/nord"><b>NORD</b><span>12 994 карточек</span></a><a class="imp-b" href="/brands/innovari"><b>Innovari</b><span>8 742 карточек</span></a><a class="imp-b" href="/brands/varvel"><b>Varvel</b><span>7 845 карточек</span></a><a class="imp-b" href="/brands/siti"><b>SITI</b><span>7 413 карточек</span></a><a class="imp-b" href="/brands/rossi"><b>Rossi</b><span>7 256 карточек</span></a><a class="imp-b" href="/brands/sew"><b>SEW-Eurodrive</b><span>7 197 карточек</span></a><a class="imp-b" href="/brands/motovario"><b>Motovario</b><span>6 535 карточек</span></a><a class="imp-b" href="/brands/bonfiglioli"><b>Bonfiglioli</b><span>6 437 карточек</span></a><a class="imp-b" href="/brands/bauer"><b>Bauer</b><span>4 782 карточек</span></a><a class="imp-b" href="/brands/lenze"><b>Lenze</b><span>4 400 карточек</span></a><a class="imp-b" href="/brands/watt-drive"><b>Watt Drive</b><span>84 карточек</span></a><a class="imp-b" href="/brands/siemens"><b>Siemens</b><span>77 карточек</span></a><a class="imp-b" href="/brands/flender"><b>Flender</b><span>70 карточек</span></a><a class="imp-b" href="/brands/stm"><b>STM</b><span>42 карточек</span></a><a class="imp-b" href="/brands/vemper"><b>Vemper</b><span>39 карточек</span></a><a class="imp-b" href="/brands/keb"><b>KEB</b><span>35 карточек</span></a><a class="imp-b" href="/brands/yilmaz"><b>Yilmaz</b><span>31 карточек</span></a><a class="imp-b" href="/brands/tramec"><b>Tramec</b><span>31 карточек</span></a><a class="imp-b" href="/brands/transtecno"><b>Transtecno</b><span>30 карточек</span></a><a class="imp-b" href="/brands/tos-znojmo"><b>Tos Znojmo</b><span>30 карточек</span></a><a class="imp-b" href="/brands/boneng"><b>Boneng</b><span>17 карточек</span></a><a class="imp-b" href="/brands/guomao"><b>Guomao</b><span>15 карточек</span></a><a class="imp-b" href="/brands/innored"><b>Innored</b><span>9 карточек</span></a><a class="imp-b" href="/brands/varmec"><b>Varmec</b><span>2 карточек</span></a></div></div><!--zr-hublinks--><p style="margin-top:14px"><b>Ещё по теме:</b> <a href="/privodnaya-tehnika">приводная техника</a> · <a href="/elektrodvigateli">электродвигатели к мотор-редукторам</a></p></section>	<section class="section" style="padding-top:0"><div class="wrap"><div class="cat-faq">
++	<details><summary>Что такое импортозамещение редуктора?</summary><div>Это замена импортного привода (SEW, NORD, Bonfiglioli, Flender и др.) на российский аналог ZR с сохранением присоединительных и габаритных размеров. Редуктор встаёт на штатное место без переделки рамы и кинематики оборудования.</div></details>
++	<details><summary>Как быстро подобрать аналог импортного редуктора?</summary><div>Пришлите фото шильда или маркировку старого редуктора — инженер определит модель и подберёт аналог ZR за 15 минут. Достаточно типоразмера, передаточного числа и мощности.</div></details>
++	<details><summary>Какие импортные бренды вы замещаете?</summary><div>SEW-Eurodrive, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Varvel, SITI, STM, Rossi, Watt Drive, Yilmaz, Transtecno, KEB, Flender, Siemens, и другие. По каждой марке — свой типоразмерный ряд аналогов ZR.</div></details>
++	<details><summary>Аналог дешевле оригинала?</summary><div>Да. Цена российского аналога ZR — от производителя, без дилерских наценок и таможенных пошлин. При этом присоединительные размеры совпадают, а гарантия — 36 месяцев.</div></details>
++	<details><summary>Сколько времени занимает изготовление аналога?</summary><div>Ходовые типоразмеры — склад, отгрузка от 3 дней. Специсполнение под заказ — от 5 рабочих дней. Срочные заявки рассматриваем индивидуально.</div></details>
++	<details><summary>Какие документы получим на аналог?</summary><div>Паспорт изделия с указанием соответствия импортной модели, декларацию ЕАС, сертификат ГОСТ 31592-2012. При необходимости — протокол испытаний.</div></details>
++	<details><summary>Как проверить, что аналог подойдёт?</summary><div>Передаём габаритный и присоединительный чертёж + 3D-модель STEP до заказа. Вы проверяете размеры фланцев, валов и крепёжных отверстий — и только потом оформляете заказ.</div></details>
++	<details><summary>Что делать, если точного аналога нет в каталоге?</summary><div>Пришлите чертёж или образец — конструкторский отдел спроектирует переходной фланец, спецвал или адаптер. Изготовим редуктор под вашу геометрию с сохранением характеристик.</div></details>
++	</div></div></section>
++
++
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -238,3 +252,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -247,3 +261,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -253,3 +267,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -257,3 +271,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -270,3 +284,3 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
++<script src="assets/inner.js?v=shapka28"></script>
+ <script>
+@@ -278,4 +292,4 @@
+ </script>
+-<script defer src="assets/modal.js?v=350d9cee"></script>
+-<script defer src="assets/podbor.js?v=c84d7602"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
++<script defer src="assets/podbor.js?v=shapka28"></script>
+ </body>

@@ -1,0 +1,108 @@
+--- main/blog/podbor-reduktora-po-tipu-nagruzki.html
++++ prod/blog/podbor-reduktora-po-tipu-nagruzki.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Подбор редуктора по характеру нагрузки и сервис-фактору</title>
++<title>Подбор редуктора по характеру нагрузки и сервис-фактору | ZR</title>
+ <meta name="description" content="Как подобрать редуктор по характеру нагрузки: равномерная, с толчками или ударная. Что такое сервис-фактор и как он зависит от режима, таблицы значений." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/podbor-reduktora-po-tipu-nagruzki" />
+-<meta property="og:title" content="Подбор редуктора по характеру нагрузки и сервис-фактору" />
++<meta property="og:title" content="Подбор редуктора по характеру нагрузки и сервис-фактору | ZR" />
+ <meta property="og:description" content="Равномерная, ударная или с толчками: как характер нагрузки и сервис-фактор определяют запас по моменту при подборе редуктора." />
+ <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -33,5 +33,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по характеру нагрузки и сервис-фактору","description":"Как характер нагрузки — равномерная, с толчками или ударная — и сервис-фактор определяют запас по моменту при подборе редуктора.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-tipu-nagruzki"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Подбор редуктора по характеру нагрузки и сервис-фактору","description":"Как характер нагрузки — равномерная, с толчками или ударная — и сервис-фактор определяют запас по моменту при подборе редуктора.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/podbor-reduktora-po-tipu-nagruzki","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Подбор редуктора по характеру нагрузки","item":"https://zavod-red.ru/blog/podbor-reduktora-po-tipu-nagruzki"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое характер нагрузки при подборе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Характер нагрузки — это то, как меняется момент во времени при работе механизма. Различают равномерную (спокойную) нагрузку без толчков, нагрузку с умеренными толчками и ударную нагрузку с резкими скачками момента, реверсами и частыми пусками. От характера нагрузки зависит сервис-фактор и, значит, требуемый запас по моменту редуктора."}},{"@type":"Question","name":"Что такое сервис-фактор редуктора?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (коэффициент эксплуатации, Sf) — это коэффициент запаса, на который умножают рабочий момент при подборе. Он учитывает характер нагрузки, число пусков в час, продолжительность работы в сутки и тип приводимой машины. Номинальный момент редуктора должен быть не меньше рабочего момента, умноженного на сервис-фактор."}},{"@type":"Question","name":"Как характер нагрузки влияет на сервис-фактор?","acceptedAnswer":{"@type":"Answer","text":"Чем резче и неравномернее нагрузка, тем выше сервис-фактор. Для равномерной спокойной нагрузки Sf ≈ 1,0–1,25, для нагрузки с умеренными толчками — 1,25–1,5, для ударной нагрузки с реверсами и частыми пусками — 1,5–2,0 и выше. Конкретное значение зависит ещё от числа пусков в час и времени работы в сутки."}},{"@type":"Question","name":"Какие примеры равномерной и ударной нагрузки?","acceptedAnswer":{"@type":"Answer","text":"Равномерная нагрузка: ленточные конвейеры с постоянным потоком, вентиляторы, центробежные насосы, мешалки жидкостей. Нагрузка с толчками: пластинчатые конвейеры, поршневые насосы, элеваторы. Ударная нагрузка: дробилки, прессы, вибропитатели, лебёдки и подъёмники с частыми пусками и реверсами, мельницы. Для ударной нагрузки запас по моменту максимальный."}},{"@type":"Question","name":"Почему нельзя подбирать редуктор по рабочему моменту без запаса?","acceptedAnswer":{"@type":"Answer","text":"Если взять редуктор с номинальным моментом точно по рабочему, без сервис-фактора, любой пусковой бросок, удар или реверс кратковременно перегрузит зубчатое зацепление и подшипники. Это ведёт к выкрашиванию зубьев, повышенному износу и сокращению ресурса. Сервис-фактор закладывает запас именно на эти пиковые и циклические нагрузки."}},{"@type":"Question","name":"Как число пусков в час влияет на подбор?","acceptedAnswer":{"@type":"Answer","text":"Каждый пуск — это бросок момента и дополнительный нагрев. Чем больше пусков в час, тем выше сервис-фактор. Редкие пуски (несколько в час) почти не повышают запас, а сотни пусков в час с реверсами требуют существенного увеличения сервис-фактора и иногда выбора усиленного исполнения редуктора."}},{"@type":"Question","name":"Зависит ли сервис-фактор от продолжительности работы?","acceptedAnswer":{"@type":"Answer","text":"Да. Чем дольше редуктор работает в сутки, тем выше требуемый запас. Работа 2–3 часа в сутки требует меньшего сервис-фактора, чем круглосуточная работа 24 часа. Поэтому при подборе указывают и характер нагрузки, и число часов работы в сутки, и число пусков в час."}},{"@type":"Question","name":"Можно ли учесть характер нагрузки при онлайн-подборе?","acceptedAnswer":{"@type":"Answer","text":"Да. В калькуляторе подбора укажите тип приводимой машины и режим работы, а в заявке опишите характер нагрузки, число пусков и часов работы. Инженер подберёт сервис-фактор по таблицам и выберет типоразмер с нужным запасом по моменту, чтобы редуктор работал весь заявленный ресурс."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое характер нагрузки при подборе редуктора?","acceptedAnswer":{"@type":"Answer","text":"Характер нагрузки — это то, как меняется момент во времени при работе механизма. Различают равномерную (спокойную) нагрузку без толчков, нагрузку с умеренными толчками и ударную нагрузку с резкими скачками момента, реверсами и частыми пусками. От характера нагрузки зависит сервис-фактор и, значит, требуемый запас по моменту редуктора."}},{"@type":"Question","name":"Что такое сервис-фактор редуктора?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор (коэффициент эксплуатации, Sf) — это коэффициент запаса, на который умножают рабочий момент при подборе. Он учитывает характер нагрузки, число пусков в час, продолжительность работы в сутки и тип приводимой машины. Номинальный момент редуктора должен быть не меньше рабочего момента, умноженного на сервис-фактор."}},{"@type":"Question","name":"Как характер нагрузки влияет на сервис-фактор?","acceptedAnswer":{"@type":"Answer","text":"Чем резче и неравномернее нагрузка, тем выше сервис-фактор. Для равномерной спокойной нагрузки Sf ≈ 1,0–1,25, для нагрузки с умеренными толчками — 1,25–1,5, для ударной нагрузки с реверсами и частыми пусками — 1,5–2,0 и выше. Конкретное значение зависит ещё от числа пусков в час и времени работы в сутки."}},{"@type":"Question","name":"Какие примеры равномерной и ударной нагрузки?","acceptedAnswer":{"@type":"Answer","text":"Равномерная нагрузка: ленточные конвейеры с постоянным потоком, вентиляторы, центробежные насосы, мешалки жидкостей. Нагрузка с толчками: пластинчатые конвейеры, поршневые насосы, элеваторы. Ударная нагрузка: дробилки, прессы, вибропитатели, лебёдки и подъёмники с частыми пусками и реверсами, мельницы. Для ударной нагрузки запас по моменту максимальный."}},{"@type":"Question","name":"Почему нельзя подбирать редуктор по рабочему моменту без запаса?","acceptedAnswer":{"@type":"Answer","text":"Если взять редуктор с номинальным моментом точно по рабочему, без сервис-фактора, любой пусковой бросок, удар или реверс кратковременно перегрузит зубчатое зацепление и подшипники. Это ведёт к выкрашиванию зубьев, повышенному износу и сокращению ресурса. Сервис-фактор закладывает запас именно на эти пиковые и циклические нагрузки."}},{"@type":"Question","name":"Как число пусков в час влияет на подбор?","acceptedAnswer":{"@type":"Answer","text":"Каждый пуск — это бросок момента и дополнительный нагрев. Чем больше пусков в час, тем выше сервис-фактор. Редкие пуски (несколько в час) почти не повышают запас, а сотни пусков в час с реверсами требуют существенного увеличения сервис-фактора и иногда выбора усиленного исполнения редуктора."}},{"@type":"Question","name":"Зависит ли сервис-фактор от продолжительности работы?","acceptedAnswer":{"@type":"Answer","text":"Да. Чем дольше редуктор работает в сутки, тем выше требуемый запас. Работа 2–3 часа в сутки требует меньшего сервис-фактора, чем круглосуточная работа 24 часа. Поэтому при подборе указывают и характер нагрузки, и число часов работы в сутки, и число пусков в час."}},{"@type":"Question","name":"Можно ли учесть характер нагрузки при онлайн-подборе?","acceptedAnswer":{"@type":"Answer","text":"Да. В калькуляторе подбора укажите тип приводимой машины и режим работы, а в заявке опишите характер нагрузки, число пусков и часов работы. Инженер подберёт сервис-фактор по таблицам и выберет типоразмер с нужным запасом по моменту, чтобы редуктор работал весь заявленный ресурс."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Характер нагрузки определяет, насколько момент колеблется во времени. Спокойные машины — конвейеры, вентиляторы, насосы — работают с равномерной нагрузкой и малым запасом. Машины с толчками — элеваторы, поршневые насосы — требуют умеренного запаса. Ударные машины — дробилки, прессы, подъёмники — нагружают зацепление резкими бросками, и для них сервис-фактор максимальный. Базовый сервис-фактор по характеру нагрузки дополнительно корректируют на число пусков в час и продолжительность работы в сутки: чем чаще пуски и дольше работа, тем больше запас. Недооценка сервис-фактора ведёт к выкрашиванию зубьев и преждевременному износу даже при формально достаточном номинальном моменте. Импортные приводы подбираем как габаритные аналоги, цены на импорт — по запросу. Сервис-фактор по типу машины Тип машины Характер нагрузки · Sf Конвейер ленточный, вентилятор равномерная · 1,0–1,25 Насос центробежный, мешалка равномерная · 1,1–1,25 Элеватор, поршневой насос с толчками · 1,25–1,5 Подъёмник, лебёдка средние удары · 1,5–1,75 Дробилка, пресс, мельница ударная · 1,75–2,0+ Поправки к сервис-фактору Фактор Влияние на Sf До 10 пусков/час минимальная надбавка 10–60 пусков/час +0,1…0,25 Более 60 пусков/час +0,25…0,5, усиленное исполнение Работа 24 ч/сутки верхняя граница диапазона Подобрать редуктор под характер нагрузки можно в калькуляторе подбора или на странице подбора редуктора . Опишите тип машины, число пусков и часов работы — инженер подберёт сервис-фактор и типоразмер с запасом."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -40,8 +43,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -56,3 +59,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -60,3 +63,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -67,6 +70,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Подбор редуктора по характеру нагрузки</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Подбор редуктора по характеру нагрузки</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Подбор редуктора по характеру нагрузки и сервис-фактору</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Подбор редуктора по характеру нагрузки и сервис-фактору — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Подбор редуктора по характеру нагрузки и сервис-фактору</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Подбор редуктора по характеру нагрузки и сервис-фактору — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -94,3 +97,3 @@
+ 
+-  <h2>Сервис-фактор по характеру нагрузки</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/red-coaxial-10.webp" alt="Пример соосного редуктора — Подбор редуктора по характеру нагрузки и сервис-фактору" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Типовое исполнение соосного привода</figcaption></figure><h2>Сервис-фактор по характеру нагрузки</h2>
+   <p>Базовое значение задаётся именно характером нагрузки, далее его корректируют по числу пусков и часам работы:</p>
+@@ -111,3 +114,3 @@
+ 
+-  <h2>Поправки на пуски и время работы</h2>
++  <figure class="art-fig"><img src="../assets/blog-photo/th-calculation.webp" alt="Расчёт момента и сервис-фактора перед подбором — Подбор редуктора по характеру нагрузки и сервис-фактору" loading="lazy" decoding="async" width="1200" height="630"><figcaption>Расчёт момента и сервис-фактора перед подбором</figcaption></figure><h2>Поправки на пуски и время работы</h2>
+   <p>Базовый сервис-фактор корректируют двумя факторами. Каждый пуск — это бросок момента и нагрев; чем больше пусков в час, тем выше коэффициент. Аналогично — чем дольше работа в сутки, тем больше запас:</p>
+@@ -174,8 +177,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -188,3 +192,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -197,3 +201,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -203,3 +207,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -207,3 +211,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -220,4 +224,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

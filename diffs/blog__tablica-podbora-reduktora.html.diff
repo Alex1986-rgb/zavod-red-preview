@@ -1,0 +1,117 @@
+--- main/blog/tablica-podbora-reduktora.html
++++ prod/blog/tablica-podbora-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Таблица подбора редуктора: как правильно читать</title>
++<title>Таблица подбора редуктора: как правильно читать | ZR</title>
+ <meta name="description" content="Как читать таблицу подбора редуктора: что означают колонки мощности, выходных оборотов, момента, передаточного числа, консольной нагрузки и сервис-фактора." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/tablica-podbora-reduktora" />
+-<meta property="og:title" content="Таблица подбора редуктора: как правильно читать" />
++<meta property="og:title" content="Таблица подбора редуктора: как правильно читать | ZR" />
+ <meta property="og:description" content="Разбираем колонки таблицы подбора: мощность, обороты, момент, передаточное число, консольная нагрузка, сервис-фактор." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-nameplate.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Таблица подбора редуктора: как правильно читать","description":"Как читать таблицу подбора редуктора: колонки мощности, выходных оборотов, момента, передаточного числа, консольной нагрузки и сервис-фактора.","image":"https://zavod-red.ru/assets/blog-photo/th-nameplate.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/tablica-podbora-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Таблица подбора редуктора: как правильно читать","description":"Как читать таблицу подбора редуктора: колонки мощности, выходных оборотов, момента, передаточного числа, консольной нагрузки и сервис-фактора.","image":"https://zavod-red.ru/assets/blog-photo/th-engineer-select.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/tablica-podbora-reduktora","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Таблица подбора редуктора","item":"https://zavod-red.ru/blog/tablica-podbora-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что означают колонки в таблице подбора редуктора?","acceptedAnswer":{"@type":"Answer","text":"Стандартная таблица подбора содержит колонки: мощность двигателя (кВт), выходные обороты (об/мин), номинальный крутящий момент на выходном валу (Н·м), передаточное число i, допустимую консольную (радиальную) нагрузку на вал (Н или кН) и сервис-фактор. По этим колонкам сопоставляют требования механизма с возможностями типоразмера."}},{"@type":"Question","name":"С какой колонки начинать чтение таблицы подбора?","acceptedAnswer":{"@type":"Answer","text":"Удобнее начинать с выходных оборотов или передаточного числа, чтобы сузить строки, а затем по колонке момента выбрать строку, где номинальный момент с запасом перекрывает рабочий. После этого проверяют консольную нагрузку и сервис-фактор. Так таблица читается сверху вниз без перебора всех вариантов."}},{"@type":"Question","name":"Что такое консольная нагрузка в таблице подбора?","acceptedAnswer":{"@type":"Answer","text":"Консольная (радиальная) нагрузка — это допустимое поперечное усилие на выходной вал от натяжения цепи, ремня или веса барабана. В таблице её указывают в ньютонах или килоньютонах, нередко с привязкой к точке приложения. Если рабочая радиальная нагрузка выше табличной, типоразмер увеличивают независимо от запаса по моменту."}},{"@type":"Question","name":"Почему в таблице один момент для разных оборотов разный?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент зависит от выходных оборотов и передаточного числа: при меньших оборотах тот же типоразмер передаёт больший момент, но ограничен тепловым режимом и прочностью зацепления. Поэтому в таблице каждому передаточному числу соответствует своя строка момента и допустимой мощности."}},{"@type":"Question","name":"Как в таблице учитывается сервис-фактор?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор показывает, во сколько раз номинальный момент типоразмера превышает рабочий. В таблицах его либо приводят отдельной колонкой, либо требуют выбирать строку так, чтобы фактический коэффициент был не ниже нужного для вашего режима. Для ударной нагрузки и частых пусков требуемый сервис-фактор выше."}},{"@type":"Question","name":"Можно ли по таблице подобрать аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, таблица помогает найти отечественный типоразмер с близкими моментом, передаточным числом и допустимой консольной нагрузкой. Но окончательную замену импортного привода проверяют по присоединительным размерам — фланцу, валам и расположению лап, чтобы аналог встал без переделки."}},{"@type":"Question","name":"Чем таблица подбора отличается от калькулятора?","acceptedAnswer":{"@type":"Answer","text":"Таблица показывает готовые строки характеристик типоразмеров, и подбор ведётся сравнением требований с колонками вручную. Калькулятор делает то же автоматически: вы вводите параметры, а он пересчитывает связанные величины и выдаёт подходящие строки. Оба инструмента дают предварительный результат, который проверяет инженер."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что означают колонки в таблице подбора редуктора?","acceptedAnswer":{"@type":"Answer","text":"Стандартная таблица подбора содержит колонки: мощность двигателя (кВт), выходные обороты (об/мин), номинальный крутящий момент на выходном валу (Н·м), передаточное число i, допустимую консольную (радиальную) нагрузку на вал (Н или кН) и сервис-фактор. По этим колонкам сопоставляют требования механизма с возможностями типоразмера."}},{"@type":"Question","name":"С какой колонки начинать чтение таблицы подбора?","acceptedAnswer":{"@type":"Answer","text":"Удобнее начинать с выходных оборотов или передаточного числа, чтобы сузить строки, а затем по колонке момента выбрать строку, где номинальный момент с запасом перекрывает рабочий. После этого проверяют консольную нагрузку и сервис-фактор. Так таблица читается сверху вниз без перебора всех вариантов."}},{"@type":"Question","name":"Что такое консольная нагрузка в таблице подбора?","acceptedAnswer":{"@type":"Answer","text":"Консольная (радиальная) нагрузка — это допустимое поперечное усилие на выходной вал от натяжения цепи, ремня или веса барабана. В таблице её указывают в ньютонах или килоньютонах, нередко с привязкой к точке приложения. Если рабочая радиальная нагрузка выше табличной, типоразмер увеличивают независимо от запаса по моменту."}},{"@type":"Question","name":"Почему в таблице один момент для разных оборотов разный?","acceptedAnswer":{"@type":"Answer","text":"Номинальный момент зависит от выходных оборотов и передаточного числа: при меньших оборотах тот же типоразмер передаёт больший момент, но ограничен тепловым режимом и прочностью зацепления. Поэтому в таблице каждому передаточному числу соответствует своя строка момента и допустимой мощности."}},{"@type":"Question","name":"Как в таблице учитывается сервис-фактор?","acceptedAnswer":{"@type":"Answer","text":"Сервис-фактор показывает, во сколько раз номинальный момент типоразмера превышает рабочий. В таблицах его либо приводят отдельной колонкой, либо требуют выбирать строку так, чтобы фактический коэффициент был не ниже нужного для вашего режима. Для ударной нагрузки и частых пусков требуемый сервис-фактор выше."}},{"@type":"Question","name":"Можно ли по таблице подобрать аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, таблица помогает найти отечественный типоразмер с близкими моментом, передаточным числом и допустимой консольной нагрузкой. Но окончательную замену импортного привода проверяют по присоединительным размерам — фланцу, валам и расположению лап, чтобы аналог встал без переделки."}},{"@type":"Question","name":"Чем таблица подбора отличается от калькулятора?","acceptedAnswer":{"@type":"Answer","text":"Таблица показывает готовые строки характеристик типоразмеров, и подбор ведётся сравнением требований с колонками вручную. Калькулятор делает то же автоматически: вы вводите параметры, а он пересчитывает связанные величины и выдаёт подходящие строки. Оба инструмента дают предварительный результат, который проверяет инженер."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"В таблице подбора строки сгруппированы по передаточным числам, и для каждого i указаны допустимая мощность двигателя, выходные обороты и номинальный момент. Поскольку момент рассчитывается как T = 9550·P·η/n2, он растёт при снижении выходных оборотов, но ограничен прочностью зацепления и тепловым режимом корпуса. Поэтому максимальный момент типоразмера не равен простому пересчёту мощности — он берётся из таблицы с уже учтёнными ограничениями. Отдельное внимание — колонке консольной нагрузки. Она задаёт предел поперечного усилия на выходной вал и часто оказывается решающей в приводах с цепной или ременной передачей. Если радиальная сила превышает табличный предел, типоразмер увеличивают независимо от запаса по моменту. Финальную проверку дополняют монтажным исполнением и присоединительными размерами, а для импортного аналога — сверкой габаритов; цена импортных позиций указывается по запросу. Колонки и единицы Колонка Единица Мощность P кВт Выходные обороты n2 об/мин Момент T Н·м Передаточное i безразмерное Консольная нагрузка Н или кН Сервис-фактор безразмерный коэффициент Что ограничивает каждая колонка Параметр Что отсекает Момент T перегрузку зацепления и вала Консольная нагрузка износ подшипников от поперечной силы Сервис-фактор работу «впритык» при пусках и реверсах Выходные обороты несоответствие скорости рабочему органу Передаточное i отклонение фактических оборотов Подобрать типоразмер по характеристикам можно через калькулятор подбора редуктора или на странице червячных редукторов . Пришлите параметры или фото шильдика — мы прочитаем таблицу за вас и пришлём предложение."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Таблица подбора редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Таблица подбора редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Таблица подбора редуктора: как правильно читать</h1><img class="blog-hero-img" src="../assets/blog-photo/th-nameplate.webp" alt="Таблица подбора редуктора: как правильно читать — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Таблица подбора редуктора: как правильно читать</h1><img class="blog-hero-img" src="../assets/blog-photo/th-engineer-select.webp" alt="Таблица подбора редуктора: как правильно читать — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -90,3 +93,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — подбор по таблице характеристик" loading="lazy"><figcaption>Каждой строке таблицы соответствует конкретный типоразмер</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор — подбор по таблице характеристик" loading="lazy" width="800" height="600"><figcaption>Каждой строке таблицы соответствует конкретный типоразмер</figcaption></figure>
+ 
+@@ -101,3 +104,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — проверка момента по таблице подбора" loading="lazy"><figcaption>Номинальный момент из таблицы проверяют запасом под режим работы</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — проверка момента по таблице подбора" loading="lazy" width="900" height="675"><figcaption>Номинальный момент из таблицы проверяют запасом под режим работы</figcaption></figure>
+ 
+@@ -164,3 +167,6 @@
+     <tr><th>Передаточное i</th><td>отклонение фактических оборотов</td></tr>
+-  </tbody></table><p>Подобрать типоразмер по характеристикам можно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или на странице <a href="/catalog/chervyachnye#kalkulyator">червячных редукторов</a>. Пришлите параметры или фото шильдика — мы прочитаем таблицу за вас и пришлём предложение.</p></div></details></div></div></section>
++  </tbody></table><p>Подобрать типоразмер по характеристикам можно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или на странице <a href="/catalog/chervyachnye#kalkulyator">червячных редукторов</a>. Пришлите параметры или фото шильдика — мы прочитаем таблицу за вас и пришлём предложение.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -192,8 +198,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -206,3 +213,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -215,3 +222,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -221,3 +228,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -225,3 +232,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -238,4 +245,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

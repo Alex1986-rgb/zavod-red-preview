@@ -1,0 +1,156 @@
+--- main/blog/chervyachnyj-s-tormozom.html
++++ prod/blog/chervyachnyj-s-tormozom.html
+@@ -6,4 +6,4 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Червячный редуктор с тормозом: когда нужно и как заказать</title>
+-<meta name="description" content="Червячные редукторы с тормозом: назначение исполнения, как работает, что указать при заказе, типовые применения." />
++<title>Червячный редуктор с тормозом: когда нужно и как заказать | ZR</title>
++<meta name="description" content="Червячные редукторы с тормозом: назначение исполнения, как работает, что указать при заказе, типовые применения. Исполнение решает конкретную задачу компоновки или режима." />
+ <link rel="canonical" href="https://zavod-red.ru/blog/chervyachnyj-s-tormozom" />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/chervyachnyj-s-tormozom" />
+-<meta property="og:title" content="Червячный редуктор с тормозом: когда нужно и как заказать" />
++<meta property="og:title" content="Червячный редуктор с тормозом: когда нужно и как заказать | ZR" />
+ <meta property="og:description" content="Червячные редукторы с тормозом: назначение исполнения, как работает, что указать при заказе, типовые применения." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-07.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-10.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -33,5 +33,8 @@
+ </style>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Червячный редуктор с тормозом: когда нужно и как заказать", "description": "Червячные редукторы с тормозом: назначение исполнения, как работает, что указать при заказе, типовые применения.", "image": "https://zavod-red.ru/assets/blog-photo/red-worm-07.webp", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/chervyachnyj-s-tormozom"}</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Червячный редуктор с тормозом: когда нужно и как заказать", "description": "Червячные редукторы с тормозом: назначение исполнения, как работает, что указать при заказе, типовые применения.", "image": "https://zavod-red.ru/assets/blog-photo/red-worm-10.webp", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/chervyachnyj-s-tormozom", "datePublished": "2026-07-15", "dateModified": "2026-08-26"}</script>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Исполнение с тормозом", "item": "https://zavod-red.ru/blog/chervyachnyj-s-tormozom"}]}</script>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Опция удорожает сильно?", "acceptedAnswer": {"@type": "Answer", "text": "Умеренно: типовые опции — 10–30% к базе; точную цену даёт КП."}}, {"@type": "Question", "name": "Можно дооснастить позже?", "acceptedAnswer": {"@type": "Answer", "text": "Часть опций — да (рычаг, охлаждение), часть закладывается в конструкцию при изготовлении (фланцы, полый вал)."}}, {"@type": "Question", "name": "Есть на складе?", "acceptedAnswer": {"@type": "Answer", "text": "Ходовые исполнения — да; специфичные собираем 2–3 недели."}}, {"@type": "Question", "name": "Совместимо с аналогом импорта?", "acceptedAnswer": {"@type": "Answer", "text": "Да, исполнения повторяем вместе с присоединительными размерами заменяемой модели."}}, {"@type": "Question", "name": "Как оформить заказ?", "acceptedAnswer": {"@type": "Answer", "text": "Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}}, {"@type": "Question", "name": "Какая доставка по России?", "acceptedAnswer": {"@type": "Answer", "text": "Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Опция удорожает сильно?","acceptedAnswer":{"@type":"Answer","text":"Умеренно: удорожание даёт тормозной узел и связанные с ним посадки; типовые опции — 10–30% к базе, точную цену даёт КП."}},{"@type":"Question","name":"Можно дооснастить позже?","acceptedAnswer":{"@type":"Answer","text":"Часть опций — да (рычаг ручного растормаживания, охлаждение), часть закладывается в конструкцию при изготовлении (фланцы, полый вал), поскольку определяют корпус и выходной вал."}},{"@type":"Question","name":"Есть на складе?","acceptedAnswer":{"@type":"Answer","text":"Ходовые исполнения — да; специфичные собираем 2–3 недели."}},{"@type":"Question","name":"Совместимо с аналогом импорта?","acceptedAnswer":{"@type":"Answer","text":"Да, исполнения повторяем вместе с присоединительными размерами заменяемой модели, включая посадочные места под тормоз и вязкость масла PG/CLP."}},{"@type":"Question","name":"Как оформить заказ?","acceptedAnswer":{"@type":"Answer","text":"Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}},{"@type":"Question","name":"Какая доставка по России?","acceptedAnswer":{"@type":"Answer","text":"Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -65,6 +68,6 @@
+ </header>
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Исполнение с тормозом</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Исполнение с тормозом</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Исполнения</div>
+-  <h1>Червячный редуктор с тормозом</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-07.webp" alt="Червячный редуктор с тормозом — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Червячный редуктор с тормозом</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-10.webp" alt="Червячный редуктор с тормозом — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~4 минут</p>
+@@ -72,16 +75,14 @@
+ 
+-<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
++<section class="section" style="padding-top:40px"><div class="wrap"><div class="art" data-ai="2">
+   <p>Разбираем востребованное исполнение червячных редукторов — с тормозом: электромагнитный тормоз двигателя плюс самоторможение пары — для подъёма и удержания.</p>
+   <h2>Как это работает</h2>
+-  <p>Исполнение решает конкретную задачу компоновки или режима. Электромагнитный тормоз двигателя плюс самоторможение пары — для подъёма и удержания. Заказывается опцией к базовой модели — цена и срок меняются умеренно.</p>
+-
+-  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный мотор-редуктор — Исполнение с тормозом" loading="lazy"><figcaption>Червячный мотор-редуктор производства «Завода Редукторов»</figcaption></figure>
++  <p>Тормоз — опция к базовой модели ZR. Он нужен, когда по режиму работы требуется фиксация вала при остановке или удержание груза на весу. Самоторможение червячной пары в таких случаях уже заложено конструкцией, поэтому дополнительный тормоз ставится только при необходимости. Опция влияет на цену и срок изготовления.</p>
++
++  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный мотор-редуктор — Исполнение с тормозом" loading="lazy" width="800" height="600"><figcaption>Червячный мотор-редуктор производства «Завода Редукторов»</figcaption></figure>
+   <h2>Когда выбирать</h2>
+-  <p>Типовые случаи: конвейеры, подъёмники, ворота, дозаторы, мешалки малых мощностей — там, где базовое исполнение требует лишних узлов (рамы, муфты, внешнего тормоза) либо не проходит по режиму.</p>
++  <p>Типовые применения: конвейеры подъёма, грузовые подъёмники, ворота, дозаторы, мешалки малой мощности. В этих механизмах базовое исполнение без тормоза потребовало бы внешнего тормозного узла, дополнительной рамы или муфты, либо не проходит по режиму пусков и реверса.</p>
+   <h2>Что указать при заказе</h2>
+-  <ul>
+-    <li>базовая модель (типоразмер, i, монтажная позиция);</li>
+-    <li>параметры опции — момент тормоза / размеры фланца / диаметр полого вала;</li>
+-    <li>условия среды: температура, пыль, влага.</li>
+-  </ul>
++  <ul><li>типоразмер, передаточное число i и монтажное положение M1–M6 по факту установки;</li>
++    <li>параметры тормозной опции — момент тормоза, размеры фланца, диаметр полого вала;</li>
++    <li>условия среды: температура, пыль, влага, требования к IP.</li></ul>
+   <div class="note">Быстрый способ: в <a href="/podbor">калькуляторе подбора</a> выберите тип редуктора, задайте мощность, обороты и момент — получите подходящие типоразмеры ZR с импортными аналогами (SEW, NORD, Motovario и др.) и выгрузкой в CSV.</div>
+@@ -102,7 +103,7 @@
+   <p>Собранные данные вводите в <a href="/podbor">калькулятор подбора</a> — он покажет подходящие типоразмеры с обозначениями ZR и ГОСТ и импортными аналогами, а результат выгрузит в CSV для спецификации.</p>
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — Исполнение с тормозом" loading="lazy"><figcaption>Производство «Завода Редукторов»: механообработка, сборка, обкатка, ОТК</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — Исполнение с тормозом" loading="lazy" width="900" height="675"><figcaption>Производство «Завода Редукторов»: механообработка, сборка, обкатка, ОТК</figcaption></figure>
+   <h2>Доставка, оплата и гарантия</h2>
+-  <p>Отгружаем со склада в Челябинске любой транспортной компанией по всей России и СНГ: счёт для юрлиц, оплата картой для частных заказчиков, отсрочка — по договору поставки. Каждый редуктор проходит обкатку и ОТК, в комплекте паспорт с характеристиками и гарантия завода 12 месяцев с ввода в эксплуатацию. Ходовые типоразмеры отгружаем за 1–3 дня, изготовление под заказ — 2–3 недели.</p>
++  <p>Отгружаем со склада в Челябинске любой транспортной компанией по всей России и СНГ: счёт для юрлиц, оплата картой для частных заказчиков, отсрочка — по договору поставки. Каждый редуктор проходит обкатку и ОТК, в комплекте паспорт с характеристиками и гарантия завода 36 месяцев с даты отгрузки. Ходовые типоразмеры отгружаем за 1–3 дня, изготовление под заказ — 2–3 недели.</p>
+   <h2>Вывод</h2>
+-  <p>Правильный путь к решению задачи короткий: соберите параметры по чек-листу, прогоните их через <a href="/podbor">калькулятор</a> или пришлите шильдик инженеру — и получите КП с точной ценой и сроком в тот же день. Подбор бесплатный, ответственность за соответствие несёт завод, а склад и производство в Челябинске закрывают и срочные замены, и плановые программы.</p>
++  <p>Соберите исходные данные по чек-листу из таблицы, проверьте их в <a href="/podbor">калькуляторе</a> или отправьте шильдик инженеру. На выходе — КП с точной ценой и сроком. Подбор бесплатный, за соответствие отвечает завод.</p>
+ </div></div></section>
+@@ -114,4 +115,4 @@
+     <div class="cat-faq">
+-      <details><summary>Опция удорожает сильно?</summary><div>Умеренно: типовые опции — 10–30% к базе; точную цену даёт КП.</div></details>
+-      <details><summary>Можно дооснастить позже?</summary><div>Часть опций — да (рычаг, охлаждение), часть закладывается в конструкцию при изготовлении (фланцы, полый вал).</div></details>
++      <details><summary>Опция удорожает сильно?</summary><div>Умеренно: удорожание даёт тормозной узел и связанные с ним посадки; типовые опции — 10–30% к базе, точную цену даёт КП.</div></details>
++      <details><summary>Можно дооснастить позже?</summary><div>Часть опций — да (рычаг ручного растормаживания, охлаждение), часть закладывается в конструкцию при изготовлении (фланцы, полый вал), поскольку определяют корпус и выходной вал.</div></details>
+       <details><summary>Есть на складе?</summary><div>Ходовые исполнения — да; специфичные собираем 2–3 недели.</div></details>
+@@ -119,6 +120,9 @@
+     <div class="cat-faq">
+-      <details><summary>Совместимо с аналогом импорта?</summary><div>Да, исполнения повторяем вместе с присоединительными размерами заменяемой модели.</div></details>
++      <details><summary>Совместимо с аналогом импорта?</summary><div>Да, исполнения повторяем вместе с присоединительными размерами заменяемой модели, включая посадочные места под тормоз и вязкость масла PG/CLP.</div></details>
+       <details><summary>Как оформить заказ?</summary><div>Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой.</div></details>
+       <details><summary>Какая доставка по России?</summary><div>Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка.</div></details>
+-    </div>
++    
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+   </div>
+@@ -151,8 +155,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -165,3 +170,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -174,3 +179,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -180,3 +185,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -184,3 +189,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -197,4 +202,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

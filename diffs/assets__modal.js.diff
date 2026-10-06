@@ -1,0 +1,600 @@
+--- main/assets/modal.js
++++ prod/assets/modal.js
+@@ -1,2 +1,5 @@
+ /* Всплывающая форма-заявка (popup) — единая по всему сайту. Самодостаточный модуль. */
++/* Сайт light-only: переключатель тем скрыт (hdr.css). Форсим светлую и чистим прежний
++   выбор — иначе тот, кто раньше успел включить «тёмную», застревал в недоведённой теме. */
++try{document.documentElement.setAttribute('data-theme','light');localStorage.removeItem('zr_theme');}catch(e){}
+ /* Глобальная страховка: форма поиска в шапке НИКОГДА не делает нативный submit —
+@@ -5,2 +8,19 @@
+ document.addEventListener('submit',function(e){var f=e.target;if(f&&f.classList&&f.classList.contains('msearch')){e.preventDefault();}},true);
++/* П.2 ТЗ: в шапке — 2 телефона + почта КРУПНО (почту копируют). Разметка топбара на разных
++   страницах разная (email + один телефон), поэтому нормализуем её JS-энхансером на всех
++   страницах, без правки 93k HTML. Идемпотентно. Стили — .tb-mail/.tb-phone в hdr.css. */
++(function(){
++  function enhTopbar(){
++    var box=document.querySelector('.hdr2 .tb-contacts'); if(!box||box.__zrTb)return; box.__zrTb=1;
++    var mail=box.querySelector('a[href^="mailto:"]');
++    // убираем старые разделители «·» и прежние телефоны — соберём заново в нужном порядке
++    Array.prototype.forEach.call(box.querySelectorAll('span'),function(s){s.remove();});
++    Array.prototype.forEach.call(box.querySelectorAll('a[href^="tel:"]'),function(a){a.remove();});
++    if(mail){ mail.classList.add('tb-mail'); mail.setAttribute('href','mailto:zr@zavod-red.ru'); mail.textContent='zr@zavod-red.ru'; }
++    [['+7 (495) 151-41-02','+74951514102'],['+7 (904) 953-41-02','+79049534102']].forEach(function(p){
++      var a=document.createElement('a'); a.className='tb-phone'; a.href='tel:'+p[1]; a.textContent=p[0]; box.appendChild(a);
++    });
++  }
++  if(document.readyState!=='loading')enhTopbar(); else document.addEventListener('DOMContentLoaded',enhTopbar);
++})();
+ (function(){
+@@ -33,2 +53,5 @@
+    + '.zr-file input{position:absolute;left:-9999px}'
++   /* Само поле угнано за экран, поэтому при обходе с клавиатуры фокус был не виден:
++      человек не понимал, на чём стоит. Рисуем рамку на видимой плашке-ярлыке. */
++   + '.zr-file:focus-within label{border-color:#cf1616;box-shadow:0 0 0 3px rgba(207,22,22,.16)}'
+    + '.zr-file .zr-fico{font-size:17px}'
+@@ -38,2 +61,8 @@
+    + '.zr-consent a{color:#1f5f8b;text-decoration:underline}'
++   /* Подсветка «почему кнопка не сработала»: галочка теперь не предустановлена,
++      и без видимой причины отказ читается как поломка формы. */
++   + '.zr-consent.need{background:#fdeceb;border:1px solid #cf1616;border-radius:9px;padding:8px 10px 8px 30px;color:#a51212;animation:zrshake .32s}'
++   + '.zr-consent.need input{left:9px;top:9px}'
++   + '@keyframes zrshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}'
++   + '@media(prefers-reduced-motion:reduce){.zr-consent.need{animation:none}}'
+    + '.zr-btn{width:100%;background:#cf1616;color:#fff;font-weight:700;font-size:16px;padding:15px;border:0;border-radius:10px;cursor:pointer;transition:.18s}'
+@@ -55,3 +84,3 @@
+    + '<div class="zr-modal__box" role="dialog" aria-modal="true" aria-label="Оставить заявку">'
+-   + '<button class="zr-modal__x" data-close aria-label="Закрыть">&times;</button>'
++   + '<button class="zr-modal__x" type="button" data-close aria-label="Закрыть">&times;</button>'
+    + '<h3>Получите расчёт стоимости</h3>'
+@@ -72,15 +101,8 @@
+    + '<div class="zr-hp"><input type="text" name="work_email" tabindex="-1" autocomplete="off" readonly aria-hidden="true"></div>'
+-   + '<select class="zr-sel" id="zrType">'
+-   + '<option value="" selected>Какой редуктор нужен?</option>'
+-   + '<option>Червячный</option>'
+-   + '<option>Цилиндрический</option>'
+-   + '<option>Плоский цилиндрический</option>'
+-   + '<option>Соосно-цилиндрический</option>'
+-   + '<option>Цилиндро-конический</option>'
+-   + '<option>Вариатор</option>'
+-   + '<option>Мотор-редуктор / электродвигатель</option>'
+-   + '<option>Аналог импортного (SEW, NORD, Bonfiglioli…)</option>'
+-   + '<option>Другое / затрудняюсь ответить</option>'
+-   + '</select>'
+-   + '<input class="zr-in" type="text" id="zrName" placeholder="Ваше имя" required>'
++   /* Первые два поля (тип редуктора и «Ваше имя») убраны — облегчаем форму (правка ТЗ):
++      достаточно телефона/почты, тип и имя инженер уточнит при звонке. Скрытые заглушки
++      #zrType/#zrName сохранены (value=''), чтобы старый обработчик submit не падал на
++      getElementById(...).value и product_title/CRM-поле имени продолжали работать. */
++   + '<input type="hidden" id="zrType" value="">'
++   + '<input type="hidden" id="zrName" value="">'
+    /* Жёсткий pattern="\+7 \(\d{3}\)…" УБРАН: он требовал точь-в-точь формат маски.
+@@ -93,4 +115,12 @@
+    + '<textarea class="zr-in" id="zrMsg" rows="2" placeholder="Или опишите задачу: мощность, обороты, что заменяем"></textarea>'
+-   + '<label class="zr-consent"><input type="checkbox" id="zrConsent" required> Отправляя заявку, я даю согласие на обработку персональных данных в соответствии с <a href="'+PRIVACY+'" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>'
+    + '<button class="zr-btn" type="submit">Получить расчёт</button>'
++   /* Согласие — ПОД кнопкой и БЕЗ предустановленной галочки (152-ФЗ, ст. 9: согласие
++      должно быть конкретным и даваться активным действием; заранее проставленная
++      галочка активным действием не считается — это прямой риск по проверке РКН).
++      Формулировка от первого лица («Я даю согласие»), а не «нажимая кнопку, вы
++      соглашаетесь»: последнее — про подразумеваемое согласие, которого для ПДн мало.
++      Чтобы снятая галочка не превратилась в «кнопка не работает», при попытке
++      отправки без неё блок подсвечивается, прокручивается в зону видимости и
++      получает фокус — см. needConsent() ниже. */
++   + '<label class="zr-consent" id="zrConsentLbl"><input type="checkbox" id="zrConsent" required> Я даю согласие на обработку моих персональных данных согласно <a href="'+PRIVACY+'" target="_blank" rel="noopener">политике конфиденциальности</a>.</label>'
+    + '</form></div></div>';
+@@ -102,7 +132,44 @@
+   var fileInp=document.getElementById('zrFile');
++  // A11y: у полей формы только placeholder — даём доступные имена для скринридеров (select без имени вовсе).
++  var _aria={zrType:'Тип заявки',zrName:'Ваше имя',zrPhone:'Телефон',zrEmail:'Электронная почта',zrMsg:'Сообщение'};
++  Object.keys(_aria).forEach(function(id){var el=document.getElementById(id);if(el&&!el.getAttribute('aria-label'))el.setAttribute('aria-label',_aria[id]);});
+   var res=modal.querySelector('.zr-res');
+   function show(m,t){res.className='zr-res show'+(t?' '+t:'');res.innerHTML=m;var box=modal.querySelector('.zr-modal__box');if(box)box.scrollTop=0;}
++  /* Галочка согласия больше не предустановлена (152-ФЗ). Чтобы отказ не выглядел
++     «кнопка не нажимается», объясняем причину сразу тремя способами: текст в шапке
++     формы, подсветка самой галочки и фокус на ней. Сообщение в .zr-res прокручивает
++     форму наверх, поэтому галочку дополнительно подтягиваем в зону видимости. */
++  function needConsent(){
++    var lbl=document.getElementById('zrConsentLbl'),cb=document.getElementById('zrConsent');
++    show('Чтобы отправить заявку, отметьте согласие на обработку персональных данных — галочка под кнопкой.','err');
++    if(lbl){lbl.classList.remove('need');void lbl.offsetWidth;lbl.classList.add('need');
++      try{lbl.scrollIntoView({block:'nearest'});}catch(e){}}
++    if(cb){try{cb.focus({preventScroll:true});}catch(e){cb.focus();}}
++  }
++  (function(){var cb=document.getElementById('zrConsent');if(!cb)return;
++    cb.addEventListener('change',function(){if(cb.checked){var l=document.getElementById('zrConsentLbl');if(l)l.classList.remove('need');}});})();
+   var _lastFocus=null;
+-  function open(e){if(e)e.preventDefault();_lastFocus=document.activeElement;res.className='zr-res';res.innerHTML='';form.style.display='';var i=document.getElementById('zrIntro');if(i)i.style.display='';modal.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('zrType').focus();},50);}
+-  function close(){modal.hidden=true;document.body.style.overflow='';if(_lastFocus&&_lastFocus.focus){try{_lastFocus.focus();}catch(e){}}}
++  function open(e){if(e)e.preventDefault();_lastFocus=document.activeElement;res.className='zr-res';res.innerHTML='';var _cl=document.getElementById('zrConsentLbl');if(_cl)_cl.classList.remove('need');form.style.display='';var i=document.getElementById('zrIntro');if(i)i.style.display='';modal.hidden=false;lockScroll(true);setTimeout(function(){var f=document.getElementById('zrPhone');if(f)f.focus();},50);}
++  function close(){modal.hidden=true;lockScroll(false);if(_lastFocus&&_lastFocus.focus){try{_lastFocus.focus();}catch(e){}}}
++  /* Блокировка фона. Одного overflow:hidden на <body> НЕ хватало: на части страниц
++     (contacts, catalog — там у html/body своя вёрстка) прокручивается корневой
++     элемент, а не body, и страница уезжала под открытой формой — человек
++     возвращался после закрытия совсем в другое место. Глушим оба и в придачу
++     фиксируем позицию: iOS Safari игнорирует overflow на html/body при
++     инерционном скролле. */
++  var _scrollY=0;
++  function lockScroll(on){
++    var b=document.body,h=document.documentElement;
++    if(on){
++      _scrollY=window.pageYOffset||h.scrollTop||0;
++      h.style.overflow='hidden';
++      b.style.overflow='hidden';
++      b.style.position='fixed';b.style.top=(-_scrollY)+'px';b.style.left='0';b.style.right='0';b.style.width='100%';
++    }else{
++      h.style.overflow='';
++      b.style.overflow='';
++      b.style.position='';b.style.top='';b.style.left='';b.style.right='';b.style.width='';
++      window.scrollTo(0,_scrollY);
++    }
++  }
+   function trapTab(e){
+@@ -110,3 +177,11 @@
+     var box=modal.querySelector('.zr-modal__box'); if(!box)return;
+-    var f=[].slice.call(box.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(el){return el.offsetParent!==null;});
++    var f=[].slice.call(box.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(el){
++      // Ловушка для ботов (.zr-hp) спрятана за экран left:-9999px, поэтому
++      // offsetParent у неё НЕ null и она попадала в список как «первый» элемент:
++      // Shift+Tab с телефона уводил фокус в невидимое поле. Выкидываем её и всё,
++      // что явно убрано из tab-порядка.
++      if(el.closest&&el.closest('.zr-hp'))return false;
++      if(el.getAttribute('tabindex')==='-1')return false;
++      return el.offsetParent!==null;
++    });
+     if(!f.length)return;
+@@ -158,13 +233,21 @@
+     var type=document.getElementById('zrType').value;
+-    if(document.getElementById('zrName').value.trim()===''){show('Укажите, как к вам обращаться.','err');return;}
+-    /* Телефон проверяем по количеству цифр, а не по длине строки с маской: при
+-       автозаполнении браузер вставляет свой формат («+79991234567», «8 999 …»),
+-       маска на него не срабатывает, и проверка на length>=18 отвергала верный номер. */
+-    if(ph.value.replace(/\D/g,'').length<11){show('Введите телефон полностью: +7 (XXX) XXX-XX-XX.','err');return;}
+-    /* Почта обязательна: она уходит в Reply-To письма, по ней менеджер отвечает
+-       клиенту, и по ней же CRM/Битрикс видит внешнего собеседника и заводит лид. */
++    /* Проверка имени убрана: поле удалено из формы (облегчение ТЗ). Имя уточняет инженер. */
++    /* Достаточно ОДНОГО контакта — телефон ИЛИ почта. Требовать оба — лишний барьер
++       (особенно на мобиле), лиды отваливались. Цифры телефона считаем, а не длину маски:
++       автозаполнение вставляет свой формат, и проверка по длине строки отвергала верный номер. */
++    // Автофокус телефона подставляет префикс «+7 (» (1 цифра). Считаем телефон с ≤1 цифрой
++    // ПУСТЫМ, иначе заявка «только по почте» падала с ошибкой «введите телефон полностью»
++    // (регрессия облегчённой формы: терялись email-лиды на десктопе).
++    var _phDigits=ph.value.replace(/\D/g,'');
++    var _phRaw=(_phDigits.length<=1)?'':ph.value.trim(), _phOk=_phDigits.length>=11;
+     var _em=document.getElementById('zrEmail').value.trim();
+-    if(_em===''){show('Укажите почту — на неё пришлём коммерческое предложение.','err');return;}
+-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(_em)){show('Проверьте почту: похоже, в адресе опечатка.','err');return;}
+-    if(!document.getElementById('zrConsent').checked){show('Отметьте согласие на обработку персональных данных.','err');return;}
++    var _emOk=_em!=='' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(_em);
++    /* Порядок проверок важен. Раньше первым шло «оставьте телефон или почту», и
++       человек, набравший половину номера или почту с опечаткой, получал именно его:
++       поле-то он заполнил, а ему отвечают «оставьте контакт». Сначала разбираем то,
++       что человек уже начал вводить, и только если оба поля пусты — просим контакт. */
++    if(_phRaw!=='' && !_phOk){show('Введите телефон полностью: +7 (XXX) XXX-XX-XX.','err');ph.focus();return;}
++    if(_em!=='' && !_emOk){show('Проверьте почту: похоже, в адресе опечатка.','err');document.getElementById('zrEmail').focus();return;}
++    if(!_phOk && !_emOk){show('Оставьте телефон или почту — как с вами связаться.','err');ph.focus();return;}
++    if(!document.getElementById('zrConsent').checked){needConsent();return;}
+     if(fileInp.files&&fileInp.files[0]&&fileInp.files[0].size>MAXB){show('Файл больше 10 МБ. Сожмите его или отправьте заявку без файла — мы запросим его в ответ.','err');return;}
+@@ -172,3 +255,3 @@
+     fd.append('work_email','');
+-    fd.append('text-562',document.getElementById('zrName').value);
++    fd.append('text-562',document.getElementById('zrName').value||'Клиент с сайта');
+     fd.append('tel-535',ph.value);
+@@ -247,3 +330,3 @@
+ 
+-/* ===== Плавающий виджет «Напишите нам» (Telegram / MAX / Почта) ===== */
++/* ===== Плавающий виджет «Напишите нам» (MAX / заявка) ===== */
+ (function(){
+@@ -251,3 +334,7 @@
+   var TG   = 'https://t.me/+79511178737';           // по номеру (работает, если в приватности TG «номер видят все»)
+-  var MAX  = 'https://max.ru/u/f9LHodD0cOIBbNxN8VFtBfWRqU_P-puLvgjJREORzznuFy0Pt_mY02s_NoI'; // персональная ссылка-приглашение MAX (МАХЗавод ООО НИИ АТТ)
++  // MAX. Ссылка по номеру (max.ru/+7995…) отдаёт 404 — проверено 05.09.2026 курлом:
++  // кнопка в виджете вела в никуда. Рабочий формат сейчас только веб-клиентский,
++  // с идентификатором профиля; max.ru/u/<id>, max.ru/id<id>, max.ru/chat/<id> тоже 404.
++  // Если снова отвалится — проверять формат курлом, а не полагаться на вид ссылки.
++  var MAX  = 'https://web.max.ru/395024719';        // +7 995 380-46-01
+   var MAIL = 'mailto:zr@zavod-red.ru';
+@@ -283,2 +370,9 @@
+ 
++  /* MAX в виджете — полноценный канал связи (с отдельной целью messenger_max).
++     Заявка открывает модальную форму (цель zayavka по факту отправки).
++     ВАЖНО: если в Метрике включены АВТОЦЕЛИ («клик по мессенджеру», «клик по email»,
++     «отправка формы»), они срабатывают сами, мимо этого кода, и в Директе могут
++     учитываться как конверсии. Отключается только в интерфейсе Метрики:
++     Настройка счётчика → Цели → автоцели; в Директе — оставить конверсией zayavka
++     и messenger_max. Кодом автоцели не выключаются. */
+   var html=''
+@@ -286,4 +380,5 @@
+    +'<div class="zrw__panel">'
++   +'<a class="zrw__item ai" href="#" data-zrchat>'+chat+'Спросить ИИ-консультанта</a>'
+    +'<a class="zrw__item mx" href="'+MAX+'" target="_blank" rel="noopener">'+mx+'MAX</a>'
+-   +'<a class="zrw__item ml" href="'+MAIL+'">'+ml+'Почта</a>'
++   +'<a class="zrw__item ml" href="#zayavka" data-zayavka>'+ml+'Оставить заявку</a>'
+    +'</div>'
+@@ -294,2 +389,12 @@
+   var w=document.getElementById('zrWidget');
++  /* Умный чат (ИИ-консультант) — грузится лениво, только по клику: assets/zr-chat.js. */
++  window.zrOpenChat=function(){
++    if(window.zrChatOpen){window.zrChatOpen();return;}
++    var s=document.createElement('script');s.src='/assets/zr-chat.js?v=1';s.async=true;
++    s.onload=function(){if(window.zrChatOpen)window.zrChatOpen();};document.head.appendChild(s);
++  };
++  document.addEventListener('click',function(e){
++    var c=e.target.closest&&e.target.closest('[data-zrchat]');
++    if(!c)return; e.preventDefault(); w.classList.remove('open'); window.zrOpenChat();
++  });
+   w.querySelector('.zrw__toggle').addEventListener('click',function(){w.classList.toggle('open');});
+@@ -297,13 +402,3 @@
+ 
+-  /* Переход в MAX — это НЕ заявка, поэтому даём ему собственную цель messenger_max,
+-     чтобы в отчётах он не смешивался с целью zayavka (она шлётся только по факту
+-     принятой заявки).
+-     Пункт «Почта» (.ml) НЕ шлёт цель: mailto перехватывается (см. ниже) и вместо
+-     почтового клиента открывается форма заявки — засчитается zayavka по факту
+-     отправки, а отдельная messenger_mail только вводила бы в заблуждение.
+-     ВАЖНО: если в Метрике включены АВТОЦЕЛИ («клик по мессенджеру», «клик по email»,
+-     «отправка формы»), они срабатывают сами, мимо этого кода, и в Директе могут
+-     учитываться как конверсии. Отключается только в интерфейсе Метрики:
+-     Настройка счётчика → Цели → автоцели; в Директе — оставить конверсией одну
+-     цель zayavka. Кодом это не выключается. */
++  /* MAX → мессенджер (цель messenger_max), Заявка → форма (zayavka по факту отправки). */
+   w.addEventListener('click',function(e){
+@@ -324,3 +419,4 @@
+    +'.zr-mbar svg{width:18px;height:18px;flex:0 0 auto}'
+-   +'@media(max-width:720px){.zr-mbar{display:flex}body{padding-bottom:70px}.zrw{bottom:80px}.zr-cookie{bottom:80px}}';
++   +'.zr-mbar .zrmb-ai{flex:0 0 56px;font-weight:800}'
++   +'@media(max-width:1024px){.zr-mbar{display:flex}body{padding-bottom:70px}.zrw{display:none}.zr-cookie{bottom:80px}}';
+   var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+@@ -330,3 +426,5 @@
+   bar.className='zr-mbar';
+-  bar.innerHTML='<a class="zrmb-lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
++  bar.innerHTML='<a class="zrmb-call" href="tel:'+TEL+'">'+phone+'Позвонить</a>'
++    +'<a class="zrmb-call zrmb-ai" href="#" data-zrchat aria-label="Спросить ИИ-консультанта">ИИ</a>'
++    +'<a class="zrmb-lead" href="#zayavka" data-zayavka>'+spark+'Получить расчёт</a>';
+   document.body.appendChild(bar);
+@@ -381,2 +479,15 @@
+   var ACTION='/api/feedback.php';
++  /* Подсветка неотмеченного согласия на статичных формах (445 страниц). Стили кладём
++     отсюда, а не в inner.css: модуль подключён везде, а разметку страниц не трогаем. */
++  try{var _s=document.createElement('style');
++    _s.textContent='.lead-form label.zr-need,.lead-form .consent.zr-need{display:block;background:#fdeceb;'
++      +'border:1px solid #cf1616;border-radius:9px;padding:8px 10px;color:#a51212;animation:zrneed .32s}'
++      +'@keyframes zrneed{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}'
++      +'@media(prefers-reduced-motion:reduce){.lead-form label.zr-need{animation:none}}';
++    document.head.appendChild(_s);}catch(_e){}
++  document.addEventListener('change',function(e){
++    var c=e.target; if(!c||c.type!=='checkbox'||!c.checked)return;
++    var l=c.closest&&(c.closest('label')||c.parentNode);
++    if(l&&l.classList)l.classList.remove('zr-need');
++  },true);
+   document.addEventListener('submit',function(e){
+@@ -385,2 +496,6 @@
+     e.preventDefault();
++    /* Двойная отправка. Кнопку мы ниже блокируем (btn.disabled), но форму можно
++       отправить и с клавиатуры — Enter в любом текстовом поле порождает submit мимо
++       кнопки. Без флага нетерпеливый человек создавал два одинаковых лида в CRM. */
++    if(form.__zrSending)return;
+     // Honeypot на клиенте не проверяем — см. пояснение у модальной формы выше:
+@@ -404,11 +519,36 @@
+     var email=emailEl?emailEl.value.trim():'';
+-    if(!name){ show('Укажите имя.','err'); return; }
+-    /* Почта обязательна и здесь: уходит в Reply-To, по ней отвечают клиенту и по ней
+-       CRM/Битрикс видит внешнего собеседника. Проверяем, только если поле есть в форме. */
+-    if(emailEl){
+-      if(email===''){ show('Укажите почту — на неё пришлём коммерческое предложение.','err'); return; }
+-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ show('Проверьте почту: похоже, в адресе опечатка.','err'); return; }
+-    }
+-    if(phoneEl&&(phone.replace(/\D/g,'').length<10)&&!email){ show('Укажите корректный телефон или email.','err'); return; }
+-    if(consent&&!consent.checked){ show('Подтвердите согласие на обработку данных.','err'); return; }
++    // Облегчённый режим (атрибут data-light="1" на форме): имя необязательно, достаточно
++    // телефона ИЛИ почты — как в модалке (правка ТЗ). Формы БЕЗ атрибута (напр. contacts)
++    // сохраняют строгую проверку: имя + почта обязательны.
++    var light = form.getAttribute && form.getAttribute('data-light')==='1';
++    var _emOk = email!=='' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
++    var _phOk = phone.replace(/\D/g,'').length>=10;
++    if(light){
++      if(!_phOk && !_emOk){ show('Оставьте телефон или почту — как с вами связаться.','err'); return; }
++      if(phone!=='' && !_phOk && !_emOk){ show('Введите телефон полностью или укажите почту.','err'); return; }
++      if(email!=='' && !_emOk){ show('Проверьте почту: похоже, в адресе опечатка.','err'); return; }
++    }else{
++      if(!name){ show('Укажите имя.','err'); return; }
++      /* Почта обязательна и здесь: уходит в Reply-To, по ней отвечают клиенту и по ней
++         CRM/Битрикс видит внешнего собеседника. Проверяем, только если поле есть в форме. */
++      if(emailEl){
++        if(email===''){ show('Укажите почту — на неё пришлём коммерческое предложение.','err'); return; }
++        if(!_emOk){ show('Проверьте почту: похоже, в адресе опечатка.','err'); return; }
++      }
++      if(phoneEl&&!_phOk&&!email){ show('Укажите корректный телефон или email.','err'); return; }
++    }
++    /* Начатый, но недобранный номер («+7 (495) 15») раньше уезжал в CRM как есть,
++       если почта была валидна: менеджер получал лид с нерабочим телефоном. Пустое
++       поле и «затравку» маски («+7 (») по-прежнему считаем отсутствием номера. */
++    if(phoneEl && phone.replace(/\D/g,'').length>1 && !_phOk){
++      show('Введите телефон полностью: +7 (XXX) XXX-XX-XX — или очистите поле.','err');
++      try{phoneEl.focus();}catch(_e){} return;
++    }
++    if(consent&&!consent.checked){
++      show('Чтобы отправить заявку, отметьте согласие на обработку персональных данных.','err');
++      var _cl=consent.closest('label')||consent.parentNode;
++      if(_cl&&_cl.classList){_cl.classList.remove('zr-need');void _cl.offsetWidth;_cl.classList.add('zr-need');}
++      try{consent.focus({preventScroll:true});}catch(_e){try{consent.focus();}catch(_e2){}}
++      return;
++    }
+     var fd=new FormData();
+@@ -428,2 +568,3 @@
+     if(btn){btn.disabled=true;var _t=btn.textContent;btn.textContent='Отправляем…';}
++    form.__zrSending=1;
+     show('Отправляем заявку…','busy');
+@@ -436,2 +577,3 @@
+       clearTimeout(_to);
++      form.__zrSending=0;
+       if(btn){btn.disabled=false;btn.textContent=_t;}
+@@ -447,2 +589,3 @@
+       clearTimeout(_to);
++      form.__zrSending=0;
+       if(btn){btn.disabled=false;btn.textContent=_t;}
+@@ -501,3 +644,3 @@
+     var TYPEW={червяч:0,worm:0,соосн:1,coaxial:1,inline:1,коническ:2,bevel:2,плоск:3,flat:3,цилиндр:4,helical:4};
+-    var STOP={редуктор:1,редуктора:1,редукторы:1,мотор:1,моторредуктор:1,привод:1,купить:1,аналог:1,цена:1};
++    var STOP={редуктор:1,редуктора:1,редукторы:1,мотор:1,моторредуктор:1,привод:1,приводы:1,купить:1,аналог:1,цена:1,gear:1,gearbox:1,gearmotor:1,motor:1,motoreducer:1,reducer:1,drive:1,buy:1,price:1};
+     /* Единицы измерения — не считаем их поисковыми токенами (значение берём отдельно). */
+@@ -505,2 +648,64 @@
+     var IMG={0:'cat_worm',1:'cat_coaxial',2:'cat_bevel',3:'cat_flat',4:'cat_cylindrical'};
++    /* ═══ Умный разбор запроса ═══
++       Клиент почти никогда не пишет так, как лежит в базе. Четыре типовых расхождения:
++       1) забыл переключить раскладку — «ыуц» вместо «sew», «мщквж» вместо «nord»;
++       2) пишет бренд кириллицей или наше обозначение латиницей — «нмрв», «MP 2»;
++       3) опускает ведущий ноль — «NMRV 63», а в каталоге «NMRV 063» (таких моделей 73);
++       4) спрашивает не модель, а раздел — «планетарный», «вариатор», «чертежи». */
++    var KB_RU='йцукенгшщзхъфывапролджэячсмитьбю', KB_EN="qwertyuiop[]asdfghjkl;'zxcvbnm,.";
++    function swapLay(str){ var ru=0,en=0,i,c,out='';
++      for(i=0;i<str.length;i++){ c=str[i].toLowerCase(); if(KB_RU.indexOf(c)>=0)ru++; else if(KB_EN.indexOf(c)>=0)en++; }
++      if(!ru&&!en)return str;
++      var from=ru>=en?KB_RU:KB_EN, to=ru>=en?KB_EN:KB_RU;
++      for(i=0;i<str.length;i++){ var j=from.indexOf(str[i].toLowerCase()); out+= j>=0?to[j]:str[i]; }
++      return out; }
++    var TRL={'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ж':'zh','з':'z','и':'i','й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f','х':'h','ц':'c','ч':'ch','ш':'sh','щ':'sch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya'};
++    function translit(str){ return String(str).toLowerCase().replace(/ё/g,'е').replace(/[а-я]/g,function(c){ return TRL[c]!=null?TRL[c]:c; }); }
++    /* Визуально одинаковые буквы: «МР» кириллицей и «MP» латиницей выглядят одинаково,
++       но для машины это разные строки. Схлопываем — только на коротких кодах, иначе
++       русские слова («соосный») превратились бы в кашу. */
++    var HOMO={'а':'a','в':'b','с':'c','е':'e','к':'k','м':'m','н':'h','о':'o','р':'p','т':'t','у':'y','х':'x'};
++    function homo(t){ return t.length>4?t:String(t).replace(/[авсекмнортух]/g,function(c){return HOMO[c];}); }
++    /* Разделы сайта: ответ на общий запрос, когда конкретной модели в нём нет. */
++    var SECTIONS=[
++      {t:'Мотор-редукторы ZR',d:'Заводская маркировка · 8 397 исполнений',u:'/motor-reduktor-zr/',k:['zr','зр','шильд','маркировк']},
++      {t:'Планетарные мотор-редукторы МР',d:'МР1–МР3, МПО, 3МП',u:'/catalog/mr',k:['мр','mr','мпо','mpo','3мп','планетарн','planetar','planet']},
++      {t:'Редукторы и мотор-редукторы ПР',d:'40 типоразмеров · все типы передач',u:'/catalog/pr',k:['пр','pr']},
++      {t:'Вариаторы',d:'Бесступенчатое регулирование скорости',u:'/catalog/variatory.html',k:['вариатор','variator','varispeed','бесступенчат','udl']},
++      {t:'Червячные мотор-редукторы',d:'Самоторможение, высокое передаточное',u:'/catalog/chervyachnye.html',k:['червяч','worm','nmrv','рчу','чм']},
++      {t:'Соосные цилиндрические мотор-редукторы',d:'Мотор и передача на одной оси',u:'/catalog/soosnye.html',k:['соосн','coaxial','inline']},
++      {t:'Цилиндрические редукторы',d:'Эвольвентное зацепление, высокий КПД',u:'/catalog/cilindricheskie.html',k:['цилиндр','helical','spur']},
++      {t:'Цилиндро-конические мотор-редукторы',d:'Валы под прямым углом',u:'/catalog/konichesko-cilindricheskie.html',k:['коническ','bevel','угловой']},
++      {t:'Плоские цилиндрические мотор-редукторы',d:'Для ограниченного монтажного пространства',u:'/catalog/ploskie.html',k:['плоск','flat','parallel']},
++      {t:'Импортозамещение',d:'Аналоги SEW, NORD, Bonfiglioli и других',u:'/importozameshchenie',k:['импорт','аналог','замен','замещ','analog','substitut','replace']},
++      {t:'Подбор по параметрам',d:'Момент, мощность, обороты — онлайн',u:'/podbor',k:['подбор','подобрат','калькулятор','расчет','параметр','select','calc']},
++      {t:'Чертежи',d:'Габаритные и присоединительные размеры',u:'/chertezhi',k:['чертеж','габарит','размер','drawing','dwg','dxf']},
++      {t:'Цены',d:'Прайс и условия поставки',u:'/ceny',k:['цена','цены','прайс','стоимост','скольк','price','cost']},
++      {t:'Весь каталог',d:'Все серии, типы передач и типоразмеры',u:'/catalog/',k:['каталог','catalog','редуктор','мотор','привод','gearbox','gearmotor','reducer','gear','motor','drive']}
++    ];
++    SECTIONS.forEach(function(x){ x.__k=x.k.map(homo); });
++    /* Наши серии клиент пишет как придётся: «МР» кириллицей, «MR» латиницей, «MP» —
++       латиницей по форме кириллических букв. Все написания сводим к одному набору. */
++    var ALIAS={mp:['мр','mr'],mr:['мр','mr'],'мр':['mr','mp'],pr:['пр','pr'],'пр':['pr'],
++      zr:['зр'],'зр':['zr'],evl:['евл'],'евл':['evl'],'нмрв':['nmrv'],nmrv:['нмрв'],
++      'чм':['chm'],chm:['чм'],'мпо':['mpo'],mpo:['мпо'],
++  /* Кириллические написания марок: клиент набирает «мотоварио», «бонфиглиоли»,
++     «сев евродрайв» — в индексе они латиницей, и выдача была пустой. */
++  'мотоварио':['motovario'],'бонфиглиоли':['bonfiglioli'],'транстехно':['transtecno'],
++  'евродрайв':['sew','eurodrive'],'сев':['sew'],'сью':['sew'],'норд':['nord'],
++  'ленце':['lenze'],'ленза':['lenze'],'бауэр':['bauer'],'байер':['bauer'],
++  'йилмаз':['yilmaz'],'илмаз':['yilmaz'],'варвел':['varvel'],'вармек':['varmec'],
++  'росси':['rossi'],'сити':['siti'],'трамек':['tramec'],'вемпер':['vemper'],
++  'флендер':['flender'],'сименс':['siemens'],'кеб':['keb'],'гуомао':['guomao'],
++  'бонэнг':['boneng'],'иннорэд':['innored'],'инновари':['innovari'],
++  'ватт':['watt'],'тос':['tos'],'зноймо':['znojmo'],'штм':['stm'],
++  'юнитдрайв':['unidrive'],'юнит':['unidrive'],
++  'моторедуктор':['мотор','редуктор'],'мотор-редуктор':['мотор','редуктор']};
++    /* Ключ короче 4 знаков сверяем целиком («пр», «zr»), длинный — по началу слова. */
++    function secHit(sec,qt){ for(var i=0;i<qt.length;i++){ var q=homo(qt[i]);
++      for(var j=0;j<sec.__k.length;j++){ var k=sec.__k[j];
++        if(k.length<=3){ if(q===k)return 1; }
++        else if(q.length>=4&&(q.indexOf(k)===0||k.indexOf(q)===0))return 1; } }
++      return 0; }
++    function secFind(qt){ var r=[]; for(var i=0;i<SECTIONS.length&&r.length<4;i++) if(secHit(SECTIONS[i],qt)) r.push(SECTIONS[i]); return r; }
+     function nn(s){return String(s==null?'':s).toLowerCase().replace(/ё/g,'е').replace(/[^0-9a-zа-я]+/g,'');}
+@@ -508,4 +713,12 @@
+     function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+-    function lev1(a,b){if(a===b)return true;var la=a.length,lb=b.length;if(Math.abs(la-lb)>1)return false;var i=0,j=0,d=0;while(i<la&&j<lb){if(a[i]===b[j]){i++;j++;}else{if(++d>1)return false;if(la>lb)i++;else if(lb>la)j++;else{i++;j++;}}}if(i<la||j<lb)d++;return d<=1;}
+-    var IDX=null,DF=null,T=null,loading=false,IMPB=null,VALS=[],BQ='';
++    /* Расстояние Левенштейна с потолком: короткое слово — 1 правка, длинное — 2.
++       «бонфильоли» и «бонфиглиоли» расходятся на две буквы, при потолке 1 не сходились. */
++    function levOk(a,b,max){ var la=a.length,lb=b.length; if(Math.abs(la-lb)>max)return false;
++      var prev=[],cur=[],i,j; for(j=0;j<=lb;j++)prev[j]=j;
++      for(i=1;i<=la;i++){ cur[0]=i; var best=i;
++        for(j=1;j<=lb;j++){ cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1)); if(cur[j]<best)best=cur[j]; }
++        if(best>max)return false; prev=cur.slice(); }
++      return prev[lb]<=max; }
++    function fuzz(a,b){ var m=(a.length>=6&&b.length>=6)?2:1; return levOk(a,b,m); }
++    var IDX=null,DF=null,T=null,loading=false,IMPB=null,BNAME={},VALS=[],BQ='',SOFT=false,LASTQT=[],QN=0,FORCEB='';
+     /* Диапазон «0,1–30» / «4–303» → [lo,hi] числами (десятичная запятая, разные тире). */
+@@ -515,5 +728,6 @@
+       function grab(re,u){ s=s.replace(re,function(m,d){ var v=parseFloat(String(d).replace(',','.')); if(!isNaN(v))vals.push({v:v,u:u}); return ' '; }); }
+-      grab(/(\d+(?:[.,]\d+)?)\s*(?:квт|kwt|kw)\b/g,'pw');
++      grab(/(\d+(?:[.,]\d+)?)\s*(?:квт|kwt|kw)(?![а-яa-z])/gi,'pw');
+       grab(/\bi\s*[=:]?\s*(\d+(?:[.,]\d+)?)\b/g,'i');
+-      grab(/(\d+(?:[.,]\d+)?)\s*передат\w*/g,'i');
++      grab(/(\d+(?:[.,]\d+)?)\s*передат[а-я]*/g,'i');
++      grab(/i\s*[=:]?\s*(\d+(?:[.,]\d+)?)(?![а-яa-z])/g,'i');
+       grab(/(?:^|\s)(\d+[.,]\d+)(?=\s)/g,'');      // голая дробь без единицы — вероятнее мощность
+@@ -534,3 +748,3 @@
+          групповых записях g — иначе запрос «SEW» снова уводил бы на обезличенную группу ZR. */
+-      IMPB={}; imp.forEach(function(r){ bkeys(r.b).forEach(function(k){IMPB[k]=1;}); });
++      IMPB={}; BNAME={}; imp.forEach(function(r){ bkeys(r.b).forEach(function(k){IMPB[k]=1; if(!BNAME[k])BNAME[k]=r.b;}); });
+       imp.forEach(function(r){ var t={}; function add(s){tk(s).forEach(function(x){t[x]=1;});}
+@@ -562,17 +776,22 @@
+     function qBrand(qt){ for(var i=0;i<qt.length;i++){ if(IMPB[brandFor(qt[i])])return brandFor(qt[i]); } return ''; }
++    /* «NMRV 63» ↔ «NMRV 063»: клиент опускает ведущий ноль, каталог его хранит. */
++    function hasTok(gr,q){ if(gr.__t[q])return 1;
++      if(/^\d{1,2}$/.test(q)&&gr.__t[('00'+q).slice(-3)])return 1;
++      return 0; }
+     function score(qt,qf,gr){ var s=0,m=0,mt=0,cm=IDX.length*0.9;
+       /* Бренд в запросе задан — держим выдачу строго внутри этого бренда. */
+-      if(BQ){ if(!gr.__imp||!gr.__t[BQ])return 0; }
++      if(BQ&&!SOFT){ if(!gr.__imp||!gr.__t[BQ])return 0; }
+       if(qf&&gr.__t[qf]){s+=90;m++;mt++;}
+       for(var i=0;i<qt.length;i++){var q=qt[i],b=0,h=false;
+-        if(gr.__t[q]){ if((DF[q]||0)>=cm)b=4; else {b=(/\d/.test(q)?55:26);h=true;} }
++        if(q.length<2){ continue; }   /* «2», «к» — слишком общо, по ним не ранжируем */
++        if(hasTok(gr,q)){ if((DF[q]||0)>=cm)b=4; else {b=(/\d/.test(q)?55:26);h=true;} }
+         else if(q.length>=3&&gr.__b.indexOf(q)>=0){b=12;h=true;}
+         else if(/^\d+$/.test(q)&&q.length>=2&&gr.__nums){ for(var n=0;n<gr.__nums.length;n++){ if(gr.__nums[n]!==q&&gr.__nums[n].indexOf(q)===0){b=30;h=true;break;} } }
+-        if(!h&&q.length>=4){for(var t in gr.__t){if(Math.abs(t.length-q.length)<=1&&lev1(t,q)){b=9;h=true;break;}}}
++        if(!h&&q.length>=4){for(var t in gr.__t){if(Math.abs(t.length-q.length)<=2&&fuzz(t,q)){b=9;h=true;break;}}}
+         if(h){m++;mt++;} s+=b; }
+       /* Есть текстовые токены (тип/модель/бренд), но ни один не совпал — запись не наша. */
+-      if(qt.length&&mt===0)return 0;
++      if(qt.length&&mt===0&&!(SOFT&&VALS.length))return 0;
+       /* Значение (кВт / передаточное i / типоразмер) — сортируем по попаданию в диапазон. */
+       if(VALS.length){ for(var k=0;k<VALS.length;k++){ var vb=valFit(VALS[k],gr); if(vb>0){s+=vb;m++;} } }
+-      if(!m)return 0; if(!BQ&&qt.length>=2&&mt<Math.ceil(qt.length/2))return 0; return s+m*4;
++      if(!m)return 0; if(!SOFT&&!BQ&&QN>=2&&mt<Math.ceil(QN/2))return 0; return s+m*4;
+     }
+@@ -581,4 +800,7 @@
+       var qt0=tk(qv.rest).filter(function(t){var k=nn(t);return !STOP[k]&&!UNIT[k];}).map(nn).filter(Boolean);
+-      var qt=[]; qt0.forEach(function(q){ qt.push(q); var mm=q.match(/^([a-zа-я]+)(\d+)$/)||q.match(/^(\d+)([a-zа-я]+)$/); if(mm){ if(mm[1])qt.push(mm[1]); if(mm[2])qt.push(mm[2]); } });
+-      VALS=qv.vals; BQ=qBrand(qt);
++      var qt=[],seen={}; function push(x){ if(x&&!seen[x]){seen[x]=1;qt.push(x);} }
++      qt0.forEach(function(q){ push(q); (ALIAS[q]||[]).forEach(push);
++        var mm=q.match(/^([a-zа-я]+)(\d+)$/)||q.match(/^(\d+)([a-zа-я]+)$/);
++        if(mm){ if(mm[1]){push(mm[1]);(ALIAS[mm[1]]||[]).forEach(push);} if(mm[2])push(mm[2]); } });
++      VALS=qv.vals; BQ=qBrand(qt)||FORCEB; LASTQT=qt; QN=qt0.length;
+       if(!qt.length&&!VALS.length)return[];
+@@ -589,4 +811,4 @@
+          пользователь должен попасть на брендовую страницу, а не на нашу карточку. */
+-      var pool=BQ?IDX.filter(function(r){return r.__imp;}):IDX;
+-      if(qType!=null)pool=pool.filter(function(r){return r.t===qType;});
++      var pool=(BQ&&!SOFT)?IDX.filter(function(r){return r.__imp;}):IDX;
++      if(qType!=null&&!SOFT)pool=pool.filter(function(r){return r.t===qType;});
+       /* Бренда в запросе нет — значит спрашивают наше (ZR 603, ПР 4110, «червячный»),
+@@ -622,7 +844,199 @@
+     }
+-    function render(q){ var top=rank(q);
+-      if(!top.length){ dd.innerHTML='<div class="ms-empty">По «'+esc(q)+'» точных карточек нет. Нажмите «Найти» — откроем полный подбор.</div>'; dd.hidden=false; return; }
+-      dd.innerHTML=top.map(row).join('')+'<a class="ms-all" href="/podbor?q='+encodeURIComponent(q)+'">Показать все результаты в подборе →</a>'; dd.hidden=false;
+-    }
+-    function load(cb){ if(IDX)return cb&&cb(); if(loading)return; loading=true; fetch('/assets/search-index.json?v=5354118f').then(function(r){return r.json();}).then(function(d){IDX=prep(d);loading=false;cb&&cb();}).catch(function(){loading=false;}); }
++    /* Разделы сверяем по СЫРЫМ токенам: «редуктор» и «мотор» — стоп-слова для моделей,
++       но именно они означают «покажи каталог». */
++    /* «мр2» слитно — тоже про раздел МР, поэтому режем на буквы+цифры. */
++    /* МР и ПР — один и тот же типоразмер: мотор-редуктор и редуктор без двигателя.
++       Номера совпадают во всех 42 строках заводской таблицы соответствия, а в поисковом
++       индексе лежит только ПР. Поэтому «МР 117» доспрашиваем как «ПР 117». */
++    function mrToPr(str){ return String(str||'').replace(/(^|[^а-яa-z0-9])(мр|mr|mp)\s*[- ]?\s*(\d{3,4})/gi,
++      function(_,a,b,n){ return a+'ПР '+n; }); }
++    /* Бренд СТРАНИЦЫ, а не запроса. Клиент на /brands/keb вводит «RC 97» и не понимает,
++       почему ему показывают SEW: он-то смотрит KEB. Контекст страницы важнее общей выдачи. */
++    function pageBrand(){ var p=location.pathname, m;
++      if((m=p.match(/^\/brands\/([a-z0-9\-]+)/i))) return nn(m[1].split('-')[0]);
++      if((m=p.match(/^\/analog\/([a-z]+)-/i))) return nn(m[1]);
++      return ''; }
++    /* Все 25 страниц марок. Нужны по двум причинам: у части брендов (KEB, Flender,
++       Siemens, Boneng, Guomao, UNI Drive) в базе НЕТ перечня моделей — по обозначению они
++       не находятся, и клиент упирался в пустоту либо в чужой бренд. Теперь такой запрос
++       всегда даёт хотя бы страницу марки. */
++    var BPAGES=[
++      {s:'bauer',n:'Bauer',k:['bauer','бауэр','баурер','байер']},
++      {s:'boneng',n:'Boneng',k:['boneng','бонэнг','k303','k305','k307','k309','k311','k313','k315','k318','бонэн','бонинг']},
++      {s:'bonfiglioli',n:'Bonfiglioli',k:['bonfiglioli','бонфиглиоли','бонфильоли','бонфиглиоле']},
++      {s:'flender',n:'Flender',k:['flender','флендер','фляндер','флендэр']},
++      {s:'guomao',n:'Guomao',k:['guomao','гуомао','gk37','gk47','gk57','gk67','gk77','gk87','gk97','gk107','gk127','gk157','zlyj','гуамао']},
++      {s:'innored',n:'Innored',k:['innored','иннорэд','инноред','иннор']},
++      {s:'innovari',n:'Innovari',k:['innovari','инновари']},
++      {s:'keb',n:'KEB',k:['keb','кеб','кэб','кееб','keб','kэб','keeб']},
++      {s:'lenze',n:'Lenze',k:['lenze','ленце','ленза','лензе']},
++      {s:'motovario',n:'Motovario',k:['motovario','мотоварио','мотовარио','мотовario']},
++      {s:'nord',n:'NORD',k:['nord','норд']},
++      {s:'rossi',n:'Rossi',k:['rossi','росси','россі']},
++      {s:'sew',n:'SEW-Eurodrive',k:['sew','сев','сью','евродрайв','севевродрайв']},
++      {s:'siemens',n:'Siemens',k:['siemens','simogear','симогир','сименс','симменс']},
++      {s:'siti',n:'SITI',k:['siti','сити']},
++      {s:'stm',n:'STM',k:['stm','штм','стм']},
++      {s:'tos-znojmo',n:'Tos Znojmo',k:['tos-znojmo','тоззноймо','зноймо','тос']},
++      {s:'tramec',n:'Tramec',k:['tramec','трамек','трамэк']},
++      {s:'transtecno',n:'Transtecno',k:['transtecno','транстехно','транстекно']},
++      {s:'unidrive',n:'UNI Drive',k:['unidrive','юнитдрайв','юнидрайв','юнит']},
++      {s:'varmec',n:'Varmec',k:['varmec','вармек','вармэк']},
++      {s:'varvel',n:'Varvel',k:['varvel','варвел','варвель']},
++      {s:'vemper',n:'Vemper',k:['vemper','вемпер','вэмпер']},
++      {s:'watt-drive',n:'Watt Drive',k:['watt-drive','ваттдрайв','ватт']},
++      {s:'yilmaz',n:'Yilmaz',k:['yilmaz','йилмаз','илмаз','йылмаз']}
++    ];
++    var BPAGE={}; BPAGES.forEach(function(x){ BPAGE[nn(x.s.split('-')[0])]=x.n; BPAGE[nn(x.s)]=x.n; });
++    function brandPageFor(qt){ for(var i=0;i<qt.length;i++){ var q=qt[i]; if(q.length<3)continue;
++      for(var j=0;j<BPAGES.length;j++){ var b=BPAGES[j], ks=[nn(b.s),nn(b.s.split('-')[0]),nn(b.n),nn(b.n.split(' ')[0])].concat((b.k||[]).map(nn));
++        for(var k=0;k<ks.length;k++){ if(ks[k]&&(q===ks[k]||(q.length>=4&&ks[k].indexOf(q)===0))) return b; } } }
++      return null; }
++    function brandLabel(k){ return BNAME[k]||BPAGE[k]||k.toUpperCase(); }
++    function rawTok(str){ var o=[]; tk(String(str||'').toLowerCase()).map(nn).filter(Boolean).forEach(function(q){ o.push(q);
++      var mm=q.match(/^([a-zа-я]+)(\d+)$/)||q.match(/^(\d+)([a-zа-я]+)$/); if(mm){ if(mm[1])o.push(mm[1]); if(mm[2])o.push(mm[2]); } });
++      return o; }
++    /* ═══ Словарь обозначений импортных моделей (assets/model-hints.json) ═══
++       741 обозначение по 16 маркам из дилерской выгрузки: ТОЛЬКО обозначение, марка и тип
++       передачи — других данных в источнике нет, и придумывать их нельзя (соответствия
++       «импорт → наш типоразмер ZR» здесь тоже нет).
++       Зачем: клиент вводит то, что прочитал на шильдике («K188», «RMI 110»), а в основном
++       индексе такой записи либо нет вовсе (по Flender/Siemens перечня моделей у нас не было),
++       либо транскрипция расходится с заводским каталогом (дилерское «K188» против «K189»).
++       Раньше это давало пустоту или подсовывало близкое из ЧУЖОЙ марки. Теперь на такой
++       запрос честно отвечаем: что это за модель, чья она, какая передача — и ведём на
++       страницу марки с предложением подобрать аналог ZR по шильдику.
++       Словарь — страховка, а не основной путь: он подключается ПОСЛЕ того, как обычный
++       поиск отработал и ничего толкового не дал, и файл грузится только в этот момент. */
++    var HINTS=null,hintsLoad=false;
++    /* Ведущие нули внутри чисел долой: клиент пишет «NMRV 63», каталог хранит «NMRV 063». */
++    function zst(s){ return String(s).replace(/0+(\d)/g,'$1'); }
++    function loadHints(cb){ if(HINTS)return cb&&cb();
++      if(hintsLoad)return;                       /* уже летит запрос — второй не нужен */
++      hintsLoad=true;
++      fetch('/assets/model-hints.json').then(function(r){return r.json();})
++        .then(function(d){ HINTS=d||{}; hintsLoad=false; cb&&cb(); })
++        /* На ошибке кладём пустой объект: HINTS перестаёт быть null, и render больше
++           не уйдёт в бесконечную попытку дозагрузки. */
++        .catch(function(){ HINTS={}; hintsLoad=false; cb&&cb(); }); }
++    /* Ключи-кандидаты. Ключи словаря нормализованы той же nn(), плюс генератор уже положил
++       синонимы без ведущих нулей и с латиницей вместо кириллических двойников.
++       Здесь добираем остальное: как ввёл → другая раскладка → транслит, и все непрерывные
++       куски из слов запроса, длинные первыми — чтобы «rossi mrv 100» нашлось как «mrv100»,
++       а не как бесполезное «100». */
++    /* Наши собственные серии словарь перебивать НЕ имеет права. У Rossi есть модели «MR 2»,
++       «MR 7», у кого-то «PR 90» — но клиент, набравший «МР 2» или «ПР 90», спрашивает наш
++       планетарный МР и наш типоразмер ПР. Такие кандидаты выбрасываем. Цифра сразу после
++       префикса обязательна, иначе бы отвалились законные «MRV 100» и «MR C3I 81». */
++    var OURS=/^(mr|мр|mp|pr|пр|zr|зр|evl|евл|рчу|чм)\d/;
++    function hintKeys(q){ var o=[],seen={};
++      function add(s){ var k=nn(s); if(!k||k.length<2||OURS.test(k))return;
++        if(!seen[k]){seen[k]=1;o.push(k);}
++        var z=zst(k); if(z!==k&&!seen[z]){seen[z]=1;o.push(z);} }
++      [String(q==null?'':q),swapLay(String(q==null?'':q)),translit(String(q==null?'':q))].forEach(function(s){
++        var t=tk(s); if(!t.length||t.length>6)return;
++        for(var len=t.length;len>=1;len--) for(var i=0;i+len<=t.length;i++) add(t.slice(i,i+len).join(''));
++      });
++      return o; }
++    function hintFind(q){ if(!HINTS)return null; var ks=hintKeys(q);
++      for(var i=0;i<ks.length;i++){ var h=HINTS[ks[i]]; if(h)return h; }
++      return null; }
++    /* Строка-подсказка. Говорим ровно то, что знаем: обозначение (в каталожном написании,
++       а не в клиентском), тип передачи и марку. Ссылка — на страницу марки. */
++    function hintRow(h){
++      var bn=String(h.b||''), full=bn+(h.b2?' / '+h.b2:'');
++      var bp=brandPageFor([nn(bn)])||brandPageFor([nn(bn.split(/[\s\-]+/)[0])]);
++      var href=bp?('/brands/'+bp.s):'/importozameshchenie';
++      return '<a class="ms-row ms-sec" href="'+esc(href)+'">'+SIC+'<span class="ms-rb">'
++        +'<span class="ms-rm">'+esc(h.n||'')+' — '+esc(h.t||'')+' мотор-редуктор '+esc(full)+'</span>'
++        +'<span class="ms-rt">Обозначение из каталога '+esc(full)+'. Своей карточки у нас нет — подберём аналог ZR по шильдику: пришлите фото или обозначение.</span></span>'
++        +'<span class="ms-rp">марка</span></a>'; }
++    var SIC='<span class="ms-sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>';
++    function secRow(x){ return '<a class="ms-row ms-sec" href="'+esc(x.u)+'">'+SIC+'<span class="ms-rb"><span class="ms-rm">'+esc(x.t)+'</span><span class="ms-rt">'+esc(x.d||'')+'</span></span><span class="ms-rp">раздел</span></a>'; }
++    /* Три попытки понять клиента, прежде чем сказать «ничего не найдено»:
++       как ввёл → в другой раскладке → латиницей → мягкий режим без жёстких фильтров. */
++    function smart(q){ var r,note='',used=q,PB=pageBrand(),ctx=(PB&&((IMPB&&IMPB[PB])||BPAGE[PB]))?PB:'',
++      hasIdx=!!(ctx&&IMPB&&IMPB[ctx]);

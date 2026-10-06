@@ -1,0 +1,101 @@
+--- main/proizvoditelyam-oborudovaniya.html
++++ prod/proizvoditelyam-oborudovaniya.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Редукторы для производителей оборудования — OEM | ЗР</title>
++<title>Редукторы для производителей оборудования — OEM | ZR</title>
+ <meta name="description" content="Серийные поставки редукторов и мотор-редукторов производителям оборудования (OEM): резерв на складе, фиксированная цена, специсполнения под конструктив." />
+@@ -15,10 +15,10 @@
+ <meta property="og:url" content="https://zavod-red.ru/proizvoditelyam-oborudovaniya" />
+-<meta property="og:title" content="Редукторы для производителей оборудования — серийные поставки | Завод Редукторов" />
++<meta property="og:title" content="Редукторы для производителей оборудования — серийные поставки | ZR" />
+ <meta property="og:description" content="Серийные поставки редукторов OEM: резерв на складе, фиксированная цена по договору, приоритет и специсполнения под ваш конструктив." />
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
+-<link rel="stylesheet" href="assets/pages-modern.css?v=7f7edb3d" />
++<link rel="stylesheet" href="assets/inner.css?v=knop26" />
++<link rel="stylesheet" href="assets/pages-modern.css?v=knop26" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Серийные поставки редукторов производителям оборудования (OEM)","serviceType":"Поставка редукторов и мотор-редукторов для производства оборудования","provider":{"@type":"Organization","name":"Завод Редукторов","legalName":"ООО «НИИ АТТ»","url":"https://zavod-red.ru/"},"areaServed":"RU","description":"Серийные и регулярные поставки редукторов производителям конвейеров, смесителей, упаковочного и промышленного оборудования: резерв на складе, фиксированная цена по договору, специсполнения под конструктив."}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Производителям оборудования","item":"https://zavod-red.ru/proizvoditelyam-oborudovaniya"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Работаете ли вы с производителями оборудования по договору на серийные поставки?","acceptedAnswer":{"@type":"Answer","text":"Да. Для производителей оборудования заключаем договор на регулярные поставки с фиксированной ценой, резервом на складе под ваш план производства и приоритетной очередью изготовления."}},{"@type":"Question","name":"Можно ли зафиксировать цену на редукторы на период договора?","acceptedAnswer":{"@type":"Answer","text":"Да. Для серийных клиентов фиксируем цену на согласованный период и объём — вы защищены от скачков курса и подорожания, а себестоимость вашего оборудования стабильна."}},{"@type":"Question","name":"Изготовите редуктор под наш конструктив?","acceptedAnswer":{"@type":"Answer","text":"Да. Делаем спецфланцы, спецвалы и нестандартные исполнения под вашу машину, унифицируем редуктор под всю вашу серию оборудования и закрепляем единую маркировку."}},{"@type":"Question","name":"Что если наш заказчик требует оригинал импорта?","acceptedAnswer":{"@type":"Answer","text":"Поставим оригинальный импортный привод SEW, NORD, Bonfiglioli и др. под заказ, а для серийного выпуска предложим габаритный аналог дешевле — на ваш выбор по позициям."}},{"@type":"Question","name":"Какой минимальный объём заказа для серийных условий?","acceptedAnswer":{"@type":"Answer","text":"Жёсткой нижней планки нет — серийные условия открываем уже от регулярной потребности в несколько десятков редукторов в месяц. На старте можем начать с пробной партии, а под подтверждённый план производства согласуем график и складской резерв."}},{"@type":"Question","name":"Делаете спецфланцы и спецвалы под наш конструктив?","acceptedAnswer":{"@type":"Answer","text":"Да. По вашим чертежам изготавливаем спецфланцы, спецвалы, нестандартные присоединительные размеры и исполнения под посадочные места вашей машины. Согласуем 3D-модель и контрольный образец до запуска серии."}},{"@type":"Question","name":"Как организованы логистика и график отгрузок?","acceptedAnswer":{"@type":"Answer","text":"Работаем по согласованному графику: держим складской резерв под ваш план и отгружаем партиями к нужным датам сборки. Доставку организуем до вашего производства транспортными компаниями по РФ, объём и периодичность фиксируем в договоре."}},{"@type":"Question","name":"Будет ли единая маркировка и взаимозаменяемость по нашей серии?","acceptedAnswer":{"@type":"Answer","text":"Да. Закрепляем за вашей серией единую маркировку и артикулы, чтобы редукторы были взаимозаменяемы в рамках исполнения. Это упрощает сборку, складской учёт и сервис у конечных заказчиков вашего оборудования."}}]}</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Работаете по договору на серийные поставки?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Для производителей оборудования заключаем договор на регулярные поставки с фиксированной ценой, резервом на складе под ваш план производства и приоритетной очередью изготовления."}}, {"@type": "Question", "name": "Можно зафиксировать цену на период договора?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Для серийных клиентов фиксируем цену на согласованный период и объём — вы защищены от скачков курса и подорожания, а себестоимость вашего оборудования стабильна."}}, {"@type": "Question", "name": "Изготовите редуктор под наш конструктив?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Делаем спецфланцы, спецвалы и нестандартные исполнения под вашу машину, унифицируем редуктор под всю серию и закрепляем единую маркировку."}}, {"@type": "Question", "name": "Что если заказчик требует оригинал импорта?", "acceptedAnswer": {"@type": "Answer", "text": "Поставим оригинал SEW, NORD, Bonfiglioli и др. под заказ, а для серийного выпуска предложим габаритный аналог дешевле — на ваш выбор по позициям. См. импортозамещение ."}}, {"@type": "Question", "name": "Какой минимальный объём заказа для серийных условий?", "acceptedAnswer": {"@type": "Answer", "text": "Жёсткой нижней планки нет — серийные условия открываем уже от регулярной потребности в несколько десятков редукторов в месяц. На старте можем начать с пробной партии, а под подтверждённый план производства согласуем график и складской резерв."}}, {"@type": "Question", "name": "Делаете спецфланцы и спецвалы под наш конструктив?", "acceptedAnswer": {"@type": "Answer", "text": "Да. По вашим чертежам изготавливаем спецфланцы, спецвалы, нестандартные присоединительные размеры и исполнения под посадочные места вашей машины. Согласуем 3D-модель и контрольный образец до запуска серии."}}, {"@type": "Question", "name": "Как организованы логистика и график отгрузок?", "acceptedAnswer": {"@type": "Answer", "text": "Работаем по согласованному графику: держим складской резерв под ваш план и отгружаем партиями к нужным датам сборки. Доставку организуем до вашего производства транспортными компаниями по РФ, объём и периодичность фиксируем в договоре."}}, {"@type": "Question", "name": "Будет ли единая маркировка и взаимозаменяемость по нашей серии?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Закрепляем за вашей серией единую маркировку и артикулы, чтобы редукторы были взаимозаменяемы в рамках исполнения. Это упрощает сборку, складской учёт и сервис у конечных заказчиков вашего оборудования."}}, {"@type": "Question", "name": "Подробнее: характеристики, таблицы и полезные ссылки", "acceptedAnswer": {"@type": "Answer", "text": "Производителю оборудования важно не «купить редуктор», а закрыть приводную часть серии с предсказуемой ценой и сроком. Поэтому мы работаем по договору: держим неснижаемый остаток ходовых типоразмеров, отгружаем партиями по графику и фиксируем стоимость на объём — себестоимость вашей машины остаётся стабильной даже при колебаниях курса. Подбираем один редуктор под всю линейку оборудования и закрепляем единую маркировку — это упрощает сборку, складскую логистику и сервис у конечного заказчика. Спецфланцы и спецвалы изготавливаем по вашим чертежам, а взаимозаменяемость снижает риски простоя. По каждой позиции вы выбираете: оригинал импорта под заказ или габаритный аналог дешевле. Условия для производителей оборудования (OEM) Условие Что включает Формат договор на серийные и регулярные поставки Цена фиксированная на объём и период, скидка за серийность Склад резерв ходовых типоразмеров под план производства Исполнение спецфланцы, спецвалы, единая маркировка серии Импорт оригинал под заказ + аналог по позициям Логистика и старт сотрудничества Параметр Условие Минимальный объём от регулярной потребности, можно с пробной партии График отгрузок партиями к датам сборки, складской резерв Доставка до вашего производства транспортными компаниями по РФ Документы паспорт, декларация ЕАС, гарантия 36 месяцев Согласование 3D-модель и контрольный образец до запуска серии Производителю оборудования важно не «купить редуктор», а закрыть приводную часть серии с предсказуемой ценой и сроком. Поэтому мы работаем по договору: держим неснижаемый остаток ходовых типоразмеров, отгружаем партиями по графику и фиксируем стоимость на объём — себестоимость вашей машины остаётся стабильной даже при колебаниях курса. Унификация и единая маркировка Подбираем один редуктор под всю вашу линейку оборудования и закрепляем единую маркировку. Это упрощает вашу сборку, складскую логистику и сервис у конечного заказчика, а взаимозаменяемость снижает риски простоя. Спецфланцы и спецвалы изготавливаем под ваш конструктив — узел встаёт без доработки рамы. Рассчитать подбор можно в калькуляторе . Оригинал импорта и аналог на ваш выбор Если ваш заказчик требует оригинальный привод SEW, NORD или Bonfiglioli — поставим оригинал под заказ. Для серийного выпуска предложим габаритный аналог дешевле, который встаёт на штатное место без переделки. По каждой позиции вы выбираете: оригинал или аналог. Формат договор на серийные / регулярные поставки Цена фиксированная на объём и период, скидка за серийность Склад резерв ходовых типоразмеров под план производства Исполнение спецфланцы, спецвалы, единая маркировка серии Импорт оригинал под заказ + аналог по позициям Чтобы обсудить условия — напишите, какое оборудование выпускаете и сколько редукторов нужно в месяц. Подготовим персональное предложение с ценой и графиком поставок."}}]}</script>
+ <style>
+@@ -56,2 +56,5 @@
+ </style>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -60,4 +63,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=knop26" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -65,3 +68,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -76,3 +79,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -80,3 +83,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -116,3 +119,3 @@
+     <div class="v"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></div><h3>Документы на партию</h3><p>Паспорта, сертификаты и декларации на каждую отгрузку — для вашей сборки и сдачи оборудования заказчику.</p></div>
+-    <div class="v"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Один поставщик, одна гарантия</h3><p>Снимаем риск с вашего производства: гарантия 24 месяца и ответственность за качество приводной части.</p></div>
++    <div class="v"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Один поставщик, одна гарантия</h3><p>Снимаем риск с вашего производства: гарантия 36 месяцев и ответственность за качество приводной части.</p></div>
+   </div>
+@@ -159,3 +162,3 @@
+         <tr><th>Документы</th><td>паспорта, сертификаты, 3D/чертежи для вашей КД</td></tr>
+-        <tr><th>Гарантия</th><td>24 месяца, ответственность за приводную часть</td></tr>
++        <tr><th>Гарантия</th><td>36 месяцев, ответственность за приводную часть</td></tr>
+       </tbody></table>
+@@ -185,3 +188,3 @@
+       <p>Расскажите, какое оборудование выпускаете и сколько редукторов нужно в месяц — подготовим персональные условия, цену и график поставок.</p>
+-      <form class="lead-form" style="max-width:480px;margin:24px auto 0;text-align:left">
++      <form class="lead-form" data-light="1" style="max-width:480px;margin:24px auto 0;text-align:left">
+         <div class="hp" aria-hidden="true"><input type="text" name="work_email" tabindex="-1" autocomplete="off" /></div>
+@@ -213,3 +216,3 @@
+       <tr><th>Доставка</th><td>до вашего производства транспортными компаниями по РФ</td></tr>
+-      <tr><th>Документы</th><td>паспорт, декларация ЕАС, гарантия 24 месяца</td></tr>
++      <tr><th>Документы</th><td>паспорт, декларация ЕАС, гарантия 36 месяцев</td></tr>
+       <tr><th>Согласование</th><td>3D-модель и контрольный образец до запуска серии</td></tr>
+@@ -225,2 +228,3 @@
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -236,3 +240,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -245,3 +249,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -251,3 +255,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -255,3 +259,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -268,4 +272,4 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="assets/modal.js?v=350d9cee"></script>
++<script src="assets/inner.js?v=shapka28"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
+ </body>

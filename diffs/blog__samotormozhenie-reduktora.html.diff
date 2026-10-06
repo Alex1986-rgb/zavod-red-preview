@@ -1,0 +1,115 @@
+--- main/blog/samotormozhenie-reduktora.html
++++ prod/blog/samotormozhenie-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Самоторможение червячного редуктора: что это такое</title>
++<title>Самоторможение червячного редуктора: что это такое | ZR</title>
+ <meta name="description" content="Самоторможение редуктора: за счёт чего возникает эффект самотормозящего редуктора, от чего зависит и почему его нельзя считать надёжным удержанием груза." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/samotormozhenie-reduktora" />
+-<meta property="og:title" content="Самоторможение червячного редуктора: что это и можно ли на него" />
++<meta property="og:title" content="Самоторможение червячного редуктора: что это и можно ли на него | ZR" />
+ <meta property="og:description" content="За счёт чего возникает самоторможение, от чего оно зависит и почему его нельзя считать надёжным тормозом для подъёмных механизмов." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-motor-gearbox.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-motor-07.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Самоторможение червячного редуктора: что это и можно ли на него полагаться","description":"За счёт чего возникает самоторможение, от чего оно зависит и почему его нельзя считать надёжным тормозом для подъёмных механизмов.","image":"https://zavod-red.ru/assets/blog-photo/th-motor-gearbox.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/samotormozhenie-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Самоторможение червячного редуктора: что это и можно ли на него полагаться","description":"За счёт чего возникает самоторможение, от чего оно зависит и почему его нельзя считать надёжным тормозом для подъёмных механизмов.","image":"https://zavod-red.ru/assets/blog-photo/red-motor-07.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/samotormozhenie-reduktora","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Самоторможение редуктора","item":"https://zavod-red.ru/blog/samotormozhenie-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое самоторможение редуктора?","acceptedAnswer":{"@type":"Answer","text":"Самоторможение — это свойство передачи удерживать выходной вал неподвижным под нагрузкой без подачи момента со стороны двигателя. Возникает за счёт сил трения в зацеплении, когда обратный момент со стороны выходного вала не может провернуть входной. Чаще всего проявляется в червячных редукторах с малым углом подъёма витка червяка."}},{"@type":"Question","name":"У каких типов редукторов есть самоторможение?","acceptedAnswer":{"@type":"Answer","text":"Выраженным самоторможением обладают червячные редукторы с одно- и двухзаходным червяком и малым углом подъёма витка. Цилиндрические, конические и планетарные передачи самоторможением, как правило, не обладают и свободно вращаются в обратную сторону. Поэтому для удержания груза в них всегда нужен отдельный тормоз."}},{"@type":"Question","name":"Зависит ли самоторможение от передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Прямой зависимости от передаточного числа нет, но связь косвенная. Самоторможение определяется углом подъёма витка червяка и коэффициентом трения, а большие передаточные числа обычно достигаются именно малым углом подъёма. Поэтому червячные редукторы с высоким передаточным числом чаще оказываются самотормозящими."}},{"@type":"Question","name":"Можно ли полагаться на самоторможение как на тормоз?","acceptedAnswer":{"@type":"Answer","text":"Как на единственное средство безопасности — нет. Самоторможение надёжно работает в статике, но ослабевает при вибрации, ударах и динамических нагрузках, которые «срывают» удержание. Для подъёмных и грузовых механизмов оно не заменяет штатный тормоз, а лишь дополняет его."}},{"@type":"Question","name":"Когда нужен дополнительный тормоз?","acceptedAnswer":{"@type":"Answer","text":"Отдельный тормоз обязателен везде, где падение или самопроизвольное движение груза опасно: в подъёмниках, лебёдках, кран-балках, талях и наклонных конвейерах. Также он нужен при значительных вибрациях и частых пусках-остановках. Самоторможение в этих случаях считают резервным, а не основным средством удержания."}},{"@type":"Question","name":"Как самоторможение связано с КПД редуктора?","acceptedAnswer":{"@type":"Answer","text":"Самоторможение и КПД находятся в обратной зависимости: оба определяются трением в зацеплении. Чем сильнее выражено самоторможение, тем выше потери на трение и ниже КПД — у самотормозящих червячных пар он обычно составляет 0,5–0,7. Поэтому платой за удобство удержания груза становится повышенный нагрев и расход энергии."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Смежные материалы и подбор","acceptedAnswer":{"@type":"Answer","text":"Если нужен компактный привод с выраженным самоторможением, посмотрите червячные редукторы в каталоге. Чтобы инженер подобрал передачу под ваш механизм и подсказал, нужен ли отдельный тормоз, воспользуйтесь формой подбора редуктора ."}},{"@type":"Question","name":"Что такое самоторможение редуктора?","acceptedAnswer":{"@type":"Answer","text":"Самоторможение — это свойство передачи удерживать выходной вал неподвижным под нагрузкой без подачи момента со стороны двигателя. Возникает за счёт сил трения в зацеплении, когда обратный момент со стороны выходного вала не может провернуть входной. Чаще всего проявляется в червячных редукторах с малым углом подъёма витка червяка."}},{"@type":"Question","name":"У каких типов редукторов есть самоторможение?","acceptedAnswer":{"@type":"Answer","text":"Выраженным самоторможением обладают червячные редукторы с одно- и двухзаходным червяком и малым углом подъёма витка. Цилиндрические, конические и планетарные передачи самоторможением, как правило, не обладают и свободно вращаются в обратную сторону. Поэтому для удержания груза в них всегда нужен отдельный тормоз."}},{"@type":"Question","name":"Зависит ли самоторможение от передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Прямой зависимости от передаточного числа нет, но связь косвенная. Самоторможение определяется углом подъёма витка червяка и коэффициентом трения, а большие передаточные числа обычно достигаются именно малым углом подъёма. Поэтому червячные редукторы с высоким передаточным числом чаще оказываются самотормозящими."}},{"@type":"Question","name":"Можно ли полагаться на самоторможение как на тормоз?","acceptedAnswer":{"@type":"Answer","text":"Как на единственное средство безопасности — нет. Самоторможение надёжно работает в статике, но ослабевает при вибрации, ударах и динамических нагрузках, которые «срывают» удержание. Для подъёмных и грузовых механизмов оно не заменяет штатный тормоз, а лишь дополняет его."}},{"@type":"Question","name":"Когда нужен дополнительный тормоз?","acceptedAnswer":{"@type":"Answer","text":"Отдельный тормоз обязателен везде, где падение или самопроизвольное движение груза опасно: в подъёмниках, лебёдках, кран-балках, талях и наклонных конвейерах. Также он нужен при значительных вибрациях и частых пусках-остановках. Самоторможение в этих случаях считают резервным, а не основным средством удержания."}},{"@type":"Question","name":"Как самоторможение связано с КПД редуктора?","acceptedAnswer":{"@type":"Answer","text":"Самоторможение и КПД находятся в обратной зависимости: оба определяются трением в зацеплении. Чем сильнее выражено самоторможение, тем выше потери на трение и ниже КПД — у самотормозящих червячных пар он обычно составляет 0,5–0,7. Поэтому платой за удобство удержания груза становится повышенный нагрев и расход энергии."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Самоторможение — свойство червячного редуктора удерживать нагрузку без обратного проворачивания вала. Оно проявляется при малом угле подъёма витка и КПД ниже ~50%, поэтому характерно для червячных передач с большим передаточным числом. Точную пригодность под вашу нагрузку подтвердит инженер. Передавайте параметры — посчитаем точно. Чтобы не считать вручную, воспользуйтесь онлайн-инструментом: задайте параметры и получите подходящие типоразмеры с обозначениями ГОСТ и импортными аналогами. Условия самоторможения Тип передачи чаще всего червячная Угол подъёма витка малый (большое передаточное число) КПД ориентировочно ниже 0,5 Передаточное число как правило высокое (i больше ~40) Важно самоторможение не заменяет тормоз для безопасности Самоторможение по типам редукторов Червячный часто самотормозящий при большом i Цилиндрический нет самоторможения Конический нет самоторможения Планетарный нет самоторможения Рекомендация для подъёмных механизмов — доп. тормоз Полезное: калькулятор подбора редуктора , каталог по типам , импортозамещение ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Самоторможение редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Самоторможение редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Справочник</div>
+-  <h1>Самоторможение червячного редуктора: что это и можно ли на него полагаться</h1><img class="blog-hero-img" src="../assets/blog-photo/th-motor-gearbox.webp" alt="Самоторможение червячного редуктора: что это и можно ли на него полагаться — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Самоторможение червячного редуктора: что это и можно ли на него полагаться</h1><img class="blog-hero-img" src="../assets/blog-photo/red-motor-07.webp" alt="Самоторможение червячного редуктора: что это и можно ли на него полагаться — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -81,3 +84,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный самотормозящий редуктор" loading="lazy"><figcaption>Червячный редуктор — компактная передача со свойством самоторможения</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный самотормозящий редуктор" loading="lazy" width="800" height="600"><figcaption>Червячный редуктор — компактная передача со свойством самоторможения</figcaption></figure>
+ 
+@@ -103,3 +106,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p02.webp" alt="Производство червячных редукторов" loading="lazy"><figcaption>Сборка червячных редукторов на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p02.webp" alt="Производство червячных редукторов" loading="lazy" width="900" height="675"><figcaption>Сборка червячных редукторов на собственном производстве</figcaption></figure>
+ 
+@@ -161,2 +164,5 @@
+   <details class="seo-more"><summary>Подробнее: характеристики, таблицы и полезные ссылки</summary><div class="seo-body"><p>Самоторможение — свойство червячного редуктора удерживать нагрузку без обратного проворачивания вала. Оно проявляется при малом угле подъёма витка и КПД ниже ~50%, поэтому характерно для червячных передач с большим передаточным числом. Точную пригодность под вашу нагрузку подтвердит инженер. Передавайте параметры — посчитаем точно.</p><p>Чтобы не считать вручную, воспользуйтесь онлайн-инструментом: задайте параметры и получите подходящие типоразмеры с обозначениями ГОСТ и импортными аналогами.</p><h3>Условия самоторможения</h3><table class="spec"><tbody><tr><th>Тип передачи</th><td>чаще всего червячная</td></tr><tr><th>Угол подъёма витка</th><td>малый (большое передаточное число)</td></tr><tr><th>КПД</th><td>ориентировочно ниже 0,5</td></tr><tr><th>Передаточное число</th><td>как правило высокое (i больше ~40)</td></tr><tr><th>Важно</th><td>самоторможение не заменяет тормоз для безопасности</td></tr></tbody></table><h3>Самоторможение по типам редукторов</h3><table class="spec"><tbody><tr><th>Червячный</th><td>часто самотормозящий при большом i</td></tr><tr><th>Цилиндрический</th><td>нет самоторможения</td></tr><tr><th>Конический</th><td>нет самоторможения</td></tr><tr><th>Планетарный</th><td>нет самоторможения</td></tr><tr><th>Рекомендация</th><td>для подъёмных механизмов — доп. тормоз</td></tr></tbody></table><p>Полезное: <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a>, <a href="/catalog/">каталог по типам</a>, <a href="/importozameshchenie">импортозамещение</a>.</p></div></details>
++
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
+ </div></div></section>
+@@ -187,8 +193,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -201,3 +208,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -210,3 +217,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -216,3 +223,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -220,3 +227,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -233,4 +240,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

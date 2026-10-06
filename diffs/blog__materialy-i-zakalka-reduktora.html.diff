@@ -1,0 +1,117 @@
+--- main/blog/materialy-i-zakalka-reduktora.html
++++ prod/blog/materialy-i-zakalka-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Из чего делают редукторы: материалы и закалка зубьев</title>
++<title>Из чего делают редукторы: материалы и закалка зубьев | ZR</title>
+ <meta name="description" content="Из чего делают редуктор: чугунный и алюминиевый корпус, легированные стали колёс, цементация и закалка зубьев до 56–62 HRC. Как материалы влияют на ресурс." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/materialy-i-zakalka-reduktora" />
+-<meta property="og:title" content="Из чего делают редукторы: материалы корпуса и закалка зубьев" />
++<meta property="og:title" content="Из чего делают редукторы: материалы корпуса и закалка зубьев | ZR" />
+ <meta property="og:description" content="Чугун и алюминий для корпуса, легированные стали и закалка зубьев редуктора до 56–62 HRC, шлифовка зуба, червяк и бронзовый венец." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-motor-gearbox.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Из чего делают редукторы: материалы корпуса и закалка зубьев","description":"Чугун и алюминий для корпуса, легированные стали и закалка зубьев редуктора до 56–62 HRC, шлифовка зуба, червяк и бронзовый венец.","image":"https://zavod-red.ru/assets/blog-photo/th-motor-gearbox.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/materialy-i-zakalka-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Из чего делают редукторы: материалы корпуса и закалка зубьев","description":"Чугун и алюминий для корпуса, легированные стали и закалка зубьев редуктора до 56–62 HRC, шлифовка зуба, червяк и бронзовый венец.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/materialy-i-zakalka-reduktora","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Материалы и закалка редуктора","item":"https://zavod-red.ru/blog/materialy-i-zakalka-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"До какой твёрдости закаливают зубья редуктора?","acceptedAnswer":{"@type":"Answer","text":"Рабочий профиль зуба силового цилиндрического редуктора закаливают до 56–62 HRC, при этом сердцевина остаётся вязкой и упругой. Такая комбинация даёт стойкость к контактному выкрашиванию и износу при сохранении ударной прочности."}},{"@type":"Question","name":"Зачем зуб цементируют перед закалкой?","acceptedAnswer":{"@type":"Answer","text":"Цементация насыщает поверхность зуба углеродом на глубину долей миллиметра, что позволяет закалить именно рабочий слой до высокой твёрдости. Сердцевина при этом остаётся вязкой и гасит ударные нагрузки. В итоге зуб не выкрашивается под контактным давлением и не ломается хрупко при пусках и реверсах."}},{"@type":"Question","name":"Из какой стали делают шестерни и колёса?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса изготавливают из легированных конструкционных сталей — например 20Х, 20ХНМ, 18ХГТ, 40Х. Легирующие элементы (хром, никель, марганец, молибден) обеспечивают прокаливаемость и прочность сердцевины под термообработку."}},{"@type":"Question","name":"Из чего делают корпус редуктора — чугун или алюминий?","acceptedAnswer":{"@type":"Answer","text":"У большинства промышленных редукторов корпус отливают из серого чугуна (СЧ20–СЧ25): он жёсткий, гасит вибрацию и хорошо отводит тепло. Алюминиевый сплав применяют у компактных мотор-редукторов и приводов малой мощности, где важна масса. Для тяжёлых режимов и больших моментов остаётся чугун."}},{"@type":"Question","name":"Зачем шлифуют зуб после закалки?","acceptedAnswer":{"@type":"Answer","text":"При закалке геометрия профиля немного искажается, поэтому рабочие поверхности шлифуют, восстанавливая точный эвольвентный профиль. Шлифовка повышает степень точности зацепления, снижает шум и вибрацию и выравнивает пятно контакта по всей высоте зуба. Равномерный контакт означает меньший износ и больший ресурс."}},{"@type":"Question","name":"Почему червячный венец делают из бронзы?","acceptedAnswer":{"@type":"Answer","text":"В червячной паре витки червяка скользят по зубьям колеса, а не перекатываются, поэтому венец отливают из оловянной бронзы — мягкого антифрикционного материала с низким трением. Пара «стальной закалённый червяк — бронзовый венец» хорошо прирабатывается и противостоит задирам. Часто венец выполняют биметаллическим: бронзовый обод на стальной ступице."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"До какой твёрдости закаливают зубья редуктора?","acceptedAnswer":{"@type":"Answer","text":"Рабочий профиль зуба силового цилиндрического редуктора закаливают до 56–62 HRC, при этом сердцевина остаётся вязкой и упругой. Такая комбинация даёт стойкость к контактному выкрашиванию и износу при сохранении ударной прочности. Подобрать редуктор с подтверждённой термообработкой можно на странице подбора ."}},{"@type":"Question","name":"Зачем зуб цементируют перед закалкой?","acceptedAnswer":{"@type":"Answer","text":"Цементация насыщает поверхность зуба углеродом на глубину долей миллиметра, что позволяет закалить именно рабочий слой до высокой твёрдости. Сердцевина при этом остаётся вязкой и гасит ударные нагрузки. В итоге зуб не выкрашивается под контактным давлением и не ломается хрупко при пусках и реверсах."}},{"@type":"Question","name":"Из какой стали делают шестерни и колёса?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса изготавливают из легированных конструкционных сталей — например 20Х, 20ХНМ, 18ХГТ, 40Х. Легирующие элементы (хром, никель, марганец, молибден) обеспечивают прокаливаемость и прочность сердцевины под термообработку. Конкретные исполнения и типоразмеры приведены в каталоге редукторов ."}},{"@type":"Question","name":"Из чего делают корпус редуктора — чугун или алюминий?","acceptedAnswer":{"@type":"Answer","text":"У большинства промышленных редукторов корпус отливают из серого чугуна (СЧ20–СЧ25): он жёсткий, гасит вибрацию и хорошо отводит тепло. Алюминиевый сплав применяют у компактных мотор-редукторов и приводов малой мощности, где важна масса. Для тяжёлых режимов и больших моментов остаётся чугун."}},{"@type":"Question","name":"Зачем шлифуют зуб после закалки?","acceptedAnswer":{"@type":"Answer","text":"При закалке геометрия профиля немного искажается, поэтому рабочие поверхности шлифуют, восстанавливая точный эвольвентный профиль. Шлифовка повышает степень точности зацепления, снижает шум и вибрацию и выравнивает пятно контакта по всей высоте зуба. Равномерный контакт означает меньший износ и больший ресурс."}},{"@type":"Question","name":"Почему червячный венец делают из бронзы?","acceptedAnswer":{"@type":"Answer","text":"В червячной паре витки червяка скользят по зубьям колеса, а не перекатываются, поэтому венец отливают из оловянной бронзы — мягкого антифрикционного материала с низким трением. Пара «стальной закалённый червяк — бронзовый венец» хорошо прирабатывается и противостоит задирам. Часто венец выполняют биметаллическим: бронзовый обод на стальной ступице. Подобрать червячный редуктор удобно через страницу подбора ."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Правильно подобранные материалы редуктора — легированная сталь зубчатых колёс, чугунный или алюминиевый корпус, бронзовый венец — в сочетании с цементацией и закалкой зубьев до 56–62 HRC дают высокий контактный ресурс, низкий шум и стабильную геометрию зацепления. Закалка зубьев редуктора с последующей шлифовкой профиля распределяет нагрузку по всей рабочей поверхности и защищает зуб от выкрашивания и износа. Подобрать редуктор с подтверждёнными материалами и термообработкой под вашу задачу поможет инженер Завода Редукторов. Зубчатые колёса редукторов чаще всего изготавливают из легированных сталей 40Х, 20Х, 20ХН3А или 18ХГТ: первые упрочняют объёмной или поверхностной закалкой ТВЧ, вторые — цементацией с последующей закалкой, что даёт твёрдый поверхностный слой при вязкой сердцевине. Для червячных передач венец делают из оловянной или безоловянной бронзы, а червяк — из закалённой шлифованной стали, что снижает износ и трение в паре. Твёрдость рабочих поверхностей зубьев напрямую определяет допускаемое контактное напряжение и ресурс: цементованные и шлифованные зубья с твёрдостью 56–62 HRC выдерживают существенно большую нагрузку, чем улучшенные до 250–320 HB. Корпус из серого чугуна гасит вибрацию и стабилен по геометрии, алюминиевый — легче и применяется в компактных мотор-редукторах. Материалы узлов редуктора Узел Материал Зубчатые колёса сталь 40Х, 20Х, 18ХГТ, 20ХН3А Червячный венец бронза БрО10Ф1, БрА9Ж3Л Червяк сталь закалённая шлифованная Корпус чугун СЧ20 / алюминиевый сплав Валы сталь 40Х улучшенная Термообработка и твёрдость зубьев Обработка Твёрдость поверхности Улучшение (норм. + отпуск) 250–320 HB Закалка ТВЧ 45–55 HRC Цементация + закалка 56–62 HRC Азотирование до 700 HV (тонкий слой) Шлифовка профиля повышает точность и ресурс Исполнения, типоразмеры и материалы редукторов приведены в каталоге редукторов . Подтверждение качества термообработки и материалов — в разделе сертификаты и качество ."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Материалы и закалка редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Материалы и закалка редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Справочник</div>
+-  <h1>Из чего делают редукторы: материалы корпуса и закалка зубьев</h1><img class="blog-hero-img" src="../assets/blog-photo/th-motor-gearbox.webp" alt="Из чего делают редукторы: материалы корпуса и закалка зубьев — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Из чего делают редукторы: материалы корпуса и закалка зубьев</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Из чего делают редукторы: материалы корпуса и закалка зубьев — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -81,3 +84,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор с чугунным корпусом и закалёнными зубьями" loading="lazy"><figcaption>Цилиндрический редуктор: чугунный корпус и закалённые шлифованные зубчатые колёса</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор с чугунным корпусом и закалёнными зубьями" loading="lazy" width="800" height="600"><figcaption>Цилиндрический редуктор: чугунный корпус и закалённые шлифованные зубчатые колёса</figcaption></figure>
+ 
+@@ -92,3 +95,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — обработка зубчатых колёс и термообработка" loading="lazy"><figcaption>Механическая и термическая обработка зубчатых колёс на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — обработка зубчатых колёс и термообработка" loading="lazy" width="900" height="675"><figcaption>Механическая и термическая обработка зубчатых колёс на собственном производстве</figcaption></figure>
+ 
+@@ -153,3 +156,6 @@
+       <tr><th>Шлифовка профиля</th><td>повышает точность и ресурс</td></tr>
+-    </tbody></table><p>Исполнения, типоразмеры и материалы редукторов приведены в <a href="/catalog/">каталоге редукторов</a>. Подтверждение качества термообработки и материалов — в разделе <a href="/sertifikaty">сертификаты и качество</a>.</p></div></details></div>
++    </tbody></table><p>Исполнения, типоразмеры и материалы редукторов приведены в <a href="/catalog/">каталоге редукторов</a>. Подтверждение качества термообработки и материалов — в разделе <a href="/sertifikaty">сертификаты и качество</a>.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ 
+@@ -182,8 +188,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -196,3 +203,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -205,3 +212,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -211,3 +218,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -215,3 +222,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -228,4 +235,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

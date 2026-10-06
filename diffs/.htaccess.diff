@@ -1,0 +1,226 @@
+--- main/.htaccess
++++ prod/.htaccess
+@@ -9,3 +9,5 @@
+ 
+-  # http→https через X-Forwarded-Proto (Timeweb за nginx — иначе цикл)
++  # http→https через X-Forwarded-Proto (Apache стоит за nginx — иначе цикл).
++  # После переезда на Beget схема та же (nginx-reuseport спереди), правило
++  # проверено 25.09.2026: http://zavod-red.ru/catalog/ -> 301 на https одним хопом.
+   RewriteCond %{HTTP:X-Forwarded-Proto} =http
+@@ -26,9 +28,51 @@
+   # (mirror не удаляет), но URL склеивается на старую версию — против дубль-контента.
+-  RewriteRule ^glossary/koefficient-perekrytiya/?$ /glossary/koeffitsient-perekrytiya [R=301,L,NE]
+-  RewriteRule ^glossary/tihohodnyy-val/?$ /glossary/tikhokhodnyy-val [R=301,L,NE]
+-  RewriteRule ^glossary/tsilindricheskiy-reduktor/?$ /glossary/cilindricheskiy-reduktor [R=301,L,NE]
+-  RewriteRule ^glossary/moment-inertsii/?$ /glossary/moment-inercii [R=301,L,NE]
+-  RewriteRule ^glossary/vibratsiya-reduktora/?$ /glossary/vibraciya-reduktora [R=301,L,NE]
++  RewriteRule ^glossary/koefficient-perekrytiya/?$ https://%{HTTP_HOST}/glossary/koeffitsient-perekrytiya [R=301,L,NE]
++  RewriteRule ^glossary/tihohodnyy-val/?$ https://%{HTTP_HOST}/glossary/tikhokhodnyy-val [R=301,L,NE]
++  RewriteRule ^glossary/tsilindricheskiy-reduktor/?$ https://%{HTTP_HOST}/glossary/cilindricheskiy-reduktor [R=301,L,NE]
++  RewriteRule ^glossary/moment-inertsii/?$ https://%{HTTP_HOST}/glossary/moment-inercii [R=301,L,NE]
++  RewriteRule ^glossary/vibratsiya-reduktora/?$ https://%{HTTP_HOST}/glossary/vibraciya-reduktora [R=301,L,NE]
++  # Дубль по IP-защите (одинаковый description, каннибализация) → канон ip-zashchita (чаще линкуется)
++  RewriteRule ^glossary/stepen-zashchity-ip/?$ https://%{HTTP_HOST}/glossary/ip-zashchita [R=301,L,NE]
+   # Ошибочная атрибуция: 7Ч-М (советский червячный) был под брендом Varvel — редирект на каталог
+-  RewriteRule ^analog/varvel-7-(.*)$ /catalog/chervyachnye [R=301,L]
++  RewriteRule ^analog/varvel-7-(.*)$ https://%{HTTP_HOST}/catalog/chervyachnye [R=301,L]
++
++  # Файл подтверждения прав Яндекс.Вебмастера обязан отдаваться ПО СВОЕМУ адресу с .html
++  # и кодом 200. Общее правило «убрать .html» уводило его в 301 — при строгой перепроверке
++  # это грозит слётом верификации домена. Выводим из-под правила до всех остальных редиректов.
++  RewriteRule ^yandex_[a-f0-9]+\.html$ - [L]
++  RewriteRule ^google[0-9a-f]+\.html$ - [L]
++
++  # Мусор в корне боевого, которого нет в исходниках: остатки старых версий и тестов.
++  # Все отдавали 200 и были открыты для индексации; ЧЕТЫРЕ копии старой главной —
++  # прямой дубль «/» и конкурент собственной главной в выдаче. Файлы НЕ удаляем
++  # (зеркало их не трогает, откат = снять правило), склеиваем URL редиректами.
++  RewriteRule ^index_old_[0-9][0-9-]*/?$ https://%{HTTP_HOST}/ [R=301,L]
++  # /evl, /mr, /pr - точные дубли каталожных страниц (совпадают title и содержимое)
++  RewriteRule ^evl/?$ https://%{HTTP_HOST}/catalog/evl [R=301,L,NE]
++  RewriteRule ^mr/?$ https://%{HTTP_HOST}/catalog/mr [R=301,L,NE]
++  RewriteRule ^pr/?$ https://%{HTTP_HOST}/catalog/pr [R=301,L,NE]
++  # /_lbtest - копия страницы чертежей, осталась от нагрузочного теста
++  RewriteRule ^_lbtest/?$ https://%{HTTP_HOST}/chertezhi [R=301,L,NE]
++  # /test - пустая страница без заголовка, отдаём 410 Gone: склеивать не с чем
++  RewriteRule ^test/?$ - [G]
++
++  # Копии сайта, оставшиеся на сервере от прежних версий. Три из них отдавали 200 и
++  # потому индексировались: полные дубли главной, каталога и страниц брендов,
++  # конкуренты настоящих страниц по тем же запросам. Правило стоит на боевом с августа,
++  # в репозиторий не попало — возвращаем, иначе заливка .htaccess его снесёт.
++  RewriteRule ^_seo_backup_[0-9a-z]+/ https://%{HTTP_HOST}/ [R=301,L,NE]
++  RewriteRule ^_lineup_backup_[0-9a-z]+/ https://%{HTTP_HOST}/ [R=301,L,NE]
++  RewriteRule ^(blog|glossary)_backup/ https://%{HTTP_HOST}/ [R=301,L,NE]
++
++  # Раздел /sravnenie/ снят целиком 20.08.2026 (решение владельца после претензии
++  # компании «Европривод»): страницы сравнения с конкурентами больше не публикуем.
++  # 410 Gone на весь раздел — склеивать с чем-либо нельзя, это не переезд контента.
++  # 23.08.2026: страница /sravnenie/tehnoreduktor-ural возвращена (решение владельца,
++  # претензий по ней не было, поиск её запрашивает). Остальной раздел отдаёт 410.
++  RewriteCond %{REQUEST_URI} !^/sravnenie/tehnoreduktor-ural(\.html)?/?$
++  RewriteRule ^sravnenie(/.*)?$ - [G]
++
++
++  # Калькулятор живёт на /podbor; старый/внешний /calculator вёл в 404 → склеиваем 301.
++  RewriteRule ^calculator/?$ https://%{HTTP_HOST}/podbor [R=301,L]
+ 
+@@ -44,17 +88,2 @@
+   RewriteRule ^analog/sew-tramec-(.*?)/?$ https://%{HTTP_HOST}/analog/tramec-$1 [R=301,L,NE]
+-
+-  # Копии сайта, оставшиеся на сервере от прежних версий. Аудит показал, что три из них
+-  # отдают 200 и потому индексируются: это полные дубли главной, каталога и страниц
+-  # брендов, конкурирующие с настоящими страницами за те же запросы. Файлы удаляются
+-  # отдельным воркфлоу, но правило ставим ЗАРАНЕЕ и оставляем навсегда: оно закрывает
+-  # окно между выкаткой и удалением, а потом продолжает уводить внешние ссылки и
+-  # поисковых роботов с мёртвых адресов на живую главную.
+-  RewriteRule ^_seo_backup_[0-9a-z]+/ https://%{HTTP_HOST}/ [R=301,L,NE]
+-  RewriteRule ^_lineup_backup_[0-9a-z]+/ https://%{HTTP_HOST}/ [R=301,L,NE]
+-  RewriteRule ^(blog|glossary)_backup/ https://%{HTTP_HOST}/ [R=301,L,NE]
+-
+-  # Страница сравнения с конкурентом, которой нет в репозитории: осталась от прежней
+-  # версии сайта. Уводим на импортозамещение — ближайший по смыслу живой раздел,
+-  # чтобы не терять переходы по внешним ссылкам.
+-  RewriteRule ^sravnenie(/|$) https://%{HTTP_HOST}/importozameshchenie [R=301,L,NE]
+ 
+@@ -174,2 +203,26 @@
+ 
++  # КЕЙСЫ: 18 почти одинаковых страниц по шести маркам схлопнуты в три сводные (25.09.2026).
++  # Замер показал совпадение 0,893–0,902 внутри каждой тройки сценариев при 1,6–2,0 %
++  # собственного текста: содержание сценария от марки не зависело. Файлы не удалены,
++  # перенесены в cases/_shlopnutye/ и закрыты noindex; склейка идёт этими 301.
++  # Ставим ДО общего правила «убрать .html» — иначе адрес с .html уходил бы двумя хопами.
++  RewriteRule ^cases/zamena-boneng-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-flender-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-guomao-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-keb-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-siemens-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-unidrive-bez-shildika(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-bez-shildika [R=301,L,NE]
++  RewriteRule ^cases/zamena-boneng-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/zamena-flender-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/zamena-guomao-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/zamena-keb-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/zamena-siemens-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/zamena-unidrive-konveyer(\.html)?/?$ https://%{HTTP_HOST}/cases/zamena-na-konveyere [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-boneng(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-flender(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-guomao(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-keb(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-siemens(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++  RewriteRule ^cases/srochnaya-zamena-unidrive(\.html)?/?$ https://%{HTTP_HOST}/cases/srochnaya-zamena [R=301,L,NE]
++
+   # СТАРЫЕ ПРОИНДЕКСИРОВАННЫЕ URL с запятыми → чистые (301). Защита от потери индексации
+@@ -182,2 +235,17 @@
+   RewriteRule ^ https://%{HTTP_HOST}/%1 [R=301,L]
++
++
++  # Чистые URL для заводских маркировок МР и ПР (вместо ?mr=/?pr=, которые закрыты
++  # в robots.txt правилом «Disallow: /*?» и потому не индексировались вовсе).
++  # Внутренняя подмена, НЕ редирект: адрес в строке остаётся человекочитаемым,
++  # карточка сама подставляет маркировку по пути. canonical ведёт на карточку ZR,
++  # поэтому дублей в индексе не возникает. 82 правила.
++
++
++  # zr-underscore-301: подчёркивание в адресах карточек заменено на дефис (07.08.2026).
++  # Google трактует «_» как склейку слов, дефис — как разделитель. Старые адреса
++  # проиндексированы, поэтому уводим их 301-м, а не бросаем в 404.
++  # Максимум подчёркиваний в слаге — два, поэтому хватает двух правил (сначала длинное).
++  RewriteRule ^(analog|ispolnenie|tiporazmer|motor-reduktor-zr)/([^_/]+)_([^_/]+)_([^_/]+)/?$ https://%{HTTP_HOST}/$1/$2-$3-$4 [R=301,L,NE]
++  RewriteRule ^(analog|ispolnenie|tiporazmer|motor-reduktor-zr)/([^_/]+)_([^_/]+)/?$ https://%{HTTP_HOST}/$1/$2-$3 [R=301,L,NE]
+ 
+@@ -218,6 +286,15 @@
+   ExpiresByType image/webp "access plus 1 year"
+-  ExpiresByType text/css "access plus 1 month"
++  # КЭШ СТИЛЕЙ И СКРИПТОВ — ЧАС ВМЕСТО МЕСЯЦА (26.09.2026)
++# Стили и скрипты кэшировались на месяц. Из-за этого любая правка оформления
++# доходила до людей только после смены номера версии в ссылке — а ссылка эта
++# стоит в 114 тысячах файлов, и прогон по ним занимает полдня и роняет сервер.
++# Сегодня такой прогон пришлось делать вручную, и следующая же правка стилей
++# упёрлась бы в то же самое.
++# Час — разумный компромисс: браузер всё равно не скачивает файл заново, а
++# спрашивает «не менялся ли» и получает короткий ответ «нет» (код 304).
++# Трафика это почти не добавляет, зато правки доезжают сами.
++  ExpiresByType text/css "access plus 1 hour"
+   ExpiresByType application/pdf "access plus 1 month"
+-  ExpiresByType text/javascript "access plus 1 month"
+-  ExpiresByType application/javascript "access plus 1 month"
++  ExpiresByType text/javascript "access plus 1 hour"
++  ExpiresByType application/javascript "access plus 1 hour"
+   # JSON-данные (podbor-data, import-catalog, search-index) версионируются через ?v= — кэшируем надолго
+@@ -266,2 +343,62 @@
+ </FilesMatch>
++# Рабочий конфиг бэкенда: правило выше закрывает только `config.php`, а пароль БД
++# лежит в `config.local.php` — он отдавался снаружи с кодом 200. Сейчас его исполняет
++# PHP и тело пустое, но защита держалась ровно на том, что обработчик жив: сбой PHP
++# или смена обработчика в панели — и наружу ушёл бы исходник с доступами.
++<FilesMatch "^config\.local.*\.php$">
++  <IfModule mod_authz_core.c>
++    Require all denied
++  </IfModule>
++  <IfModule !mod_authz_core.c>
++    Order deny,allow
++    Deny from all
++  </IfModule>
++</FilesMatch>
++# Служебные файлы репозитория, уезжающие на бой вместе с сайтом. `.worktreeinclude`
++# отдавался с кодом 200 и содержал строку `api/config.local.php` — то есть прямо
++# показывал, где лежит конфиг. `.index-state.json` — карта всех адресов сайта на 15 МБ,
++# её скачивание ещё и бесплатно грузит хостинг. Имя начинается с точки, поэтому
++# под правило по расширениям не попадает.
++<FilesMatch "^\.">
++  <IfModule mod_authz_core.c>
++    Require all denied
++  </IfModule>
++  <IfModule !mod_authz_core.c>
++    Order deny,allow
++    Deny from all
++  </IfModule>
++</FilesMatch>
++# Служебные каталоги инструментов: состав окружения, порты, настройки агентов.
++RedirectMatch 403 ^/\.claude/.*$
++RedirectMatch 403 ^/\.github/.*$
++# Архивы, которые мы сами складываем рядом перед удалением. Лежат в веб-корне,
++# поэтому без этого правила их содержимое снова отдавалось бы наружу — а это ровно
++# те страницы-дубли, ради устранения которых архив и создавался.
++RedirectMatch 403 ^/_koren_dubli[^/]*/.*$
++RedirectMatch 403 ^/_arhiv[^/]*/.*$
++# Сборочные файлы и архивы, уехавшие на бой по недосмотру. Архив отдавался целиком
++# на 10,7 МБ — бесплатная нагрузка на хостинг, который мы уже роняли по лимитам.
++<FilesMatch "^(?:Dockerfile|docker-compose\.ya?ml)$">
++  <IfModule mod_authz_core.c>
++    Require all denied
++  </IfModule>
++  <IfModule !mod_authz_core.c>
++    Order deny,allow
++    Deny from all
++  </IfModule>
++</FilesMatch>
++RedirectMatch 403 ^/zavod-3-tiporazmer\.zip$
++# Копии страниц вида index.html.bak-20260810 и index_old_*.html: правило по расширениям
++# их не ловит (после .bak идёт дата), а отдавались они с кодом 200 — то есть полные
++# дубли главной конкурировали с ней же в выдаче.
++<FilesMatch "\.(?:bak|orig|backup)[-_.0-9a-zA-Z]*$">
++  <IfModule mod_authz_core.c>
++    Require all denied
++  </IfModule>
++  <IfModule !mod_authz_core.c>
++    Order deny,allow
++    Deny from all
++  </IfModule>
++</FilesMatch>
++RedirectMatch 403 ^/index(?:_old|_backup|_broken)[^/]*\.html$
+ # Каталог данных/загрузок CRM — закрыт от прямого доступа
+@@ -270,7 +407,8 @@
+ # --- Внутренние файлы не отдаются наружу ---------------------------------------
+-# Аудит показал, что /CLAUDE.md, /README.md, /AI-STACK.md, /BRANDBOOK.md и
+-# /api/SETUP.md отдавались любому с кодом 200. Паролей в них нет, но там устройство
+-# сайта, схема заливки, хостинг, имя репозитория CRM и указание, где лежат секреты, —
+-# готовая карта для того, кто станет их искать. Вдобавок robots.txt закрывает только
+-# /api/, поэтому файлы из корня ещё и попадали в индекс.
++# /CLAUDE.md, /README.md, /AI-STACK.md, /BRANDBOOK.md и /api/SETUP.md отдавались любому
++# с кодом 200. Паролей в них нет, но там устройство сайта, схема заливки, хостинг,
++# имя репозитория CRM и указание, где лежат секреты. robots.txt закрывает только /api/,
++# поэтому файлы из корня ещё и попадали в индекс.
++# Правило стоит на боевом с августа, в репозиторий не попало — возвращаем, иначе
++# заливка .htaccess снова открыла бы эти файлы.
+ # Расширения перечислены поимённо: .yml НЕ закрывается — /yandex-market.yml это

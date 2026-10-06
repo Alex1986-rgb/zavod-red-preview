@@ -1,0 +1,117 @@
+--- main/blog/vibraciya-i-shum-reduktora.html
++++ prod/blog/vibraciya-i-shum-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Вибрация и шум редуктора: причины и как устранить</title>
++<title>Вибрация и шум редуктора: причины и как устранить | ZR</title>
+ <meta name="description" content="Почему гудит и вибрирует редуктор: несоосность, износ подшипников и зубьев, ослабление крепления, перегрузка, низкое масло. Диагностика по звуку и что делать." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/vibraciya-i-shum-reduktora" />
+-<meta property="og:title" content="Вибрация и шум редуктора: причины и как устранить" />
++<meta property="og:title" content="Вибрация и шум редуктора: причины и как устранить | ZR" />
+ <meta property="og:description" content="Почему гудит и вибрирует редуктор, как продиагностировать причину по характеру звука и что делать по шагам." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-03.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Вибрация и шум редуктора: причины и как устранить","description":"Почему гудит и вибрирует редуктор, как продиагностировать причину по характеру звука и что делать по шагам.","image":"https://zavod-red.ru/assets/blog-photo/red-worm-03.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/vibraciya-i-shum-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Вибрация и шум редуктора: причины и как устранить","description":"Почему гудит и вибрирует редуктор, как продиагностировать причину по характеру звука и что делать по шагам.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/vibraciya-i-shum-reduktora","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Вибрация и шум редуктора","item":"https://zavod-red.ru/blog/vibraciya-i-shum-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какой шум редуктора считается нормой?","acceptedAnswer":{"@type":"Answer","text":"Ровный негромкий гул без металлического лязга, стука и резких призвуков — это норма. Уровень звука зависит от типа передачи и нагрузки, но он должен быть стабильным. Тревожный признак — если шум усилился, изменил тон или появилась вибрация по сравнению с обычным режимом работы."}},{"@type":"Question","name":"Каковы основные причины вибрации и шума?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего это несоосность валов, износ или повреждение подшипников, выработка зубьев, ослабленный крепёж и фундамент, перегрузка или неподходящее масло. Характер звука помогает локализовать узел: гул на оборотах вала — подшипники, периодический стук — зубья, низкочастотная вибрация — центровка и крепление."}},{"@type":"Question","name":"Как снизить шум и вибрацию редуктора?","acceptedAnswer":{"@type":"Answer","text":"Начните с базовых проверок: затяните крепёж, проверьте центровку с двигателем, замените масло на рекомендованное и убедитесь, что нет перегруза. Если это не помогло, нужна диагностика подшипников и зубчатых пар. Виброопоры и правильный монтаж на жёсткий фундамент дополнительно гасят вибрацию."}},{"@type":"Question","name":"При чём тут центровка и крепление?","acceptedAnswer":{"@type":"Answer","text":"Несоосность валов двигателя и редуктора создаёт паразитные нагрузки, которые проявляются вибрацией и ускоренным износом подшипников и муфт. Ослабленный крепёж или нежёсткий фундамент усиливают резонанс и шум. Точная центровка и надёжная фиксация на основании — первое, что проверяют при сильной вибрации."}},{"@type":"Question","name":"Опасна ли вибрация для редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, повышенная вибрация ускоряет износ подшипников, зубьев и уплотнений, разбивает посадочные места и со временем приводит к поломке. Она также передаётся на двигатель и приводимый механизм. Игнорировать вибрацию нельзя — лучше найти причину на раннем этапе, пока ремонт обходится дешевле замены."}},{"@type":"Question","name":"Как продиагностировать причину шума?","acceptedAnswer":{"@type":"Answer","text":"Определите узел по характеру звука и оборотам, на которых он проявляется, осмотрите крепёж и центровку, проверьте уровень и чистоту масла. Наличие металлической стружки в масле говорит об износе зубьев или подшипников. Для точной оценки пришлите фото шильдика и видео со звуком — инженер подскажет ремонт или замену."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Какой шум редуктора считается нормой?","acceptedAnswer":{"@type":"Answer","text":"Ровный негромкий гул без металлического лязга, стука и резких призвуков — это норма. Уровень звука зависит от типа передачи и нагрузки, но он должен быть стабильным. Тревожный признак — если шум усилился, изменил тон или появилась вибрация по сравнению с обычным режимом работы."}},{"@type":"Question","name":"Каковы основные причины вибрации и шума?","acceptedAnswer":{"@type":"Answer","text":"Чаще всего это несоосность валов, износ или повреждение подшипников, выработка зубьев, ослабленный крепёж и фундамент, перегрузка или неподходящее масло. Характер звука помогает локализовать узел: гул на оборотах вала — подшипники, периодический стук — зубья, низкочастотная вибрация — центровка и крепление."}},{"@type":"Question","name":"Как снизить шум и вибрацию редуктора?","acceptedAnswer":{"@type":"Answer","text":"Начните с базовых проверок: затяните крепёж, проверьте центровку с двигателем, замените масло на рекомендованное и убедитесь, что нет перегруза. Если это не помогло, нужна диагностика подшипников и зубчатых пар. Виброопоры и правильный монтаж на жёсткий фундамент дополнительно гасят вибрацию."}},{"@type":"Question","name":"При чём тут центровка и крепление?","acceptedAnswer":{"@type":"Answer","text":"Несоосность валов двигателя и редуктора создаёт паразитные нагрузки, которые проявляются вибрацией и ускоренным износом подшипников и муфт. Ослабленный крепёж или нежёсткий фундамент усиливают резонанс и шум. Точная центровка и надёжная фиксация на основании — первое, что проверяют при сильной вибрации."}},{"@type":"Question","name":"Опасна ли вибрация для редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, повышенная вибрация ускоряет износ подшипников, зубьев и уплотнений, разбивает посадочные места и со временем приводит к поломке. Она также передаётся на двигатель и приводимый механизм. Игнорировать вибрацию нельзя — лучше найти причину на раннем этапе, пока ремонт обходится дешевле замены."}},{"@type":"Question","name":"Как продиагностировать причину шума?","acceptedAnswer":{"@type":"Answer","text":"Определите узел по характеру звука и оборотам, на которых он проявляется, осмотрите крепёж и центровку, проверьте уровень и чистоту масла. Наличие металлической стружки в масле говорит об износе зубьев или подшипников. Для точной оценки пришлите фото шильдика и видео со звуком — инженер подскажет ремонт или замену."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Чтобы снизить вибрацию и шум редуктора, важно действовать системно: проверить центровку и крепёж, оценить состояние подшипников и зубчатого зацепления, исключить перегрузку и масляное голодание, а при резонансе доработать основание. Ровный гул без стуков и нарастания — норма; любое изменение тона или рост вибрации редуктора означает зарождающийся дефект, который дешевле поймать на раннем этапе. Вибрация и шум редуктора — первый диагностический признак зарождающегося дефекта: ровный гул без стуков считается нормой, а изменение тона, рост амплитуды или появление ударов указывают на износ подшипников, дефект зацепления или расцентровку валов. Системная диагностика начинается с проверки крепежа и центровки, затем оценивают подшипники, зубчатое зацепление и уровень масла. Снизить вибрацию редуктора помогает устранение перекосов, замена изношенных подшипников, контроль смазки против масляного голодания и доработка основания при резонансе. Запчасти и подшипники под импортные редукторы поставляем под заказ (цена по запросу) или подбираем аналог; инженер Завода Редукторов поможет определить причину по частоте и характеру вибрации. Причины вибрации и шума редуктора Признак Вероятная причина Действие Гул на оборотной частоте дисбаланс, расцентровка центровка валов, балансировка Высокочастотный свист дефект подшипника замена подшипника Зубцовый тон, вой износ зубьев, неверный зазор контроль зацепления Стук, удары люфт, поломка зуба разборка, дефектовка Рост вибрации со временем масляное голодание, перегрев проверка уровня и качества масла Нормы вибрации привода Состояние СКЗ виброскорости Оценка Хорошее до 2,8 мм/с норма, эксплуатация Допустимое 2,8–4,5 мм/с наблюдение Требует мер 4,5–7,1 мм/с планировать ремонт Недопустимое свыше 7,1 мм/с остановка, дефектовка Перед запуском нового или отремонтированного привода соблюдайте правила обкатки редуктора — это снижает шум и вибрацию в первые часы работы. Если редуктор шумит из-за перегрузки или неверного типоразмера, поможет корректный подбор редуктора с запасом по моменту и режиму."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Вибрация и шум редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Вибрация и шум редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Эксплуатация</div>
+-  <h1>Вибрация и шум редуктора: причины и как устранить</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-03.webp" alt="Вибрация и шум редуктора: причины и как устранить — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Вибрация и шум редуктора: причины и как устранить</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Вибрация и шум редуктора: причины и как устранить — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -88,3 +91,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_bevel.webp" alt="Конический редуктор — источник шума при несоосности валов" loading="lazy"><figcaption>Конический редуктор: повышенный шум часто связан с несоосностью валов на входе</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_bevel.webp" alt="Конический редуктор — источник шума при несоосности валов" loading="lazy" width="800" height="600"><figcaption>Конический редуктор: повышенный шум часто связан с несоосностью валов на входе</figcaption></figure>
+ 
+@@ -99,3 +102,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p03.webp" alt="Дефектовка и ремонт редуктора на производстве" loading="lazy"><figcaption>Дефектовка узлов и проверка зацепления на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p03.webp" alt="Дефектовка и ремонт редуктора на производстве" loading="lazy" width="900" height="675"><figcaption>Дефектовка узлов и проверка зацепления на собственном производстве</figcaption></figure>
+ 
+@@ -196,3 +199,6 @@
+       <tr><th>Недопустимое</th><td>свыше 7,1 мм/с</td><td>остановка, дефектовка</td></tr>
+-    </tbody></table><p>Перед запуском нового или отремонтированного привода соблюдайте правила <a href="/blog/obkatka-reduktora">обкатки редуктора</a> — это снижает шум и вибрацию в первые часы работы. Если редуктор шумит из-за перегрузки или неверного типоразмера, поможет корректный <a href="/podbor">подбор редуктора</a> с запасом по моменту и режиму.</p></div></details></div>
++    </tbody></table><p>Перед запуском нового или отремонтированного привода соблюдайте правила <a href="/blog/obkatka-reduktora">обкатки редуктора</a> — это снижает шум и вибрацию в первые часы работы. Если редуктор шумит из-за перегрузки или неверного типоразмера, поможет корректный <a href="/podbor">подбор редуктора</a> с запасом по моменту и режиму.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+ </div></div></section>
+@@ -224,8 +230,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -238,3 +245,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -247,3 +254,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -253,3 +260,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -257,3 +264,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -270,4 +277,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

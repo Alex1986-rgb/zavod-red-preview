@@ -1,0 +1,150 @@
+--- main/blog/shema-i-ustrojstvo-chervyachnyj.html
++++ prod/blog/shema-i-ustrojstvo-chervyachnyj.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Устройство червячного редуктора: схема, детали, принцип работы</title>
++<title>Устройство червячный редуктора: схема, детали, принцип работы | ZR</title>
+ <meta name="description" content="Как устроен червячный редуктор: кинематическая схема, основные детали, принцип передачи момента, материалы. Ликбез инженера." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/shema-i-ustrojstvo-chervyachnyj" />
+-<meta property="og:title" content="Устройство червячного редуктора: схема, детали, принцип работы" />
++<meta property="og:title" content="Устройство червячный редуктора: схема, детали, принцип работы | ZR" />
+ <meta property="og:description" content="Как устроен червячный редуктор: кинематическая схема, основные детали, принцип передачи момента, материалы. Ликбез инженера." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-01.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-04.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -33,5 +33,8 @@
+ </style>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Устройство червячного редуктора: схема, детали, принцип работы", "description": "Как устроен червячный редуктор: кинематическая схема, основные детали, принцип передачи момента, материалы. Ликбез инженера.", "image": "https://zavod-red.ru/assets/blog-photo/red-worm-01.webp", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/shema-i-ustrojstvo-chervyachnyj"}</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Устройство червячный редуктора: схема, детали, принцип работы", "description": "Как устроен червячный редуктор: кинематическая схема, основные детали, принцип передачи момента, материалы. Ликбез инженера.", "image": "https://zavod-red.ru/assets/blog-photo/red-worm-04.webp", "author": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "areaServed": "RU", "name": "Завод Редукторов", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "mainEntityOfPage": "https://zavod-red.ru/blog/shema-i-ustrojstvo-chervyachnyj", "datePublished": "2026-07-15", "dateModified": "2026-08-26"}</script>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://zavod-red.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "Устройство", "item": "https://zavod-red.ru/blog/shema-i-ustrojstvo-chervyachnyj"}]}</script>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем отличается от коробки передач?", "acceptedAnswer": {"@type": "Answer", "text": "Постоянным передаточным числом: редуктор не переключается, он рассчитан на один режим — отсюда простота и ресурс."}}, {"@type": "Question", "name": "Какие материалы зубьев?", "acceptedAnswer": {"@type": "Answer", "text": "Легированные стали (40Х, 20ХН2М и аналоги) с цементацией/закалкой; у червячных колёс — бронзовый венец."}}, {"@type": "Question", "name": "Можно ли разобрать самому?", "acceptedAnswer": {"@type": "Answer", "text": "Технически да, но сборка требует регулировки зацепления и подшипников — без опыта лучше сервис."}}, {"@type": "Question", "name": "Где посмотреть чертежи?", "acceptedAnswer": {"@type": "Answer", "text": "Габаритные и присоединительные чертежи — в каталоге и КП; 3D-модели даём под проект."}}, {"@type": "Question", "name": "Как оформить заказ?", "acceptedAnswer": {"@type": "Answer", "text": "Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}}, {"@type": "Question", "name": "Какая доставка по России?", "acceptedAnswer": {"@type": "Answer", "text": "Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чем отличается от коробки передач?","acceptedAnswer":{"@type":"Answer","text":"Постоянным передаточным числом: редуктор не переключается, он рассчитан на один режим — отсюда простота и ресурс."}},{"@type":"Question","name":"Какие материалы зубьев?","acceptedAnswer":{"@type":"Answer","text":"Легированные стали (40Х, 20ХН2М и аналоги) с цементацией/закалкой; у червячных колёс — бронзовый венец."}},{"@type":"Question","name":"Можно ли разобрать самому?","acceptedAnswer":{"@type":"Answer","text":"Технически да, но сборка требует регулировки зацепления и подшипников — без опыта лучше сервис."}},{"@type":"Question","name":"Где посмотреть чертежи?","acceptedAnswer":{"@type":"Answer","text":"Габаритные и присоединительные чертежи червячного редуктора ZR доступны в каталоге и КП; 3D-модели предоставляем под конкретный проект."}},{"@type":"Question","name":"Как оформить заказ?","acceptedAnswer":{"@type":"Answer","text":"Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой."}},{"@type":"Question","name":"Какая доставка по России?","acceptedAnswer":{"@type":"Answer","text":"Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -65,6 +68,6 @@
+ </header>
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Устройство</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Устройство</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Матчасть</div>
+-  <h1>Устройство червячного редуктора: схема и принцип работы</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-01.webp" alt="Устройство червячного редуктора: схема и принцип работы — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Устройство червячный редуктора: схема и принцип работы</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-04.webp" alt="Устройство червячный редуктора: схема и принцип работы — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~4 минут</p>
+@@ -72,18 +75,16 @@
+ 
+-<section class="section" style="padding-top:40px"><div class="wrap"><div class="art">
++<section class="section" style="padding-top:40px"><div class="wrap"><div class="art" data-ai="2">
+   <p>Ликбез по матчасти: из чего состоит червячный редуктор и как он превращает быстрое вращение двигателя в медленное и мощное.</p>
+   <h2>Кинематика</h2>
+-  <p>Компактность, тихая работа, самоторможение при i≥40, валы под 90°. Момент растёт пропорционально передаточному числу (за вычетом потерь: КПД 60–90% (падает с ростом i)), обороты соответственно падают.</p>
+-
+-  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный мотор-редуктор — Устройство" loading="lazy"><figcaption>Червячный мотор-редуктор производства «Завода Редукторов»</figcaption></figure>
++  <p>Червячная пара даёт компактный корпус, малошумную работу, самоторможение при i≥40 и выход валов под 90°. Момент на выходе растёт пропорционально передаточному числу, обороты падают. Потери учтены в КПД 60–90%: чем выше i, тем ниже КПД.</p>
++
++  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный мотор-редуктор — Устройство" loading="lazy" width="800" height="600"><figcaption>Червячный мотор-редуктор производства «Завода Редукторов»</figcaption></figure>
+   <h2>Основные детали</h2>
+-  <ul>
+-    <li><b>Корпус</b> — чугун/сталь, база жёсткости и масляная ванна;</li>
+-    <li><b>Зубчатые элементы</b> — легированные стали с термообработкой;</li>
+-    <li><b>Валы</b> — с расчётом на радиальные и осевые нагрузки;</li>
++  <ul><li><b>Корпус</b> — чугун или сталь, задаёт жёсткость и служит масляной ванной;</li>
++    <li><b>Червячная пара</b> — легированные стали с термообработкой;</li>
++    <li><b>Валы</b> — рассчитываются на радиальные и осевые нагрузки;</li>
+     <li><b>Подшипники</b> — каталожные, под ресурс зацепления;</li>
+-    <li><b>Уплотнения и сапун</b> — герметичность и дыхание при нагреве.</li>
+-  </ul>
++    <li><b>Уплотнения и сапун</b> — герметичность и дыхание при нагреве.</li></ul>
+   <h2>Почему это надолго</h2>
+-  <p>Закрытая передача в масляной ванне — одна из самых долговечных машин в технике: нет пыли, стабильная смазка, расчётные нагрузки. Всё, что требуется взамен — правильный подбор и регламент.</p>
++  <p>Закрытая передача работает в масляной ванне: пыль не попадает, смазка стабильна, нагрузки рассчитаны. Ресурс определяется правильным подбором и регламентом замены масла PG/CLP высокой вязкости.</p>
+   <div class="note">Быстрый способ: в <a href="/podbor">калькуляторе подбора</a> выберите тип редуктора, задайте мощность, обороты и момент — получите подходящие типоразмеры ZR с импортными аналогами (SEW, NORD, Motovario и др.) и выгрузкой в CSV.</div>
+@@ -104,7 +105,7 @@
+   <p>Собранные данные вводите в <a href="/podbor">калькулятор подбора</a> — он покажет подходящие типоразмеры с обозначениями ZR и ГОСТ и импортными аналогами, а результат выгрузит в CSV для спецификации.</p>
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — Устройство" loading="lazy"><figcaption>Производство «Завода Редукторов»: механообработка, сборка, обкатка, ОТК</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство редукторов — Устройство" loading="lazy" width="900" height="675"><figcaption>Производство «Завода Редукторов»: механообработка, сборка, обкатка, ОТК</figcaption></figure>
+   <h2>Доставка, оплата и гарантия</h2>
+-  <p>Отгружаем со склада в Челябинске любой транспортной компанией по всей России и СНГ: счёт для юрлиц, оплата картой для частных заказчиков, отсрочка — по договору поставки. Каждый редуктор проходит обкатку и ОТК, в комплекте паспорт с характеристиками и гарантия завода 12 месяцев с ввода в эксплуатацию. Ходовые типоразмеры отгружаем за 1–3 дня, изготовление под заказ — 2–3 недели.</p>
++  <p>Отгружаем со склада в Челябинске любой транспортной компанией по всей России и СНГ: счёт для юрлиц, оплата картой для частных заказчиков, отсрочка — по договору поставки. Каждый редуктор проходит обкатку и ОТК, в комплекте паспорт с характеристиками и гарантия завода 36 месяцев с даты отгрузки. Ходовые типоразмеры отгружаем за 1–3 дня, изготовление под заказ — 2–3 недели.</p>
+   <h2>Вывод</h2>
+-  <p>Правильный путь к решению задачи короткий: соберите параметры по чек-листу, прогоните их через <a href="/podbor">калькулятор</a> или пришлите шильдик инженеру — и получите КП с точной ценой и сроком в тот же день. Подбор бесплатный, ответственность за соответствие несёт завод, а склад и производство в Челябинске закрывают и срочные замены, и плановые программы.</p>
++  <p>Соберите данные по чек-листу, прогоните через <a href="/podbor">калькулятор</a> или пришлите шильдик инженеру — КП с ценой и сроком придёт в тот же день. Подбор бесплатный, склад и производство в Челябинске закрывают срочные замены и плановые программы.</p>
+ </div></div></section>
+@@ -121,6 +122,9 @@
+     <div class="cat-faq">
+-      <details><summary>Где посмотреть чертежи?</summary><div>Габаритные и присоединительные чертежи — в каталоге и КП; 3D-модели даём под проект.</div></details>
++      <details><summary>Где посмотреть чертежи?</summary><div>Габаритные и присоединительные чертежи червячного редуктора ZR доступны в каталоге и КП; 3D-модели предоставляем под конкретный проект.</div></details>
+       <details><summary>Как оформить заказ?</summary><div>Заявка через сайт, письмо на zr@zavod-red.ru или звонок менеджеру. Для юрлиц — счёт по реквизитам, для частных лиц — оплата картой.</div></details>
+       <details><summary>Какая доставка по России?</summary><div>Любой транспортной компанией до терминала или двери; отгрузка со склада в Челябинске за 1–3 дня, упаковка — обрешётка.</div></details>
+-    </div>
++    
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div>
+   </div>
+@@ -153,8 +157,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -167,3 +172,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -176,3 +181,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -182,3 +187,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -186,3 +191,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -199,4 +204,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

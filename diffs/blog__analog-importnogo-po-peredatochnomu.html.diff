@@ -1,0 +1,117 @@
+--- main/blog/analog-importnogo-po-peredatochnomu.html
++++ prod/blog/analog-importnogo-po-peredatochnomu.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Аналог импортного редуктора по передаточному числу</title>
++<title>Аналог импортного редуктора по передаточному числу | ZR</title>
+ <meta name="description" content="Как подобрать аналог импортного редуктора SEW, NORD, Motovario по передаточному числу i и присоединительным размерам. Формула, таблицы и онлайн-калькулятор." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/analog-importnogo-po-peredatochnomu" />
+-<meta property="og:title" content="Аналог импортного редуктора по передаточному числу" />
++<meta property="og:title" content="Аналог импортного редуктора по передаточному числу | ZR" />
+ <meta property="og:description" content="Как подобрать отечественную замену SEW, NORD, Motovario по передаточному числу и присоединительным размерам." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-lineup.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Аналог импортного редуктора по передаточному числу","description":"Как подобрать отечественную замену SEW, NORD, Motovario по передаточному числу i и присоединительным размерам.","image":"https://zavod-red.ru/assets/blog-photo/th-lineup.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/analog-importnogo-po-peredatochnomu"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Аналог импортного редуктора по передаточному числу","description":"Как подобрать отечественную замену SEW, NORD, Motovario по передаточному числу i и присоединительным размерам.","image":"https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/analog-importnogo-po-peredatochnomu","datePublished":"2026-06-29","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Аналог импортного по передаточному числу","item":"https://zavod-red.ru/blog/analog-importnogo-po-peredatochnomu"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему передаточное число — ключевой параметр при подборе аналога?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число i задаёт выходные обороты и момент привода. Если аналог поставить с другим i, изменится скорость рабочего органа и нагрузка на двигатель. Поэтому при замене SEW, NORD или Motovario сначала фиксируют точное i по шильдику или по отношению nвх/nвых, а затем подбирают типоразмер."}},{"@type":"Question","name":"Что делать, если у отечественной серии нет точного передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Стандартные серии имеют фиксированный ряд i, поэтому идеального совпадения может не быть. Берут ближайшее значение из ряда и проверяют, насколько отклонятся выходные обороты. Отклонение в пределах 3–5% обычно допустимо для конвейеров и насосов; для дозаторов и синхронных линий требуется точное i, которое реализуют комбинированной ступенью."}},{"@type":"Question","name":"Как снять передаточное число с импортного редуктора SEW или NORD?","acceptedAnswer":{"@type":"Answer","text":"На шильдике SEW передаточное число обозначено как i и часто записано дробью (например i=29,16). У NORD оно указано в поле «i» или вычисляется по отношению n1/n2. Если таблички нет, i находят, разделив паспортные обороты двигателя на замеренные обороты выходного вала."}},{"@type":"Question","name":"Достаточно ли совпадения по передаточному числу для замены?","acceptedAnswer":{"@type":"Answer","text":"Нет. Кроме i нужно совпадение по моменту с сервис-фактором, по типу передачи и по присоединительным размерам — фланцу, концам валов, межосевому расстоянию. Аналог с верным i, но другим фланцем потребует переходной плиты, а с заниженным моментом — выйдет из строя."}},{"@type":"Question","name":"Можно ли подобрать аналог Motovario по передаточному числу онлайн?","acceptedAnswer":{"@type":"Answer","text":"Да. Введите передаточное число, мощность и обороты двигателя в калькулятор подбора на сайте — он покажет подходящие типоразмеры отечественных серий. Точные присоединительные размеры и наличие инженер уточняет после заявки."}},{"@type":"Question","name":"Сколько стоит аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Цена отечественного аналога зависит от типоразмера, передаточного числа и исполнения. Стоимость оригинальных импортных редукторов считается по запросу. Пришлите шильдик или модель — рассчитаем подбор и пришлём коммерческое предложение."}},{"@type":"Question","name":"Изменится ли момент на выходе при другом передаточном числе?","acceptedAnswer":{"@type":"Answer","text":"Да. Момент на выходе пропорционален передаточному числу: при тех же входных оборотах и мощности больший i даёт больший момент и меньшие обороты. Поэтому при подборе аналога проверяют и i, и итоговый момент с учётом КПД передачи."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему передаточное число — ключевой параметр при подборе аналога?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число i задаёт выходные обороты и момент привода. Если аналог поставить с другим i, изменится скорость рабочего органа и нагрузка на двигатель. Поэтому при замене SEW, NORD или Motovario сначала фиксируют точное i по шильдику или по отношению n вх /n вых , а затем подбирают типоразмер."}},{"@type":"Question","name":"Что делать, если у отечественной серии нет точного передаточного числа?","acceptedAnswer":{"@type":"Answer","text":"Стандартные серии имеют фиксированный ряд i, поэтому идеального совпадения может не быть. Берут ближайшее значение из ряда и проверяют, насколько отклонятся выходные обороты. Отклонение в пределах 3–5% обычно допустимо для конвейеров и насосов; для дозаторов и синхронных линий требуется точное i, которое реализуют комбинированной ступенью."}},{"@type":"Question","name":"Как снять передаточное число с импортного редуктора SEW или NORD?","acceptedAnswer":{"@type":"Answer","text":"На шильдике SEW передаточное число обозначено как i и часто записано дробью (например i=29,16). У NORD оно указано в поле «i» или вычисляется по отношению n1/n2. Если таблички нет, i находят, разделив паспортные обороты двигателя на замеренные обороты выходного вала."}},{"@type":"Question","name":"Изменится ли момент на выходе при другом передаточном числе?","acceptedAnswer":{"@type":"Answer","text":"Да. Момент на выходе пропорционален передаточному числу: при тех же входных оборотах и мощности больший i даёт больший момент и меньшие обороты. Поэтому при подборе аналога проверяют и i, и итоговый момент с учётом КПД передачи."}},{"@type":"Question","name":"Достаточно ли совпадения по передаточному числу для замены?","acceptedAnswer":{"@type":"Answer","text":"Нет. Кроме i нужно совпадение по моменту с сервис-фактором, по типу передачи и по присоединительным размерам — фланцу, концам валов, межосевому расстоянию. Аналог с верным i, но другим фланцем потребует переходной плиты, а с заниженным моментом — выйдет из строя."}},{"@type":"Question","name":"Можно ли подобрать аналог Motovario по передаточному числу онлайн?","acceptedAnswer":{"@type":"Answer","text":"Да. Введите передаточное число, мощность и обороты двигателя в калькулятор подбора на сайте — он покажет подходящие типоразмеры отечественных серий. Точные присоединительные размеры и наличие инженер уточняет после заявки."}},{"@type":"Question","name":"Сколько стоит аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Цена отечественного аналога зависит от типоразмера, передаточного числа и исполнения. Стоимость оригинальных импортных редукторов считается по запросу. Пришлите шильдик или модель — рассчитаем подбор и пришлём коммерческое предложение."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Передаточное число — это отношение i = n вх / n вых . По нему находят выходные обороты, а момент на выходе считают по формуле T = 9550 · P · η / n вых с учётом КПД передачи. У цилиндрических редукторов КПД высокий (0,96–0,98), у червячных ниже (0,7–0,9) и сильно зависит от i, что важно при замене червячных NMRV. После расчёта i и момента проверяют тип передачи и присоединительные размеры: фланец, диаметры и длины концов валов, межосевое расстояние. Несовпадение фланца решается переходной плитой, вала — спецвалом. Цена аналога зависит от типоразмера и исполнения; стоимость оригинального импорта рассчитывается по запросу. Связь передаточного числа и выходных параметров Параметр Как связан с i Выходные обороты n2 n2 = n1 / i — падают с ростом i Момент на выходе T растёт пропорционально i и КПД КПД передачи у червячных снижается при больших i Тип редуктора задаёт диапазон достижимых i Аналоги импортных серий по типу Импортная серия Отечественный аналог по типу SEW R (цилиндрический) цилиндрический соосный / горизонтальный SEW K, NORD SK (конический) коническо-цилиндрический Motovario NMRV (червячный) червячный одноступенчатый SEW S (червячно-цилиндр.) комбинированный червячно-цилиндрический Bonfiglioli (планетарный) планетарный по моменту и габариту Любой по фланцу аналог по присоединительным размерам Рассчитать замену удобно через калькулятор подбора редуктора или раздел импортозамещения приводов . Для червячных решений см. подбор червячного редуктора . Пришлите шильдик и условия работы — определим i, момент и присоединительные размеры."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Аналог импортного по передаточному числу</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Аналог импортного по передаточному числу</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Подбор</div>
+-  <h1>Аналог импортного редуктора по передаточному числу</h1><img class="blog-hero-img" src="../assets/blog-photo/th-lineup.webp" alt="Аналог импортного редуктора по передаточному числу — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Аналог импортного редуктора по передаточному числу</h1><img class="blog-hero-img" src="../assets/blog-photo/th-comparison-two.webp" alt="Аналог импортного редуктора по передаточному числу — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -82,3 +85,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор как аналог импортного по передаточному числу" loading="lazy"><figcaption>Отечественный аналог подбирается по i и присоединительным размерам</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Цилиндрический редуктор как аналог импортного по передаточному числу" loading="lazy" width="800" height="600"><figcaption>Отечественный аналог подбирается по i и присоединительным размерам</figcaption></figure>
+ 
+@@ -97,3 +100,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство аналогов импортных редукторов" loading="lazy"><figcaption>Изготовление аналога под нужное передаточное число и фланец</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p01.webp" alt="Производство аналогов импортных редукторов" loading="lazy" width="900" height="675"><figcaption>Изготовление аналога под нужное передаточное число и фланец</figcaption></figure>
+ 
+@@ -154,3 +157,6 @@
+     <tr><th>Любой по фланцу</th><td>аналог по присоединительным размерам</td></tr>
+-  </tbody></table><p>Рассчитать замену удобно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или раздел <a href="/importozameshchenie">импортозамещения приводов</a>. Для червячных решений см. <a href="/catalog/chervyachnye#kalkulyator">подбор червячного редуктора</a>. Пришлите шильдик и условия работы — определим i, момент и присоединительные размеры.</p></div></details></div></div></section>
++  </tbody></table><p>Рассчитать замену удобно через <a href="/podbor#kalkulyator">калькулятор подбора редуктора</a> или раздел <a href="/importozameshchenie">импортозамещения приводов</a>. Для червячных решений см. <a href="/catalog/chervyachnye#kalkulyator">подбор червячного редуктора</a>. Пришлите шильдик и условия работы — определим i, момент и присоединительные размеры.</p></div></details>
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
++</div></div></section>
+ 
+@@ -181,8 +187,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -195,3 +202,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -204,3 +211,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -210,3 +217,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -214,3 +221,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -227,4 +234,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

@@ -1,0 +1,590 @@
+--- main/assets/inner.css
++++ prod/assets/inner.css
+@@ -132,3 +132,3 @@
+   --light:#eef2f6;--ink:#13212c;
+-  --r:14px;--maxw:1240px;
++  --r:14px;--maxw:1480px;
+   --font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+@@ -142,3 +142,12 @@
+ html{scroll-behavior:smooth}
+-body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
++body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
++/* ПОЧЕМУ clip, А НЕ hidden (26.09.2026). Здесь стояло overflow-x:hidden — и
++   из-за него на ВСЕХ внутренних страницах не прилипала шапка при прокрутке.
++   Причина тонкая: как только у body задан overflow-x:hidden, браузер делает
++   вертикальный overflow равным auto, а сам body — контейнером прокрутки.
++   position:sticky внутри начинает отсчитываться от этого контейнера, а не от
++   окна, и прилипание молча перестаёт работать. На главной с самого начала
++   стоял clip — поэтому там шапка вела себя правильно, а на карточках, в
++   каталоге и блоге уезжала вверх. clip подрезает так же, но контейнера
++   прокрутки не создаёт. */
+ img{max-width:100%;display:block}
+@@ -159,2 +168,35 @@
+ .btn.sm{padding:11px 18px;font-size:14px}
++
++/* ── Кнопки на узком экране: перенос вместо обрезки ─────────────────────────
++   У .btn стоит white-space:nowrap — на широком экране это правильно, кнопка не
++   разваливается на две строки. Но надписи вроде «SEW-Eurodrive в Москве: подбор
++   аналога и замена» разворачиваются в строку 435px при поле 327px: хвост уходит
++   за край, визуальная область просмотра растягивается (замерено на 375px —
++   innerWidth 375 → 459), и вместе с ней уезжают липкая панель звонка и плашка
++   cookie. Ниже 760px разрешаем перенос и запрещаем вылезать за родителя.
++   На 1280px правило не действует — вид там не меняется. */
++@media(max-width:760px){
++  .btn{white-space:normal;max-width:100%}
++}
++
++/* ── Кнопка заявки .zbtn вне шапки ──────────────────────────────────────────
++   Стиль кнопки был описан только в hdr.css и только как `.hdr2 .zbtn`, то есть
++   работал исключительно внутри шапки. В тексте 698 страниц (660 в /regiony/,
++   остальное в /blog/, /brands/, /catalog/) стоит такой же
++   <a class="zbtn" data-zayavka>, и он рисовался обычным абзацным текстом — ни
++   заливки, ни подчёркивания, нажимать на него никто не догадывался. Базовое
++   правило живёт здесь, в inner.css, который грузят все страницы сайта.
++   Шапку это не трогает при любом порядке подключения файлов: селектор
++   `.hdr2 .zbtn` (0,2,0) специфичнее, чем `.zbtn` (0,1,0), поэтому компактный
++   вариант в шапке и его мобильные сокращения остаются как были. */
++.zbtn{display:inline-flex;align-items:center;justify-content:center;
++  background:var(--red);color:#fff;font-family:var(--head);font-weight:700;
++  font-size:15px;padding:15px 26px;border:0;border-radius:10px;
++  cursor:pointer;text-decoration:none;transition:.18s;max-width:100%;
++  box-shadow:0 4px 14px var(--glow)}
++.zbtn:hover{background:#b91212;color:#fff;transform:translateY(-1px)}
++.zbtn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
++@media(max-width:760px){
++  .zbtn{font-size:14.5px;padding:13px 20px;white-space:normal}
++}
+ 
+@@ -192,2 +234,17 @@
+ 
++/* LIGHTBOX */
++.zr-lb{position:fixed;inset:0;z-index:9990;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .22s;touch-action:pan-y}
++.zr-lb.show{opacity:1}
++.zr-lb-img{max-width:88vw;max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 48px rgba(0,0,0,.6);transform:scale(.9);transition:transform .22s,opacity .18s;user-select:none;pointer-events:none}
++.zr-lb.show .zr-lb-img{transform:scale(1)}
++.zr-lb-img.fade{opacity:0;transform:scale(.92)}
++.zr-lb-close{position:absolute;top:14px;right:18px;font-size:34px;color:#fff;cursor:pointer;opacity:.65;background:none;border:none;padding:8px 12px;line-height:1;z-index:2}
++.zr-lb-close:hover{opacity:1}
++.zr-lb-prev,.zr-lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:56px;color:#fff;cursor:pointer;opacity:.55;background:none;border:none;padding:12px 18px;line-height:1;z-index:2;user-select:none;transition:opacity .15s}
++.zr-lb-prev{left:6px}
++.zr-lb-next{right:6px}
++.zr-lb-prev:hover,.zr-lb-next:hover{opacity:1}
++.zr-lb-counter{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font:13px/1 'IBM Plex Mono',monospace;white-space:nowrap;pointer-events:none}
++img:not([src*="logo"]):not([src*="icon"]):not([class*="logo"]):not(.ci-logo){cursor:zoom-in}
++
+ /* CARDS / GRID */
+@@ -220,3 +277,4 @@
+ .feat .ic{flex:0 0 42px;height:42px;border-radius:10px;background:rgba(225,27,27,.12);display:flex;align-items:center;justify-content:center;font-size:20px}
+-.feat h4{font-size:16px;margin-bottom:4px}
++.feat h4,.feat h3{font-size:16px;margin-bottom:4px;font-weight:700;letter-spacing:normal;text-transform:none;position:static;padding:0}
++.feat h3::after{content:none;display:none}
+ .feat p{color:var(--muted);font-size:13.5px}
+@@ -247,2 +305,6 @@
+ .field input:focus,.field textarea:focus{outline:none;border-color:var(--red)}
++/* A11y-аудит: видимый фокус для клавиатуры (было outline:0/none без замены) */
++a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.drop-toggle:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:4px}
++/* iOS Safari авто-зумит при фокусе на полях <16px — задаём 16px на мобиле */
++@media(max-width:760px){input,select,textarea,.field input,.field textarea{font-size:16px}}
+ .consent{display:block;position:relative;padding-left:28px;margin:6px 0 16px;font-size:13px;color:var(--muted);line-height:1.5}
+@@ -292,3 +354,12 @@
+   .menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;background:#0b151d;border-bottom:1px solid var(--line);padding:0 24px;max-height:0;overflow:hidden;opacity:0;box-shadow:0 18px 40px rgba(0,0,0,.5);transition:max-height .3s ease,opacity .2s,padding .3s}
+-  header.open .menu{max-height:420px;opacity:1;padding:6px 24px 14px}
++  /* Было max-height:420px без прокрутки: на телефоне пункты за этой границей
++     просто обрезались, и до нижних разделов дойти было нельзя. Ограничиваем высотой
++     экрана и разрешаем прокрутку внутри самого меню. */
++  header.open .menu{max-height:min(78vh,640px);opacity:1;padding:6px 24px 14px;
++    overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
++  /* Телефон гасится правилом для широких экранов (max-width:1640px) и в раскрытом
++     мобильном меню тоже не показывался — хотя это единственный быстрый способ
++     позвонить с телефона. Возвращаем. */
++  header.open .menu-phone{display:block;margin-left:0;padding:14px 2px;
++    font-size:16px;font-weight:700;border-bottom:0}
+   .menu a{padding:14px 2px;border-bottom:1px solid rgba(255,255,255,.07);font-size:16px}
+@@ -416,25 +487,49 @@
+ 
+-/* ===== Подвал — компактный, светлый (2026) ===== */
+-.site-footer{position:relative;background:var(--bg2);border-top:1px solid var(--line);padding:0 0 20px;overflow:hidden}
+-.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
+-.site-footer .sf-top{display:grid;padding:36px 0 26px;grid-template-columns:1.7fr 1fr 1.1fr 1fr;gap:34px;align-items:start}
+-.sf-contacts-inline{display:flex;flex-direction:column}
+-.sf-brand img{height:40px;margin-bottom:12px;filter:none}
+-/* Светлая тема — фон подвала светлый (--bg2:#f4f6f8), а zr_logo.webp светлый:
+-   на светлом он не читается. Подменяем на тёмный вариант тем же приёмом, что
+-   и в шапке (hdr.css), — одним правилом для всех страниц сразу. */
+-[data-theme="light"] .sf-brand img{content:url(zr_logo_dark.webp)}
+-.sf-brand p{color:var(--muted);font-size:13px;line-height:1.6;max-width:320px;margin-bottom:14px}
+-.sf-contacts-inline{gap:8px;margin-top:4px}
+-.sf-contacts-inline a{display:inline-flex;align-items:center;gap:9px;color:var(--text);font-weight:700;font-size:15.5px;width:max-content}
+-.sf-contacts-inline a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;box-shadow:0 0 0 3px var(--glow)}
+-.sf-contacts-inline a.sf-mail{font-weight:600;font-size:13.5px;color:var(--muted)}
+-.sf-contacts-inline a.sf-mail::before{background:var(--muted2);box-shadow:none}
++/* ===== Подвал — в языке сайта (2026-08): белые карточки на светлом, красный только
++   акцентом. Раньше здесь была полноширинная красная полоса + серая плита с засечками —
++   единственное место на сайте с таким приёмом, подвал читался как чужой шаблон.
++   Переписано ТОЛЬКО стилями: разметка в 95k страницах не менялась (кикер и иконка —
++   через ::before, как переименование пункта меню в hdr.css). */
++.site-footer{position:relative;background:var(--bg2);border-top:1px solid var(--line);padding:0 0 22px}
++/* CTA — карточка как секции контента (.cat-specrow), а не красная полоса */
++.sf-cta-bar{padding:38px 24px 4px}
++.sf-cta-in{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px}
++/* плитка-иконка 46px — приём .feat .ic со страниц каталога */
++.sf-cta-in::before{content:"";flex:0 0 46px;height:46px;border-radius:12px;background:var(--glow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cf1616' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6'/%3E%3C/svg%3E") center/24px no-repeat}
++.sf-cta-text{flex:1 1 380px;min-width:0}
++/* кикер как .eyebrow сайта */
++.sf-cta-text::before{content:"Подбор";display:block;color:var(--red2);font:700 12px/1 var(--head);letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
++.sf-cta-text strong{display:block;color:var(--text);font:700 19px/1.3 var(--head);letter-spacing:-.01em}
++.sf-cta-text span{display:block;color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:5px}
++.sf-cta-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;max-width:100%}
++/* кнопки = .btn сайта: red radius 10px; вторичная — красный контур на белом */
++/* Кнопки в подвале (26.09.2026): 15px при высоте 49px — под общее укрупнение
++   не попали, потому что размер задан сокращённой записью font. */
++.sf-btn-cta{display:inline-flex;align-items:center;justify-content:center;padding:18px 28px;border-radius:10px;font:700 18px/1.2 var(--head);text-decoration:none;white-space:nowrap;transition:.18s;background:var(--red);color:#fff;box-shadow:0 4px 14px var(--glow)}
++.sf-btn-cta:hover{background:#b91212;color:#fff;transform:translateY(-1px)}
++.sf-btn-cta2{background:var(--card);color:var(--red);border:1.5px solid rgba(207,22,22,.3);box-shadow:none}
++.sf-btn-cta2:hover{background:rgba(207,22,22,.05);border-color:var(--red);color:var(--red)}
++/* footer grid */
++.site-footer .sf-top{display:grid;padding:34px 24px 6px;grid-template-columns:1.6fr 1fr 1.05fr 1fr;gap:38px;align-items:start}
++/* logo: в светлой теме показываем тёмную версию */
++.sf-brand img{height:42px;width:auto;object-fit:contain;margin-bottom:15px;filter:none}
++.sf-brand img{content:url(zr_logo_dark.webp)}   /* без привязки к data-theme — см. правило в hdr.css */
++.sf-brand p{color:var(--muted);font-size:13.5px;line-height:1.65;max-width:330px;margin:0 0 16px}
++.sf-contacts-inline{display:flex;flex-direction:column;gap:9px}
++/* маркер — красный КВАДРАТ, как маркеры списков на страницах (не светящаяся точка) */
++.sf-contacts-inline a{display:inline-flex;align-items:center;gap:11px;color:var(--text);font:700 16px/1.2 var(--head);width:max-content;text-decoration:none;transition:color .16s}
++.sf-contacts-inline a::before{content:"";width:6px;height:6px;border-radius:0;background:var(--red);flex-shrink:0;box-shadow:none}
++.sf-contacts-inline a.sf-mail{font:600 13.5px/1.2 var(--font);color:var(--muted)}
++.sf-contacts-inline a.sf-mail::before{width:5px;height:5px;background:var(--muted2)}
+ .sf-contacts-inline a:hover{color:var(--red)}
+-.sf-col h4{color:var(--text);font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;padding-bottom:10px;margin-bottom:6px;position:relative}
+-.sf-col h4::after{content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:var(--red)}
+-.sf-col a{display:block;color:var(--muted);padding:4px 0;font-size:13px;border:0;transition:color .16s,transform .16s}
+-.sf-col a:hover{color:var(--red);transform:translateX(3px)}
+-.sf-req{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted2);font-size:12px;line-height:1.65}
+-.sf-bottom{border-top:1px solid var(--line);margin-top:0;padding-top:18px;color:var(--muted2);font-size:12px}
++/* заголовки колонок = .eyebrow, без красных засечек */
++.sf-col h4,.sf-col .sf-h{color:var(--red2);font:700 12px/1 var(--head);letter-spacing:.12em;text-transform:uppercase;margin:3px 0 15px;padding:0;position:static}
++.sf-col h4::after,.sf-col .sf-h::after{content:none;display:none}
++.sf-col a{display:block;color:var(--muted);padding:5px 0;font-size:13.5px;border:0;text-decoration:none;transition:color .16s}
++.sf-col a:hover{color:var(--red);transform:none}
++.sf-col a.menu-new{color:var(--red);font-weight:600}
++.sf-col a.menu-new::after{content:'new';display:inline-block;background:var(--red);color:#fff;font-size:9px;font-weight:700;line-height:1;padding:2px 5px;border-radius:4px;margin-left:6px;text-transform:uppercase;letter-spacing:.4px;vertical-align:middle}
++/* реквизиты — светлый блок с mono, как таблицы характеристик */
++.sf-req{margin-top:18px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--muted2);font:400 11.5px/1.75 var(--mono)}
++.sf-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px;padding-top:18px;color:var(--muted2);font-size:12.5px}
+ .sf-bottom a{color:var(--muted2);text-decoration:none;border-bottom:1px solid transparent}
+@@ -442,6 +537,34 @@
+ [data-theme="dark"] .site-footer{background:var(--bg2)}
+-@media(max-width:860px){.site-footer .sf-top{grid-template-columns:1fr 1fr;gap:26px}}
+-@media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:22px;padding:28px 0 18px}}
+-
+-/*cb*/.zr-cb-w2{--zrcb:2}
++@media(max-width:1080px){.site-footer .sf-top{grid-template-columns:1.35fr 1fr 1fr;gap:30px}.sf-brand{grid-column:1/-1;max-width:660px}}
++@media(max-width:860px){.site-footer .sf-top{grid-template-columns:1fr 1fr;gap:28px}.sf-cta-in{align-items:flex-start;gap:16px;padding:20px}.sf-cta-in::before{flex-basis:40px;height:40px}.sf-cta-text{flex:1 1 100%}.sf-cta-btns{width:100%;min-width:0}.sf-btn-cta{max-width:100%}}
++@media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:24px;padding:28px 24px 4px}.sf-cta-bar{padding-top:28px}.sf-cta-text strong{font-size:17.5px}.sf-cta-btns{flex-direction:column}.sf-btn-cta{justify-content:center}}
++
++
++/* ===== Иллюстрации в статьях (правило канона zavod-content, п.7) =====
++   Раньше стили .art-fig дублировались инлайном в каждой статье — у 535 статей
++   их не было вовсе. Теперь правило одно и живёт здесь: inner.css грузят все
++   статьи блога, глоссария, отраслей и услуг. .art-fig-dw — вариант для
++   ГАБАРИТНЫХ ЧЕРТЕЖЕЙ: штриховая графика на белом, её нельзя обрезать
++   (object-fit:contain) и нельзя красить фоном страницы. */
++.art-fig{margin:26px 0}
++.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
++.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
++.art-fig-dw img{background:#fff;object-fit:contain;max-height:520px;padding:10px}
++.art-fig-dw figcaption a{color:var(--red);text-decoration:none;border-bottom:1px solid transparent}
++.art-fig-dw figcaption a:hover{border-bottom-color:currentColor}
++@media(max-width:560px){.art-fig{margin:20px 0}.art-fig-dw img{max-height:360px}}
++
++
++/* ===== Плитки перелинковки (.imp-rep) — правило в одном месте =====
++   Карточки аналогов несут своё инлайновое оформление .imp-rep из генератора,
++   а карточки ZR (ispolnenie/tiporazmer/motor-reduktor-zr) — нет: там ссылки
++   на импортные модели выглядели простым текстом. Стили ниже покрывают все
++   разделы; инлайн в карточках аналогов идёт после inner.css и перебивает их,
++   поэтому вид тех карточек не меняется. */
++.imp-rep{display:flex;flex-wrap:wrap;gap:9px}
++.imp-rep a,.imp-rep span.chip{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);text-decoration:none;font-size:13.5px;line-height:1.2;transition:border-color .16s,color .16s}
++.imp-rep a:hover{border-color:var(--red);color:var(--red)}
++@media(max-width:560px){.imp-rep{gap:7px}.imp-rep a,.imp-rep span.chip{padding:8px 11px;font-size:13px}}
++
++/*cb*/.zr-cb-w6{--zrcb:6}
+ 
+@@ -464,13 +587,364 @@
+ 
+-/* Перелинковка карточек /analog/: соседние исполнения модели (tools/analog_interlink.py).
+-   Разметка повторяет блок .pc-rel карточек ZR, где стиль лежит инлайном. Здесь он общий:
+-   инлайн размножил бы полкилобайта по 73 899 файлам и на столько же раздул сайт.
+-   minmax(140px,1fr) — колонка не распирает экран на узком телефоне, min-width:0 страхует
+-   длинные значения от вылезания за сетку. */
+-.pc-rel{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+-.pc-rel a{display:flex;flex-direction:column;gap:3px;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card);text-decoration:none;transition:.2s}
+-.pc-rel a:hover{border-color:var(--accent);transform:translateY(-2px)}
+-.pc-rel a b{color:var(--text);font-size:15px}
+-.pc-rel a span{color:var(--muted);font-size:12px}
+-.il-h{margin:18px 0 10px;font-size:15px;font-weight:600;color:var(--muted)}
+-.il-more{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
++/* Импортозамещение: сетка марок со счётчиком карточек */
++.imp-brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:18px}
++.imp-b{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);text-decoration:none;transition:border-color .15s}
++.imp-b:hover{border-color:var(--red)}
++.imp-b b{font:700 14.5px/1.2 var(--head);color:var(--text)}
++.imp-b span{font:600 11.5px/1 var(--mono);color:var(--muted)}
++
++/* ─── Стрелки листания фото в карточке товара (12.08.2026) ───────────────────
++   Просьба заказчика: фото должны листаться стрелками, без нажатия на миниатюры.
++   Раньше сменить кадр можно было только кликом по миниатюре под большим фото —
++   на мобильном миниатюры уезжают за край, и часть кадров человек не видел вовсе.
++
++   Разметку 74 тыс. карточек не трогаем: стрелки, счётчик и точки создаёт
++   assets/inner.js прямо в .p2-main. Стили лежат здесь, потому что инлайновый
++   <style> внутри каждой карточки править массово нельзя.
++
++   Стрелки видны СРАЗУ (не только при наведении) — на сенсорных экранах
++   состояния hover нет, и скрытые стрелки там были бы недоступны. */
++.p2-main{position:relative}
++.p2-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.92);color:var(--text);cursor:pointer;padding:0;box-shadow:0 2px 10px rgba(16,32,44,.14);transition:background .15s,border-color .15s,opacity .15s}
++.p2-nav:hover{background:#fff;border-color:var(--red);color:var(--red)}
++.p2-nav:focus-visible{outline:2px solid var(--red);outline-offset:2px}
++.p2-nav svg{width:19px;height:19px;pointer-events:none}
++.p2-prev{left:12px}
++.p2-next{right:12px}
++/* курсор на самом фото не должен превращаться в «увеличить» над стрелкой */
++.p2-nav,.p2-count,.p2-dots{cursor:pointer}
++/* счётчик кадров — сразу понятно, сколько ещё фото есть */
++.p2-count{position:absolute;right:12px;bottom:12px;z-index:3;padding:3px 9px;border-radius:20px;background:rgba(16,32,44,.72);color:#fff;font:600 12px/1.35 var(--mono);letter-spacing:.02em;cursor:default;pointer-events:none}
++/* точки под фото — второй способ навигации, привычный на телефоне */
++.p2-dots{position:absolute;left:0;right:0;bottom:12px;z-index:3;display:flex;justify-content:center;gap:7px;cursor:default;pointer-events:none}
++.p2-dots i{width:7px;height:7px;border-radius:50%;background:rgba(16,32,44,.26);transition:background .15s,transform .15s}
++.p2-dots i.on{background:var(--red);transform:scale(1.25)}
++/* когда есть точки, счётчик уводим влево, чтобы они не сталкивались */
++.p2-main.has-dots .p2-count{right:auto;left:12px}
++@media(max-width:640px){
++  .p2-nav{width:36px;height:36px}
++  .p2-prev{left:8px}
++  .p2-next{right:8px}
++}
++/* на печати навигация не нужна */
++@media print{.p2-nav,.p2-count,.p2-dots{display:none}}
++/*p2nav12*/
++
++/* Мобильная вёрстка галереи: даём колонке сжаться до ширины экрана.
++   Дефект был до стрелок и обнаружился при их проверке: .p2 — это grid, а элементы
++   грида по умолчанию имеют min-width:auto и не могут стать уже своего содержимого.
++   Полоса миниатюр — 7 кнопок по 92px плюс отступы, ровно 704px, — растягивала
++   колонку до 704px внутри экрана 375px, и вся карточка ехала горизонтально.
++   min-width:0 возвращает право сжиматься; полоса миниатюр при этом продолжает
++   скроллиться внутри себя, как и задумано (у неё overflow-x:auto). */
++.p2{min-width:0}
++.p2>*{min-width:0}
++.p2 .p2-gal,.p2 .p2-thumbs{min-width:0}
++/*p2fit12*/
++
++/* ─── «Линейка по типам»: плашки моделей, сгруппированные по типу передачи ───
++   Образец — блок на catalog/evl.html, где стили лежали инлайном. Вынесены сюда
++   (12.08.2026), потому что такой же блок появился на 19 страницах марок:
++   держать одну и ту же вёрстку в двадцати инлайновых <style> нельзя.
++   Значения — один в один с EVL-версией, чтобы блоки выглядели одинаково. */
++.lineup-series{display:flex;flex-direction:column;gap:18px}
++.lineup-grp{display:flex;flex-direction:column;gap:9px}
++.lineup-glbl{font:700 12px/1 'Space Grotesk',sans-serif;color:var(--red);text-transform:uppercase;letter-spacing:.05em}
++.lineup-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0}
++.lineup-chips a{display:inline-flex;align-items:center;padding:9px 15px;border-radius:9px;background:var(--card);border:1px solid var(--line);color:var(--text);font:600 13.5px/1 'Space Grotesk',sans-serif;text-decoration:none;transition:.14s}
++.lineup-chips a:hover{border-color:var(--red);color:var(--red);transform:translateY(-1px)}
++/* на узком экране плашки мельче — иначе ряд из 70 моделей растёт непомерно */
++@media(max-width:640px){
++  .lineup-series{gap:14px}
++  .lineup-chips{gap:6px}
++  .lineup-chips a{padding:7px 11px;font-size:12.5px}
++}
++/*lineup12*/
++
++/* Таблицы .spec на узком экране: без этого третья колонка уходит за край и текст
++   физически нечитаем (проверено на 375px — обрезает ~96px без возможности прокрутки).
++   Соседние .tbl обёрнуты контейнером в разметке, .spec встречается на 90 тыс. страниц —
++   правим стилем, а не разметкой. */
++@media (max-width:760px){
++  table.spec{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
++  table.spec tbody,table.spec thead{display:table;width:100%;min-width:520px}
++  table.spec th{width:38%}
++}
++
++/* ── Таблицы на узких экранах ────────────────────────────────────────────────
++   Аудит нашёл три дыры. У .spec правило было, но внутри .grid-2 колонка не сжимается
++   ниже min-width:520px, и таблица вылезала за поле — на 26 страницах марок и каталога
++   это давало горизонтальную прокрутку всей страницы. У .tbl и .xref правил не было
++   вовсе: сейчас держатся только за счёт короткого содержимого, а длинная строка
++   сломала бы вёрстку. Прокрутка должна жить внутри таблицы, а не в теле документа. */
++@media (max-width:760px){
++  .grid-2{grid-template-columns:1fr}
++  .grid-2>*{min-width:0}
++  .tbl,.xref{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
++  .tbl tbody,.tbl thead,.xref tbody,.xref thead{display:table;width:100%;min-width:460px}
++  .spec{max-width:100%}
++}
++
++/* ШИРОКИЕ МОНИТОРЫ (26.09.2026). Макет был заперт на 1480px при любой ширине окна:
++   на экране 2560 сайт занимал 58% — по 540px пустоты с каждой стороны, и выглядел
++   зажатой колонкой посередине. Расширяем контейнер двумя ступенями. Кегль текста
++   НЕ трогаем: сетки внутри секций рассчитаны на текущий размер шрифта, и его
++   изменение поехало бы по всем страницам сразу. */
++/* Ширина тянется за окном ПЛАВНО, без ступеней: до ~1680px экрана работает
++   базовые 1480px, дальше контейнер идёт за окном (88vw), упираясь в 1900px —
++   выше строка становится слишком длинной для чтения. */
++:root{--maxw:clamp(1480px,88vw,1900px)}
++
++/* ================= КРУПНЫЙ ШРИФТ И КНОПКИ (26.09.2026) =================
++   Просьба владельца: «шрифт очень маленький, нужно больше; шрифт для пенсионеров,
++   чтобы при открытии были большие кнопки». Базовый кегль браузерный (16px) нигде
++   не переопределялся, а больше половины текста на странице шло 13–15px — на
++   мониторе 2560 и на телефоне это читается с трудом.
++
++   Блок идёт ПОСЛЕДНИМ, поэтому при равной специфичности перебивает прежние
++   размеры. Ниже 15px на сайте не остаётся ничего, кроме служебных надписей.
++   Кнопки подняты до 58px высоты — это размер, по которому уверенно попадают
++   пальцем и который не теряется на крупном экране. */
++
++body{font-size:18px}
++p,li,dd,dt{font-size:18px;line-height:1.6}
++.lead{font-size:20px;line-height:1.55}
++td,th{font-size:17px}
++small,.hint,.muted,.note,figcaption{font-size:15px}
++
++h1{font-size:clamp(30px,3.6vw,50px);line-height:1.15}
++h2{font-size:clamp(25px,2.8vw,38px);line-height:1.2}
++h3{font-size:clamp(20px,2vw,27px);line-height:1.25}
++
++/* Кнопки: крупный текст, высокий корпус, заметный отступ. */
++.btn,.zbtn,button.btn,a.btn{
++  font-size:18px;
++  font-weight:700;
++  padding:17px 30px;
++  min-height:58px;
++  border-radius:12px;
++  line-height:1.25;
++}
++.btn.lg,a.btn.lg{font-size:20px;padding:20px 36px;min-height:64px}
++.btn.sm,a.btn.sm{font-size:16px;padding:13px 22px;min-height:48px}
++
++/* Поля формы — тем же кеглем, иначе набранный текст мельче подписи. */
++input,select,textarea{font-size:18px}
++input[type="text"],input[type="tel"],input[type="email"],select,textarea{min-height:54px;padding:14px 16px}
++
++/* На телефоне кнопка занимает строку целиком: так по ней проще попасть,
++   и длинная надпись переносится, а не вылезает за экран. */
++@media(max-width:560px){
++  body{font-size:18px}
++  .btn,.zbtn{width:100%;justify-content:center;white-space:normal}
++  .btn.lg{font-size:19px}
++}
++/* Добор (26.09.2026). После первого прохода замер на живой странице показал
++   50 мест, где текст остался 11–14.5px: прежние правила перебивались более
++   специфичными селекторами разделов. Здесь идём принудительно — цель владельца
++   «шрифт для пенсионеров» важнее исходной типографики. Служебная мелочь
++   (надстрочные подписи, счётчики) поднята до 15px, основной текст до 18px. */
++p,li,dd,dt{font-size:18px !important}
++td{font-size:17px !important}
++th{font-size:16px !important}
++b,strong,em,i{font-size:inherit !important}
++.wrap a:not(.btn):not(.zbtn):not(.hb-i){font-size:inherit !important}
++.eyebrow{font-size:15px !important;letter-spacing:.08em}
++.cat-models,.prod-d,.prod-n,.hint,.muted,.note,small,figcaption{font-size:15px !important}
++.vs-model{font-size:17px !important}
++.vs-price{font-size:22px !important}
++
++/* Третий проход (26.09.2026). Остались <span> без классов (12–14px) и шапка.
++   span получает размер родителя, а не собственный мелкий — так подписи в
++   карточках («Соосно-цилиндрический», «редукторы в наличии») идут наравне с
++   текстом. Телефоны в шапке подняты отдельно: для звонка их читают в первую
++   очередь. Классы со своим размером выше по файлу тут не затрагиваются —
++   у них специфичность класса, а здесь селектор по тегу. */
++span{font-size:inherit !important}
++.hdr2 a,.hdr2 span{font-size:16px !important}
++.tb-phone,a[href^="tel:"]{font-size:18px !important;font-weight:700}
++.grid-lbl{font-size:16px !important}
++
++/* Правка шапки (26.09.2026). Правило «на телефоне кнопка во всю ширину» задело
++   и кнопки в шапке: «Расчёт» и «Задать вопрос инженеру» растянулись на 100%,
++   наехали друг на друга и вылезли за правый край экрана. В шапке кнопки должны
++   оставаться по размеру содержимого — там их выстраивает своя раскладка. */
++@media(max-width:560px){
++  .hdr2 .btn,.hdr2 .zbtn,header .btn,header .zbtn,.nav-right .btn,.nav-right .zbtn{
++    width:auto !important;
++    min-height:44px;
++    padding:10px 14px;
++    font-size:15px !important;
++  }
++}
++
++/* Шапка на телефоне (26.09.2026). Кнопка «Задать вопрос инженеру» занимала
++   262px из 375 — блок справа раздувался до 410px, и КНОПКА МЕНЮ уезжала
++   за правый край экрана: до бургера нельзя было дотянуться. На телефоне эта
++   кнопка избыточна — внизу постоянно висит панель «Позвонить / Получить
++   расчёт» с теми же действиями. Прячем её до 700px, иконки и меню остаются. */
++@media(max-width:700px){
++  .hdr2 .nav-right .zbtn,.nav-right .zbtn{display:none !important}
++  .hdr2 .nav-right{gap:8px}
++}
++
++/* ================= ДОСТУПНОСТЬ ДЛЯ СЛАБОГО ЗРЕНИЯ (26.09.2026) =================
++   Разбор показал места, куда крупный шрифт не добрался: их рисует скрипт, либо
++   у них свои стили с высокой специфичностью. Для пожилого человека это ровно те
++   места, где он застревает — поиск, фильтр подбора, подписи полей формы.
++   Попутно подняты зоны нажатия: пальцем уверенно попадают по 44px и выше. */
++
++/* Поиск в шапке: кнопка была 12,5px высотой 29px — вдвое ниже нормы. */
++.ms-go,.hdr2 .ms-go{font-size:16px !important;min-height:44px;padding:10px 18px}
++.ms-inp,.hdr2 input[type="search"]{font-size:17px !important;min-height:44px}
++
++/* Иконки кабинета и корзины: были 40x40. */
++.hic,.hdr2 .hic{min-width:44px;min-height:44px}
++
++/* Подписи полей формы — 11,5px там, где человек вписывает имя и телефон. */
++label,.ol,.form-label,.f-lab{font-size:16px !important}
++
++/* Фильтр подбора: кнопки-пилюли 13,3px высотой 34px. Сам калькулятор
++   (podbor.js) не трогаем — только внешний вид кнопок. */
++.pf-pill,.pf-btn,.pf-more,.pf-cta,.pf-btn--ghost,.pf-btn--red{
++  font-size:16px !important;min-height:44px;padding:10px 16px}
++
++/* Конфигуратор цены: опции 12,5px, кнопки ниже порога. */
++.cfg-cta,.cfg-cart{font-size:17px !important;min-height:50px}
++.cfg-step label,.cfg-step .ol{font-size:16px !important}
++
++/* Заголовки раскрывающихся блоков FAQ — это конверсионный блок. */
++summary,.faq summary{font-size:17px !important}
++
++/* Хлебные крошки: серый на светлом давал контраст втрое ниже нормы. */
++.crumbs,.breadcrumbs,nav.crumbs a,.crumbs a,.crumbs span{
++  font-size:15px !important;color:#4a5560 !important}
++
++/* Подвал: копирайт и ссылка на политику были 12,5px. */
++.site-footer small,.site-footer .copy,.site-footer a{font-size:15px !important}
++
++/* Мелкие кнопки в карточках сравнения — шрифт не подтянулся при укрупнении. */
++.btn-sm,.btn.btn-sm{font-size:16px !important}
++
++/* Нижняя панель на узких экранах: на 320px кнопка «Получить расчёт» уходила
++   за правый край на 18px, и нажать её правую часть было нельзя. */
++@media(max-width:360px){
++  .zr-mbar .btn,.zr-mbar a{font-size:15px !important;padding:12px 10px;min-height:52px}
++  .zr-mbar{gap:8px;padding-left:8px;padding-right:8px}
++}
++
++/* Таблица вилок цен на узких экранах (26.09.2026). Три колонки с суммами
++   требуют ~520px, на телефоне 320-375px они распирали страницу и появлялась
++   прокрутка всего документа вбок. Даём прокрутку самой таблице. */
++@media(max-width:620px){
++  #vilki table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
++  #vilki table td,#vilki table th{white-space:nowrap}
++}
++
++/* РАЗГРУЗКА ВЕРХНЕЙ СТРОКИ ШАПКИ (26.09.2026).
++   В топбаре одновременно шли бегущая строка, ДВА телефона и почта — вместе с
++   нижними строками выходило около двадцати элементов до начала контента.
++   Человек, открывший сайт, сперва разбирал шапку и только потом видел, чем
++   занимается завод. На широком мониторе место есть — там оставляем всё как
++   было. Ниже 1400px прячем второй телефон и почту: оба продублированы в
++   подвале и на странице контактов, потеря невелика, а строка перестаёт
++   распирать шапку. Первый телефон остаётся всегда. */
++@media(max-width:1400px){
++  .hdr2 .tb-in a[href^="mailto:"]{display:none}
++  /* Скрываем ТОЛЬКО второй и последующие телефоны: селектор «телефон, перед
++     которым уже был телефон». Первая попытка использовала nth-of-type(n+2),
++     но тип здесь — тег <a>, а не «ссылка на телефон», и правило прятало оба
++     номера разом: в шапке не осталось ни одного телефона. */
++  .hdr2 .tb-in a[href^="tel:"] ~ a[href^="tel:"]{display:none}
++}
++
++/* МЕЛКИЙ ТЕКСТ НА КАРТОЧКАХ (26.09.2026). После укрупнения на карточках
++   аналогов осталось 33 места по 12–14,5px: ссылки в блоке документации,
++   подписи параметров в таблице соответствия, заголовки раскрывающихся
++   вопросов, подпись под фото. Карточки — главный вход людей из поиска,
++   и читать их приходится тем же пожилым снабженцам. Поднимаем до 16–17px. */
++.p2-note-dw,.p2-doc a,.p2-links a{font-size:16px !important}
++.spec .k,.spec .v,.seo-tbl .k,.seo-tbl .v,span.k,span.v{font-size:16px !important}
++table caption,caption{font-size:16px !important}
++.p2-card summary,.p2-faq summary{font-size:17px !important}
++
++/* ================= ВОПРОСЫ НА КАРТОЧКАХ (26.09.2026) =================
++   Блок вопросов на карточках товаров размечен классом .faq2, и у этого класса
++   не было НИ ОДНОГО правила — вопросы выводились простым списком, без рамок,
++   без раскрытия по клику на заметную область, в одну колонку. На странице цен
++   тот же по смыслу блок (.faq-grid/.cat-faq) выглядит как карточки с плюсом в
++   две колонки, и владелец просит привести к этому виду везде.
++   Правим стилями, а не разметкой: карточек 92 тысячи, и трогать их файлы ради
++   оформления не нужно — разметка .faq2 уже подходящая (две колонки-обёртки
++   с <details> внутри). */
++
++.faq2{
++  display:grid;
++  grid-template-columns:1fr 1fr;
++  gap:14px;
++  align-items:start;
++  margin-top:8px;
++}
++.faq2 > div{display:flex;flex-direction:column;gap:12px}
++
++@media(max-width:760px){
++  .faq2{grid-template-columns:1fr;gap:12px}
++}
++
++.faq2 details{
++  border:1px solid var(--line,#e2e6e0);
++  border-radius:12px;
++  background:var(--card,#fff);
++  overflow:hidden;
++}
++.faq2 summary{
++  list-style:none;
++  cursor:pointer;
++  padding:18px 22px;
++  font-weight:600;
++  font-size:17px !important;
++  color:var(--text,#0f1c26);
++  display:flex;
++  justify-content:space-between;
++  align-items:center;
++  gap:16px;
++  line-height:1.4;
++}
++.faq2 summary::-webkit-details-marker{display:none}
++/* Плюс справа, как в образце: при раскрытии поворачивается в крестик. */
++.faq2 summary::after{
++  content:"+";
++  color:var(--red,#e11b1b);
++  font-size:26px;
++  font-weight:400;
++  line-height:1;
++  flex:0 0 auto;
++  transition:transform .2s;
++}
++.faq2 details[open] summary::after{transform:rotate(45deg)}
++.faq2 details > p{
++  color:var(--muted,#5a6a75);
++  font-size:16px !important;
++  line-height:1.6;
++  padding:0 22px 20px;
++  margin:0;
++}
++.faq2 summary:hover{background:rgba(225,27,27,.04)}
++
++/* ================= ШАПКА ПРИЛИПАЕТ ПРИ ПРОКРУТКЕ (28.09.2026) =================
++   ЧТО БЫЛО. Прилипание (position:sticky) стояло на внутренней строке .hmain, а её
++   родитель — сам <header class="hdr2"> высотой 134px. Прилипающий элемент живёт
++   только в пределах своего родителя: как только шапка уехала вверх, уехала и
++   строка. Со стороны это выглядело так, будто sticky просто не работает — при
++   том, что в стилях он прописан. Проверено прокруткой на главной и на карточке:
++   после 1200px прокрутки строка оказывалась на -1157px, то есть за экраном.
++   ЧТО ДЕЛАЕМ. Переносим прилипание на саму шапку: её родитель — body, то есть
++   вся страница, и прилипать есть где. Прежнее правило на .hmain снимаем, иначе
++   два вложенных sticky спорят друг с другом.
++   Высоту шапка занимает ту же, что и раньше; на телефоне она компактнее. */
++
++.hdr2{position:sticky !important;top:0 !important;z-index:200}
++.hdr2 .hmain{position:static !important}
++
++/* Мобильная панель снизу и всплывающие окна должны перекрывать шапку. */
++.zr-mbar{z-index:300}
++.zr-modal,.zr-lb{z-index:400}

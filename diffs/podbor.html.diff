@@ -1,0 +1,108 @@
+--- main/podbor.html
++++ prod/podbor.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Калькулятор подбора редуктора по параметрам | ЗР</title>
++<title>Калькулятор подбора редуктора по параметрам | ZR</title>
+ <meta name="description" content="Онлайн-калькулятор подбора редуктора и мотор-редуктора по параметрам: тип, мощность, обороты, момент, передаточное. Подходящие модели и КП от завода." />
+@@ -18,5 +18,5 @@
+ <meta property="og:image" content="https://zavod-red.ru/og-image.jpg" />
+-<link rel="stylesheet" href="assets/inner.css?v=d21d4014" />
+-<link rel="stylesheet" href="assets/pages-modern.css?v=7f7edb3d" />
+-<link rel="stylesheet" href="assets/podbor.css?v=23e5e083" />
++<link rel="stylesheet" href="assets/inner.css?v=knop26" />
++<link rel="stylesheet" href="assets/pages-modern.css?v=knop26" />
++<link rel="stylesheet" href="assets/podbor.css?v=shapka28" />
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Подбор редуктора по параметрам","description":"Онлайн-подбор и расчёт редуктора и мотор-редуктора по мощности, оборотам, моменту и передаточному числу.","provider":{"@type":"Organization","name":"Завод Редукторов","url":"https://zavod-red.ru/"},"areaServed":"RU"}</script>
+@@ -25,2 +25,4 @@
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Как подобрать редуктор по параметрам", "step": [{"@type": "HowToStep", "name": "Задайте параметры", "text": "Укажите мощность двигателя, обороты на выходе, крутящий момент и передаточное число — диапазоны «от/до»."}, {"@type": "HowToStep", "name": "Посмотрите подходящие модели", "text": "Калькулятор покажет подходящие типоразмеры редукторов ZR с обозначениями ГОСТ и импортными аналогами (SEW, NORD, Motovario)."}, {"@type": "HowToStep", "name": "Подтвердите подбор и получите КП", "text": "Оставьте заявку — инженер подтвердит точный подбор, рассчитает стоимость и срок поставки."}]}</script>
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -29,4 +31,4 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=knop26" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+@@ -34,3 +36,3 @@
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -45,3 +47,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -49,3 +51,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -60,3 +62,3 @@
+   <h1>Подбор редуктора по параметрам</h1>
+-  <p>Выберите тип и задайте диапазоны по мощности, оборотам, моменту и передаточному числу — таблица покажет подходящие типоразмеры нашего производства с обозначениями ZR, ГОСТ и импортными аналогами. По выбранной позиции инженер подтвердит точный подбор, цену и срок от производителя.</p>
++  <p>Задайте параметры — таблица покажет подходящие типоразмеры нашего производства. Точный подбор, цену и срок подтвердит инженер.</p>
+ </div></section>
+@@ -64,5 +66,3 @@
+ <section id="kalkulyator" class="section" style="padding-top:34px"><div class="wrap">
+-  <div class="eyebrow">База типоразмеров</div>
+-  <h2 style="font-size:24px;margin-bottom:8px">Калькулятор подбора редуктора по параметрам</h2>
+-  <p style="color:var(--muted);max-width:860px;margin:0 0 18px;line-height:1.6">Выберите тип редуктора и задайте диапазоны «от/до»: мощность двигателя, обороты на выходе, крутящий момент, передаточное число. Покажем подходящие типоразмеры нашего производства — с обозначениями ZR и ГОСТ и импортными аналогами (SEW, NORD, Motovario). Результат можно выгрузить в CSV. Параметры — из заводской таблицы подбора; точный подбор под нагрузку и режим подтвердит инженер.</p>
++  
+   <div id="pfRoot"></div>
+@@ -74,7 +74,7 @@
+     <div>
+-      <div style="background:rgba(225,27,27,.08);border:1px solid rgba(225,27,27,.3);border-radius:14px;padding:20px 22px;margin-bottom:22px"><div style="font-weight:700;font-size:17px;margin-bottom:6px"><span class="hd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span> Не знаете параметры?</div><p style="color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 14px">Сфотографируйте заводской шильдик (табличку) редуктора или пришлите замеры — инженер определит модель и подберёт точный аналог. Разбираться в таблице для этого не обязательно.</p><a class="btn" data-zayavka href="#zayavka" style="width:100%;justify-content:center">Подобрать по фото шильдика</a></div>
++      <div style="background:rgba(225,27,27,.08);border:1px solid rgba(225,27,27,.3);border-radius:14px;padding:20px 22px;margin-bottom:22px"><div style="font-weight:700;font-size:17px;margin-bottom:6px"><span class="hd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span> Не знаете параметры?</div><p style="color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 14px">Сфотографируйте заводской шильдик (табличку) редуктора или пришлите замеры — инженер определит модель и подберёт точный аналог. Разбираться в таблице для этого не обязательно.</p><a class="btn" data-zayavka href="#zayavka" style="width:100%;justify-content:center">По фото шильдика</a></div>
+       <div class="feats" style="grid-template-columns:1fr;margin-top:0">
+-        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div><div><h4>Цена от производителя</h4><p>Без посредников и наценок дилеров — понижающие мотор-редукторы по запросу.</p></div></div>
+-        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div><div><h4>8 763 исполнения</h4><p>Серии ZR, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario.</p></div></div>
+-        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h4>Гарантия 24 месяца</h4><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
++        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg></div><div><h3>Цена от производителя</h3><p>Без посредников и наценок дилеров — понижающие мотор-редукторы по запросу.</p></div></div>
++        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div><div><h3>8&nbsp;723 исполнения в справочнике подбора</h3><p>Серии ZR, ПР, МР и аналоги SEW, NORD, Bonfiglioli, Motovario. Это база калькулятора ниже; карточек на сайте больше — 111&nbsp;000+, включая 92&nbsp;000 страниц импортных аналогов.</p></div></div>
++        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><h3>Гарантия 36 месяцев</h3><p>Подбор по нагрузке и режиму — узел служит годами.</p></div></div>
+       </div>
+@@ -84,3 +84,3 @@
+       <div class="eyebrow">Что учитываем</div>
+-      <h2 style="font-size:24px">Параметры для точного подбора</h2>
++      <h2 style="font-size:24px">Параметры для точного подбора</h2><p style="color:var(--muted);max-width:860px;margin:10px 0 0;line-height:1.6">Выберите тип и задайте диапазоны по мощности, оборотам, моменту и передаточному числу — таблица покажет подходящие типоразмеры нашего производства с обозначениями ZR, ГОСТ и импортными аналогами. По выбранной позиции инженер подтвердит точный подбор, цену и срок от производителя.</p><p style="color:var(--muted);max-width:860px;margin:10px 0 18px;line-height:1.6">Выберите тип редуктора и задайте диапазоны «от/до»: мощность двигателя, обороты на выходе, крутящий момент, передаточное число. Покажем подходящие типоразмеры нашего производства — с обозначениями ZR и ГОСТ и импортными аналогами (SEW, NORD, Motovario). Результат можно выгрузить в CSV. Параметры — из заводской таблицы подбора; точный подбор под нагрузку и режим подтвердит инженер.</p>
+       <table class="spec"><tbody>
+@@ -160,3 +160,6 @@
+ 
++<section class="section" data-hublink="1" style="padding-top:0"><div class="wrap"><h2>Подбор по обозначению</h2><p style="margin-bottom:12px;color:var(--muted)">Два справочника по маркировке: типоразмер задаёт передаточное число, исполнение добавляет к нему двигатель.</p><div class="imp-rep" style="display:flex;flex-wrap:wrap;gap:9px"><a href="/tiporazmer/" class="chip">Редукторы по типоразмерам</a><a href="/ispolnenie/" class="chip">Исполнения по мощности и передаточному</a><a href="/podbor" class="chip">Калькулятор подбора</a></div></div></section>
++<section class="section" data-artlinks="1" style="padding-top:0"><div class="wrap"><h2 class="sec-h">Разобраться в обозначениях</h2><p style="line-height:2"><a href="/blog/peredatochnoe-chislo-i">Передаточное число: как считать</a> · <a href="/blog/motor-reduktor-50">Мотор-редуктор 50: что означает число</a></p></div></section>
+ <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+@@ -172,3 +175,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -181,3 +184,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -187,3 +190,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -191,3 +194,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -204,5 +207,5 @@
+ 
+-<script src="assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="assets/podbor.js?v=c84d7602"></script>
+-<script defer src="assets/modal.js?v=350d9cee"></script>
++<script src="assets/inner.js?v=shapka28"></script>
++<script defer src="assets/podbor.js?v=shapka28"></script>
++<script defer src="assets/modal.js?v=0110zrchat"></script>
+ </body>

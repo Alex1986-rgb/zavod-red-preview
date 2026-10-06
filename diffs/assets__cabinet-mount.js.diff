@@ -1,0 +1,81 @@
+--- main/assets/cabinet-mount.js
++++ prod/assets/cabinet-mount.js
+@@ -85,5 +85,15 @@
+   /* ---------- nav model ---------- */
++  var SVG_IC = {
++    overview: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>',
++    orders: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12V5a2 2 0 0 1 2-2h7l5 5v4"/><path d="M3 21l3-3-3-3"/><path d="M9 18H4"/></svg>',
++    favorites: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.7 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.8-7.8 1.1-1a5.5 5.5 0 0 0 0-7.6Z"/></svg>',
++    requests: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>',
++    docs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v16H6.5A2.5 2.5 0 0 0 4 21.5V5.5Z"/><path d="M9 7h6M9 11h6"/></svg>',
++    profile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M18 11h-3v10h3"/><path d="M18 11 22 8v13"/></svg>',
++    support: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></svg>',
++    settings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>',
++  };
+   var NAV = [
+-    { id: "overview", ic: "▣", t: "Обзор" },
+-    { id: "orders", ic: "📦", t: "Заказы", n: function () { return orders().length; } },
++    { id: "overview", ic: SVG_IC.overview, t: "Обзор" },
++    { id: "orders", ic: SVG_IC.orders, t: "Заказы", n: function () { return orders().length; } },
+     { id: "favorites", ic: "❤", t: "Избранное", n: function () { return favorites().length; } },
+@@ -101,6 +111,9 @@
+     s.textContent = [
+-      ".zr-cab{background:#eef2f6;min-height:60vh}.zr-cab *{box-sizing:border-box}",
+-      ".zr-cab-in{max-width:1240px;margin:0 auto;padding:24px 24px 64px}",
+-      ".zr-cab-top{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}",
+-      ".zr-cab-ava{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#ff4b3c,#e11b1b);color:#fff;display:flex;align-items:center;justify-content:center;font:800 22px 'Space Grotesk',sans-serif;flex:none}",
++      ".zr-cab-name{font:800 22px/1.2 'Archivo',sans-serif;color:#0f1c26;margin:0}",
++      // Пустоты было на пол-экрана: min-height:60vh держал высоту даже под
++      // маленькой формой входа. Высоту задаёт содержимое.
++      ".zr-cab{background:#eef2f6;min-height:auto;padding-bottom:28px}.zr-cab *{box-sizing:border-box}",
++      ".zr-cab-in{max-width:1240px;margin:0 auto;padding:16px 20px 40px}",
++      ".zr-cab-top{display:flex;align-items:center;gap:16px;margin-bottom:14px;flex-wrap:wrap}",
++      ".zr-cab-ava{width:60px;height:60px;border-radius:12px;background:linear-gradient(135deg,#ff4b3c,#e11b1b);color:#fff;display:flex;align-items:center;justify-content:center;font:800 22px 'Space Grotesk',sans-serif;flex:none}",
+       ".zr-cab-top h1{font:700 clamp(21px,2.8vw,29px)/1.1 'Space Grotesk',sans-serif;color:#0f1c26;margin:0 0 3px}",
+@@ -110,6 +123,6 @@
+       ".zr-logout{border:1px solid rgba(12,20,28,.14);background:#fff;color:#5a6a75;font:600 13px 'Archivo',sans-serif;padding:9px 16px;border-radius:10px;cursor:pointer;transition:.15s}.zr-logout:hover{border-color:#e11b1b;color:#e11b1b}",
+-      ".zr-cab-grid{display:grid;grid-template-columns:244px 1fr;gap:24px;align-items:start}",
+-      ".zr-nav{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:16px;padding:8px;position:sticky;top:16px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
++      ".zr-cab-grid{display:grid;grid-template-columns:244px 1fr;gap:16px;align-items:start}",
++      ".zr-nav{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:12px;padding:8px;position:sticky;top:16px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
+       ".zr-nav button{display:flex;align-items:center;gap:11px;width:100%;border:0;background:none;padding:11px 13px;border-radius:11px;font:600 14px 'Archivo',sans-serif;color:#3f4b55;cursor:pointer;transition:.13s;text-align:left}",
+-      ".zr-nav button .ic{font-size:16px;width:20px;text-align:center;flex:none}",
++      ".zr-nav button .ic{width:18px;height:18px;flex:none;display:flex;align-items:center;justify-content:center}.zr-nav button .ic svg{width:18px;height:18px}",
+       ".zr-nav button:hover{background:#f2f5f8}",
+@@ -119,8 +132,8 @@
+       ".zr-main{min-width:0}",
+-      ".zr-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}",
+-      ".zr-kpi{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:16px;padding:20px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
+-      ".zr-kpi .n{font:800 25px 'Space Grotesk',sans-serif;color:#0f1c26;letter-spacing:-.02em}.zr-kpi .n.acc{color:#e11b1b}.zr-kpi .n.good{color:#12915f}",
++      ".zr-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:14px}",
++      ".zr-kpi{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
++      ".zr-kpi .n{font:800 22px 'Space Grotesk',sans-serif;color:#0f1c26;letter-spacing:-.02em}.zr-kpi .n.acc{color:#e11b1b}.zr-kpi .n.good{color:#12915f}",
+       ".zr-kpi .l{color:#8a97a1;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;margin-top:3px}",
+-      ".zr-card{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
+-      ".zr-card h2{font:700 17px 'Space Grotesk',sans-serif;color:#0f1c26;margin:0 0 4px}.zr-card .cap{color:#8a97a1;font-size:13px;margin:0 0 16px}",
++      ".zr-card{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:12px;padding:16px 20px;margin-bottom:12px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
++      ".zr-card h2{font:700 15px 'Space Grotesk',sans-serif;color:#0f1c26;margin:0 0 4px}.zr-card .cap{color:#8a97a1;font-size:13px;margin:0 0 16px}",
+       ".zr-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.zr-h h2{margin:0}",
+@@ -134,3 +147,3 @@
+       ".zr-chips button{border:0;background:none;padding:9px 15px;border-radius:9px;font:600 13.5px 'Archivo',sans-serif;color:#3f4b55;cursor:pointer}.zr-chips button.on{background:#e11b1b;color:#fff}",
+-      ".zr-ord{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
++      ".zr-ord{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:12px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(16,31,42,.04)}",
+       ".zr-ord-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}",
+@@ -145,3 +158,3 @@
+       ".zr-fav{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}",
+-      ".zr-fav-c{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(16,31,42,.04);transition:box-shadow .16s,transform .16s,border-color .16s}",
++      ".zr-fav-c{background:#fff;border:1px solid rgba(12,20,28,.08);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(16,31,42,.04);transition:box-shadow .16s,transform .16s,border-color .16s}",
+       ".zr-fav-c:hover{box-shadow:0 14px 30px rgba(16,31,42,.1);transform:translateY(-3px);border-color:rgba(225,27,27,.35)}",
+@@ -198,5 +211,5 @@
+       "@media(prefers-reduced-motion:reduce){.zr-cab *{animation:none!important;transition:none!important}}",
+-      "@media(max-width:1024px){.zr-cab-in{padding:20px 20px 56px}.zr-cab-grid{grid-template-columns:210px 1fr;gap:20px}.zr-kpis{grid-template-columns:repeat(2,1fr)}.zr-fav{grid-template-columns:repeat(2,1fr)}}",
++      "@media(max-width:1024px){.zr-cab-in{padding:14px 16px 36px}.zr-cab-grid{grid-template-columns:210px 1fr;gap:20px}.zr-kpis{grid-template-columns:repeat(2,1fr)}.zr-fav{grid-template-columns:repeat(2,1fr)}}",
+       "@media(max-width:880px){.zr-cab-grid{grid-template-columns:1fr}.zr-nav{position:static;display:flex;overflow-x:auto;overflow-y:hidden;padding:6px;gap:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.zr-nav::-webkit-scrollbar{display:none}.zr-nav button{width:auto;white-space:nowrap;flex:0 0 auto}.zr-nav button .cnt{margin-left:6px}.zr-qa{grid-template-columns:repeat(2,1fr)}}",
+-      "@media(max-width:560px){.zr-cab-in{padding:16px 16px 48px}.zr-card{padding:20px}.zr-cab-top .spacer{display:none}.zr-kpis{grid-template-columns:repeat(2,1fr);gap:12px}.zr-qa{grid-template-columns:1fr}.zr-fav{grid-template-columns:1fr}.zr-frow{grid-template-columns:1fr}.zr-msg{max-width:90%}}",
++      "@media(max-width:560px){.zr-cab-in{padding:10px 10px 32px}.zr-card{padding:20px}.zr-cab-top .spacer{display:none}.zr-kpis{grid-template-columns:repeat(2,1fr);gap:12px}.zr-qa{grid-template-columns:1fr}.zr-fav{grid-template-columns:1fr}.zr-frow{grid-template-columns:1fr}.zr-msg{max-width:90%}}",
+       "@media(max-width:400px){.zr-cab-ava{width:52px;height:52px;font-size:19px}.zr-cab-top h1{font-size:22px}.zr-kpi{padding:16px}.zr-kpi .n{font-size:22px}}"
+@@ -400,3 +413,3 @@
+     host.innerHTML = '<div class="zr-cab-in">' +
+-      '<div class="zr-cab-top"><div class="zr-cab-ava">' + esc(init) + '</div><div><h1>' + esc(name) + '</h1><div class="sub">' + esc(sub || "Оптовый клиент Завода Редукторов") + '</div><span class="badge">Оптовые условия · прямые цены завода</span></div>' +
++      '<div class="zr-cab-top"><div class="zr-cab-ava">' + esc(init) + '</div><div><h2 class="zr-cab-name">' + esc(name) + '</h2><div class="sub">' + esc(sub || "Оптовый клиент Завода Редукторов") + '</div><span class="badge">Оптовые условия · прямые цены завода</span></div>' +
+       '<div class="spacer"></div><button class="zr-logout" id="zr-logout">Выйти</button></div>' +

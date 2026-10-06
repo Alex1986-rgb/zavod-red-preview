@@ -1,0 +1,128 @@
+--- main/blog/srochnaya-zamena-importnogo-reduktora.html
++++ prod/blog/srochnaya-zamena-importnogo-reduktora.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Срочная замена импортного редуктора: что делать</title>
++<title>Срочная замена импортного редуктора: что делать | ZR</title>
+ <meta name="description" content="Срочная замена импортного редуктора, если привод встал: два пути — поставка оригинала под заказ или срочное изготовление аналога. Что прислать для подбора." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/srochnaya-zamena-importnogo-reduktora" />
+-<meta property="og:title" content="Срочная замена импортного редуктора: что делать, если привод" />
++<meta property="og:title" content="Срочная замена импортного редуктора: что делать, если привод | ZR" />
+ <meta property="og:description" content="Два пути при остановке привода — поставка оригинала под заказ или срочное изготовление габаритного аналога взамен импортного редуктора." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-production-floor.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Срочная замена импортного редуктора: что делать, если привод встал","description":"Два пути при остановке привода — поставка оригинала под заказ или срочное изготовление габаритного аналога взамен импортного редуктора.","image":"https://zavod-red.ru/assets/blog-photo/th-production-floor.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/srochnaya-zamena-importnogo-reduktora"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Срочная замена импортного редуктора: что делать, если привод встал","description":"Два пути при остановке привода — поставка оригинала под заказ или срочное изготовление габаритного аналога взамен импортного редуктора.","image":"https://zavod-red.ru/assets/blog-photo/th-comparison-two.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/srochnaya-zamena-importnogo-reduktora","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Срочная замена импортного редуктора","item":"https://zavod-red.ru/blog/srochnaya-zamena-importnogo-reduktora"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"За какой срок изготавливается аналог взамен импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Аналог собственного производства мы изготавливаем сами, поэтому планируем срок точнее, чем при ожидании оригинала под заказ. Точный срок зависит от типа привода, исполнения и загрузки и подтверждается по запросу после уточнения модели."}},{"@type":"Question","name":"Что прислать для срочного подбора замены?","acceptedAnswer":{"@type":"Answer","text":"Достаточно фото шильда, общего вида узла и замеров присоединительных размеров — фланца, валов, межосевого расстояния. По этим данным инженер подтвердит совместимость и одновременно просчитает оригинал и аналог."}},{"@type":"Question","name":"Можно ли подобрать аналог без читаемого шильдика?","acceptedAnswer":{"@type":"Answer","text":"Да. Если шильд утрачен или нечитаем, подбираем по замерам габаритных и присоединительных размеров, передаточному числу и фото узла. Инженер восстановит параметры и подтвердит замену до отгрузки."}},{"@type":"Question","name":"Встанет ли аналог на место без переделки оборудования?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы воспроизводим монтажные и присоединительные размеры — фланец, вал, межосевое расстояние, поэтому узел встаёт на штатное место. Рама, муфты и фундамент не переделываются. При нестандартной схеме изготавливаем переходный фланец или спецвал по чертежу."}},{"@type":"Question","name":"Можно ли заказать оригинал импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, оригинальные приводы поставляем под заказ через альтернативные каналы. Параллельно просчитываем срочный габаритный аналог собственного производства, чтобы вы выбрали вариант, который быстрее запустит линию."}},{"@type":"Question","name":"Какая гарантия на аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"На редукторы собственного производства предоставляем гарантию 24 месяца. Гарантия распространяется на изготовленный аналог при соблюдении условий монтажа и эксплуатации. Условия по конкретной модели уточняйте при оформлении."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"За какой срок изготавливается аналог взамен импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Аналог собственного производства мы изготавливаем сами, поэтому планируем срок точнее, чем при ожидании оригинала под заказ. Точный срок зависит от типа привода, исполнения и загрузки и подтверждается по запросу после уточнения модели. Подробнее о вариантах — на странице импортозамещения ."}},{"@type":"Question","name":"Что прислать для срочного подбора замены?","acceptedAnswer":{"@type":"Answer","text":"Достаточно фото шильда, общего вида узла и замеров присоединительных размеров — фланца, валов, межосевого расстояния. По этим данным инженер подтвердит совместимость и одновременно просчитает оригинал и аналог. Можно сразу запустить подбор по параметрам."}},{"@type":"Question","name":"Можно ли подобрать аналог без читаемого шильдика?","acceptedAnswer":{"@type":"Answer","text":"Да. Если шильд утрачен или нечитаем, подбираем по замерам габаритных и присоединительных размеров, передаточному числу и фото узла. Инженер восстановит параметры и подтвердит замену до отгрузки. Отправить данные на подбор можно прямо со страницы."}},{"@type":"Question","name":"Встанет ли аналог на место без переделки оборудования?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы воспроизводим монтажные и присоединительные размеры — фланец, вал, межосевое расстояние, поэтому узел встаёт на штатное место. Рама, муфты и фундамент не переделываются. При нестандартной схеме изготавливаем переходный фланец или спецвал по чертежу."}},{"@type":"Question","name":"Можно ли заказать оригинал импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"Да, оригинальные приводы поставляем под заказ через альтернативные каналы. Параллельно просчитываем срочный габаритный аналог собственного производства, чтобы вы выбрали вариант, который быстрее запустит линию. Оба пути и условия — на странице импортозамещения ."}},{"@type":"Question","name":"Какая гарантия на аналог импортного редуктора?","acceptedAnswer":{"@type":"Answer","text":"На редукторы собственного производства предоставляем гарантию 36 месяцев. Гарантия распространяется на изготовленный аналог при соблюдении условий монтажа и эксплуатации. Условия по конкретной модели уточняйте при оформлении или через подбор ."}},{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Срочная замена импортного редуктора ведётся в два параллельных потока: одновременно прорабатывается поставка оригинала под заказ и срочное изготовление габаритного аналога, который повторяет присоединительные размеры и встаёт на штатное место без переделки рамы. Это сокращает простой остановленного оборудования и снимает зависимость от сроков поставки оригинала. Для подбора аналога SEW, NORD или Bonfiglioli достаточно фото шильда, общего вида узла и замеров валов и фланца — по ним инженер подтверждает совместимость по мощности, передаточному числу и моменту. Оригинал поставляем под заказ (цена по запросу), а габаритный аналог собственного производства даёт реальный срок запуска привода в кратчайшее время. Что нужно для срочного подбора Фото шильдика модель, мощность, передаточное число, момент Замер выходного вала диаметр, длина, шпонка / полый вал Замер фланца / лап межосевые, диаметр центровки, отверстия Общий вид узла положение валов, монтажное исполнение Условия работы режим, число пусков, среда Сравнение вариантов срочной замены Вариант Срок Совместимость Оригинал под заказ длительный, цена по запросу полная, 1:1 Габаритный аналог ЗР срочное изготовление по присоединительным размерам Аналог с переходной плитой короткий при несовпадении посадок Со склада (типовой) минимальный если параметры совпали Подробнее о схемах поставки оригинала и изготовления аналогов — на странице импортозамещения редукторов . Запустить срочный подбор по фото и замерам можно через форму подбора редуктора ."}},{"@type":"Question","name":"Как быстро заменить импортный редуктор?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото шильдика или маркировку — инженер определит модель за 15 минут и подберёт аналог ZR. Ходовые позиции — на складе, отгрузка от 3 дней. Срочные заявки — отдельно."}},{"@type":"Question","name":"Аналог точно подойдёт по размерам?","acceptedAnswer":{"@type":"Answer","text":"Да. Изготавливаем с теми же присоединительными: фланцы, валы, крепёж. Передаём чертёж и 3D-модель до заказа — проверяете до оплаты."}},{"@type":"Question","name":"Какие бренды можете заменить?","acceptedAnswer":{"@type":"Answer","text":"SEW, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Varvel, SITI, STM, Rossi, Flender, Siemens, KEB, Tramec и другие. По каждой марке — свой справочник соответствия ZR."}},{"@type":"Question","name":"Сколько стоит аналог?","acceptedAnswer":{"@type":"Answer","text":"Цена — от производителя, без дилерских наценок и таможни. Пришлите параметры — рассчитаем за 15 минут и пришлём КП."}},{"@type":"Question","name":"Какие сроки изготовления?","acceptedAnswer":{"@type":"Answer","text":"Складские типоразмеры — от 3 дней. Под заказ — от 5 рабочих дней. Специсполнения — от 10 дней. Срочно — обсуждаем."}},{"@type":"Question","name":"Даёте ли чертежи до заказа?","acceptedAnswer":{"@type":"Answer","text":"Да. Габаритный и присоединительный чертёж + 3D-модель STEP — бесплатно, до оплаты. Проверяете что подходит — потом заказываете."}},{"@type":"Question","name":"Какая гарантия на аналог?","acceptedAnswer":{"@type":"Answer","text":"36 месяцев. Паспорт изделия, декларация ЕАС, сертификат ГОСТ. При поломке — замена с ответственностью по договору."}},{"@type":"Question","name":"Как оформить заказ?","acceptedAnswer":{"@type":"Answer","text":"Опишите задачу через форму, позвоните +7 (495) 151-41-02 или напишите на zr@zavod-red.ru. Инженер подберёт, пришлёт КП, заключим договор."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Срочная замена импортного редуктора</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Срочная замена импортного редуктора</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Импортозамещение</div>
+-  <h1>Срочная замена импортного редуктора: что делать, если привод встал</h1><img class="blog-hero-img" src="../assets/blog-photo/th-production-floor.webp" alt="Срочная замена импортного редуктора: что делать, если привод встал — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Срочная замена импортного редуктора: что делать, если привод встал</h1><img class="blog-hero-img" src="../assets/blog-photo/th-comparison-two.webp" alt="Срочная замена импортного редуктора: что делать, если привод встал — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~6 минут</p>
+@@ -82,3 +85,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный редуктор взамен импортного — срочная замена" loading="lazy"><figcaption>Габаритный аналог взамен импортного редуктора — без переделки рамы</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_worm.webp" alt="Червячный редуктор взамен импортного — срочная замена" loading="lazy" width="800" height="600"><figcaption>Габаритный аналог взамен импортного редуктора — без переделки рамы</figcaption></figure>
+ 
+@@ -90,3 +93,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/prod-d2.webp" alt="Производство редуктора взамен импортного на собственных мощностях" loading="lazy"><figcaption>Срочное изготовление аналога на собственном производстве</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/prod-d2.webp" alt="Производство редуктора взамен импортного на собственных мощностях" loading="lazy" width="900" height="675"><figcaption>Срочное изготовление аналога на собственном производстве</figcaption></figure>
+ 
+@@ -146,3 +149,3 @@
+         <summary>Какая гарантия на аналог импортного редуктора?</summary>
+-        <p>На редукторы собственного производства предоставляем гарантию 24 месяца. Гарантия распространяется на изготовленный аналог при соблюдении условий монтажа и эксплуатации. Условия по конкретной модели уточняйте при оформлении или через <a href="/podbor">подбор</a>.</p>
++        <p>На редукторы собственного производства предоставляем гарантию 36 месяцев. Гарантия распространяется на изготовленный аналог при соблюдении условий монтажа и эксплуатации. Условия по конкретной модели уточняйте при оформлении или через <a href="/podbor">подбор</a>.</p>
+       </details>
+@@ -211,8 +214,22 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+-    <footer class="site-footer">
++    
++	<section class="section" style="padding-top:0"><div class="wrap"><div class="cat-faq">
++	<details><summary>Как быстро заменить импортный редуктор?</summary><div>Пришлите фото шильдика или маркировку — инженер определит модель за 15 минут и подберёт аналог ZR. Ходовые позиции — на складе, отгрузка от 3 дней. Срочные заявки — отдельно.</div></details>
++	<details><summary>Аналог точно подойдёт по размерам?</summary><div>Да. Изготавливаем с теми же присоединительными: фланцы, валы, крепёж. Передаём чертёж и 3D-модель до заказа — проверяете до оплаты.</div></details>
++	<details><summary>Какие бренды можете заменить?</summary><div>SEW, NORD, Bonfiglioli, Motovario, Bauer, Lenze, Varvel, SITI, STM, Rossi, Flender, Siemens, KEB, Tramec и другие. По каждой марке — свой справочник соответствия ZR.</div></details>
++	<details><summary>Сколько стоит аналог?</summary><div>Цена — от производителя, без дилерских наценок и таможни. Пришлите параметры — рассчитаем за 15 минут и пришлём КП.</div></details>
++	<details><summary>Какие сроки изготовления?</summary><div>Складские типоразмеры — от 3 дней. Под заказ — от 5 рабочих дней. Специсполнения — от 10 дней. Срочно — обсуждаем.</div></details>
++	<details><summary>Даёте ли чертежи до заказа?</summary><div>Да. Габаритный и присоединительный чертёж + 3D-модель STEP — бесплатно, до оплаты. Проверяете что подходит — потом заказываете.</div></details>
++	<details><summary>Какая гарантия на аналог?</summary><div>36 месяцев. Паспорт изделия, декларация ЕАС, сертификат ГОСТ. При поломке — замена с ответственностью по договору.</div></details>
++	<details><summary>Как оформить заказ?</summary><div>Опишите задачу через форму, позвоните +7 (495) 151-41-02 или напишите на zr@zavod-red.ru. Инженер подберёт, пришлёт КП, заключим договор.</div></details>
++	</div></div></section>
++
++
++<footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -225,3 +242,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -234,3 +251,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -240,3 +257,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -244,3 +261,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -257,4 +274,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

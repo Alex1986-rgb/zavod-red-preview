@@ -1,0 +1,13 @@
+--- main/assets/auth-gate.js
++++ prod/assets/auth-gate.js
+@@ -55,4 +55,8 @@
+       '<div class="ac">' +
+-      '<img class="ac-logo" src="/assets/zr_logo.webp" alt="Завод Редукторов" onerror="this.style.display=\'none\'">' +
+-      '<h1 id="ac-title">Личный кабинет</h1>' +
++      // zr_logo.webp — СВЕТЛАЯ версия: на белой карточке входа от неё видна только красная
++      // шестерёнка, сам текст логотипа сливается с фоном. Берём тёмную, как в шапке и подвале.
++      '<img class="ac-logo" src="/assets/zr_logo_dark.webp" alt="Завод Редукторов" onerror="this.style.display=\'none\'">' +
++      // h2, а не h1: на странице уже есть <h1> в hero-секции. Три h1 на одном экране —
++      // и дубль для пользователя, и ошибка структуры для поисковика.
++      '<h2 id="ac-title">Личный кабинет</h2>' +
+       '<p class="ac-sub">Заявки, история заказов, персональный менеджер и КП в одном месте.</p>' +

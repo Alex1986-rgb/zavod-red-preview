@@ -1,0 +1,600 @@
+--- main/index.html
++++ prod/index.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Завод Редукторов «НИИ АТТ» — производство редукторов и мотор-редукторов</title>
++<title>Завод Редукторов — производство мотор-редукторов и редукторов</title>
+ <meta name="description" content="Завод редукторов ООО «НИИ АТТ» — производство понижающих редукторов и мотор-редукторов: червячные, цилиндрические, соосные, конические, вариаторы." />
+@@ -18,3 +18,7 @@
+ <link rel="apple-touch-icon" href="assets/favicons/fav-180x180.png" />
+-<link rel="stylesheet" href="assets/podbor.css?v=23e5e083" />
++<link rel="stylesheet" href="assets/podbor.css?v=shapka28" />
++<!-- Картинки первого экрана — предзагрузка. Без неё браузер находит их только после
++     разбора инлайнового CSS (68 КБ), и на телефоне hero появляется заметно позже. -->
++<link rel="preload" as="image" href="assets/hero_poster.webp" fetchpriority="high" />
++<link rel="preload" as="image" href="assets/reduktor_float.webp?v=2" type="image/webp" fetchpriority="high" />
+ <link rel="manifest" href="site.webmanifest" />
+@@ -24,3 +28,3 @@
+ <meta property="og:url" content="https://zavod-red.ru/" />
+-<meta property="og:title" content="Завод Редукторов «НИИ АТТ» — производство промышленных редукторов и мотор-редукторов" />
++<meta property="og:title" content="Завод Редукторов — производство мотор-редукторов и редукторов" />
+ <meta property="og:description" content="Собственное производство редукторов и мотор-редукторов ZR, ПР, МР. Аналоги SEW, Bonfiglioli, NORD, Motovario. Подбор по маркировке, фото и шильдику. Поставка по России." />
+@@ -59,13 +63,23 @@
+   },
+-  "aggregateRating": {
+-    "@type": "AggregateRating",
+-    "ratingValue": "4.9",
+-    "reviewCount": "6",
+-    "bestRating": "5"
+-  },
+-  "review": [
+-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Начальник производства, изготовитель конвейеров, Москва"},"reviewBody":"Берём редукторы серийно под наши конвейеры. Резерв на складе и фиксированная цена закрывают главную боль — производство не встаёт, а себестоимость предсказуема."},
+-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Главный механик, пищевое производство, Краснодар"},"reviewBody":"Встал редуктор на линии, оригинал — полгода ожидания. Аналог изготовили за несколько дней, встал на штатное место без переделки рамы."},
+-    {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"Руководитель снабжения, производство стройматериалов, Новосибирск"},"reviewBody":"Меняли импортные NORD на отечественные аналоги по всему парку. Присоединительные совпали, рамы не трогали, по цене вышло заметно выгоднее."}
++  "sameAs": [
++    "https://yandex.ru/maps/org/zavod_reduktorov/208172675272/"
+   ]
++}
++</script>
++<!-- WebSite + SearchAction -->
++<script type="application/ld+json">
++{
++  "@context": "https://schema.org",
++  "@type": "WebSite",
++  "url": "https://zavod-red.ru/",
++  "name": "Завод Редукторов",
++  "description": "Производство промышленных редукторов и мотор-редукторов в Челябинске",
++  "potentialAction": {
++    "@type": "SearchAction",
++    "target": {
++      "@type": "EntryPoint",
++      "urlTemplate": "https://zavod-red.ru/podbor?q={search_term_string}"
++    },
++    "query-input": "required name=search_term_string"
++  }
+ }
+@@ -73,3 +87,3 @@
+ <style>
+-:root{
++:root{--hdr:151px;--head:'Space Grotesk',var(--font);--mono:'IBM Plex Mono',ui-monospace,'SF Mono',Consolas,monospace;--glow:rgba(207,22,22,.12);
+   --bg:#0b151d; --bg2:#0e1a24; --card:#14222e; --card2:#172836; --line:#22333f;
+@@ -78,3 +92,3 @@
+   --light:#eef2f6; --light-card:#fff; --ink:#13212c;
+-  --r:14px; --maxw:1240px;
++  --r:14px; --maxw:1480px;
+   --font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',Arial,sans-serif;
+@@ -87,2 +101,9 @@
+ .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
++/* ШИРОКИЕ МОНИТОРЫ (26.09.2026). Макет был заперт на 1480px при любой ширине:
++   на экране 2560 сайт занимал 58% ширины — по 540px пустоты по краям. Две ступени
++   расширения; кегль текста не трогаем, сетки секций рассчитаны на текущий размер. */
++/* Ширина тянется за окном ПЛАВНО, без ступеней: до ~1680px экрана работает
++   базовые 1480px, дальше контейнер идёт за окном (88vw), упираясь в 1900px —
++   выше строка становится слишком длинной для чтения. */
++:root{--maxw:clamp(1480px,88vw,1900px)}
+ .section{padding:88px 0}
+@@ -102,3 +123,3 @@
+ .logo img{flex-shrink:0;max-width:none}
+-[data-theme="light"] .logo img{content:url(assets/zr_logo_dark.webp)}
++.logo img{content:url(assets/zr_logo_dark.webp)}
+ .hero h1{color:#fff}
+@@ -133,3 +154,3 @@
+ /* HERO */
+-.hero{position:relative;min-height:calc(100vh - 78px);min-height:calc(100svh - 78px);display:flex;align-items:center;overflow:hidden}
++.hero{position:relative;min-height:calc(100vh - var(--hdr,151px));min-height:calc(100svh - var(--hdr,151px));display:flex;align-items:center;overflow:hidden}
+ .hero video,.hero .hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+@@ -137,3 +158,3 @@
+ .hero .wrap{position:relative;z-index:2;padding-top:44px;padding-bottom:44px}
+-.hero h1{font-size:clamp(32px,4.4vw,56px);max-width:900px;text-transform:uppercase;line-height:1.08}
++.hero h1{font-size:clamp(32px,4.4vw,56px);max-width:900px;letter-spacing:-.02em;line-height:1.08}
+ .hero h1 .accent{color:var(--red2)}
+@@ -141,3 +162,3 @@
+ .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+-.hero-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
++.hero-badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-top:28px}
+ .hero-badges .b b{display:block;font-size:clamp(21px,2vw,28px);font-weight:800;color:#fff;line-height:1.05}
+@@ -202,7 +223,16 @@
+ @media(max-width:560px){#reviews .rev-grid{grid-template-columns:1fr}}
+-.site-footer{background:#08121a;border-top:1px solid var(--line);padding:56px 0 26px;color:var(--muted);font-size:14px}
+-[data-theme="light"] .site-footer{background:#eaeef3}
+-[data-theme="light"] .sf-brand img{content:url(assets/zr_logo_dark.webp)}
+-.sf-top{display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1fr;gap:36px}
+-.sf-brand img{height:46px;margin-bottom:14px}
++
++[data-theme="light"] 
++
++
++
++
++.sf-cta-btns{display:flex;gap:10px;flex-wrap:wrap}
++
++.sf-btn-cta:hover{background:rgba(255,255,255,.88)}
++
++.sf-btn-cta2:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
++.sf-top{display:grid;grid-template-columns:1.6fr 1fr 1.2fr 1fr;gap:36px;padding-top:40px}
++.sf-brand img{height:46px;width:auto;object-fit:contain;margin-bottom:14px}
++.sf-brand img{content:url(assets/zr_logo_dark.webp)}
+ .sf-brand p{color:var(--muted);font-size:13.5px;line-height:1.6;margin-bottom:16px;max-width:310px}
+@@ -215,2 +245,4 @@
+ .sf-col a:hover{color:var(--text)}
++.sf-col a.menu-new{color:var(--red);font-weight:600}
++.sf-col a.menu-new::after{content:'new';display:inline-block;background:var(--red);color:#fff;font-size:9px;font-weight:700;line-height:1;padding:2px 5px;border-radius:4px;margin-left:6px;text-transform:uppercase;letter-spacing:.4px;vertical-align:middle}
+ .sf-req{color:var(--muted2);font-size:12.5px;line-height:1.7;margin-top:12px}
+@@ -301,13 +333,6 @@
+ /* PRODUCTION ICON CARDS (b2) */
+-.prod-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:28px}
+-@media(max-width:980px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+-@media(max-width:560px){.prod-grid{grid-template-columns:1fr 1fr}}
+-.prod-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:12px 8px;transition:transform .16s}
+-.prod-card:hover{transform:translateY(-3px)}
+-.prod-card:hover b{color:#fff}
+-.prod-ic{width:78px;height:78px;color:var(--steel);transition:transform .16s;display:flex;align-items:center;justify-content:center}
+-.prod-card:hover .prod-ic{transform:scale(1.06)}
+-.prod-ic svg{width:100%;height:100%}
+-.prod-ic img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+-.prod-card b{font-size:13.5px;color:var(--text);font-weight:700;line-height:1.32}
++.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
++@media(max-width:980px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
++@media(max-width:560px){.prod-grid{grid-template-columns:1fr;gap:12px}}
++.prod-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-align:left;transition:border-color .18s,box-shadow .18s}.prod-card:hover{border-color:var(--red);box-shadow:0 12px 28px rgba(14,26,36,.10)}.prod-img{background:#fff;border-bottom:1px solid var(--line);display:block;overflow:hidden}.prod-img img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain}.prod-b{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}.prod-mark{font:700 11px/1 var(--mono);letter-spacing:.14em;color:var(--red)}.prod-card b{font-size:16.5px;color:var(--text);font-weight:800;line-height:1.28}.prod-d{font-size:13.5px;line-height:1.5;color:var(--muted)}.prod-n{font:600 12.5px/1.4 var(--mono);color:var(--steel);margin-top:auto;padding-top:6px}.prod-go{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--red)}.prod-go svg{width:15px;height:15px;transition:transform .18s}.prod-card:hover .prod-go svg{transform:translateX(3px)}.grid-lbl{display:flex;align-items:center;gap:12px;margin:34px 0 16px;font:700 13px/1.2 var(--head);color:var(--text);letter-spacing:.01em}.grid-lbl::after{content:"";flex:1;height:1px;background:var(--line)}.grid-lbl i{font:600 11.5px/1 var(--mono);font-style:normal;color:var(--muted2);letter-spacing:.04em}
+ /* VS COMPARISON (b3) */
+@@ -346,2 +371,19 @@
+ .vs-price-good{color:#5bdc84}
++/* УЗКИЕ ЭКРАНЫ (26.09.2026). Карточка сравнения не помещалась в 320px: картинка
++   была прибита к 108px, цена стояла с nowrap — вдвоём распирали блок на 39px наружу. */
++@media(max-width:400px){
++  .vs-card{padding:18px 16px 16px}
++  .vs-prod img{width:76px;height:60px;flex:0 0 76px}
++  .vs-prod{gap:10px}
++  .vs-price{white-space:normal}
++  .ceny-grid{grid-template-columns:1fr}
++}
++/* ТАБЛИЦЫ SEO-БЛОКА НА ТЕЛЕФОНЕ (26.09.2026). Сама таблица в экран вмещалась,
++   а содержимое строк — нет: длинные значения распирали ячейки, и текст уходил
++   за правый край на ~29px без всякой прокрутки, то есть просто обрезался.
++   Делаем таблицу прокручиваемой вбок — так её можно дочитать целиком. */
++@media(max-width:560px){
++  .seo-body table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
++  .seo-body table td,.seo-body table th{white-space:nowrap}
++}
+ .vs-price em{display:block;color:var(--muted2);font-weight:500;font-size:11px;font-style:normal;margin-top:1px}
+@@ -398,7 +440,7 @@
+ .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+-.cat-item{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;transition:.18s}
+-.cat-item:hover{border-color:#33485a;transform:translateY(-2px)}
+-.cat-img{width:100%;background:#fff;border-radius:10px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative}
+-.cat-img img{width:100%;height:100%;object-fit:contain;padding:8px}
+-.cat-models{margin:-2px 0 14px;font-size:12.5px;color:var(--steel);line-height:1.5;letter-spacing:.01em}
++.cat-item{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .18s,box-shadow .18s}
++.cat-item:hover{border-color:var(--red);box-shadow:0 12px 28px rgba(14,26,36,.10)}
++.cat-img{width:100%;height:198px;background:#fff;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
++.cat-img img{width:100%;height:100%;object-fit:contain;padding:10px}
++.cat-models{margin:0;font:12.5px/1.5 var(--mono);color:var(--steel);letter-spacing:.01em}
+ .cat-models b{color:#cdd9e1;font-weight:600}
+@@ -409,7 +451,7 @@
+ .mv-badge svg{width:13px;height:13px}
+-.cat-body{display:flex;flex-direction:column;flex:1}
+-.cat-body h3{font-size:19px;margin-bottom:8px}
+-.cat-body p{color:var(--muted);font-size:14px;margin-bottom:16px}
+-.cat-actions{display:flex;gap:10px;margin-top:auto}
+-.btn-sm{padding:10px 18px;font-size:13px;border-radius:8px}
++.cat-body{display:flex;flex-direction:column;flex:1;padding:15px 16px 16px;gap:7px}
++.cat-body h3{font-size:16.5px;font-weight:800;line-height:1.28;margin:0}
++.cat-body p{color:var(--muted);font-size:13.5px;line-height:1.5;margin:0}
++.cat-actions{display:flex;gap:8px;margin-top:auto;padding-top:12px}
++.btn-sm{padding:8px 15px;font-size:12.5px;border-radius:8px}
+ .btn-out{background:transparent;border:1.5px solid var(--line);color:#cdd9e1}
+@@ -439,3 +481,3 @@
+ .brand{background:#fff;border:1px solid var(--line);border-radius:10px;height:96px;width:168px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 16px 0;cursor:pointer;position:relative;transition:transform .16s,box-shadow .16s,border-color .16s}
+-.brand img{max-height:42px;max-width:128px;width:auto;object-fit:contain;flex:1}
++.brand img{max-height:42px;max-width:128px;width:auto;object-fit:contain;flex:1}.brand-txt{flex:1;display:flex;align-items:center;justify-content:center;font:800 17px/1.2 var(--head);color:var(--text);text-align:center;letter-spacing:.01em}
+ .brand-go{margin-top:8px;width:100%;border-top:1px solid #eef1f4;color:#7a8b97;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:6px 0;display:flex;align-items:center;justify-content:center;gap:5px;transition:color .16s}
+@@ -648,3 +690,3 @@
+   .cat-item{flex-direction:column}
+-  .cat-img{flex-basis:auto;aspect-ratio:16/10}
++  .cat-img{flex-basis:auto;height:180px}
+   .section{padding:60px 0}
+@@ -719,3 +761,3 @@
+   .nav-right{gap:12px}
+-  .btn.btn-sm{padding:9px 14px;font-size:14px}
++  .btn.btn-sm{padding:8px 14px;font-size:12.5px}
+ }
+@@ -777,5 +819,149 @@
+ [data-theme="light"] .sel-result,[data-theme="light"] .sel-result b{color:#16242e}
++
++/* Подвал — единый вид со всеми страницами (перенесено из assets/inner.css) */
++/* ===== Подвал — в языке сайта (2026-08): белые карточки на светлом, красный только
++   акцентом. Раньше здесь была полноширинная красная полоса + серая плита с засечками —
++   единственное место на сайте с таким приёмом, подвал читался как чужой шаблон.
++   Переписано ТОЛЬКО стилями: разметка в 95k страницах не менялась (кикер и иконка —
++   через ::before, как переименование пункта меню в hdr.css). */
++.site-footer{position:relative;background:var(--bg2);border-top:1px solid var(--line);padding:0 0 22px}
++/* CTA — карточка как секции контента (.cat-specrow), а не красная полоса */
++.sf-cta-bar{padding:38px 24px 4px}
++.sf-cta-in{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 28px}
++/* плитка-иконка 46px — приём .feat .ic со страниц каталога */
++.sf-cta-in::before{content:"";flex:0 0 46px;height:46px;border-radius:12px;background:var(--glow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cf1616' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6'/%3E%3C/svg%3E") center/24px no-repeat}
++.sf-cta-text{flex:1 1 380px;min-width:0}
++/* кикер как .eyebrow сайта */
++.sf-cta-text::before{content:"Подбор";display:block;color:var(--red2);font:700 12px/1 var(--head);letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
++.sf-cta-text strong{display:block;color:var(--text);font:700 19px/1.3 var(--head);letter-spacing:-.01em}
++.sf-cta-text span{display:block;color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:5px}
++.sf-cta-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;max-width:100%}
++/* кнопки = .btn сайта: red radius 10px; вторичная — красный контур на белом */
++.sf-btn-cta{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:10px;font:700 15px/1 var(--head);text-decoration:none;white-space:nowrap;transition:.18s;background:var(--red);color:#fff;box-shadow:0 4px 14px var(--glow)}
++.sf-btn-cta:hover{background:#b91212;color:#fff;transform:translateY(-1px)}
++.sf-btn-cta2{background:var(--card);color:var(--red);border:1.5px solid rgba(207,22,22,.3);box-shadow:none}
++.sf-btn-cta2:hover{background:rgba(207,22,22,.05);border-color:var(--red);color:var(--red)}
++/* footer grid */
++.site-footer .sf-top{display:grid;padding:34px 24px 6px;grid-template-columns:1.6fr 1fr 1.05fr 1fr;gap:38px;align-items:start}
++/* logo: в светлой теме показываем тёмную версию */
++.sf-brand img{height:42px;width:auto;object-fit:contain;margin-bottom:15px;filter:none}
++.sf-brand img{content:url(assets/zr_logo_dark.webp)}   /* без привязки к data-theme — см. правило в hdr.css */
++.sf-brand p{color:var(--muted);font-size:13.5px;line-height:1.65;max-width:330px;margin:0 0 16px}
++.sf-contacts-inline{display:flex;flex-direction:column;gap:9px}
++/* маркер — красный КВАДРАТ, как маркеры списков на страницах (не светящаяся точка) */
++.sf-contacts-inline a{display:inline-flex;align-items:center;gap:11px;color:var(--text);font:700 16px/1.2 var(--head);width:max-content;text-decoration:none;transition:color .16s}
++.sf-contacts-inline a::before{content:"";width:6px;height:6px;border-radius:0;background:var(--red);flex-shrink:0;box-shadow:none}
++.sf-contacts-inline a.sf-mail{font:600 13.5px/1.2 var(--font);color:var(--muted)}
++.sf-contacts-inline a.sf-mail::before{width:5px;height:5px;background:var(--muted2)}
++.sf-contacts-inline a:hover{color:var(--red)}
++/* заголовки колонок = .eyebrow, без красных засечек */
++.sf-col h4{color:var(--red2);font:700 12px/1 var(--head);letter-spacing:.12em;text-transform:uppercase;margin:3px 0 15px;padding:0;position:static}
++.sf-col h4::after{content:none;display:none}
++.sf-col a{display:block;color:var(--muted);padding:5px 0;font-size:13.5px;border:0;text-decoration:none;transition:color .16s}
++.sf-col a:hover{color:var(--red);transform:none}
++.sf-col a.menu-new{color:var(--red);font-weight:600}
++.sf-col a.menu-new::after{content:'new';display:inline-block;background:var(--red);color:#fff;font-size:9px;font-weight:700;line-height:1;padding:2px 5px;border-radius:4px;margin-left:6px;text-transform:uppercase;letter-spacing:.4px;vertical-align:middle}
++/* реквизиты — светлый блок с mono, как таблицы характеристик */
++.sf-req{margin-top:18px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--muted2);font:400 11.5px/1.75 var(--mono)}
++.sf-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px;padding-top:18px;color:var(--muted2);font-size:12.5px}
++.sf-bottom a{color:var(--muted2);text-decoration:none;border-bottom:1px solid transparent}
++.sf-bottom a:hover{color:var(--red);border-bottom-color:currentColor}
++[data-theme="dark"] .site-footer{background:var(--bg2)}
++@media(max-width:1080px){.site-footer .sf-top{grid-template-columns:1.35fr 1fr 1fr;gap:30px}.sf-brand{grid-column:1/-1;max-width:660px}}
++@media(max-width:860px){.site-footer .sf-top{grid-template-columns:1fr 1fr;gap:28px}.sf-cta-in{align-items:flex-start;gap:16px;padding:20px}.sf-cta-in::before{flex-basis:40px;height:40px}.sf-cta-text{flex:1 1 100%}.sf-cta-btns{width:100%;min-width:0}.sf-btn-cta{max-width:100%}}
++@media(max-width:560px){.site-footer .sf-top{grid-template-columns:1fr;gap:24px;padding:28px 24px 4px}.sf-cta-bar{padding-top:28px}.sf-cta-text strong{font-size:17.5px}.sf-cta-btns{flex-direction:column}.sf-btn-cta{justify-content:center}}
++
++
++/* ===== Иллюстрации в статьях (правило канона zavod-content, п.7) =====
++   Раньше стили .art-fig дублировались инлайном в каждой статье — у 535 статей
++   их не было вовсе. Теперь правило одно и живёт здесь: inner.css грузят все
++   статьи блога, глоссария, отраслей и услуг. .art-fig-dw — вариант для
++   ГАБАРИТНЫХ ЧЕРТЕЖЕЙ: штриховая графика на белом, её нельзя обрезать
++   (object-fit:contain) и нельзя красить фоном страницы. */
++.art-fig{margin:26px 0}
++.art-fig img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
++.art-fig figcaption{color:var(--muted2);font-size:13px;margin-top:8px;text-align:center}
++.art-fig-dw img{background:#fff;object-fit:contain;max-height:520px;padding:10px}
++.art-fig-dw figcaption a{color:var(--red);text-decoration:none;border-bottom:1px solid transparent}
++.art-fig-dw figcaption a:hover{border-bottom-color:currentColor}
++@media(max-width:560px){.art-fig{margin:20px 0}.art-fig-dw img{max-height:360px}}
++/* ===== Компакт-режим секции «Что мы производим и поставляем» =====
++   Задача: весь блок (заголовок + маркировки + типы передач) помещается
++   в один экран на десктопе. Правила ограничены #catalog, поэтому карточки
++   тех же классов на других страницах не затрагиваются. */
++@media(min-width:981px){
++  #catalog.section{padding:52px 0}
++  #catalog .eyebrow{margin-bottom:8px}
++  #catalog h2{font-size:clamp(24px,2.3vw,32px);margin-bottom:8px}
++  #catalog .lead{font-size:14.5px;line-height:1.5;max-width:1000px;margin-bottom:0}
++  #catalog .grid-lbl{margin:20px 0 12px}
++
++  /* маркировки: карточка становится горизонтальной — фото слева, текст справа */
++  #catalog .prod-grid{gap:14px}
++  #catalog .prod-card{flex-direction:row;align-items:stretch}
++  #catalog .prod-img{flex:0 0 116px;width:116px;border-bottom:none;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center}
++  #catalog .prod-img img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;padding:8px}
++  #catalog .prod-b{padding:11px 13px;gap:4px}
++  #catalog .prod-mark{font-size:10px}
++  #catalog .prod-card b{font-size:14px;line-height:1.25}
++  #catalog .prod-d{font-size:12px;line-height:1.42;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
++  #catalog .prod-n{font-size:11px;padding-top:2px}
++  #catalog .prod-go{font-size:12px}
++  #catalog .prod-go svg{width:13px;height:13px}
++
++  /* Типы передач — КРУПНЫЕ карточки (12.08.2026, по референсу конкурента).
++     Раньше здесь всё ужималось, чтобы секция влезала в один экран: фото 112px,
++     текст обрезался на второй строке. Заказчик попросил увеличить — описание
++     типа передачи должно читаться целиком, это то, ради чего блок и нужен.
++     Секция теперь занимает больше экрана; карточки марок выше остались сжатыми. */
++  #catalog .cat-grid{grid-template-columns:repeat(3,1fr);gap:18px}
++  #catalog .cat-img{height:210px}
++  #catalog .cat-img img{padding:14px}
++  #catalog .cat-body{padding:16px 18px 18px;gap:9px}
++  #catalog .cat-body h3{font-size:18px;line-height:1.25}
++  #catalog .cat-body p{font-size:14px;line-height:1.55}
++  #catalog .cat-models{font-size:12.5px;line-height:1.5}
++  #catalog .cat-actions{gap:10px;padding-top:14px}
++  #catalog .cat-actions .btn-sm{padding:9px 16px;font-size:13px}
++}
++/* Широкие экраны: три крупные карточки в ряд (было шесть мелких).
++   Шесть в ряд давали колонку ~200px — фото читалось как иконка, а описание
++   не помещалось. Три в ряд дают карточку ~430px: фото видно, текст целиком. */
++@media(min-width:1280px){
++  #catalog .cat-grid{grid-template-columns:repeat(3,1fr);gap:22px}
++  #catalog .cat-img{height:250px}
++  #catalog .cat-body{padding:18px 20px 20px}
++  #catalog .cat-body h3{font-size:19px}
++  #catalog .cat-body p{font-size:14.5px}
++  #catalog .cat-actions .btn-sm{flex:1;text-align:center;padding:10px 14px;font-size:13.5px}
++}
++/* средние экраны: колонок меньше, зато обе сетки — горизонтальными карточками,
++   иначе текст в узкой колонке рвётся и секция снова перестаёт влезать */
++@media(min-width:981px) and (max-width:1279px){
++  #catalog.section{padding:34px 0}
++  #catalog h2{font-size:26px}
++  #catalog .lead{font-size:14px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
++  #catalog .grid-lbl{margin:16px 0 10px}
++  #catalog .prod-grid{grid-template-columns:repeat(2,1fr);gap:12px}
++  #catalog .prod-d{-webkit-line-clamp:2}
++  /* Типы передач на среднем экране: две крупные карточки в ряд.
++     Горизонтальная компоновка с фото-полоской 104px здесь снята вместе
++     с обрезкой текста — заказчик просил увеличить блок (12.08.2026). */
++  #catalog .cat-grid{grid-template-columns:repeat(2,1fr);gap:18px}
++  #catalog .cat-item{flex-direction:column}
++  #catalog .cat-img{flex:0 0 auto;width:100%;height:220px;border-bottom:1px solid var(--line);border-right:none}
++  #catalog .cat-body{padding:16px 18px 18px}
++  #catalog .cat-body h3{font-size:17.5px}
++  #catalog .cat-body p{font-size:14px;line-height:1.55}
++  #catalog .cat-models{font-size:12.5px;line-height:1.5}
++  #catalog .cat-actions{padding-top:13px}
++}
++@media(max-width:1080px){:root{--hdr:110px}}@media(max-width:560px){:root{--hdr:127px}}/* на главной у первого экрана своя красная кнопка; шапочную делаем контурной, чтобы красных не было четыре */
++body.home .hdr2 .zbtn,.hdr2 .zbtn{background:transparent;color:var(--h-red,#e2231a);border:1.5px solid var(--h-red,#e2231a);box-shadow:none}
+ </style>
+-<!-- (Метрика отключена) -->
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Из чего изготовлены зубчатые колёса и корпус?","acceptedAnswer":{"@type":"Answer","text":"Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1."}},{"@type":"Question","name":"Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?","acceptedAnswer":{"@type":"Answer","text":"Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу."}},{"@type":"Question","name":"Поможете подобрать редуктор под мою задачу?","acceptedAnswer":{"@type":"Answer","text":"Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки."}},{"@type":"Question","name":"Дадите 3D-модель и чертёж до заказа?","acceptedAnswer":{"@type":"Answer","text":"Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости."}},{"@type":"Question","name":"Можно ли подключить мотор-редуктор к преобразователю частоты?","acceptedAnswer":{"@type":"Answer","text":"Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу."}},{"@type":"Question","name":"Изготовите снятую с производства или редкую модель?","acceptedAnswer":{"@type":"Answer","text":"Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования."}},{"@type":"Question","name":"Какие сроки изготовления и доставки?","acceptedAnswer":{"@type":"Answer","text":"По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России."}},{"@type":"Question","name":"Какая гарантия и какие документы предоставляете?","acceptedAnswer":{"@type":"Answer","text":"Гарантия — 24 месяца; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012."}}]}</script>
++
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Почему выбирают Завод Редукторов? Характеристики, таблицы и ссылки", "acceptedAnswer": {"@type": "Answer", "text": "Промышленный редуктор понижает обороты двигателя и повышает крутящий момент на выходном валу — без него не обходятся конвейеры, смесители, дозаторы, подъёмники и упаковочные линии. Завод Редукторов рассчитывает типоразмер под мощность, передаточное число и режим работы, а собственное производство полного цикла в Челябинске позволяет держать цену от производителя и срок изготовления короче, чем у дилеров импорта. Купить мотор-редуктор у нас можно как для разовой задачи, так и для серийного выпуска оборудования: фиксируем цену по договору, держим складской резерв ходовых типоразмеров и изготавливаем специсполнения по чертежу заказчика. Каждое изделие сопровождается паспортом и декларацией соответствия ГОСТ, а гарантия 36 месяцев вдвое выше среднерыночной. Типы редукторов: КПД и применение Тип редуктора КПД и применение Червячный КПД 70–90%, самоторможение, валы под 90° — конвейеры, ворота, запорная арматура Цилиндрический КПД до 98%, высокий ресурс — мощные приводы, дробилки, мешалки Соосно-цилиндрический КПД 94–97%, компактный соосный монтаж — насосы, вентиляция, транспортёры Цилиндро-конический КПД 90–95%, угловая передача — подъёмники, тяжёлые конвейеры Планетарный КПД 95–98%, большой момент при малых габаритах — станки, спецтехника Преимущества завода Сроки изготовление от 3 дней, КП с ценой в течение 15 минут Гарантия 36 месяцев — вдвое выше среднерыночной Импортозамещение габаритные аналоги SEW, NORD, Bonfiglioli, Motovario Документы паспорт изделия, декларация ЕАС, соответствие ГОСТ Цена напрямую с завода, без наценки дилеров Понижающий редуктор снижает обороты электродвигателя и повышает крутящий момент на выходном валу — это основа привода конвейеров, мешалок, подъёмных механизмов, насосов, дробильно-размольного и упаковочного оборудования. Мы производим мотор-редукторы в сборе с электродвигателем 220 В и 380 В и отдельные редукторы под имеющийся двигатель, с отгрузкой от 3 дней и гарантией 36 месяцев. Что мы производим и подбираем В каталоге редукторов — червячные (самоторможение, валы под 90°), цилиндрические (высокий КПД, режим S1), соосно-цилиндрические , цилиндро-конические , плоские цилиндрические мотор-редукторы, вариаторы и планетарные приводы. Не знаете, какой нужен? — воспользуйтесь калькулятором подбора по параметрам или посмотрите цены по маркировкам ZR, ПР, МР . Импортозамещение приводов Изготавливаем габаритные и присоединительные аналоги импортных мотор-редукторов — узел встаёт на штатное место без переделки оборудования, а стоит дешевле оригинала. Подбираем замену по шильдику, фото или образцу. Подробнее — на странице импортозамещения и в блоге . Типы редукторов червячные, цилиндрические, соосные, конические, плоские, вариаторы, планетарные Линейки ZR, ПР, МР — мотор-редуктор по запросу Мощность от 0,12 до 200 кВт, 220 В / 380 В Аналоги SEW, NORD, Bonfiglioli, Motovario, Varvel и др. Поставка от 3 дней по всей России, гарантия 36 месяцев"}}, {"@type": "Question", "name": "Из чего изготовлены зубчатые колёса и корпус?", "acceptedAnswer": {"@type": "Answer", "text": "Зубчатые колёса и шестерни — из легированных сталей с цементацией и высокочастотной закалкой зубьев до 56–62 HRC при упругой сердцевине. Корпус — литой серый чугун: гасит вибрацию и отводит тепло, обеспечивая стабильную работу в продолжительном режиме S1."}}, {"@type": "Question", "name": "Подойдёт ли ваш редуктор вместо импортного (SEW, NORD, Bonfiglioli)?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Изготавливаем габаритные и присоединительные аналоги — узел встаёт на штатное место без переделки оборудования. При необходимости делаем переходный фланец и спецвал по вашему образцу или чертежу."}}, {"@type": "Question", "name": "Поможете подобрать редуктор под мою задачу?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Подбираем по рабочим условиям — мощности, крутящему моменту, оборотам, режиму и цикличности работы, — а не «по названию модели». Это исключает преждевременный выход узла из строя из-за перегрузки."}}, {"@type": "Question", "name": "Дадите 3D-модель и чертёж до заказа?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Передаём 3D-модели в форматах STEP/IGES и рабочие чертежи, чтобы вы заранее проверили, как редуктор встанет в проект, и снизили риск переделок и несовместимости."}}, {"@type": "Question", "name": "Можно ли подключить мотор-редуктор к преобразователю частоты?", "acceptedAnswer": {"@type": "Answer", "text": "Да, наши мотор-редукторы рассчитаны на работу с преобразователем частоты. Сообщите требуемый диапазон регулирования оборотов — подберём электродвигатель под задачу."}}, {"@type": "Question", "name": "Изготовите снятую с производства или редкую модель?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Воспроизводим редкие и снятые с производства редукторы по образцу и чертежу — с сохранением присоединительных и габаритных размеров, без переделки рамы и кинематики оборудования."}}, {"@type": "Question", "name": "Какие сроки изготовления и доставки?", "acceptedAnswer": {"@type": "Answer", "text": "По ходовым типоразмерам — складское наличие, отгрузка от 3 дней. Под заказ — от 5 рабочих дней. Доставляем транспортными компаниями по всей России."}}, {"@type": "Question", "name": "Какая гарантия и какие документы предоставляете?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантия — 36 месяцев; при поломке в гарантийный срок меняем редуктор с финансовой ответственностью за качество. С продукцией передаём паспорт изделия, декларацию ЕАС и сертификат соответствия ГОСТ 31592-2012."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -785,8 +971,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="assets/hdr.css?v=shap26b" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="tel:+74951514102" class="tb-phone"><b>+7 (495) 151-41-02</b></a><span>·</span><a href="tel:+79049534102" class="tb-phone"><b>+7 (904) 953-41-02</b></a><span>·</span><a href="mailto:zr@zavod-red.ru" class="tb-mail-lg">zr@zavod-red.ru</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -801,7 +987,7 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+ <a href="/proizvoditelyam-oborudovaniya">Производителям</a>
+-<a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/importozameshchenie">Импортозамещение</a><a href="/uslugi/" data-uslink="1">Услуги завода</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -814,7 +1000,6 @@
+ <section class="hero">
+-  <img class="hero-poster" src="assets/hero_poster.webp" alt="" aria-hidden="true" />
+-  <!-- Фоновое видео (880 КБ) — украшение, не контент. Грузим и на телефонах тоже:
+-       файл небольшой, звука нет. Не грузим только при явной экономии трафика,
+-       на 2G и при системной настройке «уменьшить движение» — там остаётся
+-       постер (55 КБ). Источник подставляется скриптом ниже, отсюда data-src. -->
++  <img class="hero-poster" src="assets/hero_poster.webp" alt="" aria-hidden="true" fetchpriority="high" decoding="async" width="1280" height="756" />
++  <!-- Фоновое видео (880 КБ) — украшение, не контент: на узких экранах, при экономии
++       трафика и на медленном соединении не грузим вовсе, остаётся постер (55 КБ).
++       Источник подставляется скриптом ниже, поэтому здесь только data-src. -->
+   <video id="heroVid" autoplay muted loop playsinline preload="none" poster="assets/hero_poster.webp" data-src="assets/hero.mp4"></video>
+@@ -825,26 +1010,58 @@
+     var c = navigator.connection || {};
+-    // Экономия трафика и 2G — выбор пользователя, уважаем: остаётся постер.
++    // Уважаем только явную экономию трафика и честно медленную сеть (2g).
++    // 3g сюда не добавляем: браузеры на телефоне помечают так и вполне рабочий
++    // мобильный интернет — с такой отсечкой видео на телефоне снова не появилось бы.
+     var slow = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
+-    // «Уменьшить движение» — настройка доступности, её тоже уважаем.
+     var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
++    // 20.09.2026, просьба заказчика: на телефоне видео тоже показываем. Раньше здесь
++    // стояла отсечка по ширине (max-width:900px) — с ней на мобильном оставался только
++    // постер, и это читалось как «видео отвалилось». Постер под видео лежит по-прежнему,
++    // так что при отказе браузера первый экран не пустеет.
+     if (slow || noMotion) { v.removeAttribute('autoplay'); return; }
++    // Safari разрешает автозапуск только по СВОЙСТВУ muted, атрибута ему мало,
++    // когда источник добавлен скриптом. Ставим оба.
++    v.muted = true; v.defaultMuted = true; v.setAttribute('muted','');
++    v.preload = 'auto';
+     var s = document.createElement('source');
+     s.src = v.getAttribute('data-src'); s.type = 'video/mp4';
+-    v.appendChild(s); v.load();
++    v.appendChild(s);
+     // autoplay не срабатывает, когда источник добавлен после разбора страницы —
+     // запускаем сами; отказ браузера не страшен, под видео лежит постер.
+-    var go = function(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+-    go();
+-    v.addEventListener('canplay', go, { once: true });
+-    // Браузер вправе отклонить автозапуск (политика автовоспроизведения, частый
+-    // случай на мобильных). Тогда стартуем при первом действии пользователя,
+-    // иначе посетитель так и остался бы с одним постером.
+-    var kick = function(){ if (v.paused) go(); };
+-    ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function(ev){
+-      window.addEventListener(ev, kick, { once: true, passive: true });
++    var done = false;
++    var go = function(){
++      if (done || !v.isConnected) return;
++      var p = v.play();
++      if (p && p.then) p.then(function(){ done = true; }, function(){ /* попробуем ещё раз по событию ниже */ });
++      else done = true;
++    };
++    // load() асинхронный: play(), вызванный вплотную к нему, Chrome обрывает
++    // AbortError'ом. Поэтому сначала load(), а запуск — по готовности данных.
++    v.load();
++    // Ни одно из событий не гарантировано (могло пройти до подписки) —
++    // вешаем несколько и НЕ ставим once, чтобы отказ не был окончательным.
++    ['loadeddata','canplay','canplaythrough','playing','suspend'].forEach(function(ev){
++      v.addEventListener(ev, go);
+     });
++    if (v.readyState >= 2) go();   // данные успели приехать до подписки
+     // во вкладке, открытой в фоне, браузер ставит видео на паузу — доиграем при возврате
+     document.addEventListener('visibilitychange', function(){
+-      if (document.visibilityState === 'visible' && v.paused) go();
++      if (document.visibilityState === 'visible' && v.paused) { done = false; go(); }
+     });
++    // iOS в режиме энергосбережения и часть десктопных политик блокируют
++    // автозапуск наглухо — первый же жест пользователя снимает запрет.
++    var byGesture = function(){
++      if (v.paused) { done = false; go(); }
++      if (!v.paused) {
++        ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){
++          window.removeEventListener(ev, byGesture);
++        });
++      }
++    };
++    ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){
++      window.addEventListener(ev, byGesture, { passive: true });
++    });
++    // Файл не отдался или кодек не поддержан — убираем пустой видеослой,
++    // чтобы наверняка остался постер, а не чёрный прямоугольник.
++    v.addEventListener('error', function(){ v.style.display = 'none'; });
++    s.addEventListener('error', function(){ v.style.display = 'none'; });
+   })();
+@@ -853,16 +1070,15 @@
+     <div class="hero-main">
+-      <h1>Промышленные <span class="accent">редукторы</span> и мотор-редукторы от&nbsp;производителя</h1>
+-      <p class="hero-sub">Производим редукторы и мотор-редукторы ZR, ПР, МР и&nbsp;поставляем оригинальные импортные приводы (SEW, NORD, Bonfiglioli, Motovario) — <b>оригинал под заказ или российский аналог со&nbsp;склада</b>. Подбор по&nbsp;маркировке, фото, шильдику или параметрам; цена от&nbsp;производителя, поставка по&nbsp;России.</p>
++      <h1>Промышленные <span class="accent">редукторы</span> для&nbsp;производителей оборудования</h1>
++      <p class="hero-sub">Быстрая замена со&nbsp;склада импортных редукторов (SEW, NORD, Bonfiglioli, Motovario) и&nbsp;российских мотор-редукторов ZR, ПР, МР — <b>с&nbsp;гарантией совместимости</b>.</p>
+       <div class="hero-cta">
+         <a class="btn lg" data-zayavka href="#zayavka">Получить расчёт</a>
+-        <a class="btn lg ghost" href="/podbor">Подбор по параметрам</a>
++        <a class="btn lg ghost" href="/podbor">Подобрать редуктор</a>
+       </div>
+-      <p class="hero-trust">Инженер ответит за&nbsp;15&nbsp;минут · подбор по&nbsp;шильдику, фото и&nbsp;параметрам · отгрузка от&nbsp;3&nbsp;дней по&nbsp;России</p>
+       <div class="hero-badges">
+-        <div class="b"><b>от 3 дней</b><span>редукторы в наличии</span></div>
+-        <div class="b"><b>24 месяца</b><span>гарантия или переделаем за наш счёт</span></div>
+-        <div class="b"><b>100%</b><span>замена импортных аналогов</span></div>
++        <div class="b"><b>Со склада</b><span>редукторы в наличии</span></div>
++        <div class="b"><b>111 000+</b><span>позиций в каталоге</span></div>
++        <div class="b"><b>36 месяцев</b><span>гарантия · полная ответственность по договору</span></div>
+       </div>
+     </div>
+-    <div class="hero-3d" id="hero3d" aria-label="Промышленный мотор-редуктор"><picture><source srcset="assets/reduktor_float.webp?v=2" type="image/webp" /><img src="assets/reduktor_float.png?v=2" alt="Промышленный мотор-редуктор" width="560" height="475" loading="eager" /></picture></div>
++    <div class="hero-3d" id="hero3d" aria-label="Промышленный мотор-редуктор"><picture><source srcset="assets/reduktor_float.webp?v=2" type="image/webp" /><img src="assets/reduktor_float.png?v=2" alt="Промышленный мотор-редуктор" width="560" height="475" loading="eager" fetchpriority="high" decoding="async" /></picture></div>
+   </div>
+@@ -872,14 +1088,182 @@
+ <style id="zr-marksnav">
+-.marks-nav{padding:32px 0}
+-.mnav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+-.mnav-tile{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px;text-decoration:none;transition:.16s}
+-.mnav-tile:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 10px 24px rgba(14,26,36,.08)}
+-.mnav-ic{flex:0 0 auto;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:12px}
+-.mnav-ic img{width:40px;height:40px;object-fit:contain}
+-.mnav-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+-.mnav-txt b{color:var(--text);font-size:15px;font-family:'Space Grotesk',sans-serif}
+-.mnav-txt span{color:var(--muted);font-size:12px;line-height:1.3}
+-.mnav-arr{color:var(--red2);font-weight:700;font-size:18px;flex:0 0 auto}
+-@media(max-width:820px){.mnav-grid{grid-template-columns:1fr 1fr}}
+-@media(max-width:460px){.mnav-grid{grid-template-columns:1fr}}
++/* Плитки разделов — В СТИЛЕ ШАПКИ САЙТА (заказчик 08.08.2026): белая карточка на тонкой
++   линии, скругление 11px как у кнопок hdr2, заголовок Space Grotesk, а действие — квадратная
++   кнопка-стрелка ровно как иконки «Кабинет»/«Корзина» в шапке (заливается красным на hover). */
++.marks-nav{padding:30px 0}
++.mnav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:12px}
++.mnav-tile{position:relative;display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:12px 13px;text-decoration:none;transition:border-color .16s,box-shadow .16s,transform .16s}
++.mnav-tile:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 8px 22px rgba(207,22,22,.10)}
++.mnav-ic{flex:0 0 auto;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
++.mnav-ic img{width:46px;height:46px;object-fit:contain;mix-blend-mode:multiply}
++.mnav-ic--photo{background:#fff}
++.mnav-ic--photo img{width:100%;height:100%;object-fit:cover;mix-blend-mode:normal}
++.mnav-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;padding-right:32px}
++.mnav-txt b{color:var(--text);font:600 14.5px/1.25 'Space Grotesk',sans-serif}
++.mnav-txt span{color:var(--muted);font-size:12px;line-height:1.35}
++.mnav-arr{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--red);font:700 15px/1 'Space Grotesk',sans-serif;transition:.16s}
++.mnav-tile:hover .mnav-arr{background:var(--red);border-color:var(--red);color:#fff}
++@media(min-width:1200px){.mnav-grid{grid-template-columns:repeat(5,1fr)}}
++/* Плиток пять. При 3 и 4 колонках последняя оставалась одна в ряду и «висела»
++   обрубком (на 1024 px было 4 + 1). Поэтому ниже 1200 px — ровно две колонки,
++   а первая плитка занимает всю ширину: ряды выходят 1 + 2 + 2, без сирот. */
++@media(max-width:1199px){.mnav-grid{grid-template-columns:1fr 1fr}.mnav-grid>.mnav-tile:first-child{grid-column:1/-1}}
++@media(max-width:460px){.mnav-grid{grid-template-columns:1fr}.mnav-grid>.mnav-tile:first-child{grid-column:auto}.mnav-ic{width:52px;height:52px}}
++@media(max-width:560px){.prod-card{flex-direction:row;align-items:stretch}.prod-img{flex:0 0 118px;width:118px;border-bottom:none;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center}.prod-img img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}.prod-b{padding:12px 14px;gap:5px}.prod-card b{font-size:15px}.prod-d{font-size:12.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.prod-n{font-size:11.5px;padding-top:2px}.prod-go{font-size:12.5px}.grid-lbl{margin:26px 0 12px}}
++/* ================= КРУПНЫЙ ШРИФТ И КНОПКИ (26.09.2026) =================
++   Просьба владельца: «шрифт очень маленький, нужно больше; шрифт для пенсионеров,
++   чтобы при открытии были большие кнопки». Базовый кегль браузерный (16px) нигде
++   не переопределялся, а больше половины текста на странице шло 13–15px — на
++   мониторе 2560 и на телефоне это читается с трудом.
++
++   Блок идёт ПОСЛЕДНИМ, поэтому при равной специфичности перебивает прежние
++   размеры. Ниже 15px на сайте не остаётся ничего, кроме служебных надписей.
++   Кнопки подняты до 58px высоты — это размер, по которому уверенно попадают
++   пальцем и который не теряется на крупном экране. */
++
++body{font-size:18px}
++p,li,dd,dt{font-size:18px;line-height:1.6}
++.lead{font-size:20px;line-height:1.55}
++td,th{font-size:17px}
++small,.hint,.muted,.note,figcaption{font-size:15px}
++
++h1{font-size:clamp(30px,3.6vw,50px);line-height:1.15}
++h2{font-size:clamp(25px,2.8vw,38px);line-height:1.2}
++h3{font-size:clamp(20px,2vw,27px);line-height:1.25}
++
++/* Кнопки: крупный текст, высокий корпус, заметный отступ. */
++.btn,.zbtn,button.btn,a.btn{
++  font-size:18px;
++  font-weight:700;
++  padding:17px 30px;
++  min-height:58px;
++  border-radius:12px;
++  line-height:1.25;
++}
++.btn.lg,a.btn.lg{font-size:20px;padding:20px 36px;min-height:64px}
++.btn.sm,a.btn.sm{font-size:16px;padding:13px 22px;min-height:48px}
++
++/* Поля формы — тем же кеглем, иначе набранный текст мельче подписи. */
++input,select,textarea{font-size:18px}
++input[type="text"],input[type="tel"],input[type="email"],select,textarea{min-height:54px;padding:14px 16px}
++
++/* На телефоне кнопка занимает строку целиком: так по ней проще попасть,
++   и длинная надпись переносится, а не вылезает за экран. */
++@media(max-width:560px){
++  body{font-size:18px}
++  .btn,.zbtn{width:100%;justify-content:center;white-space:normal}
++  .btn.lg{font-size:19px}
++}
++
++/* Добор (26.09.2026). После первого прохода замер на живой странице показал
++   50 мест, где текст остался 11–14.5px: прежние правила перебивались более
++   специфичными селекторами разделов. Здесь идём принудительно — цель владельца
++   «шрифт для пенсионеров» важнее исходной типографики. Служебная мелочь
++   (надстрочные подписи, счётчики) поднята до 15px, основной текст до 18px. */
++p,li,dd,dt{font-size:18px !important}
++td{font-size:17px !important}
++th{font-size:16px !important}
++b,strong,em,i{font-size:inherit !important}
++.wrap a:not(.btn):not(.zbtn):not(.hb-i){font-size:inherit !important}
++.eyebrow{font-size:15px !important;letter-spacing:.08em}
++.cat-models,.prod-d,.prod-n,.hint,.muted,.note,small,figcaption{font-size:15px !important}
++.vs-model{font-size:17px !important}
++.vs-price{font-size:22px !important}
++
++
++/* Третий проход (26.09.2026). Остались <span> без классов (12–14px) и шапка.
++   span получает размер родителя, а не собственный мелкий — так подписи в
++   карточках («Соосно-цилиндрический», «редукторы в наличии») идут наравне с
++   текстом. Телефоны в шапке подняты отдельно: для звонка их читают в первую
++   очередь. Классы со своим размером выше по файлу тут не затрагиваются —
++   у них специфичность класса, а здесь селектор по тегу. */
++span{font-size:inherit !important}
++.hdr2 a,.hdr2 span{font-size:16px !important}
++.tb-phone,a[href^="tel:"]{font-size:18px !important;font-weight:700}
++.grid-lbl{font-size:16px !important}
++
++
++/* Правка шапки (26.09.2026). Правило «на телефоне кнопка во всю ширину» задело
++   и кнопки в шапке: «Расчёт» и «Получить расчёт» растянулись на 100%,
++   наехали друг на друга и вылезли за правый край экрана. В шапке кнопки должны
++   оставаться по размеру содержимого — там их выстраивает своя раскладка. */
++@media(max-width:560px){

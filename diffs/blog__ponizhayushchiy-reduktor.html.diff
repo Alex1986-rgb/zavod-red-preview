@@ -1,0 +1,115 @@
+--- main/blog/ponizhayushchiy-reduktor.html
++++ prod/blog/ponizhayushchiy-reduktor.html
+@@ -6,3 +6,3 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Понижающий редуктор: что это и как его выбрать</title>
++<title>Понижающий редуктор: что это и как его выбрать | ZR</title>
+ <meta name="description" content="Понижающий редуктор: что это такое, как работает, какие бывают типы и как выбрать под задачу. Передаточное число, момент, цена от производителя — по запросу." />
+@@ -14,6 +14,6 @@
+ <meta property="og:url" content="https://zavod-red.ru/blog/ponizhayushchiy-reduktor" />
+-<meta property="og:title" content="Понижающий редуктор: что это, как работает и как выбрать" />
++<meta property="og:title" content="Понижающий редуктор: что это, как работает и как выбрать | ZR" />
+ <meta property="og:description" content="Что такое понижающий редуктор, как он снижает обороты и повышает момент, какие бывают типы и как выбрать под задачу. Цена от производителя." />
+-<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/red-worm-08.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <style>
+@@ -32,5 +32,8 @@
+ </style>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Понижающий редуктор: что это, как работает и как выбрать","description":"Что такое понижающий редуктор, как он снижает обороты и повышает момент, какие бывают типы и как выбрать под задачу. Цена от производителя.","image":"https://zavod-red.ru/assets/blog-photo/red-worm-08.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/ponizhayushchiy-reduktor"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Понижающий редуктор: что это, как работает и как выбрать","description":"Что такое понижающий редуктор, как он снижает обороты и повышает момент, какие бывают типы и как выбрать под задачу. Цена от производителя.","image":"https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp","author":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов"},"publisher":{"@type":"Organization","areaServed":"RU","name":"Завод Редукторов","logo":{"@type":"ImageObject","url":"https://zavod-red.ru/assets/zr_logo.webp"}},"mainEntityOfPage":"https://zavod-red.ru/blog/ponizhayushchiy-reduktor","datePublished":"2026-06-26","dateModified":"2026-08-26"}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://zavod-red.ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://zavod-red.ru/blog/"},{"@type":"ListItem","position":3,"name":"Понижающий редуктор","item":"https://zavod-red.ru/blog/ponizhayushchiy-reduktor"}]}</script>
+-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое понижающий редуктор и зачем он нужен?","acceptedAnswer":{"@type":"Answer","text":"Понижающий редуктор — это механическая передача, которая снижает обороты двигателя и пропорционально повышает крутящий момент на выходном валу. Он нужен там, где двигатель крутится слишком быстро для рабочего органа: в конвейерах, мешалках, подъёмных механизмах. Подобрать и заказать понижающий редуктор по цене от производителя можно прямо на нашем заводе."}},{"@type":"Question","name":"Сколько стоит понижающий редуктор?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от типа, типоразмера, передаточного числа и исполнения. На собственном производстве понижающий редуктор можно купить по цене от производителя — по запросу, без посредников и дилерских наценок. Чтобы узнать точную стоимость под ваш типоразмер и заказать, пришлите параметры или фото шильдика."}},{"@type":"Question","name":"Чем понижающий редуктор отличается от повышающего?","acceptedAnswer":{"@type":"Answer","text":"Понижающий редуктор уменьшает обороты и увеличивает момент, а повышающий действует наоборот — поднимает обороты, снижая момент. В приводах механизмов в подавляющем большинстве случаев применяют именно понижающий редуктор. Заказать его по цене от производителя можно с расчётом передаточного числа под вашу задачу."}},{"@type":"Question","name":"Как выбрать понижающий редуктор под задачу?","acceptedAnswer":{"@type":"Answer","text":"Отталкивайтесь от рабочих параметров: требуемого крутящего момента, выходных оборотов, мощности двигателя и режима работы. Затем подбирается передаточное число и тип конструкции — цилиндрический, червячный или планетарный. Инженеры завода бесплатно рассчитают подбор и предложат понижающий редуктор по цене от производителя."}},{"@type":"Question","name":"Какие типы понижающих редукторов вы производите?","acceptedAnswer":{"@type":"Answer","text":"Мы изготавливаем цилиндрические, червячные, планетарные и комбинированные понижающие редукторы, а также мотор-редукторы в сборе с двигателем. Каждый тип решает свои задачи по моменту, КПД и компоновке. Любое исполнение можно заказать по цене от производителя с изготовлением под ваши присоединительные размеры."}},{"@type":"Question","name":"Можно ли заказать понижающий редуктор по индивидуальным размерам?","acceptedAnswer":{"@type":"Answer","text":"Да, мы изготавливаем понижающие редукторы под нестандартные присоединительные и габаритные размеры, включая замену импортных аналогов. Достаточно прислать чертёж, фото шильдика или образец. Индивидуальное исполнение производится по цене от производителя без посреднической наценки — оформить заказ можно через заявку на сайте."}}]}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Подробнее: характеристики, таблицы и полезные ссылки","acceptedAnswer":{"@type":"Answer","text":"Завод Редукторов изготавливает понижающий редуктор любого типа — червячный, цилиндрический, соосный, конический и планетарный — и поставляет его по цене от производителя без посредников. Мы рассчитываем передаточное число под ваши обороты и момент, подбираем исполнение под присоединительные размеры и отгружаем по всей России. Понижающий редуктор цена от производителя начинается по запросу: вы платите за изделие и инженерный подбор, а не за наценку дилера. Понижающий редуктор уменьшает обороты двигателя и во столько же раз увеличивает крутящий момент на выходном валу — этим определяется передаточное число под конкретную задачу. Тип передачи выбирают по компоновке: соосный и цилиндрический для высокого КПД, червячный для большого понижения и самоторможения, конический и планетарный для особых требований к моменту и габаритам. Цена понижающего редуктора от производителя зависит от типоразмера, передаточного числа и исполнения вала, а начинается по запросу. Инженерный подбор по оборотам и моменту входит в стоимость, поэтому вы не переплачиваете за дилерскую наценку и получаете привод под свои присоединительные размеры. Типы понижающих редукторов Тип Особенность Цилиндрический КПД до 98%, большие моменты Соосный компактный, вход и выход на оси Червячный большое понижение, самоторможение Конический передача под углом 90° Планетарный максимальный момент при малом габарите Ориентир по цене и числу Параметр Значение Цена от производителя по запросу Передаточное число от 5 до 100+ КПД 0,7–0,98 по типу Подбор бесплатно, входит в цену Отгрузка по всей России Цены на редукторы и мотор-редукторы — актуальная стоимость и сроки изготовления. Каталог редукторов — все типы понижающих редукторов с характеристиками."}},{"@type":"Question","name":"Что такое понижающий редуктор и зачем он нужен?","acceptedAnswer":{"@type":"Answer","text":"Понижающий редуктор — это механическая передача, которая снижает обороты двигателя и пропорционально повышает крутящий момент на выходном валу. Он нужен там, где двигатель крутится слишком быстро для рабочего органа: в конвейерах, мешалках, подъёмных механизмах. Подобрать и заказать понижающий редуктор по цене от производителя можно прямо на нашем заводе."}},{"@type":"Question","name":"Сколько стоит понижающий редуктор?","acceptedAnswer":{"@type":"Answer","text":"Цена зависит от типа, типоразмера, передаточного числа и исполнения. На собственном производстве понижающий редуктор можно купить по цене от производителя — по запросу, без посредников и дилерских наценок. Чтобы узнать точную стоимость под ваш типоразмер и заказать, пришлите параметры или фото шильдика."}},{"@type":"Question","name":"Чем понижающий редуктор отличается от повышающего?","acceptedAnswer":{"@type":"Answer","text":"Понижающий редуктор уменьшает обороты и увеличивает момент, а повышающий действует наоборот — поднимает обороты, снижая момент. В приводах механизмов в подавляющем большинстве случаев применяют именно понижающий редуктор. Заказать его по цене от производителя можно с расчётом передаточного числа под вашу задачу."}},{"@type":"Question","name":"Как выбрать понижающий редуктор под задачу?","acceptedAnswer":{"@type":"Answer","text":"Отталкивайтесь от рабочих параметров: требуемого крутящего момента, выходных оборотов, мощности двигателя и режима работы. Затем подбирается передаточное число и тип конструкции — цилиндрический, червячный или планетарный. Инженеры завода бесплатно рассчитают подбор и предложат понижающий редуктор по цене от производителя."}},{"@type":"Question","name":"Какие типы понижающих редукторов вы производите?","acceptedAnswer":{"@type":"Answer","text":"Мы изготавливаем цилиндрические, червячные, планетарные и комбинированные понижающие редукторы, а также мотор-редукторы в сборе с двигателем. Каждый тип решает свои задачи по моменту, КПД и компоновке. Любое исполнение можно заказать по цене от производителя с изготовлением под ваши присоединительные размеры."}},{"@type":"Question","name":"Можно ли заказать понижающий редуктор по индивидуальным размерам?","acceptedAnswer":{"@type":"Answer","text":"Да, мы изготавливаем понижающие редукторы под нестандартные присоединительные и габаритные размеры, включая замену импортных аналогов. Достаточно прислать чертёж, фото шильдика или образец. Индивидуальное исполнение производится по цене от производителя без посреднической наценки — оформить заказ можно через заявку на сайте."}},{"@type":"Question","name":"Как заказать редуктор по образцу?","acceptedAnswer":{"@type":"Answer","text":"Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию."}},{"@type":"Question","name":"Какие документы получите с редуктором?","acceptedAnswer":{"@type":"Answer","text":"Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору."}}]}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -39,8 +42,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -55,3 +58,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -59,3 +62,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -66,6 +69,6 @@
+ 
+-<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/">Блог</a><span>›</span>Понижающий редуктор</div>
++<div class="wrap crumbs"><a href="/">Главная</a><span>›</span><a href="/blog/" class="menu-new">Блог</a><span>›</span>Понижающий редуктор</div>
+ <section class="phero"><div class="wrap">
+   <div class="eyebrow">Справочник</div>
+-  <h1>Понижающий редуктор: что это, как работает и как выбрать</h1><img class="blog-hero-img" src="../assets/blog-photo/red-worm-08.webp" alt="Понижающий редуктор: что это, как работает и как выбрать — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)">
++  <h1>Понижающий редуктор: что это, как работает и как выбрать</h1><img class="blog-hero-img" src="../assets/blog-photo/th-steel-gears.webp" alt="Понижающий редуктор: что это, как работает и как выбрать — Завод Редукторов" loading="eager" style="width:100%;max-height:340px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid var(--line)" width="1200" height="630">
+   <p class="art-meta">Опыт инженеров Завода Редукторов · время чтения ~7 минут</p>
+@@ -86,3 +89,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Понижающий цилиндрический редуктор с высоким КПД" loading="lazy"><figcaption>Понижающий цилиндрический редуктор — высокий КПД и большой ресурс под нагрузкой</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/catalog/cat_cylindrical.webp" alt="Понижающий цилиндрический редуктор с высоким КПД" loading="lazy" width="800" height="600"><figcaption>Понижающий цилиндрический редуктор — высокий КПД и большой ресурс под нагрузкой</figcaption></figure>
+ 
+@@ -112,3 +115,3 @@
+ 
+-  <figure class="art-fig"><img src="../assets/production/p02.webp" alt="Производство понижающих редукторов на Заводе Редукторов" loading="lazy"><figcaption>Понижающие редукторы собственного производства — изготовление и сборка</figcaption></figure>
++  <figure class="art-fig"><img src="../assets/production/p02.webp" alt="Производство понижающих редукторов на Заводе Редукторов" loading="lazy" width="900" height="675"><figcaption>Понижающие редукторы собственного производства — изготовление и сборка</figcaption></figure>
+ 
+@@ -159,2 +162,5 @@
+   <details><summary>Можно ли заказать понижающий редуктор по индивидуальным размерам?</summary><p>Да, мы изготавливаем понижающие редукторы под нестандартные присоединительные и габаритные размеры, включая замену импортных аналогов. Достаточно прислать чертёж, фото шильдика или образец. Индивидуальное исполнение производится по цене от производителя без посреднической наценки — оформить заказ можно через заявку на сайте.</p></details>
++
++	<details><summary>Как заказать редуктор по образцу?</summary><div>Пришлите фото или чертёж старого редуктора — изготовим аналог с теми же присоединительными. Переходной фланец или спецвал — спроектируем под вашу геометрию.</div></details>
++	<details><summary>Какие документы получите с редуктором?</summary><div>Паспорт изделия с характеристиками, декларация ЕАС, сертификат ГОСТ 31592-2012. Гарантия 36 месяцев — при поломке меняем по договору.</div></details>
+ </div></div></div></section>
+@@ -186,8 +192,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -200,3 +207,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -209,3 +216,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -215,3 +222,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -219,3 +226,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -232,4 +239,4 @@
+ 
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>

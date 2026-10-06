@@ -1,0 +1,338 @@
+--- main/assets/hdr.css
++++ prod/assets/hdr.css
+@@ -1,20 +1,37 @@
++/* ШАПКА СЛЕДУЕТ ЗА КОНТЕНТОМ (26.09.2026): ширина была прибита к 1480px
++   в четырёх местах, из-за чего на широком мониторе шапка оставалась узкой,
++   когда контент под ней расширялся. Теперь обе берут одну переменную. */
+ /* Единая шапка (дизайн каталога) — самодостаточна: работает на страницах с любым CSS.
+    Темизация через vars с фолбэками на тёмную. */
+-header.hdr2{position:sticky;top:0;z-index:100;background:transparent;backdrop-filter:none;border-bottom:0}
++/* Липкой была вся шапка целиком — три полосы, около 151px, а на ширине 1081–1280px
++   с лентой марок и все 193px. На телефоне это съедало треть экрана при каждой прокрутке.
++   Теперь прилипает только главная полоса с логотипом, поиском и кнопкой заявки (~67px),
++   а верхняя строка контактов и меню уезжают вверх как обычный контент. */
++header.hdr2{position:relative;z-index:100;background:transparent;backdrop-filter:none;border-bottom:0}
+ .hdr2{--h-bg:var(--bg,#0b151d);--h-bg2:var(--bg2,#0e1a24);--h-card:var(--card,#14222e);--h-line:var(--line,#22333f);--h-text:var(--text,#e9eff4);--h-dim:var(--muted,#94a8b5);--h-red:var(--red,#e11b1b);--h-glow:var(--glow,rgba(225,27,27,.16))}
+-.hdr2 .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+-.hdr2 .topbar{background:var(--h-bg2);border-bottom:1px solid var(--h-line);font-size:12.5px;color:var(--h-dim)}
+-.hdr2 .tb-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:7px 24px;flex-wrap:wrap;font-family:'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.02em}
++.hdr2 .wrap{max-width:var(--maxw,1480px);margin:0 auto;padding:0 24px}
++.hdr2 .topbar{background:var(--h-bg2);border-bottom:1px solid var(--h-line);font-size:14px;color:var(--h-dim)}
++.hdr2 .tb-in{max-width:var(--maxw,1480px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 24px;flex-wrap:wrap;font-family:'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.02em}
+ .hdr2 .tb-note{display:flex;align-items:center;gap:8px}
+ .hdr2 .tb-dot{width:7px;height:7px;border-radius:50%;background:var(--h-red);box-shadow:0 0 8px var(--h-red);display:inline-block}
+-.hdr2 .tb-contacts{display:flex;align-items:center;gap:14px}
++.hdr2 .tb-contacts{display:flex;align-items:center;gap:12px}
+ .hdr2 .tb-contacts a{color:var(--h-dim);text-decoration:none}
+ .hdr2 .tb-contacts a:hover{color:var(--h-text)}
+-.hdr2 .hmain{position:relative;z-index:50;background:color-mix(in srgb,var(--h-bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--h-line)}
+-.hdr2 .hm-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 24px}
+-/* На внутренних страницах шапка светлая, а в разметке стоит СВЕТЛЫЙ логотип
+-   (zr_logo.webp) — белый на белом = невидим. На главной логотип принудительно
+-   тёмный. Приводим к главной: подменяем на тёмную версию (путь — относительно
+-   этого CSS, т.е. assets/zr_logo_dark.webp). Так чинятся все страницы разом. */
++.hdr2 .hmain{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--h-bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--h-line)}
++.hdr2 .hm-in{max-width:var(--maxw,1480px);margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 24px}
++/* ПРАВИЛО ЛОГОТИПА (единое на весь сайт, 2026-08).
++   В разметке всех 95k страниц стоит СВЕТЛЫЙ файл zr_logo.webp — на светлом сайте
++   он невидим. Тёмная версия подставляется здесь, в hdr.css, потому что этот файл
++   грузят ВСЕ страницы (проверено: 95 106 из 95 108; исключения — brandbook.html и
++   служебный фрагмент tools/). Правило намеренно:
++     • БЕЗ привязки к [data-theme] — сайт только светлый, а атрибут ставит JS;
++       при ошибке/отключённом JS логотип иначе оставался бы белым;
++     • покрывает и шапку, и подвал — подвальное правило в inner.css дублирует его,
++       но 5 страниц cases/* грузят hdr.css без inner.css;
++     • путь относительно ЭТОГО файла, т.е. assets/zr_logo_dark.webp.
++   Менять логотип — только здесь; правка разметки в 95k страниц не нужна.
++   ВАЖНО: после правки поднять ?v= во всех HTML, иначе у вернувшихся посетителей
++   останется закешированный старый CSS по старому URL (так и было с /blog/*). */
+ .hdr2 .logo img{height:42px;width:auto;display:block;content:url(zr_logo_dark.webp)}
++.sf-brand img{content:url(zr_logo_dark.webp)}
+ .hdr2 .cat-btn{display:flex;align-items:center;gap:9px;background:var(--h-red);color:#fff;border:0;border-radius:11px;padding:11px 16px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;cursor:pointer;flex-shrink:0;box-shadow:0 4px 16px var(--h-glow);text-decoration:none;white-space:nowrap}
+@@ -39,9 +56,18 @@
+ .hdr2 .zbtn:hover{filter:brightness(.94)}
+-.hdr2 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;flex-shrink:0}
++/* Базовый вид кнопки .zbtn теперь описан в inner.css — иначе те же
++   <a class="zbtn" data-zayavka> в тексте 698 страниц оставались голым текстом.
++   Шапке базовое правило не мешает (`.hdr2 .zbtn` специфичнее), но у общего
++   `.zbtn:hover` есть подъём на 1px, которого в шапке быть не должно: кнопка
++   стоит в липкой полосе и дёргаться там не может. Гасим явно, а не надеемся
++   на порядок подключения файлов. */
++.hdr2 .zbtn:hover{transform:none}
++/* Кнопка мобильного меню: три полоски 24×2 с зазором 5 и padding 8 давали область
++   нажатия 40×32 — меньше 44×44, которые требует WCAG 2.5.5 для пальца. */
++.hdr2 .burger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:none;border:0;cursor:pointer;padding:8px;min-width:44px;min-height:44px;flex-shrink:0}
+ .hdr2 .burger span{width:24px;height:2px;background:var(--h-text);border-radius:2px;transition:.25s}
+ .hdr2 .hnav{background:var(--h-bg);border-bottom:1px solid var(--h-line)}
+-.hdr2 .hn-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;padding:0 24px;overflow-x:auto;scrollbar-width:none}
++.hdr2 .hn-in{max-width:var(--maxw,1480px);margin:0 auto;display:flex;align-items:center;padding:0 24px;overflow-x:auto;scrollbar-width:none}
+ .hdr2 .hn-in::-webkit-scrollbar{display:none}
+ .hdr2 .menu{display:flex;align-items:center;gap:4px;margin:0}
+-.hdr2 .menu>a,.hdr2 .menu .drop-toggle{color:var(--h-dim);font-weight:500;font-size:13.5px;padding:12px 14px;border-bottom:2px solid transparent;text-decoration:none;white-space:nowrap;transition:.15s}
++.hdr2 .menu>a,.hdr2 .menu .drop-toggle{color:var(--h-dim);font-weight:600;font-size:15px;padding:12px 14px;border-bottom:2px solid transparent;text-decoration:none;white-space:nowrap;transition:.15s}
+ .hdr2 .menu>a:hover,.hdr2 .menu>a.active,.hdr2 .menu .drop-toggle:hover{color:var(--h-text);border-bottom-color:var(--h-red)}
+@@ -55,3 +81,21 @@
+ .hdr2 .menu-phone{margin-left:auto;color:var(--h-text);font-weight:600;font-size:13.5px;padding:12px 14px;text-decoration:none;white-space:nowrap}
+-@media(max-width:1080px){.hdr2 .topbar{display:none}.hdr2 .ms-chip{display:none}.hdr2 .zbtn{display:none}}
++.hdr2 .menu>a.menu-new{color:var(--h-text)}
++.hdr2 .menu>a.menu-new::after{content:'new';display:inline-block;background:var(--h-red);color:#fff;font-size:9px;font-weight:700;line-height:1;padding:2px 5px;border-radius:4px;margin-left:6px;text-transform:uppercase;letter-spacing:.4px;vertical-align:middle}
++/* Ниже 1080px одним правилом гасились сразу три элемента, включая кнопку заявки.
++   На главной это терпимо — в первом экране есть своя кнопка. А на 95 тысячах карточек
++   и в каталоге `.zbtn` — единственная кнопка заявки в шапке, и на планшете её не было.
++   Теперь она не исчезает, а ужимается; ниже 860px переезжает в строку с бургером. */
++@media(max-width:1080px){
++  .hdr2 .topbar{display:none}
++  .hdr2 .ms-chip{display:none}
++  .hdr2 .zbtn{padding:9px 12px;font-size:13px;box-shadow:none}
++}
++@media(max-width:860px){
++  .hdr2 .zbtn{padding:8px 11px;font-size:12.5px;border-radius:9px}
++}
++@media(max-width:560px){
++  /* на телефоне текст кнопки режем до сути, чтобы она не выдавливала логотип */
++  .hdr2 .zbtn{font-size:0;padding:9px 11px}
++  .hdr2 .zbtn::before{content:'Расчёт';font-size:12.5px}
++}
+ @media(max-width:860px){
+@@ -64,3 +108,5 @@
+   .hdr2.open .menu>a,.hdr2.open .menu .drop-toggle{padding:12px 8px;border-bottom:1px solid var(--h-line)}
+-  .hdr2.open .menu-phone{margin-left:0}
++  /* тот же случай в каркасе hdr2: в раскрытом меню телефон должен быть виден */
++  .hdr2.open .menu-phone{display:block;margin-left:0;font-size:16px;font-weight:700;
++    padding:12px 8px;border-bottom:1px solid var(--h-line)}
+   .hdr2.open .submenu{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;padding:0 0 0 14px}
+@@ -110,2 +156,233 @@
+    Менять цифру при каждой правке hdr.css, если размер снова сойдётся с продом. */
+-.zr-cb-hdr3{--zrcb:3}
++.zr-cb-hdr7{--zrcb:7}
++
++/* П.1 (бриф главной): упрощённое меню — лишние пункты скрыты, порядок и переименование
++   «Подбор» → «Подбор мотор-редуктора» через CSS. Так шапка меняется ОДНИМ файлом на всём
++   сайте, без правки разметки в 93k страницах. Каталог остаётся отдельной красной кнопкой. */
++.hdr2 .menu>a[href="/catalog/"],
++.hdr2 .menu>a[href="/motor-reduktor-zr/"],
++.hdr2 .menu>a[href="/catalog/evl"],
++.hdr2 .menu>a[href="/proizvoditelyam-oborudovaniya"]{display:none!important}
++.hdr2 .menu>a[href="/importozameshchenie"]{order:1}
++.hdr2 .menu>a[href="/podbor"]{order:2}
++.hdr2 .menu>a[href="/ceny"]{order:3}
++/* Блог остаётся в шапке — с бейджем new (см. .menu-new выше), между Ценами и «О заводе» */
++.hdr2 .menu>a[href="/blog/"]{order:4}
++.hdr2 .menu .dropdown{order:5}
++.hdr2 .menu>a[href="/contacts"]{order:6}
++.hdr2 .menu>a[href="/podbor"]::after{content:" мотор-редуктора"}
++.hdr2 .menu-phone{order:7}
++
++/* П.2 ТЗ: широкий контейнер как у promred (1480) + КРУПНЫЕ контакты в шапке
++   (почту часто копируют — выделяем). Телефоны/почту нормализует энхансер в modal.js. */
++.hdr2 .topbar{font-size:14.5px}
++.hdr2 .tb-in{padding-top:9px;padding-bottom:9px}
++.hdr2 .tb-contacts{gap:24px}
++.hdr2 .tb-contacts a{color:var(--h-text);font-weight:600;font-size:15px;line-height:1.2}
++.hdr2 .tb-contacts a.tb-phone{font-weight:700;font-size:16px;letter-spacing:.01em}
++.hdr2 .tb-contacts a.tb-mail{font-weight:700;font-size:16px;color:var(--h-red)}
++.hdr2 .tb-contacts a.tb-mail:hover{text-decoration:underline}
++@media(max-width:1240px){.hdr2 .tb-contacts{gap:16px}.hdr2 .tb-contacts a.tb-phone,.hdr2 .tb-contacts a.tb-mail{font-size:15px}}
++
++/* БЕГУЩАЯ СТРОКА МАРОК в правой (пустой) части строки навигации.
++   Разметку вставляет скрипт в modal.js — шапка лежит в 93k HTML, править её файлами нельзя.
++   Клик по логотипу ведёт на страницу марки /brands/<slug>.
++   Бесшовность: трек = набор логотипов ДВАЖДЫ, сдвиг ровно на -50%; поэтому расстояние
++   задаётся margin-right у элемента, а НЕ gap (иначе на стыке набора появится рывок). */
++.hdr2 .hnav-brands{overflow:hidden;display:flex;align-items:center;
++  -webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);
++  mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
++/* ШИРОКИЙ экран: лента живёт в правой (пустой) части строки навигации. */
++.hdr2 .hn-in>.hnav-brands{flex:1 1 auto;min-width:0;margin-left:20px}
++/* УЗКИЙ экран (до 1280px): в строке меню места нет, а ниже 860px .hnav вообще уходит в
++   бургер — поэтому скрипт переносит ленту прямым потомком .hdr2, отдельной полосой
++   под шапкой. Так марки видны и на телефоне. */
++.hdr2>.hnav-brands{width:100%;height:42px;background:var(--h-bg);border-bottom:1px solid var(--h-line);padding:0 10px}
++.hdr2 .hb-track{display:flex;align-items:center;gap:0;width:max-content;animation:zr-bt 55s linear infinite}
++.hdr2 .hnav-brands:hover .hb-track{animation-play-state:paused}
++.hdr2 .hb-i{display:flex;align-items:center;justify-content:center;height:44px;flex:0 0 auto;margin-right:32px;text-decoration:none;opacity:1;transition:opacity .16s,transform .16s}
++.hdr2 .hb-i img{height:26px;width:auto;max-width:112px;object-fit:contain;display:block;mix-blend-mode:multiply}
++.hdr2 .hb-i:hover{opacity:1;transform:scale(1.08)}
++@keyframes zr-bt{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
++@media(prefers-reduced-motion:reduce){.hdr2 .hb-track{animation:none}}
++@media(max-width:560px){.hdr2>.hnav-brands{height:38px}.hdr2 .hb-i{margin-right:26px}.hdr2 .hb-i img{height:22px;max-width:96px}}
++
++/* Умный поиск: подсказка о раскладке/приближении и строки-разделы */
++.ms-note{padding:9px 11px 7px;font-size:12px;line-height:1.4;color:var(--h-dim);border-bottom:1px solid var(--h-line);margin-bottom:4px}
++.ms-sic{flex-shrink:0;width:38px;height:38px;border-radius:9px;border:1px solid var(--h-line);display:flex;align-items:center;justify-content:center;color:var(--h-dim)}
++.ms-sic svg{width:17px;height:17px}
++.ms-sec .ms-rp{color:var(--h-dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
++/* zr-ms1 */
++
++/* 12.08.2026 — строка в шапке: закреплённое начало + бегущая лента выгод.
++   «Собственное производство» стоит на месте (просьба заказчика) и подано акцентно —
++   это постоянный маркер, он должен читаться сразу, не дожидаясь цикла. Едет только
++   продолжение: слоган заказчика и ещё три факта, разделённые красными точками.
++
++   Зачем прокрутка: текста больше, чем влезает в .tb-in (он ограничен 1480px).
++   Статичный вариант переносился на вторую строку, и липкая шапка вырастала с 40 до
++   77px — лишние 38px при каждом скролле на всех страницах. Прокрутка снимает
++   ограничение по ширине, поэтому и почта смогла вернуться в шапку.
++
++   Растворение (mask) с обеих сторон обязательно: без него бегущий текст возникал
++   вплотную к закреплённому, обрубленный на полуслове, и строка читалась как мусор.
++
++   Механика петли: две одинаковые копии в flex-ряду едут влево на свою ширину плюс
++   отбивку — когда первая уходит за край, вторая занимает её место, шва не видно.
++   Вторая копия помечена aria-hidden в вёрстке, чтобы скринридер не читал дважды.
++
++   Производительность: анимируется только transform (композитный слой, без
++   перерисовки), contain:paint ограничивает область отрисовки самой лентой,
++   поэтому прокрутка не заставляет браузер пересчитывать остальную шапку. */
++.hdr2 .tb-in{flex-wrap:nowrap}
++.hdr2 .tb-note{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:9px;overflow:hidden;font-size:13.5px}
++
++/* пульсирующая точка — «эфир идёт» */
++.hdr2 .tb-note .tb-dot{flex:0 0 auto;animation:zrTbPulse 2s ease-in-out infinite}
++@keyframes zrTbPulse{
++  0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 8px var(--h-red)}
++  50%{opacity:.45;transform:scale(.72);box-shadow:0 0 2px var(--h-red)}
++}
++
++/* закреплённое начало — ярче и плотнее остального, чтобы читалось как заголовок ленты */
++.hdr2 .tb-fix{flex:0 0 auto;white-space:nowrap;color:var(--h-text);font-weight:600;letter-spacing:.01em}
++
++.hdr2 .tb-marq{--tb-gap:64px;--tb-speed:46s;flex:1 1 auto;min-width:0;display:flex;gap:var(--tb-gap);overflow:hidden;padding:0 10px;contain:paint;mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 30px),transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 30px),transparent 100%)}
++.hdr2 .tb-marq-i{flex:0 0 auto;white-space:nowrap;animation:zrTbMarq var(--tb-speed) linear infinite;will-change:transform}
++@keyframes zrTbMarq{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--tb-gap)))}}
++
++/* красные точки-разделители между фактами ленты */
++.hdr2 .tb-sep{color:var(--h-red);font-weight:700;margin:0 13px;opacity:.9}
++
++/* курсор на строке — прокрутка встаёт, чтобы можно было спокойно дочитать */
++.hdr2 .tb-note:hover .tb-marq-i{animation-play-state:paused}
++/* уважаем системную настройку «меньше движения»: ничего не мигает и не едет */
++@media(prefers-reduced-motion:reduce){
++  .hdr2 .tb-marq-i{animation:none}
++  .hdr2 .tb-note .tb-dot{animation:none}
++  .hdr2 .tb-marq{mask-image:none;-webkit-mask-image:none}
++}
++.hdr2 .tb-contacts{flex:0 0 auto;gap:18px}
++.hdr2 .tb-contacts a.tb-phone,.hdr2 .tb-contacts a.tb-mail{font-size:15px}
++/* Ниже 1080px строка скрыта (display:none выше в файле) — глушим и анимации.
++   Формально они и так не рисуются, но объявленные keyframes остаются живыми
++   объектами анимации: на телефоне это лишняя работа планировщика и расход
++   батареи там, где строку всё равно не видно. */
++@media(max-width:1080px){
++  .hdr2 .tb-marq-i,.hdr2 .tb-note .tb-dot{animation:none}
++}
++/*hdrbar17mob2670*/
++
++/* Липкая полоса шапки перекрывает цель якоря: на карточке навигация #opis, #spec,
++   #dostavka уводила заголовок раздела под шапку, и человек попадал на середину текста.
++   Отступ равен высоте липкой полосы; на узких экранах она ниже. */
++html{scroll-padding-top:76px}
++@media(max-width:860px){html{scroll-padding-top:64px}}
++@media(max-width:560px){html{scroll-padding-top:58px}}
++
++/* Компактная липкая шапка при прокрутке — телефон и планшет. 20.09.2026.
++   Класс .hdr2--tight ставит скрипт в modal.js после 120px прокрутки (и только при
++   ширине до 860px). Строка поиска сворачивается, липкой остаётся одна полоса:
++   логотип, кабинет, корзина, «Расчёт» и бургер — около 67px вместо 127.
++   Поиск никуда не девается: он снова раскрывается, как только человек вернулся
++   наверх. Переход по высоте, а не display:none, чтобы полоса не дёргалась. */
++@media(max-width:860px){
++  .hdr2 .msearch{transition:max-height .18s ease,opacity .14s ease,margin .18s ease;
++    max-height:60px;opacity:1;overflow:hidden}
++  .hdr2--tight .msearch{max-height:0;opacity:0;margin-top:0;margin-bottom:0;
++    padding-top:0;padding-bottom:0;border-width:0}
++}
++@media(prefers-reduced-motion:reduce){
++  .hdr2 .msearch{transition:none}
++}
++
++/* Шапка на телефоне (26.09.2026). Кнопка «Задать вопрос инженеру» занимала
++   262px из 375 — блок справа раздувался до 410px, и КНОПКА МЕНЮ уезжала
++   за правый край экрана: до бургера нельзя было дотянуться. На телефоне эта
++   кнопка избыточна — внизу постоянно висит панель «Позвонить / Получить
++   расчёт» с теми же действиями. Прячем её до 700px, иконки и меню остаются. */
++@media(max-width:700px){
++  .hdr2 .nav-right .zbtn,.nav-right .zbtn{display:none !important}
++  .hdr2 .nav-right{gap:8px}
++}
++
++/* ================= ДОСТУПНОСТЬ ДЛЯ СЛАБОГО ЗРЕНИЯ (26.09.2026) =================
++   Разбор показал места, куда крупный шрифт не добрался: их рисует скрипт, либо
++   у них свои стили с высокой специфичностью. Для пожилого человека это ровно те
++   места, где он застревает — поиск, фильтр подбора, подписи полей формы.
++   Попутно подняты зоны нажатия: пальцем уверенно попадают по 44px и выше. */
++
++/* Поиск в шапке: кнопка была 12,5px высотой 29px — вдвое ниже нормы. */
++.ms-go,.hdr2 .ms-go{font-size:16px !important;min-height:44px;padding:10px 18px}
++.ms-inp,.hdr2 input[type="search"]{font-size:17px !important;min-height:44px}
++
++/* Иконки кабинета и корзины: были 40x40. */
++.hic,.hdr2 .hic{min-width:44px;min-height:44px}
++
++/* Подписи полей формы — 11,5px там, где человек вписывает имя и телефон. */
++label,.ol,.form-label,.f-lab{font-size:16px !important}
++
++/* Фильтр подбора: кнопки-пилюли 13,3px высотой 34px. Сам калькулятор
++   (podbor.js) не трогаем — только внешний вид кнопок. */
++.pf-pill,.pf-btn,.pf-more,.pf-cta,.pf-btn--ghost,.pf-btn--red{
++  font-size:16px !important;min-height:44px;padding:10px 16px}
++
++/* Конфигуратор цены: опции 12,5px, кнопки ниже порога. */
++.cfg-cta,.cfg-cart{font-size:17px !important;min-height:50px}
++.cfg-step label,.cfg-step .ol{font-size:16px !important}
++
++/* Заголовки раскрывающихся блоков FAQ — это конверсионный блок. */
++summary,.faq summary{font-size:17px !important}
++
++/* Хлебные крошки: серый на светлом давал контраст втрое ниже нормы. */
++.crumbs,.breadcrumbs,nav.crumbs a,.crumbs a,.crumbs span{
++  font-size:15px !important;color:#4a5560 !important}
++
++/* Подвал: копирайт и ссылка на политику были 12,5px. */
++.site-footer small,.site-footer .copy,.site-footer a{font-size:15px !important}
++
++/* Мелкие кнопки в карточках сравнения — шрифт не подтянулся при укрупнении. */
++.btn-sm,.btn.btn-sm{font-size:16px !important}
++
++/* Нижняя панель на узких экранах: на 320px кнопка «Получить расчёт» уходила
++   за правый край на 18px, и нажать её правую часть было нельзя. */
++@media(max-width:360px){
++  .zr-mbar .btn,.zr-mbar a{font-size:15px !important;padding:12px 10px;min-height:52px}
++  .zr-mbar{gap:8px;padding-left:8px;padding-right:8px}
++}
++
++/* РАЗГРУЗКА ВЕРХНЕЙ СТРОКИ ШАПКИ (26.09.2026).
++   В топбаре одновременно шли бегущая строка, ДВА телефона и почта — вместе с
++   нижними строками выходило около двадцати элементов до начала контента.
++   Человек, открывший сайт, сперва разбирал шапку и только потом видел, чем
++   занимается завод. На широком мониторе место есть — там оставляем всё как
++   было. Ниже 1400px прячем второй телефон и почту: оба продублированы в
++   подвале и на странице контактов, потеря невелика, а строка перестаёт
++   распирать шапку. Первый телефон остаётся всегда. */
++@media(max-width:1400px){
++  .hdr2 .tb-in a[href^="mailto:"]{display:none}
++  /* Скрываем ТОЛЬКО второй и последующие телефоны: селектор «телефон, перед
++     которым уже был телефон». Первая попытка использовала nth-of-type(n+2),
++     но тип здесь — тег <a>, а не «ссылка на телефон», и правило прятало оба
++     номера разом: в шапке не осталось ни одного телефона. */
++  .hdr2 .tb-in a[href^="tel:"] ~ a[href^="tel:"]{display:none}
++}
++
++/* ================= ШАПКА ПРИЛИПАЕТ ПРИ ПРОКРУТКЕ (28.09.2026) =================
++   ЧТО БЫЛО. Прилипание (position:sticky) стояло на внутренней строке .hmain, а её
++   родитель — сам <header class="hdr2"> высотой 134px. Прилипающий элемент живёт
++   только в пределах своего родителя: как только шапка уехала вверх, уехала и
++   строка. Со стороны это выглядело так, будто sticky просто не работает — при
++   том, что в стилях он прописан. Проверено прокруткой на главной и на карточке:
++   после 1200px прокрутки строка оказывалась на -1157px, то есть за экраном.
++   ЧТО ДЕЛАЕМ. Переносим прилипание на саму шапку: её родитель — body, то есть
++   вся страница, и прилипать есть где. Прежнее правило на .hmain снимаем, иначе
++   два вложенных sticky спорят друг с другом.
++   Высоту шапка занимает ту же, что и раньше; на телефоне она компактнее. */
++
++.hdr2{position:sticky !important;top:0 !important;z-index:200}
++.hdr2 .hmain{position:static !important}
++
++/* Мобильная панель снизу и всплывающие окна должны перекрывать шапку. */
++.zr-mbar{z-index:300}
++.zr-modal,.zr-lb{z-index:400}

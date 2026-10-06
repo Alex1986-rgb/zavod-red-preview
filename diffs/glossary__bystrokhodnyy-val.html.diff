@@ -1,0 +1,91 @@
+--- main/glossary/bystrokhodnyy-val.html
++++ prod/glossary/bystrokhodnyy-val.html
+@@ -5,3 +5,3 @@
+ <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-<title>Быстроходный вал редуктора: входной вал привода</title>
++<title>Быстроходный вал редуктора: входной вал привода | ZR</title>
+ <meta name="description" content="Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам." />
+@@ -11,9 +11,12 @@
+ <meta property="og:type" content="article" /><meta property="og:url" content="https://zavod-red.ru/glossary/bystrokhodnyy-val" />
+-<meta property="og:title" content="Быстроходный вал редуктора: входной вал привода" /><meta property="og:description" content="Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам." />
++<meta property="og:title" content="Быстроходный вал редуктора: входной вал привода | ZR" /><meta property="og:description" content="Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам." />
+ <meta property="og:image" content="https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp" />
+-<link rel="stylesheet" href="../assets/inner.css?v=d21d4014" />
++<link rel="stylesheet" href="../assets/inner.css?v=shapka28" />
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "DefinedTerm", "name": "Быстроходный вал", "description": "Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам.", "inDefinedTermSet": {"@type": "DefinedTermSet", "name": "Глоссарий редукторов — Завод Редукторов", "url": "https://zavod-red.ru/glossary/"}, "url": "https://zavod-red.ru/glossary/bystrokhodnyy-val"}</script>
+ <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://zavod-red.ru/"}, {"@type": "ListItem", "position": 2, "name": "Глоссарий", "item": "https://zavod-red.ru/glossary/"}, {"@type": "ListItem", "position": 3, "name": "Быстроходный вал", "item": "https://zavod-red.ru/glossary/bystrokhodnyy-val"}]}</script>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое быстроходный вал редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Это входной вал, принимающий вращение от двигателя с высокими оборотами около 1450 об/мин и малым моментом."}}, {"@type": "Question", "name": "Как связаны быстроходный вал и передаточное число?", "acceptedAnswer": {"@type": "Answer", "text": "Передаточное число равно отношению оборотов: i=n1/n2, где n1 — обороты быстроходного вала."}}, {"@type": "Question", "name": "Совпадает ли быстроходный вал аналога ZR с импортом?", "acceptedAnswer": {"@type": "Answer", "text": "Да, аналог ZR повторяет исполнение вала или мотор-фланца, замена без переделки посадки двигателя."}}, {"@type": "Question", "name": "Почему на быстроходном валу момент меньше, чем на тихоходном?", "acceptedAnswer": {"@type": "Answer", "text": "Мощность через ступени передаётся почти без потерь, а мощность равна произведению момента на угловую скорость. На быстроходном валу обороты высокие (около 1450 об/мин), поэтому при той же мощности момент мал. Редуктор снижает обороты в i раз и во столько же увеличивает момент на выходе за вычетом потерь на КПД."}}, {"@type": "Question", "name": "Как рассчитать момент на быстроходном валу?", "acceptedAnswer": {"@type": "Answer", "text": "Момент считают по формуле T=9550·P·КПД/n, где P — мощность в кВт, n — обороты вала. Для входного вала берут n1≈1450 об/мин при 4-полюсном двигателе. Например, при 3 кВт момент составит примерно 9550·3/1450 ≈ 19,8 Н·м. Это исходная величина для проверки прочности вала и подшипников."}}, {"@type": "Question", "name": "Какое исполнение входного вала бывает у мотор-редуктора?", "acceptedAnswer": {"@type": "Answer", "text": "Быстроходный вал может быть свободным (со шпоночным или шлицевым концом под муфту) либо выполнен как полый вал под вал двигателя во фланцевом мотор-редукторе. В моноблочном исполнении входного вала как отдельной детали нет: ротор двигателя напрямую несёт первую шестерню, что упрощает конструкцию и уменьшает габарит."}}, {"@type": "Question", "name": "Через что соединяют двигатель с быстроходным валом?", "acceptedAnswer": {"@type": "Answer", "text": "Соединение выполняют упругой муфтой, которая компенсирует небольшую несоосность и гасит толчки момента, либо напрямую во фланцевом исполнении. Муфту подбирают по номинальному моменту с запасом на пусковые перегрузки и число пусков в час. Точную соосность выставляют при монтаже, иначе растёт нагрузка на подшипники входного вала."}}, {"@type": "Question", "name": "Почему быстроходный вал сильнее греется и требует балансировки?", "acceptedAnswer": {"@type": "Answer", "text": "На высоких оборотах любой дисбаланс и перекос вызывают вибрацию и дополнительный нагрев подшипников, поэтому входной вал и полумуфту балансируют. Здесь же расположены самые нагруженные высокоскоростные подшипники и первая, наиболее шумная пара зацепления. От качества обработки и смазки этого узла во многом зависит ресурс всего редуктора."}}]}</script>
+-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Быстроходный вал", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»"}, "description": "Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам.", "mainEntityOfPage": "https://zavod-red.ru/glossary/bystrokhodnyy-val"}</script>
++<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое быстроходный вал редуктора?","acceptedAnswer":{"@type":"Answer","text":"Это входной вал, принимающий вращение от двигателя с высокими оборотами около 1450 об/мин и малым моментом."}},{"@type":"Question","name":"Как связаны быстроходный вал и передаточное число?","acceptedAnswer":{"@type":"Answer","text":"Передаточное число равно отношению оборотов: i=n1/n2, где n1 — обороты быстроходного вала."}},{"@type":"Question","name":"Совпадает ли быстроходный вал аналога ZR с импортом?","acceptedAnswer":{"@type":"Answer","text":"Да, аналог ZR повторяет исполнение вала или мотор-фланца, замена без переделки посадки двигателя."}},{"@type":"Question","name":"Почему на быстроходном валу момент меньше, чем на тихоходном?","acceptedAnswer":{"@type":"Answer","text":"Мощность через ступени передаётся почти без потерь, а мощность равна произведению момента на угловую скорость. На быстроходном валу обороты высокие (около 1450 об/мин), поэтому при той же мощности момент мал. Редуктор снижает обороты в i раз и во столько же увеличивает момент на выходе за вычетом потерь на КПД."}},{"@type":"Question","name":"Как рассчитать момент на быстроходном валу?","acceptedAnswer":{"@type":"Answer","text":"Момент считают по формуле T=9550·P·КПД/n, где P — мощность в кВт, n — обороты вала. Для входного вала берут n1≈1450 об/мин при 4-полюсном двигателе. Например, при 3 кВт момент составит примерно 9550·3/1450 ≈ 19,8 Н·м. Это исходная величина для проверки прочности вала и подшипников."}},{"@type":"Question","name":"Какое исполнение входного вала бывает у мотор-редуктора?","acceptedAnswer":{"@type":"Answer","text":"Быстроходный вал может быть свободным (со шпоночным или шлицевым концом под муфту) либо выполнен как полый вал под вал двигателя во фланцевом мотор-редукторе. В моноблочном исполнении входного вала как отдельной детали нет: ротор двигателя напрямую несёт первую шестерню, что упрощает конструкцию и уменьшает габарит."}},{"@type":"Question","name":"Через что соединяют двигатель с быстроходным валом?","acceptedAnswer":{"@type":"Answer","text":"Соединение выполняют упругой муфтой, которая компенсирует небольшую несоосность и гасит толчки момента, либо напрямую во фланцевом исполнении. Муфту подбирают по номинальному моменту с запасом на пусковые перегрузки и число пусков в час. Точную соосность выставляют при монтаже, иначе растёт нагрузка на подшипники входного вала."}},{"@type":"Question","name":"Почему быстроходный вал сильнее греется и требует балансировки?","acceptedAnswer":{"@type":"Answer","text":"На высоких оборотах любой дисбаланс и перекос вызывают вибрацию и дополнительный нагрев подшипников, поэтому входной вал и полумуфту балансируют. Здесь же расположены самые нагруженные высокоскоростные подшипники и первая, наиболее шумная пара зацепления. От качества обработки и смазки этого узла во многом зависит ресурс всего редуктора."}},{"@type":"Question","name":"Смежные термины и подбор","acceptedAnswer":{"@type":"Answer","text":"Другие термины — в глоссарии редукторов . Подбор модели по параметрам — калькулятор , замена импорта — импортозамещение ."}}]}</script>
++<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Быстроходный вал", "author": {"@type": "Organization", "name": "Завод Редукторов"}, "publisher": {"@type": "Organization", "name": "ООО «НИИ АТТ»", "logo": {"@type": "ImageObject", "url": "https://zavod-red.ru/assets/zr_logo.webp"}}, "description": "Быстроходный вал — входной вал редуктора с высокими оборотами от двигателя. Исполнения, обороты 1450 и подбор замены ZR по размерам.", "mainEntityOfPage": "https://zavod-red.ru/glossary/bystrokhodnyy-val", "datePublished": "2026-07-03", "dateModified": "2026-08-26", "image": "https://zavod-red.ru/assets/blog-photo/th-steel-gears.webp"}</script>
++<!-- Yandex.Metrika counter -->
++<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109758131,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
++<noscript><div><img src="https://mc.yandex.ru/watch/109758131" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+ </head>
+@@ -21,8 +24,8 @@
+ <header class="hdr2">
+-<link rel="stylesheet" href="../assets/hdr.css?v=8083901f" />
+-<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span>Собственное производство · отгрузка по всей России</div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
++<link rel="stylesheet" href="../assets/hdr.css?v=shapka28" />
++<div class="topbar"><div class="tb-in"><div class="tb-note"><span class="tb-dot"></span><span class="tb-fix">Собственное производство</span><span class="tb-marq"><span class="tb-marq-i">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span><span class="tb-marq-i" aria-hidden="true">Промышленные редукторы для производителей оборудования<span class="tb-sep">•</span>Отгрузка по всей России<span class="tb-sep">•</span>Аналоги SEW, NORD, Bonfiglioli без переделки рамы<span class="tb-sep">•</span>Расчёт и КП за 15 минут<span class="tb-sep">•</span>Гарантия 36 месяцев</span></span></div><div class="tb-contacts"><a href="mailto:zr@zavod-red.ru">zr@zavod-red.ru</a><span>·</span><a href="tel:+79049534102">+7 (904) 953-41-02</a></div></div></div>
+ <div class="hmain"><div class="hm-in">
+-<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" /></a>
++<a class="logo" href="/"><img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" /></a>
+ <a class="cat-btn" href="/catalog/"><span class="cb-ic"><span></span><span></span><span></span></span>Каталог</a>
+-<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по 85 000+ позициям: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
++<form class="msearch" action="/podbor" method="get" role="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg><input type="search" name="q" placeholder="Поиск по каталогу: ZR 979, SEW R107, NMRV 050…" aria-label="Поиск по каталогу" /><span class="ms-chip">по шильду</span></form>
+ <div class="nav-right">
+@@ -37,3 +40,3 @@
+ <a href="/podbor">Подбор</a>
+-<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a><a href="/catalog/evl">Редукторы EVL</a>
++<a href="/motor-reduktor-zr/">Мотор-редукторы ZR</a>
+ <a href="/ceny">Цены</a>
+@@ -41,3 +44,3 @@
+ <a href="/importozameshchenie">Импортозамещение</a>
+-<a href="/blog/">Блог</a>
++<a href="/blog/" class="menu-new">Блог</a>
+ <div class="dropdown"><a class="drop-toggle" role="button" aria-haspopup="true" aria-expanded="false">О заводе</a><div class="submenu"><a href="/about">О заводе и производство</a><a href="/about#team">Люди производства</a><a href="/sertifikaty">Сертификаты</a><a href="/cases/">Кейсы и отзывы</a><a href="/dostavka-raschet">Доставка по России</a></div></div>
+@@ -53,3 +56,3 @@
+ 
+-  <div class="art-figrow" style="display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 22px"><figure class="art-fig" style="flex:1 1 260px;margin:0"><img src="../assets/blog-photo/th-steel-gears.webp" alt="Редуктор ZR — Быстроходный вал" loading="lazy"><figcaption>Термин из глоссария редукторов Завода Редукторов</figcaption></figure><figure class="art-fig" style="flex:1 1 260px;margin:0"><img src="../assets/production/p02.webp" alt="Производство редукторов и мотор-редукторов ZR — Челябинск" loading="lazy"><figcaption>Производство редукторов ZR — Челябинск</figcaption></figure></div>
++  <div class="art-figrow" style="display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 22px"><figure class="art-fig" style="flex:1 1 260px;margin:0"><img src="../assets/blog-photo/th-steel-gears.webp" alt="Редуктор ZR — Быстроходный вал" loading="lazy" width="1200" height="630"><figcaption>Термин из глоссария редукторов Завода Редукторов</figcaption></figure><figure class="art-fig" style="flex:1 1 260px;margin:0"><img src="../assets/production/p02.webp" alt="Производство редукторов и мотор-редукторов ZR — Челябинск" loading="lazy" width="900" height="675"><figcaption>Производство редукторов ZR — Челябинск</figcaption></figure></div>
+ 
+@@ -82,8 +85,9 @@
+ <a class="btn lg" data-zayavka href="#zayavka" style="background:var(--red)">Стать партнёром — 5% →</a>
+-<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 24 мес · паспорт на изделие</div>
++<div style="margin-top:12px;font-size:13px;color:#9fb3c8">Расчёт КП за 15 минут · гарантия 36 мес · паспорт на изделие</div>
+ </div></div></section>
+     <footer class="site-footer">
++<div class="sf-cta-bar"><div class="wrap sf-cta-in"><div class="sf-cta-text"><strong>Подобрать редуктор под задачу</strong><span>Ответим в течение 30 минут — пришлём КП и подберём аналог</span></div><div class="sf-cta-btns"><a href="/podbor" class="sf-btn-cta">Подобрать редуктор</a><a href="#zayavka" data-zayavka class="sf-btn-cta sf-btn-cta2">Получить расчёт</a></div></div></div>
+   <div class="wrap sf-top">
+     <div class="sf-brand">
+-      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" />
++      <img src="../assets/zr_logo.webp" alt="Завод Редукторов — производство редукторов и мотор-редукторов" width="451" height="168" />
+       <p>Производство промышленных редукторов и мотор-редукторов. Поставка оригиналов импорта и габаритных аналогов под заказ. Отгрузка по всей России.</p>
+@@ -96,3 +100,3 @@
+     <div class="sf-col">
+-      <h4>Каталог</h4>
++      <p class="sf-h">Каталог</p>
+       <a href="/catalog/chervyachnye">Червячные</a>
+@@ -105,3 +109,3 @@
+     <div class="sf-col">
+-      <h4>Разделы</h4>
++      <p class="sf-h">Разделы</p>
+       <a href="/podbor">Подбор редуктора</a>
+@@ -111,3 +115,3 @@
+       <a href="/importozameshchenie">Импортозамещение</a>
+-      <a href="/blog/">Блог</a>
++      <a href="/blog/" class="menu-new">Блог</a>
+       <a href="/cases/">Кейсы</a><a href="/glossary/">Глоссарий</a><a href="/otrasli/">Отрасли</a>
+@@ -115,3 +119,3 @@
+     <div class="sf-col">
+-      <h4>Компания</h4>
++      <p class="sf-h">Компания</p>
+       <a href="/about">О заводе</a>
+@@ -127,4 +131,4 @@
+ </footer>
+-<script src="../assets/inner.js?v=42c8f9e0"></script>
+-<script defer src="../assets/modal.js?v=350d9cee"></script>
++<script src="../assets/inner.js?v=shapka28"></script>
++<script defer src="../assets/modal.js?v=0110zrchat"></script>
+ </body></html>
