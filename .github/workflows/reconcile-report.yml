@@ -1,0 +1,77 @@
+name: "Сверка ветки с боевым слепком (только GitHub, сервер не трогается)"
+
+# Сравнивает три версии каждого файла: боевой слепок (claude/prod-snapshot), main и рабочую ветку.
+# Находит боевые правки, которых нет в репозитории (их нельзя затирать деплоем).
+# Отчёт и диффы — в ветку claude/reconcile-report. Запуск: коммит tools/reconcile/request.txt.
+on:
+  push:
+    branches: [claude/greeting-check-in-gdeerr]
+    paths: ['tools/reconcile/request.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Три версии (без analog и генерируемых разделов)
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          U="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for b in claude/prod-snapshot:prod main:main claude/greeting-check-in-gdeerr:work; do
+            br=${b%%:*}; d=${b#*:}
+            git clone -q --depth 1 --filter=blob:none --sparse --branch "$br" "$U" "$d"
+            (cd "$d" && git sparse-checkout set --no-cone '/*' '!/analog/' '!/ispolnenie/' '!/tiporazmer/' '!/motor-reduktor-zr/' '!/reduktor/' '!/dist/' '!/assets/' '/assets/*.css' '/assets/*.js' '/assets/*.json' && git checkout -q)
+            echo "$d: $(cd $d && git ls-files | wc -l) файлов"
+          done
+      - name: Сравнение
+        run: |
+          python3 - <<'PY'
+          import os, hashlib, difflib, json
+          def files(root):
+              out={}
+              for dp,dn,fn in os.walk(root):
+                  dn[:]=[x for x in dn if x!='.git']
+                  for f in fn:
+                      p=os.path.relpath(os.path.join(dp,f),root)
+                      if p.endswith(('.html','.htm','.css','.js','.php','.htaccess','.xml','.txt','.json','.webmanifest')):
+                          out[p]=os.path.join(dp,f)
+              return out
+          P,M,W=files('prod'),files('main'),files('work')
+          def h(p): return hashlib.md5(open(p,'rb').read()).hexdigest()
+          rows=[]; os.makedirs('out/diffs',exist_ok=True)
+          only_prod=sorted(p for p in P if p not in M and p not in W and not p.startswith(('api/','admin/')))
+          for p in sorted(set(P)&(set(M)|set(W))):
+              if p.startswith(('api/','admin/')): continue
+              hp=h(P[p]); hm=h(M[p]) if p in M else None; hw=h(W[p]) if p in W else None
+              if hp==hw: cls='same-as-work'
+              elif hp==hm: cls='prod=main (только наши правки, безопасно)'
+              else: cls='БОЕВЫЕ ПРАВКИ (prod≠main)'
+              rows.append((cls,p))
+              if cls.startswith('БОЕВЫЕ'):
+                  a=open(M[p] if p in M else W[p],encoding='utf-8',errors='replace').read().splitlines()
+                  b=open(P[p],encoding='utf-8',errors='replace').read().splitlines()
+                  d=list(difflib.unified_diff(a,b,'main/'+p,'prod/'+p,lineterm='',n=1))
+                  add=sum(1 for x in d if x.startswith('+') and not x.startswith('+++')); rem=sum(1 for x in d if x.startswith('-') and not x.startswith('---'))
+                  rows[-1]=(cls,p,add,rem)
+                  open('out/diffs/'+p.replace('/','__')+'.diff','w').write('\n'.join(d[:600]))
+          from collections import Counter
+          c=Counter(r[0] for r in rows)
+          L=['# Сверка рабочей ветки с боевым слепком','','| Класс | Файлов |','|---|---|']+[f'| {k} | {v} |' for k,v in c.most_common()]
+          L+=['',f'Только на проде (нет ни в main, ни в ветке): {len(only_prod)}','']+[f'- `{p}`' for p in only_prod[:200]]
+          br=[r for r in rows if r[0].startswith('БОЕВЫЕ')]
+          br.sort(key=lambda r:-(r[2]+r[3]))
+          L+=['','## Файлы с боевыми правками (prod отличается от main)','','| Файл | +строк на проде | −строк | ',
+              '|---|---|---|']+[f'| `{r[1]}` | {r[2]} | {r[3]} |' for r in br]
+          open('out/REPORT.md','w').write('\n'.join(L)+'\n')
+          print('\n'.join(L[:60])); print('... всего с боевыми правками:',len(br))
+          PY
+      - name: Отчёт → ветка claude/reconcile-report
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          cd out && git init -q -b claude/reconcile-report && git config user.name "reconcile bot" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -q -m "Сверка с боевым слепком $(date -u +%F' '%H:%M) UTC" && git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:claude/reconcile-report && echo "отчёт в ветке claude/reconcile-report"

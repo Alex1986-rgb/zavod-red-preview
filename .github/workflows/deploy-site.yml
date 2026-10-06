@@ -1,15 +1,12 @@
-name: Deploy site (rsync over SSH)
+name: "Deploy сайта на Beget (rsync по SSH, вручную)"
 # Шифрованная заливка ядра сайта по SSH-ключу (без пароля, без FTP открытым текстом).
 # rsync сверяет по содержимому — уходит грабля lftp (правки той же длины пропускались).
-# Вход под БАЗОВЫМ аккаунтом cu549563 (ключ в его ~/.ssh/authorized_keys), путь абсолютный.
+# Вход под аккаунтом Beget (ключ в его ~/.ssh/authorized_keys), путь относительно домашнего каталога.
 # analog/ исключён (отдельный воркфлоу). БЕЗ --delete: серверные файлы CRM (api/admin)
 # и то, чего нет в dist, сохраняются — как в прежнем mirror.
+# Только вручную: боевой сайт расходится с репозиторием (см. ветку claude/prod-snapshot),
+# автоматическая заливка на push в main стёрла бы боевые правки. По умолчанию — сухой прогон.
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - '.github/**'
-      - 'analog/**'
   workflow_dispatch:
     inputs:
       dry:
@@ -45,7 +42,7 @@ jobs:
           SSH_USER: ${{ secrets.FTP_USERNAME }}
         run: |
           BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
-          DEST="/home/c/$BASE/public_html/"
+          DEST="zavod-red.ru/public_html/"   # Beget: ~/zavod-red.ru/public_html (раньше Timeweb /home/c/…)
           DRY="${{ inputs.dry }}"
           FLAG=""; [ "$DRY" = "true" ] && FLAG="--dry-run"
           echo "цель: $BASE@$HOST:$DEST   сухой=$DRY"

@@ -1,4 +1,4 @@
-name: Удалить копии сайта с прода
+name: "Удалить старые копии с прода (Beget)"
 
 # Два режима, оба по одному и тому же полю подтверждения:
 #   УДАЛИТЬ — удалить с сервера четыре пути из белого списка;
@@ -64,26 +64,26 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
             "$BASE@$HOST" 'bash -s' <<'REMOTE'
           set -u
-          ROOT="$HOME/public_html"
+          ROOT="$HOME/zavod-red.ru/public_html"   # Beget (раньше Timeweb: ~/public_html)
           ARCHIVE="$HOME/prod-cleanup-$(date +%Y%m%d-%H%M%S).tar.gz"
 
           # Белый список. Только эти пути и только они.
-          TARGETS="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie"
+          TARGETS="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie api/feedback.php.orig-20260811 api/feedback_old_2026-06-09.php api/helpers.php.orig"
 
           echo "корень сайта: $ROOT"
           echo
           echo "=== ЧТО БУДЕТ УДАЛЕНО ==="
           EXISTING=""
           for t in $TARGETS; do
-            # защита: только простое имя каталога, без слэшей и точек
-            case "$t" in *[/.]* | "") echo "  ПРОПУСК (недопустимое имя): $t"; continue ;; esac
-            if [ -d "$ROOT/$t" ]; then
+            # защита: без выхода из корня сайта и абсолютных путей
+            case "$t" in *..* | /* | "") echo "  ПРОПУСК (недопустимое имя): $t"; continue ;; esac
+            if [ -e "$ROOT/$t" ]; then
               n=$(find "$ROOT/$t" -type f | wc -l)
               sz=$(du -sh "$ROOT/$t" 2>/dev/null | cut -f1)
-              printf '  %-28s файлов: %-6s размер: %s\n' "$t/" "$n" "$sz"
+              printf '  %-40s файлов: %-6s размер: %s\n' "$t" "$n" "$sz"
               EXISTING="$EXISTING $t"
             else
-              printf '  %-28s нет на сервере\n' "$t/"
+              printf '  %-40s нет на сервере\n' "$t"
             fi
           done
 
@@ -102,7 +102,7 @@ jobs:
           echo "=== УДАЛЕНИЕ ==="
           for t in $EXISTING; do
             rm -rf "${ROOT:?}/$t"
-            if [ -d "$ROOT/$t" ]; then echo "  НЕ УДАЛЁН: $t"; else echo "  удалён: $t"; fi
+            if [ -e "$ROOT/$t" ]; then echo "  НЕ УДАЛЁН: $t"; else echo "  удалён: $t"; fi
           done
 
           echo
@@ -121,7 +121,7 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no \
             "$BASE@$HOST" 'bash -s' <<'REMOTE'
           set -u
-          ROOT="$HOME/public_html"
+          ROOT="$HOME/zavod-red.ru/public_html"   # Beget (раньше Timeweb: ~/public_html)
           ARCHIVE=$(ls -t "$HOME"/prod-cleanup-*.tar.gz 2>/dev/null | head -1)
           if [ -z "$ARCHIVE" ]; then
             echo "Архивов prod-cleanup-*.tar.gz нет — возвращать нечего."
@@ -131,31 +131,25 @@ jobs:
 
           echo
           echo "=== ЧТО В АРХИВЕ ==="
-          TOP=$(tar tzf "$ARCHIVE" | cut -d/ -f1 | sort -u)
-          for t in $TOP; do
-            printf '  %-28s записей: %s\n' "$t/" "$(tar tzf "$ARCHIVE" | grep -c "^$t/")"
-          done
+          tar tzf "$ARCHIVE" | sed 's#/$##' | sort -u | head -40
 
           # Тот же белый список, что и при удалении. Посторонний путь в архиве
           # останавливает распаковку: в корень сайта не должно попасть ничего сверх того,
           # что этот же воркфлоу оттуда и убрал.
-          ALLOWED="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie"
-          for t in $TOP; do
-            case " $ALLOWED " in
-              *" $t "*) ;;
-              *) echo "ОТКАЗ: в архиве посторонний путь «$t» — не распаковываю."; exit 1 ;;
-            esac
-          done
+          ALLOWED="_seo_backup_20260812b _seo_backup_20260812c _lineup_backup_20260812 sravnenie api/feedback.php.orig-20260811 api/feedback_old_2026-06-09.php api/helpers.php.orig"
+          BAD=0
+          while IFS= read -r e; do
+            e=${e%/}; ok=0
+            for t in $ALLOWED; do case "$e" in "$t"|"$t"/*) ok=1 ;; esac; done
+            [ $ok = 1 ] || { echo "ОТКАЗ: в архиве посторонний путь «$e» — не распаковываю."; BAD=1; break; }
+          done < <(tar tzf "$ARCHIVE")
+          [ $BAD = 0 ] || exit 1
 
           echo
           echo "=== РАСПАКОВКА В КОРЕНЬ САЙТА ==="
           cd "$ROOT" && tar xzf "$ARCHIVE"
-          for t in $TOP; do
-            if [ -d "$ROOT/$t" ]; then
-              printf '  вернулся: %-28s файлов: %s\n' "$t" "$(find "$ROOT/$t" -type f | wc -l)"
-            else
-              echo "  НЕ ВЕРНУЛСЯ: $t"
-            fi
+          for t in $ALLOWED; do
+            [ -e "$ROOT/$t" ] && printf '  на месте: %s\n' "$t"
           done
 
           echo
@@ -173,6 +167,6 @@ jobs:
             printf '  %-24s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -L -w '%{http_code}' "$S$p")"
           done
           echo "=== удалённые адреса (ожидаем 301 по правилам .htaccess) ==="
-          for p in /_seo_backup_20260812b/index.html /_lineup_backup_20260812/catalog/evl.html /sravnenie/tehnoreduktor-ural.html; do
+          for p in /_seo_backup_20260812b/index.html /_lineup_backup_20260812/catalog/evl.html /sravnenie/tehnoreduktor-ural.html /api/feedback.php.orig-20260811 /api/feedback_old_2026-06-09.php /api/helpers.php.orig; do
             printf '  %-46s HTTP %s\n' "$p" "$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$S$p")"
           done

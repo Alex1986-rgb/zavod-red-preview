@@ -1,4 +1,4 @@
-name: Deploy analog cards (rsync over SSH)
+name: "Deploy карточек analog на Beget (rsync по SSH, вручную)"
 
 # Шифрованная заливка карточек /analog (73.9К файлов) по SSH-ключу — без FTP-пароля.
 # Аналог deploy-site-ssh.yml, но собирает dist С analog (INCLUDE_ANALOG=1) и льёт
@@ -44,7 +44,7 @@ jobs:
           SSH_USER: ${{ secrets.FTP_USERNAME }}
         run: |
           BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/[[:space:]]*$//' | sed 's/_[12]$//')
-          DEST="/home/c/$BASE/public_html/analog/"
+          DEST="zavod-red.ru/public_html/analog/"   # Beget (раньше Timeweb /home/c/…)
           DRY="${{ inputs.dry }}"
           FLAG=""; [ "$DRY" = "true" ] && FLAG="--dry-run"
           echo "цель: $BASE@$HOST:$DEST   сухой=$DRY   файлов: $(find dist/analog -type f | wc -l)"
