@@ -1,0 +1,3199 @@
+{
+ "desktop": {
+  "url": "/reduktor/evl-063-747.html",
+  "title": "Редуктор ZR 606/604 — червячный, момент 42–85 Н·м — купить, цена | ЗР",
+  "docW": 1440,
+  "vw": 1440,
+  "pageH": 7813,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 162,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 301,
+    "h": 1348,
+    "padT": 20,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "opis",
+    "cls": "section",
+    "top": 1709,
+    "h": 1487,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Описание"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "spec",
+    "cls": "section",
+    "top": 3196,
+    "h": 850,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Характеристики ZR 606/604"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "tz",
+    "cls": "section",
+    "top": 4046,
+    "h": 155,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Типоразмеры ZR 606/604 по передаточному "
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "analogi",
+    "cls": "section",
+    "top": 4201,
+    "h": 427,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Заменяет импортные приводы"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "dostavka",
+    "cls": "section",
+    "top": 4628,
+    "h": 217,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Доставка и оплата"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "tehdoc",
+    "cls": "section",
+    "top": 4845,
+    "h": 182,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Техническая документация"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "chertezh",
+    "cls": "section",
+    "top": 5027,
+    "h": 1165,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Чертёж"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "faq",
+    "cls": "section",
+    "top": 6193,
+    "h": 395,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Частые вопросы по ZR 606/604"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6588,
+    "h": 342,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Похожие модели — червячный"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6930,
+    "h": 235,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 0,
+     "text": "Нужен ZR 606/604? Рассчитаем и пришлём К"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -72
+   },
+   {
+    "tag": "section",
+    "id": "seo",
+    "cls": "section",
+    "top": 7165,
+    "h": 228,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 7393,
+    "h": 420,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4680",
+   "A. right=1583",
+   "I. right=1583",
+   "A. right=1883",
+   "B. right=1708",
+   "I. right=1883",
+   "A. right=2498",
+   "B. right=1966",
+   "I. right=2498",
+   "A. right=2706",
+   "B. right=2552",
+   "I. right=2706"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 0,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "act",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "📄 Запросить цену",
+    "cls": "btn lg",
+    "h": 61,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "🔍 Подобрать замену",
+    "cls": "btn ghost lg",
+    "h": 61,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить чертёж испол",
+    "cls": "btn",
+    "h": 54,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Вся серия червячный →",
+    "cls": "btn ghost",
+    "h": 56,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   22,
+   23,
+   24,
+   30,
+   33
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "11px",
+   "18px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«zr@zavod-red.ru» 124×20",
+   "A«+7 (904) 953-41-02» 149×20",
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 33,
+    "lh": "37.29px",
+    "mt": 0,
+    "mb": 4,
+    "text": "Редуктор ZR 606/604 червячный промышленный"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Описание"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Технические диапазоны ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Применение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Подбор под задачу"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Импортозамещение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Мотор-редуктор, монтаж, сроки"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Характеристики ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 19,
+    "lh": "21.3408px",
+    "mt": 22,
+    "mb": 0,
+    "text": "Примеры исполнений (по моменту)"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Типоразмеры ZR 606/604 по передаточному числу"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Заменяет импортные приводы"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Доставка и оплата"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Техническая документация"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Чертёж"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Частые вопросы по ZR 606/604"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Похожие модели — червячный"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Нужен ZR 606/604? Рассчитаем и пришлём КП в течени"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 113,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/innovari.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varmec.png",
+    "w": 93,
+    "h": 24,
+    "nw": 189,
+    "nh": 49,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/yilmaz.png",
+    "w": 27,
+    "h": 24,
+    "nw": 88,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/keb.png",
+    "w": 53,
+    "h": 24,
+    "nw": 192,
+    "nh": 87,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/watt-drive.png",
+    "w": 61,
+    "h": 24,
+    "nw": 199,
+    "nh": 78,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 450,
+    "h": 338,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 78,
+    "h": 62,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 325,
+    "h": 451,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 33,
+   "lh": "37.29px",
+   "text": "Редуктор ZR 606/604 червячный промышленный"
+  }
+ },
+ "tablet": {
+  "url": "/reduktor/evl-063-747.html",
+  "title": "Редуктор ZR 606/604 — червячный, момент 42–85 Н·м — купить, цена | ЗР",
+  "docW": 1024,
+  "vw": 1024,
+  "pageH": 7992,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 79,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 217,
+    "h": 1502,
+    "padT": 20,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "opis",
+    "cls": "section",
+    "top": 1780,
+    "h": 1487,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Описание"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "spec",
+    "cls": "section",
+    "top": 3267,
+    "h": 850,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Характеристики ZR 606/604"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "tz",
+    "cls": "section",
+    "top": 4118,
+    "h": 155,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Типоразмеры ZR 606/604 по передаточному "
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "analogi",
+    "cls": "section",
+    "top": 4272,
+    "h": 475,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Заменяет импортные приводы"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "dostavka",
+    "cls": "section",
+    "top": 4747,
+    "h": 243,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Доставка и оплата"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "tehdoc",
+    "cls": "section",
+    "top": 4990,
+    "h": 182,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Техническая документация"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "chertezh",
+    "cls": "section",
+    "top": 5172,
+    "h": 1143,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Чертёж"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 760
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "faq",
+    "cls": "section",
+    "top": 6315,
+    "h": 416,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Частые вопросы по ZR 606/604"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 6730,
+    "h": 342,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Похожие модели — червячный"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 7072,
+    "h": 235,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 0,
+     "text": "Нужен ZR 606/604? Рассчитаем и пришлём К"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -72
+   },
+   {
+    "tag": "section",
+    "id": "seo",
+    "cls": "section",
+    "top": 7307,
+    "h": 228,
+    "padT": 0,
+    "padB": 72,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 7535,
+    "h": 457,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4681",
+   "A. right=1136",
+   "I. right=1136",
+   "A. right=1225",
+   "B. right=1204",
+   "A. right=1584",
+   "B. right=1290",
+   "I. right=1584",
+   "A. right=1884",
+   "B. right=1709",
+   "I. right=1884",
+   "A. right=2499"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 47,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 32,
+    "fs": 14,
+    "pad": "8px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 44,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "act",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 76,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "📄 Запросить цену",
+    "cls": "btn lg",
+    "h": 61,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "🔍 Подобрать замену",
+    "cls": "btn ghost lg",
+    "h": 61,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить чертёж испол",
+    "cls": "btn",
+    "h": 54,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Вся серия червячный →",
+    "cls": "btn ghost",
+    "h": 56,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Напишите нам",
+    "cls": "zrw__toggle",
+    "h": 46,
+    "fs": 15,
+    "pad": "13px 21px",
+    "r": "30px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 22px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   22,
+   23,
+   24,
+   29,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "11px",
+   "18px",
+   "30px",
+   "13px"
+  ],
+  "smallTargets": [
+   "BUTTON«Найти» 74×32",
+   "A«» 82×38",
+   "A«» 59×38",
+   "A«» 140×38",
+   "A«» 77×38",
+   "A«» 146×38",
+   "A«» 71×38",
+   "A«» 104×38",
+   "A«» 106×38",
+   "A«» 134×38",
+   "A«» 72×38",
+   "A«» 78×38",
+   "A«» 46×38",
+   "A«» 108×38",
+   "A«» 28×38"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 29,
+    "lh": "32.3994px",
+    "mt": 0,
+    "mb": 4,
+    "text": "Редуктор ZR 606/604 червячный промышленный"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Описание"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Технические диапазоны ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Применение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Подбор под задачу"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Импортозамещение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Мотор-редуктор, монтаж, сроки"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Характеристики ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 19,
+    "lh": "21.3408px",
+    "mt": 22,
+    "mb": 0,
+    "text": "Примеры исполнений (по моменту)"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Типоразмеры ZR 606/604 по передаточному числу"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Заменяет импортные приводы"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Доставка и оплата"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Техническая документация"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Чертёж"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Частые вопросы по ZR 606/604"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Похожие модели — червячный"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Нужен ZR 606/604? Рассчитаем и пришлём КП в течени"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 94,
+    "h": 42,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 54,
+    "h": 24,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 31,
+    "h": 24,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 112,
+    "h": 24,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 49,
+    "h": 24,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 118,
+    "h": 24,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 43,
+    "h": 24,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 76,
+    "h": 24,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bauer.png",
+    "w": 78,
+    "h": 24,
+    "nw": 194,
+    "nh": 60,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/varvel.png",
+    "w": 106,
+    "h": 24,
+    "nw": 186,
+    "nh": 42,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew-tramec.png",
+    "w": 44,
+    "h": 24,
+    "nw": 163,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siti.png",
+    "w": 50,
+    "h": 24,
+    "nw": 188,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/stm.png",
+    "w": 18,
+    "h": 24,
+    "nw": 65,
+    "nh": 85,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/transtecno.png",
+    "w": 80,
+    "h": 24,
+    "nw": 190,
+    "nh": 57,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 450,
+    "h": 338,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 78,
+    "h": 62,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 78,
+    "h": 62,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 317,
+    "h": 440,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 29,
+   "lh": "32.3994px",
+   "text": "Редуктор ZR 606/604 червячный промышленный"
+  }
+ },
+ "mobile": {
+  "url": "/reduktor/evl-063-747.html",
+  "title": "Редуктор ZR 606/604 — червячный, момент 42–85 Н·м — купить, цена | ЗР",
+  "docW": 394,
+  "vw": 390,
+  "pageH": 12494,
+  "secs": [
+   {
+    "tag": "header",
+    "id": "",
+    "cls": "hdr2",
+    "top": 0,
+    "h": 122,
+    "padT": 0,
+    "padB": 0,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 247,
+    "h": 2474,
+    "padT": 20,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "section",
+    "id": "opis",
+    "cls": "section",
+    "top": 2782,
+    "h": 2566,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Описание"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "spec",
+    "cls": "section",
+    "top": 5348,
+    "h": 946,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Характеристики ZR 606/604"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "tz",
+    "cls": "section",
+    "top": 6294,
+    "h": 210,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Типоразмеры ZR 606/604 по передаточному "
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "analogi",
+    "cls": "section",
+    "top": 6504,
+    "h": 805,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Заменяет импортные приводы"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 342
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "dostavka",
+    "cls": "section",
+    "top": 7309,
+    "h": 526,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Доставка и оплата"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "tehdoc",
+    "cls": "section",
+    "top": 7835,
+    "h": 256,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Техническая документация"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "chertezh",
+    "cls": "section",
+    "top": 8091,
+    "h": 1002,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Чертёж"
+    },
+    "eyebrow": false,
+    "lead": {
+     "fs": 16,
+     "mb": 18,
+     "w": 342
+    },
+    "gapH2ToContent": 18
+   },
+   {
+    "tag": "section",
+    "id": "faq",
+    "cls": "section",
+    "top": 9093,
+    "h": 802,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Частые вопросы по ZR 606/604"
+    },
+    "eyebrow": true,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 9895,
+    "h": 513,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 24,
+     "lh": "27.36px",
+     "mb": 16,
+     "text": "Похожие модели — червячный"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": 16
+   },
+   {
+    "tag": "section",
+    "id": "",
+    "cls": "section",
+    "top": 10409,
+    "h": 336,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": {
+     "fs": 22,
+     "lh": "25.08px",
+     "mb": 0,
+     "text": "Нужен ZR 606/604? Рассчитаем и пришлём К"
+    },
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": -97
+   },
+   {
+    "tag": "section",
+    "id": "seo",
+    "cls": "section",
+    "top": 10745,
+    "h": 316,
+    "padT": 0,
+    "padB": 52,
+    "bg": "rgba(0, 0, 0, 0)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   },
+   {
+    "tag": "footer",
+    "id": "",
+    "cls": "site-footer",
+    "top": 11061,
+    "h": 1363,
+    "padT": 0,
+    "padB": 20,
+    "bg": "rgb(244, 246, 248)",
+    "h2": null,
+    "eyebrow": false,
+    "lead": null,
+    "gapH2ToContent": null
+   }
+  ],
+  "overflow": [
+   "DIV.zr-ser-row right=4579",
+   "A. right=478",
+   "B. right=394",
+   "I. right=478",
+   "A. right=587",
+   "B. right=552",
+   "I. right=587",
+   "A. right=751",
+   "B. right=660",
+   "I. right=751",
+   "A. right=943",
+   "B. right=810"
+  ],
+  "btns": [
+   {
+    "t": "Каталог",
+    "cls": "cat-btn",
+    "h": 0,
+    "fs": 15,
+    "pad": "11px 16px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Найти",
+    "cls": "ms-go",
+    "h": 36,
+    "fs": 13,
+    "pad": "0px 16px",
+    "r": "8px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "",
+    "cls": "theme-toggle",
+    "h": 0,
+    "fs": 13,
+    "pad": "0px",
+    "r": "10px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zbtn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px 18px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "burger",
+    "h": 40,
+    "fs": 13,
+    "pad": "12px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "act",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "",
+    "cls": "",
+    "h": 66,
+    "fs": 13,
+    "pad": "6px",
+    "r": "12px",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "📄 Запросить цену",
+    "cls": "btn lg",
+    "h": 59,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "🔍 Подобрать замену",
+    "cls": "btn ghost lg",
+    "h": 61,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Запросить чертёж испол",
+    "cls": "btn",
+    "h": 54,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Вся серия червячный →",
+    "cls": "btn ghost",
+    "h": 56,
+    "fs": 15,
+    "pad": "15px 26px",
+    "r": "10px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(14, 26, 36)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "btn lg",
+    "h": 60,
+    "fs": 16,
+    "pad": "17px 32px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "×",
+    "cls": "zr-modal__x",
+    "h": 0,
+    "fs": 30,
+    "pad": "4px 8px",
+    "r": "0px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(102, 116, 126)"
+   },
+   {
+    "t": "Получить расчёт",
+    "cls": "zr-btn",
+    "h": 0,
+    "fs": 16,
+    "pad": "15px",
+    "r": "10px",
+    "bg": "rgb(207, 22, 22)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "",
+    "cls": "zrw__toggle",
+    "h": 52,
+    "fs": 15,
+    "pad": "0px",
+    "r": "50%",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Принять",
+    "cls": "zr-cookie__btn",
+    "h": 0,
+    "fs": 14,
+    "pad": "11px",
+    "r": "9px",
+    "bg": "rgb(225, 27, 27)",
+    "color": "rgb(255, 255, 255)"
+   }
+  ],
+  "fontSizes": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   22,
+   23,
+   24,
+   27,
+   30
+  ],
+  "radii": [
+   "50%",
+   "10px",
+   "2px",
+   "6px",
+   "8px",
+   "12px",
+   "9px",
+   "7px",
+   "16px",
+   "14px",
+   "11px",
+   "18px",
+   "13px"
+  ],
+  "smallTargets": [
+   "A«» 91×34",
+   "BUTTON«Найти» 71×36",
+   "A«» 67×32",
+   "A«» 47×32",
+   "A«» 115×32",
+   "A«» 63×32",
+   "A«» 122×32",
+   "A«» 58×32",
+   "A«» 85×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32",
+   "A«» 22×32"
+  ],
+  "heads": [
+   {
+    "t": "H1",
+    "fs": 27,
+    "lh": "30.51px",
+    "mt": 0,
+    "mb": 4,
+    "text": "Редуктор ZR 606/604 червячный промышленный"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Описание"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Технические диапазоны ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Применение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Подбор под задачу"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Импортозамещение"
+   },
+   {
+    "t": "H3",
+    "fs": 18,
+    "lh": "20.52px",
+    "mt": 26,
+    "mb": 8,
+    "text": "Мотор-редуктор, монтаж, сроки"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Характеристики ZR 606/604"
+   },
+   {
+    "t": "H3",
+    "fs": 19,
+    "lh": "21.3408px",
+    "mt": 22,
+    "mb": 0,
+    "text": "Примеры исполнений (по моменту)"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Типоразмеры ZR 606/604 по передаточному числу"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Заменяет импортные приводы"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Доставка и оплата"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Техническая документация"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Чертёж"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Частые вопросы по ZR 606/604"
+   },
+   {
+    "t": "H2",
+    "fs": 24,
+    "lh": "27.36px",
+    "mt": 0,
+    "mb": 16,
+    "text": "Похожие модели — червячный"
+   },
+   {
+    "t": "H2",
+    "fs": 22,
+    "lh": "25.08px",
+    "mt": 0,
+    "mb": 0,
+    "text": "Нужен ZR 606/604? Рассчитаем и пришлём КП в течени"
+   },
+   {
+    "t": "H3",
+    "fs": 23,
+    "lh": "26.22px",
+    "mt": 0,
+    "mb": 6,
+    "text": "Получите расчёт стоимости"
+   }
+  ],
+  "imgs": [
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 91,
+    "h": 34,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/sew.png",
+    "w": 45,
+    "h": 20,
+    "nw": 186,
+    "nh": 82,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/nord.png",
+    "w": 25,
+    "h": 20,
+    "nw": 112,
+    "nh": 88,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/bonfiglioli.png",
+    "w": 93,
+    "h": 20,
+    "nw": 200,
+    "nh": 43,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/motovario.png",
+    "w": 41,
+    "h": 20,
+    "nw": 165,
+    "nh": 81,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/flender.png",
+    "w": 100,
+    "h": 20,
+    "nw": 188,
+    "nh": 28,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/siemens.png",
+    "w": 36,
+    "h": 20,
+    "nw": 160,
+    "nh": 90,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "/assets/brands-float/lenze.png",
+    "w": 63,
+    "h": 20,
+    "nw": 192,
+    "nh": 61,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 312,
+    "h": 234,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/catalog/cat_worm.webp",
+    "w": 64,
+    "h": 52,
+    "nw": 800,
+    "nh": 600,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 64,
+    "h": 52,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "contain"
+   },
+   {
+    "src": "../assets/drawings/zr-606-bonfiglioli-w-63.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-motovario-nmrv-063.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-nord-1-smi-63.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l1.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l2.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/drawings/zr-606-siti-mi-60-l3.png",
+    "w": 165,
+    "h": 224,
+    "nw": 1400,
+    "nh": 1981,
+    "alt": true,
+    "fit": "fill"
+   },
+   {
+    "src": "../assets/zr_logo.webp",
+    "w": 107,
+    "h": 40,
+    "nw": 451,
+    "nh": 168,
+    "alt": true,
+    "fit": "fill"
+   }
+  ],
+  "theme": "light",
+  "bodyClass": "",
+  "bodyFont": "\"Segoe UI\", -apple-system, BlinkMacSystemFont, Roboto, \"Helv",
+  "h1": {
+   "fs": 27,
+   "lh": "30.51px",
+   "text": "Редуктор ZR 606/604 червячный промышленный"
+  }
+ }
+}
