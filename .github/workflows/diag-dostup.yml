@@ -1,0 +1,44 @@
+name: Проверка доступов к серверу (только чтение)
+
+# Временно, из ветки claude/greeting-check-in-gdeerr: какие секреты заданы в этом репозитории
+# и пускает ли сервер по SSH и FTP. Только чтение, ничего не пишет. Запуск: коммит tools/diag/request.txt.
+on:
+  push:
+    branches: [claude/greeting-check-in-gdeerr]
+    paths: ['tools/diag/request.txt']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp >/dev/null
+      - name: Какие секреты заданы
+        env:
+          A: ${{ secrets.FTP_SERVER }}
+          B: ${{ secrets.FTP_USERNAME }}
+          C: ${{ secrets.FTP_PASSWORD }}
+          D: ${{ secrets.SSH_PRIVATE_KEY }}
+          E: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
+        run: |
+          for v in A:FTP_SERVER B:FTP_USERNAME C:FTP_PASSWORD D:SSH_PRIVATE_KEY E:YANDEX_WEBMASTER_TOKEN; do n=${v%%:*}; k=${v#*:}; [ -n "${!n}" ] && echo "$k: задан (${#n} симв.: $(printf '%s' "${!n}" | wc -c))" || echo "$k: ПУСТ"; done
+      - name: SSH
+        shell: bash {0}
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          [ -z "$SSH_KEY" ] && { echo "ключа нет — пропуск"; exit 0; }
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n'); BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/_[12]$//')
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519; ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=20 "$BASE@$HOST" 'echo SSH OK; ls public_html | head -5; ls -la public_html/crm-data 2>/dev/null | head -8'; echo "код: $?"
+      - name: FTP
+        shell: bash {0}
+        env:
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          [ -z "$FTP_PASS" ] && { echo "пароля нет — пропуск"; exit 0; }
+          lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 1; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; cls -l /public_html/ | head -8; cls -l /public_html/crm-data/ | head -8" 2>&1 | grep -v '^$'
