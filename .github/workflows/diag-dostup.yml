@@ -32,13 +32,38 @@ jobs:
           [ -z "$SSH_KEY" ] && { echo "ключа нет — пропуск"; exit 0; }
           HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n'); BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/_[12]$//')
           mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519; ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=20 "$BASE@$HOST" 'echo SSH OK; ls public_html | head -5; ls -la public_html/crm-data 2>/dev/null | head -8'; echo "код: $?"
-      - name: FTP
-        shell: bash {0}
-        env:
-          FTP_HOST: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          [ -z "$FTP_PASS" ] && { echo "пароля нет — пропуск"; exit 0; }
-          lftp -c "set ftp:ssl-allow no; set net:timeout 20; set net:max-retries 1; open -u \"$FTP_USER\",\"$FTP_PASS\" \"ftp://$FTP_HOST\"; cls -l /public_html/ | head -8; cls -l /public_html/crm-data/ | head -8" 2>&1 | grep -v '^$'
+          ssh -i ~/.ssh/id_ed25519 -o BatchMode=yes -o StrictHostKeyChecking=no -o ConnectTimeout=20 "$BASE@$HOST" 'bash -s' <<'REMOTE'
+          echo "=== домашний каталог ==="; ls -la ~ | head -30
+          F=$(find ~ -maxdepth 6 -path '*/api/feedback.php' 2>/dev/null | head -3); echo "=== приёмники найдены: ==="; echo "$F"
+          D=$(dirname "$(dirname "$(echo "$F" | head -1)")"); echo "=== корень сайта: $D ==="; ls -la "$D" | head -25
+          echo "=== api ==="; (cd "$D/api" && md5sum feedback.php helpers.php db.php; ls -la | head -6)
+          echo "=== config ==="; for f in "$D/api/config.php" "$D/api/config.local.php"; do [ -f "$f" ] && echo "есть: $f" || echo "нет: $f"; done
+          echo "=== php ==="; which php; php -v 2>/dev/null | head -1
+          echo "=== crm-data ==="; ls -la "$D/crm-data" 2>/dev/null | head -15
+          A="$D/crm-data/lead_attempts.jsonl"
+          if [ -f "$A" ]; then
+            echo "=== журнал попыток: $(wc -l < "$A") строк ==="
+            echo "--- по исходам ---"; grep -o '"outcome":"[a-z_]*"' "$A" | sort | uniq -c
+            echo "--- по дням (последние 40) ---"; grep -o '"created_at":"[0-9-]*' "$A" | cut -d'"' -f4 | sort | uniq -c | tail -40
+            echo "--- причины (топ) ---"; grep -o '"reason":"[^"]*"' "$A" | sort | uniq -c | sort -rn | head -15 | cut -c1-220
+            echo "--- последние 30 (контакты скрыты) ---"
+            tail -n 30 "$A" | sed -E 's/"name":"[^"]*"/"name":"*"/; s/"phone":"[^"]*"/"phone":"*"/; s/"email":"[^"]*"/"email":"*"/; s/"ua":"[^"]*"/"ua":"-"/; s/"ip":"[^"]*"/"ip":"-"/; s/"message":"([^"]{0,50})[^"]*"/"message":"\1…"/' | cut -c1-440
+          else echo "журнала попыток нет: $A"; fi
+          echo "=== логи ошибок PHP ==="; for f in "$D/error_log" "$D/api/error_log" "$D/php_errors.log" ~/"$(basename "$D")"/logs/*error* $(ls -d ~/logs 2>/dev/null)/*error* ; do [ -f "$f" ] && { echo "--- $f ---"; tail -n 25 "$f" | cut -c1-300; }; done; true
+          echo "=== cron ==="; crontab -l 2>/dev/null | head -10
+          echo "=== БД ==="
+          cd "$D" && php -d display_errors=1 -r '
+            require "api/db.php"; $p=function_exists("db")?db():null;
+            if(!$p){echo "db(): null\n"; exit;}
+            $qs=["всего заявок"=>"SELECT COUNT(*) c FROM crm_leads","последняя заявка"=>"SELECT MAX(created_at) t FROM crm_leads",
+                 "заявок по дням"=>"SELECT DATE(created_at) d, COUNT(*) c FROM crm_leads GROUP BY d ORDER BY d DESC LIMIT 25",
+                 "по статусам"=>"SELECT status, COUNT(*) c FROM crm_leads GROUP BY status",
+                 "по источнику за 30 дней"=>"SELECT source, COUNT(*) c FROM crm_leads WHERE created_at >= NOW() - INTERVAL 30 DAY GROUP BY source",
+                 "попыток по исходам"=>"SELECT outcome, COUNT(*) c FROM crm_lead_attempts GROUP BY outcome",
+                 "попыток по дням"=>"SELECT DATE(created_at) d, outcome, COUNT(*) c FROM crm_lead_attempts GROUP BY d, outcome ORDER BY d DESC LIMIT 30",
+                 "уведомления"=>"SELECT type, COUNT(*) c, MAX(created_at) t FROM crm_audit WHERE type LIKE \"notify_%\" GROUP BY type",
+                 "последние 10 заявок (без контактов)"=>"SELECT id, created_at, status, source, LEFT(page_url,60) page FROM crm_leads ORDER BY id DESC LIMIT 10"];
+            foreach($qs as $k=>$q){ echo "## $k\n"; try{ echo json_encode($p->query($q)->fetchAll(), JSON_UNESCAPED_UNICODE),"\n"; }catch(Throwable $e){ echo "ошибка: ",$e->getMessage(),"\n"; } }
+          ' 2>&1 | cut -c1-2000
+          REMOTE
+          echo "код: $?"
