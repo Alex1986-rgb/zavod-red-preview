@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Макет для дизайна · CRM</title>
+<!-- ВНИМАНИЕ: это локальный макет для работы над дизайном, НЕ страница CRM.
+     Собран из реальной разметки _layout.php + leads.php и подключает настоящий
+     admin.css, чтобы правки стилей можно было видеть, не имея доступа к базе.
+     На боевой НЕ выкладывается. -->
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" class="nav-toggle-cb" hidden>
+<header class="topbar">
+  <label for="nav-toggle" class="burger" aria-label="Меню">☰</label>
+  <span class="topbar__brand">Завод Редукторов · CRM</span>
+</header>
+
+<aside class="sidebar">
+  <div class="sidebar__brand"><span class="sidebar__logo">ЗР</span><span>Завод<br>Редукторов</span></div>
+  <nav class="sidebar__nav">
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>Дашборд</a>
+    <a href="#" class="active"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg></span>Заявки</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg></span>Попытки</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/><path d="m15.5 15.5 2 2 3.5-3.5"/></svg></span>Проверка каналов</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.6 2.6-1.4-1.4 2.6-2.6Z"/></svg></span>Инженер</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Письма</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 7 2 2 4-4"/><path d="M12 8h9"/><path d="m4 17 2 2 4-4"/><path d="M12 18h9"/></svg></span>Задачи</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v16H6.5A2.5 2.5 0 0 0 4 21.5V5.5Z"/><path d="M9 7h6M9 11h6"/></svg></span>База знаний</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></span>Поиск</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Отчёты</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-7-7 18-2.5-8.5L3 11Z"/></svg></span>Рассылка</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>Директ</a>
+    <a href="#"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a5 5 0 0 1 5-5h2M20 12a5 5 0 0 1-5 5h-2"/><path d="m9 9-3 3 3 3M15 9l3 3-3 3"/></svg></span>Синхро Яндекс</a>
+    <a href="#" class="nav__logout"><span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17l-5-5 5-5"/><path d="M5 12h12"/><path d="M15 4h4v16h-4"/></svg></span>Выход</a>
+  </nav>
+  <div class="sidebar__user"><div class="sidebar__user-name">Админ</div><div class="sidebar__user-role">Администратор</div></div>
+</aside>
+<label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
+
+<main class="content" data-page="leads">
+  <div class="appbar">
+    <div class="appbar__spacer"></div>
+    <div class="appbar__right">
+      <a class="appbar__ic appbar__bell" href="#" title="Уведомления"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></a>
+      <a class="appbar__ic" href="#" title="Справка"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></a>
+      <div class="appbar__user"><span class="appbar__ava">А</span><span class="appbar__meta"><b>Админ</b><small>Администратор</small></span></div>
+    </div>
+  </div>
+
+  <div class="page-head">
+    <h1>Заявки</h1>
+    <div class="filters">
+      <select class="input input--sm"><option>Все статусы</option><option>Новая</option><option>В работе</option></select>
+      <select class="input input--sm"><option>Все менеджеры</option><option>Админ</option></select>
+      <input class="input input--sm" placeholder="Поиск: имя, телефон, почта">
+      <button class="btn btn-primary btn-sm">Найти</button>
+    </div>
+  </div>
+
+  <div class="kpi-row" style="display:flex;gap:9px;flex-wrap:wrap;margin-bottom:9px">
+    <div class="kpi"><div class="kpi__label">Всего заявок</div><div class="kpi__value">111</div></div>
+    <div class="kpi"><div class="kpi__label">Новых сегодня</div><div class="kpi__value">3</div></div>
+    <div class="kpi"><div class="kpi__label">В работе</div><div class="kpi__value">12</div></div>
+    <div class="kpi"><div class="kpi__label">Без менеджера</div><div class="kpi__value">7</div></div>
+  </div>
+
+  <div id="bulkBar" class="bulk-bar show">
+    <span class="bulk-bar__count"><b>3</b> выбрано</span>
+    <select class="input input--sm"><option>Статус…</option></select>
+    <select class="input input--sm"><option>Менеджер…</option></select>
+    <button class="btn btn-primary btn-sm">Применить</button>
+    <button class="btn btn-ghost btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;margin-right:5px"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.6 2.6-1.4-1.4 2.6-2.6Z"/></svg>На проверку инженеру</button>
+    <button class="btn btn-ghost btn-sm">Снять выбор</button>
+    <button class="btn btn-ghost btn-sm bulk-del"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;margin-right:5px"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>Удалить</button>
+  </div>
+
+  <div class="card">
+    <table class="tbl">
+      <thead><tr>
+        <th style="width:28px"><input type="checkbox"></th>
+        <th>ID</th><th>Дата</th><th>Клиент</th><th>Телефон</th><th>Страница</th><th>Статус</th><th>Менеджер</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><input type="checkbox" checked></td><td>#111</td><td>04.08 00:44</td><td>Клиент с сайта</td><td>+7 912 345-67-89</td><td>/analog/sew-r-97</td><td><span class="badge badge--new">Новая</span></td><td>—</td></tr>
+        <tr><td><input type="checkbox" checked></td><td>#110</td><td>03.08 14:50</td><td>Клиент с сайта</td><td>+7 702 752-03-72</td><td>/podbor</td><td><span class="badge badge--work">В работе</span></td><td>Админ</td></tr>
+        <tr><td><input type="checkbox" checked></td><td>#109</td><td>03.08 13:20</td><td>Пётр Иванов</td><td>+7 900 000-20-14</td><td>/contacts</td><td><span class="badge badge--work">В работе</span></td><td>Админ</td></tr>
+        <tr><td><input type="checkbox"></td><td>#108</td><td>03.08 09:16</td><td>Клиент с сайта</td><td>+7 913 890-43-21</td><td>/reduktor/evl-166</td><td><span class="badge badge--work">Подбор</span></td><td>Админ</td></tr>
+        <tr><td><input type="checkbox"></td><td>#107</td><td>02.08 20:40</td><td>Александр</td><td>+7 927 286-08-73</td><td>/ceny</td><td><span class="badge badge--ok">Отправлено</span></td><td>Админ</td></tr>
+        <tr><td><input type="checkbox"></td><td>#106</td><td>01.08 06:50</td><td>ООО «Привод»</td><td>+7 900 000-55-66</td><td>/importozameshchenie</td><td><span class="badge badge--done">Закрыта</span></td><td>Админ</td></tr>
+        <tr><td><input type="checkbox"></td><td>#105</td><td>31.07 18:02</td><td>Сергей К.</td><td>+7 905 111-22-33</td><td>/catalog/chervyachnye</td><td><span class="badge badge--new">Новая</span></td><td>—</td></tr>
+        <tr><td><input type="checkbox"></td><td>#104</td><td>31.07 11:41</td><td>Завод «Метиз»</td><td>+7 846 200-10-10</td><td>/analog/nord-83</td><td><span class="badge badge--work">В работе</span></td><td>Админ</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pager"><a href="#" class="btn btn-ghost btn-sm">← Назад</a> <span class="muted">1 из 14</span> <a href="#" class="btn btn-ghost btn-sm">Вперёд →</a></div>
+</main>
+</body>
+</html>

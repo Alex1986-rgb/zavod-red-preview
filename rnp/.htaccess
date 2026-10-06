@@ -1,0 +1,5 @@
+# РНП отдела продаж: файл данных, блокировка и временные файлы записи — не отдавать по прямой ссылке.
+<FilesMatch "^rnp-data">
+  Require all denied
+</FilesMatch>
+Options -Indexes

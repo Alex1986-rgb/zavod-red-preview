@@ -1,0 +1,82 @@
+User-agent: *
+Allow: /
+# Пауза между запросами для неизвестных ботов, чтобы не выедали сервер.
+# Яндекс и Google её игнорируют: их темп настраивается в их кабинетах.
+Crawl-delay: 3
+Disallow: /cart
+Disallow: /checkout
+Disallow: /cabinet
+Disallow: /api/
+# Адреса с параметрами закрыты намеренно. Проверено 25.09.2026: ни листинги
+# (/analog/spisok-…), ни страницы подбора регионов параметров не используют —
+# у них чистые адреса, правило их не задевает. Задевает оно только
+# /podbor?brand=… (29 внутренних ссылок) — это та же страница подбора с заранее
+# выставленным фильтром, то есть дубль /podbor, и закрывать её правильно.
+# При 100 тысячах страниц и обходе ~700 страниц в сутки пускать робота
+# на параметрические дубли — значит отдать им бюджет обхода живых карточек.
+Disallow: /*?
+
+# UTM-метки: правило выше запрещает роботу ХОДИТЬ по таким адресам, и этого мало.
+# Когда на нас ссылаются с меткой (реклама, рассылки, партнёрские ссылки), вес
+# такой ссылки упирается в запрещённый адрес и до чистой страницы не доходит.
+# Clean-param говорит Яндексу иначе: «эти параметры содержимое не меняют» —
+# и он склеивает адрес с меткой с чистым адресом, передавая ему накопленные
+# сигналы, вместо того чтобы просто выбросить ссылку.
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+Clean-param: yclid&gclid&_openstat&from&etext&ysclid
+
+# ── Ограничение краулеров, которые не приносят трафика ──────────────────────
+# На сайте около 100 тысяч страниц. SEO-сканеры выкачивают их целиком и создают
+# нагрузку, из-за которой тормозят сайт и админка, а взамен не дают ни посетителей,
+# ни позиций. Поисковые системы (Яндекс, Google, Bing, Mail.ru) не ограничены.
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: SeekportBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+Sitemap: https://zavod-red.ru/sitemap-index.xml
+Sitemap: https://zavod-red.ru/sitemap-analog-2.xml
+Sitemap: https://zavod-red.ru/sitemap-analog-3.xml
+Sitemap: https://zavod-red.ru/sitemap-analog-4.xml
+Sitemap: https://zavod-red.ru/sitemap-analog.xml
+Sitemap: https://zavod-red.ru/sitemap-hub.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-1.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-1b.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-2.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-2b.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-3.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-3b.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-4.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-4b.xml
+Sitemap: https://zavod-red.ru/sitemap-images-analog-5.xml
+Sitemap: https://zavod-red.ru/sitemap-images.xml
+Sitemap: https://zavod-red.ru/sitemap-ispolnenie.xml
+Sitemap: https://zavod-red.ru/sitemap-regiony.xml
+Sitemap: https://zavod-red.ru/sitemap-tiporazmer.xml
+Sitemap: https://zavod-red.ru/sitemap-zr.xml
+Sitemap: https://zavod-red.ru/sitemap.xml

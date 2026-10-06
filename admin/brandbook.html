@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Брендбук CRM · Завод Редукторов</title>
+<link rel="stylesheet" href="assets/admin.css">
+<style>
+  .bb{max-width:1040px;margin:0 auto;padding:34px 22px 80px}
+  .bb h1{font-size:30px;font-weight:800;letter-spacing:-.01em;color:var(--ink);margin-bottom:4px}
+  .bb__sub{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:34px;max-width:680px}
+  .bb section{margin-top:44px}
+  .bb section>h2{font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:20px}
+  .sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:13px}
+  .sw{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--card)}
+  .sw .chip{height:74px}
+  .sw .m{padding:9px 11px}
+  .sw .m b{display:block;font-size:13px;color:var(--ink)}
+  .sw .m code{font-size:11.5px;color:var(--muted)}
+  .sw .m span{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .ty>div{padding:12px 0;border-bottom:1px solid var(--line)}
+  .ty .t{display:inline-block;min-width:120px;color:var(--muted);font-size:12px}
+  .ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+  .ic{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:1px solid var(--line);border-radius:11px;background:var(--card);text-align:center}
+  .ic svg{width:24px;height:24px;color:var(--red)}
+  .ic span{font-size:11.5px;color:var(--muted)}
+</style>
+</head>
+<body style="background:var(--bg)">
+<div class="bb">
+  <h1>Брендбук CRM · Завод Редукторов</h1>
+  <p class="bb__sub">Фирменный стиль панели CRM. Цвета, статусы, кнопки и компоненты используют реальный <code>admin/assets/admin.css</code>. Бренд общий с сайтом (см. <a href="../BRANDBOOK.md" style="color:var(--red);font-weight:600">BRANDBOOK.md</a>). CRM — светлая тема с тёмным сайдбаром, акцент красный <b>#e11b1b</b>.</p>
+
+  <!-- ЦВЕТА -->
+  <section>
+    <h2>Цвета интерфейса</h2>
+    <div class="sw-grid" id="sw"></div>
+  </section>
+
+  <!-- СТАТУСЫ ЛИДОВ -->
+  <section>
+    <h2>Статусы заявок</h2>
+    <div class="row">
+      <span class="badge badge--new">Новая</span>
+      <span class="badge badge--in_progress">В работе</span>
+      <span class="badge badge--quoted">КП отправлено</span>
+      <span class="badge badge--won">Успех</span>
+      <span class="badge badge--lost">Отказ</span>
+    </div>
+  </section>
+
+  <!-- КНОПКИ -->
+  <section>
+    <h2>Кнопки</h2>
+    <div class="row">
+      <button class="btn btn-primary">Основная</button>
+      <button class="btn btn-ghost">Вторичная (ghost)</button>
+      <button class="btn btn-danger">Опасная (danger)</button>
+      <button class="btn btn-primary btn-sm">Компактная</button>
+    </div>
+  </section>
+
+  <!-- ПОДСКАЗКИ -->
+  <section>
+    <h2>Подсказки и баннеры</h2>
+    <div class="help help--info"><span class="help__icon">💡</span><div class="help__body"><b>Help-баннер.</b> Объясняет «зачем страница и как пользоваться». Модификаторы <code>--info / --ok / --warn</code>.</div></div>
+    <div class="help help--ok"><span class="help__icon">✅</span><div class="help__body"><b>Успех.</b> Подтверждение, что всё настроено корректно.</div></div>
+    <div class="help help--warn"><span class="help__icon">⚠️</span><div class="help__body"><b>Внимание.</b> Требуется действие или есть риск.</div></div>
+    <p class="hint">Мелкая серая подсказка <code>.hint</code> под полем. Рядом с подписью — кружок <span class="tip" data-tip="Так выглядит всплывающая подсказка .tip">?</span> с тултипом.</p>
+  </section>
+
+  <!-- ФОРМЫ -->
+  <section>
+    <h2>Поля формы</h2>
+    <form class="form-grid" onsubmit="return false">
+      <label>Имя<input type="text" placeholder="Иван Петров"></label>
+      <label>Тип редуктора
+        <select><option>Червячный</option><option>Цилиндрический</option></select>
+      </label>
+      <label>Сообщение<textarea rows="2" placeholder="Опишите задачу"></textarea></label>
+    </form>
+  </section>
+
+  <!-- ТИПОГРАФИКА -->
+  <section>
+    <h2>Типографика</h2>
+    <div class="ty">
+      <div><span class="t">H1 · 30/800</span><span style="font-size:26px;font-weight:800;color:var(--ink)">Дашборд CRM</span></div>
+      <div><span class="t">H2 · 18/700</span><span style="font-size:18px;font-weight:700;color:var(--ink)">Заявки и воронка</span></div>
+      <div><span class="t">Body · 14</span><span style="font-size:14px;color:var(--text)">Основной текст таблиц и карточек.</span></div>
+      <div><span class="t">Muted · 13</span><span style="font-size:13px;color:var(--muted)">Подписи и вторичный текст.</span></div>
+    </div>
+  </section>
+
+  <!-- ИКОНКИ -->
+  <section>
+    <h2>Иконки (линейные, фирменный red)</h2>
+    <div class="ic-grid" id="ic"></div>
+  </section>
+</div>
+
+<script>
+var COLORS=[
+  ['--red','#e11b1b','Акцент (бренд)'],['--red-dark','#b91515','Акцент hover'],['--red-soft','#fde7e7','Мягкий фон акцента'],
+  ['--ink','#0f172a','Заголовки'],['--text','#1e293b','Текст'],['--muted','#64748b','Вторичный текст'],
+  ['--line','#e2e8f0','Границы'],['--bg','#f1f5f9','Фон контента'],['--card','#ffffff','Карточки'],
+  ['--sidebar-bg','#14181f','Сайдбар'],['--sidebar-text','#c7cdd6','Текст сайдбара'],
+  ['--green','#10b981','Успех'],['--amber','#f59e0b','Предупреждение'],['--blue','#3b82f6','Инфо']
+];
+var sw=document.getElementById('sw');
+COLORS.forEach(function(c){var d=document.createElement('div');d.className='sw';
+  d.innerHTML='<div class="chip" style="background:'+c[1]+'"></div><div class="m"><b>'+c[0]+'</b><code>'+c[1]+'</code><span>'+c[2]+'</span></div>';sw.appendChild(d);});
+var P='viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+var ICONS=[
+  ['Дашборд','<rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>'],
+  ['Заявки','<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>'],
+  ['Задачи','<path d="M11 12H3M16 6H3M16 18H3"/><path d="m18 9 3 3-3 3"/>'],
+  ['Поиск','<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'],
+  ['Отчёты','<path d="M4 21v-7M12 21v-9M20 21v-5M4 10V3M12 8V3M20 12V3"/>'],
+  ['Настройки','<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'],
+  ['Телефон','<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'],
+  ['Почта','<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'],
+  ['ИИ-агент','<path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/>'],
+  ['Здоровье','<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'],
+  ['Бэкап','<path d="M12 2v8m0 0 3-3m-3 3L9 7"/><path d="M3 15a9 9 0 0 0 18 0"/>'],
+  ['Успех','<path d="M20 6 9 17l-5-5"/>']
+];
+var ic=document.getElementById('ic');
+ICONS.forEach(function(it){var d=document.createElement('div');d.className='ic';
+  d.innerHTML='<svg '+P+'>'+it[1]+'</svg><span>'+it[0]+'</span>';ic.appendChild(d);});
+</script>
+</body>
+</html>
+</content>

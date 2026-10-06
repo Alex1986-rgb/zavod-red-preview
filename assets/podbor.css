@@ -1,0 +1,196 @@
+/* ===== Подбор редуктора — фильтр-таблица. Тема сайта (тёмная/светлая). ===== */
+#pfRoot{color:var(--text);font-family:inherit;margin-top:6px}
+
+/* переключатель типа */
+.pf-types{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pf-pill{appearance:none;background:var(--card);border:1px solid var(--line);color:var(--muted);
+  font:600 13px/1 inherit;padding:9px 15px;border-radius:999px;cursor:pointer;transition:.15s}
+.pf-pill:hover{color:var(--text);border-color:#2f4456}
+.pf-pill.is-active{background:var(--red);border-color:var(--red);color:#fff}
+
+/* таблица */
+.pf-tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.pf-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:1040px}
+
+/* Таблица шире 1040 px, поэтому на планшете и на телефоне в альбомной ориентации
+   (681–1118 px) правые колонки уезжают за край: при ширине окна 820 скрыто 426 px,
+   и колонка «Заказ» не видна вообще. Полоса прокрутки при этом внизу блока высотой
+   больше двух тысяч точек — то есть вне экрана, а на iPad её не видно совсем.
+   Прижимаем колонку заказа к правому краю, чтобы кнопка была на виду всегда;
+   лёгкая тень слева показывает, что за ней таблица продолжается.
+   На широких экранах прокрутки нет и правило ничего не меняет. */
+.pf-table td.pf-order{position:sticky;right:0;z-index:2;background:var(--card);
+  box-shadow:-8px 0 12px -8px rgba(14,26,36,.18)}
+.pf-table thead th:last-child{position:sticky;right:0;z-index:3;background:var(--bg2);
+  box-shadow:-8px 0 12px -8px rgba(14,26,36,.18)}
+
+/* шапка с заголовками — числовые колонки по центру (значения пишутся под названием, правка №6) */
+.pf-table thead th{background:var(--bg2);color:var(--muted);font-weight:700;text-align:center;
+  vertical-align:bottom;padding:15px 14px 10px;font-size:11.5px;text-transform:uppercase;
+  letter-spacing:.03em;line-height:1.32;border-bottom:1px solid var(--line)}
+.pf-th-tz{min-width:172px;text-align:left}
+
+/* строка фильтров */
+.pf-frow td{background:var(--bg2);padding:0 14px 15px;vertical-align:top;border-bottom:1px solid var(--line)}
+.pf-in{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  padding:8px 11px;border-radius:8px;font:13.5px/1.2 inherit;box-sizing:border-box}
+.pf-in::placeholder{color:var(--muted2)}
+.pf-in:focus,.pf-sel:focus{outline:none;border-color:var(--blue)}
+.pf-rg{display:flex;align-items:center;gap:7px;margin-top:7px}
+.pf-rg:first-of-type{margin-top:0}
+.pf-rg span{color:var(--muted2);font-size:11.5px;flex:0 0 16px}
+.pf-sel{flex:1 1 auto;width:100%;min-width:74px;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  padding:7px 26px 7px 9px;border-radius:8px;font:13px/1.2 inherit;box-sizing:border-box;
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237fa8c4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 8px center}
+
+/* строка кнопок */
+.pf-brow td{background:var(--card);padding:14px;border-bottom:1px solid var(--line)}
+.pf-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.pf-btn{font:700 13px/1 inherit;padding:11px 20px;border-radius:9px;cursor:pointer;border:1px solid transparent;transition:.15s}
+.pf-btn--ghost{background:transparent;border-color:var(--line);color:var(--muted)}
+.pf-btn--ghost:hover{color:var(--text);border-color:#2f4456}
+.pf-btn--red{background:var(--red);color:#fff}
+.pf-btn--red:hover{background:#c81414}
+.pf-th-ord{text-align:center;white-space:nowrap}
+.pf-order{text-align:center;white-space:nowrap}
+.pf-ord{display:inline-block;font:700 12.5px/1 inherit;padding:9px 16px;border-radius:8px;border:0;background:var(--red);color:#fff;text-decoration:none;cursor:pointer;transition:.15s;box-shadow:0 2px 8px rgba(225,29,29,.25)}
+.pf-ord:hover{background:#c81414;color:#fff;transform:translateY(-1px);box-shadow:0 4px 14px rgba(225,29,29,.35)}
+.pf-count{color:var(--muted);font-size:13px;margin-left:4px}
+.pf-count b{color:var(--text)}
+
+/* тело — числа крупнее (правка №4), по центру (№6), строки компактные (№3) */
+.pf-table tbody td{padding:7px 14px;border-bottom:1px solid var(--line);color:var(--text);white-space:nowrap;
+  text-align:center;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;vertical-align:middle}
+.pf-table tbody tr:last-child td{border-bottom:0}
+.pf-table tbody tr:nth-child(even){background:var(--card2)}
+.pf-table tbody tr:hover{background:#16242f}
+.pf-tz{white-space:normal !important;min-width:150px;text-align:left;font-weight:400;line-height:1.2}
+.pf-tz b{display:block;color:var(--red2);font-weight:800;font-size:14px}
+/* маркировка ZR (наша) — крупно красным; EVL — мелким серым кубиком рядом с ГОСТ */
+.pf-tz b.pf-zr{font-size:15px;line-height:1.1;margin-bottom:2px}
+.pf-evl{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:5px;
+  background:var(--card2);color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap;vertical-align:middle}
+.pf-tr-gost{display:inline;color:var(--muted);font-size:11.5px;margin-left:7px}
+.pf-tr-an{display:block;color:var(--muted2);font-size:11px;margin-top:1px}
+.pf-empty{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
+.pf-loading-cell{text-align:center;color:var(--muted);padding:34px !important;white-space:normal !important}
+
+.pf-more{display:block;margin:16px auto 0;background:var(--card2);border:1px solid var(--line);color:var(--text);
+  font:600 14px/1 inherit;padding:11px 26px;border-radius:9px;cursor:pointer}
+.pf-more:hover{border-color:var(--blue)}
+.pf-more[hidden]{display:none}
+.pf-note{font-size:12.5px;color:var(--muted2);margin:16px 0 0;line-height:1.55;max-width:840px}
+
+/* нижний CTA */
+.pf-ask{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:20px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.pf-ask span{font-size:14px;color:var(--text);font-weight:600}
+.pf-cta{background:var(--red);color:#fff;font:700 14px/1 inherit;padding:12px 22px;border:0;border-radius:9px;cursor:pointer;transition:.15s}
+.pf-cta:hover{background:#c81414}
+
+/* светлая тема — мягкие hover-фоны под светлый режим */
+[data-theme="light"] .pf-table tbody tr:hover{background:#eef3f7}
+[data-theme="light"] .pf-pill:hover,[data-theme="light"] .pf-btn--ghost:hover,[data-theme="light"] .pf-pill:hover{border-color:#9fb4c4}
+
+@media(max-width:1000px){
+  .pf-ask{flex-direction:column;align-items:stretch;text-align:center}
+  .pf-toolbar{justify-content:flex-start}
+
+  /* ——— мобильная карточная раскладка вместо широкой таблицы (нет горизонтального скролла) ——— */
+  .pf-tablewrap{overflow-x:visible;border:0;border-radius:0;background:transparent}
+  .pf-table{display:block;width:100%;min-width:0;font-size:14px}
+  .pf-table thead,.pf-table tbody{display:block;width:100%}
+  /* строка заголовков колонок не нужна — подписи берём из data-label */
+  .pf-table thead tr:first-child{display:none}
+
+  /* строка фильтров → вертикальная панель с подписями */
+  .pf-frow{display:block}
+  .pf-frow td{display:block;width:100%;background:var(--bg2)!important;border:0;border-bottom:1px solid var(--line);padding:11px 14px}
+  .pf-frow td:first-child{border-radius:12px 12px 0 0;border-top:1px solid var(--line)}
+  .pf-frow td.pf-frow-pad{display:none}
+  .pf-frow td[data-label]::before{content:attr(data-label);display:block;font-size:11px;text-transform:uppercase;
+    letter-spacing:.03em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .pf-frow .pf-rg{display:inline-flex;width:calc(50% - 5px)}
+  .pf-frow .pf-rg:first-of-type{margin-right:6px}
+
+  /* строка кнопок */
+  .pf-brow td{display:block;background:var(--card)!important;border-radius:0 0 12px 12px;padding:14px}
+  .pf-toolbar .pf-btn{flex:1 1 auto;text-align:center}
+
+  /* строки результатов → карточки */
+  .pf-table tbody td{white-space:normal}
+  .pf-table tbody tr{display:block;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;
+    background:var(--card)!important;overflow:hidden}
+  .pf-table tbody tr:hover{background:var(--card)!important}
+  [data-theme="light"] .pf-table tbody tr:hover{background:var(--card)!important}
+  .pf-table tbody td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:10px 14px;border-bottom:1px solid var(--line);text-align:right}
+  .pf-table tbody td:last-child{border-bottom:0}
+  .pf-table tbody td[data-label]::before{content:attr(data-label);flex:0 0 46%;text-align:left;
+    color:var(--muted);font-size:12px;font-weight:600}
+  /* ячейка типоразмера — на всю ширину, без подписи */
+  .pf-tz{display:block!important;text-align:left!important;background:var(--bg2)}
+  .pf-tz b{font-size:15px}
+  /* кнопка заказа — во всю ширину карточки */
+  .pf-order{display:block!important;text-align:center!important;padding:12px 14px!important}
+  .pf-ord{display:block;width:100%;box-sizing:border-box;padding:13px}
+  /* пустое / загрузка на всю ширину */
+  .pf-empty,.pf-loading-cell{display:block!important;text-align:center}
+}
+.pf-brands{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
+.pf-brands-lbl{font-size:13px;color:var(--muted);margin-right:4px;font-weight:600}
+.pf-pill--brand{font:600 13px/1 inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.15s}
+.pf-pill--brand:hover{color:var(--text);border-color:#33485a}
+.pf-pill--brand.is-active{background:var(--red);color:#fff;border-color:var(--red)}
+.pf-ord--req{background:transparent !important;border:1.5px solid var(--red) !important;color:var(--red) !important}
+.pf-ord--req:hover{background:var(--red) !important;color:#fff !important}
+
+/* Переключатель марок — выделенный блок, а не строчка пилюль в общем потоке.
+   Заказчик: «показать в марках добавь все модели и както выдели». Раньше он был свёрнут
+   за кнопкой и терялся; теперь это первое, что видно над таблицей подбора. */
+.pf-brands--panel{display:block;background:var(--card,#fff);border:1px solid var(--line,#e2e6e0);
+  border-left:3px solid var(--red,#cf1616);border-radius:14px;padding:14px 16px;margin-bottom:16px}
+.pf-brands--panel .pf-brands-lbl{display:block;font:700 13px/1.2 'Space Grotesk',sans-serif;
+  color:var(--text,#101f2a);text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px}
+.pf-brands--panel .pf-brands-set{display:flex;flex-wrap:wrap;gap:7px}
+.pf-brands--panel .pf-brands-hint{display:block;font-size:12px;color:var(--muted,#7c8b95);margin-top:10px}
+.pf-brands--panel .pf-pill--brand{transition:.14s}
+.pf-brands--panel .pf-pill--brand.is-active{box-shadow:0 0 0 3px rgba(207,22,22,.16)}
+/* Марки без построенного подбора — приглушены, но кликабельны: скрывать их нельзя,
+   иначе читается как «не работаем с брендом». */
+.pf-brands--panel .pf-pill--brand.is-nodata{opacity:.55;border-style:dashed}
+.pf-brands--panel .pf-pill--brand.is-nodata:hover{opacity:1}
+
+/* Иконка марки в чипе калькулятора: клиент узнаёт логотип быстрее, чем читает название.
+   Логотипов нет у Rossi, Tos Znojmo и Vemper — там onerror убирает <img>, остаётся текст. */
+.pf-pill--brand{display:inline-flex;align-items:center;gap:7px}
+.pf-pill-ic{height:15px;width:auto;max-width:46px;object-fit:contain;flex-shrink:0;opacity:.85;transition:opacity .15s}
+.pf-pill--brand:hover .pf-pill-ic{opacity:1}
+.pf-pill--brand.is-active .pf-pill-ic{filter:brightness(0) invert(1);opacity:1}
+.pf-pill--brand.is-nodata .pf-pill-ic{opacity:.4}
+
+/* Карточки типоразмеров марки без параметрического подбора */
+.pf-bcards{margin:10px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.pf-bc-lbl{font:700 13px/1.3 'Space Grotesk',sans-serif;color:var(--text);margin-bottom:10px}
+.pf-bc-lbl i{display:block;font:400 12px/1.4 inherit;color:var(--muted);margin-top:3px}
+.pf-bc-set{display:flex;flex-wrap:wrap;gap:7px}
+.pf-bc{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:8px;font:600 12.5px/1 'IBM Plex Mono',monospace;color:var(--text);text-decoration:none;background:var(--bg)}
+.pf-bc:hover{border-color:var(--red);color:var(--red)}
+
+/* ПЕРЕХОД НА СТРАНИЦУ МАРКИ / ТИПА (заказчик 08.08.2026).
+   Пилюля остаётся фильтром калькулятора, а стрелка ↗ в её правом углу открывает раздел.
+   Обёртка .pf-pill-w нужна потому, что вкладывать <a> внутрь <button> нельзя. */
+.pf-pill-w{position:relative;display:inline-flex;align-items:center}
+.pf-pill-w .pf-pill.has-go{padding-right:28px}
+.pf-pill-go{position:absolute;right:5px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;
+  width:19px;height:19px;border-radius:6px;font-size:12px;line-height:1;color:var(--muted,#7c8b95);text-decoration:none;opacity:.6;transition:.14s}
+.pf-pill-go:hover{opacity:1;color:#fff;background:var(--red,#cf1616)}
+.pf-pill-w .pf-pill.is-active+.pf-pill-go{color:#fff;opacity:.85}
+.pf-pill-w .pf-pill.is-active+.pf-pill-go:hover{background:rgba(255,255,255,.22);color:#fff}
+/* Марка без параметрической базы — вся плашка ссылка на страницу марки */
+.pf-pill--brand.is-link{text-decoration:none}
+.pf-pill--brand.is-link:hover{border-color:var(--red,#cf1616);color:var(--red,#cf1616);opacity:1}
+.pf-pill--brand.is-link::after{content:"\2197";margin-left:2px;font-size:11px;opacity:.7}
+@media(max-width:560px){.pf-pill-go{width:17px;right:4px}.pf-pill-w .pf-pill.has-go{padding-right:25px}}
