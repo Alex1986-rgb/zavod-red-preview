@@ -27,9 +27,9 @@ async function checkOne(p, w, tag) {
   // Счётчики и чужие виджеты не нужны для вёрстки и тормозят прогон.
   await ctx.route(/mc\.yandex|yandex\.ru\/metrika|googletagmanager|google-analytics|vk\.com\/rtrg|top-fwz1/, r => r.abort());
   const pg = await ctx.newPage();
-  const r = { page: p, vp: tag, status: 0, failed: [], jsErrors: [], overflow: null, offenders: [], brokenImgs: [], noCss: false, title: '' };
+  const r = { page: p, vp: tag, cut: [], status: 0, failed: [], jsErrors: [], overflow: null, offenders: [], brokenImgs: [], noCss: false, title: '' };
   pg.on('pageerror', e => r.jsErrors.push(String(e.message).slice(0, 160)));
-  pg.on('console', m => { if (m.type() === 'error' && !/favicon|metrika|yandex/i.test(m.text())) r.jsErrors.push('console: ' + m.text().slice(0, 160)); });
+  pg.on('console', m => { if (m.type() === 'error' && !/favicon|metrika|yandex|ERR_FAILED/i.test(m.text())) r.jsErrors.push('console: ' + m.text().slice(0, 160)); });
   pg.on('response', res => { try { const u = new URL(res.url()); if (u.host === host && res.status() >= 400 && res.request().resourceType() !== 'document') r.failed.push(res.status() + ' ' + u.pathname); } catch (e) {} });
   pg.on('requestfailed', rq => { try { const u = new URL(rq.url()); if (u.host === host) r.failed.push('FAIL ' + u.pathname + ' ' + (rq.failure()?.errorText || '')); } catch (e) {} });
   try {
@@ -48,15 +48,31 @@ async function checkOne(p, w, tag) {
         if (rc.width < 8 || rc.height < 4 || st.visibility === 'hidden' || st.display === 'none' || st.position === 'fixed') continue;
         if (rc.right > W + 2 || rc.left < -2) { if (clipped(e)) continue; off.push(e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '') + ' [' + Math.round(rc.left) + '…' + Math.round(rc.right) + ']'); }
       }
+      // Обрезанное содержимое: контейнер с overflow hidden/clip, внутри которого что-то шире него
+      // (страница не скроллится вбок, но правый край текста/таблицы/формы просто отрезан).
+      const cut = [];
+      for (const e of document.querySelectorAll('body *')) {
+        const st = getComputedStyle(e);
+        if (!/(hidden|clip)/.test(st.overflowX) || st.display === 'none' || st.visibility === 'hidden') continue;
+        const rc = e.getBoundingClientRect();
+        if (rc.width < 60 || rc.height < 20 || rc.bottom < 0) continue;
+        if (e.scrollWidth <= e.clientWidth + 4) continue;
+        // карусели/ленты логотипов (анимация или nowrap-ряд картинок) — не поломка
+        if (/marquee|ticker|logos|brands-strip|carousel|slider|swiper|track/i.test(String(e.className))) continue;
+        const kids = [...e.querySelectorAll('*')].filter(k => { const r = k.getBoundingClientRect(); return r.right > rc.right + 4 && r.left < rc.right && (k.innerText || '').trim() && getComputedStyle(k).position !== 'absolute'; });
+        if (!kids.length) continue;
+        const k = kids[0];
+        cut.push(e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + '.' + String(e.className).trim().split(/\s+/).slice(0, 2).join('.') + ' w=' + Math.round(rc.width) + ' scroll=' + e.scrollWidth + ' → «' + (k.innerText || '').trim().slice(0, 30).replace(/\s+/g, ' ') + '»');
+      }
       // Оставляем самых «внешних»: дочерние вылезающих не интересны.
       const broken = [...document.images].filter(i => i.complete && i.naturalWidth === 0 && (i.currentSrc || i.src) && getComputedStyle(i).display !== 'none' && i.getBoundingClientRect().width > 0).map(i => (i.currentSrc || i.src).replace(location.origin, '')).slice(0, 10);
-      return { title: document.title.slice(0, 80), overflow: docW > W + 2 ? docW : null, offenders: off.slice(0, 8), brokenImgs: broken, noCss: document.styleSheets.length === 0, h1: document.querySelectorAll('h1').length };
+      return { title: document.title.slice(0, 80), overflow: docW > W + 2 ? docW : null, offenders: off.slice(0, 8), brokenImgs: broken, noCss: document.styleSheets.length === 0, cut: cut.slice(0, 6), h1: document.querySelectorAll('h1').length };
     }));
     if (shots.has(p)) {
-      const h = await pg.evaluate(() => document.documentElement.scrollHeight);
-      await pg.setViewportSize({ width: w, height: Math.min(h, 12000) });
-      await pg.waitForTimeout(400);
-      await pg.screenshot({ path: `${OUT}/img/${slug(p)}_${tag}.jpg`, type: 'jpeg', quality: 55, fullPage: false });
+      // fullPage при обычной высоте окна: если растянуть окно на всю страницу, блоки высотой 100vh
+      // раздуваются на тысячи пикселей и скриншот врёт.
+      await pg.addStyleTag({ content: '[class*=cookie],#zrCookie,.zr-cookie{display:none!important}' });
+      await pg.screenshot({ path: `${OUT}/img/${slug(p)}_${tag}.jpg`, type: 'jpeg', quality: 55, fullPage: true });
     }
   } catch (e) { r.error = String(e.message).slice(0, 200); }
   r.failed = [...new Set(r.failed)].slice(0, 12); r.jsErrors = [...new Set(r.jsErrors)].slice(0, 6);
@@ -76,6 +92,7 @@ const L = [];
 const sec = (t, f) => { const rs = results.filter(f); L.push(`\n## ${t}: ${rs.length}`); return rs; };
 for (const r of sec('Ошибка загрузки / статус ≠ 200', r => r.error || r.status !== 200)) L.push(`${r.page} [${r.vp}] status=${r.status} ${r.error || ''}`);
 for (const r of sec('Горизонтальный вылет страницы', r => r.overflow)) L.push(`${r.page} [${r.vp}] ширина ${r.overflow}: ${r.offenders.slice(0, 4).join(' | ')}`);
+for (const r of sec('Обрезанное содержимое (край срезан, вбок не листается)', r => r.cut && r.cut.length)) L.push(`${r.page} [${r.vp}]: ${r.cut.slice(0, 3).join(' | ')}`);
 for (const r of sec('Вылезающие элементы без вылета страницы', r => !r.overflow && r.offenders.length)) L.push(`${r.page} [${r.vp}]: ${r.offenders.slice(0, 3).join(' | ')}`);
 for (const r of sec('Битые картинки', r => r.brokenImgs.length)) L.push(`${r.page} [${r.vp}]: ${r.brokenImgs.slice(0, 4).join(' ')}`);
 for (const r of sec('Не загрузились ресурсы своего домена', r => r.failed.length)) L.push(`${r.page} [${r.vp}]: ${r.failed.slice(0, 5).join(' | ')}`);
