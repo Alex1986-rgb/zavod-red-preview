@@ -1,0 +1,60 @@
+# Проверка вёрстки живого сайта (по умолчанию https://zavod-red.ru) на раннере GitHub.
+# Только чтение: открывает страницы браузером, ничего на сервере не меняет.
+# Запуск: коммит tools/design-audit/live-request.json ({"base":"https://zavod-red.ru","label":"live1"}).
+# Список страниц — tools/design-audit/live-pages.txt, скриншоты — live-shots.txt.
+# Результат — в ветку claude/audit-shots, папка = label.
+name: site-check
+
+on:
+  push:
+    branches: [claude/greeting-check-in-gdeerr]
+    paths: ['tools/design-audit/live-request.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: design-audit
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            /tools/design-audit/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Поставить Playwright + Chromium
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null
+          npm i playwright@1.47.2 --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Проверить страницы
+        run: |
+          BASE="$(python3 -c "import json;print(json.load(open('tools/design-audit/live-request.json')).get('base','https://zavod-red.ru'))")"
+          LABEL="$(python3 -c "import json;print(json.load(open('tools/design-audit/live-request.json'))['label'])")"
+          echo "$LABEL" > /tmp/label
+          cp tools/design-audit/check.mjs /tmp/pw/check.mjs
+          (cd /tmp/pw && node check.mjs "/tmp/out/$LABEL" "$BASE" "$GITHUB_WORKSPACE/tools/design-audit/live-pages.txt" "$GITHUB_WORKSPACE/tools/design-audit/live-shots.txt")
+          du -sh /tmp/out/"$LABEL"
+      - name: Сложить результат в ветку claude/audit-shots
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          LABEL="$(cat /tmp/label)"
+          mkdir -p /tmp/shots && cd /tmp/shots
+          git init -q -b claude/audit-shots
+          git config user.name "design-audit bot"; git config user.email "actions@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin claude/audit-shots 2>/dev/null; then git reset -q --hard FETCH_HEAD; fi
+          rm -rf "$LABEL"; cp -r "/tmp/out/$LABEL" "$LABEL"
+          git add -A; git commit -q -m "site-check: $LABEL" || { echo "нечего коммитить"; exit 0; }
+          for i in 1 2 3 4; do git push -q origin HEAD:claude/audit-shots && exit 0; sleep $((2**i)); git fetch -q origin claude/audit-shots && git rebase -q FETCH_HEAD || true; done
+          exit 1
