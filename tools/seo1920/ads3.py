@@ -38,10 +38,10 @@ BRANDS = {
                                              'KC 90']),
     'innored':    ('Innored', 'Иннорэд, Инноред, Иноред', ['IRWD 030', 'IRWD 050', 'IRWD 063', 'IRW 110']),
     'innovari':   ('Innovari', 'Инновари', []),
-    'yilmaz':     ('Yilmaz', 'Йилмаз, Илмаз', ['MR', 'KV', 'KN', 'MN']),
+    'yilmaz':     ('Yilmaz', 'Йилмаз, Илмаз', []),
     'unidrive':   ('UNI Drive', 'Юнидрайв, Unit Drive, Юнит Драйв', []),
     'keb':        ('KEB', 'КЕБ', ['G63', 'ZG13']),
-    'bauer':      ('Bauer', 'Бауэр, Бауер', ['BS 02', 'BF 50', 'BG', 'BK']),
+    'bauer':      ('Bauer', 'Бауэр, Бауер', ['BS 02', 'BF 50']),
 }
 TAIL = 'Оригинал или аналог ZR, подбор по шильду за 15 минут, гарантия 36 мес.'
 DESC = r'<meta name="description" content="([^"]*)"'
@@ -76,7 +76,7 @@ for f in sorted((ROOT / 'brands').glob('*.html')):
     if not m:
         continue
     old = html.unescape(m.group(1))
-    if 'Ищут также:' in old or 'аналог ZR, подбор по шильду за 15 минут, гарантия 36 мес.' in old:
+    if 'Ищут также:' in old or 'Популярные модели:' in old:
         continue                                   # уже применено
     body = text_of(s)
     found = [x for x in models if present(body, x)]
@@ -86,15 +86,28 @@ for f in sorted((ROOT / 'brands').glob('*.html')):
         if b == 'nord':
             own = [x for x in found if suf.startswith('PLOSK') or suf.startswith('SOOSN')]
         found = own
-    # первая фраза старого описания — уже под запросы (seo1920), оставляем её
-    first = re.split(r'(?<=[.:])\s', old, 1)[0].rstrip(':.')
-    ru_new = ', '.join(v for v in ru.split(', ') if v.lower() not in first.lower())
-    also = f' Ищут также: {ru_new}.' if ru_new else ''
-    def build(ms):
-        return f'{first}.{also}' + (' Модели: ' + ', '.join(ms) + '.' if ms else '') + ' ' + TAIL
-    new = build(found)
+    # Старое описание сохраняем (в нём число типоразмеров, обозначения, оффер), убираем только
+    # повтор «Купить … цена и срок по запросу.» и дописываем русские написания и модели.
+    sents = [x for x in re.split(r'(?<=\.)\s+', old.strip()) if x and not x.startswith('Купить ' + name.split()[0]) and not re.match(r'Купить \S+ серии?', x)]
+    ru_new = ', '.join(v for v in ru.split(', ') if v.lower() not in old.lower())
+    found = [x for x in found if x.replace(' ', '') not in old.replace(' ', '')]
+    def build(sn, ms):
+        t = ' '.join(sn)
+        if ru_new:
+            t += f' Ищут также: {ru_new}.'
+        if ms:
+            t += ' Популярные модели: ' + ', '.join(ms) + '.'
+        return t
+    new = build(sents, found)
+    for drop in ('Обозначения:', 'Цена по запросу', 'Подбор по шильду'):
+        if len(new) <= MAXLEN:
+            break
+        sents = [x for x in sents if not x.startswith(drop)]
+        new = build(sents, found)
     while len(new) > MAXLEN and found:
-        found.pop(); new = build(found)
+        found.pop(); new = build(sents, found)
+    if new == old or not (ru_new or found):
+        continue
     ns = s[:m.start(1)] + html.escape(new, quote=True) + s[m.end(1):]
     m2 = re.search(OGD, ns)
     if m2:
