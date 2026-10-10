@@ -1,0 +1,73 @@
+# Выкладка точечных правок на боевой сайт (Beget, ~/zavod-red.ru/public_html), с согласия владельца 09.10.2026:
+#   tools/livefix/patch.py  — вёрстка (мобильная панель, крошки, таблицы, карточки);
+#   tools/seo1920/patch.py  — title/description под запросы + sitemap lastmod + IndexNow.
+# Перед правкой — копия в ~/_archive_old/. Оба скрипта идемпотентны: повторный запуск ничего не ломает.
+# Запуск: коммит tools/livefix/request.txt.
+name: livefix
+
+on:
+  push:
+    branches: [claude/greeting-check-in-gdeerr]
+    paths: ['tools/livefix/request.txt']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: livefix
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            /tools/livefix/
+            /tools/seo1920/
+          sparse-checkout-cone-mode: false
+      - name: Ключ
+        env:
+          SSH_HOST: ${{ secrets.FTP_SERVER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.FTP_USERNAME }}
+        run: |
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '\r\n'); BASE=$(printf '%s' "$SSH_USER" | tr -d '\r\n' | sed 's/_[12]$//')
+          mkdir -p ~/.ssh && printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519; ssh-keyscan -t ed25519,rsa "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          echo "HOST=$HOST" >> $GITHUB_ENV; echo "BASE=$BASE" >> $GITHUB_ENV
+      - name: Применить на сервере
+        shell: bash
+        run: |
+          set -euo pipefail
+          SSHO="-i $HOME/.ssh/id_ed25519 -o BatchMode=yes"
+          ssh $SSHO "$BASE@$HOST" "mkdir -p ~/_deploy_tmp/livefix"
+          scp $SSHO tools/livefix/patch.py "$BASE@$HOST:_deploy_tmp/livefix/layout.py"
+          scp $SSHO tools/seo1920/patch.py "$BASE@$HOST:_deploy_tmp/livefix/seo.py"
+          ssh $SSHO "$BASE@$HOST" 'bash -s' <<'EOS'
+          set -euo pipefail
+          R=~/zavod-red.ru/public_html
+          TS=$(date +%Y%m%d-%H%M%S)
+          B=~/_archive_old/livefix-$TS
+          mkdir -p $B/assets
+          cp -p $R/assets/modal.js $R/assets/inner.css $R/assets/hdr.css $B/assets/
+          echo "python: $(python3 --version)"
+          echo "=== ВЁРСТКА ==="
+          python3 ~/_deploy_tmp/livefix/layout.py $R
+          echo "Откат вёрстки: cp -p $B/assets/* $R/assets/"
+          echo "=== SEO ==="
+          python3 ~/_deploy_tmp/livefix/seo.py $R --apply
+          rm -rf ~/_deploy_tmp/livefix
+          EOS
+      - name: Проверка на живом сайте
+        shell: bash
+        run: |
+          N=$(date +%s)
+          curl -sS "https://zavod-red.ru/assets/modal.js?n=$N" -o modal.js && node --check modal.js && echo "modal.js: синтаксис OK"
+          for f in assets/modal.js assets/inner.css assets/hdr.css; do printf '%s LIVEFIX-0910: ' "$f"; curl -sS "https://zavod-red.ru/$f?n=$N" | grep -c LIVEFIX-0910 || true; done
+          for u in "" about catalog/pr catalog/mr brands/sew brands/sew-r brands/sew-k brands/sew-w brands/bonfiglioli-vf brands/nord brands/siti-bh brands/lenze-gfl brands/flender; do
+            printf '%-24s %s  ' "/$u" "$(curl -sS -o /dev/null -w '%{http_code}' "https://zavod-red.ru/$u?n=$N")"
+            curl -sS "https://zavod-red.ru/$u?n=$N" | grep -o '<title>[^<]*</title>' | head -1
+          done
+          printf 'IndexNow key: '; curl -sS -o /dev/null -w '%{http_code}\n' https://zavod-red.ru/051a8bb09331b03c5e35d4a40339b5b3.txt
