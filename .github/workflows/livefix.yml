@@ -27,6 +27,7 @@ jobs:
           sparse-checkout: |
             /tools/livefix/
             /tools/seo1920/
+            /tools/formfix/
           sparse-checkout-cone-mode: false
       - name: Ключ
         env:
