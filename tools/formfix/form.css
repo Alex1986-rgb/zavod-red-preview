@@ -1,0 +1,30 @@
+/* ===== LIVEFIX-FORM (10.10.2026): форма заявки «Оставить заявку» — главная, О заводе, Контакты,
+   Импортозамещение, Производителям. Было: класс .ff-row (Имя + Телефон в ряд) нигде не описан;
+   на главной не подключён inner.css — форма без карточки, поля без отступов, «Сообщение»
+   уже остальных и моноширинным шрифтом; сразу под формой в подвале — та же плашка с кнопками. ===== */
+form.lead-form{display:block;background:#fff;border:1px solid #e2e9ef;border-radius:18px;padding:28px 28px 24px;box-shadow:0 10px 40px rgba(20,40,60,.08);text-align:left;color:#16242e}
+form.lead-form h3{margin:0 0 6px}
+form.lead-form .ff-row{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+form.lead-form .field{margin:0 0 14px}
+form.lead-form .field label{display:block;margin:0 0 6px;font-size:13px;font-weight:600;color:#5c6b76}
+form.lead-form .field input,form.lead-form .field textarea,form.lead-form .field select{display:block;width:100%;max-width:none;box-sizing:border-box;margin:0;background:#fff;color:#16242e;border:1px solid #cdd9e2;border-radius:10px;padding:13px 15px;font:inherit;font-size:15px;line-height:1.4}
+form.lead-form .field textarea{min-height:96px;resize:vertical}
+form.lead-form .field input::placeholder,form.lead-form .field textarea::placeholder{color:#94a3ae;font:inherit}
+form.lead-form .field input:focus,form.lead-form .field textarea:focus,form.lead-form .field select:focus{outline:none;border-color:#cf1616;box-shadow:0 0 0 3px rgba(207,22,22,.12)}
+form.lead-form .consent{display:block;position:relative;padding-left:28px;margin:4px 0 16px;font-size:13px;line-height:1.5;color:#5c6b76}
+form.lead-form .consent input{position:absolute;left:0;top:2px;width:16px;height:16px;margin:0;accent-color:#cf1616}
+form.lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form.lead-form button[type=submit]{width:100%;justify-content:center}
+@media(max-width:640px){
+  form.lead-form{padding:20px 16px;border-radius:14px}
+  form.lead-form .ff-row{grid-template-columns:1fr}
+  form.lead-form .field input,form.lead-form .field textarea{font-size:16px}
+}
+/* Главная: на широком экране заголовок и текст слева, форма справа — вместо узкой колонки с пустотой */
+@media(min-width:960px){
+  section#zayavka>.wrap:has(>div>form.lead-form){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);column-gap:56px;align-items:start}
+  section#zayavka>.wrap:has(>div>form.lead-form)>*{grid-column:1}
+  section#zayavka>.wrap:has(>div>form.lead-form)>div:has(>form.lead-form){grid-column:2;grid-row:1/span 4;margin-top:0!important;max-width:none!important}
+}
+/* Под формой заявки не дублируем ту же плашку «Подобрать / Получить расчёт» в подвале */
+section#zayavka+footer .sf-cta-bar{display:none}

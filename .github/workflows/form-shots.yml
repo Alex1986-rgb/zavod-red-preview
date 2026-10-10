@@ -1,0 +1,64 @@
+# Скриншоты формы заявки ДО/ПОСЛЕ исправления (tools/formfix/form.css) — только чтение живого сайта.
+# Качает 5 страниц с формой и их CSS/JS, применяет патч к локальной копии, снимает 1440 и 390 px,
+# кладёт PNG в ветку claude/audit-shots (formfix/). Сервер не трогает. Запуск: коммит tools/formfix/request.txt.
+name: form-shots
+on:
+  push:
+    branches: [claude/greeting-check-in-gdeerr]
+    paths: ['tools/formfix/request.txt']
+permissions:
+  contents: write
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            /tools/formfix/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Playwright
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null
+          npm i playwright@1.47.2 --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Скачать страницы и стили
+        run: |
+          set -e
+          mkdir -p /tmp/before && cd /tmp/before
+          for p in index about contacts importozameshchenie proizvoditelyam-oborudovaniya; do
+            u="https://zavod-red.ru/$p"; [ "$p" = index ] && u="https://zavod-red.ru/"
+            curl -sSf "$u" -o "$p.html"
+          done
+          for f in $(cat *.html | grep -o -E '(href|src)="[^"]*\.(css|js)[^"]*"' | sed -E 's/^(href|src)="//; s/"$//; s/\?.*//; s#^\.\./##; s#^/##' | grep -v '^http' | sort -u); do
+            mkdir -p "$(dirname "$f")"; curl -sSf "https://zavod-red.ru/$f" -o "$f" || echo "нет $f"
+          done
+          cp -r /tmp/before /tmp/after
+          python3 "$GITHUB_WORKSPACE/tools/formfix/patch.py" /tmp/after "$GITHUB_WORKSPACE/tools/formfix/form.css"
+      - name: Скриншоты
+        run: |
+          mkdir -p /tmp/out
+          cp tools/formfix/shot.js /tmp/pw/shot.js
+          (cd /tmp/before && python3 -m http.server 4201 >/dev/null 2>&1 &)
+          (cd /tmp/after && python3 -m http.server 4202 >/dev/null 2>&1 &)
+          sleep 2
+          cd /tmp/pw && node shot.js http://127.0.0.1:4201 /tmp/out before && node shot.js http://127.0.0.1:4202 /tmp/out after
+          ls -la /tmp/out
+      - name: В ветку claude/audit-shots
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          mkdir -p /tmp/res && cd /tmp/res
+          git init -q -b claude/audit-shots
+          git config user.name "form-shots bot"; git config user.email "actions@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin claude/audit-shots 2>/dev/null; then git reset -q --hard FETCH_HEAD; fi
+          rm -rf formfix && mkdir formfix && cp /tmp/out/*.png formfix/
+          git add -A; git commit -q -m "form-shots" || exit 0
+          for i in 1 2 3 4; do git push -q origin HEAD:claude/audit-shots && exit 0; sleep $((2**i)); git fetch -q origin claude/audit-shots && git rebase -q FETCH_HEAD || true; done
+          exit 1
