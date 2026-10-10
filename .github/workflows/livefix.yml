@@ -49,6 +49,7 @@ jobs:
           scp $SSHO tools/seo1920/ads3.py "$BASE@$HOST:_deploy_tmp/livefix/ads3.py"
           scp $SSHO tools/seo1920/ads4.py "$BASE@$HOST:_deploy_tmp/livefix/ads4.py"
           scp $SSHO tools/seo1920/ads5.py "$BASE@$HOST:_deploy_tmp/livefix/ads5.py"
+          scp $SSHO tools/seo1920/ads6.py "$BASE@$HOST:_deploy_tmp/livefix/ads6.py"
           ssh $SSHO "$BASE@$HOST" 'bash -s' <<'EOS'
           set -euo pipefail
           R=~/zavod-red.ru/public_html
@@ -73,6 +74,8 @@ jobs:
           python3 ~/_deploy_tmp/livefix/ads4.py $R --apply
           echo "=== ХАБЫ МОДЕЛЕЙ analog/ ==="
           python3 ~/_deploy_tmp/livefix/ads5.py $R --apply
+          echo "=== ЗАПРОСЫ В ТЕКСТ: ЧАСТЫЕ ВОПРОСЫ ==="
+          python3 ~/_deploy_tmp/livefix/ads6.py $R --apply
           rm -rf ~/_deploy_tmp/livefix
           EOS
       - name: Проверка на живом сайте
@@ -88,4 +91,5 @@ jobs:
           for u in analog/sew-r-77 analog/bonfiglioli-vf-49 analog/motovario-nmrv-050 analog/siti-mu-50 analog/nord-sk-72; do printf '%-30s ' "/$u"; curl -sS "https://zavod-red.ru/$u?n=$N" | grep -o '<title>[^<]*</title>' | head -1; done
           for u in catalog catalog/motor-reduktory catalog/motor-reduktory-380v catalog/pr catalog/evl podbor; do printf '%-28s ' "/$u"; curl -sS "https://zavod-red.ru/$u?n=$N" | grep -o '<title>[^<]*</title>' | head -1; done
           for u in brands/sew-r brands/lenze brands/tramec-xc; do printf '%-20s ' "/$u"; curl -sS "https://zavod-red.ru/$u?n=$N" | grep -o '<meta name="description" content="[^"]*"' | head -1; done
+          for u in "" brands/sew catalog/motor-reduktory podbor; do printf '%-26s FAQ ads6: ' "/$u"; curl -sS "https://zavod-red.ru/$u?n=$N" | grep -c 'ads6' || true; done
           printf 'IndexNow key: '; curl -sS -o /dev/null -w '%{http_code}\n' https://zavod-red.ru/051a8bb09331b03c5e35d4a40339b5b3.txt
