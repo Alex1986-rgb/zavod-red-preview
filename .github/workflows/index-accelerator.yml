@@ -33,6 +33,18 @@ jobs:
           restore-keys: |
             index-state-
 
+      - name: Взять актуальные карты сайта с zavod-red.ru
+        # Карты в репозитории отстают от боевого сайта (правки идут прямо на сервер),
+        # поэтому перед отправкой берём их с сайта. Если сайт не ответил — остаются файлы из репозитория.
+        run: |
+          for sm in sitemap.xml sitemap-hub.xml sitemap-zr.xml sitemap-tiporazmer.xml sitemap-ispolnenie.xml \
+                    sitemap-analog.xml sitemap-analog-2.xml sitemap-analog-3.xml sitemap-analog-4.xml sitemap-regiony.xml; do
+            if curl -sSf -m 60 "https://zavod-red.ru/$sm" -o "/tmp/$sm" && grep -q "<loc>" "/tmp/$sm"; then
+              mv "/tmp/$sm" "$sm"; echo "$sm: $(grep -c '<loc>' "$sm") URL с сайта"
+            else
+              echo "$sm: с сайта не взят, оставлен из репозитория"
+            fi
+          done
       - name: Запустить ускоритель
         env:
           YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}

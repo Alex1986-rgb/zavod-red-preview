@@ -44,6 +44,9 @@ PAGE_SITEMAPS = [
     "sitemap-ispolnenie.xml",  # исполнения
     "sitemap-analog.xml",      # аналоги (длинный хвост)
     "sitemap-analog-2.xml",
+    "sitemap-analog-3.xml",
+    "sitemap-analog-4.xml",
+    "sitemap-regiony.xml",     # региональные страницы
 ]
 STATE_FILE = os.path.join(BASE, ".index-state.json")
 LOG_FILE = os.path.join(BASE, "index-accelerator.log")
