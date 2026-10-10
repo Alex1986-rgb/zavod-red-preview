@@ -36,3 +36,8 @@ section#zayavka+footer .sf-cta-bar{display:none}
 .zr-modern form.lead-form .consent{color:rgba(255,255,255,.88)}
 .zr-modern form.lead-form .consent a{color:#fff}
 form.lead-form .grid-2>.field:last-child:nth-child(odd),form.lead-form .ff-row>.field:last-child:nth-child(odd){grid-column:1/-1}
+form.lead-form .grid-2{row-gap:0!important}
+@media(max-width:640px){
+  .cta-band:has(form.lead-form){padding-left:12px!important;padding-right:12px!important}
+  .zr-modern .cta-band form.lead-form,.cta-band form.lead-form{padding:22px 16px!important;max-width:none!important;width:100%}
+}
