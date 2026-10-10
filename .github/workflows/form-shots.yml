@@ -39,6 +39,7 @@ jobs:
           done
           cp -r /tmp/before /tmp/after
           python3 "$GITHUB_WORKSPACE/tools/formfix/patch.py" /tmp/after "$GITHUB_WORKSPACE/tools/formfix/form.css"
+          HOME=/tmp python3 "$GITHUB_WORKSPACE/tools/formfix/indexfaq.py" /tmp/after --apply
       - name: Скриншоты
         run: |
           mkdir -p /tmp/out

@@ -28,3 +28,11 @@ form.lead-form button[type=submit]{width:100%;justify-content:center}
 }
 /* Под формой заявки не дублируем ту же плашку «Подобрать / Получить расчёт» в подвале */
 section#zayavka+footer .sf-cta-bar{display:none}
+/* Красная форма на внутренних страницах (.zr-modern): подписи были серыми на красном и почти не читались,
+   всё выравнивалось по центру; «Почта» — третье поле в сетке из двух колонок — висела в полширины. */
+.zr-modern form.lead-form .field,.zr-modern form.lead-form .consent{text-align:left}
+.zr-modern form.lead-form .field label{color:rgba(255,255,255,.95)}
+.zr-modern form.lead-form .field input,.zr-modern form.lead-form .field textarea{border-color:transparent}
+.zr-modern form.lead-form .consent{color:rgba(255,255,255,.88)}
+.zr-modern form.lead-form .consent a{color:#fff}
+form.lead-form .grid-2>.field:last-child:nth-child(odd),form.lead-form .ff-row>.field:last-child:nth-child(odd){grid-column:1/-1}
