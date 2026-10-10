@@ -1,0 +1,4 @@
+/* ===== LIVEFIX-FORM2 (10.10.2026): на средних экранах (641–959 px) форма главной — по центру, а не слева с пустотой справа ===== */
+@media(min-width:641px) and (max-width:959px){
+  section#zayavka>.wrap>div:has(>form.lead-form){margin-left:auto!important;margin-right:auto!important;max-width:640px!important}
+}
