@@ -45,6 +45,7 @@ jobs:
           ssh $SSHO "$BASE@$HOST" "mkdir -p ~/_deploy_tmp/livefix"
           scp $SSHO tools/livefix/patch.py "$BASE@$HOST:_deploy_tmp/livefix/layout.py"
           scp $SSHO tools/seo1920/patch.py "$BASE@$HOST:_deploy_tmp/livefix/seo.py"
+          scp $SSHO tools/seo1920/titles2.py "$BASE@$HOST:_deploy_tmp/livefix/titles2.py"
           ssh $SSHO "$BASE@$HOST" 'bash -s' <<'EOS'
           set -euo pipefail
           R=~/zavod-red.ru/public_html
@@ -58,6 +59,8 @@ jobs:
           echo "Откат вёрстки: cp -p $B/assets/* $R/assets/"
           echo "=== SEO ==="
           python3 ~/_deploy_tmp/livefix/seo.py $R --apply
+          echo "=== ЦИФРЫ В ЗАГОЛОВКАХ ==="
+          python3 ~/_deploy_tmp/livefix/titles2.py $R --apply
           rm -rf ~/_deploy_tmp/livefix
           EOS
       - name: Проверка на живом сайте
