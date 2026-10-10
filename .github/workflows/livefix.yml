@@ -63,6 +63,9 @@ jobs:
           echo "=== ЦИФРЫ В ЗАГОЛОВКАХ ==="
           python3 ~/_deploy_tmp/livefix/titles2.py $R --apply
           echo "=== ОПИСАНИЯ ПОД КЛЮЧИ РЕКЛАМЫ ==="
+          # Разовый откат первой версии ads3 (затёрла полезные описания серий) — один раз, по метке.
+          RB=~/_archive_old/ads3-20261010-151304
+          if [ -d "$RB/brands" ] && [ ! -f "$RB/.restored" ]; then cp -p "$RB"/brands/*.html "$R/brands/" && touch "$RB/.restored" && echo "откат ads3 v1: $(ls "$RB"/brands | wc -l) стр."; fi
           python3 ~/_deploy_tmp/livefix/ads3.py $R --apply
           rm -rf ~/_deploy_tmp/livefix
           EOS
