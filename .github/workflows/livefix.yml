@@ -69,7 +69,7 @@ jobs:
           N=$(date +%s)
           curl -sS "https://zavod-red.ru/assets/modal.js?n=$N" -o modal.js && node --check modal.js && echo "modal.js: синтаксис OK"
           for f in assets/modal.js assets/inner.css assets/hdr.css; do printf '%s LIVEFIX-0910: ' "$f"; curl -sS "https://zavod-red.ru/$f?n=$N" | grep -c LIVEFIX-0910 || true; done
-          for u in "" about catalog/pr catalog/mr brands/sew brands/sew-r brands/sew-k brands/sew-w brands/bonfiglioli-vf brands/nord brands/siti-bh brands/lenze-gfl brands/flender; do
+          for u in "" about catalog/pr catalog/mr brands/sew brands/sew-r brands/sew-k brands/sew-w brands/bonfiglioli-vf brands/nord brands/siti-bh brands/lenze-gfl brands/flender brands/bonfiglioli brands/sew brands/tramec-k brands/vemper-mrv; do
             printf '%-24s %s  ' "/$u" "$(curl -sS -o /dev/null -w '%{http_code}' "https://zavod-red.ru/$u?n=$N")"
             curl -sS "https://zavod-red.ru/$u?n=$N" | grep -o '<title>[^<]*</title>' | head -1
           done
